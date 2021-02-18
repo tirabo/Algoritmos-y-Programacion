@@ -1,6 +1,8 @@
 from turtle import *
 
 """
+Esta biblioteca está documentada en
+https://docs.python.org/3/library/turtle.html
 Funciones que podés usar:
 - bgcolor(color)
 - color(color)
@@ -16,8 +18,10 @@ Funciones que podés usar:
 - hideturtle(), para que no se vea al "artista"
 - showturtle(), para que se lo vuelva a ver
 """
-bgcolor('white')
-color('black')
+bgcolor('green')
+color('white')
+shapesize(1, 1, 2)
+pensize(3)
 speed(1)
 forward(100)
 left(120)
