@@ -10,13 +10,16 @@ import cmath # numeros complejos
 https://scipython.com/book2/chapter-7-matplotlib/problems/p72/the-julia-set/
 El conjunto Julia asociado a la función compleja f(z)=z**2 + c puede ser representado usando el siguiente algoritmo.
 Para cada punto, z_0, en el plano complejo de tal manera que -1.5 <= Re[z_0] <= 1.5 y -1.5 <= Im[z_0] <= 1.5, iterar según 
-   z_n1 = z_n**2 + c,  (n1 representa n + 1)
+   z = z**2 + c,  
 dónde c es una constante (compleja). 
 Coloree el píxel en una imagen correspondiente a esta región del plano complejo de acuerdo con el número de iteraciones 
 necesarias para que |z| supere algún valor crítico, r_max > 0 (o negro si esto no sucede antes de un cierto número máximo de iteraciones n_max).
 
 Escriba un programa para trazar el conjunto de Julia para c = -0.1 + 0.65*j Usando r_max= 10 y n_max=500 (en Python el imaginario puro es "j").
 """
+
+# Tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
+# Sitio útil (tutorial, ejemplos, etc) para pygame:  http://programarcadegames.com/
 
 # CONSTANTES
 W = 360 # ancho y alto de la pantalla

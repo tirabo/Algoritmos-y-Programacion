@@ -9,6 +9,9 @@
  
 import pygame
  
+# Tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
+# Sitio útil (tutorial, ejemplos, etc) para pygame:  http://programarcadegames.com/
+
 # Definimos algunos colores
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)

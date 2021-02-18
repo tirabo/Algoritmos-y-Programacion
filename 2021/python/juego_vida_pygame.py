@@ -3,6 +3,7 @@ from pygame.locals import *
 import time
 import random
 
+
 # JUEGO DE LA VIDA TOROIDAL
 # El juego se desrrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
 # (más sencillo: un rectángulo donde lo de arriba se continúa con lo de abajo, lo de la izquierda con lo de la derecha). 
@@ -10,14 +11,15 @@ import random
 # 1) Cada pixel de tablero es 1 o 0 (negro o blanco). 
 # 2) Hay una cantidad de pixeles inciales que está en 1 (patrón o semilla). 
 # 3) Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
-# 4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener la nueva distribución de pixeles 
+# 4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener el tablero n se usan los valores del tablero n-1 y
 #       a) Cualquier pixel 1 con dos o tres vecinos vivos sigue siendo 1.
 #       b) Cualquier pixel 0 con tres vecinos 1 se convierte a 1.
 #       c) Todas los otros pixeles pasan a 0.
 
     
 
-# tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
+# Tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
+# Sitio útil (tutorial, ejemplos, etc) para pygame:  http://programarcadegames.com/
 
 # CONSTANTES
 
@@ -26,10 +28,9 @@ HEIGHT = 80
 E = 10 # E es la escala, la pantalla se dibuja de WIDTH * E x HEIGHT * E
 background = 'gray' # color de fondo
 lapiz = 'black' # color dl lápiz
-#patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
+patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
 # patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
-patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8),
- (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
+# patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
 
 # FUNCIONES
 
@@ -73,7 +74,7 @@ def juego_vida(tablero, screen, patron):
     # post: cada pixel de tablero es 1 o 0 (1 se dibuja color lapiz, 0 se dibuja color background).
     #      1) se pone 1 en los pixeles de patron
     #      Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
-    #      2)  Las reglas para didujar (o borrar) pixeles son: se hace un recorrido por todos los pixeles y
+    #      2) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener el tablero n se usan los valores del tablero n-1 y
     #         a) Cualquier pixel 1 con dos o tres vecinos vivos sigue siendo 1.
     #         b) Cualquier pixel 0 con tres vecinos 1 se convierte a 1.
     #         c) Todas los otros pixeles pasan a 0.
@@ -113,7 +114,7 @@ def juego_vida(tablero, screen, patron):
                     else:
                         tablero[i][j] = 0
         pygame.display.update()
-        # time.sleep(0.03)
+        # time.sleep(0.1)
     
 
 def main():

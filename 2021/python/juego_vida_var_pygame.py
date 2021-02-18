@@ -4,21 +4,23 @@ import time
 import random
 
 # JUEGO DE LA VIDA TOROIDAL
-# El juego se desrrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
+# El juego se desarrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
 # (más sencillo: un rectángulo donde lo de arriba se continúa con lo de abajo, lo de la izquierda con lo de la derecha). 
 # Las reglas son 
 # 1) Cada pixel de tablero es 1 o 0 (negro o blanco). 
 # 2) Hay una cantidad de pixeles inciales que está en 1 (patrón o semilla). 
 # 3) Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
-# 4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener la nueva distribución de pixeles en el paso n
+# 4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener el tablero n se usan los valores del tablero n-1 y
 #      a) Cualquier pixel 1 con menos de dos vecinos 1 pasa a 0.
 #      b) Cualquier pixel 1 con dos o tres vecinos 1 queda igual.
 #      c) Cualquier pixel 1 con más de tres vecinos 1 muere.
 #      d) Cualquier pixel 0 con exactamente tres vecinos 1 se convierte en una pixel 1.
+#
+# En  este archoivo se modifican algunas reglas agregando probabilidad. 
 
-    
+# Tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
+# Sitio útil (tutorial, ejemplos, etc) para pygame:  http://programarcadegames.com/
 
-# tutorial sencillo para dibujar: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
 
 # CONSTANTES
 
@@ -104,7 +106,7 @@ def juego_vida(tablero, screen, patron):
         for i in range(WIDTH):
             for j in range(HEIGHT):
                 if tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) < 2:
-                    if random.randrange(100) > -1:
+                    if random.randrange(100) > 1:
                         tablero[i][j] = 0
                         del_pixel(tablero, screen, i, j)
                 elif  tablero_orig[i][j] == 1 and (num_vecinos(tablero_orig,i,j) == 2 or num_vecinos(tablero_orig,i,j) == 3):
@@ -120,11 +122,11 @@ def juego_vida(tablero, screen, patron):
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) < 3:
-                    if random.randrange(100) > 100:
+                    if random.randrange(1000) > 1000:
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) >3:
-                    if random.randrange(100) > 95:
+                    if random.randrange(100) > 100:
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
         pygame.display.update()
