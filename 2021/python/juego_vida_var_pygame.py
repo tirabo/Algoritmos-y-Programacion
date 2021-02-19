@@ -4,8 +4,8 @@ import time
 import random
 
 # JUEGO DE LA VIDA TOROIDAL
-# El juego se desarrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
-# (más sencillo: un rectángulo donde lo de arriba se continúa con lo de abajo, lo de la izquierda con lo de la derecha). 
+# El juego se desrrolla en un rectángulo WIDTH x HEIGHT donde lo de arriba se continúa con lo de abajo y lo de la izquierda con lo de la derecha 
+# (es un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente).
 # Las reglas son 
 # 1) Cada pixel de tablero es 1 o 0 (negro o blanco). 
 # 2) Hay una cantidad de pixeles inciales que está en 1 (patrón o semilla). 
@@ -105,28 +105,36 @@ def juego_vida(tablero, screen, patron):
                  tablero_orig[i][j] = tablero[i][j]
         for i in range(WIDTH):
             for j in range(HEIGHT):
-                if tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) < 2:
-                    if random.randrange(100) > 1:
+                if tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) == 0:
+                    if random.randrange(100) > -1: # -1 
                         tablero[i][j] = 0
                         del_pixel(tablero, screen, i, j)
-                elif  tablero_orig[i][j] == 1 and (num_vecinos(tablero_orig,i,j) == 2 or num_vecinos(tablero_orig,i,j) == 3):
-                    if random.randrange(100) > 5:
-                        tablero[i][j] = 1
-                        put_pixel(tablero, screen, i, j)
+                elif tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) == 1:
+                    if random.randrange(100) > 1: # -1 
+                        tablero[i][j] = 0
+                        del_pixel(tablero, screen, i, j)
+                elif  tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) == 2:
+                    if random.randrange(100) > 100: # 100
+                        tablero[i][j] = 0
+                        del_pixel(tablero, screen, i, j)
+                elif  tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) == 3:
+                    if random.randrange(100) > 100: # 100
+                        tablero[i][j] = 0
+                        del_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 1 and num_vecinos(tablero_orig,i,j) > 3:
-                    if random.randrange(100) > -1:
+                    if random.randrange(100) > -1: # -1 
                         tablero[i][j] = 0
                         del_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) == 3:
-                    if random.randrange(100) > -1:
+                    if random.randrange(100) > -1: # -1 
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) < 3:
-                    if random.randrange(1000) > 1000:
+                    if random.randrange(100) > 100: # 100
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
                 elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) >3:
-                    if random.randrange(100) > 100:
+                    if random.randrange(100) > 100: # 100
                         tablero[i][j] = 1
                         put_pixel(tablero, screen, i, j)
         pygame.display.update()
