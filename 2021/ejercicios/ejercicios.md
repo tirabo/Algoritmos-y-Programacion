@@ -1018,19 +1018,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/coRuMC4Ykksti8Z47)
 
-### Name Greeting!
+### Saludo de nombre!
 
-Create a function that takes a name and returns a greeting in the form
-of a string.
+Cree una función que tome un nombre y devuelva un saludo en el formulario
+de una cuerda.
 
-__Ejemplos:__ hello\_name("Gerald") ➞ "Hello Gerald!"
-hello\_name("Tiffany") ➞ "Hello Tiffany!" hello\_name("Ed") ➞ "Hello
-Ed!"
+__Ejemplos:__ 
 
-Notas: The input is always a name (as string). Don't forget the
-exclamation mark! If you get stuck on a challenge, find …
+hello\_name("Gerald") ➞ "Hello Gerald!"
 
-formatting
+hello\_name("Tiffany") ➞ "Hello Tiffany!" 
+
+hello\_name("Ed") ➞ "Hello Ed!"
+
+Notas: La entrada es siempre un nombre (como cadena). No olvides el
+¡signo de exclamación!
+
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -1575,7 +1579,7 @@ First" concat\_name("John", "Doe") ➞ "Doe, John" concat\_name("Mary",
 Notas: Don't forget to return the result. If you
 get stuck on a challenge, find help in th …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -2593,7 +2597,7 @@ new\_word("cherry") ➞ "herry" new\_word("plum") ➞ "lum"
 Notas: The input
 is always a valid word.
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -2805,7 +2809,7 @@ howmanytimes(0) ➞ "Edbit" howmanytimes(12) ➞ "Edaaaaaaaaaaaabit" Notes
 The string must start with "Ed" and end with "bit". You'll only be given
 integers as test input.
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -3114,7 +3118,7 @@ add("\#", " ") ➞ "\#"
 Notas: Make sure there are no spaces between words
 when returning the function.
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -3499,7 +3503,7 @@ person's first name and last name. The first character will be the first
 letter of the first name but in lowercase. The next three characters
 will be the first three characters, but the fi …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -3889,7 +3893,7 @@ __Ejemplos:__ remove\_numbers("mubashir1") ➞ "mubashir" remove\_numbers("12ma2
 
 Tema: bugs
 
-formatting
+Tema: formato
 
 interview
 
@@ -3960,7 +3964,7 @@ transparent") ➞ False
 
 Notas: N/A
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -4303,7 +4307,7 @@ order to get a certain outcome. Write a template string according to the
 following example: Example a = "John" b = "Joe" c = "Jack" template =
 "yourtemplatestringhere" template.format( …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -4352,7 +4356,7 @@ wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW" wumbo("WUMBOLOGY") ➞
 
 Notas: N/A
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -4539,7 +4543,7 @@ get\_word("comp", "lete") ➞ "Complete" get\_word("lang", "uage") ➞
 
 Notas: N/A
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -4786,7 +4790,7 @@ order to get a certain outcome. Write a template string according to the
 following example: Example a = "John" b = "Joe" template =
 "yourtemplatestringhere" template.format(a, b) ➞ "J …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -4994,7 +4998,7 @@ number of "o"s.
 
 __Ejemplos:__ googlify(10) …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -5245,7 +5249,7 @@ __Ejemplos:__ reverse\_case("Happy Birthday") ➞ "hAPPY bIRTHDAY" reverse\_case
 THANKS") ➞ "many thanks" reverse\_case("sPoNtAnEoUs") ➞ "SpOnTaNeOuS"
 Notes N/A
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -5558,7 +5562,7 @@ We reverse 123 to get 321 and then add 123 to the end, resulting in
 __Ejemplos:__ reverseandnot(123) ➞ 321123 reverseandnot(152) ➞ 251152
 reverseandnot(123456789) ➞ 987654321 …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -5692,7 +5696,7 @@ order to get a certain outcome. Write a template string according to the
 following example: Example template = "yourtemplatestringhere"
 template.format("name", me = "John", him = "Joe" …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -5746,7 +5750,7 @@ Notas: Treat a space as its own character
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -6724,7 +6728,7 @@ Notas: N/A
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -7063,7 +7067,7 @@ Notas: This
 challenge is about using two operators that are related to division. If
 the number is negative, treat it like it's positive.
 
-formatting
+Tema: formato
 
 Tema: matemática
 
@@ -7091,7 +7095,7 @@ __Ejemplos:__ zip\_it(["Elise",
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ordenación
 
@@ -7573,7 +7577,7 @@ ride 'til I can't no more") ➞ "I'm gonna rwidwe 'twil I can't no morwe
 owo" owofied("Do you ever feel like a plastic bag") ➞ "Do you wevwer
 fwewel lwikwe a plastwic bag owo" owofie …
 
-formatting
+Tema: formato
 
 regex
 
@@ -7601,7 +7605,7 @@ removefirstlast("a") ➞ "a"
 Notas: For words with two or fewer letters
 (including an empty string), return the string itself (see examp …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -7869,17 +7873,48 @@ Añadir a colección
 
 [](https://edabit.com/challenge/6bMaDhnn34shBBpvi)
 
-### Edabit's Markdown Formatting
+### Formato markdown
 
-Edabit allows for markdown formatting, meaning that it's possible to
-format words by surrounding text with special characters. For example,
-to get bold text, you surround the text with double asterisks, like this
-bold. Here is a list of the possible formatting options in Edabit and
-how to apply them: bold italics \` inline …
+El formato markdown permite formatear las palabras rodeando el texto con caracteres especiales. Por ejemplo, para poner el texto en negrita, rodee el texto con asteriscos dobles, como esta **negrita**. 
+Aquí hay una lista de las posibles opciones de formato en Edabit y cómo aplicarlas:
+
+negrita: **bold**
+
+cursiva: _italics_
+
+código: `inline code`
+
+tachado: ~~strikethrough~~
+
+Desafío
+
+Dada una cadena y un carácter de estilo, devuelve la cadena formateada.
+
+Los caracteres de estilo son letras simples que representan los diferentes tipos de formato.
+
+Para los propósitos de este desafío, los personajes de estilo son los siguientes:
+
+"b" es para negrita
+
+"i" es para cursiva
+
+"c" es para código en línea
+
+"s" es para tachado
+
+Ejemplos
+
+`md_format("Bold", "b") ➞ "**Bold**"`
+
+`md_format("leaning text", "i") ➞ "_leaning text_"`
+
+`md_format("Edabit", "c") ➞ "`Edabit`"`
+
+`md_format("That's a strike!", "s") ➞ "~~That's a strike!~~"`
 
 Tema: condiciones
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -8034,7 +8069,7 @@ olleH" reverse("The quick brown fox.") ➞ ".xof nworb kciuq ehT"
 reverse("Edabit is really helpful!") ➞ "!lufpleh yllaer si tibadE" Notes
 You can expect a valid string for all test cases.
 
-formatting
+Tema: formato
 
 Tema: ordenación
 
@@ -8081,7 +8116,7 @@ The second number is the minor version. The third number is the patch
 (bug fixes). Create three separate functions, one to retrieve each
 element in the semantic versioning specification …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -8240,7 +8275,7 @@ how to do this challenge.
 __Ejemplos:__ reverse\_psychology("wash the
 dishes") ➞ "Do not wash the dishes." reverse\_p …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -8318,7 +8353,7 @@ Notes N/A
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -8426,7 +8461,7 @@ __Ejemplos:__ strip\_sentence("the quick brown fox jumps
 over the lazy dog", "aeiou") ➞ "th qck brwn fx jmps vr th lzy dg"
 strip\_sentence("the hissing snakes sinisterly slither a …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -9246,7 +9281,7 @@ Tema: condiciones
 
 dates
 
-formatting
+Tema: formato
 
 Dificultad: Muy Fácil
 
@@ -9481,7 +9516,7 @@ __Ejemplos:__ filterstatenames(["Arizona", "CA", "NY", "Nevada"], "abb")
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -9585,7 +9620,7 @@ cap\_me(["Slyvia", "Kristal", "Sharilyn", …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -9838,7 +9873,7 @@ at least one piece of meat (-x). For example, the grill below has 4
 non-vegetarian skewers and 1 vegetarian skewer (the one in the middle).
 ["--xo--x--ox--", "--xx--x--xx--", "--o …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -9969,7 +10004,7 @@ __Ejemplos:__ clear\_fog("sky") ➞ "It's a clear day!"
 clear\_fog("fogfogFFfoooofftogffreogffesGgfOogfog") ➞ "trees"
 clear\_fog("fogFogFogffoObirdsanffodthebffoeffoesGG …
 
-formatting
+Tema: formato
 
 regex
 
@@ -10440,7 +10475,7 @@ stutter("enthusiastic") ➞ "en... en... enthusia …
 
 Tema: algoritmos
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -10544,7 +10579,7 @@ __Ejemplos:__ relationtoluke("Darth Vader") ➞
 
 Tema: condiciones
 
-formatting
+Tema: formato
 
 objects
 
@@ -10722,7 +10757,7 @@ example, since 12 is 1100 in binary, the return value should be 2.
 __Ejemplos:__ count\_ones(0) ➞ 0 count\_ones(100) ➞ 3 count\_ones(999) ➞ 8
 Notes The input will always be a valid integer (number).
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -10777,7 +10812,7 @@ counterpartCharCode("A") ➞ 97 counterpartCharCode("a") ➞ 65
 Notas: The
 argument will always be a single character. Not all …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -10907,7 +10942,7 @@ card\_hide("8754456321113213") ➞ "\*\*3213" card\_hide("35123413355523")
 
 __Ejemplos:__ Ensure you return a string. The length …
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -11044,7 +11079,7 @@ is a non-negative integer. The given list …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -11067,7 +11102,7 @@ __Ejemplos:__ reverse("Hello World") ➞
 "DLROw OLLEh" reverse("ReVeRsE") ➞ "eSrEvEr" reverse("Radar") ➞ "RADAr"
 Notes There will be no punctuation in any of the test cases.
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -11191,7 +11226,7 @@ doublechar("1234! ") ➞ "11223344!!\_\_ "
 Notas: All test cases contain
 valid strings. Don't worry about spaces, specia …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -11244,7 +11279,7 @@ is 8mm (equal to 0.008m) num\_layers(21) …
 
 Tema: álgebra
 
-formatting
+Tema: formato
 
 Tema: matemática
 
@@ -11270,7 +11305,7 @@ __Ejemplos:__ indexofcaps("eDaBiT") ➞ [1, 3, 5]
 indexofcaps("eQuINoX") ➞ [1, 3, 4, 6] indexofcaps("determine") ➞ []
 indexofcaps("STRIKE") ➞ [0, 1, 2, 3, 4, 5] indexofcaps("sUn") ➞ …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -11565,7 +11600,7 @@ __Ejemplos:__ alphabet\_soup("hello") ➞
 
 Notas: You can assume numbers and p …
 
-formatting
+Tema: formato
 
 Tema: ordenación
 
@@ -12310,7 +12345,7 @@ drinking Diet Coke.") ➞ " hv nvr sn thn prsn drnkng Dt Ck."
 remove\_vowels("We're gonna build a wall!") ➞ "W'r gnn bld wll!"
 remove\_vowels("Happy Thanksgiving to all--even the ha …
 
-formatting
+Tema: formato
 
 regex
 
@@ -12859,7 +12894,7 @@ __Ejemplos:__ captofront("hApPy") ➞ "APhpy" captofront("moveMENT") ➞
 Notas: Keep the original
 relative order of the upper and lower case letters the same.
 
-formatting
+Tema: formato
 
 regex
 
@@ -12965,7 +13000,7 @@ letters\_only("\^U)6\$22\>8p).") ➞ "Up"
 Notas: See the Resources section
 for more information on Python string methods.
 
-formatting
+Tema: formato
 
 regex
 
@@ -12990,7 +13025,7 @@ cost from the sales price, then divide by salesprice.
 
 __Ejemplos:__ profit\_margin(50, 50) ➞ "0.0%" profit\_margin(28, 39) …
 
-formatting
+Tema: formato
 
 Tema: matemática
 
@@ -13018,7 +13053,7 @@ important meeting. She asks you to write a program …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -13222,7 +13257,7 @@ __Ejemplos:__ should make this clear.
 
 __Ejemplos:__ inator\_inator("Shrink …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -13400,7 +13435,7 @@ and there should be no spaces at the beginning or end of the sentence.
 __Ejemplos:__ correct\_spacing("The film starts at midnight. ") ➞ "The film
 starts at midnight." correct\_sp …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -14032,7 +14067,7 @@ __Ejemplos:__ in\_box([ "\#\#\#", "\#\*\#", "\#\#\#" ]) ➞ True in\_box([
 
 Notas: …
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -14060,7 +14095,7 @@ in your expression. Flags can come in any order.
 __Ejemplos:__ txt1 = "red
 flag blue flag" txt2 = "yellow flag red flag …
 
-formatting
+Tema: formato
 
 regex
 
@@ -14590,7 +14625,7 @@ order to get a certain outcome. Write three template strings according
 to the following example. All final strings must have a length of 30
 characters. Notice the period . at the end …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -14665,7 +14700,7 @@ order to get a certain outcome. Write a three templates string according
 to the following example. All final strings must have a length of 20
 characters: Example starry = "yourtemplate …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -14691,7 +14726,7 @@ located within the "users/edabit" dir …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 regex
 
@@ -14773,7 +14808,7 @@ Notas: The first li …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Dificultad: Fácil
 
@@ -14826,7 +14861,7 @@ sort\_descending(1254859723) ➞ 9875543221 sort\_descending(73065) ➞
 
 Notas: You can expect non-negative nu …
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -14923,7 +14958,7 @@ obscured in some way. Since someone could look over your shoulder, you
 don't want that shown on your screen. Hence, the website masks these
 Tema: strings. Your task is to create a function th …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -14949,7 +14984,7 @@ M | N | O | P | Q | R | S | T | U | V | W | ... | --- | --- | --- | ---
 
 Tema: algoritmos
 
-formatting
+Tema: formato
 
 Tema: lógica
 
@@ -15116,7 +15151,7 @@ __Ejemplos:__ shhh("HI THERE!") ➞ '"Hi
 there!", whispered Edabit.' shhh("tHaT'S Pretty awesOme") ➞ '"That's
 pretty awesome", whispered Edabit.' shhh("") ➞ …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -15681,7 +15716,7 @@ emotify("Make me grin") ➞ "Make me …
 
 Tema: condiciones
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -15806,7 +15841,7 @@ __Ejemplos:__ formatphonenumber([1, 2, 3, 4, 5, 6, 7, 8, 9,
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -15879,7 +15914,7 @@ __Ejemplos:__ format\_math("3 + 4") ➞ "3 + 4 = 7" format\_math("3 -
 Notas: You will need to deal with addition,
 subtraction, multiplication and division. Division …
 
-formatting
+Tema: formato
 
 Tema: matemática
 
@@ -15904,7 +15939,7 @@ Spaces will be included only when more than one word is present.
 
 __Ejemplos:__ reverse("Reverse") ➞ "esreveR" reverse(" …
 
-formatting
+Tema: formato
 
 regex
 
@@ -15934,7 +15969,7 @@ pretty") ➞ "s---s w--e p----y" partially\_hide("red is not my color") ➞
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -16060,7 +16095,7 @@ get\_middle("middle") ➞ "dd" get\_middle("A") ➞ "A"
 
 Notas: All t …
 
-formatting
+Tema: formato
 
 Tema: matemática
 
@@ -16207,7 +16242,7 @@ __Ejemplos:__ cms\_selector(["WordPress", "Joomla", "Drupal"],
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -16325,7 +16360,7 @@ quick brown fox" removespecialcharacters("%fd76\$fd …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 regex
 
@@ -16568,7 +16603,7 @@ Notas: Return the elements in the …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -16698,7 +16733,7 @@ complete\_binary("110010100010") ➞ "0000110010100010"
 Notas: Return the
 same string if its length is already a multiple of 8.
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -16896,7 +16931,7 @@ find\_nemo("Nemo is me") ➞ "I found Nemo at 1!" …
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -16918,7 +16953,7 @@ re module. You can do this by adding the following line at the top of
 your file: import re Write a regular expression that will match the
 files with the extension .py or .pyw. You …
 
-formatting
+Tema: formato
 
 regex
 
@@ -17120,7 +17155,7 @@ __Ejemplos:__ make\_title("This is a title") ➞ "This Is A Title"
 make\_title("capitalize every word") ➞ "Capitalize Every Word"
 make\_title("I Like Pizza") ➞ "I Like Pizza" make\_titl …
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -17231,7 +17266,7 @@ You only need to retrieve one element.
 
 Tema: listas
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -17335,7 +17370,7 @@ __Ejemplos:__ format\_num(1000) ➞
 Notas: You
 can expect a valid number for all test cases.
 
-formatting
+Tema: formato
 
 Tema: números
 
@@ -17362,7 +17397,7 @@ __Ejemplos:__ accum("abcd") ➞ "A-Bb-Ccc-Dddd" accum("RqaEzty") ➞
 "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy" accum("cwAt") ➞ "C-Ww-Aaa-Tttt"
 Notes Capitalize the first letter of each set. All test …
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
@@ -17708,7 +17743,7 @@ bar should begin and end with "|" Repeat the character to fill the bar,
 with each character equivalent to 10% Use spaces to pad the bar to a
 length of 10 characters. A single space c …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -17856,7 +17891,7 @@ order to get a certain outcome. Write a template string according to the
 following example. Notice that the template will be formatted twice:
 Example a = "John" b = "Joe" template = "y …
 
-formatting
+Tema: formato
 
 Tema: lenguaje\_fundamentos
 
@@ -17936,7 +17971,7 @@ that returns its enharmonic equivalent. The
 
 __Ejemplos:__ be …
 
-formatting
+Tema: formato
 
 Tema: strings
 
@@ -17960,7 +17995,7 @@ original order of items.
 __Ejemplos:__ uniqueinorder("AAAABBBCCDAABBB") ➞
 ["A", "B", "C", "D", "A", "B"] uniqueinorder(" …
 
-formatting
+Tema: formato
 
 Tema: ciclos
 
