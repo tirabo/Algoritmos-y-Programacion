@@ -1,3 +1,9 @@
+[//]: <> (Para traducir: Alt+Shift+T.)
+[//]: <> (negrita: **bold**)
+[//]: <> (cursiva: _italics_)
+[//]: <> (código: `inline code`)
+[//]: <> (tachado: ~~strikethrough~~)
+
 [](https://edabit.com/challenge/rZToTkR5eB9Zn4zLh)
 
 ### Devuelve la suma de dos números
@@ -7,7 +13,7 @@ suma.
 
 Examples
 
-addition(3, 2) ➞ 5, addition(-3, -6) ➞ -9, addition(7, 3) ➞ 10.
+`addition(3, 2) ➞ 5, addition(-3, -6) ➞ -9, addition(7, 3) ➞ 10.`
 
 Tema: álgebra
 
@@ -35,7 +41,7 @@ número por +1 y devuelve el resultado.
 
 __Ejemplos:__ 
 
-addition(0) ➞ 1
+`addition(0) ➞ 1`
 
 Tema: álgebra
 
@@ -58,7 +64,7 @@ Añadir a colección
 Escribe una función que tome un número entero de minutos y lo convierta a
 segundos.
 
-__Ejemplos:__ convert(5) ➞ 300 convert(3) ➞ 180 convert(2) ➞ 120
+__Ejemplos:__ `convert(5) ➞ 300 convert(3) ➞ 180 convert(2) ➞ 120`
 
 
 Tema: lenguaje\_fundamentos
@@ -82,8 +88,10 @@ Añadir a colección
 Escribe una función que tome la base y la altura de un triángulo y devuelva
 su área.
 
-__Ejemplos:__ tri\_area(3, 2) ➞ 3 tri\_area(7, 4) ➞ 14
-tri\_area(10, 10) ➞ 50 
+__Ejemplos:__ 
+
+`tri\_area(3, 2) ➞ 3 tri\_area(7, 4) ➞ 14
+tri\_area(10, 10) ➞ 50 `
 
 
 Notas: El área de un triángulo es: (base \* height)
@@ -109,8 +117,8 @@ Añadir a colección
 
 Fix the code 
 
-def cubes(a):
-	retunr a ** 3
+        def cubes(a): 
+                retunr a ** 3
 
 Tema: bugs
 
@@ -130,7 +138,7 @@ Añadir a colección
 
 Escribe una función que convierta horas en segundos.
 
-__Ejemplos:__ howmanyseconds(2) ➞ 7200, howmanyseconds(10) ➞ 36000, howmanyseconds(24) ➞ 86400
+__Ejemplos:__ `howmanyseconds(2) ➞ 7200, howmanyseconds(10) ➞ 36000, howmanyseconds(24) ➞ 86400`
 
 Notas: 60 segundos en un minuto, 60 minutos en una hora No lo olvide
 para devolver su respuesta.
@@ -155,10 +163,10 @@ Añadir a colección
 
 Cree una función que encuentre el rango máximo del tercer lado de un triángulo, donde las longitudes de los lados son números enteros.
 
-__Ejemplos:__ 
-next\_edge(8,10) ➞ 17 
-next\_edge(5, 7) ➞ 11 
-next\_edge(9, 2) ➞ 10
+__Ejemplos:__         
+`next_edge(8,10) ➞ 17 `    
+`next_edge(5, 7) ➞ 11 `    
+`next_edge(9, 2) ➞ 10`
 
 Notas: (side1 + side2) - 1 = rango máximo del tercer borde.Las longitudes de los lados del triángulo son números enteros positivos.
 
@@ -185,13 +193,11 @@ de una operación de división. Se pasan dos números como parámetros.El primer
 el parámetro dividido por el segundo parámetro tendrá un resto,
 posiblemente cero. Devuelve ese valor.
 
-__Ejemplos:__
+__Ejemplos:__    
 
-remainder(1, 3) ➞ 1
-
-remainder(3, 4) ➞ 3 
-
-remainder(5, 5) ➞ 0
+        remainder(1, 3) ➞ 1
+        remainder(3, 4) ➞ 3 
+        remainder(5, 5) ➞ 0
 
 Tema: matemática
 
@@ -211,7 +217,11 @@ Añadir a colección
 
 Cree una función que tome una cadena y la devuelva como un número entero.
 
-__Ejemplos:__ string\_int("6") ➞ 6, string\_int("1000") ➞ 1000, string\_int("12") ➞ 12
+__Ejemplos:__ 
+
+        string_int("6") ➞ 6, 
+        string_int("1000") ➞ 1000, 
+        string_int("12") ➞ 12
 
 Notas: Todos los números estarán enteros.Todos los números
 ser positivo.
@@ -238,11 +248,9 @@ Cree una función que tome la edad y devuelva la edad en días.
 
 __Ejemplos:__ 
 
-calc\_age(65) ➞ 23725 
-
-calc\_age(0) ➞ 0 
-
-calc\_age(20) ➞ 7300
+        calc\_age(65) ➞ 23725 
+        calc\_age(0) ➞ 0 
+        calc\_age(20) ➞ 7300
 
 Nota: Use 365 días como la duración de un año para este desafío.Ignorar
 años bisiestos y días entre el último cumpleaños y ahora.Espere solo positivo
@@ -269,12 +277,9 @@ un rectángulo.
 
 __Ejemplos:__ 
 
-find\_perimeter(6, 7) ➞ 26 
-
-find\_perimeter(20, 10)
-➞ 60 
-
-find\_perimeter(2, 9) ➞ 22
+        find_perimeter(6, 7) ➞ 26 
+        find_perimeter(20, 10) ➞ 60 
+        find_perimeter(2, 9) ➞ 22
 
 
 Tema: geometría
@@ -302,12 +307,9 @@ Dado un polígono regular n de n lados, devuelve la suma total de
 
 __Ejemplos:__ 
 
-sum\_polygon(3) ➞ 180 
-
-sum\_polygon(4) ➞
-360 
-
-sum\_polygon(6) ➞ 720
+        sum_polygon(3) ➞ 180 
+        sum_polygon(4) ➞ 360 
+        sum_polygon(6) ➞ 720
 
 Notas: n siempre será mayor que 2. La fórmula (n - 2) x 180 da la suma de todas las medidas de los ángulos de un polígono de n lados.
 
@@ -339,11 +341,9 @@ x es igual a 7. Intente depurar el código y pasar todas las pruebas.
 
 __Ejemplos:__ 
 
-is\_seven(4) ➞ False 
-
-is\_seven(9) ➞ False 
-
-is\_seven(7) ➞ True
+        is_seven(4) ➞ False 
+        is_seven(9) ➞ False 
+        is_seven(7) ➞ True
 
 Notas: El error puede ser sutil, ¡así que mira de cerca!
 
@@ -369,11 +369,9 @@ Un vehículo necesita 10 veces más combustible que el que tiene para la distanc
 
 __Ejemplos:__ 
 
-calculate\_fuel(15) ➞ 150
-
-calculate\_fuel(23.5) ➞ 235 
-
-calculate\_fuel(3) ➞ 100
+        calculate_fuel(15) ➞ 150
+        calculate_fuel(23.5) ➞ 235 
+        calculate_fuel(3) ➞ 100
 
 
 Tema: flujo
@@ -399,11 +397,9 @@ devuelve el cálculo.
 
 __Ejemplos:__ 
 
-calculate\_exponent(2, 5) ➞ 32
-
-calculate\_exponent(10, 10) ➞ 10000000000 
-
-calculate\_exponent(3, 3) ➞ 27
+        calculate_exponent(2, 5) ➞ 32
+        calculate_exponent(10, 10) ➞ 10000000000 
+        calculate_exponent(3, 3) ➞ 27
 
 Notes: Todas las entradas serán números enteros positivos. 
 
@@ -432,11 +428,9 @@ el primer elemento.
 
 __Ejemplos:__ 
 
-getfirstvalue([1, 2, 3]) ➞ 1
-
-getfirstvalue([80, 5, 100]) ➞ 80 
-
-getfirstvalue([-500, 0, 50]) ➞ -500
+        getfirstvalue([1, 2, 3]) ➞ 1
+        getfirstvalue([80, 5, 100]) ➞ 80 
+        getfirstvalue([-500, 0, 50]) ➞ -500
 
 Notes: El primer elemento de una lista siempre tiene un índice de 0.
 
@@ -462,13 +456,9 @@ El que gana consigue 3 puntos,  el que empata consigue 1 punto y el que pierde c
 
 __Ejemplos:__ 
 
-football\_points(3, 4, 2) ➞ 13 
-
-football\_points(5, 0, 2) ➞ 15
-
-football\_points(0, 0, 1) ➞ 0
-
-Notas: Inputs will be numbers …
+        football_points(3, 4, 2) ➞ 13 
+        football_points(5, 0, 2) ➞ 15
+        football_points(0, 0, 1) ➞ 0
 
 Tema: álgebra
 
@@ -515,11 +505,9 @@ a segundos y los suma.
 
 __Ejemplos:__ 
 
-convert(1, 3) ➞ 3780 
-
-convert(2, 0) ➞ 7200 
-
-convert(0, 0) ➞ 0
+        convert(1, 3) ➞ 3780 
+        convert(2, 0) ➞ 7200 
+        convert(0, 0) ➞ 0
 
 Tema: lenguaje\_fundamentos
 
@@ -539,19 +527,16 @@ Añadir a colección
 
 Escribe dos funciones:
 
-to\_int (): una función para convertir una cadena en un entero.
+`to_int()` : una función para convertir una cadena en un entero.
 
-to\_str (): Una función para convertir un número entero en una cadena.
+`to_str()` : Una función para convertir un número entero en una cadena.
 
 __Ejemplos:__ 
 
-to\_int("77") ➞ 77 
-
-to\_int("532") ➞ 532 
-
-to\_str(77) ➞ "77"
-
-to\_str(532) ➞ "532"
+        to_int("77") ➞ 77 
+        to_int("532") ➞ 532 
+        to_str(77) ➞ "77"
+        to_str(532) ➞ "532"
 
 Tema: lenguaje\_fundamentos
 
@@ -574,9 +559,8 @@ cadena.
 
 __Ejemplos:__ 
 
-booltostring(True) ➞ "True" 
-
-booltostring(False) ➞ "False"
+        booltostring(True) ➞ "True" 
+        booltostring(False) ➞ "False"
 
 Tema: bits\_operaciones
 
@@ -603,7 +587,7 @@ Escribe una función que devuelva la cadena "algo" unida a un espacio.
 
 __Ejemplos:__ 
 
-givemesomething("es mejor que nada") ➞ "algo es mejor que nada" 
+        givemesomething("es mejor que nada") ➞ "algo es mejor que nada" 
 
 
 Notas: suponga que se proporciona una entrada.
@@ -630,11 +614,9 @@ equipo y devolver ese valor.
 
 __Ejemplos:__ 
 
-points(1, 1) ➞ 5 
-
-points(7, 5) ➞ 29 
-
-points(38, 8) ➞ 100 
+        points(1, 1) ➞ 5 
+        points(7, 5) ➞ 29 
+        points(38, 8) ➞ 100 
 
 Tema: lenguaje\_fundamentos
 
@@ -659,11 +641,9 @@ de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
-issamenum(4, 8) ➞ False 
-
-issamenum(2, 2) ➞ True 
-
-issamenum(2, "2") ➞ False
+        issamenum(4, 8) ➞ False 
+        issamenum(2, 2) ➞ True 
+        issamenum(2, "2") ➞ False
 
 Tema: condiciones
 
@@ -690,11 +670,9 @@ True si es menor o igual a cero; de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
-lessthanorequalto\_zero(5) ➞ False 
-
-lessthanorequalto\_zero(0) ➞ True 
-
-lessthanorequalto\_zero(-2) ➞ True
+        lessthanorequalto_zero(5) ➞ False 
+        lessthanorequalto_zero(0) ➞ True 
+        lessthanorequalto_zero(-2) ➞ True
 
 Tema: condiciones
 
@@ -718,11 +696,9 @@ Crea una función que devuelva el módulo de los dos números dados.
 
 __Ejemplos:__ 
 
-mod(-13, 64) ➞ 51 
-
-mod(50, 25) ➞ 0 
-
-mod(-6, 3) ➞ 0
+        mod(-13, 64) ➞ 51 
+        mod(50, 25) ➞ 0 
+        mod(-6, 3) ➞ 0
 
 Tema: matemática
 
@@ -745,11 +721,9 @@ número en la lista.
 
 __Ejemplos:__ 
 
-findLargestNum([4, 5, 1, 3]) ➞ 5
-
-findLargestNum([300, 200, 600, 150]) ➞ 600 
-
-findLargestNum([1000, 1001, 857, 1]) ➞ 1001
+        findLargestNum([4, 5, 1, 3]) ➞ 5
+        findLargestNum([300, 200, 600, 150]) ➞ 600 
+        findLargestNum([1000, 1001, 857, 1]) ➞ 1001
 
 Tema: listas
 
@@ -776,15 +750,11 @@ número en la lista.
 
 __Ejemplos:__ 
 
-findsmallestnum([34, 15, 88, 2]) ➞ 2
-
-findsmallestnum([34, -345, -1, 100]) ➞ -345 
-
-findsmallestnum([-76, 1.345, 1, 0]) ➞ -76 
-
-findsmallestnum([0.4356, 0.8795, 0.5435, -0.9999]) ➞ -0.9999 
-
-findsmallestnum([7, 7, 7]) ➞ 7
+        findsmallestnum([34, 15, 88, 2]) ➞ 2
+        findsmallestnum([34, -345, -1, 100]) ➞ -345 
+        findsmallestnum([-76, 1.345, 1, 0]) ➞ -76 
+        findsmallestnum([0.4356, 0.8795, 0.5435, -0.9999]) ➞ -0.9999 
+        findsmallestnum([7, 7, 7]) ➞ 7
 
 Tema: listas
 
@@ -811,13 +781,10 @@ negativo de ese número. Devuelve números negativos sin ningún cambio.
 
 __Ejemplos:__ 
 
-return\_negative(4) ➞ -4 
-
-return\_negative(15) ➞ -15
-
-return\_negative(-4) ➞ -4 
-
-return\_negative(0) ➞ 0
+        return_negative(4) ➞ -4 
+        return_negative(15) ➞ -15
+        return_negative(-4) ➞ -4 
+        return_negative(0) ➞ 0
 
 
 Tema: lenguaje\_fundamentos
@@ -845,11 +812,9 @@ determina si el año es bisiesto o no.
 
 __Ejemplos:__ 
 
-leap\_year(2020)➞ True 
-
-leap\_year(2021) ➞ False 
-
-leap\_year(2100) ➞ False 
+        leap_year(2020)➞ True 
+        leap_year(2021) ➞ False 
+        leap_year(2100) ➞ False 
 
 Tema: álgebra
 
@@ -874,11 +839,8 @@ los números más pequeños y más grandes.
 
 __Ejemplos:__ 
 
-differencemaxmin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82 (el número más pequeño es -50, el mayor es 32).
-
-differencemaxmin([44, 32, 86, 19]) ➞ 67 (el número más pequeño es 19, el más grande es 86).
-
-Notas: N/A
+        differencemaxmin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82 (el número más pequeño es -50, el mayor es 32).
+        differencemaxmin([44, 32, 86, 19]) ➞ 67 (el número más pequeño es 19, el más grande es 86).
 
 Tema: listas
 
@@ -904,11 +866,9 @@ Cree una función para concatenar dos listas de enteros.
 
 __Ejemplos:__ 
 
-concat([1, 3, 5], [2, 6, 8]) ➞ [1, 3, 5, 2, 6, 8] 
-
-concat([7, 8], [10, 9, 1, 1, 2]) ➞ [7, 8, 10, 9, 1, 1, 2] 
-
-concat([4, 5, 1], [3, 3, 3, 3, 3]) ➞ [4, 5, 1, 3, 3, 3, 3, 3]
+        concat([1, 3, 5], [2, 6, 8]) ➞ [1, 3, 5, 2, 6, 8] 
+        concat([7, 8], [10, 9, 1, 1, 2]) ➞ [7, 8, 10, 9, 1, 1, 2] 
+        concat([4, 5, 1], [3, 3, 3, 3, 3]) ➞ [4, 5, 1, 3, 3, 3, 3, 3]
 
 Tema: listas
 
@@ -928,16 +888,13 @@ Añadir a colección
 
 ### Diferencia máxima
 
-Dada una lista de enteros, devuelve la diferencia entre el mayor y
-los enteros más pequeños de la lista.
+Dada una lista de enteros, devuelve la diferencia entre el mayor y los enteros más pequeños de la lista.
 
 __Ejemplos:__ 
 
-difference([10, 15, 20, 2, 10, 6]) ➞ 18, 20 - 2 = 18 
-
-difference([-3, 4, -9, -1, -2, 15]) ➞ 24, 15 - (-9) = 24 
-
-difference([4, 17, 12, 2, 10, 2]) ➞ 15
+        difference([10, 15, 20, 2, 10, 6]) ➞ 18, 20 - 2 = 18 
+        difference([-3, 4, -9, -1, -2, 15]) ➞ 24, 15 - (-9) = 24 
+        difference([4, 17, 12, 2, 10, 2]) ➞ 15
 
 Tema: listas
 
@@ -962,11 +919,9 @@ Dados dos números, devuelva True si la suma de ambos números es menor que
 
 __Ejemplos:__ 
 
-lessthan100(22, 15) ➞ True,  22 + 15 = 37 
-
-lessthan100(83, 34) ➞ False, 83 + 34 = 117 
-
-lessthan100(3, 77) ➞ true
+        lessthan100(22, 15) ➞ True,  22 + 15 = 37 
+        lessthan100(83, 34) ➞ False, 83 + 34 = 117 
+        lessthan100(3, 77) ➞ true
 
 Tema: lenguaje\_fundamentos
 
@@ -991,14 +946,10 @@ lista. La lista puede ser homogénea o heterogénea.
 
 __Ejemplos:__ 
 
-getlastitem([1, 2, 3]) ➞ 3 
-
-getlastitem(["cat", "dog", "duck"]) ➞ "duck"
-
-
-getlastitem([True, False, True]) ➞ True 
-
-getlastitem([7, "String", False]) ➞ False
+        getlastitem([1, 2, 3]) ➞ 3 
+        getlastitem(["cat", "dog", "duck"]) ➞ "duck"
+        getlastitem([True, False, True]) ➞ True 
+        getlastitem([7, "String", False]) ➞ False
 
 Tema: listas
 
@@ -1014,7 +965,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-### Hasta acá ###
+
 
 [](https://edabit.com/challenge/coRuMC4Ykksti8Z47)
 
@@ -1025,11 +976,9 @@ de una cuerda.
 
 __Ejemplos:__ 
 
-hello\_name("Gerald") ➞ "Hello Gerald!"
-
-hello\_name("Tiffany") ➞ "Hello Tiffany!" 
-
-hello\_name("Ed") ➞ "Hello Ed!"
+        hello_name("Gerald") ➞ "Hello Gerald!"
+        hello_name("Tiffany") ➞ "Hello Tiffany!" 
+        hello_name("Ed") ➞ "Hello Ed!"
 
 Notas: La entrada es siempre un nombre (como cadena). No olvides el
 ¡signo de exclamación!
@@ -1050,14 +999,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/SNM5EZ3FePECt2HQn)
 
-### Profitable Gamble
+### Apuesta rentable
 
-Create a function that takes three arguments prob, prize, pay and
-returns True if prob \* prize \> pay; otherwise return False. To
-illustrate: profitable\_gamble(0.2, 50, 9) ... should yield True, since
-the net profit is 1 (0.2 \* 50 - 9), and 1 \> 0.
+Cree una función que tome tres argumentos prob, premio, pago y
+devuelve True si `prob * premio >= pagar`, de lo contrario, devuelve False.
 
-__Ejemplos:__ profitable\_gamble(0.2, 50, 9) ➞ True profitable\_gamble(0.9, 1, 2) …
+__Ejemplos:__ 
+
+        profitable\_gamble(0.2, 50, 9) ➞ True 
+        profitable\_gamble(0.9, 1, 2) ➞ False
 
 Tema: condiciones
 
@@ -1073,19 +1023,19 @@ Añadir a favoritos
 
 Añadir a colección
 
+
 [](https://edabit.com/challenge/49pyDP8dE3pJ2dYMW)
 
-### Check if an Integer is Divisible By Five
+### Compruebe si un número entero es divisible por cinco
 
-Create a function that returns True if an integer is evenly divisible by
-5, and False otherwise.
+Cree una función que devuelva `True` si un número entero es divisible por
+5, y `False` en caso contrario.
 
-__Ejemplos:__ divisiblebyfive(5) ➞ True
-divisiblebyfive(-55) ➞ True divisiblebyfive(37) ➞ False
+__Ejemplos:__ 
 
-Notas: Don't
-forget to return the result. If you get stuck on a challenge, find help
-in the Resources tab. If you're really stuck, unlo …
+        divisiblebyfive(5) ➞ True
+        divisiblebyfive(-55) ➞ True 
+        divisiblebyfive(37) ➞ False
 
 Tema: matemática
 
@@ -1103,16 +1053,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/foFKdr68vSENQ9AYB)
 
-### Get the Sum of All List Elements
+### Obtener la suma de todos los elementos de la lista
 
-Create a function that takes a list and returns the sum of all numbers
-in the list.
+Cree una función que tome una lista y devuelva la suma de todos los números
+en la lista.
 
-__Ejemplos:__ getsumof\_elements([2, 7, 4]) ➞ 13
-getsumof\_elements([45, 3, 0]) ➞ 48 getsumof\_elements([-2, 84, 23]) ➞
-105
+__Ejemplos:__ 
 
-Notas: N/A
+        getsumof_elements([2, 7, 4]) ➞ 13
+        getsumof_elements([45, 3, 0]) ➞ 48 
+        getsumof_elements([-2, 84, 23]) ➞ 105
 
 Tema: listas
 
@@ -1132,17 +1082,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Yj2Rew5XQYpu7Nosq)
 
-### Frames Per Second
+###Cuadros por segundo
 
-Create a function that returns the number of frames shown in a given
-number of minutes for a certain FPS.
+Cree una función que devuelva el número de fotogramas que se muestran en un determinado
+número de minutos para un determinado FPS.
 
-__Ejemplos:__ frames(1, 1) ➞ 60
-frames(10, 1) ➞ 600 frames(10, 25) ➞ 15000
+__Ejemplos:__ 
+        frames(1, 1) ➞ 60
+        frames(10, 1) ➞ 600
+        frames(10, 25) ➞ 15000
 
-Notas: FPS stands for "frames
-per second" and it's the number of frames a computer screen shows every
-second.
+Notas: FPS significa "marcos por segundo" y es la cantidad de fotogramas que muestra una pantalla de computadora cada segundo.
 
 Tema: algoritmos
 
@@ -1162,17 +1112,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/NebFhjXTn8NEbhYXY)
 
-### Multiple of 100
+### Múltiplo de 100
 
-Create a function that takes an integer and return True if it's
-divisible by 100, otherwise return False.
+Cree una función que tome un número entero y devuelva `True` si es
+divisible por 100; de lo contrario, devuelve `False`.
 
-__Ejemplos:__ divisible(1) ➞ False
-divisible(1000) ➞ True divisible(100) ➞ True
+__Ejemplos:__ 
 
-Notas: Don't forget to
-return the result. If you get stuck on a challenge, find help in the
-Resources tab. If you're really stuck, unlock solut …
+        divisible(1) ➞ False
+        divisible(1000) ➞ True 
+        divisible(100) ➞ True
+
 
 Tema: álgebra
 
@@ -1190,41 +1140,19 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/gbWDtMHtZARm7sdNA)
-
-### Using the "and" Operator
-
-Python has a logical operator and, which can also be written as &. The
-and operator takes two boolean values, and returns True if both values
-are True. Consider a and b: a is checked if it is True or False. If a is
-False, False is returned. b is checked if it is True or False. If b is
-False, False is returned. Otherwise, …
-
-Tema: lenguaje\_fundamentos
-
-Tema: lógica
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/HuWQaCpFR7iTeCvTm)
 
-### Two Makes Ten
+### Dos hacen diez
 
-Create a function that takes two arguments. Both arguments are integers,
-a and b. Return True if one of them is 10 or if their sum is 10.
+Cree una función que tenga dos argumentos. Ambos argumentos son números enteros,
+`a` y `b`. La función devuelve `True` si uno de ellos es 10 o si su suma es 10.
 
-__Ejemplos:__ makes10(9, 10) ➞ True makes10(9, 9) ➞ False makes10(1, 9) ➞
-True
+__Ejemplos:__ 
 
-Notas: Don't forget to return the result.
+        makes10(9, 10) ➞ True 
+        makes10(9, 9) ➞ False 
+        makes10(1, 9) ➞ True
 
 Tema: algoritmos
 
@@ -1242,15 +1170,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/pKyeEDkNqZraqS3rW)
 
-### Testing K\^K == N?
+### Testeando `k**k == n`?
 
-Write a function that returns True if k\^k == n for input (n, k) and
-return False otherwise.
+Escriba una función que devuelva `True` si `k**k == n` para la entrada `(n, k)` y
+devuelva `False` de lo contrario.
 
-__Ejemplos:__ ktok(4, 2) ➞ True ktok(387420489, 9) ➞
-True 9\^9 == 387420489 ktok(3124, 5) ➞ False ktok(17, 3) ➞ False Notes
-The \^ operator refers to exponentiation operation \*\*, not the bitwise
-XOR operation.
+__Ejemplos:__ 
+
+        ktok(4, 2) ➞ True 
+        ktok(387420489, 9) ➞ True,  9**9 == 387420489 
+        ktok(3124, 5) ➞ False 
+        ktok(17, 3) ➞ False 
 
 Tema: bits\_operaciones
 
@@ -1270,19 +1200,22 @@ Añadir a colección
 
 [](https://edabit.com/challenge/F5ycABGyZtghMpYjr)
 
-### Buggy Code (Part 2)
+### Código con bugs
 
-Fix the code in the code tab to pass this challenge (only syntax
-errors). Look at the
+Corrija el código de más abajo (solo errores de sintaxis). Mire los ejemplos a continuación para tener una idea de lo que debería hacer la función.
 
-__Ejemplos:__ below to get an idea of what the function
-should do.
+        def max_num(n1, n2):
+                if n2 > n1:
+                        return n2
+                elif:
+                        return n1
 
-__Ejemplos:__ max\_num(3, 7) ➞ 7 max\_num(-1, 0) ➞ 0
-max\_num(1000, 400) ➞ 1000
+__Ejemplos:__ 
 
-Notas: READ EVERY WORD CAREFULLY, CHARACTER BY
-CHARACTER! Don't overthink this challenge; it's not supp …
+        max_num(3, 7) ➞ 7 
+        max_num(-1, 0) ➞ 0
+        max_num(1000, 400) ➞ 1000
+
 
 Tema: bugs
 
@@ -1298,17 +1231,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/C3N2JEfFQoh4cqQ98)
 
-### Compare Strings by Count of Characters
+### Comparar cadenas por número de caracteres
 
-Create a function that takes two strings as arguments and return either
-True or False depending on whether the total number of characters in the
-first string is equal to the total number of characters in the second
-string.
+Cree una función que tome dos cadenas como argumentos y devuelva
+Verdadero o Falso dependiendo de si el número total de caracteres en el
+la primera cadena es igual al número total de caracteres en la segunda
+cuerda.
 
-__Ejemplos:__ comp("AB", "CD") ➞ True comp("ABC", "DE") ➞ False
-comp("hello", "edabit") ➞ False
+__Ejemplos:__ 
 
-Notas: Do …
+        comp("AB", "CD") ➞ True 
+        comp("ABC", "DE") ➞ False
+        comp("hello", "cadena") ➞ False
 
 Tema: condiciones
 
@@ -1326,16 +1260,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/NRxWszQRw5JqSDmQS)
 
-### Divides Evenly
+### Divide uniformemente
 
-Given two integers, a and b, return True if a can be divided evenly by
-b. Return False otherwise.
+Dados dos números enteros positivo, a y b, devuelve True si a se puede dividir exactamente por
+b (resto 0). Devuelva False de lo contrario. 
 
-__Ejemplos:__ divides\_evenly(98, 7) ➞ True 98/7 =
-14 divides\_evenly(85, 4) ➞ False 85/4 = 21.25
+__Ejemplos:__ 
 
-Notas: a will always be
-greater than or equal to b.
+        divides_evenly(98, 7) ➞ True, 98/7 = 14 
+        divides_evenly(85, 4) ➞ False, 85/4 = 21.25
+
+Notas: a siempre será mayor o igual que b.
 
 Tema: matemática
 
@@ -1353,17 +1288,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/wtu32ZFxHJsuQnogX)
 
-### Is the String Empty?
+### ¿Está vacía la cadena?
 
-Create a function that returns True if a string is empty and False
-otherwise.
+Cree una función que devuelva Verdadero si una cadena está vacía y es Falsa
+de lo contrario.
 
-__Ejemplos:__ is\_empty("") ➞ True is\_empty(" ") ➞ False
-is\_empty("a") ➞ False
+__Ejemplos:__ 
 
-Notas: A string containing only whitespaces " "
-does not count as empty. Don't forget to return the result. If you get
-stuck on a challenge, find help in the Resources tab. …
+        is_empty("") ➞ True 
+        is_empty(" ") ➞ False
+        is_empty("a") ➞ False
+
+Notas: Una cadena que contiene solo espacios en blanco `'  '` no cuenta como vacía.
 
 Tema: lenguaje\_fundamentos
 
@@ -1381,17 +1317,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/QKmETue6fMTdcB8Rq)
 
-### Recursion to Repeat a String n Number of Times
+###Recurrencia para repetir una cadena n número de veces
 
-Create a recursive function that takes two parameters and repeats the
-string n number of times. The first parameter txt is the string to be
-repeated and the second parameter is the number of times the string is
-to be repeated.
+Cree una función recursiva que tome dos parámetros y repita la cadena n número de veces. El primer parámetro es la cadena a ser repetida y el segundo parámetro es el número de veces que la cadena se repite.
 
-__Ejemplos:__ repetition("ab", 3) ➞ "ababab"
-repetition("kiwi", 1) ➞ "kiwi" repetition("cherry", 2) ➞ …
+__Ejemplos:__ 
 
-recursion
+        repetition("ab", 3) ➞ "ababab"
+        repetition("kiwi", 1) ➞ "kiwi" 
+        repetition("cherry ", 2) ➞ "cherry cherry "
+
+Tema: recursion
 
 Tema: strings
 
@@ -1405,19 +1341,26 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Qei2FyKLmSCbYDkbm)
 
-### Buggy Code (Part 3)
+### Código con bugs
 
-Fix the code in the code tab to pass this challenge (only syntax
-errors). Look at the
+Corrija el código en la pestaña de código para aprobar este desafío (solo sintaxis
+errores).Mira el
 
-__Ejemplos:__ below to get an idea of what the function
-should do.
+        def sum_lst(lst):
+                total
+                for i in range(0,lst):
+                        total += lst[i]
+                return total
 
-__Ejemplos:__ sum\_lst([1, 2, 3, 4, 5]) ➞ 15 sum\_lst([-1, 0, 1])
-➞ 0 sum\_lst([0, 4, 8, 12]) ➞ 24
+Ejemplos a continuación para tener una idea de cuál es la función
+debería hacer.
 
-Notas: READ EVERY WORD CAREFULLY,
-CHARACTER BY CHARACTER! Don't overthink this chall …
+__Ejemplos:__ 
+
+        sum_lst([1, 2, 3, 4, 5]) ➞ 15 
+        sum_lst([-1, 0, 1]) ➞ 0 
+        sum_lst([0, 4, 8, 12]) ➞ 24
+
 
 Tema: listas
 
@@ -1435,15 +1378,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/dP9osvXn6r6F36wYF)
 
-### Front 3 - Slice Check Repeat Concatenate
+### Comprobar, repetir y concatenar
 
-Create a function that takes a string; we'll say that the front is the
-first three characters of the string. If the string length is less than
-three characters, the front is whatever is there. Return a new string,
-which is three copies of the front.
+Cree una función que tome una cadena. Diremos que el frente de la cadena son los primeros tres caracteres de la cadena. Si la longitud de la cadena es menor que tres, el frente es toda la cadena.
+Devuelva una nueva cadena, que sean tres copias del frente.
 
-__Ejemplos:__ front3("Python") ➞
-"PytPytPyt" front3("Cucumber") ➞ "CucCucCuc" …
+__Ejemplos:__ 
+
+        front3("Python") ➞ "PytPytPyt"       
+        front3("Cucumber") ➞ "CucCucCuc"
 
 Tema: condiciones
 
@@ -1459,17 +1402,19 @@ Añadir a colección
 
 [](https://edabit.com/challenge/pfuxt3J2p2tph3LJQ)
 
-### The Forbidden Letter
+### La letra prohibida
 
-Given a letter and a list of words, return whether the letter does not
-appear in any of the words.
+Dada una letra y una lista de palabras, devuelva `True` si la letra no
+aparecen en cualquiera de las palabras, `False` en el otro caso.
 
-__Ejemplos:__ forbidden\_letter("r", ["rock",
-"paper", "scissors"]) ➞ False forbidden\_letter("a", ["spoon", "fork",
-"knife"]) ➞ True forbidden\_letter("m", []) ➞ True
+__Ejemplos:__ 
 
-Notas: All inputs
-given will be in lowercase. You will always be …
+        forbidden\_letter("r", ["rock", "paper", "scissors"]) ➞ False 
+        forbidden\_letter("a", ["spoon", "fork", "knife"]) ➞ True 
+        forbidden\_letter("m", []) ➞ True
+
+
+Notas: Todas las entradas deben estar en minúsculas. 
 
 Tema: listas
 
@@ -1487,37 +1432,18 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/Wpbb6x9nHax55zKLX)
-
-### SQL Where Clause
-
-In many cases, SQL is used to select more than just columns in a table.
-For example, you can filter your search by specifying conditions as seen
-below: SELECT \* FROM Table WHERE Name = "Bob"; Again, we can use the
-asterisks to select all the data in a table. However, with the use of
-the WHERE keyword, only all of Bob's dat …
-
-Tema: lenguaje\_fundamentos
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/HRu9WggWxdSpYjxNf)
 
-### Sum of List Less Than 100 List Remix
+### Suma de lista menor a 100
 
-Given a list of numbers, return True if the sum of the values in the
-list is less than 100; otherwise return False.
+Dada una lista de números, devuelva Verdadero si la suma de los valores en la lista es menor que 100, de lo contrario, devuelve False.
 
-__Ejemplos:__ listlessthan\_100([5, 57]) ➞ True listlessthan\_100([77, 30]) ➞ False
-listlessthan\_100([0]) ➞ True
+__Ejemplos:__ 
 
-Notas: N/A
+        listlessthan_100([5, 57]) ➞ True 
+        listlessthan_100([77, 30]) ➞ False
+        listlessthan_100([0]) ➞ True
 
 Tema: listas
 
@@ -1537,15 +1463,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/H4m227Nz2fXoxYHNg)
 
-### Return Types
+### Tipos de devoluciones
 
-Create a function that takes a list lst and returns the types of values
-(data types) in a new list.
+Cree una función que tome una lista `lst` y devuelva los tipos de valores (tipos de datos) en una nueva lista.
 
-__Ejemplos:__ listvaluestypes([1, 10]), ➞ ['int',
-'int']) listvaluestypes([["hello" , 1] , 10]), ➞ ['list', 'int'])
-listvaluestypes(["shashwat", 10, 90]), ➞ ['str', 'int', 'int']) Notes
-Check the Resources tab for help if n …
+__Ejemplos:__ 
+
+        listvaluestypes([1, 10]), ➞ ['int', 'int']) 
+        listvaluestypes([["hello" , 1] , 10]), ➞ ['list', 'int'])
+        listvaluestypes(["shashwat", 10, 90]), ➞ ['str', 'int', 'int']) 
+
 
 Tema: algoritmos
 
@@ -1567,17 +1494,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/pFQPcaaASgHuACbaS)
 
-### Concatenate First and Last Name into One String
+### Concatenar nombre y apellido en una sola cadena
 
-Given two strings, firstname and lastname, return a single string in the
-format "last, first".
+Dadas dos cadenas, nombre y apellido, devuelve una sola cadena en el
+formato "apellido, nombre".
 
-__Ejemplos:__ concat\_name("First", "Last") ➞ "Last,
-First" concat\_name("John", "Doe") ➞ "Doe, John" concat\_name("Mary",
-"Jane") ➞ "Jane, Mary"
+__Ejemplos:__ 
 
-Notas: Don't forget to return the result. If you
-get stuck on a challenge, find help in th …
+        concat_name("First", "Last") ➞ "Last, First" 
+        concat_name("John", "Doe") ➞ "Doe, John" 
+        concat_name("Mary", "Jane") ➞ "Jane, Mary"
+
 
 Tema: formato
 
@@ -1593,43 +1520,19 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/zpwSLfGvDhpj8TfaG)
-
-### SQL COUNT() Function
-
-In SQL, the COUNT() function returns the number of rows that match a
-specified criterion. You can use this syntax: SELECT COUNT(column\_name)
-FROM table\_name WHERE condition; In this challenge, fill in the query
-in the Code tab to COUNT the total visitors from the Name column, having
-Bill greater than 10000 AND number of Vi …
-
-Tema: programación\_funcional
-
-Tema: matemática
-
-Tema: números
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/vBEm4jimnvxaFhdgs)
 
-### Moving House
+### Casa movil
 
-I'd like to calculate how long on average I've lived in the same house.
-Given a person's age and the number of times they've moved house as
-moves, return the average number of years that they've spent living in
-the same house.
+Me gustaría calcular cuánto tiempo en promedio he vivido en la misma casa.
+Dada la edad de una persona y el número de veces que se ha mudado de casa, devuelva el número medio de años que ha pasado viviendo en la misma casa.
 
-__Ejemplos:__ yearsinone\_house(30, 1) ➞ 15
-yearsinone\_house(15, 2) ➞ 5 yearsinone\_house(80, 0) ➞ 80 …
+__Ejemplos:__ 
+
+        yearsinone_house(30, 1) ➞ 15
+        yearsinone_house(15, 2) ➞ 5 
+        yearsinone_house(80, 0) ➞ 80 …
 
 Tema: lenguaje\_fundamentos
 
@@ -1643,65 +1546,22 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/kxPHnRL2XuL7k43Gi)
-
-### SQL Select Statement
-
-SQL is the standard language used for querying data from databases.
-However, thanks to its clear English-based syntax, it's a very simple
-language to pick up! For example, the command for selecting every field
-from a database is this: SELECT \* FROM Table; The asterisk is a
-wildcard that represents everything. It's like the …
-
-Tema: lenguaje\_fundamentos
-
-objects
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
-
-[](https://edabit.com/challenge/7shokLkiNu2PEpWtP)
-
-### Destructuring Assignment (Ignoring Values)
-
-You can assign variables from lists like this: first, \_ , last = [1, 2,
-8] first = lst[0] \_ = ignores second value (2) last = lst[-1]
-print(first) ➞ outputs 1 print(last) ➞ outputs 8 Using Destructuring
-Assignment (check the Resources tab), your task is to unpack the list
-writeyourcodehere into three variables, f …
-
-Tema: lenguaje\_fundamentos
-
-Tema: lógica
-
-Tema: ciclos
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/cZ6zaRiKn7dfvJhnF)
 
-### Concatenating First and Last Character of a String
+### Concatenación del primer y último carácter de una cadena
 
-Creates a function that takes a string and returns the concatenated
-first and last character.
+Crea una función que toma una cadena y devuelve el concatenado
+primer y último carácter.
 
-__Ejemplos:__ first\_last("ganesh") ➞ "gh"
-first\_last("kali") ➞ "ki" first\_last("shiva") ➞ "sa"
-first\_last("vishnu") ➞ "vu" first\_last("durga") ➞ "da"
+__Ejemplos:__ 
 
-Notas: There is
-no empty string.
+        first_last("ganesh") ➞ "gh"
+        first_last("kali") ➞ "ki" 
+        first_last("shiva") ➞ "sa"
+        first_last("vishnu") ➞ "vu" 
+        first_last("durga") ➞ "da"
+
 
 Tema: lenguaje\_fundamentos
 
@@ -1717,15 +1577,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/YEwPHzQ5XJCafCQmE)
 
-### Is the String Odd or Even?
+### ¿Es la cadena par o impar?
 
-Given a string, return true if its length is even or false if the length
-is odd.
+Dada una cadena, devuelve verdadero si su longitud es par o falso si la longitud
+es impar.
 
-__Ejemplos:__ oddoreven("apples") ➞ True oddoreven("pears") ➞ False
-oddoreven("cherry") ➞ True
+__Ejemplos:__ 
 
-Notas: N/A
+        oddoreven("apples") ➞ True 
+        oddoreven("pears") ➞ False
+        oddoreven("cherry") ➞ True
 
 Tema: condiciones
 
@@ -1743,14 +1604,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/JCZqhijycsNizczsR)
 
-### Pair Management
+### Gestión de pares
 
-Given two arguements, return a list contains these two arguements.
+Dados dos argumentos, devuelve una lista que contiene estos dos argumentos.
 
-__Ejemplos:__ make\_pair(1, 2) ➞ [1, 2] make\_pair(51, 21) ➞ [51, 21]
-make\_pair(512124, 215) ➞ [512124, 215]
+__Ejemplos:__ 
 
-Notas: N/A
+        make_pair(1, 2) ➞ [1, 2] 
+        make_pair(51, 21) ➞ [51, 21]
+        make_pair(512124, 215) ➞ [512124, 215]
 
 Tema: listas
 
@@ -1766,15 +1628,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/EPS5tFxKQB7vWXLs6)
 
-### Area of a Rectangle
+### Área de un rectángulo
 
-Create a function that calculates the area of a rectangle. If the
-arguments are invalid, your function must return -1.
+Crea una función que calcule el área de un rectángulo. Si uno de los argumentos no es válido, su función debe devolver -1.
 
-__Ejemplos:__ area(3, 4)
-➞ 12 area(10, 11) ➞ 110 area(-1, 5) ➞ -1 area(0, 2) ➞ -1
+__Ejemplos:__ 
 
-Notas: N/A
+        area(3, 4) ➞ 12 
+        area(10, 11) ➞ 110 
+        area(-1, 5) ➞ -1 
+        area(0, 2) ➞ -1
 
 Tema: álgebra
 
@@ -1792,16 +1655,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/eXRfoKp8m9Q6qvpRv)
 
-### Sum Greater Than Five
+### Suma mayor que cinco
 
-Write a function that returns the sum of elements in a list greater than
-5.
+Escribe una función que devuelva la suma de los elementos en una lista que son mayores que 5.
 
-__Ejemplos:__ sum\_five([1, 5, 20, 30, 4, 9, 18]) ➞ 77 sum\_five([1, 2, 3,
-4]) ➞ 0 sum\_five([10, 12, 28, 47, 55, 100]) ➞ 252
+__Ejemplos:__ 
 
-Notas: Find all the
-elements greater than 5, not the elements greater than or equal to 5.
+        sum\_five([1, 5, 20, 30, 4, 9, 18]) ➞ 77 
+        sum\_five([1, 2, 3, 4]) ➞ 0 
+        sum\_five([10, 12, 28, 47, 55, 100]) ➞ 252
+
+Notas: Encuentra todos los elementos mayores que 5, no los elementos mayores o iguales a 5.
 
 Tema: listas
 
@@ -1819,13 +1683,32 @@ Añadir a colección
 
 [](https://edabit.com/challenge/cStXTiYtCwyY4tEpP)
 
-### Fix the Error: Value vs. Reference Types
+### Corregir el error: valores frente a tipos de referencia
 
-Create a function that returns True if two lists contain identical
-values, and False otherwise. To solve this question, your friend writes
-the following code: def check\_equals(lst1, lst2): if lst1 is lst2:
-return True: else: return False But testing the code, you see that
-something is not quite rig …
+Cree una función que devuelva Verdadero si dos listas contienen valores idénticos (en las mismas posiciones) y Falso en caso contrario.
+
+Para resolver esta pregunta, su amigo escribe el siguiente código:
+
+        def check_equals(lst1, lst2):
+                if lst1 is lst2:
+                        return True
+                else:
+                        return False
+
+Pero al probar el código, ve que algo no está del todo bien. La ejecución del código produce los siguientes resultados:
+
+        check_equals([1, 2], [1, 3]) ➞ False
+        # ok
+        check_equals([1, 2], [1, 2]) ➞ False
+        # ¡Ay!¿Qué sucedió?
+
+Vuelva a escribir el código de su amigo para que comprobar correctamente si dos listas son iguales. Las siguientes pruebas deben ser superadas:
+
+        check_equals([1, 2], [1, 3]) ➞ False
+        check_equals([1, 2], [1, 2]) ➞ True
+        check_equals([4, 5, 6], [4, 5, 6]) ➞ True
+        check_equals([4, 7, 6], [4, 5, 6]) ➞ False
+
 
 Tema: bugs
 
@@ -1839,34 +1722,11 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/jKAjLk5epb8XDzTwC)
-
-### Burglary Series (14): Adjectives Total
-
-You call your spouse in anger and a "little" argument takes place. Count
-the total amount of adjectives used. Given a dictionary of adjectives,
-return the total amount of adjectives used.
-
-__Ejemplos:__ totalamountadjectives({ "a": "moron" }) ➞ 1 totalamountadjectives({ "a":
-"idiot", "b": "idiot", "c": "idiot" }) ➞ 3 totalamoun …
-
-Tema: listas
-
-Tema: lenguaje\_fundamentos
-
-objects
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
+[//]: <> (Hasta acá
 
 [](https://edabit.com/challenge/2XLjgZhmACph76Pkr)
 
-### Minimal I: If Boolean Then Boolean
+### Minimal I: Si es booleano, entonces booleano
 
 In this series we're going to see common redundancies and superfluities
 that make our code unnecessarily complicated and less readable, and
