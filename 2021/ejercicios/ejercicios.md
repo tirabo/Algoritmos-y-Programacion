@@ -1722,45 +1722,23 @@ Añadir a favoritos
 
 Añadir a colección
 
-[//]: <> (Hasta acá
-
-[](https://edabit.com/challenge/2XLjgZhmACph76Pkr)
-
-### Minimal I: Si es booleano, entonces booleano
-
-In this series we're going to see common redundancies and superfluities
-that make our code unnecessarily complicated and less readable, and
-we're going to learn how to avoid them. In line with the spirit of the
-series, we can summarize the general rules of minimalist code in two
-simple principles: Keep your code clean and …
-
-Tema: condiciones
-
-Tema: lenguaje\_fundamentos
-
-Tema: lógica
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/2HhmMdGPSpJ8EFrZe)
 
-### Buggy Code (Part 4)
+### Código con  bugs
 
-Emmy has written a function that returns a greeting to users. However,
-she's in love with Mubashir, and would like to greet him slightly
-differently. She added a special case in her function, but she made a
-mistake. Can you help her?
+Ema ha escrito una función que devuelve un saludo a los usuarios. Sin embargo, es más amiga de Pedro y le gustaría saludarlo en forma diferente. Agregó un caso especial en su función, pero cometió un error.¿Puedes ayudarla?
 
-__Ejemplos:__ greeting("Matt") ➞ "Hello, Matt!"
-greeting("Helen") ➞ "Hello, Helen!" greeting( …
+        def saludo(name):
+                return "¡Hola, " + name + "!"
+	        if name == "Pedro":
+		        return "¡Hola amigo!"
+
+__Ejemplos:__ 
+
+        saludo("Matías") ➞ "¡Hola, Matías!"
+        saludo("Elena") ➞ "¡Hola,, Elena!" 
+        saludo("Pedro") ➞ "¡Hola amigo!" 
 
 Tema: bugs
 
@@ -1778,14 +1756,20 @@ Añadir a colección
 
 [](https://edabit.com/challenge/6YN2ww3B4cQZ6rTmN)
 
-### Leap Year Function ⌚
+### Función de año bisiesto ⌚
 
-Write a function that returns True if a year is a leap, otherwise it
-returns False. A year is a "leap year" if it lasts 366 days, instead of
-365 in a typical year. That extra day is added to the end of the shorter
-month, dating as February 29. To eliminate this error, the Gregorian
-calendar stipulates that a year that is d …
+Escriba una función que devuelva Verdadero si un año es bisiesto; de lo contrario, devuelve Falso.
 
+Un año es un "año bisiesto" si dura 366 días, en lugar de 365 en un año típico. Ese día adicional se agrega al final del mes más corto, creando el 29 de febrero.
+
+Un año bisiesto ocurre cada cuatro años y tendrá lugar si el año es múltiplo de cuatro. La excepción a esto es un año de fin de siglo (por ejemplo, 1900 o 2000), donde el año debe ser divisible por 400 para ser un año bisiesto.
+
+__Ejemplos:__
+
+        leap_year(1990) ➞ False
+        leap_year(1924) ➞ True
+        leap_year(2021) ➞ False
+        
 Tema: álgebra
 
 Tema: condiciones
@@ -1804,13 +1788,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/LRevQqmaH78mwyYXi)
 
-### Inches to Feet
+### Centímetros a metros
 
-Create a function that accepts a measurement value in inches and returns
-the equivalent of the measurement value in feet.
+Cree una función que acepte un valor de medición en centímetros y devuelva
+el equivalente en metros.
 
-__Ejemplos:__ inchestofeet(324) ➞ 27 inchestofeet(12) ➞ 1 inchestofeet(36) ➞ 3 Notes
-If inches are under 12, return 0. 12 inches = 1 foot.
+__Ejemplos:__ 
+
+        cm2m(324) ➞ 3 
+        cm2m(12) ➞ 0 
+        cm2m(5344) ➞ 53 
+
+Notas: si los centímetros son menos de 100, devuelve 0. 100 cm = 1 m.
 
 Tema: lenguaje\_fundamentos
 
@@ -1826,15 +1815,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/YWoJkmMHYEENCvgRP)
 
-### Destructuring Assignment
+### Asignación de desestructuración
 
-You can assign variables from lists like this: lst = [1, 2, 3, 4, 5, 6,
-7, 8] first = lst[0] second = lst[1] third = lst[2] other = lst[3:]
-print(first) ➞ outputs 1 print(second) ➞ outputs 2 print(third) ➞
-outputs 3 print(other) ➞ outputs [4, 5, 6, 7, 8] Create variables first,
-second, third and other from the given list …
+Puede asignar variables de una lista de la siguiente manera:
 
-interview
+        lst = [1, 2, 3, 4, 5, 6, 7, 8]
+        primera = lst[0]
+        segunda = lst[1]
+        tercera = lst[2]
+        otra = lst[3:]
+
+        print(primera) ➞ outputs 1
+        print(segunda) ➞ outputs 2
+        print(tercera) ➞ outputs 3
+        print(otra) ➞ outputs [4, 5, 6, 7, 8]
+
+Su tarea es descomprimir la lista en cuatro variables, primera, segunda, tercera y otra. Su solución debe ser solo un código de una línea.
+
 
 Tema: lenguaje\_fundamentos
 
@@ -1850,45 +1847,21 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/xbDMmBbykN6cEvFfr)
-
-### SQL ORDER BY Keyword
-
-Once you've learned how to SELECT everything from a table in SQL, you
-can sort your results in ascending or descending order. By default, SQL
-will always sort the results in ascending order. For example: SELECT \*
-FROM Table ORDER BY ColumnName ... is the same as: SELECT \* FROM Table
-ORDER BY ColumnName ASC You can sort t …
-
-Tema: programación\_funcional
-
-interview
-
-Tema: lógica
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/jcAfvJxEqA2fuE2qZ)
 
-### Fix the Error: Check Whether a Given Number Is Odd
+### Corrija el error: compruebe si un número dado es impar
 
-Éowyn has written the function is\_odd() to check if a given number is
-odd or not. Unfortunately, the function does not return the correct
-result for all the inputs. Help her fix the error. def is\_odd(num):
-return num % 1 == 1 or 2
+Uriel ha escrito la función  `es_impar()` para verificar si un número dado es impar o no. Desafortunadamente, la función no devuelve el resultado correcto para todas las entradas. Ayúdalo a corregir el error.
 
-__Ejemplos:__ is\_odd(-5) ➞ True is\_odd(25) ➞ True
-is\_odd(0) ➞ False
+        def es_impar(num):
+                return num % 1 == 1 or 2
 
-Notas: All the inputs will …
+__Ejemplos:__ 
+
+        es_impar(-5) ➞ True 
+        es_impar(25) ➞ True
+        es_impar(0) ➞ False
 
 Tema: bugs
 
@@ -1906,17 +1879,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/f3jm7sk7LaYttYyLP)
 
-### Convert Number to String of Dashes
+### Convertir número en una cadena de guiones
 
-Create a function that takes a number (from 1 - 60) and returns a
-corresponding string of hyphens.
+Cree una función que tome un número (de 1 a 60) y devuelva una  cadena de guiones de esa longitud.
 
-__Ejemplos:__ numtodashes(1) ➞ "-"
-numtodashes(5) ➞ "-----" numtodashes(3) ➞ "---"
+__Ejemplos:__
 
-Notas: You will be
-provided integers ranging from 1 to 60. Don't forget to return your
-result as a string. If you get stuck on a challenge, find h …
+        num2guiones(1) ➞ "-"
+        num2guiones(5) ➞ "-----" 
+        num2guiones(3) ➞ "---"
 
 Tema: ciclos
 
@@ -1934,17 +1905,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/F7qjLMhPzJgyNEqdi)
 
-### Miserable Parody of a Calculator
+### Miserable parodia de una calculadora
 
-Create a function that will handle simple math expressions. The input is
-an expression in the form of a string.
+Cree una función que maneje expresiones matemáticas simples. La entrada es una expresión en forma de cadena con no más de tres operaciones (que solo pueden ser `+`, `-`, `*` y `/`).
 
-__Ejemplos:__ calculator("23+4") ➞ 27
-calculator("45-15") ➞ 30 calculator("13+2-5\*2") ➞ 5
-calculator("49/7\*2-3") ➞ 11
+__Ejemplos:__ 
 
-Notas: There will be no brackets in the
-input line. No need to calculate mathematical functions ( …
+        calculator("23+4") ➞ 27
+        calculator("45-15") ➞ 30 
+        calculator("13+2-5*2") ➞ 5
+        calculator("49/7*2-3") ➞ 11
+
+Notas: No habrá paréntesis en el línea de entrada.
 
 Tema: álgebra
 
@@ -1962,16 +1934,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/ZGezQDXsturZGpQcS)
 
-### Check if a List Contains a Given Number
+### Compruebe si una lista contiene un número determinado
 
-Write a function to check if a list contains a particular number.
+Escribe una función para verificar si una lista contiene un número en particular.
 
-__Ejemplos:__ check([1, 2, 3, 4, 5], 3) ➞ True check([1, 1, 2, 1, 1], 3) ➞
-False check([5, 5, 5, 6], 5) ➞ True check([], 5) ➞ False
+__Ejemplos:__ 
 
-Notas: Don't
-forget to return the result. If you get stuck on a challenge, find help
-in the Resources tab. If you're really stuck …
+        check([1, 2, 3, 4, 5], 3) ➞ True 
+        check([1, 1, 2, 1, 1], 3) ➞ False 
+        check([5, 5, 5, 6], 5) ➞ True 
+        check([], 5) ➞ False
 
 Tema: listas
 
@@ -1989,17 +1961,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/DruRW8YM8PNiH9Kg7)
 
-### Is the Number Even or Odd?
+### ¿Es el número par o impar?
 
-Create a function that takes a number as an argument and returns "even"
-for even numbers and "odd" for odd numbers.
+Cree una función que tome un número como argumento y devuelva "par"
+para números pares y "impares" para números impares.
 
-__Ejemplos:__ isEvenOrOdd(3) ➞
-"odd" isEvenOrOdd(146) ➞ "even" isEvenOrOdd(19) ➞ "odd"
+__Ejemplos:__ 
 
-Notas: Dont
-forget to return the result. Input will always be a valid integer.
-Expect negative integers (whole numbers). Test …
+        es_par_o_impar(3) ➞ "impar" 
+        es_par_o_impar(146) ➞ "par" 
+        es_par_o_impar(19) ➞ "impar"
+
+Notas: No olvide devolver el resultado. La entrada siempre será un número entero válido (positivo o negativo).
 
 Tema: condiciones
 
@@ -2019,16 +1992,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/jozLzME3YptxydiQm)
 
-### Is the Word Singular or Plural?
+### ¿Es la palabra singular o plural?
 
-Create a function that takes in a word and determines whether or not it
-is plural. A plural word is one that ends in "s".
+Cree una función que tome una palabra y determine si es o no
+es plural. Una palabra plural es aquella que termina en "s" (aunque no siempre sea así).
 
-__Ejemplos:__ is\_plural("changes") ➞ True is\_plural("change") ➞ False
-is\_plural("dudes") ➞ True is\_plural("magic") ➞ False
+__Ejemplos:__ 
 
-Notas: Don't
-forget to return the result. Remember that return True (boolean) is n …
+        es_plural("cambios") ➞ True 
+        es_plural("cambio") ➞ False
+        es_plural("dudas") ➞ True 
+        es_plural("magico") ➞ False
+
 
 Tema: condiciones
 
@@ -2046,15 +2021,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/HQXRKxQXECFTCFTtn)
 
-### On/Off Switches
+### Interruptores de encendido / apagado
 
-Create a function that returns how many possible outcomes can come from
-a certain number of switches (on / off). In other words, for a given
-number of switches, how many different combinations of on and off can we
-have?
+Cree una función que devuelva cuántos resultados posibles pueden provenir
+un cierto número de interruptores (encendido / apagado). En otras palabras, para un
+número de interruptores, ¿cuántas combinaciones diferentes de encendido y apagado podemos tener?
 
-__Ejemplos:__ pos\_com(1) ➞ 2 pos\_com(3) ➞ 8 pos\_com(10) ➞ 1024 Notes
-All numbers will be whole and positive.
+__Ejemplos:__ 
+
+        pos_com(1) ➞ 2 
+        pos_com(3) ➞ 8 
+        pos_com(10) ➞ 1024 
 
 Tema: álgebra
 
@@ -2072,14 +2049,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/8rXfBzRZbgZP7mzyR)
 
-### Is the Last Character an "N"?
+### ¿El último carácter es una "N"?
 
-Create a function that takes a string (a random name). If the last
-character of the name is an "n", return True, otherwise return False.
+Cree una función que tome una cadena. Si el ultimo carácter del nombre es una "n", devuelve True, de lo contrario devuelve False.
 
-__Ejemplos:__ islastcharacter\_n("Aiden") ➞ True islastcharacter\_n("Piet") ➞
-False islastcharacter\_n("Bert") ➞ False islastcharacter\_n("Dean") ➞
-True
+__Ejemplos:__ 
+
+        el_unltimo_n("Aiden") ➞ True 
+        el_unltimo_n("Piet") ➞ False 
+        el_unltimo_n("Bert") ➞ False 
+        el_unltimo_n("Dean") ➞ True
 
 Notas: The function must return a boolean …
 
@@ -2101,17 +2080,24 @@ Añadir a colección
 
 [](https://edabit.com/challenge/vFFsWbTX2JuvjKZvf)
 
-### Buggy Code (Part 5)
+### Código con bugs
 
-Mubashir created an infinite loop! Help him by fixing the code in the
-code tab to pass this challenge. Look at the
+Pedro creó un bucle infinito!
 
-__Ejemplos:__ below to get an
-idea of what the function should do.
+        def print_list(n):
+                result=[]
+                i=1
+                while i<=n:
+                        result+=[i]
+                return result
 
-__Ejemplos:__ print\_list(1) ➞ [1]
-print\_list(3) ➞ [1, 2, 3] print\_list(6) ➞ [1, 2, 3, 4, 5, 6] Notes
-READ EVERY WORD CAREFULLY, CHARACTER BY CHARACTER …
+Ayúdalo arreglando el código  para pasar este desafío. Mirá los ejemplos a continuación para tener una idea de lo que debería hacer la función.
+
+__Ejemplos:__ 
+
+        print_list(1) ➞ [1]
+        print_list(3) ➞ [1, 2, 3]
+        print_list(6) ➞ [1, 2, 3, 4, 5, 6]
 
 Tema: bugs
 
@@ -2129,13 +2115,31 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Ne2LgRan7bZWs7BS7)
 
-### Find the Bug: Returning the Container
+### Encontrar el bug: Devolución del contenedor
 
-The packaging system is running wild! The candy is lying loose all over
-in the warehouse, the cereal is missing, and bread is stuffed in a
-bottle. What is going on here? The candy should be in plastic and the
-bread should be in a bag. The packaging machine is running the
-get\_container() function to retrieve the container of …
+¡El sistema de empaque se está volviendo loco! El caramelo está suelto por todo el almacén, falta el cereal y el pan está metido en una botella. ¿Que esta pasando aqui? Los dulces deben estar en plástico y el pan debe estar en una bolsa.
+
+La máquina de embalaje está ejecutando la función `get_container()` para recuperar el contenedor de un producto. Pero algo no va bien...
+
+        # Arreglar este código:
+        def get_container(product):
+                matches = {
+                "Pan" : "botella",
+                "Leche" : "botella",
+                "Cerveza" : "botella",
+                "Huevos" : "carton",
+                "Cereales" : "caja",
+                "Caramelo" : None,
+                "Queso" : None
+                }
+                return matches[product]
+
+__Ejemplos:__ 
+
+        get_container("Pan") ➞ "bolsa"
+        get_container("Cerveza") ➞ "botella"
+        get_container("Caramelo") ➞ "plastico"
+        get_container("Queso") ➞ None
 
 Tema: bugs
 
@@ -2157,11 +2161,31 @@ Añadir a colección
 
 ### Fix Basic Calculator
 
-Mubashir created a function that takes two numbers a and b and an
-operator o. His function should return the result of the corresponding
-Tema: matemáticaematical function on both numbers. If the operator is not one of the
-specified characters +, -, /, \*, or if there is a division by zero, the
-function should return None. Help him by fix …
+Pedro creó una función que toma dos números a y b y un operador o. Su función debería devolver el resultado de la función matemática correspondiente en ambos números. Si el operador no es uno de los caracteres especificados `+`, `-`, `/`, `*` o si hay una división por cero, la función debe devolver Ninguno. Ayúdalo arreglando el código siguiente:
+
+        # Arreglar este código:
+        def basic_calculator(a, o, b):
+                result = 0
+                if(O == "+"):
+                        return a + b
+                else if(o =! "-"):
+                        return a - b
+                if(o != "/" or b == 0):
+                        return a / b
+                if(0 == "*"):
+                        return a * b
+                return result
+
+Mire los ejemplos a continuación para tener una idea de lo que debería hacer la función:
+
+__Ejemplos:__ 
+
+        basic_calculator(2, '+',  4) ➞ 6
+        basic_calculator(6, '-', 5) ➞ 1
+        basic_calculator(12, '/', 3) ➞ 4
+        basic_calculator(3, '*', 4) ➞ 12
+        basic_calculator(1, '/', 0) ➞ None # Division by zero is not possible
+        basic_calculator(1, 'x', 0) ➞ None # 'x' is not an operator
 
 Tema: bugs
 
@@ -2181,14 +2205,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/WYq4aFwSNuoyFCW5G)
 
-### Nth Even Number
+### Enésimo número par
 
-Create a function that takes a number n and returns the nth even number.
+Cree una función que tome un número n y devuelva el enésimo número par.
 
-__Ejemplos:__ nth\_even(1) ➞ 0 0 is first even number nth\_even(2) ➞ 2 2 is
-second even number nth\_even(100) ➞ 198
+__Ejemplos:__ 
 
-Notas: N/A
+        nesimo_par(1) ➞ 0 # 0 es el primer número par 
+        nesimo_par(2) ➞ 2 # 2 es el segundo número par
+        nesimo_par(100) ➞ 198
 
 Tema: lenguaje\_fundamentos
 
@@ -2206,19 +2231,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/MSjfXQ4gvMzeezFgB)
 
-### 50-30-20 Strategy
+### Estrategia 50-30-20
 
-The 50-30-20 strategy is a simple way to budget, which involves spending
-50% of after-tax income on needs, 30% after tax income on wants, and 20%
-after-tax income on savings or paying off debt. Given the after-tax
-income as ati, what you are supposed to do is to make a function that
-will return a dictionary that shows how m …
+La estrategia 50-30-20 es una forma sencilla de presupuestar, que implica gastar el 50% de los ingresos las necesidades, el 30% en los ingresos en los deseos y el 20% en ahorros o el pago de deudas.
+
+Lo que se supone que debe hacer es crear una función que devuelva un diccionario que muestre cuánto necesita gastar una persona en necesidades, deseos y ahorros.
+
+__Ejemplos:__ 
+
+        fifty_thirty_twenty(10000) ➞ { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
+        fifty_thirty_twenty(50000) ➞ { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
+        fifty_thirty_twenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
 
 Tema: álgebra
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: números
 
@@ -2234,14 +2263,26 @@ Añadir a colección
 
 [](https://edabit.com/challenge/5pBHzWb8Psot9EQNk)
 
-### Simple Encoder
+### Codificador simple
 
-Create a function that takes a string str and performs simple encoding
-as per the following method: Replace all single occurrence characters
-with [ Replace all characters with two or more occurrences with ] Return
-the final string after modification.
+Cree una función que tome una cadena str y realice una codificación simple
+según el siguiente método:
 
-__Ejemplos:__ simple\_encoder("Mubashir") ➞ "[[[[[[[[" '[' for each character …
+1. Reemplazar todos los caracteres de ocurrencia única con `[`
+2. Reemplazar todos los caracteres con dos o más ocurrencias con `]` 
+
+Devolver la cadena final después de la modificación.
+
+__Ejemplos:__ 
+
+        simple_encoder("Mubashir") ➞ "[[[[[[[["
+        # '[' para cada carácter
+
+        simple_encoder("Matt") ➞ "[[]]"
+        # ']' para ambas 't'
+
+        simple_encoder("va  seguro") ➞ "[[]][[[[[["
+        # Dos espacios en el medio
 
 Tema: listas
 
@@ -2263,14 +2304,14 @@ Añadir a colección
 
 ### Burrrrrrrp
 
-Create a function that returns the string "Burp" with the amount of
-"r's" determined by the input parameters of the function.
+Cree una función que devuelva la cadena "Burp" con la cantidad de
+"r" determinadas por los parámetros de entrada de la función.
 
-__Ejemplos:__ long\_burp(3) ➞ "Burrrp" long\_burp(5) ➞ "Burrrrrp" long\_burp(9) ➞
-"Burrrrrrrrrp"
+__Ejemplos:__ 
 
-Notas: Expect num to always be \>= 1. Remember to use a
-capital "B". Don't forget to return the result.
+        largo_burp(3) ➞ "Burrrp" 
+        largo_burp(5) ➞ "Burrrrrp" 
+        largo_burp(9) ➞ "Burrrrrrrrrp"
 
 Tema: matemática
 
@@ -2288,15 +2329,14 @@ Añadir a colección
 
 ### Char-to-ASCII
 
-Create a function that returns the ASCII value of the passed in
-character.
+Cree una función que devuelva el valor ASCII de un carcater.
 
-__Ejemplos:__ ctoa("A") ➞ 65 ctoa("m") ➞ 109 ctoa("[") ➞ 91
-ctoa("\\") ➞ 92
+__Ejemplos:__ 
 
-Notas: Don't forget to return the result. If you get
-stuck on a challenge, find help in the Resources tab. If you're really
-stuck, unlock solutions in the Solutions tab.
+        ctoa("A") ➞ 65 
+        ctoa("m") ➞ 109 
+        ctoa("[") ➞ 91
+        ctoa("\\") ➞ 92
 
 Tema: algoritmos
 
@@ -2314,23 +2354,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/bGHnhQr5bjH8kd8rG)
 
-### Rotate the List by One 🔄
+### Rotar la lista de uno en uno
 
-Given a list, rotates the values clockwise by one (the last value is
-sent to the first position). Check the
+Dada una lista, rota los valores en el sentido de las agujas del reloj en uno (el último valor es
+enviado a la primera posición). Consulta los ejemplos para una mejor
+comprensión.
 
-__Ejemplos:__ for a better
-understanding.
+__Ejemplos:__ 
 
-__Ejemplos:__ rotatebyone([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
-rotatebyone([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9] rotatebyone([20, 15, 26,
-8, 4]) ➞ [4, 20, 15, 26, 8]
-
-Notas: All lists are …
+        rotarporuno([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
+        rotarporuno([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9] 
+        rotarporuno([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Dificultad: Muy Fácil
 
@@ -2339,6 +2377,9 @@ Dificultad: Muy Fácil
 Añadir a favoritos
 
 Añadir a colección
+
+[//]: <> (Hasta acá)
+
 
 [](https://edabit.com/challenge/QM6ZgHxvQCDX9Tzoa)
 
@@ -3066,8 +3107,8 @@ Create a function that takes a string txt and a number n and returns the
 repeated string n number of times. If given argument txt is not a
 string, return Not A String !!
 
-__Ejemplos:__ repeat\_string("Mubashir", 2) ➞
-"MubashirMubashir" repeat\_string("Matt", 3) ➞ "MattMattMatt"
+__Ejemplos:__ repeat\_string("Pedro", 2) ➞
+"PedroPedro" repeat\_string("Matt", 3) ➞ "MattMattMatt"
 repeat\_string(1990, 7) ➞ "Not A String !!"
 
 Notas: D …
@@ -3511,7 +3552,7 @@ Añadir a colección
 
 ### Back to Home?
 
-Mubashir has started his journey from home. Given a string of directions
+Pedro has started his journey from home. Given a string of directions
 (N=North, W=West, S=South, E=East), he will walk for one minute in each
 direction. Determine whether a set of directions will lead him back to
 the starting position or not.
@@ -3599,7 +3640,7 @@ lambda\_func("3") ➞ "3" lambda\_func(True) ➞ True
 Notas: Check the
 Resources tab for more information on lambda functions.
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -3694,7 +3735,7 @@ not amazing. Return the string without any change if the word edabit is
 part of the string.
 
 __Ejemplos:__ amazing\_edabit("edabit is amazing.") ➞
-"edabit is amazing." amazing\_edabit("Mubashir is amazing.") ➞ "Mubashir
+"edabit is amazing." amazing\_edabit("Pedro is amazing.") ➞ "Pedro
 is not amazing." amazing\_edabit("Infinity …
 
 regex
@@ -3743,7 +3784,7 @@ Añadir a colección
 
 ### Buggy Code (Part 6)
 
-Mubashir wants to remove numbers from a given string! Help him by fixing
+Pedro wants to remove numbers from a given string! Help him by fixing
 the code in the code tab to pass this challenge. Look at the
 
 __Ejemplos:__ below to get an idea of what the function should do.
@@ -3932,7 +3973,7 @@ None if list/string is emtpy.
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -3996,7 +4037,7 @@ Añadir a colección
 
 [](https://edabit.com/challenge/GuoJCiRJkr9CLRqJa)
 
-### Similar Bread
+### Similar Pan
 
 Given two lists, which represent two sandwiches, return whether both
 sandwiches use the same type of bread. The bread will always be found at
@@ -4551,7 +4592,7 @@ __Ejemplos:__ nothingisnothing(0, False, [], {}) ➞ False nothingisnothing(33, 
 (True, True, 3)) ➞ True nothingisnothing(True, None) ➞ False Notes
 \*args allows a function to take any number of p …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -5088,7 +5129,7 @@ displaying each person to their respective occupation. Person | Job ---
 | --- Annie | Teacher Steven | Engineer Lisa | Doctor Osman | Cashier
 Example names = ["Dennis", "Vera", "Mabe …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Dificultad: Muy Fácil
 
@@ -5150,7 +5191,7 @@ Añadir a colección
 
 ### Simple Counting
 
-Mubashir needs your help to count a specific digit in a list. You have
+Pedro needs your help to count a specific digit in a list. You have
 to create a function that takes two integers n and d and makes a list of
 squares of all numbers from 0...\<= n and returns the count of the
 digits d in the list.
@@ -5800,11 +5841,11 @@ Añadir a colección
 
 ### Cowboy Shootout
 
-Wild Roger is tasked with shooting down 6 bottles with 6 shots as fast
+Wild Roger is tasked with shooting down 6 botellas with 6 shots as fast
 as possible. Here are the different types of shots he could make: He
-could use one pistol to shoot a bottle with a "Bang!" in 0.5 seconds. Or
+could use one pistol to shoot a botella with a "Bang!" in 0.5 seconds. Or
 he could use both pistols at once with a "BangBang!" to shoot two
-bottles in 0.5 seconds. Given a list of Bangs …
+botellas in 0.5 seconds. Given a list of Bangs …
 
 Tema: listas
 
@@ -6146,7 +6187,7 @@ __Ejemplos:__ oddsumlist([11, 15, 6, 8,
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: matemática
 
@@ -7856,7 +7897,7 @@ count\_unique("a", "soup") ➞ 5
 Notas: Each word will contain at least on
 …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: strings
 
@@ -7954,7 +7995,7 @@ dictionary of the stolen items, return the total amount of the burglary
 __Ejemplos:__ calculate\_losses({ "tv" : 30, "skate" : 20, "stereo" : 50, })
 ➞ 100 calculate\_losses({ "painting" : 2 …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -8372,7 +8413,7 @@ types has their own special properties and peculiar …
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -9022,7 +9063,7 @@ Añadir a colección
 
 ### A Simple Timer
 
-Mubashir created a simple timer but he needs your help to make it
+Pedro created a simple timer but he needs your help to make it
 readable inside a microcontroller. Create a function that takes the
 number of seconds and returns the timer in "00:00:00" format.
 
@@ -9911,7 +9952,7 @@ Añadir a colección
 
 ### Opposite House 🏘️
 
-Mubashir was walking through a straight street with exactly n identical
+Pedro was walking through a straight street with exactly n identical
 houses on both sides. House numbers in the street look like this: 1 | |
 6 3 | | 4 5 | | 2 He noticed that Even numbered houses increases on the
 right while Odd numbered houses decreases on the left. Create a function
@@ -10413,7 +10454,7 @@ __Ejemplos:__ add\_name({}, "Brutus", 300) ➞ { "Brutus": 300 } add\_name({
 "piano": 500 }, "Brutus", 400) ➞ { "piano": 500, "Brutus": 400 }
 add\_name({ "piano": 500, "stereo": 300 }, "Cali …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -10585,7 +10626,7 @@ Añadir a colección
 
 [](https://edabit.com/challenge/6nSckbgCx9hjTwmcw)
 
-### Is it Time for Milk and Cookies?
+### Is it Time for Leche and Cookies?
 
 Christmas Eve is almost upon us, so naturally we need to prepare some
 milk and cookies for Santa! Create a function that accepts a Date object
@@ -11864,7 +11905,7 @@ Notas: N/A
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -12076,7 +12117,7 @@ you get stuck on a challenge, …
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -12095,7 +12136,7 @@ Añadir a colección
 ### Say Hello to Guests
 
 In this exercise you will have to: Take a list of names. Add "Hello" to
-every name. Make one big string with all greetings. The solution should
+every name. Make one big string with all saludos. The solution should
 be one string with a comma in between every "Hello (Name)".
 
 __Ejemplos:__ greet\_people(["Joe"]) ➞ "Hello Joe" greet\_people(["Angela", "Joe"]) ➞
@@ -12257,7 +12298,7 @@ False] integer\_boolean("001") ➞ [False, …
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -13272,7 +13313,7 @@ Notas: Assume all names …
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -13610,7 +13651,7 @@ Notas: Tests c …
 
 Tema: condiciones
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 objects
 
@@ -14005,7 +14046,7 @@ __Ejemplos:__ matrix(3, 2, 3) ➞ [[3, …
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
@@ -14774,7 +14815,7 @@ Notes Must return a tuple. 255 is the ma …
 
 Tema: álgebra
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Dificultad: Fácil
 
@@ -15345,7 +15386,7 @@ on that day. Return the number of uploads for a given month.
 __Ejemplos:__ upload\_count(["Sept 22", "Sept 21", "Oct 15"], "Sept") ➞ 2
 upload\_count(["Sept 22", "Sept 21", "Oct 15"], "Oct") …
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
@@ -16120,8 +16161,8 @@ Añadir a colección
 
 Write a function to return the city from each of these vacation spots.
 
-__Ejemplos:__ grab\_city("[Last Day!] Beer Festival [Munich]") ➞ "Munich"
-grab\_city("Cheese Factory Tour [Portland]") ➞ "Portland"
+__Ejemplos:__ grab\_city("[Last Day!] Cerveza Festival [Munich]") ➞ "Munich"
+grab\_city("Queso Factory Tour [Portland]") ➞ "Portland"
 grab\_city("50% Off! 5-Day Trip to Onsen [Kyoto]") ➞ "Kyoto"
 
 Notas: There
@@ -16266,7 +16307,7 @@ Añadir a colección
 
 ### Guess the Sequence
 
-Mubashir was trying to figure out a sequence of numbers given below: N |
+Pedro was trying to figure out a sequence of numbers given below: N |
 Result --- | --- 1 | 90 2 | 240 3 | 450 4 | 720 5 | 1050 If you can
 figure this out then help him by creating a function that takes a number
 n and returns the nth number of the sequence.
@@ -16557,7 +16598,7 @@ Añadir a colección
 
 ### Robot Path 🤖
 
-Mubashir created a simple robot that is navigated by a series of North,
+Pedro created a simple robot that is navigated by a series of North,
 East, South, and West [n, e, s, w] commands. The robot is designed for
 only two destinations: Destination No. 1: e, n, e, e, n Destination No.
 2: w, n, w, n, w, w, n Create a function that takes a list of commands
@@ -17731,7 +17772,7 @@ Tema: algoritmos
 
 Tema: listas
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Dificultad: Fácil
 
@@ -17769,7 +17810,7 @@ Añadir a colección
 
 ### A Simple Task
 
-Mubashir needs your help in a simple task. Create a function which takes
+Pedro needs your help in a simple task. Create a function which takes
 a number n and return its decimal part.
 
 __Ejemplos:__ decimal\_part(1.2) ➞
@@ -17882,7 +17923,7 @@ __Ejemplos:__ oldest({ "Emma": 71,
 
 Notas: All ages will be different.
 
-data\_structures
+Tema: estructuras\_de\_datos
 
 Tema: lenguaje\_fundamentos
 
