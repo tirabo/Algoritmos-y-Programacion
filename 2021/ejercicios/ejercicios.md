@@ -11,9 +11,11 @@
 Cree una función que tome dos números como argumentos y devuelva sus
 suma.
 
-Examples
+__Ejemplos__
 
-`addition(3, 2) ➞ 5, addition(-3, -6) ➞ -9, addition(7, 3) ➞ 10.`
+    addition(3, 2) ➞ 5
+    addition(-3, -6) ➞ -9
+    addition(7, 3) ➞ 10
 
 Tema: álgebra
 
@@ -41,7 +43,8 @@ número por +1 y devuelve el resultado.
 
 __Ejemplos:__ 
 
-`addition(0) ➞ 1`
+    addition(0) ➞ 1
+    addition(5) ➞ 6
 
 Tema: álgebra
 
@@ -90,12 +93,12 @@ su área.
 
 __Ejemplos:__ 
 
-`tri\_area(3, 2) ➞ 3 tri\_area(7, 4) ➞ 14
-tri\_area(10, 10) ➞ 50 `
+    tri_area(3, 2) ➞ 3 
+    tri_area(7, 4) ➞ 14
+    tri_area(10, 10) ➞ 50
 
 
-Notas: El área de un triángulo es: (base \* height)
-/ 2 
+Notas: El área de un triángulo es (base \* altura) / 2 
 
 Tema: geometría
 
@@ -113,12 +116,12 @@ Añadir a colección
 
 [](https://edabit.com/challenge/CjXamaNRmKxwkmBxq)
 
-### Código Buggy
+### Código buggy
 
-Fix the code 
+Arreglar el código
 
-        def cubes(a): 
-                retunr a ** 3
+    def cubes(a): 
+        retunr a ** 3
 
 Tema: bugs
 
@@ -138,7 +141,11 @@ Añadir a colección
 
 Escribe una función que convierta horas en segundos.
 
-__Ejemplos:__ `howmanyseconds(2) ➞ 7200, howmanyseconds(10) ➞ 36000, howmanyseconds(24) ➞ 86400`
+__Ejemplos:__ 
+
+    howmanyseconds(2) ➞ 7200
+    howmanyseconds(10) ➞ 36000
+    howmanyseconds(24) ➞ 86400
 
 Notas: 60 segundos en un minuto, 60 minutos en una hora No lo olvide
 para devolver su respuesta.
@@ -163,10 +170,11 @@ Añadir a colección
 
 Cree una función que encuentre el rango máximo del tercer lado de un triángulo, donde las longitudes de los lados son números enteros.
 
-__Ejemplos:__         
-`next_edge(8,10) ➞ 17 `    
-`next_edge(5, 7) ➞ 11 `    
-`next_edge(9, 2) ➞ 10`
+__Ejemplos:__
+
+    next_edge(8,10) ➞ 17
+    next_edge(5, 7) ➞ 11
+    next_edge(9, 2) ➞ 10
 
 Notas: (side1 + side2) - 1 = rango máximo del tercer borde.Las longitudes de los lados del triángulo son números enteros positivos.
 
@@ -193,11 +201,11 @@ de una operación de división. Se pasan dos números como parámetros.El primer
 el parámetro dividido por el segundo parámetro tendrá un resto,
 posiblemente cero. Devuelve ese valor.
 
-__Ejemplos:__    
+__Ejemplos:__
 
-        remainder(1, 3) ➞ 1
-        remainder(3, 4) ➞ 3 
-        remainder(5, 5) ➞ 0
+     remainder(1, 3) ➞ 1
+     remainder(3, 4) ➞ 3 
+     remainder(5, 5) ➞ 0
 
 Tema: matemática
 
@@ -217,11 +225,11 @@ Añadir a colección
 
 Cree una función que tome una cadena y la devuelva como un número entero.
 
-__Ejemplos:__ 
+__Ejemplos:__
 
-        string_int("6") ➞ 6, 
-        string_int("1000") ➞ 1000, 
-        string_int("12") ➞ 12
+     string_int("6") ➞ 6, 
+     string_int("1000") ➞ 1000, 
+     string_int("12") ➞ 12
 
 Notas: Todos los números estarán enteros.Todos los números
 ser positivo.
@@ -248,9 +256,9 @@ Cree una función que tome la edad y devuelva la edad en días.
 
 __Ejemplos:__ 
 
-        calc\_age(65) ➞ 23725 
-        calc\_age(0) ➞ 0 
-        calc\_age(20) ➞ 7300
+     calc_edad(65) ➞ 23725 
+     calc_edad(0) ➞ 0 
+     calc_edad(20) ➞ 7300
 
 Nota: Use 365 días como la duración de un año para este desafío.Ignorar
 años bisiestos y días entre el último cumpleaños y ahora.Espere solo positivo
@@ -277,9 +285,9 @@ un rectángulo.
 
 __Ejemplos:__ 
 
-        find_perimeter(6, 7) ➞ 26 
-        find_perimeter(20, 10) ➞ 60 
-        find_perimeter(2, 9) ➞ 22
+     find_perimeter(6, 7) ➞ 26 
+     find_perimeter(20, 10) ➞ 60 
+     find_perimeter(2, 9) ➞ 22
 
 
 Tema: geometría
@@ -307,9 +315,9 @@ Dado un polígono regular n de n lados, devuelve la suma total de
 
 __Ejemplos:__ 
 
-        sum_polygon(3) ➞ 180 
-        sum_polygon(4) ➞ 360 
-        sum_polygon(6) ➞ 720
+     sum_polygon(3) ➞ 180 
+     sum_polygon(4) ➞ 360 
+     sum_polygon(6) ➞ 720
 
 Notas: n siempre será mayor que 2. La fórmula (n - 2) x 180 da la suma de todas las medidas de los ángulos de un polígono de n lados.
 
@@ -333,17 +341,17 @@ Añadir a colección
 
 Arreglar el código
 
-def is_seven(x):
-	return False if x=7 elif True
+    def is_seven(x):
+        return False if x=7 elif True
 
 por lo que la función devuelve verdadero si y solo si
 x es igual a 7. Intente depurar el código y pasar todas las pruebas. 
 
 __Ejemplos:__ 
 
-        is_seven(4) ➞ False 
-        is_seven(9) ➞ False 
-        is_seven(7) ➞ True
+     is_seven(4) ➞ False 
+     is_seven(9) ➞ False 
+     is_seven(7) ➞ True
 
 Notas: El error puede ser sutil, ¡así que mira de cerca!
 
@@ -369,9 +377,9 @@ Un vehículo necesita 10 veces más combustible que el que tiene para la distanc
 
 __Ejemplos:__ 
 
-        calculate_fuel(15) ➞ 150
-        calculate_fuel(23.5) ➞ 235 
-        calculate_fuel(3) ➞ 100
+     calculate_fuel(15) ➞ 150
+     calculate_fuel(23.5) ➞ 235 
+     calculate_fuel(3) ➞ 100
 
 
 Tema: flujo
@@ -397,9 +405,9 @@ devuelve el cálculo.
 
 __Ejemplos:__ 
 
-        calculate_exponent(2, 5) ➞ 32
-        calculate_exponent(10, 10) ➞ 10000000000 
-        calculate_exponent(3, 3) ➞ 27
+     calculate_exponent(2, 5) ➞ 32
+     calculate_exponent(10, 10) ➞ 10000000000 
+     calculate_exponent(3, 3) ➞ 27
 
 Notes: Todas las entradas serán números enteros positivos. 
 
@@ -428,9 +436,9 @@ el primer elemento.
 
 __Ejemplos:__ 
 
-        getfirstvalue([1, 2, 3]) ➞ 1
-        getfirstvalue([80, 5, 100]) ➞ 80 
-        getfirstvalue([-500, 0, 50]) ➞ -500
+     getfirstvalue([1, 2, 3]) ➞ 1
+     getfirstvalue([80, 5, 100]) ➞ 80 
+     getfirstvalue([-500, 0, 50]) ➞ -500
 
 Notes: El primer elemento de una lista siempre tiene un índice de 0.
 
@@ -456,9 +464,9 @@ El que gana consigue 3 puntos,  el que empata consigue 1 punto y el que pierde c
 
 __Ejemplos:__ 
 
-        football_points(3, 4, 2) ➞ 13 
-        football_points(5, 0, 2) ➞ 15
-        football_points(0, 0, 1) ➞ 0
+     football_points(3, 4, 2) ➞ 13 
+     football_points(5, 0, 2) ➞ 15
+     football_points(0, 0, 1) ➞ 0
 
 Tema: álgebra
 
@@ -505,9 +513,9 @@ a segundos y los suma.
 
 __Ejemplos:__ 
 
-        convert(1, 3) ➞ 3780 
-        convert(2, 0) ➞ 7200 
-        convert(0, 0) ➞ 0
+     convert(1, 3) ➞ 3780 
+     convert(2, 0) ➞ 7200 
+     convert(0, 0) ➞ 0
 
 Tema: lenguaje\_fundamentos
 
@@ -533,10 +541,10 @@ Escribe dos funciones:
 
 __Ejemplos:__ 
 
-        to_int("77") ➞ 77 
-        to_int("532") ➞ 532 
-        to_str(77) ➞ "77"
-        to_str(532) ➞ "532"
+     to_int("77") ➞ 77 
+     to_int("532") ➞ 532 
+     to_str(77) ➞ "77"
+     to_str(532) ➞ "532"
 
 Tema: lenguaje\_fundamentos
 
@@ -559,12 +567,12 @@ cadena.
 
 __Ejemplos:__ 
 
-        booltostring(True) ➞ "True" 
-        booltostring(False) ➞ "False"
+     booltostring(True) ➞ "True" 
+     booltostring(False) ➞ "False"
 
 Tema: bits\_operaciones
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -587,7 +595,7 @@ Escribe una función que devuelva la cadena "algo" unida a un espacio.
 
 __Ejemplos:__ 
 
-        givemesomething("es mejor que nada") ➞ "algo es mejor que nada" 
+     givemesomething("es mejor que nada") ➞ "algo es mejor que nada" 
 
 
 Notas: suponga que se proporciona una entrada.
@@ -614,9 +622,9 @@ equipo y devolver ese valor.
 
 __Ejemplos:__ 
 
-        points(1, 1) ➞ 5 
-        points(7, 5) ➞ 29 
-        points(38, 8) ➞ 100 
+     points(1, 1) ➞ 5 
+     points(7, 5) ➞ 29 
+     points(38, 8) ➞ 100 
 
 Tema: lenguaje\_fundamentos
 
@@ -641,11 +649,11 @@ de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
-        issamenum(4, 8) ➞ False 
-        issamenum(2, 2) ➞ True 
-        issamenum(2, "2") ➞ False
+     issamenum(4, 8) ➞ False 
+     issamenum(2, 2) ➞ True 
+     issamenum(2, "2") ➞ False
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -670,11 +678,11 @@ True si es menor o igual a cero; de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
-        lessthanorequalto_zero(5) ➞ False 
-        lessthanorequalto_zero(0) ➞ True 
-        lessthanorequalto_zero(-2) ➞ True
+     lessthanorequalto_zero(5) ➞ False 
+     lessthanorequalto_zero(0) ➞ True 
+     lessthanorequalto_zero(-2) ➞ True
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -696,9 +704,9 @@ Crea una función que devuelva el módulo de los dos números dados.
 
 __Ejemplos:__ 
 
-        mod(-13, 64) ➞ 51 
-        mod(50, 25) ➞ 0 
-        mod(-6, 3) ➞ 0
+     mod(-13, 64) ➞ 51 
+     mod(50, 25) ➞ 0 
+     mod(-6, 3) ➞ 0
 
 Tema: matemática
 
@@ -721,9 +729,9 @@ número en la lista.
 
 __Ejemplos:__ 
 
-        findLargestNum([4, 5, 1, 3]) ➞ 5
-        findLargestNum([300, 200, 600, 150]) ➞ 600 
-        findLargestNum([1000, 1001, 857, 1]) ➞ 1001
+     findLargestNum([4, 5, 1, 3]) ➞ 5
+     findLargestNum([300, 200, 600, 150]) ➞ 600 
+     findLargestNum([1000, 1001, 857, 1]) ➞ 1001
 
 Tema: listas
 
@@ -750,11 +758,11 @@ número en la lista.
 
 __Ejemplos:__ 
 
-        findsmallestnum([34, 15, 88, 2]) ➞ 2
-        findsmallestnum([34, -345, -1, 100]) ➞ -345 
-        findsmallestnum([-76, 1.345, 1, 0]) ➞ -76 
-        findsmallestnum([0.4356, 0.8795, 0.5435, -0.9999]) ➞ -0.9999 
-        findsmallestnum([7, 7, 7]) ➞ 7
+     findsmallestnum([34, 15, 88, 2]) ➞ 2
+     findsmallestnum([34, -345, -1, 100]) ➞ -345 
+     findsmallestnum([-76, 1.345, 1, 0]) ➞ -76 
+     findsmallestnum([0.4356, 0.8795, 0.5435, -0.9999]) ➞ -0.9999 
+     findsmallestnum([7, 7, 7]) ➞ 7
 
 Tema: listas
 
@@ -781,10 +789,10 @@ negativo de ese número. Devuelve números negativos sin ningún cambio.
 
 __Ejemplos:__ 
 
-        return_negative(4) ➞ -4 
-        return_negative(15) ➞ -15
-        return_negative(-4) ➞ -4 
-        return_negative(0) ➞ 0
+     return_negative(4) ➞ -4 
+     return_negative(15) ➞ -15
+     return_negative(-4) ➞ -4 
+     return_negative(0) ➞ 0
 
 
 Tema: lenguaje\_fundamentos
@@ -812,9 +820,9 @@ determina si el año es bisiesto o no.
 
 __Ejemplos:__ 
 
-        leap_year(2020)➞ True 
-        leap_year(2021) ➞ False 
-        leap_year(2100) ➞ False 
+     leap_year(2020)➞ True 
+     leap_year(2021) ➞ False 
+     leap_year(2100) ➞ False 
 
 Tema: álgebra
 
@@ -839,8 +847,8 @@ los números más pequeños y más grandes.
 
 __Ejemplos:__ 
 
-        differencemaxmin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82 (el número más pequeño es -50, el mayor es 32).
-        differencemaxmin([44, 32, 86, 19]) ➞ 67 (el número más pequeño es 19, el más grande es 86).
+     differencemaxmin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82 (el número más pequeño es -50, el mayor es 32).
+     differencemaxmin([44, 32, 86, 19]) ➞ 67 (el número más pequeño es 19, el más grande es 86).
 
 Tema: listas
 
@@ -866,9 +874,9 @@ Cree una función para concatenar dos listas de enteros.
 
 __Ejemplos:__ 
 
-        concat([1, 3, 5], [2, 6, 8]) ➞ [1, 3, 5, 2, 6, 8] 
-        concat([7, 8], [10, 9, 1, 1, 2]) ➞ [7, 8, 10, 9, 1, 1, 2] 
-        concat([4, 5, 1], [3, 3, 3, 3, 3]) ➞ [4, 5, 1, 3, 3, 3, 3, 3]
+     concat([1, 3, 5], [2, 6, 8]) ➞ [1, 3, 5, 2, 6, 8] 
+     concat([7, 8], [10, 9, 1, 1, 2]) ➞ [7, 8, 10, 9, 1, 1, 2] 
+     concat([4, 5, 1], [3, 3, 3, 3, 3]) ➞ [4, 5, 1, 3, 3, 3, 3, 3]
 
 Tema: listas
 
@@ -892,9 +900,9 @@ Dada una lista de enteros, devuelve la diferencia entre el mayor y los enteros m
 
 __Ejemplos:__ 
 
-        difference([10, 15, 20, 2, 10, 6]) ➞ 18, 20 - 2 = 18 
-        difference([-3, 4, -9, -1, -2, 15]) ➞ 24, 15 - (-9) = 24 
-        difference([4, 17, 12, 2, 10, 2]) ➞ 15
+     difference([10, 15, 20, 2, 10, 6]) ➞ 18, 20 - 2 = 18 
+     difference([-3, 4, -9, -1, -2, 15]) ➞ 24, 15 - (-9) = 24 
+     difference([4, 17, 12, 2, 10, 2]) ➞ 15
 
 Tema: listas
 
@@ -919,9 +927,9 @@ Dados dos números, devuelva True si la suma de ambos números es menor que
 
 __Ejemplos:__ 
 
-        lessthan100(22, 15) ➞ True,  22 + 15 = 37 
-        lessthan100(83, 34) ➞ False, 83 + 34 = 117 
-        lessthan100(3, 77) ➞ true
+     lessthan100(22, 15) ➞ True,  22 + 15 = 37 
+     lessthan100(83, 34) ➞ False, 83 + 34 = 117 
+     lessthan100(3, 77) ➞ true
 
 Tema: lenguaje\_fundamentos
 
@@ -946,10 +954,10 @@ lista. La lista puede ser homogénea o heterogénea.
 
 __Ejemplos:__ 
 
-        getlastitem([1, 2, 3]) ➞ 3 
-        getlastitem(["cat", "dog", "duck"]) ➞ "duck"
-        getlastitem([True, False, True]) ➞ True 
-        getlastitem([7, "String", False]) ➞ False
+     getlastitem([1, 2, 3]) ➞ 3 
+     getlastitem(["cat", "dog", "duck"]) ➞ "duck"
+     getlastitem([True, False, True]) ➞ True 
+     getlastitem([7, "String", False]) ➞ False
 
 Tema: listas
 
@@ -976,9 +984,9 @@ de una cuerda.
 
 __Ejemplos:__ 
 
-        hello_name("Gerald") ➞ "Hello Gerald!"
-        hello_name("Tiffany") ➞ "Hello Tiffany!" 
-        hello_name("Ed") ➞ "Hello Ed!"
+     hello_name("Gerald") ➞ "Hello Gerald!"
+     hello_name("Tiffany") ➞ "Hello Tiffany!" 
+     hello_name("Ed") ➞ "Hello Ed!"
 
 Notas: La entrada es siempre un nombre (como cadena). No olvides el
 ¡signo de exclamación!
@@ -1006,10 +1014,10 @@ devuelve True si `prob * premio >= pagar`, de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
-        profitable\_gamble(0.2, 50, 9) ➞ True 
-        profitable\_gamble(0.9, 1, 2) ➞ False
+     profitable\_gamble(0.2, 50, 9) ➞ True 
+     profitable\_gamble(0.9, 1, 2) ➞ False
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -1033,9 +1041,9 @@ Cree una función que devuelva `True` si un número entero es divisible por
 
 __Ejemplos:__ 
 
-        divisiblebyfive(5) ➞ True
-        divisiblebyfive(-55) ➞ True 
-        divisiblebyfive(37) ➞ False
+     divisiblebyfive(5) ➞ True
+     divisiblebyfive(-55) ➞ True 
+     divisiblebyfive(37) ➞ False
 
 Tema: matemática
 
@@ -1060,9 +1068,9 @@ en la lista.
 
 __Ejemplos:__ 
 
-        getsumof_elements([2, 7, 4]) ➞ 13
-        getsumof_elements([45, 3, 0]) ➞ 48 
-        getsumof_elements([-2, 84, 23]) ➞ 105
+     getsumof_elements([2, 7, 4]) ➞ 13
+     getsumof_elements([45, 3, 0]) ➞ 48 
+     getsumof_elements([-2, 84, 23]) ➞ 105
 
 Tema: listas
 
@@ -1088,9 +1096,9 @@ Cree una función que devuelva el número de fotogramas que se muestran en un de
 número de minutos para un determinado FPS.
 
 __Ejemplos:__ 
-        frames(1, 1) ➞ 60
-        frames(10, 1) ➞ 600
-        frames(10, 25) ➞ 15000
+     frames(1, 1) ➞ 60
+     frames(10, 1) ➞ 600
+     frames(10, 25) ➞ 15000
 
 Notas: FPS significa "marcos por segundo" y es la cantidad de fotogramas que muestra una pantalla de computadora cada segundo.
 
@@ -1110,7 +1118,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/NebFhjXTn8NEbhYXY)
+[](https://edabit.com/challenge/NebFhjXTn8NEbhY    )
 
 ### Múltiplo de 100
 
@@ -1119,14 +1127,14 @@ divisible por 100; de lo contrario, devuelve `False`.
 
 __Ejemplos:__ 
 
-        divisible(1) ➞ False
-        divisible(1000) ➞ True 
-        divisible(100) ➞ True
+     divisible(1) ➞ False
+     divisible(1000) ➞ True 
+     divisible(100) ➞ True
 
 
 Tema: álgebra
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -1150,13 +1158,13 @@ Cree una función que tenga dos argumentos. Ambos argumentos son números entero
 
 __Ejemplos:__ 
 
-        makes10(9, 10) ➞ True 
-        makes10(9, 9) ➞ False 
-        makes10(1, 9) ➞ True
+     makes10(9, 10) ➞ True 
+     makes10(9, 9) ➞ False 
+     makes10(1, 9) ➞ True
 
 Tema: algoritmos
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: validación
 
@@ -1177,10 +1185,10 @@ devuelva `False` de lo contrario.
 
 __Ejemplos:__ 
 
-        ktok(4, 2) ➞ True 
-        ktok(387420489, 9) ➞ True,  9**9 == 387420489 
-        ktok(3124, 5) ➞ False 
-        ktok(17, 3) ➞ False 
+     ktok(4, 2) ➞ True 
+     ktok(387420489, 9) ➞ True,  9**9 == 387420489 
+     ktok(3124, 5) ➞ False 
+     ktok(17, 3) ➞ False 
 
 Tema: bits\_operaciones
 
@@ -1204,17 +1212,17 @@ Añadir a colección
 
 Corrija el código de más abajo (solo errores de sintaxis). Mire los ejemplos a continuación para tener una idea de lo que debería hacer la función.
 
-        def max_num(n1, n2):
-                if n2 > n1:
-                        return n2
-                elif:
-                        return n1
+     def max_num(n1, n2):
+         if n2 > n1:
+             return n2
+         elif:
+             return n1
 
 __Ejemplos:__ 
 
-        max_num(3, 7) ➞ 7 
-        max_num(-1, 0) ➞ 0
-        max_num(1000, 400) ➞ 1000
+     max_num(3, 7) ➞ 7 
+     max_num(-1, 0) ➞ 0
+     max_num(1000, 400) ➞ 1000
 
 
 Tema: bugs
@@ -1240,11 +1248,11 @@ cuerda.
 
 __Ejemplos:__ 
 
-        comp("AB", "CD") ➞ True 
-        comp("ABC", "DE") ➞ False
-        comp("hello", "cadena") ➞ False
+     comp("AB", "CD") ➞ True 
+     comp("ABC", "DE") ➞ False
+     comp("hello", "cadena") ➞ False
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -1267,8 +1275,8 @@ b (resto 0). Devuelva False de lo contrario.
 
 __Ejemplos:__ 
 
-        divides_evenly(98, 7) ➞ True, 98/7 = 14 
-        divides_evenly(85, 4) ➞ False, 85/4 = 21.25
+     divides_evenly(98, 7) ➞ True, 98/7 = 14 
+     divides_evenly(85, 4) ➞ False, 85/4 = 21.25
 
 Notas: a siempre será mayor o igual que b.
 
@@ -1295,9 +1303,9 @@ de lo contrario.
 
 __Ejemplos:__ 
 
-        is_empty("") ➞ True 
-        is_empty(" ") ➞ False
-        is_empty("a") ➞ False
+     is_empty("") ➞ True 
+     is_empty(" ") ➞ False
+     is_empty("a") ➞ False
 
 Notas: Una cadena que contiene solo espacios en blanco `'  '` no cuenta como vacía.
 
@@ -1323,9 +1331,9 @@ Cree una función recursiva que tome dos parámetros y repita la cadena n númer
 
 __Ejemplos:__ 
 
-        repetition("ab", 3) ➞ "ababab"
-        repetition("kiwi", 1) ➞ "kiwi" 
-        repetition("cherry ", 2) ➞ "cherry cherry "
+     repetition("ab", 3) ➞ "ababab"
+     repetition("kiwi", 1) ➞ "kiwi" 
+     repetition("cherry ", 2) ➞ "cherry cherry "
 
 Tema: recursion
 
@@ -1346,20 +1354,20 @@ Añadir a colección
 Corrija el código en la pestaña de código para aprobar este desafío (solo sintaxis
 errores).Mira el
 
-        def sum_lst(lst):
-                total
-                for i in range(0,lst):
-                        total += lst[i]
-                return total
+     def sum_lst(lst):
+         total
+         for i in range(0,lst):
+             total += lst[i]
+         return total
 
 Ejemplos a continuación para tener una idea de cuál es la función
 debería hacer.
 
 __Ejemplos:__ 
 
-        sum_lst([1, 2, 3, 4, 5]) ➞ 15 
-        sum_lst([-1, 0, 1]) ➞ 0 
-        sum_lst([0, 4, 8, 12]) ➞ 24
+     sum_lst([1, 2, 3, 4, 5]) ➞ 15 
+     sum_lst([-1, 0, 1]) ➞ 0 
+     sum_lst([0, 4, 8, 12]) ➞ 24
 
 
 Tema: listas
@@ -1385,10 +1393,10 @@ Devuelva una nueva cadena, que sean tres copias del frente.
 
 __Ejemplos:__ 
 
-        front3("Python") ➞ "PytPytPyt"       
-        front3("Cucumber") ➞ "CucCucCuc"
+     front3("Python") ➞ "PytPytPyt"
+     front3("Cucumber") ➞ "CucCucCuc"
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -1409,9 +1417,9 @@ aparecen en cualquiera de las palabras, `False` en el otro caso.
 
 __Ejemplos:__ 
 
-        forbidden\_letter("r", ["rock", "paper", "scissors"]) ➞ False 
-        forbidden\_letter("a", ["spoon", "fork", "knife"]) ➞ True 
-        forbidden\_letter("m", []) ➞ True
+     forbidden\_letter("r", ["rock", "paper", "scissors"]) ➞ False 
+     forbidden\_letter("a", ["spoon", "fork", "knife"]) ➞ True 
+     forbidden\_letter("m", []) ➞ True
 
 
 Notas: Todas las entradas deben estar en minúsculas. 
@@ -1441,9 +1449,9 @@ Dada una lista de números, devuelva True si la suma de los valores en la lista 
 
 __Ejemplos:__ 
 
-        listlessthan_100([5, 57]) ➞ True 
-        listlessthan_100([77, 30]) ➞ False
-        listlessthan_100([0]) ➞ True
+     listlessthan_100([5, 57]) ➞ True 
+     listlessthan_100([77, 30]) ➞ False
+     listlessthan_100([0]) ➞ True
 
 Tema: listas
 
@@ -1469,9 +1477,9 @@ Cree una función que tome una lista `lst` y devuelva los tipos de valores (tipo
 
 __Ejemplos:__ 
 
-        listvaluestypes([1, 10]), ➞ ['int', 'int']) 
-        listvaluestypes([["hello" , 1] , 10]), ➞ ['list', 'int'])
-        listvaluestypes(["shashwat", 10, 90]), ➞ ['str', 'int', 'int']) 
+     listvaluestypes([1, 10]), ➞ ['int', 'int']) 
+     listvaluestypes([["hello" , 1] , 10]), ➞ ['list', 'int'])
+     listvaluestypes(["shashwat", 10, 90]), ➞ ['str', 'int', 'int']) 
 
 
 Tema: algoritmos
@@ -1501,9 +1509,9 @@ formato "apellido, nombre".
 
 __Ejemplos:__ 
 
-        concat_name("First", "Last") ➞ "Last, First" 
-        concat_name("John", "Doe") ➞ "Doe, John" 
-        concat_name("Mary", "Jane") ➞ "Jane, Mary"
+     concat_name("First", "Last") ➞ "Last, First" 
+     concat_name("John", "Doe") ➞ "Doe, John" 
+     concat_name("Mary", "Jane") ➞ "Jane, Mary"
 
 
 Tema: formato
@@ -1530,9 +1538,9 @@ Dada la edad de una persona y el número de veces que se ha mudado de casa, devu
 
 __Ejemplos:__ 
 
-        yearsinone_house(30, 1) ➞ 15
-        yearsinone_house(15, 2) ➞ 5 
-        yearsinone_house(80, 0) ➞ 80 …
+     yearsinone_house(30, 1) ➞ 15
+     yearsinone_house(15, 2) ➞ 5 
+     yearsinone_house(80, 0) ➞ 80 …
 
 Tema: lenguaje\_fundamentos
 
@@ -1556,11 +1564,11 @@ primer y último carácter.
 
 __Ejemplos:__ 
 
-        first_last("ganesh") ➞ "gh"
-        first_last("kali") ➞ "ki" 
-        first_last("shiva") ➞ "sa"
-        first_last("vishnu") ➞ "vu" 
-        first_last("durga") ➞ "da"
+     first_last("ganesh") ➞ "gh"
+     first_last("kali") ➞ "ki" 
+     first_last("shiva") ➞ "sa"
+     first_last("vishnu") ➞ "vu" 
+     first_last("durga") ➞ "da"
 
 
 Tema: lenguaje\_fundamentos
@@ -1584,11 +1592,11 @@ es impar.
 
 __Ejemplos:__ 
 
-        oddoreven("apples") ➞ True 
-        oddoreven("pears") ➞ False
-        oddoreven("cherry") ➞ True
+     oddoreven("apples") ➞ True 
+     oddoreven("pears") ➞ False
+     oddoreven("cherry") ➞ True
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -1610,9 +1618,9 @@ Dados dos argumentos, devuelve una lista que contiene estos dos argumentos.
 
 __Ejemplos:__ 
 
-        make_pair(1, 2) ➞ [1, 2] 
-        make_pair(51, 21) ➞ [51, 21]
-        make_pair(512124, 215) ➞ [512124, 215]
+     make_pair(1, 2) ➞ [1, 2] 
+     make_pair(51, 21) ➞ [51, 21]
+     make_pair(512124, 215) ➞ [512124, 215]
 
 Tema: listas
 
@@ -1634,10 +1642,10 @@ Crea una función que calcule el área de un rectángulo. Si uno de los argument
 
 __Ejemplos:__ 
 
-        area(3, 4) ➞ 12 
-        area(10, 11) ➞ 110 
-        area(-1, 5) ➞ -1 
-        area(0, 2) ➞ -1
+     area(3, 4) ➞ 12 
+     area(10, 11) ➞ 110 
+     area(-1, 5) ➞ -1 
+     area(0, 2) ➞ -1
 
 Tema: álgebra
 
@@ -1661,9 +1669,9 @@ Escribe una función que devuelva la suma de los elementos en una lista que son 
 
 __Ejemplos:__ 
 
-        sum\_five([1, 5, 20, 30, 4, 9, 18]) ➞ 77 
-        sum\_five([1, 2, 3, 4]) ➞ 0 
-        sum\_five([10, 12, 28, 47, 55, 100]) ➞ 252
+     sum\_five([1, 5, 20, 30, 4, 9, 18]) ➞ 77 
+     sum\_five([1, 2, 3, 4]) ➞ 0 
+     sum\_five([10, 12, 28, 47, 55, 100]) ➞ 252
 
 Notas: Encuentra todos los elementos mayores que 5, no los elementos mayores o iguales a 5.
 
@@ -1689,25 +1697,25 @@ Cree una función que devuelva True si dos listas contienen valores idénticos (
 
 Para resolver esta pregunta, su amigo escribe el siguiente código:
 
-        def check_equals(lst1, lst2):
-                if lst1 is lst2:
-                        return True
-                else:
-                        return False
+     def check_equals(lst1, lst2):
+         if lst1 is lst2:
+             return True
+         else:
+             return False
 
 Pero al probar el código, ve que algo no está del todo bien. La ejecución del código produce los siguientes resultados:
 
-        check_equals([1, 2], [1, 3]) ➞ False
-        # ok
-        check_equals([1, 2], [1, 2]) ➞ False
-        # ¡Ay!¿Qué sucedió?
+     check_equals([1, 2], [1, 3]) ➞ False
+     # ok
+     check_equals([1, 2], [1, 2]) ➞ False
+     # ¡Ay!¿Qué sucedió?
 
 Vuelva a escribir el código de su amigo para que comprobar correctamente si dos listas son iguales. Las siguientes pruebas deben ser superadas:
 
-        check_equals([1, 2], [1, 3]) ➞ False
-        check_equals([1, 2], [1, 2]) ➞ True
-        check_equals([4, 5, 6], [4, 5, 6]) ➞ True
-        check_equals([4, 7, 6], [4, 5, 6]) ➞ False
+     check_equals([1, 2], [1, 3]) ➞ False
+     check_equals([1, 2], [1, 2]) ➞ True
+     check_equals([4, 5, 6], [4, 5, 6]) ➞ True
+     check_equals([4, 7, 6], [4, 5, 6]) ➞ False
 
 
 Tema: bugs
@@ -1729,20 +1737,20 @@ Añadir a colección
 
 Ema ha escrito una función que devuelve un saludo a los usuarios. Sin embargo, es más amiga de Pedro y le gustaría saludarlo en forma diferente. Agregó un caso especial en su función, pero cometió un error.¿Puedes ayudarla?
 
-        def saludo(name):
-                return "¡Hola, " + name + "!"
-	        if name == "Pedro":
-		        return "¡Hola amigo!"
+     def saludo(name):
+         return "¡Hola, " + name + "!"
+	     if name == "Pedro":
+		     return "¡Hola amigo!"
 
 __Ejemplos:__ 
 
-        saludo("Matías") ➞ "¡Hola, Matías!"
-        saludo("Elena") ➞ "¡Hola,, Elena!" 
-        saludo("Pedro") ➞ "¡Hola amigo!" 
+     saludo("Matías") ➞ "¡Hola, Matías!"
+     saludo("Elena") ➞ "¡Hola,, Elena!" 
+     saludo("Pedro") ➞ "¡Hola amigo!" 
 
 Tema: bugs
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -1766,13 +1774,13 @@ Un año bisiesto ocurre cada cuatro años y tendrá lugar si el año es múltipl
 
 __Ejemplos:__
 
-        leap_year(1990) ➞ False
-        leap_year(1924) ➞ True
-        leap_year(2021) ➞ False
-        
+     leap_year(1990) ➞ False
+     leap_year(1924) ➞ True
+     leap_year(2021) ➞ False
+     
 Tema: álgebra
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -1795,9 +1803,9 @@ el equivalente en metros.
 
 __Ejemplos:__ 
 
-        cm2m(324) ➞ 3 
-        cm2m(12) ➞ 0 
-        cm2m(5344) ➞ 53 
+     cm2m(324) ➞ 3 
+     cm2m(12) ➞ 0 
+     cm2m(5344) ➞ 53 
 
 Notas: si los centímetros son menos de 100, devuelve 0. 100 cm = 1 m.
 
@@ -1819,16 +1827,16 @@ Añadir a colección
 
 Puede asignar variables de una lista de la siguiente manera:
 
-        lst = [1, 2, 3, 4, 5, 6, 7, 8]
-        primera = lst[0]
-        segunda = lst[1]
-        tercera = lst[2]
-        otra = lst[3:]
+     lst = [1, 2, 3, 4, 5, 6, 7, 8]
+     primera = lst[0]
+     segunda = lst[1]
+     tercera = lst[2]
+     otra = lst[3:]
 
-        print(primera) ➞ outputs 1
-        print(segunda) ➞ outputs 2
-        print(tercera) ➞ outputs 3
-        print(otra) ➞ outputs [4, 5, 6, 7, 8]
+     print(primera) ➞ outputs 1
+     print(segunda) ➞ outputs 2
+     print(tercera) ➞ outputs 3
+     print(otra) ➞ outputs [4, 5, 6, 7, 8]
 
 Su tarea es descomprimir la lista en cuatro variables, primera, segunda, tercera y otra. Su solución debe ser solo un código de una línea.
 
@@ -1854,14 +1862,14 @@ Añadir a colección
 
 Uriel ha escrito la función  `es_impar()` para verificar si un número dado es impar o no. Desafortunadamente, la función no devuelve el resultado correcto para todas las entradas. Ayúdalo a corregir el error.
 
-        def es_impar(num):
-                return num % 1 == 1 or 2
+     def es_impar(num):
+         return num % 1 == 1 or 2
 
 __Ejemplos:__ 
 
-        es_impar(-5) ➞ True 
-        es_impar(25) ➞ True
-        es_impar(0) ➞ False
+     es_impar(-5) ➞ True 
+     es_impar(25) ➞ True
+     es_impar(0) ➞ False
 
 Tema: bugs
 
@@ -1885,9 +1893,9 @@ Cree una función que tome un número (de 1 a 60) y devuelva una  cadena de guio
 
 __Ejemplos:__
 
-        num2guiones(1) ➞ "-"
-        num2guiones(5) ➞ "-----" 
-        num2guiones(3) ➞ "---"
+     num2guiones(1) ➞ "-"
+     num2guiones(5) ➞ "-----" 
+     num2guiones(3) ➞ "---"
 
 Tema: ciclos
 
@@ -1911,10 +1919,10 @@ Cree una función que maneje expresiones matemáticas simples. La entrada es una
 
 __Ejemplos:__ 
 
-        calculator("23+4") ➞ 27
-        calculator("45-15") ➞ 30 
-        calculator("13+2-5*2") ➞ 5
-        calculator("49/7*2-3") ➞ 11
+     calculator("23+4") ➞ 27
+     calculator("45-15") ➞ 30 
+     calculator("13+2-5*2") ➞ 5
+     calculator("49/7*2-3") ➞ 11
 
 Notas: No habrá paréntesis en el línea de entrada.
 
@@ -1940,10 +1948,10 @@ Escribe una función para verificar si una lista contiene un número en particul
 
 __Ejemplos:__ 
 
-        check([1, 2, 3, 4, 5], 3) ➞ True 
-        check([1, 1, 2, 1, 1], 3) ➞ False 
-        check([5, 5, 5, 6], 5) ➞ True 
-        check([], 5) ➞ False
+     check([1, 2, 3, 4, 5], 3) ➞ True 
+     check([1, 1, 2, 1, 1], 3) ➞ False 
+     check([5, 5, 5, 6], 5) ➞ True 
+     check([], 5) ➞ False
 
 Tema: listas
 
@@ -1968,13 +1976,13 @@ para números pares y "impares" para números impares.
 
 __Ejemplos:__ 
 
-        es_par_o_impar(3) ➞ "impar" 
-        es_par_o_impar(146) ➞ "par" 
-        es_par_o_impar(19) ➞ "impar"
+     es_par_o_impar(3) ➞ "impar" 
+     es_par_o_impar(146) ➞ "par" 
+     es_par_o_impar(19) ➞ "impar"
 
 Notas: No olvide devolver el resultado. La entrada siempre será un número entero válido (positivo o negativo).
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -1999,13 +2007,13 @@ es plural. Una palabra plural es aquella que termina en "s" (aunque no siempre s
 
 __Ejemplos:__ 
 
-        es_plural("cambios") ➞ True 
-        es_plural("cambio") ➞ False
-        es_plural("dudas") ➞ True 
-        es_plural("magico") ➞ False
+     es_plural("cambios") ➞ True 
+     es_plural("cambio") ➞ False
+     es_plural("dudas") ➞ True 
+     es_plural("magico") ➞ False
 
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -2029,9 +2037,9 @@ número de interruptores, ¿cuántas combinaciones diferentes de encendido y apa
 
 __Ejemplos:__ 
 
-        pos_com(1) ➞ 2 
-        pos_com(3) ➞ 8 
-        pos_com(10) ➞ 1024 
+     pos_com(1) ➞ 2 
+     pos_com(3) ➞ 8 
+     pos_com(10) ➞ 1024 
 
 Tema: álgebra
 
@@ -2055,14 +2063,14 @@ Cree una función que tome una cadena. Si el ultimo carácter del nombre es una 
 
 __Ejemplos:__ 
 
-        el_unltimo_n("Aiden") ➞ True 
-        el_unltimo_n("Piet") ➞ False 
-        el_unltimo_n("Bert") ➞ False 
-        el_unltimo_n("Dean") ➞ True
+     el_unltimo_n("Aiden") ➞ True 
+     el_unltimo_n("Piet") ➞ False 
+     el_unltimo_n("Bert") ➞ False 
+     el_unltimo_n("Dean") ➞ True
 
 Notas: The function must return a boolean …
 
-Tema: condiciones
+Tema: condicionales
 
 regex
 
@@ -2084,20 +2092,20 @@ Añadir a colección
 
 Pedro creó un bucle infinito!
 
-        def print_list(n):
-                result=[]
-                i=1
-                while i<=n:
-                        result+=[i]
-                return result
+     def print_list(n):
+         result=[]
+         i=1
+         while i<=n:
+             result+=[i]
+         return result
 
 Ayúdalo arreglando el código  para pasar este desafío. Mirá los ejemplos a continuación para tener una idea de lo que debería hacer la función.
 
 __Ejemplos:__ 
 
-        print_list(1) ➞ [1]
-        print_list(3) ➞ [1, 2, 3]
-        print_list(6) ➞ [1, 2, 3, 4, 5, 6]
+     print_list(1) ➞ [1]
+     print_list(3) ➞ [1, 2, 3]
+     print_list(6) ➞ [1, 2, 3, 4, 5, 6]
 
 Tema: bugs
 
@@ -2121,29 +2129,29 @@ Añadir a colección
 
 La máquina de embalaje está ejecutando la función `get_container()` para recuperar el contenedor de un producto. Pero algo no va bien...
 
-        # Arreglar este código:
-        def get_container(product):
-                matches = {
-                "Pan" : "botella",
-                "Leche" : "botella",
-                "Cerveza" : "botella",
-                "Huevos" : "carton",
-                "Cereales" : "caja",
-                "Caramelo" : None,
-                "Queso" : None
-                }
-                return matches[product]
+     # Arreglar este código:
+     def get_container(product):
+         matches = {
+         "Pan" : "botella",
+         "Leche" : "botella",
+         "Cerveza" : "botella",
+         "Huevos" : "carton",
+         "Cereales" : "caja",
+         "Caramelo" : None,
+         "Queso" : None
+         }
+         return matches[product]
 
 __Ejemplos:__ 
 
-        get_container("Pan") ➞ "bolsa"
-        get_container("Cerveza") ➞ "botella"
-        get_container("Caramelo") ➞ "plastico"
-        get_container("Queso") ➞ None
+     get_container("Pan") ➞ "bolsa"
+     get_container("Cerveza") ➞ "botella"
+     get_container("Caramelo") ➞ "plastico"
+     get_container("Queso") ➞ None
 
 Tema: bugs
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -2163,29 +2171,29 @@ Añadir a colección
 
 Pedro creó una función que toma dos números a y b y un operador o. Su función debería devolver el resultado de la función matemática correspondiente en ambos números. Si el operador no es uno de los caracteres especificados `+`, `-`, `/`, `*` o si hay una división por cero, la función debe devolver Ninguno. Ayúdalo arreglando el código siguiente:
 
-        # Arreglar este código:
-        def basic_calculator(a, o, b):
-                result = 0
-                if(O == "+"):
-                        return a + b
-                else if(o =! "-"):
-                        return a - b
-                if(o != "/" or b == 0):
-                        return a / b
-                if(0 == "*"):
-                        return a * b
-                return result
+     # Arreglar este código:
+     def basic_calculator(a, o, b):
+         result = 0
+         if(O == "+"):
+             return a + b
+         else if(o =! "-"):
+             return a - b
+         if(o != "/" or b == 0):
+             return a / b
+         if(0 == "*"):
+             return a * b
+         return result
 
 Mire los ejemplos a continuación para tener una idea de lo que debería hacer la función:
 
 __Ejemplos:__ 
 
-        basic_calculator(2, '+',  4) ➞ 6
-        basic_calculator(6, '-', 5) ➞ 1
-        basic_calculator(12, '/', 3) ➞ 4
-        basic_calculator(3, '*', 4) ➞ 12
-        basic_calculator(1, '/', 0) ➞ None # Division by zero is not possible
-        basic_calculator(1, 'x', 0) ➞ None # 'x' is not an operator
+     basic_calculator(2, '+',  4) ➞ 6
+     basic_calculator(6, '-', 5) ➞ 1
+     basic_calculator(12, '/', 3) ➞ 4
+     basic_calculator(3, '*', 4) ➞ 12
+     basic_calculator(1, '/', 0) ➞ None # Division by zero is not possible
+     basic_calculator(1, 'x', 0) ➞ None # 'x' is not an operator
 
 Tema: bugs
 
@@ -2211,9 +2219,9 @@ Cree una función que tome un número n y devuelva el enésimo número par.
 
 __Ejemplos:__ 
 
-        nesimo_par(1) ➞ 0 # 0 es el primer número par 
-        nesimo_par(2) ➞ 2 # 2 es el segundo número par
-        nesimo_par(100) ➞ 198
+     nesimo_par(1) ➞ 0 # 0 es el primer número par 
+     nesimo_par(2) ➞ 2 # 2 es el segundo número par
+     nesimo_par(100) ➞ 198
 
 Tema: lenguaje\_fundamentos
 
@@ -2239,9 +2247,9 @@ Lo que se supone que debe hacer es crear una función que devuelva un diccionari
 
 __Ejemplos:__ 
 
-        fifty_thirty_twenty(10000) ➞ { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
-        fifty_thirty_twenty(50000) ➞ { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
-        fifty_thirty_twenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
+     fifty_thirty_twenty(10000) ➞ { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
+     fifty_thirty_twenty(50000) ➞ { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
+     fifty_thirty_twenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
 
 Tema: álgebra
 
@@ -2275,14 +2283,14 @@ Devolver la cadena final después de la modificación.
 
 __Ejemplos:__ 
 
-        simple_encoder("Mubashir") ➞ "[[[[[[[["
-        # '[' para cada carácter
+     simple_encoder("Mubashir") ➞ "[[[[[[[["
+     # '[' para cada carácter
 
-        simple_encoder("Matt") ➞ "[[]]"
-        # ']' para ambas 't'
+     simple_encoder("Matt") ➞ "[[]]"
+     # ']' para ambas 't'
 
-        simple_encoder("va  seguro") ➞ "[[]][[[[[["
-        # Dos espacios en el medio
+     simple_encoder("va  seguro") ➞ "[[]][[[[[["
+     # Dos espacios en el medio
 
 Tema: listas
 
@@ -2309,9 +2317,9 @@ Cree una función que devuelva la cadena "Burp" con la cantidad de
 
 __Ejemplos:__ 
 
-        largo_burp(3) ➞ "Burrrp" 
-        largo_burp(5) ➞ "Burrrrrp" 
-        largo_burp(9) ➞ "Burrrrrrrrrp"
+     largo_burp(3) ➞ "Burrrp" 
+     largo_burp(5) ➞ "Burrrrrp" 
+     largo_burp(9) ➞ "Burrrrrrrrrp"
 
 Tema: matemática
 
@@ -2333,10 +2341,10 @@ Cree una función que devuelva el valor ASCII de un carcater.
 
 __Ejemplos:__ 
 
-        ctoa("A") ➞ 65 
-        ctoa("m") ➞ 109 
-        ctoa("[") ➞ 91
-        ctoa("\\") ➞ 92
+     ctoa("A") ➞ 65 
+     ctoa("m") ➞ 109 
+     ctoa("[") ➞ 91
+     ctoa("\\") ➞ 92
 
 Tema: algoritmos
 
@@ -2362,9 +2370,9 @@ comprensión.
 
 __Ejemplos:__ 
 
-        rotarporuno([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
-        rotarporuno([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9] 
-        rotarporuno([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
+     rotarporuno([1, 2, 3, 4, 5]) ➞ [5, 1, 2, 3, 4]
+     rotarporuno([6, 5, 8, 9, 7]) ➞ [7, 6, 5, 8, 9] 
+     rotarporuno([20, 15, 26, 8, 4]) ➞ [4, 20, 15, 26, 8]
 
 Tema: listas
 
@@ -2387,9 +2395,9 @@ Crea una función que evalúe una ecuación.
 
 __Ejemplos:__ 
 
-        eq("1+2") ➞ 3
-        eq("6/(9-7)") ➞ 3 
-        eq("3+2-4") ➞ 1
+     eq("1+2") ➞ 3
+     eq("6/(9-7)") ➞ 3 
+     eq("3+2-4") ➞ 1
 
 Notas: Usar la finción `eval()`. Devuelva el valor, no la ecuación. El método utilizado para resolver esto no debe utilizarse en la práctica. 
 
@@ -2415,37 +2423,37 @@ Cree una función que verifique si dos diccionarios tienen las mismas claves y v
 
 __Ejemplos:__ 
 
-        # Primer diccionario.
-        dic_uno = {
-                "nombre": "Benny",
-                "telefono": "3325558745",
-                "email": "benny@acme.com"
-        }
+     # Primer diccionario.
+     dic_uno = {
+         "nombre": "Benny",
+         "telefono": "3325558745",
+         "email": "benny@acme.com"
+     }
 
-        # Segundo diccionario.
-        dic_dos = {
-                "nombre": "Jason",
-                "telefono": "9853759720",
-                "email": "jason@acme.com"
-        }
+     # Segundo diccionario.
+     dic_dos = {
+         "nombre": "Jason",
+         "telefono": "9853759720",
+         "email": "jason@acme.com"
+     }
 
-        is_equal(dic_uno, dic_dos) ➞ False
+     is_equal(dic_uno, dic_dos) ➞ False
 
-        # Primer diccionario. 
-        dic_uno = {
-                nombre": "Jason",
-                "telefono": "9853759720",
-                "email": "jason@acme.com"
-        }
+     # Primer diccionario. 
+     dic_uno = {
+         nombre": "Jason",
+         "telefono": "9853759720",
+         "email": "jason@acme.com"
+     }
 
-        # Segundo diccionario.
-        dic_dos = {
-                "nombre": "Jason",
-                "telefono": "9853759720",
-                "email": "jason@acme.com"
-        }
+     # Segundo diccionario.
+     dic_dos = {
+         "nombre": "Jason",
+         "telefono": "9853759720",
+         "email": "jason@acme.com"
+     }
 
-        is_equal(dic_uno, obj_two) ➞ True
+     is_equal(dic_uno, obj_two) ➞ True
 
 Nota: en  ambos casos `dic_uno == dic_dos` es falso. 
 
@@ -2469,12 +2477,12 @@ Debido a un concepto de programación conocido como _truthiness_, ciertos valore
 
 __Ejemplos:__ 
 
-        flip_bool(True) ➞ 0
-        flip_bool(False) ➞ 1
-        flip_bool(1) ➞ 0
-        flip_bool(0) ➞ 1
+     flip_bool(True) ➞ 0
+     flip_bool(False) ➞ 1
+     flip_bool(1) ➞ 0
+     flip_bool(0) ➞ 1
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -2496,13 +2504,13 @@ Añadir a colección
 
 Cree una función que devuelva True si `p`, el peso de un automóvil más el peso de los pasajeros en el automóvil es menor que el peso máximo `max_weight` que el automóvil puede llevar. De lo contrario, devuelva False. El peso del automóvil, el peso de los pasajeros y el peso máximo se da en kilogramos. La signatura de la función es
 
-        weight_allowed(max_weight: int, pasajeros: list, auto: int)
+     weight_allowed(max_weight: int, pasajeros: list, auto: int)
 
 __Ejemplos:__ 
 
-        weight_allowed(3000, [150, 201, 75, 88, 195], 1700) ➞ True
-        weight_allowed(3000, [220, 101, 115, 228, 15], 2500) ➞ False
-        weight_allowed(2900, [225, 171, 300], 1850) ➞ True
+     weight_allowed(3000, [150, 201, 75, 88, 195], 1700) ➞ True
+     weight_allowed(3000, [220, 101, 115, 228, 15], 2500) ➞ False
+     weight_allowed(2900, [225, 171, 300], 1850) ➞ True
 
 Tema: lenguaje\_fundamentos
 
@@ -2526,9 +2534,9 @@ Cree una función que tome una palabra y devuelva la nueva palabra sin el primer
 
 __Ejemplos:__ 
 
-        new_word("apple") ➞ "pple"
-        new_word("cherry") ➞ "herry" 
-        new_word("plum") ➞ "lum"
+     new_word("apple") ➞ "pple"
+     new_word("cherry") ➞ "herry" 
+     new_word("plum") ➞ "lum"
 
 Tema: formato
 
@@ -2553,9 +2561,9 @@ responder.
 
 __Ejemplos:__ 
 
-        equation("1+1") ➞ 2 
-        equation("7\*4-2") ➞ 26
-        equation("1+1+1+1+1") ➞ 5
+     equation("1+1") ➞ 2 
+     equation("7\*4-2") ➞ 26
+     equation("1+1+1+1+1") ➞ 5
 
 Notas: los operadores admitidos son `+`, `-`, `\` y `*`. Use el operador `eval()`.
 
@@ -2591,13 +2599,13 @@ Cree una función que devuelva el nombre del hombre que puede llevar a casa la m
 
 __Ejemplo resuelto:__ 
 
-        quien_gana_esta noche (40, 95, 5, 10) ➞ "López"
-        # El artículo cuesta 5 monedas y ocupa 10 espacios de inventario.
-        # Pérez solo puede comprar un máximo de 8 artículos (40 monedas // 5 = 8).
-        # López solo puede traer a casa un máximo de 9 artículos.(95 espacios de inventario // 10 = 9).
-        # López es el ganador.
+     quien_gana_esta noche (40, 95, 5, 10) ➞ "López"
+     # El artículo cuesta 5 monedas y ocupa 10 espacios de inventario.
+     # Pérez solo puede comprar un máximo de 8 artículos (40 monedas // 5 = 8).
+     # López solo puede traer a casa un máximo de 9 artículos.(95 espacios de inventario // 10 = 9).
+     # López es el ganador.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -2620,10 +2628,10 @@ valor mínimo en cada fila.
 
 __Ejemplos:__ 
 
-        sum_minimos([ [1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100] ] ➞ 26 
-        # el valor mínimode la primera fila es 1
-        # el valor mínimo de la segunda fila es 5
-        # el valor mínimo de la tercera fila es 20
+     sum_minimos([ [1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100] ] ➞ 26 
+     # el valor mínimode la primera fila es 1
+     # el valor mínimo de la segunda fila es 5
+     # el valor mínimo de la tercera fila es 20
 
 Tema: listas
 
@@ -2650,9 +2658,9 @@ lista invertida.
 
 __Ejemplos:__ 
 
-        invertir_lista([1, 2, 3, 4, 5]) ➞ [-1, -2, -3, -4, -5] 
-        invertir_lista([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
-        invertir_lista([]) ➞ []
+     invertir_lista([1, 2, 3, 4, 5]) ➞ [-1, -2, -3, -4, -5] 
+     invertir_lista([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
+     invertir_lista([]) ➞ []
 
 Tema: listas
 
@@ -2680,9 +2688,9 @@ forma.
 
 __Ejemplos:__ 
 
-        area_forma(2, 3, "triangulo") ➞ 3 
-        area_forma(8, 6, "paralelogramo") ➞ 48 
-        area_forma(2.9, 1.3, "paralelogramo") ➞ 3.77
+     area_forma(2, 3, "triangulo") ➞ 3 
+     area_forma(8, 6, "paralelogramo") ➞ 48 
+     area_forma(2.9, 1.3, "paralelogramo") ➞ 3.77
 
 Notas:
 
@@ -2692,7 +2700,7 @@ Notas:
 
 Tema: algoritmos
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: geometría
 
@@ -2714,9 +2722,9 @@ Cree una función que tome un número y devuelva una lista de la mitad del núme
 
 __Ejemplos: __ 
 
-        medio_cuarto_octavo(6) ➞ [3, 1.5, 0.75]
-        medio_cuarto_octavo(22) ➞ [11, 5.5, 2.75] 
-        medio_cuarto_octavo(25) ➞ [12.5, 6.25, 3.125]
+     medio_cuarto_octavo(6) ➞ [3, 1.5, 0.75]
+     medio_cuarto_octavo(22) ➞ [11, 5.5, 2.75] 
+     medio_cuarto_octavo(25) ➞ [12.5, 6.25, 3.125]
 
 Notas: El orden de la lista es: mitad, cuarto y octavo.
 
@@ -2740,10 +2748,10 @@ Escriba una función que tome un número entero y devuelva una cadena con el nú
 
 __Ejemplos: __ 
 
-        cuantas_veces(5) ➞ "Acccccme"
-        cuantas_veces(0) ➞ "Ame" 
-        cuantas_veces(12) ➞ "Accccccccccccme" 
-        
+     cuantas_veces(5) ➞ "Acccccme"
+     cuantas_veces(0) ➞ "Ame" 
+     cuantas_veces(12) ➞ "Accccccccccccme" 
+     
 Notas: La cadena debe comenzar con "Ac" y terminar con "me".
 
 Tema: formato
@@ -2769,9 +2777,9 @@ números mínimo y máximo, en ese orden (como una lista).
 
 __Ejemplos:__ 
 
-        min_max([1, 2, 3, 4, 5]) ➞ [1, 5]
-        min_max([2334454, 5]) ➞ [5, 2334454]
-        min_max([1]) ➞ [1, 1]
+     min_max([1, 2, 3, 4, 5]) ➞ [1, 5]
+     min_max([2334454, 5]) ➞ [5, 2334454]
+     min_max([1]) ➞ [1, 1]
 
 Notas: Todas las listas de prueba tendrán al menos un entero.
 
@@ -2797,11 +2805,11 @@ Cree una función que devuelva True si una cadena contiene espacios.
 
 __Ejemplos:__ 
 
-        tiene_espacios("hola") ➞ False 
-        tiene_espacios("hola, mundo") ➞ True 
-        tiene_espacios(" ") ➞ True 
-        tiene_espacios("") ➞ False 
-        tiene_espacios(",. /! @ \# ") ➞ False
+     tiene_espacios("hola") ➞ False 
+     tiene_espacios("hola, mundo") ➞ True 
+     tiene_espacios(" ") ➞ True 
+     tiene_espacios("") ➞ False 
+     tiene_espacios(",. /! @ \# ") ➞ False
 
 Tema: cadenas
 
@@ -2846,10 +2854,10 @@ Añadir a colección
 
 Hay una manera fácil de asignar valores usando listas.
 
-        cabeza, cola = [1, 2, 3, 4]
+     cabeza, cola = [1, 2, 3, 4]
 
-        print(cabeza) ➞ 1
-        print(cola) ➞ 2
+     print(cabeza) ➞ 1
+     print(cola) ➞ 2
 
 Pero, ¿cómo podría hacer `cola == [2, 3, 4]` en lugar de `tail == 2`? Agrega algo en el código y haz que esto suceda.
 
@@ -2875,9 +2883,9 @@ Cree una función que tome la velocidad de la bola `bs` y la velocidad del palo 
 
 __Ejemplos:__
 
-        smash_factor (139.4, 93.8) ➞ 1.49
-        smash_factor (181.2, 124.5) ➞ 1.46
-        smash_factor (154,7, 104,3) ➞ 1,48
+     smash_factor (139.4, 93.8) ➞ 1.49
+     smash_factor (181.2, 124.5) ➞ 1.46
+     smash_factor (154,7, 104,3) ➞ 1,48
 
 Tema: lenguaje\_fundamentos
 
@@ -2903,10 +2911,10 @@ Cree una función que tome una lista de elementos y devuelva el primero y
 
 __Ejemplos: __ 
 
-        primero_ultimo([5, 10, 15, 20, 25]) ➞ [5, 25] 
-        primero_ultimo(["acme", 13, None, False, True]) ➞ ["acme", True] 
-        primero_ultimo([1, 4, "6", "hola", Ninguno]) ➞ [1, Ninguno] 
-        
+     primero_ultimo([5, 10, 15, 20, 25]) ➞ [5, 25] 
+     primero_ultimo(["acme", 13, None, False, True]) ➞ ["acme", True] 
+     primero_ultimo([1, 4, "6", "hola", Ninguno]) ➞ [1, Ninguno] 
+     
 
 Tema: listas
 
@@ -2931,14 +2939,14 @@ las tres puertas lógicas: AND, OR y NOT.
 
 __Ejemplos:__ 
 
-        AND(1, 1) ➞ 1 
-        AND(0, 0) ➞ 0 
-        OR(1, 0) ➞ 1 
-        OR(1, 1) ➞ 1 
-        NOT(0) ➞ 1 
-        NOT(1) ➞ 0
+     AND(1, 1) ➞ 1 
+     AND(0, 0) ➞ 0 
+     OR(1, 0) ➞ 1 
+     OR(1, 1) ➞ 1 
+     NOT(0) ➞ 1 
+     NOT(1) ➞ 0
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -2958,9 +2966,9 @@ Crea una función que cuente cuántas D hay en una oración.
 
 __Ejemplos:__ 
 
-        contar_d("Mi amigo Dylan se distrajo en la escuela") ➞ 2
-        contar_d("Los escombros estaban esparcidos por todo el patio.") ➞ 1
-        contar_d("Los roedores hibernaban en su guarida. ") ➞ 2
+     contar_d("Mi amigo Dylan se distrajo en la escuela") ➞ 2
+     contar_d("Los escombros estaban esparcidos por todo el patio.") ➞ 1
+     contar_d("Los roedores hibernaban en su guarida. ") ➞ 2
 
 Notas: tu función no debe distinguir entre mayúsculas y minúsculas. 
 
@@ -2986,9 +2994,9 @@ Cree una función de dos cadenas como argumentos y reemplace los espacios de la 
 
 __Ejemplos:__ 
 
-        add("R", "pythonis fun") ➞ "pythonRisRfun"
-        add("\#", "hello world!") ➞ "hello\#world!"
-        add("\#", " ") ➞ "\#"
+     add("R", "pythonis fun") ➞ "pythonRisRfun"
+     add("\#", "hello world!") ➞ "hello\#world!"
+     add("\#", " ") ➞ "\#"
 
 Notas: Asegúrese de que no haya espacios entre palabras al devolver la función.
 
@@ -3010,13 +3018,13 @@ Añadir a colección
 
 Puede asignar variables de listas con desestructuración como esta:
 
-        arr = ["ojos", "nariz", "labios", "orejas"]
-        ojos, nariz, labios, orejas = arr
+     arr = ["ojos", "nariz", "labios", "orejas"]
+     ojos, nariz, labios, orejas = arr
 
 Si no necesita todos los índices de lista almacenados en una variable con nombre, puede usar `_` como variable desechable.
 
-        arr = ["ojos", "nariz", "labios", "orejas"]
-        _, nariz, _, _ = arr
+     arr = ["ojos", "nariz", "labios", "orejas"]
+     _, nariz, _, _ = arr
 
 ... esto asigna el valor en `arr[1]` a la variable `nariz`. Los valores de cada índice se asignarán a la variable `_` en orden, sobrescribiendo cada valor anterior. `nariz` ahora almacena la cadena  `"nariz"`, y `_` almacena la cadena `"orejas"`.
 
@@ -3045,9 +3053,9 @@ Tengo un cubo que contiene una cantidad de pintura azul marino y me gustaría pi
 
 __Ejemplos: __
 
-        pintar(100, 4, 5) ➞ 5
-        pintar(10, 15, 12) ➞ 0
-        pintar(41, 3, 6) ➞ 2
+     pintar(100, 4, 5) ➞ 5
+     pintar(10, 15, 12) ➞ 0
+     pintar(41, 3, 6) ➞ 2
 
 Tema: matemática
 
@@ -3069,9 +3077,9 @@ Cree una función que pueda convertir el Yen (moneda de Japón) en USD.
 
 __Ejemplos:__ 
 
-        yentousd(1) ➞ 0.01 
-        yentousd(500) ➞ 4.65 
-        yentousd(649) ➞ 6.04
+     yentousd(1) ➞ 0.01 
+     yentousd(500) ➞ 4.65 
+     yentousd(649) ➞ 6.04
 
 Notas: Cada conversión de Yen a USD es Yen / 107.5
 
@@ -3096,11 +3104,11 @@ cadena, devuelve `No es una cadena`
 
 __Ejemplos:__ 
 
-        repeat_string("Pedro", 2)  "PedroPedro" 
-        repeat_string("Matt", 3) ➞ "MattMattMatt"
-        repeat_string(1990, 7) ➞ "No es una cadena"
+     repeat_string("Pedro", 2)  "PedroPedro" 
+     repeat_string("Matt", 3) ➞ "MattMattMatt"
+     repeat_string(1990, 7) ➞ "No es una cadena"
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -3125,9 +3133,9 @@ Cree una función que valide si un puente es seguro para caminar
 
 __Ejemplos:__ 
 
-        issafebridge("####") ➞ True 
-        issafebridge("## ####") ➞ False 
-        issafebridge("#") ➞ True
+     issafebridge("####") ➞ True 
+     issafebridge("## ####") ➞ False 
+     issafebridge("#") ➞ True
 
 
 Tema: lenguaje\_fundamentos
@@ -3152,9 +3160,9 @@ La función `abs()` devuelve el valor absoluto de un número. Esto significas qu
 
 __Ejemplos:__ 
 
-        absolute(-5) ➞ 5 
-        absolute(-3.14) ➞ 3.14 
-        absolute(250) ➞ 250
+     absolute(-5) ➞ 5 
+     absolute(-3.14) ➞ 3.14 
+     absolute(250) ➞ 250
 
 Tema: lenguaje\_fundamentos
 
@@ -3181,9 +3189,9 @@ peor pagado.
 
 __Ejemplos:__ 
 
-        programadores(147, 33, 526) ➞ 493 
-        programadores(33, 72, 74) ➞ 41 
-        programadores(1, 5, 9) ➞ 8
+     programadores(147, 33, 526) ➞ 493 
+     programadores(33, 72, 74) ➞ 41 
+     programadores(1, 5, 9) ➞ 8
 
 Tema: algoritmos
 
@@ -3208,8 +3216,8 @@ la entrada es 0. Solo puede usar operadores aritméticos, es decir la función n
 
 __Ejemplos:__ 
 
-        flip(1) ➞ 0 
-        flip(0) ➞ 1
+     flip(1) ➞ 0 
+     flip(0) ➞ 1
 
 Notas: analice la expresión `(x + 1) * (x -1)`
 
@@ -3234,10 +3242,10 @@ Cree una función que encuentre cada factor de un número n dado. Tu solución d
 
 __Ejemplos:__ 
 
-        find_factors(9) ➞ [1, 3, 9] # 9 tiene tres factores 1, 3 y 9
-        find_factors(12) ➞ [1, 2, 3, 4, 6, 12] 
-        find_factors(20) ➞ [1, 2, 4, 5,10, 20] 
-        find_factors(0) ➞ [] 0 no tiene factores
+     find_factors(9) ➞ [1, 3, 9] # 9 tiene tres factores 1, 3 y 9
+     find_factors(12) ➞ [1, 2, 3, 4, 6, 12] 
+     find_factors(20) ➞ [1, 2, 4, 5,10, 20] 
+     find_factors(0) ➞ [] 0 no tiene factores
 
 Tema: listas
 
@@ -3264,8 +3272,8 @@ Cree una función de tres parámetros que devuelva True si todos los parámetros
 
 __Ejemplos:__ 
 
-        todos_V(True, True, True) ➞ True 
-        todos_V(True, False, True) ➞ False 
+     todos_V(True, True, True) ➞ True 
+     todos_V(True, False, True) ➞ False 
 
 Tema: listas
 
@@ -3289,9 +3297,9 @@ Dado un conjunto que contiene un elemento, devuelve el elemento.
 
 __Ejemplos:__ 
 
-        elementfromset({"acme"}) ➞ "acme" 
-        elementfromset({True}) ➞ True
-        elementfromset({11037}) ➞ 11037
+     elementfromset({"acme"}) ➞ "acme" 
+     elementfromset({True}) ➞ True
+     elementfromset({11037}) ➞ 11037
 
 Notas: Listas, diccionarios y otros conjuntos no pueden ser elementos porque los conjuntos no aceptan  tipos de datos mutables como elementos.
 
@@ -3315,11 +3323,11 @@ servir bebidas.
 
 __Ejemplos:__ 
 
-        should_serve_drinks(17, True) ➞ False
-        should_serve_drinks(19, False) ➞ True
-        should_serve_drinks(30, True) ➞ False
+     should_serve_drinks(17, True) ➞ False
+     should_serve_drinks(19, False) ➞ True
+     should_serve_drinks(30, True) ➞ False
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -3345,9 +3353,9 @@ Cree una función que devuelva una identificación de cuatro caracteres usando e
 
 __Ejemplos:__ 
 
-        create_id("mary", "lamb") ➞ "mLam"
-        create_id("John", "SMITH") ➞ "jSmi"
-        create_id("mary", "smith") ➞ "mSmi"
+     create_id("mary", "lamb") ➞ "mLam"
+     create_id("John", "SMITH") ➞ "jSmi"
+     create_id("mary", "smith") ➞ "mSmi"
 
 Tema: formato
 
@@ -3371,9 +3379,9 @@ Debe implementar una función que devuelva una distancia en kilómetros converti
 
 __Ejemplos:__ 
 
-        kmtomiles(2) ➞ 1.24274
-        kmtomiles(6) ➞ 3.72823 
-        kmtomiles(8) ➞ 4.97097
+     kmtomiles(2) ➞ 1.24274
+     kmtomiles(6) ➞ 3.72823 
+     kmtomiles(8) ➞ 4.97097
 
 Tema: lenguaje\_fundamentos
 
@@ -3398,9 +3406,9 @@ cadena.
 
 __Ejemplos:__ 
 
-        papas("papa") ➞ 1 
-        papas("papa papa") ➞ 2 
-        papas("papamanzana") ➞ 1
+     papas("papa") ➞ 1 
+     papas("papa papa") ➞ 2 
+     papas("papamanzana") ➞ 1
 
 Tema: lenguaje\_fundamentos
 
@@ -3414,19 +3422,26 @@ Añadir a favoritos
 
 Añadir a colección
 
-[//]: <> (Hasta acá)
+
 
 [](https://edabit.com/challenge/fqn5FcLzEb4RBH9w7)
 
-### Slice of Pie
+### Porción de pastel
 
-Create a function that determines whether or not it's possible to split
-a pie fairly given these three parameters: Total number of slices.
-Number of recipients. How many slices each person gets. The function
-will be in this form: equal\_slices(total slices, no. recipients, slices
-each)
+Cree una función que determine si es posible o no dividir
+una tarta dados estos tres parámetros: 
+- Número total de porciones.
+- Número de destinatarios.
+- Cuántas rebanadas recibe cada persona.
 
-__Ejemplos:__ equal\_slices(11, 5, 2) ➞ Tr …
+La función tendrá esta forma: 
+
+     porciones_iguales(tot_porciones, nro_per, por_x_persona)
+
+__Ejemplos:__ 
+
+     porciones_iguales(11, 5, 2) ➞ True
+     porciones_iguales(11, 5, 3) ➞ False
 
 Tema: álgebra
 
@@ -3444,21 +3459,20 @@ Añadir a colección
 
 [](https://edabit.com/challenge/zdo6JCL6Z5d2fT8JB)
 
-### Does the Dictionary Contain a Given Key?
+### ¿El diccionario contiene una clave determinada?
 
-Write a function that returns True if a dictionary contains the
-specified key, and False otherwise.
+Escriba una función que devuelva Verdadero si un diccionario contiene el
+clave especificada y False en caso contrario.
 
-__Ejemplos:__ has\_key({ "a": 44, "b":
-45, "c": 46 }, "d") ➞ False has\_key({ "craves": True, "midnight": True,
-"snack": True }, "morning") ➞ False has\_key({ "pot": 1, "tot": 2,
-"not": 3 }, "not") ➞ True
+__Ejemplos:__ 
 
-Notas: N/A
+     tiene_clave({ "a": 44, "b": 45, "c": 46 }, "d") ➞ False
+     tiene_clave({ "craves": True, "midnight": True, "snack": True }, "morning") ➞ False 
+     tiene_clave({ "pot": 1, "tot": 2, "not": 3 }, "not") ➞ True
 
 Tema: lenguaje\_fundamentos
 
-objects
+Tema: diccionarios
 
 Tema: validación
 
@@ -3472,13 +3486,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/BajbSekxzL2hudEWe)
 
-### Raucous Applause
+### Aplausos estridentes
 
-After an amazing performance, the crowd goes wild! People clap
-enthusiastically and most claps overlap with each other to create one
-homogeneous sound. An overlapped clap is a clap which starts but doesn't
-finish, as in "ClaClap" (the first clap is cut short and there are
-overall 2 claps). Given a string of what the overla …
+Después de una actuación increíble, la gente aplaude con entusiasmo y la mayoría de los aplausos se superponen entre sí para crear un sonido homogéneo.
+
+Un aplauso superpuesto es un aplauso que comienza pero no termina, como en "ClaClap" (el primer aplauso se corta y hay 2 aplausos en total).
+
+Dada una serie de cómo sonaban los aplausos superpuestos, devuelva cuántos aplausos se hicieron en total.
+
+__Ejemplos:__ 
+
+     contar_aplausos("ClaClaClaClap!") ➞ 4
+     contar_aplausos("ClClClaClaClaClap!") ➞ 6
+     contar_aplausos("CCClaClClap!Clap!ClClClap!") ➞ 9
+
+Notas: Cada aplauso comienza con una "C" mayúscula.
 
 Tema: lenguaje\_fundamentos
 
@@ -3496,17 +3518,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/F3M4PhqC4JdX28Qmx)
 
-### Back to Home?
+### ¿De vuelta a casa?
 
-Pedro has started his journey from home. Given a string of directions
-(N=North, W=West, S=South, E=East), he will walk for one minute in each
-direction. Determine whether a set of directions will lead him back to
-the starting position or not.
+Pedro ha comenzado su viaje desde casa. Dada una serie de direcciones
+(N = Norte, O = Oeste, S = Sur, E = Este), caminará un minuto en cada
+dirección. Determine si un conjunto de instrucciones lo llevará de regreso a la posición inicial o no.
+__Ejemplos:__ 
 
-__Ejemplos:__ backtohome("EEWE") ➞ False
-backtohome("NENESSWW") ➞ True backtohome …
+     vuelta_a_casa("EEOE") ➞ False
+     vuelta_a_casa("NENESSOO") ➞ True 
 
-games
+Tema: juegos
 
 Tema: lógica
 
@@ -3526,15 +3548,42 @@ Añadir a colección
 
 [](https://edabit.com/challenge/aj7JPnAuW8dy4ggdp)
 
-### Minimal II: Boolean Redundancy
+### Redundancia booleana
 
-Check the principles of minimalist code in the [intro to the first
-challenge] (https://edabit.com/challenge/2XLjgZhmACph76Pkr). In the Code
-tab you will find a code that is missing a single character in order to
-pass the tests. However, your goal is to submit a function as minimalist
-as possible. Use the tips in the tips se …
+Consulte los principios del código minimalista en la introducción del primer desafío.
 
-Tema: condiciones
+Al  siguiente código le falta un solo carácter para pasar las pruebas. 
+
+     def parity(n):
+         remander = bool(n % 2)
+         if remainder == False:
+             return "par"
+         if remainder == True:
+             return "impar"
+
+Sin embargo, su objetivo es presentar una función lo más minimalista posible.  Utilice los consejos de la sección de consejos a continuación.
+
+Escribe una función que devuelva la cadena `"par"` si el entero dado es par y la cadena `"impar"` si es impar.
+
+__Consejos__
+
+Convertir un booleano, o algo que finalmente se interpretará como booleano, en un booleano es redundante.
+
+Por ejemplo, el código:
+
+     boolean = bool(x < 4)
+     return boolean == True
+
+Es equivalente a simplemente:
+
+     return x < 4
+
+- Una comparación con `<`, `<=`, `==`,  `!=`, `>` siempre resultará en un booleano, por lo tanto, usar la función `bool()` es totalmente innecesario. 
+- `boolean == True` es redundante, ya que siempre devolverá `boolean`.
+- Para obtener el opuesto de booleano podríamos usar `boolean == False`. Sin embargo, una forma mucho más limpia de hacer esto es `not boolean`.
+- Para mantener la legibilidad, evite declarar variables innecesarias.
+
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -3550,13 +3599,24 @@ Añadir a colección
 
 [](https://edabit.com/challenge/g5HP8CmfXd7am7NtX)
 
-### Keyboard Mistakes
+### Errores de teclado
 
-Character recognition software often makes mistakes when documents
-(especially old ones written with a typewriter) are digitized. Your task
-is to correct the errors in the digitized text. You only have to handle
-the following mistakes: A is misinterpreted as 4 S is misinterpreted as
-5 O is misinterpreted as 0 I is misinter …
+El software de reconocimiento de caracteres a menudo comete errores cuando se digitalizan documentos (especialmente los antiguos escritos con máquina de escribir).
+
+Su tarea es corregir los errores en el texto digitalizado. Solo tienes que manejar los siguientes errores:
+
+- A se malinterpreta como 4
+- S se malinterpreta como 5
+- O se malinterpreta como 0
+- Me malinterpretan como 1
+
+Los casos de prueba contienen números solo por error.
+
+__Ejemplos:__ 
+
+    keyboard_mistakes("MUB45H1R") ➞ "MUBASHIR"
+    keyboard_mistakes("DUBL1N") ➞ "DUBLIN"
+    keyboard_mistakes("51NG4P0RE") ➞ "SINGAPORE"
 
 Tema: programación\_funcional
 
@@ -3572,43 +3632,27 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/EkhfsvH6drYCLmAbL)
-
-### Using Lambda Functions
-
-Create a function that returns its given argument, but by using a lambda
-function. A lambda function is constructed like so: lambda\_func=lambda
-"""parameters""":\#code here
-
-__Ejemplos:__ lambda\_func(3) ➞ 3
-lambda\_func("3") ➞ "3" lambda\_func(True) ➞ True
-
-Notas: Check the
-Resources tab for more information on lambda functions.
-
-Tema: estructuras\_de\_datos
-
-Tema: lenguaje\_fundamentos
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/dTxY9oQuNHAovpDCm)
 
-### Buggy Code
+### Código buggy
 
-The challenge is to try and fix this buggy code, given the inputs True
-and False. See the
+El desafío es intentar corregir este código defectuoso, dadas las entradas `True` y `False`. 
 
-__Ejemplos:__ below for the expected output.
+    def tiene_bugs(buggy_code):
+        if buggyCode:
+            return 'días tristes'
+        elif:
+            return 'es un buen día'
 
-__Ejemplos:__ has\_bugs(True) ➞ "sad days" has\_bugs(False) ➞ "it's a good day" Notes
-Don't overthink this challenge (look at the syntax and correct it).
+Consulte los ejemplos a continuación para ver el resultado esperado.
+
+__Ejemplos:__ 
+
+    tiene_bugs(True) ➞ "días tristes" 
+    tiene_bugs(False) "es un buen día"
+
+Notas: No pienses demasiado en este desafío (mira la sintaxis y corrígela).
 
 Tema: bugs
 
@@ -3624,16 +3668,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/FtwouqMohuumDZh23)
 
-### Indexing with Integer Division
+### Indexación con división de enteros
 
-Given an index using INTEGER division and a list, return the value of
-the list with the given index.
+Dado un índice que usa la división entera y una lista, devuelve el valor de la lista con el índice dado.
 
-__Ejemplos:__ value\_at([1, 2, 3, 4, 5, 6], 10
-// 2) ➞ 6 value\_at([1, 2, 3, 4, 5, 6], 8.0 // 2) ➞ 5 value\_at([1, 2,
-3, 4], 6.535355314 // 2) ➞ 4
+__Ejemplos:__ 
 
-Notas: N/A
+    value_at([1, 2, 3, 4, 5, 6], 10, 2) ➞ 6 # 10 // 2 == 5.0
+    value_at([1, 2, 3, 4, 5, 6], 8.2, 2) ➞ 5 # 8.2 // 2 == 4.0
+    value_at([1, 2, 3, 4], 6.535355314,  2) ➞ 4
+
 
 Tema: listas
 
@@ -3649,14 +3693,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/u5WsfTX8rXb2phrNp)
 
-### Kinetic Energy
+### Energía cinética
 
-Kinetic energy can be calculated with the following formula: KE = 1/2mv²
-m is mass in kg v is velocity in m/s KE is kinetic energy in J Return
-the Kinetic Energy in Joules, given the mass and velocity. For the
-purposes of this challenge, round answers to the nearest integer.
+La energía cinética se puede calcular con la siguiente fórmula: 
+_KE = (1 / 2) m v²_, donde _m_ es la masa en _kg_, _v_ es la velocidad en _m / s_, _KE_ es la energía cinética en en julios, dada la masa y la velocidad.
 
-__Ejemplos:__ calckineticenergy(60, 3) ➞ 270 calck …
+Escriba una función que redondee las respuestas al número entero más cercano.
+
+__Ejemplos:__ 
+
+    calckineticenergy(65, 3) ➞ 292 
+
 
 Tema: matemática
 
@@ -3674,17 +3721,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/hegqYg42GC9FR927g)
 
-### Amazing Edabit!
+### Increíble Acme!
 
-Create a function that takes a string and changes the word amazing to
-not amazing. Return the string without any change if the word acme is
-part of the string.
+Cree una función que tome una cadena y cambie la palabra `asombroso` a
+`no asombroso`. Devuelve la cadena sin ningún cambio si la palabra `acme` es parte de ella.
 
-__Ejemplos:__ amazing\_acme("acme is amazing.") ➞
-"acme is amazing." amazing\_acme("Pedro is amazing.") ➞ "Pedro
-is not amazing." amazing\_acme("Infinity …
+__Ejemplos:__ 
 
-regex
+    asombroso_acme("acme es asombroso.") ➞ "acme es asombroso." 
+    asombroso_acme("Pedro es asombroso.") ➞ "Pedro no es asombroso."
+    asombroso_acme("El infinito no es asombroso") ➞ "El infinito no es no asombroso"
 
 Tema: cadenas
 
@@ -3700,17 +3746,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/MaekZ28kEvH9ZxPga)
 
-### Cube the Square Root
+### La raíz cuadrada al cubo
 
-Create a function that takes a number as an argument and returns the
-square root of that number cubed.
+Cree una función que tome un número como argumento y devuelva el
+raíz cuadrada de ese número al cubo.
 
-__Ejemplos:__ cube\_squareroot(81) ➞ 729
-cube\_squareroot(1646089) ➞ 2111932187 cube\_squareroot(695556) ➞
-580093704
+__Ejemplos:__ 
 
-Notas: All numbers will evenly square root, so don't worry
-about decimal numbers.
+    raizcuadrada_al_cubo(81) ➞ 729.0
+    raizcuadrada_al_cubo(80) ➞ 715.5417527999329
 
 Tema: álgebra
 
@@ -3726,69 +3770,31 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/xNxZx7DDr6BumJLaB)
-
-### Buggy Code (Part 6)
-
-Pedro wants to remove numbers from a given string! Help him by fixing
-the code in the code tab to pass this challenge. Look at the
-
-__Ejemplos:__ below to get an idea of what the function should do.
-
-__Ejemplos:__ remove\_numbers("mubashir1") ➞ "mubashir" remove\_numbers("12ma23tt") ➞
-"matt" remove\_numbers("e1d2a3b4i5t6") ➞ "acme …
-
-Tema: bugs
-
-Tema: formato
-
-interview
-
-Tema: cadenas
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
-
-[](https://edabit.com/challenge/F4iemEeFfsaFoMpAF)
-
-### C String to C++ String (in Python)
-
-This is a list of single characters with an unwanted character at the
-end: ["H", "e", "l", "l", "o", "!", "\\0"] You could also just type
-"Hello!" when initializing a variable, creating the string "Hello!"
-Create a function that will return a string by combining the given
-character list, not including the unwanted final …
-
-Tema: listas
-
-Tema: lenguaje\_fundamentos
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/ZF6vZwPc5He5u5EFe)
 
-### Slightly Superior
+### Ligeramente superior
 
-You will be given two extremely similar lists, but exactly one of the
-items in a list will be valued slightly higher than its counterpart
-(which means that evaluating the value \> the other value will return
-True). Create a function that returns whether the first list is slightly
-superior to the second list. Worked Example …
+Se le darán dos listas extremadamente similares, pero exactamente uno de los elementos de una lista se valorará ligeramente más que su contraparte (lo que significa que al evaluar el valor> el otro valor devolverá True).
+
+Cree una función que devuelva si la primera lista es ligeramente superior a la segunda lista.
+
+__Ejemplo resuelto__
+
+    primero_superior([1, 2, 4], [1, 2, 3]) ➞ True
+    # El par de elementos de cada índice se comparan sucesivamente.
+    # El 1 de la primera lista es el mismo que el 1 de la segunda lista
+    # 2 es lo mismo que 2.
+    # Sin embargo, 4 es mayor que 3, por lo que la lista uno es superior.
+
+__Ejemplos__
+
+    primero_superior(["a", "d", "c"], ["a", "b", "c"]) ➞ True
+    primero_superior(["zebra", "ostrich", "whale"], ["ant", "ostrich", "whale"]) ➞ True
+    primero_superior([1, 2, 3, 4], [1, 2, 4, 4]) ➞ False
+    primero_superior([True, 10, "zebra"], [True, 10, "zebra"]) ➞ False
 
 Tema: lenguaje\_fundamentos
-
-objects
 
 Dificultad: Muy Fácil
 
@@ -3800,16 +3806,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/CHwX2o6rqrBsL4gzr)
 
-### Check If It's a Title String
+### Compruebe si es una cadena de título
 
-Check if a text txt is a title text or not. A title text is one which
-has all the words in the text start with an upper case letter.
+Compruebe si un texto `txt` es un texto de título o no. Un texto de título es aquel que tiene todas las palabras del texto que comienzan con una letra mayúscula.
 
-__Ejemplos:__ check\_title("A Mind Boggling Achievement") ➞ True check\_title("A
-Simple Java Script Program!") ➞ True check\_title("Water is
-transparent") ➞ False
+__Ejemplos:__ 
 
-Notas: N/A
+    check_title("A Mind Boggling Achievement") ➞ True 
+    check_title("A Simple Java Script Program!") ➞ True 
+    check_title("Water is transparent") ➞ False
 
 Tema: formato
 
@@ -3829,14 +3834,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/b36bBpsnzyDbd4mzF)
 
-### Among Us Imposter Formula
+### Fórmula de impostor entre nosotros
 
-Create a function that calculates the chance of being an imposter. The
-formula for the chances of being an imposter is 100 × (i / p) where i is
-the imposter count and p is the player count. Make sure to round the
-value to the nearest integer and return the value as a percentage.
+Crea una función tal que dado el número de impostores y el número de auténticos calcule la posibilidad de ser un impostor. La fórmula para las posibilidades de ser un impostor es `100 * (i / p)` donde `i` es la cantidad de impostores y `p` es la cantidad total de jugadores. Asegúrese de redondear el valor al número entero más cercano y devolver el valor como porcentaje.
 
-__Ejemplos:__ imposter\_formula(1, 10) ➞ "10%" imp …
+__Ejemplos:__
+
+    imposter_formula(1, 10) ➞ "10%"
+    imposter_formula(2, 5) ➞ "40%"
+    imposter_formula(1, 8) ➞ "13%"
+
+Notas: el límite de auntenticos es 10 y el de impostores solo puede llegar hasta 3.
+
 
 Tema: álgebra
 
@@ -3852,13 +3861,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/CAgmHcypCLFDSadGp)
 
-### Is the Dictionary Empty?
+### ¿Está vacío el diccionario?
 
-Write a function that returns True if a dictionary is empty, and False
-otherwise.
+Escriba una función que devuelva Verdadero si un diccionario está vacío y Falso de lo contrario.
 
-__Ejemplos:__ is\_empty({}) ➞ True is\_empty({ "a": 1 }) ➞ False
-Notes N/A
+__Ejemplos:__ 
+
+    is_empty({}) ➞ True 
+    is_empty({ "a": 1 }) ➞ False
+
 
 Tema: lenguaje\_fundamentos
 
@@ -3876,16 +3887,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/aQWEQDoWiNbryG8xs)
 
-### N Tables + 1
+### N Tablas + 1
 
-Create a function that takes a number num and returns the first 10
-multiples of num with 1 added to it, separated by commas.
+Cree una función que tome un número num y devuelva los primeros 10
+múltiplos de num con 1 agregado, separados por comas.
 
-__Ejemplos:__ ntablesplus\_one(7) ➞ "8,15,22,29,36,43,50,57,64,71" ntablesplus\_one(1)
-➞ "2,3,4,5,6,7,8,9,10,11" ntablesplus\_one(3) ➞
-"4,7,10,13,16,19,22,25,28,31"
+__Ejemplos:__ 
 
-Notas: There is no comma after the last n …
+    ntablesplus_one(7) ➞ "8,15,22,29,36,43,50,57,64,71"
+    ntablesplus_one(1) ➞ "2,3,4,5,6,7,8,9,10,11" 
+    ntablesplus_one(3) ➞ "4,7,10,13,16,19,22,25,28,31"
+
+Notas: No hay coma después del último número.
 
 Tema: algoritmos
 
@@ -3905,17 +3918,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/mcC546MLnBjNLXTb8)
 
-### Return Last Item
+### Devolver el último ítem
 
-Create a function that returns the last value of the last item in a list
-or string.
+Cree una función que devuelva el valor del último elemento de una lista
+o cadena.
 
-__Ejemplos:__ last\_ind([0, 4, 19, 34, 50, -9, 2]) ➞ 2
-last\_ind("The quick brown fox jumped over the lazy dog") ➞ "g"
-last\_ind([]) ➞ None
+__Ejemplos:__ 
 
-Notas: Lists/strings will be of varying size. Return
-None if list/string is emtpy.
+    last_ind([0, 4, 19, 34, 50, -9, 2]) ➞ 2
+    last_ind("The quick brown fox jumped over the lazy dog") ➞ "g"
+    last_ind([]) ➞ None
+
+Notas: Las listas / cadenas pueden ser de diferentes tamaños. 
 
 Tema: listas
 
@@ -3933,19 +3947,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/38oPds8QTdn7mhGsR)
 
-### Random Integer Generator
+### Generador de enteros aleatorios
+El desafío es simple. Devuelve un entero aleatorio `N` tal que `a <= N <= B`.
 
-The challange is simple. Return a random integer N such that a \<= N \<=
-b.
+__Ejemplos:__ 
 
-__Ejemplos:__ random\_int(5, 9) ➞ 7 random\_int(5, 9) ➞ 9 random\_int(5,
-9) ➞ 5
+    random_int(5, 9) ➞ 7 
+    random_int(5, 9) ➞ 9 
+    random_int(5, 9) ➞ 5
 
-Notas: Don't forget to return the result. Return value must be an
-integer. If you get stuck on a challenge, find help in the Resources
-tab. If you're really stuck, unlock solut …
-
-Tema: programación\_funcional
+Notas: use la biblioteca `random`.
 
 Tema: números
 
@@ -3957,17 +3968,38 @@ Añadir a favoritos
 
 Añadir a colección
 
+
 [](https://edabit.com/challenge/EMjazHJw24y93kyD4)
 
-### Using Ternary Operators
+### Usando operadores ternarios
 
-The ternary operator (sometimes called Conditional Expressions) in
-python is an alternative to the if... else... statement. It is written
-in the format: resultiftrue if condition else resultiffalse Ternary
-operators are often more compact than multi-line if statements, and are
-useful for simple conditional tests. For exa …
+El operador ternario (a veces llamado Expresiones condicionales) en Python es una alternativa a la declaración if ... else ....
 
-Tema: condiciones
+Está escrito en el formato:
+
+result_if_true if condition else result_if_false
+
+Los operadores ternarios suelen ser más compactos que las instrucciones if de varias líneas y son útiles para pruebas condicionales simples.
+
+Por ejemplo:
+
+    # Using ternary operator.
+    state = "nice" if is_nice else "not nice"
+
+    # Equivalent code using multi-line if statements.
+    if is_nice:
+        state = "nice"
+    else:
+        state = "not nice"
+
+Escribe una función que use el operador ternario para devolver "sí" si b es Verdadero y "no" en caso contrario.
+
+__Ejemplos:__ 
+
+    yeah_nope(True) ➞ "sí"
+    yeah_nope(False) ➞ "no"
+
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -3983,15 +4015,27 @@ Añadir a colección
 
 [](https://edabit.com/challenge/GuoJCiRJkr9CLRqJa)
 
-### Similar Pan
+### Pan similar
 
-Given two lists, which represent two sandwiches, return whether both
-sandwiches use the same type of bread. The bread will always be found at
-the start and end of the list.
+Dadas dos listas, que representan dos sándwiches, devuelva si ambos
+los sándwiches usan el mismo tipo de pan. El pan siempre se encontrará en el principio y el final de la lista.
 
-__Ejemplos:__ hassamebread( ["white bread",
-"lettuce", "white bread"], ["white bread", "tomato", "white bread"] ) ➞
-True hassamebread( ["brown bread", …
+__Ejemplos:__ 
+
+    tienen_mismo_pan(
+        ["pan blanco", "lechuga", "pan blanco"],
+        ["pan blanco", "tomate", "pan blanco"]
+    ) ➞ True
+
+    tienen_mismo_pan(
+        ["pan negro", "pollo", "pan negro"],
+        ["pan blanco", "pollo", "pan blanco"]
+    ) ➞ False
+
+    tienen_mismo_pan(
+        ["tostada", "queso", "tostada"],
+        ["pan negro", "queso", "tostada"]
+    ) ➞ False
 
 Tema: listas
 
@@ -4011,14 +4055,14 @@ Añadir a colección
 
 [](https://edabit.com/challenge/SFE4q5pFTi8TBwj76)
 
-### Upvotes vs Downvotes
+### Votos positivos y negativos
 
-Given a dictionary containing counts of both upvotes and downvotes,
-return what vote count should be displayed. This is calculated by
-subtracting the number of downvotes from upvotes.
+Dado un diccionario que contiene recuentos de votos positivos y negativos, devuelva el recuento de votos que debe mostrarse. Esto es calculado por restando el número de votos negativos de los votos positivos.
 
-__Ejemplos:__ getvotecount({ "upvotes": 13, "downvotes": 0 }) ➞ 13 getvotecount({
-"upvotes": 2, "downvotes": 33 }) ➞ -31 getvotecount({ "upvotes …
+__Ejemplos:__ 
+
+    getvotecount({ "upvotes": 13, "downvotes": 0 }) ➞ 13 
+    getvotecount({ "upvotes": 2, "downvotes": 33 }) ➞ -31 
 
 Tema: listas
 
@@ -4038,16 +4082,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/ove5xwGAKfMxRmcbF)
 
-### Case Insensitive Comparison
+### Comparación entre mayúsculas y minúsculas
 
-Write a function that validates whether two strings are identical. Make
-it case insensitive.
+Escribe una función que valide si dos cadenas son idénticas. No distingue entre mayúsculas y minúsculas.
 
-__Ejemplos:__ match("hello", "hELLo") ➞ True
-match("motive", "emotive") ➞ False match("venom", "VENOM") ➞ True
-match("mask", "mAskinG") ➞ False
-
-Notas: N/A
+__Ejemplos:__ 
+    match("hello", "hELLo") ➞ True
+    match("motive", "emotive") ➞ False 
+    match("venom", "VENOM") ➞ True
+    match("mask", "mAskinG") ➞ False
 
 Tema: lenguaje\_fundamentos
 
@@ -4065,23 +4108,28 @@ Añadir a colección
 
 [](https://edabit.com/challenge/oZAkiD6H7sf7zpZpn)
 
-### Calculate Using String Operation
+### Calcular usando operación de cadena
 
-Create a function that takes two numbers and a mathematical operator and
-returns the result.
+Cree una función que tome dos números y un operador aritmético y
+devuelve el resultado.
 
-__Ejemplos:__ calculate(4, 9, "+") ➞ 13 calculate(12, 5,
-"-") ➞ 7 calculate(6, 3, "\*") ➞ 18 calculate(25, 5, "//") ➞ 5
-calculate(14, 3, "%") ➞ 2 calculate(7, 2, "/") ➞ 3.5
+__Ejemplos:__ 
 
-Notas: Numbers can
-be negative. The only operations used are …
+    calcular(4, 9, "+") ➞ 13
+    calcular(12, 5, "-") ➞ 7
+    calcular(6, 3, "*") ➞ 18
+    calcular(25, 5, "//") ➞ 5
+    calcular(14, 3, "%") ➞ 2
+    calcular(7, 2, "/") ➞ 3.5
+
 
 Tema: álgebra
 
 Tema: matemática
 
 Tema: cadenas
+
+Tema: condicionales
 
 Dificultad: Muy Fácil
 
@@ -4093,15 +4141,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Ti98ADcrmxi3NP68f)
 
-### Fraction Greater Than One
+### Fracción mayor que uno
 
-Given a fraction as a string, return whether or not it is greater than 1
-when evaluated.
+Dada una fracción como una cadena, devuelve si es mayor que 1 o no
+cuando se evalúa.
 
-__Ejemplos:__ greaterthanone("1/2") ➞ False
-greaterthanone("7/4") ➞ True greaterthanone("10/10") ➞ False Notes
-Fractions must be strictly greater than 1 (see example \#3).
+__Ejemplos:__ 
 
+    greaterthanone("1/2") ➞ False
+    greaterthanone("7/4") ➞ True
+    greaterthanone("1/1") ➞ False
+    greaterthanone("10/10") ➞ False 
+    
 Tema: lenguaje\_fundamentos
 
 Tema: matemática
@@ -4120,15 +4171,26 @@ Añadir a colección
 
 [](https://edabit.com/challenge/X4i7hHGhKYbGkcHx6)
 
-### Find the Average of the Letters 📊
+### Hallar el promedio de las letras
 
-Create a function that returns the average of a list composed of
-letters. First, find the number of the letter in the alphabet in order
-to find the average of the list. A = 1 B = 2 C = 3 D = 4 E = 5 average =
-total sum of all numbers / number of item in the set Return the result
-rounded to two decimal points.
+Cree una función que devuelva el promedio de una lista compuesta por letras.Primero, encuentre el número de la letra en el alfabeto para encontrar el promedio de la lista.
 
-__Ejemplos:__ av …
+    A = 1
+    B = 2
+    C = 3
+    D = 4
+    E = 5
+
+- promedio = suma total de todos los números / número de elementos del conjunto
+
+Devuelve el resultado redondeado a dos decimales.
+
+__Ejemplos:__
+
+    average_index(["a", "b", "c", "i"]) ➞ 3.75
+    average_index(["e", "d", "a", "b", "i", "t"]) ➞ 6.83
+    average_index(["y", "o", "u", "a", "r", "e", "t", "h", "e", "b", "e", "s", "t"]) ➞ 12.62
+
 
 Tema: listas
 
@@ -4146,13 +4208,27 @@ Añadir a colección
 
 [](https://edabit.com/challenge/vJrhnikLPK9jhFbyH)
 
-### Format I: Template String
+### Formato: plantillas de cadenas (templates)
 
-For each challenge of this series you do not need to submit a function.
-Instead, you need to submit a template string that can formatted in
-order to get a certain outcome. Write a template string according to the
-following example: Example a = "John" b = "Joe" c = "Jack" template =
-"yourtemplatestringhere" template.format( …
+En  este ejercicio no es necesario hacer una función. En su lugar, debe generar una plantilla que permite formatear una cadena para obtener un resultado determinado.
+
+Escriba una plantilla de acuerdo con el siguiente ejemplo:
+
+__Ejemplos:__
+
+    a = "John"
+    b = "Joe"
+    c = "Jack"
+    template = "su_plantilla_aqui"
+    template.format(a, b, c) ➞ "Los nombres eran: John, Joe y Jack."
+
+__Ayuda__
+
+Una plantilla de cadenas es una cadena que usa llaves `{}` como marcador de posición que luego se puede formatear:
+
+    "hola,  mi nombre es {}".format("John") ➞ "hola,  mi nombre es John."
+
+No pongas ningún valor dentro `{}`.
 
 Tema: formato
 
@@ -4170,14 +4246,19 @@ Añadir a colección
 
 [](https://edabit.com/challenge/T3p8AkyXcE9ALkWbA)
 
-### Sandwich Fillings
+### Rellenos de Sandwich
 
-Given a sandwich (as a list), return a list of fillings inside the
-sandwich. This involves ignoring the first and last elements.
+Dado un sándwich (como una lista), devuelva una lista de rellenos dentro del sándwich. Esto implica ignorar el primer y último elemento.
 
-__Ejemplos:__ get\_fillings(["bread", "ham", "cheese", "ham", "bread"]) ➞ ["ham",
-"cheese", "ham"] get\_fillings(["bread", "sausage", "tomato", "bread"])
-➞ ["sausage", "tomato"] get\_fillings(["bread", …
+__Ejemplos:__
+
+get_fillings(["pan", "jamón", "queso", "jamón", "pan"]) ➞ ["jamón", "queso", "jamón"]
+
+get_fillings(["pan", "salchicha", "tomate", "pan"]) ➞ ["salchicha", "tomate"]
+
+get_fillings(["pan", "lechuga", "tocino", "tomate", "pan"]) ➞ ["lechuga", "tocino", "tomate"]
+
+Notas: el primer y último elemento siempre serán "pan".
 
 Tema: listas
 
@@ -4193,15 +4274,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/jsBijKCgbgeef64fw)
 
-### The Study of Wumbology
+### El estudio de la wumbología
 
-Create a function that flips M's to W's (all uppercase).
+Cree una función que cambie M a W (todo en mayúsculas).
 
-__Ejemplos:__ wumbo("I LOVE MAKING CHALLENGES") ➞ "I LOVE WAKING CHALLENGES"
-wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW" wumbo("WUMBOLOGY") ➞
-"WUWBOLOGY"
+__Ejemplos:__ 
 
-Notas: N/A
+    wumbo("I LOVE MAKING CHALLENGES") ➞ "I LOVE WAKING CHALLENGES"
+    wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW" 
+    wumbo("WUMBOLOGY") ➞ "WUWBOLOGY"
 
 Tema: formato
 
@@ -4219,18 +4300,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/WCm54pW7ME7GxuzJm)
 
-### Find the Total Number of Digits the Given Number Has
+### Hallar el número total de dígitos que tiene el número dado
 
-Create a function that takes a number as an argument and returns the
-amount of digits it has.
+Cree una función que tome un número como argumento y devuelva el
+cantidad de dígitos que tiene.
 
-__Ejemplos:__ finddigitamount(123) ➞ 3
-finddigitamount(56) ➞ 2 finddigitamount(7154) ➞ 4
-finddigitamount(61217311514) ➞ 11 finddigitamount(0) ➞ 1
+__Ejemplos:__ 
 
-Notas: If you
-get stuck on a challenge, find help in the Resources tab. If you're real
-…
+    cantidad_de_digitos(123) ➞ 3
+    cantidad_de_digitos(56) ➞ 2 
+    cantidad_de_digitos(7154) ➞ 4
+    cantidad_de_digitos(61217311514) ➞ 11 
+    cantidad_de_digitos(0) ➞ 1
 
 Tema: matemática
 
@@ -4246,15 +4327,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/7ujabrnbRK9w6Z5xb)
 
-### Convert All List Items to String
+### Convertir todos los elementos de la lista en una cadena
 
-Create a function that takes a list of integers and strings. Convert
-integers to strings and return the new list.
+Cree una función que tome una lista de números enteros y cadenas.Convierta enteros en cadenas y devuelva la nueva lista.
 
-__Ejemplos:__ parse\_list([1, 2,
-"a", "b"]) ➞ ["1", "2", "a", "b"] parse\_list(["abc", 123, "def", 456])
-➞ ["abc", "123", "def", "456"] parse\_list([1, 2, 3, 17, 24, 3, "a",
-"123b"]) ➞ ["1", "2", "3", "17", "24", "3", …
+__Ejemplos:__ 
+
+    parse_list([1, 2, "a", "b"]) ➞ ["1", "2", "a", "b"]
+    parse_list(["abc", 123, "def", 456]) ➞ ["abc", "123", "def", "456"]
+    parse_list([1, 2, 3, 17, 24, 3, "a", "123b"]) ➞ ["1", "2", "3", "17", "24", "3", "a", "123b"]
+    parse_list([]) ➞ []
+
 
 Tema: listas
 
@@ -4272,15 +4355,15 @@ Añadir a colección
 
 ### Count Instances of a Character in a String
 
-Create a function that takes two strings as arguments and returns the
-number of times the first string (the single character) is found in the
-second string.
+Create a function that takes two strings as arguments and returns the number of times the first string (the single character) is found in the second string.
 
-__Ejemplos:__ char\_count("a", "acme") ➞ 1 char\_count("c",
-"Chamber of secrets") ➞ 1 char\_count("b", "big fat bubble") ➞ 4 Notes
-Your output must be case-sensitive (see …
+__Ejemplos:__ 
 
-interview
+    char_count("a", "acme") ➞ 1
+    char_count("c", "Chamber of secrets") ➞ 1
+    char_count("b", "big fat bubble") ➞ 4
+
+Notas: Su salida debe distinguir entre mayúsculas y minúsculas (consulte el segundo ejemplo).
 
 Tema: lenguaje\_fundamentos
 
@@ -4296,43 +4379,20 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/45mCi72kbwTyvx3jk)
-
-### SQL Weather Station Series (Part 1) ☔🌪
-
-Welcome to the series of SQL challenges, Juan has just entered the
-climate research center and he needs to find the cities that start with
-a capital letter B and end with the letter s, and most sort them in
-alphabetical order. His friend tells him that he can use the LIKE method
-to find the matches in the database and the O …
-
-Tema: programación\_funcional
-
-Tema: cadenas
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/3yPvbEjskPuuSSCAC)
 
-### Trimmed Averages
+### Promedios recortados
 
-Given a list of numbers, remove the largest and smallest numbers, and
-calculate the average of the remaining numbers.
+Dada una lista de números, elimine el número más grande y el más pequeño, y calcule el promedio de los números restantes.
 
-__Ejemplos:__ trimmed\_averages([4, 5, 7, 100]) ➞ 6 Average of 5 and 7
-trimmed\_averages([10, 25, 5, 15, 20]) ➞ 15 Average of 10, 15 and 20
-trimmed\_averages([1, 1, 1]) ➞ 1 1
+__Ejemplos:__ 
 
-Notas: Round to the nearest whole numb
-…
+    promedio_recortado([4, 5, 7, 100]) ➞ 6 # Promedio de 5 y 7
+    promedio_recortado([10, 25, 5, 15, 20]) ➞ 15 # Promedio de 10, 15 y 20
+    promedio_recortado([1, 1, 1]) ➞ 1
+
+Notas: Redondea al número entero más próximo
 
 Tema: listas
 
@@ -4350,15 +4410,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/SwERCKpctjJDcDZRQ)
 
-### Simple Letters
+### Letras simples
 
-Create a function that takes two lowercase strings str1 and str2 of
-alphabets from a to z and returns the sorted and longest string
-containing distinct alphabets.
+Cree una función que tome dos cadenas en minúsculas str1 y str2 de letras de la a a la z y devuelva las letras de ambas cadenas ordenadas.
 
-__Ejemplos:__ str1 = "mubashir" str2 =
-"acme" longest\_string(str1, str2) ➞ "abdehimrstu" Contains sorted and
-distinct alphabets of given strings. str1 = "abcdefghi …
+__Ejemplos:__
+
+str1 = "abierto"
+str2 = "cerrado"
+ordenados(str1, str2) ➞ "abcdeiort"
 
 Tema: lenguaje\_fundamentos
 
@@ -4378,17 +4438,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/vxKcxazrqgmNA64db)
 
-### Re-Form the Word
+### Rehacer la palabra
 
-A word has been split into a left part and a right part. Re-form the
-word by adding both halves together, changing the first character to an
-uppercase letter.
+Una palabra se ha dividido en una parte izquierda y una parte derecha.Rehacer la palabra uniendo ambas mitades, cambiando el primer carácter a una letra mayúscula.
 
-__Ejemplos:__ get\_word("seas", "onal") ➞ "Seasonal"
-get\_word("comp", "lete") ➞ "Complete" get\_word("lang", "uage") ➞
-"Language"
+__Ejemplos:__ 
 
-Notas: N/A
+    rehacer("seas", "onal") ➞ "Seasonal"
+    rehacer("comp", "lete") ➞ "Complete" 
+    rehacer("lang", "uage") ➞ "Language"
 
 Tema: formato
 
@@ -4406,14 +4464,20 @@ Añadir a colección
 
 [](https://edabit.com/challenge/kNwkZDtWiBdw3NCnL)
 
-### Check if One Array can be Nested in Another
+### Compruebe si una lista puede ser anidada en otra
 
-Create a function that returns True if the first list can be nested
-inside the second. list1 can be nested inside list2 if: list1's min is
-greater than list2's min. list1's max is less than list2's max.
+Cree una función que devuelva True si la primera lista puede ser anidada en la segunda.
 
-__Ejemplos:__ can\_nest([1, 2, 3, 4], [0, 6]) ➞ True can\_nest([3, 1], [4, 0]) ➞ True
-can\_nest([9, 9, 8], [8, 9]) ➞ False ca …
+`list1` se puede anidar dentro de `list2` si:
+- El mínimo de `list1` es mayor que el mínimo de `list2`.
+- El máximo de `list1` es menor que el máximo de `list2`.
+
+__Ejemplos:__ 
+
+    can_nest([1, 2, 3, 4], [0, 6]) ➞ True
+    can_nest([3, 1], [4, 0]) ➞ True
+    can_nest([9, 9, 8], [8, 9]) ➞ False
+    can_nest([1, 2, 3, 4], [2, 3]) ➞ False
 
 Tema: listas
 
@@ -4429,13 +4493,20 @@ Añadir a colección
 
 [](https://edabit.com/challenge/kZLQZKCKhn2MZNd9t)
 
-### Tile Teamwork Tactics
+### Tácticas de trabajo en equipo
 
-In a board game, a piece may advance 1-6 tiles forward depending on the
-number rolled on a six-sided die. If you advance your piece onto the
-same tile as another player's piece, both of you earn a bonus. Given you
-and your friend's tile number, create a function that returns if it's
-possible to earn a bonus when you roll th …
+En un juego de mesa, una pieza puede avanzar de 1 a 6 posiciones, dependiendo del número tirado en un dado de seis caras. Si avanza su pieza a la misma ficha que la pieza de otro jugador, ambos ganan una bonificación.
+
+Teniendo en cuenta la posición de tu ficha y la de tu amigo, crea una función que devuelva si es posible ganar una bonificación cuando lances los dados.
+
+__Ejemplos__
+
+    possible_bonus(3, 7) ➞ True
+    possible_bonus(1, 9) ➞ False
+    possible_bonus(5, 3) ➞ False
+
+Notas:  no puede moverse hacia atrás (por eso el ejemplo 3 no funciona).
+Si ya estás en la misma casilla, devuelve False, ya que estarías alejándote. Espere solo entradas enteras positivas.
 
 Tema: lenguaje\_fundamentos
 
@@ -4453,16 +4524,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/jijxZNn98jE9C2EWo)
 
-### Automorphic Number
+### Número automórfico
 
-A number is called Automorphic number if its square ends in the same
-digits as the number itself. Create a function that takes a number n and
-returns True if it is an Automorphic number, otherwise False.
+Un número se llama automórfico si su cuadrado termina en el mismo
+número. Por ejemplo 25^2 = 625 termina en  25. Cree una función que tome un número `n` y devuelve `True` si es un número automórfico, de lo contrario `False`.
 
-__Ejemplos:__ automorphic(1) ➞ True automorphic(3) ➞ False 3\^2 = 9 automorphic(6) ➞
-True 6\^2 = 36 (ends with 6)
+__Ejemplos:__ 
 
-Notas: N/A
+    automorphic(1) ➞ True 
+    automorphic(3) ➞ False # 3^2 = 9 
+    automorphic(6) ➞ True # 6^2 = 36 (termina con 6)
+    automorphic(25) ➞ True # 25^2 = 625 (termina con 25)
+
 
 Tema: lógica
 
@@ -4482,14 +4555,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/vbPYZ6RiZEkiz24wx)
 
-### The Modulus Operator Function
+### La función del operador de módulo
 
-Create a function that will work as the modulus operator % without using
-the modulus operator. The modulus operator is a way to determine the
-remainder of a division operation. Instead of returning the result of
-the division, the modulo operation returns the whole number remainder.
+Cree una función que funcione como el operador de módulo `%` sin utilizar el operador de módulo. El operador de módulo es una forma de determinar el resto de una operación de división.
 
-__Ejemplos:__ mod(5, 2) ➞ 1 mod(218, 5) ➞ 3 m …
+__Ejemplos:__
+
+    mod(5, 2) ➞ 1
+    mod(218, 5) ➞ 3
+    mod(6, 3) ➞ 0
 
 Tema: programación\_funcional
 
@@ -4503,17 +4577,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/RejGBWcKsKM2PANip)
 
-### Count Syllables
+### Contar sílabas
 
-Create a function that counts the number of syllables a word has. Each
-syllable is separated with a dash -.
+Crea una función que cuente el número de sílabas que tiene una palabra.Cada la sílaba se separa con un guión -.
 
-__Ejemplos:__ number\_syllables("buf-fet") ➞ 2 number\_syllables("beau-ti-ful") ➞ 3
-number\_syllables("mon-u-men-tal") ➞ 4
-number\_syllables("on-o-mat-o-poe-ia") ➞ 6
+__Ejemplos:__ 
 
-Notas: Don't forget to return
-the result. If you get stuc …
+    numero_silabas("buf-fet") ➞ 2 
+    numero_silabas("beau-ti-ful") ➞ 3
+    numero_silabas("mon-u-men-tal") ➞ 4
+    numero_silabas("on-o-mat-o-poe-ia") ➞ 6
 
 Tema: lenguaje\_fundamentos
 
@@ -4529,14 +4602,22 @@ Añadir a colección
 
 [](https://edabit.com/challenge/n26hBhqdRk9ToTboA)
 
-### Nothing is Nothing?
+### ¿Nada es nada?
 
-Given any number of parameters (which is signified using args syntax),
-return True if none of the variables are falsy/empty\*.
+Dado cualquier número de parámetros (que se indica mediante la sintaxis `*args`),  devuelva `True` si ninguna de las variables es falsa / vacía.
 
-__Ejemplos:__ nothingisnothing(0, False, [], {}) ➞ False nothingisnothing(33, "Hello",
-(True, True, 3)) ➞ True nothingisnothing(True, None) ➞ False Notes
-\*args allows a function to take any number of p …
+__Ejemplos:__
+
+nothing_is_nothing(0, False, [], {}) ➞ False
+
+nothing_is_nothing(33, "Hello", (True, True, 3)) ➞ True
+
+nothing_is_nothing(True, None) ➞ False
+
+Notas:
+- `*args` permite que una función tome cualquier número de parámetros.
+- Falsa se refiere a valores que se evalúan como `False` en un contexto booleano.
+- Esto incluye (pero no se limita a) valores como 0, Falso, None y listas,  tuplas y conjuntos vacíos,.
 
 Tema: estructuras\_de\_datos
 
@@ -4554,14 +4635,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/gd9Yw3H4qGEt5xksN)
 
-### Sort Numbers in Ascending Order
+### Ordenar números en orden ascendente
 
-Create a function that takes a list of numbers and returns a new list,
-sorted in ascending order (smallest to biggest). Sort numbers list in
-ascending order. If the function's argument is None or an empty list,
-return an empty list. Return a new array of sorted numbers.
+Cree una función que tome una lista de números y devuelva una nueva lista, ordenada en orden ascendente (de menor a mayor).
 
-__Ejemplos:__ sortnumsascending([1, 2, 10, 50, 5]) ➞ [1, 2 …
+- Ordenar la lista de números en orden ascendente.
+- Si el argumento de la función es `None` o una lista vacía, devuelve una lista vacía.
+- Devuelve una nueva lista de números ordenados.
+
+__Ejemplos:__
+
+    sort_nums_ascending([1, 2, 10, 50, 5]) ➞ [1, 2, 5, 10, 50]
+    sort_nums_ascending([80, 29, 4, -95, -24, 85]) ➞ [-95, -24, 4, 29, 80, 85]
+    sort_nums_ascending([]) ➞ []
+
+Nota: la entrada de prueba puede ser positiva o negativa.
 
 Tema: listas
 
@@ -4579,15 +4667,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/zFmJTah4E9mxJyoFF)
 
-### Find the Index
+### Encuentra el índice
 
-Create a function that takes a list and a string as arguments and return
-the index of the string.
+Cree una función que tome una lista y una cadena como argumentos y devuelva el índice de la cadena. Devuelve -1 si la cadena no está. 
 
-__Ejemplos:__ find\_index(["hi", "acme", "fgh",
-"abc"], "fgh") ➞ 2 find\_index(["Red", "blue", "Blue", "Green"], "blue")
-➞ 1 find\_index(["a", "g", "y", "d"], "d") ➞ 3 find\_index(["Pineapple",
-"Orange", "Grape", "Apple"], "Pineapp …
+__Ejemplos:__ 
+
+    find_index(["hi", "acme", "fgh", "abc"], "fgh") ➞ 2
+    find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
+    find_index(["a", "g", "y", "d"], "f") ➞ -1
+    find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
 
 Tema: listas
 
@@ -4602,6 +4691,8 @@ Dificultad: Muy Fácil
 Añadir a favoritos
 
 Añadir a colección
+
+[//]: <> (Hasta acá)
 
 [](https://edabit.com/challenge/xPB3jeeNRLqRQ3Dwe)
 
@@ -4692,7 +4783,7 @@ is\_boiling("0F") ➞ False
 Notas: The boiling point of water is 212F in
 fahrenheit and 100C in celsius.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -4716,7 +4807,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -4949,7 +5040,7 @@ Notas: N/A
 
 Tema: algoritmos
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: ciclos
 
@@ -4972,7 +5063,7 @@ Here is a list of all digits (if you are non english speaker): String |
 Number ----------|---------- "one" | 1 "two" | 2 "three" | 3 "four" | 4
 "five" | 5 "six" | 6 "seven" | 7 "eight" | 8 "nin …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: ciclos
 
@@ -5199,7 +5290,7 @@ intwithinbounds(4.5, 3, 8) ➞ False
 Notas: The term "within bounds" means
 a number is considered equal or greater than …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -5225,7 +5316,7 @@ and returns the name of an ancestor (m/f) or descendant (m/f). If the
 number is negative, return the related ancestor. If positive, return the
 related descendant. You are generation …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -5437,7 +5528,7 @@ Notas: a,
 b and, c are the side lengths of the triangulos. Test input will always
 be three positive numbers.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: geometría
 
@@ -5465,7 +5556,7 @@ that takes an argument of any data type and returns 1 if it's truthy and
 
 __Ejemplos:__ is\_tru …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -5493,7 +5584,7 @@ __Ejemplos:__ both(6, 2) ➞ True both(0, 0) ➞ True both(-1, 2) ➞ False both
 
 Notas: Inputs will always be two numbers.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -5816,7 +5907,7 @@ if a given variable name is valid, otherwise return False.
 
 __Ejemplos:__ variable\_valid("result") ➞ True variablevalid …
 
-Tema: condiciones
+Tema: condicionales
 
 regex
 
@@ -5842,7 +5933,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -5868,7 +5959,7 @@ given index.
 __Ejemplos:__ length\_element(range(2, 4), 0) ➞ [2, 2]
 length\_element(range(12, 15, 2), 1) ➞ [2, 14] len …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -6182,7 +6273,7 @@ __Ejemplos:__ sayhellobye("alon", 1) ➞ "Hello Alon" sayhellobye("Tomi", 0) ➞
 Notas: The name you return
 must be capitalized.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -6333,7 +6424,7 @@ Añadir a colección
 Create a function which returns the length of a string, without using
 len().
 
-__Ejemplos:__ length("Hello World") ➞ 11 length("Edabit") ➞ 6
+__Ejemplos:__ length("Hello World") ➞ 11 length("Acme") ➞ 6
 length("wash your hands!") ➞ 16
 
 Notas: N/A
@@ -6472,7 +6563,7 @@ range — and return the number limited to this range. If the number falls
 within the range, the number should be returned. If the number is less
 than the lower limit of the range, the …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -6499,7 +6590,7 @@ hello\_world(15) ➞ "Hello World"
 
 Notas: Don't forget t …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -6707,7 +6798,7 @@ __Ejemplos:__ is\_equal(5, 6) ➞ False is\_equal(1, 1) ➞ True is\_equal("1",
 
 Notas: If there is a string then it should return False.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -6812,7 +6903,7 @@ for the list that you will need for this challenge.
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -7205,7 +7296,7 @@ __Ejemplos:__ pH\_name(5) ➞ "acidic" pH\_name(8.7) ➞ "alkaline" pH\_name(7) 
 
 Notas: Values such as 6.9999 and …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -7400,7 +7491,7 @@ Tema: listas
 
 Tema: flujo
 
-games
+Tema: juegos
 
 Tema: cadenas
 
@@ -7677,7 +7768,7 @@ __Ejemplos:__ hurdle\_jump([1, 2, 3, 4,
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -7723,7 +7814,7 @@ Añadir a colección
 ### Formato markdown
 
 El formato markdown permite formatear las palabras rodeando el texto con caracteres especiales. Por ejemplo, para poner el texto en negrita, rodee el texto con asteriscos dobles, como esta **negrita**. 
-Aquí hay una lista de las posibles opciones de formato en Edabit y cómo aplicarlas:
+Aquí hay una lista de las posibles opciones de formato en Acme y cómo aplicarlas:
 
 negrita: **bold**
 
@@ -7755,11 +7846,11 @@ Ejemplos
 
 `md_format("leaning text", "i") ➞ "_leaning text_"`
 
-`md_format("Edabit", "c") ➞ "`Edabit`"`
+`md_format("Acme", "c") ➞ "`Acme`"`
 
 `md_format("That's a strike!", "s") ➞ "~~That's a strike!~~"`
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: formato
 
@@ -7869,7 +7960,7 @@ __Ejemplos:__ acceptintomovie(14, True) …
 
 Tema: algoritmos
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: validación
 
@@ -7913,7 +8004,7 @@ string in reversed order.
 
 __Ejemplos:__ reverse("Hello World") ➞ "dlroW
 olleH" reverse("The quick brown fox.") ➞ ".xof nworb kciuq ehT"
-reverse("Edabit is really helpful!") ➞ "!lufpleh yllaer si tibadE" Notes
+reverse("Acme is really helpful!") ➞ "!lufpleh yllaer si tibadE" Notes
 You can expect a valid string for all test cases.
 
 Tema: formato
@@ -8152,9 +8243,9 @@ rooks can attack each other if they share the sam …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
-games
+Tema: juegos
 
 Tema: validación
 
@@ -8425,7 +8516,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/smxnbDimHa2oXYocS)
+[](https://edabit.com/challenge/smxnbDimHa2o    ocS)
 
 ### Repeat the Same Item Multiple Times
 
@@ -8672,7 +8763,7 @@ __Ejemplos:__ gettriangulotype([2, 6, 5]) ➞ "scalene" gettr …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: geometría
 
@@ -9124,7 +9215,7 @@ month. Number | Month Name --- | --- 1 | January 2 | February 3 | March
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 dates
 
@@ -9259,7 +9350,7 @@ __Ejemplos:__ dictionary("bu", ["button", "breakfast", "border"]) ➞ ["button"]
 dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞
 ["triplet", "tries", trip"] dictionary("beau", ["pastry", "d …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -9287,7 +9378,7 @@ Notas: You can expect valid strings …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -9349,7 +9440,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/jB3EBCxPmHXYakNJu)
+[](https://edabit.com/challenge/jB3EBCxPmH    akNJu)
 
 ### State Names and Abbreviations
 
@@ -9399,7 +9490,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/kB9HnJbeWS8NXYeWT)
+[](https://edabit.com/challenge/kB9HnJbeWS8N    eWT)
 
 ### Identical Sublists
 
@@ -9413,7 +9504,7 @@ identical elements. count\_identical([ [1, 2], [2, 3], [3, 4], [4, 4] ])
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: ciclos
 
@@ -9565,7 +9656,7 @@ test\_fairness([[4, 3], [2, 4], [1, 2]], [[6, 2], [4, 2], [1, 1], [1,
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Dificultad: Muy Fácil
 
@@ -9698,7 +9789,7 @@ Tema: algoritmos
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -9986,7 +10077,7 @@ opposite of each other. In a second class le …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 objects
 
@@ -10108,7 +10199,7 @@ The score of a single turn is calculated based on the distance from the
 middle. You need to create a function that takes dart location as two
 cartesian coordinates x, y and returns …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -10240,7 +10331,7 @@ string_pairs("airforces") ➞ ["ai", "rf", "or", "ce", "s*"]
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -10424,7 +10515,7 @@ brother in law R2D2 | droid
 __Ejemplos:__ relationtoluke("Darth Vader") ➞
 "Luke, I am your father." relationtoluk …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: formato
 
@@ -10453,7 +10544,7 @@ __Ejemplos:__ damage(40, 5,
 
 Notas: Return "invalid" if damage or speed is negative.
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: matemática
 
@@ -10761,7 +10852,7 @@ __Ejemplos:__ p1 = Person("Samuel", …
 
 classes
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -10813,7 +10904,7 @@ value (True or False). Return True if the amount of x's and o's are the
 same. Return False if they aren't the same amount. The string can
 contain any character. When "x" and "o" are not …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -11098,7 +11189,7 @@ expected" reverse(None) ➞ "boolean expected"
 Notas: Don't forget to
 return the result. If you get stuck on a challenge, fi …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -11208,7 +11299,7 @@ for value in collection if condition] …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -11228,14 +11319,14 @@ Create a function that takes a list of strings and integers, and filters
 out the list so that it returns a list of integers only.
 
 __Ejemplos:__ filter\_list([1, 2, 3, "a", "b", 4]) ➞ [1, 2, 3, 4] filter\_list(["A",
-0, "Edabit", 1729, "Python", "1729"]) ➞ [0, 1729]
+0, "Acme", 1729, "Python", "1729"]) ➞ [0, 1729]
 filter\_list(["Nothing", "here"]) ➞ []
 
 Notas: Don't overthink this …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: ciclos
 
@@ -11395,7 +11486,7 @@ __Ejemplos:__ nextinline([5, 6, 7, 8, 9], 1) ➞ [6, 7, 8, 9, 1] nextinline([7, 
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -11524,9 +11615,9 @@ count(["A", "A", "K", "Q", "Q", "J"]) …
 
 Tema: álgebra
 
-Tema: condiciones
+Tema: condicionales
 
-games
+Tema: juegos
 
 Tema: ciclos
 
@@ -11645,7 +11736,7 @@ gun the fastest. If both are drawn at the same time, return "tie".
 
 __Ejemplos:__ showdown( " Bang! ", " …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -11695,7 +11786,7 @@ simon\_says([1, 2], [5, 5]) ➞ False simon\_says([1, 2 …
 
 Tema: listas
 
-games
+Tema: juegos
 
 Tema: validación
 
@@ -11878,7 +11969,7 @@ symmetrical when it is the same as its reverse.
 __Ejemplos:__ is\_symmetrical(7227) ➞ True is\_symmetrical(12567) ➞ False
 is\_symmetrical(44444444) ➞ True is\_symmetrical(9939) ➞ False …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -12168,7 +12259,7 @@ words) and -1s (incorrectly-typed words). Inputs: User-typed: ["cat",
 
 Tema: listas
 
-games
+Tema: juegos
 
 Tema: ciclos
 
@@ -12325,7 +12416,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -12401,7 +12492,7 @@ up the total number of points for all the tiles in their hand. Each hand
 contains 7 scrabble tiles. Here's an example hand: [ { "tile": "N",
 "score": 1 }, { "tile": "K", "score": 5 …
 
-games
+Tema: juegos
 
 Tema: ciclos
 
@@ -12819,7 +12910,7 @@ __Ejemplos:__ parity\_analysis(243) ➞ True 243 is odd and so is
 9 (2 + 4 + 3) parity\_analysis(12) ➞ False 12 is even but 3 is odd (1 +
 2) parity\_analysis(3) ➞ True 3 is odd …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -12946,7 +13037,7 @@ more on my favorite video platform. Your job is to help me create a
 function that takes a string and checks to see if it contains the
 following words or phrases: "anime" "meme" "vine …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: ciclos
 
@@ -12974,7 +13065,7 @@ Notas: Your function must return 0, 2 or 3.
 
 Tema: algoritmos
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -13478,7 +13569,7 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/r8jXYt5dQ3puspQfJ)
+[](https://edabit.com/challenge/r8j    t5dQ3puspQfJ)
 
 ### Split a String Based on Vowels and Consonants
 
@@ -13491,7 +13582,7 @@ split("What's the time?") ➞ "aeieWht's th tm?"
 
 Notas: Vo …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -13570,7 +13661,7 @@ Tema: álgebra
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: validación
 
@@ -13595,7 +13686,7 @@ count\_all("149990") ➞ { "LETTERS": 0, "DIGITS": 6 }
 
 Notas: Tests c …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: estructuras\_de\_datos
 
@@ -14036,7 +14127,7 @@ Write a function, that replaces all vowels in a string with a specified
 vowel.
 
 __Ejemplos:__ vow\_replace("apples and bananas", "u") ➞ "upplus und
-bununus" vow\_replace("cheese casserole", "o") ➞ "chooso cossorolo"
+bununus" vow\_replace("queso casserole", "o") ➞ "chooso cossorolo"
 vow\_replace("stuffed jalapeno poppers", "e") ➞ "steffed jelepene
 peppers"
 
@@ -14315,7 +14406,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -14992,11 +15083,11 @@ Añadir a colección
 
 Write a function that removes all capitals letters from a sentence
 except the first letter, put quotation marks around the sentence and add
-", whispered Edabit." at the end.
+", whispered Acme." at the end.
 
 __Ejemplos:__ shhh("HI THERE!") ➞ '"Hi
-there!", whispered Edabit.' shhh("tHaT'S Pretty awesOme") ➞ '"That's
-pretty awesome", whispered Edabit.' shhh("") ➞ …
+there!", whispered Acme.' shhh("tHaT'S Pretty awesOme") ➞ '"That's
+pretty awesome", whispered Acme.' shhh("") ➞ …
 
 Tema: formato
 
@@ -15049,7 +15140,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
@@ -15079,7 +15170,7 @@ Tema: algoritmos
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Dificultad: Fácil
 
@@ -15091,9 +15182,9 @@ Añadir a colección
 
 [](https://edabit.com/challenge/yvwdxFcxkT5hiTgfr)
 
-### Edabit Experience Points
+### Acme Experience Points
 
-As you complete questions on Edabit, you gain experience points
+As you complete questions on Acme, you gain experience points
 depending on the difficulty of the question. The points for each
 difficulty are as follows: Difficulty | Experience Points --- | --- Very
 Easy | 5XP Easy | 10XP Medium | 20XP Hard | 40XP Very Hard | 80XP Given
@@ -15127,7 +15218,7 @@ Notes In order to work properly, the …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: flujo
 
@@ -15182,7 +15273,7 @@ __Ejemplos:__ sum\_neg([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: números
 
@@ -15561,7 +15652,7 @@ their corresponding emoticons. word | emoticon --- | --- smile | :D grin
 __Ejemplos:__ emotify("Make me smile") ➞ "Make me :D"
 emotify("Make me grin") ➞ "Make me …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: formato
 
@@ -15614,7 +15705,7 @@ characters are the same, return "Two's …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -15840,7 +15931,7 @@ s] Use his middle snail against Steve …
 
 Tema: listas
 
-games
+Tema: juegos
 
 Tema: validación
 
@@ -15990,7 +16081,7 @@ or if statements. The input error will be 1 to 5: 1 \>\> "Check the fan"
 2 \>\> "Emergency stop" 3 \>\> "Pump Error" 4 \>\> "c" 5 \>\>
 "Temperature Sensor Error" For any other value, return "1 …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: cadenas
 
@@ -16524,7 +16615,7 @@ but population grows by a percentage. So, the food supply would soon be
 insufficient for the population. Your job is to find out when that will
 occur. For this challenge, assume 1 popu …
 
-Tema: condiciones
+Tema: condicionales
 
 dates
 
@@ -16746,9 +16837,9 @@ Añadir a colección
 Create a function that ends the first word of a phrase with "ed",
 essentially verbifying a noun.
 
-__Ejemplos:__ verbify("cheese burger") ➞
-"cheesed burger" verbify("salt water") ➞ "salted water" verbify("orange
-juice") ➞ "oranged juice" verbify("shredded cheese") ➞ "shredded cheese"
+__Ejemplos:__ verbify("queso burger") ➞
+"quesod burger" verbify("salt water") ➞ "salted water" verbify("orange
+juice") ➞ "oranged juice" verbify("shredded queso") ➞ "shredded queso"
 Notes Change only the first word. Note that …
 
 Tema: lenguaje\_fundamentos
@@ -16826,7 +16917,7 @@ days(4, 654) ➞ 30 days(2, 200) ➞ 28 days(2, 1000) ➞ 28
 
 Notas: N/A
 
-Tema: condiciones
+Tema: condicionales
 
 dates
 
@@ -17137,7 +17228,7 @@ button, which is already active, will …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lógica
 
@@ -17165,7 +17256,7 @@ __Ejemplos:__ isspecialarray([2, 7,
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 higher\_order\_functions
 
@@ -17400,7 +17491,7 @@ change\_types([13, "13", "12", "twelve"]) ➞ …
 
 Tema: listas
 
-Tema: condiciones
+Tema: condicionales
 
 Dificultad: Fácil
 
@@ -17444,7 +17535,7 @@ tab you will find a code that is missing a single character in order to
 pass the tests. However, your goal is to submit a function as minimalist
 as possible. Use the tips in the tips se …
 
-Tema: condiciones
+Tema: condicionales
 
 Tema: lenguaje\_fundamentos
 
