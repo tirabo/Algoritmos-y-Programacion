@@ -9,7 +9,7 @@ import time
 
 
 
-def dibujar_triangulo_iso(ang: float, largo: float):
+def triangulo_iso(ang: float, largo: float):
     # post: dibuja un triángulo isosceles con un vértice con angulo interior ang  
     #       y los lados iguales de longitud largo
     #       (la orientación depende de hacia donde esté mirando la tortuga)
@@ -25,20 +25,20 @@ def dibujar_triangulo_iso(ang: float, largo: float):
     right(180 - ang) # queda en la misma orientación que partio
 
 
-def poligono_regular(n: int, lado: float):
+def poligono_regular(n: int, radio: float):
     ang_int = 360 / n
     for i in range(n):
-        dibujar_triangulo_iso(ang_int,lado)
+        triangulo_iso(ang_int, radio)
         right(ang_int)
 
 colormode(255)
-bgcolor('white')
+bgcolor('lightgray')
 shapesize(1, 1, 2)
 pensize(4)
 speed(1)
 
-# dibujar_triangulo_iso(30, 100)
-poligono_regular(6,100)
+# triangulo_iso(15, 250)
+poligono_regular(6,150)
 
 
 done()

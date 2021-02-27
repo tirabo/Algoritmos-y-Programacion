@@ -230,7 +230,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -540,7 +540,7 @@ __Ejemplos:__
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -568,7 +568,7 @@ Tema: condiciones
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -594,7 +594,7 @@ Notas: suponga que se proporciona una entrada.
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -987,7 +987,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1234,7 +1234,7 @@ Añadir a colección
 ### Comparar cadenas por número de caracteres
 
 Cree una función que tome dos cadenas como argumentos y devuelva
-Verdadero o Falso dependiendo de si el número total de caracteres en el
+True o False dependiendo de si el número total de caracteres en el
 la primera cadena es igual al número total de caracteres en la segunda
 cuerda.
 
@@ -1246,7 +1246,7 @@ __Ejemplos:__
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -1290,7 +1290,7 @@ Añadir a colección
 
 ### ¿Está vacía la cadena?
 
-Cree una función que devuelva Verdadero si una cadena está vacía y es Falsa
+Cree una función que devuelva True si una cadena está vacía y es Falsa
 de lo contrario.
 
 __Ejemplos:__ 
@@ -1303,7 +1303,7 @@ Notas: Una cadena que contiene solo espacios en blanco `'  '` no cuenta como vac
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -1329,7 +1329,7 @@ __Ejemplos:__
 
 Tema: recursion
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1390,7 +1390,7 @@ __Ejemplos:__
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1420,7 +1420,7 @@ Tema: listas
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -1437,7 +1437,7 @@ Añadir a colección
 
 ### Suma de lista menor a 100
 
-Dada una lista de números, devuelva Verdadero si la suma de los valores en la lista es menor que 100, de lo contrario, devuelve False.
+Dada una lista de números, devuelva True si la suma de los valores en la lista es menor que 100, de lo contrario, devuelve False.
 
 __Ejemplos:__ 
 
@@ -1510,7 +1510,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1565,7 +1565,7 @@ __Ejemplos:__
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1590,7 +1590,7 @@ __Ejemplos:__
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -1685,7 +1685,7 @@ Añadir a colección
 
 ### Corregir el error: valores frente a tipos de referencia
 
-Cree una función que devuelva Verdadero si dos listas contienen valores idénticos (en las mismas posiciones) y Falso en caso contrario.
+Cree una función que devuelva True si dos listas contienen valores idénticos (en las mismas posiciones) y False en caso contrario.
 
 Para resolver esta pregunta, su amigo escribe el siguiente código:
 
@@ -1744,7 +1744,7 @@ Tema: bugs
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1758,7 +1758,7 @@ Añadir a colección
 
 ### Función de año bisiesto ⌚
 
-Escriba una función que devuelva Verdadero si un año es bisiesto; de lo contrario, devuelve Falso.
+Escriba una función que devuelva True si un año es bisiesto; de lo contrario, devuelve False.
 
 Un año es un "año bisiesto" si dura 366 días, en lugar de 365 en un año típico. Ese día adicional se agrega al final del mes más corto, creando el 29 de febrero.
 
@@ -1893,7 +1893,7 @@ Tema: ciclos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -1922,7 +1922,7 @@ Tema: álgebra
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2007,7 +2007,7 @@ __Ejemplos:__
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -2066,7 +2066,7 @@ Tema: condiciones
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -2290,7 +2290,7 @@ cryptography
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2315,7 +2315,7 @@ __Ejemplos:__
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2342,7 +2342,7 @@ Tema: algoritmos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2378,28 +2378,26 @@ Añadir a favoritos
 
 Añadir a colección
 
-[//]: <> (Hasta acá)
-
 
 [](https://edabit.com/challenge/QM6ZgHxvQCDX9Tzoa)
 
-### Evaluate an Equation
+### Evaluar una ecuación
 
-Create a function that evaluates an equation.
+Crea una función que evalúe una ecuación.
 
-__Ejemplos:__ eq("1+2") ➞ 3
-eq("6/(9-7)") ➞ 3 eq("3+2-4") ➞ 1
+__Ejemplos:__ 
 
-Notas: Don't print, return a value.
-Return the value, not the equation. The method used to solve this
-challenge should not be used in practice. However, it's important to be
-aware of how this functionality works and why …
+        eq("1+2") ➞ 3
+        eq("6/(9-7)") ➞ 3 
+        eq("3+2-4") ➞ 1
+
+Notas: Usar la finción `eval()`. Devuelva el valor, no la ecuación. El método utilizado para resolver esto no debe utilizarse en la práctica. 
 
 Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2411,17 +2409,47 @@ Añadir a colección
 
 [](https://edabit.com/challenge/QJiqdu9QGMmAgK5Fi)
 
-### Check if objOne Is Equal to objTwo
+### Compruebe si `dic_uno` es igual a `dic_dos`
 
-Create a function that checks to see if two object arguments are equal
-to one another. Return True if the objects are equal, otherwise, return
-False.
+Cree una función que verifique si dos diccionarios tienen las mismas claves y valores correspondientes. Devuelve True si los diccionaros son iguales; de lo contrario, devuelve False.
 
-__Ejemplos:__ The first object parameter. obj\_one = { "name":
-"Benny", "phone": "3325558745", "email": "benny@edabit.com" } The second
-object parameter. obj\_two = { "nam …
+__Ejemplos:__ 
 
-objects
+        # Primer diccionario.
+        dic_uno = {
+                "nombre": "Benny",
+                "telefono": "3325558745",
+                "email": "benny@acme.com"
+        }
+
+        # Segundo diccionario.
+        dic_dos = {
+                "nombre": "Jason",
+                "telefono": "9853759720",
+                "email": "jason@acme.com"
+        }
+
+        is_equal(dic_uno, dic_dos) ➞ False
+
+        # Primer diccionario. 
+        dic_uno = {
+                nombre": "Jason",
+                "telefono": "9853759720",
+                "email": "jason@acme.com"
+        }
+
+        # Segundo diccionario.
+        dic_dos = {
+                "nombre": "Jason",
+                "telefono": "9853759720",
+                "email": "jason@acme.com"
+        }
+
+        is_equal(dic_uno, obj_two) ➞ True
+
+Nota: en  ambos casos `dic_uno == dic_dos` es falso. 
+
+Tema: diccionarios
 
 Tema: validación
 
@@ -2435,15 +2463,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/jmn5FDFyLDPA4t6zP)
 
-### Flip the Boolean
+### Cambiar el booleano
 
-Due to a programming concept known as truthiness, certain values can be
-evaluated to (i.e. take the place of) booleans. For example, 1 (or any
-number other than 0) is often equivalent to True, and 0 is often
-equivalent to False. Create a function that returns the opposite of the
-given boolean, as a number.
+Debido a un concepto de programación conocido como _truthiness_, ciertos valores pueden ser evaluados como booleanos. Por ejemplo, 1 (o cualquier número distinto de 0) a menudo es equivalente a True, y 0 es a menudo equivalente a False. Cree una función que dado `True` o `False` devuelve el entero con significado contrario.
 
-__Ejemplos:__ flip\_bo …
+__Ejemplos:__ 
+
+        flip_bool(True) ➞ 0
+        flip_bool(False) ➞ 1
+        flip_bool(1) ➞ 0
+        flip_bool(0) ➞ 1
 
 Tema: condiciones
 
@@ -2463,13 +2492,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Fej5HSzcvHMdm2i4N)
 
-### Maximum Weight Allowed
+### Peso máximo permitido
 
-Create a function that returns True if the combined weight of a car car
-and the weight of the passengers p in the car is less than the maximum
-weight max\_weight the car is allowed to carry. Otherwise, return False.
-The weight of the car and the weight of the passengers are given in
-pounds. The maximum weight is given in kilo …
+Cree una función que devuelva True si `p`, el peso de un automóvil más el peso de los pasajeros en el automóvil es menor que el peso máximo `max_weight` que el automóvil puede llevar. De lo contrario, devuelva False. El peso del automóvil, el peso de los pasajeros y el peso máximo se da en kilogramos. La signatura de la función es
+
+        weight_allowed(max_weight: int, pasajeros: list, auto: int)
+
+__Ejemplos:__ 
+
+        weight_allowed(3000, [150, 201, 75, 88, 195], 1700) ➞ True
+        weight_allowed(3000, [220, 101, 115, 228, 15], 2500) ➞ False
+        weight_allowed(2900, [225, 171, 300], 1850) ➞ True
 
 Tema: lenguaje\_fundamentos
 
@@ -2487,22 +2520,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/yeqgXCk6NTpsexQ5B)
 
-### Word without First Character
+### Palabra sin primer carácter
 
-Create a function that takes a word and returns the new word without
-including the first character.
+Cree una función que tome una palabra y devuelva la nueva palabra sin el primer carácter.
 
-__Ejemplos:__ new\_word("apple") ➞ "pple"
-new\_word("cherry") ➞ "herry" new\_word("plum") ➞ "lum"
+__Ejemplos:__ 
 
-Notas: The input
-is always a valid word.
+        new_word("apple") ➞ "pple"
+        new_word("cherry") ➞ "herry" 
+        new_word("plum") ➞ "lum"
 
 Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2514,15 +2546,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/DgL3Ka5tBwF9SC6zn)
 
-### Solve the Equation
+### Resuelve la ecuación
 
-Create a function that takes an equation (e.g. "1+1"), and returns the
-answer.
+Cree una función que tome una fórmula aritmética (por ejemplo, "1 + 1") y devuelva el
+responder.
 
-__Ejemplos:__ equation("1+1") ➞ 2 equation("7\*4-2") ➞ 26
-equation("1+1+1+1+1") ➞ 5
+__Ejemplos:__ 
 
-Notas: Supported operators are +, -, and \*.
+        equation("1+1") ➞ 2 
+        equation("7\*4-2") ➞ 26
+        equation("1+1+1+1+1") ➞ 5
+
+Notas: los operadores admitidos son `+`, `-`, `\` y `*`. Use el operador `eval()`.
 
 Tema: lenguaje\_fundamentos
 
@@ -2536,39 +2571,31 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/aYTLW5jmRoXhnnzwj)
-
-### SQL Basic Operators
-
-Once you've learned how to select everything from a table in SQL, you
-can start narrowing your search for specific pieces of data with
-conditions. For example, to select the data in a specific column, you
-can use this syntax. SELECT ColumnName FROM Table WHERE OtherColumn ==
-100; In this challenge, fill in the query in the …
-
-Tema: lenguaje\_fundamentos
-
-Tema: lógica
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/Fe4dD4xrdBJjQ7H9a)
 
 ### A Day at the Market
 
-Backpack Bill and Wallet Will set off for the annual festival. As they
-approach the stalls, Bill retorts that he'll be able to bring home more
-stuff than Will. Taking this as a challenge, Will refutes and a
-competition spurs into action. Backpack Bill has an infinite inventory
-space, but a limited number of coins. Wallet Wi …
+Juan Pérez y Pedro López partieron para el festival anual. A medida que se acercan a los puestos, Pérez responde que podrá llevar a casa más cosas que López.
+
+Juan Pérez tiene un espacio de inventario infinito, pero un número limitado de monedas. 
+
+Pedro López tiene una cantidad infinita de monedas, pero un espacio de inventario limitado.
+
+Cree una función que devuelva el nombre del hombre que puede llevar a casa la mayor cantidad de artículos. Los parámetros se dan como sigue:
+
+- La cantidad de dinero de Pérez.
+- Cantidad de espacio de inventario de López.
+- El precio del artículo.
+- El tamaño del artículo.
+
+__Ejemplo resuelto:__ 
+
+        quien_gana_esta noche (40, 95, 5, 10) ➞ "López"
+        # El artículo cuesta 5 monedas y ocupa 10 espacios de inventario.
+        # Pérez solo puede comprar un máximo de 8 artículos (40 monedas // 5 = 8).
+        # López solo puede traer a casa un máximo de 9 artículos.(95 espacios de inventario // 10 = 9).
+        # López es el ganador.
 
 Tema: condiciones
 
@@ -2586,17 +2613,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/5NMfCfBNqw3iiDeeR)
 
-### Sum of Minimums
+### Suma de mínimos
 
-Create a function that takes a 2D list lst returns the sum of the
-minimum value in each row.
+Cree una función que tome una lista de listas y devuelve la suma de
+valor mínimo en cada fila.
 
-__Ejemplos:__ sum\_minimums([ [1, 2, 3, 4, 5], [5,
-6, 7, 8, 9], [20, 21, 34, 56, 100] ] ➞ 26 minimum value of the first row
-is 1 minimum value of the second row is 5 minimum value of the third row
-is 20
+__Ejemplos:__ 
 
-Notas: N/A
+        sum_minimos([ [1, 2, 3, 4, 5], [5, 6, 7, 8, 9], [20, 21, 34, 56, 100] ] ➞ 26 
+        # el valor mínimode la primera fila es 1
+        # el valor mínimo de la segunda fila es 5
+        # el valor mínimo de la tercera fila es 20
 
 Tema: listas
 
@@ -2616,17 +2643,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Jm4eKTENReSiQFw9t)
 
-### Invert a List
+### Invertir una lista
 
-Create a function that takes a list of numbers lst and returns an
-inverted list.
+Cree una función que tome una lista de números y devuelva un
+lista invertida.
 
-__Ejemplos:__ invert\_list([1, 2, 3, 4, 5]) ➞ [-1, -2, -3, -4,
--5] invert\_list([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
-invert\_list([]) ➞ []
+__Ejemplos:__ 
 
-Notas: Don't forget to return the result. If you
-get stuck on a challenge, find help in the Resources tab. I …
+        invertir_lista([1, 2, 3, 4, 5]) ➞ [-1, -2, -3, -4, -5] 
+        invertir_lista([1, -2, 3, -4, 5]) ➞ [-1, 2, -3, 4, -5]
+        invertir_lista([]) ➞ []
 
 Tema: listas
 
@@ -2646,15 +2672,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/pAFxfge35bT3zj4Bs)
 
-### Triangle and Parallelogram Area Finder
+### Buscador de áreas de triángulo y paralelogramo
 
-Write a function that accepts base (decimal), height (decimal) and shape
-("triangle", "parallelogram") as input and calculates the area of that
-shape.
+Escribe una función que acepte base (decimal), altura (decimal) y forma.
+("triángulo", "paralelogramo") como entrada y calcula el área de ese¿a
+forma.
 
-__Ejemplos:__ area\_shape(2, 3, "triangle") ➞ 3 area\_shape(8, 6,
-"parallelogram") ➞ 48 area\_shape(2.9, 1.3, "parallelogram") ➞ 3.77
-Notes Area of a triangle is 0.5 \* b \* h Area …
+__Ejemplos:__ 
+
+        area_forma(2, 3, "triangulo") ➞ 3 
+        area_forma(8, 6, "paralelogramo") ➞ 48 
+        area_forma(2.9, 1.3, "paralelogramo") ➞ 3.77
+
+Notas:
+
+- El área de un triángulo es  `0.5 * b * h`
+- El área de un paralelogramo es `b * h`
+- Suponga que el triángulo y el paralelogramo son las únicas entradas para la forma.
 
 Tema: algoritmos
 
@@ -2674,17 +2708,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/u68XgCZcWGphs5R54)
 
-### Half, Quarter and Eighth
+### Mitad, cuarto y octavo
 
-Create a function that takes a number and return a list of three
-Tema: números: half of the number, quarter of the number and an eighth of the
-number.
+Cree una función que tome un número y devuelva una lista de la mitad del número, un cuarto del número y un octavo del número.
 
-__Ejemplos:__ halfquartereighth(6) ➞ [3, 1.5, 0.75]
-halfquartereighth(22) ➞ [11, 5.5, 2.75] halfquartereighth(25) ➞ [12.5,
-6.25, 3.125]
+__Ejemplos: __ 
 
-Notas: The order of the list is: half, quarter, …
+        medio_cuarto_octavo(6) ➞ [3, 1.5, 0.75]
+        medio_cuarto_octavo(22) ➞ [11, 5.5, 2.75] 
+        medio_cuarto_octavo(25) ➞ [12.5, 6.25, 3.125]
+
+Notas: El orden de la lista es: mitad, cuarto y octavo.
 
 Tema: listas
 
@@ -2700,21 +2734,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/hPaBJ7KJZ8fZtjJgL)
 
-### Edaaaaabit
+### Accccme
 
-Write a function that takes an integer and returns a string with the
-given number of "a"s in Edabit.
+Escriba una función que tome un número entero y devuelva una cadena con el número dado de "c" en Acme.
 
-__Ejemplos:__ howmanytimes(5) ➞ "Edaaaaabit"
-howmanytimes(0) ➞ "Edbit" howmanytimes(12) ➞ "Edaaaaaaaaaaaabit" Notes
-The string must start with "Ed" and end with "bit". You'll only be given
-integers as test input.
+__Ejemplos: __ 
+
+        cuantas_veces(5) ➞ "Acccccme"
+        cuantas_veces(0) ➞ "Ame" 
+        cuantas_veces(12) ➞ "Accccccccccccme" 
+        
+Notas: La cadena debe comenzar con "Ac" y terminar con "me".
 
 Tema: formato
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -2726,16 +2762,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/y9Rans4Ry5oW74cat)
 
-### Find the Smallest and Biggest Numbers
+### Encuentra el número más pequeños y más grande
 
-Create a function that accepts a list of numbers and return both the
-minimum and maximum numbers, in that order (as a list).
+Cree una función que acepte una lista de números y devuelva el
+números mínimo y máximo, en ese orden (como una lista).
 
-__Ejemplos:__ min\_max([1, 2, 3, 4, 5]) ➞ [1, 5] min\_max([2334454, 5]) ➞ [5, 2334454]
-min\_max([1]) ➞ [1, 1]
+__Ejemplos:__ 
 
-Notas: All test lists will have at least one
-element and are valid.
+        min_max([1, 2, 3, 4, 5]) ➞ [1, 5]
+        min_max([2334454, 5]) ➞ [5, 2334454]
+        min_max([1]) ➞ [1, 1]
+
+Notas: Todas las listas de prueba tendrán al menos un entero.
 
 Tema: listas
 
@@ -2753,18 +2791,19 @@ Añadir a colección
 
 [](https://edabit.com/challenge/rR2qf7ELnXoXESiz2)
 
-### Check String for Spaces
+### Comprobar espacios  en la cadena
 
-Create a function that returns True if a string contains any spaces.
+Cree una función que devuelva True si una cadena contiene espacios.
 
-__Ejemplos:__ has\_spaces("hello") ➞ False has\_spaces("hello, world") ➞ True
-has\_spaces(" ") ➞ True has\_spaces("") ➞ False has\_spaces(",./!@\#") ➞
-False
+__Ejemplos:__ 
 
-Notas: An empty string does not contain any spaces. Try doing this
-without RegEx.
+        tiene_espacios("hola") ➞ False 
+        tiene_espacios("hola, mundo") ➞ True 
+        tiene_espacios(" ") ➞ True 
+        tiene_espacios("") ➞ False 
+        tiene_espacios(",. /! @ \# ") ➞ False
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -2778,15 +2817,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/sLb2Fs6aGRQBYAXqQ)
 
-### Number of Stickers
+### Número de pegatinas
 
-Given a Rubik's Cube with a side length of n, return the number of
-individual stickers that are needed to cover the whole cube. Pictures of
-Rubik's Cubes The Rubik's cube of side length 1 has 6 stickers. The
-Rubik's cube of side length 2 has 24 stickers. The Rubik's cube of side
-length 3 has 54 stickers.
+Dado un cubo de Rubik con un lado de longitud n, devuelve el número de
+pegatinas individuales que se necesitan para cubrir todo el cubo. 
 
-__Ejemplos:__ howmanys …
+ - El cubo de Rubik de lado 1 tiene 6 pegatinas.
+ - El cubo de Rubik de lado 2 tiene 24 pegatinas.
+ - El cubo de Rubik de lado 3 tiene 54 pegatinas.
+
 
 Tema: álgebra
 
@@ -2800,43 +2839,19 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/r3T23PTQnZRgjWGFH)
-
-### Many Operators!
-
-Some basic Python operators are +, -, \*, /, and %. In this challenge
-you will be given three parameters, num1, num2, and an operator. Use the
-operator on number 1 and 2.
-
-__Ejemplos:__ operate(1, 2, "+") ➞ 3 1 + 2 = 3
-operate(7, 10, "-") ➞ -3 7 - 10 = -3 operate(20, 10, "%") ➞ 0 20 % 10 =
-0
-
-Notas: There will not be any division …
-
-Tema: lenguaje\_fundamentos
-
-Tema: matemática
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/8rcrBw82sfHyCmJMG)
 
-### Iterable Unpacking
+### Desembalaje iterable
 
-There is an easy way to assign to array values to the nth index by using
-the Rest element. head, tail = [1, 2, 3, 4] print(head) ➞ 1 print(tail)
-➞ 2 But how could I make tail = [2, 3, 4] instead of tail = 2? Add
-something into the code and make this happen.
+Hay una manera fácil de asignar valores usando listas.
 
-Notas: Check the Resources
-tab for more examples.
+        cabeza, cola = [1, 2, 3, 4]
+
+        print(cabeza) ➞ 1
+        print(cola) ➞ 2
+
+Pero, ¿cómo podría hacer `cola == [2, 3, 4]` en lugar de `tail == 2`? Agrega algo en el código y haz que esto suceda.
 
 Tema: listas
 
@@ -2852,13 +2867,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Mm4BaYNPaXHJKWA7M)
 
-### Smash Factor
+### Factor de golpe
 
-Smash factor is a term in golf that relates to the amount of energy
-transferred from the club head to the golf ball. The formula for
-calculating smash factor is ball speed divided by club speed. Create a
-function that takes ball speed bs and club speed cs as arguments and
-returns the smash factor to the nearest hundredth. …
+El factor de golpe es un término en el golf que se relaciona con la cantidad de energía transferida desde la cabeza del palo a la pelota de golf. La fórmula para calcular el factor de impacto es la velocidad de la bola dividida por la velocidad del palo.
+
+Cree una función que tome la velocidad de la bola `bs` y la velocidad del palo `cs` como argumentos y devuelva el factor de impacto con dos decimales.
+
+__Ejemplos:__
+
+        smash_factor (139.4, 93.8) ➞ 1.49
+        smash_factor (181.2, 124.5) ➞ 1.46
+        smash_factor (154,7, 104,3) ➞ 1,48
 
 Tema: lenguaje\_fundamentos
 
@@ -2874,70 +2893,20 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/SKdpWwgKMAwMPHvRK)
-
-### Stack the Boxes
-
-Here's an image of four models. Some of the cubes are hidden behind
-other cubes. Model one consists of one cube. Model two consists of four
-cubes, and so on... Stack the Boxes Write a function that takes a number
-n and returns the number of stacked boxes in a model n levels high,
-visible and invisible.
-
-__Ejemplos:__ stack\_boxe …
-
-Tema: álgebra
-
-Tema: algoritmos
-
-Tema: lógica
-
-Tema: matemática
-
-Tema: números
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
-
-[](https://edabit.com/challenge/hmvH3d8E2pKhCjsu3)
-
-### Make My Way Home
-
-You will be given a list, showing how far James travels away from his
-home for each day. He may choose to travel towards or away from his
-house, so negative values are to be expected. Create a function which
-calculates how far James must walk to get back home.
-
-__Ejemplos:__ distance\_home([2, 4, 2, 5]) ➞ 13 distance\_home([-1, - …
-
-Tema: matemática
-
-Tema: números
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/9kkSyfN62E4At9wcy)
 
-### Return the First and Last Elements in a List
+### Devolver el primer y último elemento de una lista
 
-Create a function that takes a list of elements and return the first and
-last elements as a new list.
+Cree una función que tome una lista de elementos y devuelva el primero y
+último elemento como una nueva lista.
 
-__Ejemplos:__ first\_last([5, 10, 15, 20, 25]) ➞
-[5, 25] first\_last(["edabit", 13, None, False, True]) ➞ ["edabit",
-True] first\_last([None, 4, "6", "hello", None]) ➞ [None, None] Notes
-Test input will always contain a minimum …
+__Ejemplos: __ 
+
+        primero_ultimo([5, 10, 15, 20, 25]) ➞ [5, 25] 
+        primero_ultimo(["acme", 13, None, False, True]) ➞ ["acme", True] 
+        primero_ultimo([1, 4, "6", "hola", Ninguno]) ➞ [1, Ninguno] 
+        
 
 Tema: listas
 
@@ -2955,16 +2924,19 @@ Añadir a colección
 
 [](https://edabit.com/challenge/phEQ7teNSYSQdDHPr)
 
-### AND, OR and NOT
+### AND, OR y NOT
 
-You will need to write three unfinished logic gates. Continue to write
-the three logic gates: AND, OR, and NOT.
+Deberá escribir tres puertas lógicas sin terminar.Continuar escribiendo
+las tres puertas lógicas: AND, OR y NOT.
 
-__Ejemplos:__ AND(1, 1) ➞ 1 AND(0,
-0) ➞ 0 OR(1, 0) ➞ 1 OR(1, 1) ➞ 1 NOT(0) ➞ 1 NOT(1) ➞ 0
+__Ejemplos:__ 
 
-Notas: Check the
-Resourses tab for some help.
+        AND(1, 1) ➞ 1 
+        AND(0, 0) ➞ 0 
+        OR(1, 0) ➞ 1 
+        OR(1, 1) ➞ 1 
+        NOT(0) ➞ 1 
+        NOT(1) ➞ 0
 
 Tema: condiciones
 
@@ -2980,22 +2952,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/xdSKkXQkkMroNzq8C)
 
-### How Many D's Are There?
+### ¿Cuántas D hay?
 
-Create a function that counts how many D's are in a sentence.
+Crea una función que cuente cuántas D hay en una oración.
 
-__Ejemplos:__ count\_d("My friend Dylan got distracted in school.") ➞ 4
-count\_d("Debris was scattered all over the yard.") ➞ 3 count\_d("The
-rodents hibernated in their den.") ➞ 3
+__Ejemplos:__ 
 
-Notas: Your function must be
-case-insensitive. Remember to return the result. Check the …
+        contar_d("Mi amigo Dylan se distrajo en la escuela") ➞ 2
+        contar_d("Los escombros estaban esparcidos por todo el patio.") ➞ 1
+        contar_d("Los roedores hibernaban en su guarida. ") ➞ 2
+
+Notas: tu función no debe distinguir entre mayúsculas y minúsculas. 
 
 Tema: algoritmos
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3007,21 +2980,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/fBzF8TuQQxx6C7dWm)
 
-### WordCharWord
+### Insertar
 
-Create a function that will put the first argument, a character, between
-every word in the second argument, a string.
+Cree una función de dos cadenas como argumentos y reemplace los espacios de la segunda cadena por la primera cadena.
 
-__Ejemplos:__ add("R", "python
-is fun") ➞ "pythonRisRfun" add("\#", "hello world!") ➞ "hello\#world!"
-add("\#", " ") ➞ "\#"
+__Ejemplos:__ 
 
-Notas: Make sure there are no spaces between words
-when returning the function.
+        add("R", "pythonis fun") ➞ "pythonRisRfun"
+        add("\#", "hello world!") ➞ "hello\#world!"
+        add("\#", " ") ➞ "\#"
+
+Notas: Asegúrese de que no haya espacios entre palabras al devolver la función.
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3033,13 +3006,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/hCmiYBGTCXxPoHBio)
 
-### Destructuring Lists III
+### Desestructuración de listas
 
-You can assign variables from lists with destructuring like this: arr =
-["eyes", "nose", "lips", "ears"] eyes, nose, lips, ears = arr If you
-need to change any items in an existing array, you can refer to the
-items with a similar syntax. Just skip over existing items in the list
-using \_ in place of a value name, like so: …
+Puede asignar variables de listas con desestructuración como esta:
+
+        arr = ["ojos", "nariz", "labios", "orejas"]
+        ojos, nariz, labios, orejas = arr
+
+Si no necesita todos los índices de lista almacenados en una variable con nombre, puede usar `_` como variable desechable.
+
+        arr = ["ojos", "nariz", "labios", "orejas"]
+        _, nariz, _, _ = arr
+
+... esto asigna el valor en `arr[1]` a la variable `nariz`. Los valores de cada índice se asignarán a la variable `_` en orden, sobrescribiendo cada valor anterior. `nariz` ahora almacena la cadena  `"nariz"`, y `_` almacena la cadena `"orejas"`.
+
+Utilice la asignación de desestructuración en la lista dada para asignar la cadena `"labios"` a la variable `Labios`. No utilice la indexación de listas ni asigne nombres de variables a ninguna de las otras cadenas.
 
 Tema: listas
 
@@ -3055,13 +3036,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/7ECZC8CBEhy5QkvN3)
 
-### I'd Like a New Shade of Blue, Please
+### Me gustaría un nuevo tono de azul, por favor
 
-I have a bucket containing an amount of navy blue paint and I'd like to
-paint as many walls as possible. Create a function that returns the
-number of complete walls that I can paint, before I need to head to the
-shops to buy more. n is the number of square meters I can paint. w and h
-are the widths and heights of a single w …
+Tengo un cubo que contiene una cantidad de pintura azul marino y me gustaría pintar tantas paredes como sea posible. Cree una función que devuelva la cantidad de paredes completas que puedo pintar, antes de tener que ir a las tiendas para comprar más.
+
+- `n`, el primer argumento, es la cantidad de metros cuadrados que puedo pintar.
+- `w` y `h` son los anchos y alturas de una sola pared en metros.
+
+__Ejemplos: __
+
+        pintar(100, 4, 5) ➞ 5
+        pintar(10, 15, 12) ➞ 0
+        pintar(41, 3, 6) ➞ 2
 
 Tema: matemática
 
@@ -3077,15 +3063,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/fHwaeLLz2vN9XzFft)
 
-### Convert Yen to USD
+### Convertir Yen a USD
 
-Create a function that can turn Yen (Japanese dollar) to USD (American
-dollar).
+Cree una función que pueda convertir el Yen (moneda de Japón) en USD.
 
-__Ejemplos:__ yentousd(1) ➞ 0.01 yentousd(500) ➞ 4.65 yentousd(649)
-➞ 6.04
+__Ejemplos:__ 
 
-Notas: Each Yen to USD conversion is Yen / 107.5
+        yentousd(1) ➞ 0.01 
+        yentousd(500) ➞ 4.65 
+        yentousd(649) ➞ 6.04
+
+Notas: Cada conversión de Yen a USD es Yen / 107.5
 
 Tema: matemática
 
@@ -3101,17 +3089,16 @@ Añadir a colección
 
 [](https://edabit.com/challenge/YSJjPdkwrhQCfnkcZ)
 
-### Repeat String
+### Repetir cadena
 
-Create a function that takes a string txt and a number n and returns the
-repeated string n number of times. If given argument txt is not a
-string, return Not A String !!
+Cree una función que tome una cadena de texto y un número n y devuelva la cadena repetida n número de veces. Si el argumento dado no es un
+cadena, devuelve `No es una cadena`
 
-__Ejemplos:__ repeat\_string("Pedro", 2) ➞
-"PedroPedro" repeat\_string("Matt", 3) ➞ "MattMattMatt"
-repeat\_string(1990, 7) ➞ "Not A String !!"
+__Ejemplos:__ 
 
-Notas: D …
+        repeat_string("Pedro", 2)  "PedroPedro" 
+        repeat_string("Matt", 3) ➞ "MattMattMatt"
+        repeat_string(1990, 7) ➞ "No es una cadena"
 
 Tema: condiciones
 
@@ -3119,7 +3106,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3131,20 +3118,21 @@ Añadir a colección
 
 [](https://edabit.com/challenge/2vvfEodtq4RYsbcrh)
 
-### Broken Bridge
+### Puente roto
 
-Create a function which validates whether a bridge is safe to walk on
-(i.e. has no gaps in it to fall through).
+Cree una función que valide si un puente es seguro para caminar
+(es decir, no tiene huecos por los que pasar).
 
-__Ejemplos:__ issafebridge("\#\#\#\#") ➞ True issafebridge("\#\# \#\#\#\#") ➞ False
-issafebridge("\#") ➞ True
+__Ejemplos:__ 
 
-Notas: You can expect the bridge's ends
-connecting it to its surrounding.
+        issafebridge("####") ➞ True 
+        issafebridge("## ####") ➞ False 
+        issafebridge("#") ➞ True
+
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -3158,14 +3146,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/DbFcBJiRz3GDm6xns)
 
-### Recreating the abs() Function
+### Recreando la función abs()
 
-The abs() function returns the absolute value of a number. This means it
-returns a number's positive value. You can think of it as the distance
-away from zero. Create a function that recreates this functionality.
+La función `abs()` devuelve el valor absoluto de un número. Esto significas que devuelve la distancia del número al 0. Cree una función que recree esta funcionalidad.
 
-__Ejemplos:__ absolute(-5) ➞ 5 absolute(-3.14) ➞ 3.14 absolute(250) ➞ 250
-Notes Tests will only include valid num …
+__Ejemplos:__ 
+
+        absolute(-5) ➞ 5 
+        absolute(-3.14) ➞ 3.14 
+        absolute(250) ➞ 250
 
 Tema: lenguaje\_fundamentos
 
@@ -3183,17 +3172,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/9zsDKijmBffmnk9AP)
 
-### The 3 Programmers Problem
+### El problema de los 3 programadores
 
-You hired three programmers and you (hopefully) pay them. Create a
-function that takes three numbers (the hourly wage of each programmer)
-and returns the difference between the highest-paid programmer and the
-lowest-paid.
+Contrató a tres programadores y (con suerte) les pagará. Crear un
+función que toma tres números (el salario por hora de cada programador)
+y devuelve la diferencia entre el programador mejor pagado y el
+peor pagado.
 
-__Ejemplos:__ programmers(147, 33, 526) ➞ 493 programmers(33,
-72, 74) ➞ 41 programmers(1, 5, 9) ➞ 8
+__Ejemplos:__ 
 
-Notas: …
+        programadores(147, 33, 526) ➞ 493 
+        programadores(33, 72, 74) ➞ 41 
+        programadores(1, 5, 9) ➞ 8
 
 Tema: algoritmos
 
@@ -3211,16 +3201,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/D6Qbh5doP6RvopoF3)
 
-### No Conditionals?
+### ¿No hay condicionales?
 
-Write a function that returns 0 if the input is 1, and returns 1 if the
-input is 0.
+Escriba una función que devuelva 0 si la entrada es 1 y devuelve 1 si la
+la entrada es 0. Solo puede usar operadores aritméticos, es decir la función no usa condicionales.
 
-__Ejemplos:__ flip(1) ➞ 0 flip(0) ➞ 1
+__Ejemplos:__ 
 
-Notas: Try completing this
-challenge without using any: Conditionals Ternary operators Negations
-Bit operators
+        flip(1) ➞ 0 
+        flip(0) ➞ 1
+
+Notas: analice la expresión `(x + 1) * (x -1)`
 
 Tema: flujo
 
@@ -3234,42 +3225,19 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/PE8XQipGLS5bhpLZ5)
-
-### Fix the Errors / Comparing Arrays
-
-Programmer Pete is trying to create a function that returns True if two
-lists share the same length and have identical numerical values at every
-index, otherwise, it will return False. However, the solution his
-function gives is in an unexpected format. Can you fix Pete's function
-so that it behaves as seen in the
-
-__Ejemplos:__ …
-
-Tema: listas
-
-Tema: bugs
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/6Pf5GGG6HnzbB95gf)
 
-### Factors of a Given Number
+### Factores de un número dado
 
-Create a function that finds each factor of a given number n. Your
-solution should return a list of the number(s) that meet this criteria.
+Cree una función que encuentre cada factor de un número n dado. Tu solución debe devolver la lista de los números que cumplen con este criterio.
 
-__Ejemplos:__ find\_factors(9) ➞ [1, 3, 9] 9 has three factors 1, 3 and 9
-find\_factors(12) ➞ [1, 2, 3, 4, 6, 12] find\_factors(20) ➞ [1, 2, 4, 5,
-10, 20] find\_factors(0) ➞ [] 0 has no factor …
+__Ejemplos:__ 
+
+        find_factors(9) ➞ [1, 3, 9] # 9 tiene tres factores 1, 3 y 9
+        find_factors(12) ➞ [1, 2, 3, 4, 6, 12] 
+        find_factors(20) ➞ [1, 2, 4, 5,10, 20] 
+        find_factors(0) ➞ [] 0 no tiene factores
 
 Tema: listas
 
@@ -3287,45 +3255,17 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/CrGp24KwCCxy6Xjq6)
-
-### SQL AND Operator
-
-A supermarket is keeping the record of their customers in SQL Table.
-They have decided to give some discount to their regular customers. They
-need your help to filter out their regular customers. SELECT ColumnName
-FROM Table WHERE OneColumn=50; In this challenge, fill in the query in
-the Code tab to select the data from th …
-
-Tema: programación\_funcional
-
-Tema: lógica
-
-Tema: números
-
-Tema: validación
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/ogjDWJAT2kTXEzkD5)
 
-### Check if All Values Are True
+### Compruebe si todos los valores son verdaderos
 
-Create a function that returns True if all parameters are truthy, and
-False otherwise.
+Cree una función de tres parámetros que devuelva True si todos los parámetros son verdaderos, y False de lo contrario.
 
-__Ejemplos:__ all\_truthy(True, True, True) ➞ True
-all\_truthy(True, False, True) ➞ False all\_truthy(5, 4, 3, 2, 1, 0) ➞
-False
+__Ejemplos:__ 
 
-Notas: Truthy values include non-empty sequences, numbers (except 0
-in every numeric type), and basically every valu …
+        todos_V(True, True, True) ➞ True 
+        todos_V(True, False, True) ➞ False 
 
 Tema: listas
 
@@ -3343,20 +3283,19 @@ Añadir a colección
 
 [](https://edabit.com/challenge/YsYysHoxaHZbv3vS8)
 
-### Return Sole Element in a Set
+### Devolver elemento único en un conjunto
 
-Given a set containing one element, return the element.
+Dado un conjunto que contiene un elemento, devuelve el elemento.
 
-__Ejemplos:__ elementfromset({"edabit"}) ➞ "edabit" elementfromset({True}) ➞ True
-elementfromset({11037}) ➞ 11037
+__Ejemplos:__ 
 
-Notas: Lists, dictionaries, and other
-sets won't be elements because sets won't accept any mutable data types
-as elements.
+        elementfromset({"acme"}) ➞ "acme" 
+        elementfromset({True}) ➞ True
+        elementfromset({11037}) ➞ 11037
+
+Notas: Listas, diccionarios y otros conjuntos no pueden ser elementos porque los conjuntos no aceptan  tipos de datos mutables como elementos.
 
 Tema: lenguaje\_fundamentos
-
-objects
 
 Dificultad: Muy Fácil
 
@@ -3368,15 +3307,17 @@ Añadir a colección
 
 [](https://edabit.com/challenge/iipAZ7sK8C5sRF8K6)
 
-### Drinks Allowed?
+### Bebidas permitidas?
 
-A bartender is writing a simple program to determine whether he should
-serve drinks to someone. He only serves drinks to people 18 and older
-and when he's not on break. Given the person's age, and whether break
-time is in session, create a function which returns whether he should
-serve drinks.
+Un cantinero está escribiendo un programa simple para determinar si debe
+servir bebidas a alguien. Solo sirve bebidas a personas mayores de 18 años y cuando él no está de descanso. Dada la edad de la persona y si está de descanso o no, cree una función que devuelva si debe
+servir bebidas.
 
-__Ejemplos:__ shouldservedrinks(17 …
+__Ejemplos:__ 
+
+        should_serve_drinks(17, True) ➞ False
+        should_serve_drinks(19, False) ➞ True
+        should_serve_drinks(30, True) ➞ False
 
 Tema: condiciones
 
@@ -3396,19 +3337,23 @@ Añadir a colección
 
 [](https://edabit.com/challenge/MNrEx87Bzsg6TfuMY)
 
-### City School Creating IDS
+### Escuela de la ciudad creando IDS
 
-Many IDS (for emails or Google ID) are created using the person's name.
-Create a function that will return a four-character ID using the
-person's first name and last name. The first character will be the first
-letter of the first name but in lowercase. The next three characters
-will be the first three characters, but the fi …
+Muchos IDS (para correos electrónicos o ID de Google) se crean utilizando el nombre de la persona.
+
+Cree una función que devuelva una identificación de cuatro caracteres usando el nombre y apellido de la persona. El primer carácter será la primera letra del nombre pero en minúsculas. Los siguientes tres caracteres serán los primeros tres caracteres del apellido, pero la primera letra estará en mayúscula y las otras dos en minúsculas.
+
+__Ejemplos:__ 
+
+        create_id("mary", "lamb") ➞ "mLam"
+        create_id("John", "SMITH") ➞ "jSmi"
+        create_id("mary", "smith") ➞ "mSmi"
 
 Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3420,17 +3365,15 @@ Añadir a colección
 
 [](https://edabit.com/challenge/vAk9SBqYmj6hXKfrD)
 
-### Convert Kilometers to Miles
+### Convertir kilómetros en millas
 
-In this challenge, you have to implement a function that returns the
-given distance kilometers converted into miles. You have to round the
-result up to the fifth decimal digit.
+Debe implementar una función que devuelva una distancia en kilómetros convertida a millas. Tienes que redondear el resultado hasta el quinto dígito decimal.
 
-__Ejemplos:__ kmtomiles(2) ➞ 1.24274
-kmtomiles(6) ➞ 3.72823 kmtomiles(8) ➞ 4.97097
+__Ejemplos:__ 
 
-Notas: Don't forget to
-return the result. If you get stuck on a chal …
+        kmtomiles(2) ➞ 1.24274
+        kmtomiles(6) ➞ 3.72823 
+        kmtomiles(8) ➞ 4.97097
 
 Tema: lenguaje\_fundamentos
 
@@ -3448,19 +3391,20 @@ Añadir a colección
 
 [](https://edabit.com/challenge/Luhb2KStP2wiX6FMp)
 
-### Find the Amount of Potatoes
+### Hallar la cantidad de papas
 
-Create a function to return the amount of potatoes there are in a
-string.
+Cree una función para devolver la cantidad de papas que hay en un
+cadena.
 
-__Ejemplos:__ potatoes("potato") ➞ 1 potatoes("potatopotato") ➞ 2
-potatoes("potatoapple") ➞ 1
+__Ejemplos:__ 
 
-Notas: N/A
+        papas("papa") ➞ 1 
+        papas("papa papa") ➞ 2 
+        papas("papamanzana") ➞ 1
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3469,6 +3413,8 @@ Dificultad: Muy Fácil
 Añadir a favoritos
 
 Añadir a colección
+
+[//]: <> (Hasta acá)
 
 [](https://edabit.com/challenge/fqn5FcLzEb4RBH9w7)
 
@@ -3538,7 +3484,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3616,7 +3562,7 @@ Tema: programación\_funcional
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3731,16 +3677,16 @@ Añadir a colección
 ### Amazing Edabit!
 
 Create a function that takes a string and changes the word amazing to
-not amazing. Return the string without any change if the word edabit is
+not amazing. Return the string without any change if the word acme is
 part of the string.
 
-__Ejemplos:__ amazing\_edabit("edabit is amazing.") ➞
-"edabit is amazing." amazing\_edabit("Pedro is amazing.") ➞ "Pedro
-is not amazing." amazing\_edabit("Infinity …
+__Ejemplos:__ amazing\_acme("acme is amazing.") ➞
+"acme is amazing." amazing\_acme("Pedro is amazing.") ➞ "Pedro
+is not amazing." amazing\_acme("Infinity …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -3790,7 +3736,7 @@ the code in the code tab to pass this challenge. Look at the
 __Ejemplos:__ below to get an idea of what the function should do.
 
 __Ejemplos:__ remove\_numbers("mubashir1") ➞ "mubashir" remove\_numbers("12ma23tt") ➞
-"matt" remove\_numbers("e1d2a3b4i5t6") ➞ "edabit …
+"matt" remove\_numbers("e1d2a3b4i5t6") ➞ "acme …
 
 Tema: bugs
 
@@ -3798,7 +3744,7 @@ Tema: formato
 
 interview
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -3869,7 +3815,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -4105,7 +4051,7 @@ Notas: N/A
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -4135,7 +4081,7 @@ Tema: álgebra
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4160,7 +4106,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -4212,7 +4158,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4261,7 +4207,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4330,7 +4276,7 @@ Create a function that takes two strings as arguments and returns the
 number of times the first string (the single character) is found in the
 second string.
 
-__Ejemplos:__ char\_count("a", "edabit") ➞ 1 char\_count("c",
+__Ejemplos:__ char\_count("a", "acme") ➞ 1 char\_count("c",
 "Chamber of secrets") ➞ 1 char\_count("b", "big fat bubble") ➞ 4 Notes
 Your output must be case-sensitive (see …
 
@@ -4340,7 +4286,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4362,7 +4308,7 @@ to find the matches in the database and the O …
 
 Tema: programación\_funcional
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -4411,7 +4357,7 @@ alphabets from a to z and returns the sorted and longest string
 containing distinct alphabets.
 
 __Ejemplos:__ str1 = "mubashir" str2 =
-"edabit" longest\_string(str1, str2) ➞ "abdehimrstu" Contains sorted and
+"acme" longest\_string(str1, str2) ➞ "abdehimrstu" Contains sorted and
 distinct alphabets of given strings. str1 = "abcdefghi …
 
 Tema: lenguaje\_fundamentos
@@ -4420,7 +4366,7 @@ Tema: lógica
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4448,7 +4394,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4571,7 +4517,7 @@ the result. If you get stuc …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4638,7 +4584,7 @@ Añadir a colección
 Create a function that takes a list and a string as arguments and return
 the index of the string.
 
-__Ejemplos:__ find\_index(["hi", "edabit", "fgh",
+__Ejemplos:__ find\_index(["hi", "acme", "fgh",
 "abc"], "fgh") ➞ 2 find\_index(["Red", "blue", "Blue", "Green"], "blue")
 ➞ 1 find\_index(["a", "g", "y", "d"], "d") ➞ 3 find\_index(["Pineapple",
 "Orange", "Grape", "Apple"], "Pineapp …
@@ -4647,7 +4593,7 @@ Tema: listas
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4695,7 +4641,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4723,7 +4669,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4748,7 +4694,7 @@ fahrenheit and 100C in celsius.
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -4801,7 +4747,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4827,7 +4773,7 @@ Make sure the code is not case sensitive.
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4903,7 +4849,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4953,7 +4899,7 @@ should not include letters that appear more than once in the stri …
 
 interview
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -4979,7 +4925,7 @@ Notas: The function will not be case
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5032,7 +4978,7 @@ Tema: ciclos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5055,7 +5001,7 @@ same\_case("ketcHUp") ➞ False
 
 Notas: N/A
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -5083,7 +5029,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5100,7 +5046,7 @@ Añadir a colección
 Create a function that returns the selected filename from a path.
 Include the extension in your answer.
 
-__Ejemplos:__ getfilename("C:/Projects/piltests/ascii/edabit.txt") ➞ "edabit.txt"
+__Ejemplos:__ getfilename("C:/Projects/piltests/ascii/acme.txt") ➞ "acme.txt"
 getfilename("C:/Users/johnsmith/Music/Beethoven5.mp3") ➞
 "Beethoven\_5.mp3" get\_filename("ffprobe.exe") ➞ "ffprobe.exe" Notes
 Tests will inclu …
@@ -5154,7 +5100,7 @@ Tema: formato
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5230,7 +5176,7 @@ Tema: números.
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5285,7 +5231,7 @@ Tema: lógica
 
 objects
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5361,7 +5307,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5467,7 +5413,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5482,13 +5428,13 @@ Añadir a colección
 ### Is It a Triangle?
 
 Create a function that takes three numbers as arguments and returns True
-if it's a triangle and False if not.
+if it's a triangulo and False if not.
 
-__Ejemplos:__ is\_triangle(2, 3, 4) ➞
-True is\_triangle(3, 4, 5) ➞ True is\_triangle(4, 3, 8) ➞ False
+__Ejemplos:__ is\_triangulo(2, 3, 4) ➞
+True is\_triangulo(3, 4, 5) ➞ True is\_triangulo(4, 3, 8) ➞ False
 
 Notas: a,
-b and, c are the side lengths of the triangles. Test input will always
+b and, c are the side lengths of the triangulos. Test input will always
 be three positive numbers.
 
 Tema: condiciones
@@ -5595,13 +5541,13 @@ For each challenge of this series you do not need to submit a function.
 Instead, you need to submit a template string that can formatted in
 order to get a certain outcome. Write a template string according to the
 following example: Example template = "yourtemplatestringhere"
-template.format("name", me = "John", him = "Joe" …
+template.format("nombre", me = "John", him = "Joe" …
 
 Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5625,7 +5571,7 @@ Notas: N/A
 
 Tema: programación\_funcional
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5655,7 +5601,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5746,7 +5692,7 @@ Añadir a colección
 Create a function that takes a whole number as input and returns the
 shape with that number's amount of sides. Here are the expected outputs
 to get from these inputs. Inputs | Outputs --- | --- 1 | "circle" 2 |
-"semi-circle" 3 | "triangle" 4 | "square" 5 | "pentagon" 6 | "hexagon" 7
+"semi-circle" 3 | "triangulo" 4 | "square" 5 | "pentagon" 6 | "hexagon" 7
 | "heptagon" 8 | "octagon" 9 | "nonagon" …
 
 Tema: listas
@@ -5827,7 +5773,7 @@ instance, if ABBACCCCAC is written when the gam …
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -5874,7 +5820,7 @@ Tema: condiciones
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -5950,7 +5896,7 @@ Tema: programación\_funcional
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -6086,7 +6032,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -6240,7 +6186,7 @@ Tema: condiciones
 
 Tema: flujo
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -6280,7 +6226,7 @@ Añadir a colección
 
 ### Missing Third Angle
 
-You are given 2 out of 3 angles in a triangle, in degrees. Write a
+You are given 2 out of 3 angles in a triangulo, in degrees. Write a
 function that classifies the missing angle as either "acute", "right",
 or "obtuse" based on its degrees. An acute angle is less than 90
 degrees. A right angle is exactly 90 degrees. An obtuse angle is greater
@@ -6422,7 +6368,7 @@ interview
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -6557,7 +6503,7 @@ Tema: condiciones
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -6659,7 +6605,7 @@ Tema: listas
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7024,7 +6970,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -7048,7 +6994,7 @@ every word lowercase, and the rest uppercase! E …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7074,7 +7020,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -7104,7 +7050,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7193,7 +7139,7 @@ Añadir a colección
 ### Height of an Equilateral Triangle
 
 Create a function that takes the length of the side of an equilateral
-triangle in centimeters and returns the height of the triangle in
+triangulo in centimeters and returns the height of the triangulo in
 millimeters.
 
 __Ejemplos:__ height(2) ➞ 17.3 mm height(5) ➞ 43.3 mm
@@ -7208,7 +7154,7 @@ Tema: geometría
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7236,7 +7182,7 @@ Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7290,7 +7236,7 @@ higher\_order\_functions
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7344,7 +7290,7 @@ is\_identical("kk") ➞ True
 
 Notas: N/A
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -7456,7 +7402,7 @@ Tema: flujo
 
 games
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7482,7 +7428,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7510,7 +7456,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7634,7 +7580,7 @@ random letters, but their letters remai …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7681,7 +7627,7 @@ Tema: lenguaje\_fundamentos
 
 objects
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7762,7 +7708,7 @@ Tema: listas
 
 higher\_order\_functions
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7819,7 +7765,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7873,7 +7819,7 @@ Tema: números
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7899,7 +7845,7 @@ Notas: Each word will contain at least on
 
 Tema: estructuras\_de\_datos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7948,7 +7894,7 @@ join\_path("portion1/", "portion2") ➞ "portion1/portion2" …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -7974,7 +7920,7 @@ Tema: formato
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8019,7 +7965,7 @@ element in the semantic versioning specification …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8047,7 +7993,7 @@ Tema: lógica
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8101,7 +8047,7 @@ is\_between("bookend", "boolean", "boost") ➞ False
 
 Notas: A …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -8180,7 +8126,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8301,7 +8247,7 @@ Añadir a colección
 ### List from Comma-Delimited String
 
 Write a function that turns a comma-delimited list into an array of
-Tema: strings.
+Tema: cadenas.
 
 __Ejemplos:__ to\_array("watermelon, raspberry, orange") ➞
 ["watermelon", "raspberry", "orange"] to\_array("x1, x2, x3, x4, x5") ➞
@@ -8312,7 +8258,7 @@ Notas: Return an empty lis …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8366,7 +8312,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8488,8 +8434,8 @@ argument (item) is the item that needs repeating while the second
 argument (times) is the number of times the item is to be repeated.
 Return the result in a list.
 
-__Ejemplos:__ repeat("edabit", 3) ➞ ["edabit",
-"edabit", "edabit"] repeat(13, 5) ➞ [13, 13, 13, 13 …
+__Ejemplos:__ repeat("acme", 3) ➞ ["acme",
+"acme", "acme"] repeat(13, 5) ➞ [13, 13, 13, 13 …
 
 Tema: listas
 
@@ -8567,12 +8513,12 @@ __Ejemplos:__ smaller\_num("21", "44") ➞ "21" smaller\_num("1500", "1") ➞ "1
 smaller\_num("5", "5") ➞ "5"
 
 Notas: Numbers will be represented as
-Tema: strings, and your output should also be a string. If both numbers tie,
+Tema: cadenas, and your output should also be a string. If both numbers tie,
 return either number. Numbers will be positive. Bonus: See if yo …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8596,7 +8542,7 @@ __Ejemplos:__ is\_valid("59001") ➞ True is\_v …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -8623,7 +8569,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8673,7 +8619,7 @@ Tema: listas
 
 higher\_order\_functions
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8717,12 +8663,12 @@ Añadir a colección
 
 ### What Type of Triangle?
 
-Create a function which returns the type of triangle, given the side
+Create a function which returns the type of triangulo, given the side
 lengths. Return the following values if they match the criterea. No
 sides equal: "scalene" Two sides equal: "isosceles" All sides equal:
-"equilateral" Less or more than 3 sides given: "not a triangle"
+"equilateral" Less or more than 3 sides given: "not a triangulo"
 
-__Ejemplos:__ gettriangletype([2, 6, 5]) ➞ "scalene" gettr …
+__Ejemplos:__ gettriangulotype([2, 6, 5]) ➞ "scalene" gettr …
 
 Tema: listas
 
@@ -8832,7 +8778,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -8882,7 +8828,7 @@ Tema: ciclos
 
 objects
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9005,7 +8951,7 @@ Notas: N/A
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9076,7 +9022,7 @@ Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9206,7 +9152,7 @@ __Ejemplos:__ is\_prefix("automation",
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -9232,7 +9178,7 @@ index\_shuffle("holiday") ➞ "hldyoia" index\_shuffle("mayb …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9315,7 +9261,7 @@ dictionary("tri", ["triplet", "tries", "trip", "piano", "tree"]) ➞
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9343,7 +9289,7 @@ Tema: listas
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -9368,7 +9314,7 @@ same\_ascii("EdAbIt", "EDABIT") ➞ False
 Notas: If you need some help with
 ASCII codes, check the Resources tab for an …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -9391,7 +9337,7 @@ __Ejemplos:__ check\_ending("abc", "bc") ➞ True check\_ending("abc", "d") ➞ 
 check\_ending("samurai", "zi") ➞ False check\_ending("feminine", "nine")
 ➞ True check\_ending("convention", "tio") ➞ F …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -9670,7 +9616,7 @@ Notas: N/A
 
 Tema: listas
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9776,7 +9722,7 @@ non-vegetarian skewers and 1 vegetarian skewer (the one in the middle).
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9805,7 +9751,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9857,7 +9803,7 @@ Tema: lógica
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9881,7 +9827,7 @@ interview
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -9909,7 +9855,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -9990,7 +9936,7 @@ Tema: listas
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10062,14 +10008,14 @@ Given two strings, repeatedly cycle through all of the letters in the
 first string until it is the same length as the second string.
 
 __Ejemplos:__ string\_cycling("abc", "hello") ➞ "abcab" string\_cycling("programming",
-"edabit") ➞ "progra" string\_cycling("ha", "good morning") ➞
+"acme") ➞ "progra" string\_cycling("ha", "good morning") ➞
 "hahahahahaha"
 
 Notas: All tests will include valid …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10093,7 +10039,7 @@ Tema: programación\_funcional
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10142,7 +10088,7 @@ Notas: You don't need to write a function, just the
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10288,7 +10234,7 @@ __Ejemplos:__
 
 string\_pairs("mubashir") ➞ ["mu", "ba", "sh","ir"] 
 
-string_pairs("edabit") ➞ ["ed", "ab", "it"]
+string_pairs("acme") ➞ ["ed", "ab", "it"]
 
 string_pairs("airforces") ➞ ["ai", "rf", "or", "ce", "s*"]
 
@@ -10298,7 +10244,7 @@ Tema: condiciones
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10352,7 +10298,7 @@ Tema: lenguaje\_fundamentos
 
 recursion
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Muy Fácil
 
@@ -10380,7 +10326,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10484,7 +10430,7 @@ Tema: formato
 
 objects
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10588,7 +10534,7 @@ __Ejemplos:__ mood\_today("happy") ➞ "Today, I am feeling happy" mood\_today("
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10690,7 +10636,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10715,7 +10661,7 @@ argument will always be a single character. Not all …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10763,7 +10709,7 @@ Notas: N/A
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -10791,7 +10737,7 @@ be in lower case.
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10847,7 +10793,7 @@ Tema: formato
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10873,7 +10819,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -10901,7 +10847,7 @@ exactly o …
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -10946,7 +10892,7 @@ Añadir a colección
 ### Hamming Distance
 
 Hamming distance is the number of characters that differ between two
-Tema: strings. To illustrate: String1: "abcbba" String2: "abcbda" Hamming
+Tema: cadenas. To illustrate: String1: "abcbba" String2: "abcbda" Hamming
 Distance: 1 - "b" vs. "d" is the only difference. Create a function that
 computes the hamming distance between two strings.
 
@@ -10954,7 +10900,7 @@ __Ejemplos:__ hamming\_distance("abcde", "bcdef") ➞ 5 hamming\_dist …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11007,7 +10953,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11054,7 +11000,7 @@ Tema: listas
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11129,7 +11075,7 @@ valid strings. Don't worry about spaces, specia …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11208,7 +11154,7 @@ indexofcaps("STRIKE") ➞ [0, 1, 2, 3, 4, 5] indexofcaps("sUn") ➞ …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11293,7 +11239,7 @@ Tema: condiciones
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11386,8 +11332,8 @@ Añadir a colección
 ### Triangular Number Sequence
 
 This Triangular Number Sequence is generated from a pattern of dots that
-form a triangle. The first 5 numbers of the sequence, or dots, are: 1,
-3, 6, 10, 15 This means that the first triangle has just one dot, the
+form a triangulo. The first 5 numbers of the sequence, or dots, are: 1,
+3, 6, 10, 15 This means that the first triangulo has just one dot, the
 second one has three dots, the third one has 6 dots and so on. Write a
 function that gives the number of dots …
 
@@ -11468,10 +11414,10 @@ Añadir a colección
 Create the function that takes a list of dictionaries and returns the
 sum of people's budgets.
 
-__Ejemplos:__ get\_budgets([ { "name": "John",
-"age": 21, "budget": 23000 }, { "name": "Steve", "age": 32, "budget":
-40000 }, { "name": "Martin", "age": 16, "budget": 2700 } ]) ➞ 65700
-get\_budgets([ { "name": "John", "age": …
+__Ejemplos:__ get\_budgets([ { "nombre": "John",
+"age": 21, "budget": 23000 }, { "nombre": "Steve", "age": 32, "budget":
+40000 }, { "nombre": "Martin", "age": 16, "budget": 2700 } ]) ➞ 65700
+get\_budgets([ { "nombre": "John", "age": …
 
 Tema: listas
 
@@ -11495,7 +11441,7 @@ Create a function that takes a string and returns a string with its
 letters in alphabetical order.
 
 __Ejemplos:__ alphabet\_soup("hello") ➞
-"ehllo" alphabet\_soup("edabit") ➞ "abdeit" alphabet\_soup("hacker") ➞
+"ehllo" alphabet\_soup("acme") ➞ "abdeit" alphabet\_soup("hacker") ➞
 "acehkr" alphabet\_soup("geek") ➞ "eegk" alphabet\_soup("javascript") ➞
 "aacijprstv"
 
@@ -11505,7 +11451,7 @@ Tema: formato
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11701,7 +11647,7 @@ __Ejemplos:__ showdown( " Bang! ", " …
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11775,7 +11721,7 @@ __Ejemplos:__ society\_name(["Adam", "Sarah",
 
 Tema: listas
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -11798,7 +11744,7 @@ sensitive. is\_isogram("Consecutive") ➞ Fals …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -11843,15 +11789,15 @@ Añadir a colección
 Create a function that takes a string and returns True or False,
 depending on whether the characters are in order or not.
 
-__Ejemplos:__ isinorder("abc") ➞ True isinorder("edabit") ➞ False isinorder("123") ➞
+__Ejemplos:__ isinorder("abc") ➞ True isinorder("acme") ➞ False isinorder("123") ➞
 True isinorder("xyzz") ➞ True
 
 Notas: You don't have to handle empty
-Tema: strings.
+Tema: cadenas.
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -11879,7 +11825,7 @@ Notas: N/A
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12040,7 +11986,7 @@ Tema: flujo
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12146,7 +12092,7 @@ Tema: listas
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12250,7 +12196,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12302,7 +12248,7 @@ Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12329,7 +12275,7 @@ interview
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -12513,7 +12459,7 @@ Tema: listas
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12618,7 +12564,7 @@ __Ejemplos:__ stepstoconvert("abC") ➞ 1
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12799,7 +12745,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12851,7 +12797,7 @@ Tema: números
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12905,7 +12851,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -12932,7 +12878,7 @@ Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13004,7 +12950,7 @@ Tema: condiciones
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13160,7 +13106,7 @@ __Ejemplos:__ inator\_inator("Shrink …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13186,7 +13132,7 @@ substring of the output …
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -13211,7 +13157,7 @@ __Ejemplos:__ isvowelsandwich("cat") ➞ True isvowelsandwich("ear") ➞ …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -13263,7 +13209,7 @@ LiTTLe meRmaiD" ascii\_capitalize("Oh what a b …
 
 higher\_order\_functions
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13338,7 +13284,7 @@ starts at midnight." correct\_sp …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13575,7 +13521,7 @@ Notes N/A
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13599,7 +13545,7 @@ special\_reverse("peter piper picked pickled pe …
 
 higher\_order\_functions
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -13706,7 +13652,7 @@ challenge is designed to use RegEx only.
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -13761,7 +13707,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -13842,7 +13788,7 @@ Notas: Conversion should be case insensitive (see example \#2).
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14098,7 +14044,7 @@ Notas: All words will be lowercase. Y is …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14221,7 +14167,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14249,7 +14195,7 @@ interview
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14297,7 +14243,7 @@ Notas: Input is a string.
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14323,7 +14269,7 @@ Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14349,7 +14295,7 @@ characters of the string. challenge2(txt) ➞ "vwxyz" Last 5 charac …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14456,7 +14402,7 @@ Tema: lenguaje\_fundamentos
 
 recursion
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14483,7 +14429,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14506,7 +14452,7 @@ ascii\_sort(["majorly", "then"]) ➞ "then" ascii\_sort(["vict …
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14530,7 +14476,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14553,7 +14499,7 @@ get\_type(true) ➞ "bool" get\_type([]) ➞ "list" get\_type(None) ➞
 
 Notas: N/A
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -14605,7 +14551,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14623,7 +14569,7 @@ Regular Expressions (RegEx) are a powerful tool used to match or search
 for a pattern in a string. To use them in Python you need to import the
 re module. You can do this by adding the following line at the top of
 your file: import re Write a regular expression that will match any file
-located within the "users/edabit" dir …
+located within the "users/acme" dir …
 
 Tema: listas
 
@@ -14857,11 +14803,11 @@ Usually when you sign up for an account to buy something, your credit
 card number, phone number or answer to a secret question is partially
 obscured in some way. Since someone could look over your shoulder, you
 don't want that shown on your screen. Hence, the website masks these
-Tema: strings. Your task is to create a function th …
+Tema: cadenas. Your task is to create a function th …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -14889,7 +14835,7 @@ Tema: formato
 
 Tema: lógica
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -14988,7 +14934,7 @@ Tema: bugs
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15056,7 +15002,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15157,7 +15103,7 @@ Tema: listas
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15263,7 +15209,7 @@ Notas: N/A
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -15339,7 +15285,7 @@ __Ejemplos:__ worm\_length("----------") ➞ "100 mm." worm\_length("") ➞
 Notas: Return "invalid" if an
 empty string is given or if the string has c …
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15390,7 +15336,7 @@ Tema: estructuras\_de\_datos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15412,7 +15358,7 @@ build. construct\_fence("\$50,000") ➞ "HHHHHHHHHHHHH …
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15435,7 +15381,7 @@ was ostracized.") ➞ ["ostrich", "ostracized"] …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15456,7 +15402,7 @@ or not. The function should return a boolean (True or False value).
 
 __Ejemplos:__ is\_palindrome("Neuquen") ➞ True …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -15514,7 +15460,7 @@ Tema: matemática
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -15556,13 +15502,13 @@ Añadir a colección
 
 ### Find the Other Two Side Lengths
 
-Given the shortest side of a 30 60 90 triangle you have to find out the
+Given the shortest side of a 30 60 90 triangulo you have to find out the
 other 2 sides, (return the longest side, medium-length side).
 
 __Ejemplos:__ returnsides(1) ➞ (2, 1.73) returnsides(2) ➞ (4, 3.46) returnsides(3) ➞
 (6, 5.2)
 
-Notas: 30 60 90 triangles always follow this rule, let's say the
+Notas: 30 60 90 triangulos always follow this rule, let's say the
 shortest side length is x units, th …
 
 Tema: geometría
@@ -15621,7 +15567,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15644,7 +15590,7 @@ Function should not be case sensitive (as …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -15670,7 +15616,7 @@ Tema: listas
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -15819,7 +15765,7 @@ Tema: formato
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15846,7 +15792,7 @@ regex
 
 Tema: ordenación
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15872,7 +15818,7 @@ Tema: listas
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -15918,7 +15864,7 @@ implement a function that returns: "Safe" if n is not apocalyptic.
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -16002,7 +15948,7 @@ Tema: matemática
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16024,7 +15970,7 @@ __Ejemplos:__ count\_towers([ [" \#\# "], ["\#\# \#\# \#\#"], ["\#\# \#\# \#\# \
 
 Tema: listas
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16046,7 +15992,7 @@ or if statements. The input error will be 1 to 5: 1 \>\> "Check the fan"
 
 Tema: condiciones
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16145,7 +16091,7 @@ Tema: listas
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16170,7 +16116,7 @@ may be additional brackets, but the city will always b …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16237,7 +16183,7 @@ index\_filter([0, 1, 5, 7, 4, 2], "Cry me a river") ➞ "cream …
 
 Tema: listas
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16265,7 +16211,7 @@ Tema: formato
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16293,7 +16239,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16372,7 +16318,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16452,7 +16398,7 @@ a "leftover" string (see example \#3).
 
 Tema: listas
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16556,7 +16502,7 @@ __Ejemplos:__ isstrangepair("rati …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -16638,7 +16584,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16687,7 +16633,7 @@ Notas: N/A
 
 Tema: matemática
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16734,7 +16680,7 @@ __Ejemplos:__ DECIMATOR("1234567890") ➞ …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16809,7 +16755,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16834,7 +16780,7 @@ Tema: listas
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -16931,7 +16877,7 @@ Tema: lenguaje\_fundamentos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17062,7 +17008,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17087,7 +17033,7 @@ Notas: Duplicate characters are case sensitive. The input …
 
 interview
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -17115,7 +17061,7 @@ be 5 digits long exactly and only contain …
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17162,7 +17108,7 @@ many sub-lists.
 
 __Ejemplos:__ de\_nest([[[[[[[[[[[[3]]]]]]]]]]]]) ➞ 3
 de\_nest([[[[[[[True]]]]]]]) ➞ True
-de\_nest([[[[[[[[[[[[[[[[["edabit"]]]]]]]]]]]]]]]]]) ➞ "edabit" Notes
+de\_nest([[[[[[[[[[[[[[[[["acme"]]]]]]]]]]]]]]]]]) ➞ "acme" Notes
 You only need to retrieve one element.
 
 Tema: listas
@@ -17277,7 +17223,7 @@ Tema: números
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17302,7 +17248,7 @@ Tema: formato
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17376,7 +17322,7 @@ __Ejemplos:__ noddy\_function("FANTASTIC") ➞ True
 noddy\_function("wonderful") ➞ False noddy\_function("NODDY") ➞ False
 Notes …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -17404,7 +17350,7 @@ Tema: lógica
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17524,7 +17470,7 @@ the words in the string, while keeping the wo …
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17544,7 +17490,7 @@ first letter the following word (and not case sensitive, so "A" would be
 the same as "a"). The following would be a smooth sentence "Carlos swam
 masterfully" because "Carlos" ends wit …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -17573,7 +17519,7 @@ Tema: flujo
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17599,7 +17545,7 @@ Tema: listas
 
 higher\_order\_functions
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17646,7 +17592,7 @@ length of 10 characters. A single space c …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17668,7 +17614,7 @@ letter.
 __Ejemplos:__ alliteration\_correct("She swam to the shore.") ➞ True
 All words \>= 4 letters long begins with "s" …
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -17696,7 +17642,7 @@ Tema: ciclos
 
 regex
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17714,7 +17660,7 @@ Create a function that always returns True for every item in a given
 list. However, if an element is the word "flick", switch to always
 returning the opposite boolean value.
 
-__Ejemplos:__ flick\_switch(["edabit",
+__Ejemplos:__ flick\_switch(["acme",
 "flick", "eda", "bit"]) ➞ [True, False, False, False]
 flick\_switch(["flick", 11037, 3.14, 53]) ➞[False, False, False, …
 
@@ -17796,7 +17742,7 @@ Tema: formato
 
 Tema: lenguaje\_fundamentos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17844,7 +17790,7 @@ to the end of the binary string. Cre …
 
 Tema: números
 
-Tema: strings
+Tema: cadenas
 
 Tema: validación
 
@@ -17874,7 +17820,7 @@ __Ejemplos:__ be …
 
 Tema: formato
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
@@ -17973,7 +17919,7 @@ some helpful guidance.
 
 __Ejemplos:__ construct\_deconstruct("Hello") ➞ [ "H",
 "He", "Hel", "Hell", "Hello", "Hell", "Hel", "He", "H" ]
-construct\_deconstruct("edabit") ➞ [ …
+construct\_deconstruct("acme") ➞ [ …
 
 Tema: listas
 
@@ -17981,7 +17927,7 @@ Tema: lenguaje\_fundamentos
 
 Tema: ciclos
 
-Tema: strings
+Tema: cadenas
 
 Dificultad: Fácil
 
