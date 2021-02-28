@@ -56,19 +56,16 @@ def julia():
         for j in range(W):
             k = 0 # cantidad de iteraciones
             z = coord_2_complex(i,j)
-            while k <= N_max:
+            while k <= N_max and abs(z) <= R_max:
                 k = k + 1
                 z = z**2 + C
-                if abs(z) > R_max:
-                    # print( abs(z) /R_max, i,j,'N')
-                    break
             # A esta altura abs(z) <= R_max y  se colorea z según lo grande que es  o abs(Zz > R_max y se colorea negro
             if abs(z) <= R_max:
                 color0 = round(max (50, 255 - 255 * 10 * abs(z) / R_max))
                 #color0 = round(255*math.log10(max (50, 255 - 255 * 10 * abs(z) / R_max))/math.log10(255))
                 color1 = color0 #random.randrange(255)
                 color2 = color0
-                print(color0)
+                # print(color0)
             else:
                 color0 = 0
                 color1 = 0
