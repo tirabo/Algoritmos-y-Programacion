@@ -3973,7 +3973,7 @@ Añadir a colección
 
 ### Usando operadores ternarios
 
-El operador ternario (a veces llamado Expresiones condicionales) en Python es una alternativa a la declaración if ... else ....
+El operador ternario (a veces llamado expresiones condicionales) en Python es una alternativa a la declaración if ... else ....
 
 Está escrito en el formato:
 
@@ -3983,10 +3983,10 @@ Los operadores ternarios suelen ser más compactos que las instrucciones if de v
 
 Por ejemplo:
 
-    # Using ternary operator.
+    # Uso del operador ternario.
     state = "nice" if is_nice else "not nice"
 
-    # Equivalent code using multi-line if statements.
+    # Código equivalente utilizando múltiples líneas.
     if is_nice:
         state = "nice"
     else:
@@ -4696,15 +4696,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/xPB3jeeNRLqRQ3Dwe)
 
-### Find None in a List
+### No encuentra None en una lista
 
-Create a function to find None in a list of numbers. The return value
-should be the index where None is found. If None is not found in the
-list, then return -1.
+Cree una función para encontrar `None` en una lista de números. El valor de retorno
+debe ser el índice donde se encuentra `None`. Si `None` no se encuentra en la lista, devolver -1.
 
-__Ejemplos:__ find\_none([1, 2, None]) ➞ 2
-find\_none([None, 1, 2, 3, 4]) ➞ 0 find\_none([0, 1, 2, 3, 4]) ➞ -1
-Notes None will occur in the input list only once.
+__Ejemplos:__ 
+
+    find_none([1, 2, None]) ➞ 2
+    find_none([None, 1, 2, 3, 4]) ➞ 0
+    find_none([0, 1, 2, 3, 4]) ➞ -1
+
+Notas:  `None` ocurrirá en la lista solo una vez.
 
 Tema: listas
 
@@ -4718,42 +4721,21 @@ Añadir a favoritos
 
 Añadir a colección
 
-[](https://edabit.com/challenge/3Erjtkxt2eAW9yd5a)
-
-### Format II: Argument Indices
-
-For each challenge of this series you do not need to submit a function.
-Instead, you need to submit a template string that can formatted in
-order to get a certain outcome. Write a template string according to the
-following example: Example a = "John" b = "Joe" template =
-"yourtemplatestringhere" template.format(a, b) ➞ "J …
-
-Tema: formato
-
-Tema: lenguaje\_fundamentos
-
-Tema: cadenas
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/wBuZ2Qp9okzGeZc6e)
 
-### Who's in First Place?
+### ¿Quién está en primer lugar?
 
-Create a function that takes a string road and returns the car that's in
-first place. The road will be made of "=", and cars will be represented
-by letters in the alphabet.
+Cree una función que lleve tome una cadena que representa un camino con autos y devuelva el auto que está en
+primer lugar. El camino estará hecho de "=", y los autos estarán representados por letras en el alfabeto.
 
-__Ejemplos:__ first\_place("====b===O===e===U=A==") ➞ "A" first\_place("e==B=Fe") ➞
-"e" first\_place("proeNeoOJGnfl") ➞ "l"
+__Ejemplos:__ 
 
-Notas: Return None if there are
+    first\_place("====b===O===e===U=A==") ➞ "A" 
+    first\_place("e==B=Fe") ➞"e" 
+    first\_place("proeNeoOJGnfl") ➞ "l"
+
+Notas: Devolver `None` si no hay Return None if there are
 no …
 
 Tema: lenguaje\_fundamentos
@@ -12149,7 +12131,7 @@ __Ejemplos:__ getstudentnames({
 "Student 1" : "Steve", "Student 2" : "Becky", "Student 3" : "John" }) ➞
 ["Becky", "John", "Steve"]
 
-Notas: Don't forget to return your result. If
+Notas: No olvide devolver su resultado. If
 you get stuck on a challenge, …
 
 Tema: listas
@@ -12172,9 +12154,9 @@ Añadir a colección
 
 ### Say Hello to Guests
 
-In this exercise you will have to: Take a list of names. Add "Hello" to
-every name. Make one big string with all saludos. The solution should
-be one string with a comma in between every "Hello (Name)".
+En este ejercicio deberá: Tomar una lista de nombres.Agregar "Hola" a
+cada nombre.Haz una cuerda grande con todos los saludos.La solución debe
+ser una cadena con una coma entre cada "Hola (nombre)".
 
 __Ejemplos:__ greet\_people(["Joe"]) ➞ "Hello Joe" greet\_people(["Angela", "Joe"]) ➞
 "Hello Angela, Hello Joe" greet\_people …
