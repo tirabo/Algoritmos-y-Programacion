@@ -4,7 +4,7 @@ import time
 import random
 
 # JUEGO DE LA VIDA TOROIDAL
-# El juego se desrrolla en un rectángulo WIDTH x HEIGHT donde lo de arriba se continúa con lo de abajo y lo de la izquierda con lo de la derecha 
+# El juego se desarrolla en un rectángulo WIDTH x HEIGHT donde lo de arriba se continúa con lo de abajo y lo de la izquierda con lo de la derecha 
 # (es un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente).
 # Las reglas son 
 # 1) Cada pixel de tablero es 1 o 0 (negro o blanco). 

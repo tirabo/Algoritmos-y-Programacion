@@ -8,9 +8,9 @@ Funciones que podés usar:
 - color(color)
 - forward(units)
 - backward(units)
-- speed(speed), speed debe ser un número entre 1 y 14
-- right(degrees)
-- left(degrees)
+- speed(speed), speed debe ser un número entre 1 y 13
+- right(degrees) # sexagesimales
+- left(degrees) # sexagesimales
 - face(degrees), para apuntar en cierta dirección
 - penup(), levanta el lápiz, para poder desplazarse sin dejar huella
 - pendown(), apoya el lápiz, para volver a dibujar después de haberlo levantado
@@ -19,10 +19,10 @@ Funciones que podés usar:
 - showturtle(), para que se lo vuelva a ver
 """
 bgcolor('green')
-color('white')
-shapesize(1, 1, 2)
-pensize(3)
+color('black')
+pensize(5)
 speed(1)
+
 forward(100)
 left(120)
 forward(100)
@@ -36,4 +36,17 @@ left(120)
 forward(100)
 left(120)
 forward(100)
+
+
+for _ in range(3):
+    forward(100)
+    left(120)
+    forward(100)
+    left(120)
+    forward(100)
+    left(120)
 done()
+
+
+
+
