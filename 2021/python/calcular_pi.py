@@ -1,13 +1,7 @@
 import random
 import math
-from  decimal import *
 
-print(getcontext())
-print(Decimal(0.1)+Decimal(0.1)+Decimal(0.1))
-print(1/10+1/10+1/10)
-print(1/10)
-
-# Calcular pi  en forma probabilística
+# Calcular pi  en forma probabilística (Montecarlo)
 
 # Se "dibuja" (en forma imaginaria) un cuadrado de 1 x 1 y se tiran puntos (x,y)  en el cuadrado
 # es decir 0 <= x, y <= 1. 
@@ -24,7 +18,34 @@ def calcular_pi_prob(n: int ) -> float:
             en_circulo = en_circulo + 1
     return en_circulo /(0.5**2 * n)
 
-# print(calcular_pi_prob(1000000))
+print(calcular_pi_prob(1000000))
+
+
+def  calcular_pi_poligono_cir(n: int) -> float:
+    # pre: n >=3
+    # post: calcula pi haciendo el polígono regular de n-lados circunscripto a una circunferencia de radio 1
+    angulo = 2 * math.pi / n
+    base = 2 * math.sin(angulo / 2)
+    perimetro = n * base # parecido  2 * PI * radio = 2 * PI
+    return perimetro / 2
+
+print(calcular_pi_poligono_cir(1000))
+
+def  calcular_pi_poligono_ins(n: int) -> float:
+    # pre: n >=3
+    # post: calcula pi haciendo el polígono regular de n-lados circunscripto a una circunferencia de radio 1
+    angulo = 2 * math.pi / n
+    altura =  math.cos(angulo / 2)
+    base = 2 * (1 - altura**2)**0.5
+    perimetro = n * base # parecido  2 * PI * radio = 2 * PI
+    return perimetro / 2
+
+print(calcular_pi_poligono_ins(1000))
+
+print(calcular_pi_poligono_cir(1000) - calcular_pi_poligono_ins(1000))
+
+
+
 
 def calcular_pi_Newton(n: int ) -> float:
     # ver: http://www.pi314.net/eng/newton.php

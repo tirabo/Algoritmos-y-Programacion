@@ -54,7 +54,7 @@ print(factorial(5))
 
 
 
-"""
+
 bgcolor('green')
 color('black')
 pensize(5)
@@ -70,4 +70,4 @@ dibujar_cuadrado(100)
 
 
 done()
-"""
+
