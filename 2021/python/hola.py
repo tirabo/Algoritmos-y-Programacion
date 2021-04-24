@@ -1,3 +1,13 @@
+import turtle
+import buscando_a_tientas as bat
+
+
+bat.dibujar_grilla(6, 6)
+boton = bat.ubicar_boton()
+bat.encontrar_al_azar(boton)
+turtle.done()
+
+"""
 def es_bisiesto(anho: int) -> bool:
   if anho > 0 and anho % 4 == 0:
     result = True
@@ -44,3 +54,4 @@ def dias_desde_epoch(fecha: tuple) -> int:
 print(dias_desde_epoch((1,1,1972))) # 1096 (dos años + un año bisiesto: 365 * 2 + 366)
 #print(dias_desde_epoch((31,12,1973))) # 1461 (tres años + un año bisiesto: 365 * 3 + 366) 
 #print(dias_desde_epoch((12,4,2021))) # 18730 (el lunes pasado)
+"""

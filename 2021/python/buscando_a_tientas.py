@@ -24,9 +24,10 @@ Funciones que podés usar:
 - pos(), return the turtle’s current location (x,y) (as a Vec2D vector).
 """
 
-ANCHO, ALTO = 16, 16
 
-def dibujar_grilla():
+def dibujar_grilla(ancho = 16, alto = 16):
+    global ANCHO, ALTO
+    ANCHO, ALTO = ancho,  alto
     hideturtle()
     bgcolor('green')
     color('black')
@@ -136,7 +137,7 @@ def encontrar_al_azar(boton: tuple[int, int]):
 
 
 def main():
-    dibujar_grilla()
+    dibujar_grilla(10, 10)
     boton = ubicar_boton()
     encontrar_al_azar(boton)
     done()
@@ -145,5 +146,4 @@ def main():
 # RUN
  
 if __name__ == '__main__':
-    ANCHO, ALTO = 10, 10
     main()
