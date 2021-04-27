@@ -21,7 +21,7 @@ import random
 # Tutorial sencillo para dibujar con pygame: https://sites.cs.ucsb.edu/~pconrad//cs5nm/topics/pygame/drawing/index.html
 # Sitio útil (tutorial, ejemplos, etc) para pygame:  http://programarcadegames.com/
 
-# FUNCIONES
+# CLASES
 
 class Ventana:
     def __init__(self, titulo = '', width = 120, height = 80, e = 10, colors =  ['gray', 'black']):
@@ -79,6 +79,7 @@ class Ventana:
         print(self.__tblr[2])
 
         
+# FUNCIONES 
 
 def num_vecinos(ventana: Ventana, x: int, y: int):
     # post: devuelve la cantidad de vecinos de ventana.tblr[x][y] que valen ventana.colors[1] (0 <= x < ventana.width, 0 <= y < ventana.height)
