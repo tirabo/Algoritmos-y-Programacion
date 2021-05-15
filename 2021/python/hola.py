@@ -1,12 +1,58 @@
 import turtle
 import buscando_a_tientas as bat
 
+def raiz_bab(x: float, error: float) -> float:
+    # pre: x >= 0
+    assert x >= 0, 'El número debe ser >= 0'
+    # post: devuelve b tal |x - b**2| < error
+    b, h = x, 1 
+    while abs(x - b**2) >= error:
+            # inv: b * h == x and ¿h**2 + b**2 <= 2*x? 
+            b, h = (h + b) /2,  2 * x / ( h + b)
+            # print(h, b, x - b**2)
+    return b 
 
+def raiz_bab_int(x: float, error: float) -> float:
+    # pre: x >= 0
+    assert x >= 0, 'El número debe ser >= 0'
+    # post: devuelve b tal |x - b**2| < error
+    b, h = x, 1 
+    while abs(x - b**2) >= error:
+            # inv: b * h == x and ¿h**2 + b**2 <= 2*x? 
+            if b - h > 1000:
+                b, h, y = int(b), int(h), int(x)
+                b, h = (h + b) // 2,  2 * x // ( h + b)
+            else:
+                b, h = (h + b) /2,  2 * x / ( h + b)
+            # print(h, b, x - b**2)
+    return b 
+x = 10**55+23344
+print(raiz_bab_int(x, 0.1), x**0.5)
+
+#for i in range(26):
+#  print(raiz_bab(i**2, 1))
+
+def raiz_bab2(x: float, n: int) -> float:
+    b, h = x, 1
+    for i in range(n):
+        b, h = (h + b) /2,  2 * x / ( h + b)
+    return b 
+
+# for i in range(26):
+#    print(raiz_bab2(i, 100))
+
+# print(raiz_bab(120888888888888888888887, 0.001))
+"""
+for i  in range(1000):
+    print(raiz_bab(10**14 + i, 0.1))
+"""
+
+"""
 bat.dibujar_grilla(6, 6)
 boton = bat.ubicar_boton()
 bat.encontrar_al_azar(boton)
 turtle.done()
-
+"""
 """
 def es_bisiesto(anho: int) -> bool:
   if anho > 0 and anho % 4 == 0:

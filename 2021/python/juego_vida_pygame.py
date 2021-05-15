@@ -1,5 +1,23 @@
 import pygame
 from pygame.locals import *
+
+
+def main():
+    screen = pygame.display.set_mode((400, 200)) # crea ventana
+    pygame.display.set_caption("Probando")
+    screen.fill('green')
+    pygame.display.update()
+    while True:
+        for eventos in pygame.event.get():
+            if eventos.type == QUIT:
+                exit(0) # apretando "x" arriba derecha cierra la ventana
+    return 0
+# RUN
+ 
+if __name__ == '__main__':
+    main()
+
+exit(0)
 import time
 import random
 
