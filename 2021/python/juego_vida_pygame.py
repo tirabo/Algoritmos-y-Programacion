@@ -1,23 +1,5 @@
 import pygame
 from pygame.locals import *
-
-
-def main():
-    screen = pygame.display.set_mode((400, 200)) # crea ventana
-    pygame.display.set_caption("Probando")
-    screen.fill('green')
-    pygame.display.update()
-    while True:
-        for eventos in pygame.event.get():
-            if eventos.type == QUIT:
-                exit(0) # apretando "x" arriba derecha cierra la ventana
-    return 0
-# RUN
- 
-if __name__ == '__main__':
-    main()
-
-exit(0)
 import time
 import random
 
@@ -131,7 +113,7 @@ def juego_vida(tablero, screen, patron, grilla = False):
                 exit(0) # apretando "x" arriba derecha cierra la ventana
         for i in range(WIDTH):
             for j in range(HEIGHT):
-                 tablero_orig[i][j] = tablero[i][j]
+                tablero_orig[i][j] = tablero[i][j]
         for i in range(WIDTH):
             for j in range(HEIGHT):
                 if tablero_orig[i][j] == 1 and (num_vecinos(tablero_orig,i,j) == 2 or num_vecinos(tablero_orig,i,j) == 3):
@@ -157,6 +139,6 @@ def main():
     return 0
 
 # RUN
- 
+
 if __name__ == '__main__':
     main()
