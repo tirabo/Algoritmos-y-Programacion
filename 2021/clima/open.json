@@ -1,0 +1,21 @@
+diccionario = {
+	'message': 'accurate', 
+	'cod': '200', 
+	'count': 1, 
+	'list': 
+		[
+			{
+				'id': 3860259, 
+				'name': 'Córdoba', 
+				'coord': {'lat': -31.4135, 'lon': -64.1811}, 
+				'main': {'temp': 17.93, 'feels_like': 17.14, 'temp_min': 16.11, 'temp_max': 19, 'pressure': 1019, 'humidity': 52}, 
+				'dt': 1622642942, 
+				'wind': {'speed': 1.54, 'deg': 300}, 
+				'sys': {'country': 'AR'}, 
+				'rain': None, 
+				'snow': None, 
+				'clouds': {'all': 0}, 
+				'weather': [{'id': 800, 'main': 'Clear', 'description': 'cielo claro', 'icon': '01d'}]
+			}
+		]
+}

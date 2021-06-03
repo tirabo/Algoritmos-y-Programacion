@@ -1,0 +1,22 @@
+[ 	
+	{
+		'DATE': '2003', 
+		'STATION': 'US1COJF0003', 
+		'SNOW': '     1554', 
+		'DP01_ATTRIBUTES': 'N', 
+		'PRCP_ATTRIBUTES': ' ,N', 
+		'DSNW': '        16', 
+		'SNOW_ATTRIBUTES': ' ,N', 
+		'PRCP': '    353.1', 
+		'DP10': '        29', 
+		'DP10_ATTRIBUTES': 'N', 
+		'DP01': '        84', 
+		'DSNW_ATTRIBUTES': 'N'
+	},
+	{'DATE': '2004', 'STATION': 'US1COJF0003', 'SNOW': '     1336', 'DP01_ATTRIBUTES': 'N', 'PRCP_ATTRIBUTES': ' ,N', 'DSNW': '        18', 'SNOW_ATTRIBUTES': ' ,N', 'PRCP': '    535.2', 'DP10': '        53', 'DP10_ATTRIBUTES': 'N', 'DP01': '        96', 'DSNW_ATTRIBUTES': 'N'},
+	{'DATE': '2005', 'STATION': 'US1COJF0003', 'PRCP_ATTRIBUTES': ' ,N', 'PRCP': '    392.7'},
+	{'DATE': '2007', 'STATION': 'US1COJF0003', 'SNOW': '     1880', 'DP01_ATTRIBUTES': 'N', 'PRCP_ATTRIBUTES': ' ,N', 'DSNW': '        26', 'SNOW_ATTRIBUTES': ' ,N', 'PRCP': '    498.7', 'DP10': '        52', 'DP10_ATTRIBUTES': 'N', 'DP01': '        96', 'DSNW_ATTRIBUTES': 'N'},
+	{'DATE': '2008', 'STATION': 'US1COJF0003', 'SNOW': '     1156', 'DP01_ATTRIBUTES': 'N', 'PRCP_ATTRIBUTES': ' ,N', 'DSNW': '        17', 'SNOW_ATTRIBUTES': ' ,N', 'PRCP': '    323.1', 'DP10': '        32', 'DP10_ATTRIBUTES': 'N', 'DP01': '        74', 'DSNW_ATTRIBUTES': 'N'},
+	{'DATE': '2009', 'STATION': 'US1COJF0003', 'DP01_ATTRIBUTES': 'N', 'PRCP_ATTRIBUTES': ' ,N', 'PRCP': '    548.5', 'DP10': '        46', 'DP10_ATTRIBUTES': 'N', 'DP01': '       103'},
+	{'DATE': '2010', 'STATION': 'US1COJF0003', 'DP01_ATTRIBUTES': 'N', 'PRCP_ATTRIBUTES': ' ,N', 'PRCP': '    347.3', 'DP10': '        36', 'DP10_ATTRIBUTES': 'N', 'DP01': '        75'}
+]
