@@ -4696,7 +4696,7 @@ Añadir a colección
 
 [](https://edabit.com/challenge/xPB3jeeNRLqRQ3Dwe)
 
-### No encuentra None en una lista
+### No encuentra `None` en una lista
 
 Cree una función para encontrar `None` en una lista de números. El valor de retorno
 debe ser el índice donde se encuentra `None`. Si `None` no se encuentra en la lista, devolver -1.
@@ -4754,16 +4754,18 @@ Añadir a colección
 
 [](https://edabit.com/challenge/dBqLSk6qvudNdZrSx)
 
-### Is the Water Boiling?
+### ¿Está el agua hirviendo?
 
-Create a function that determines if the temp of the water is considered
-boiling or not. temp will be measured in fahrenheit and celsius.
+Cree una función que determine si el agua está hirviendo o no.La temperatura se medirá en celsius o fahrenheit.
 
-__Ejemplos:__ is\_boiling("212F") ➞ True is\_boiling("100C") ➞ True
-is\_boiling("0F") ➞ False
+__Ejemplos:__ 
 
-Notas: The boiling point of water is 212F in
-fahrenheit and 100C in celsius.
+    is_boiling("212F") ➞ True 
+    is_boiling("100C") ➞ True
+    is_boiling("0F") ➞ False
+
+Notas:El punto de ebullición de agua es de 212F en
+Fahrenheit y 100C en Celsius.
 
 Tema: condicionales
 
@@ -4781,68 +4783,38 @@ Añadir a colección
 
 [](https://edabit.com/challenge/2TdPmSpLpa8NWh6m9)
 
-### Minimal IV: if-elif-else Inferno
+### Encontrar la bomba
 
-Check the principles of minimalist code in the [intro to the first
-challenge] (https://edabit.com/challenge/2XLjgZhmACph76Pkr). In the Code
-tab you will find a code that is missing a single character in order to
-pass the tests. However, your goal is to submit a function as minimalist
-as possible. Use the tips in the tips se …
+Cree una función que encuentre la palabra "bomba" en la cadena dada.Si fue encontrada, vuelve "¡Cuidado!!!", de lo contrario, vuelve "No hay bomba, relájate.".
 
-Tema: condicionales
+__Ejemplos:__ 
 
-Tema: lenguaje\_fundamentos
+    bomba("Hay una bomba.") ➞ "¡Cuidado!!!" 
+    bomba("Oye, ¿pensaste que hay una bomba?") ➞ "¡Cuidado!!!" 
+    bomba("Esto va a boom !!!") ➞"No hay bomba, relájate."
 
-Tema: lógica
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
-
-[](https://edabit.com/challenge/xA8FJW2cwjAnJ2ptt)
-
-### Find the Bomb
-
-Create a function that finds the word "bomb" in the given string. If
-found, return "Duck!!!", otherwise, return "There is no bomb, relax.".
-
-__Ejemplos:__ bomb("There is a bomb.") ➞ "Duck!!!" bomb("Hey, did you think
-there is a bomb?") ➞ "Duck!!!" bomb("This goes boom!!!") ➞ "There is no
-bomb, relax."
-
-Notas: "bomb" may appear …
 
 Tema: lenguaje\_fundamentos
 
-regex
+Tema: regex
 
 Tema: cadenas
 
 Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/MWM3f4aKjPacPt2zw)
 
-### Modifying the Last Character
+### Modificando el último carácter
 
-Create a function which makes the last character of a string repeat n
-number of times.
+Cree una función que que repita el último carácter de una cadena `n` veces.
 
-__Ejemplos:__ modify\_last("Hello", 3) ➞ "Hellooo"
-modify\_last("hey", 6) ➞ "heyyyyyy" modify\_last("excuse me what?", 5) ➞
-"excuse me what?????"
+__Ejemplos:__ 
 
-Notas: Test will include numbers and punctuation.
-Make sure the code is not case sensitive.
+    modificar_ultimo("Hola", 3) ➞ "Holaaa"
+    modificar_ultimo("Adios", 6) ➞ "Adiossssss" 
+    modificar_ultimo("¿Disculpe?", 5) ➞ "Disculpe?????"
+
+Notas: La prueba incluirá números y puntuación. Asegúrese de que el código no sea sensible a mayúsculas y minúsculas.
 
 Tema: lenguaje\_fundamentos
 
@@ -4852,19 +4824,20 @@ Dificultad: Muy Fácil
 
 **
 
-Añadir a favoritos
-
-Añadir a colección
-
 [](https://edabit.com/challenge/2f9vjBiynkBtF3TBi)
 
-### Equality Check
+### Control de igualdad
 
-In this challenge, you must verify the equality of two different values
-given the parameters a and b. Both the value and type of the parameters
-need to be equal. The possible types of the given parameters are:
-Tema: números Strings Booleans (False or True) Special values: None What have
-you learned so far that will permit you t …
+En este desafío, debes verificar la igualdad de dos valores diferentes dados los parámetros `a` y `b`.
+
+Tanto el valor como el tipo de los parámetros deben ser iguales. Los posibles tipos de parámetros dados son:
+
+- Números
+- Cadenas
+- Booleanos (`False` o `True`)
+- Valores especiales: `None`
+
+Implemente una función que devuelva `True` si los parámetros son iguales y `False` si no lo son.
 
 Tema: lenguaje\_fundamentos
 
@@ -4875,36 +4848,6 @@ Tema: validación
 Dificultad: Muy Fácil
 
 **
-
-Añadir a favoritos
-
-Añadir a colección
-
-[](https://edabit.com/challenge/gNnm5vWpz4uNnGx4v)
-
-### Minimal VII: Lambda Functions
-
-Check the principles of minimalist code in the [intro to the first
-challenge] (https://edabit.com/challenge/2XLjgZhmACph76Pkr). In the Code
-tab you will find a code that is missing a single character in order to
-pass the tests. However, your goal is to submit a function as minimalist
-as possible. Use the tips in the tips se …
-
-closures
-
-higher\_order\_functions
-
-Tema: lenguaje\_fundamentos
-
-Tema: lógica
-
-Dificultad: Muy Fácil
-
-**
-
-Añadir a favoritos
-
-Añadir a colección
 
 [](https://edabit.com/challenge/NyuQDLrp7DqLoFL2X)
 
