@@ -13,7 +13,7 @@ def criba(n):
     return primos
 
 
-def criba_w(n):
+def criba_w(n): # de Wikipedia. El mejor. 
     a = [True]*(n+1)
     for i in range(2, int(n**0.5) + 1):
         if a[i] == True:
