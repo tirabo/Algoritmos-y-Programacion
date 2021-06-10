@@ -4851,7 +4851,7 @@ Dificultad: Muy Fácil
 
 [](https://edabit.com/challenge/NyuQDLrp7DqLoFL2X)
 
-### The Full Length of a Google
+### La longitud total de un google
 
 Google's logo can be stretched depending on how many pages it lets you
 skip forward to. Image of Goooooooooogle Let's say we wanted to change
