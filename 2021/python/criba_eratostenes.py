@@ -25,15 +25,6 @@ def criba_m(n):
     return primos
 
 
-def criba_w(n): # de Wikipedia. El mejor. 
-    a = [True]*(n+1)
-    for i in range(2, int(n**0.5) + 1):
-        if a[i] == True:
-            for j in range(i**2, n+1, i ):
-                a[j] = False
-    return [i for i in range(2,n+1) if a[i] == True]
-
-
 def criba2(n): # esta no es estrictamente la criba: saca todos los k*x para k >=2, sin importar si x es primo o no
     # ce = set(range(2, n + 1)) -  {k * x  for x in range(2, int(n**0.5) + 1) for k in range(2 , n // x  + 1)}
     ce = set(range(2, n + 1)) -  {k for i in range(2, int(n**0.5) + 1) for k in range(i**2, n + 1, i )}
