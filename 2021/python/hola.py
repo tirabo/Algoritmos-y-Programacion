@@ -1,5 +1,5 @@
 import turtle
-import buscando_a_tientas as bat
+
 
 def raiz_bab(x: float, error: float) -> float:
     # pre: x >= 0

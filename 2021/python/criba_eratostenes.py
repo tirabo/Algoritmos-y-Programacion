@@ -14,6 +14,21 @@ def criba(n):
                 k = k + 1
     return primos
 
+def criba_w(n): # de Wikipedia en inglés.
+    # Devuelve la lista de primos  <= n
+    a = [True]*(n+1) # Hace un  lista de n+1 elementos cada uno True [True, True, ..., True]
+    """
+    a = []
+    for _ in range(n+1):
+        a.append(True)
+    """
+    for i in range(2, int(n**0.5) + 1): # por observación 1
+        if a[i] == True:
+            for j in range(i**2, n+1, i ): # por observación 2
+                a[j] = False
+    # Si a[i] == True,  entonces i es primo (i >= 2)
+    return [i for i in range(2,n+1) if a[i] == True]
+
 def criba_m(n):
     # pre: n número natural
     # post: se obtiene ''primos'' la lista de números primos hasta n
