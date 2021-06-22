@@ -191,7 +191,7 @@ def temp_min_max(estacion: str, anho: str) -> dict:
     assert precondition, 'Error: temp_min_max() recibe el estación como string de 4 letras y el año como string de 4 números'
 
     # genera el archivo de datos:
-    clima_anho(estacion,anho,1,12)
+    # clima_anho(estacion,anho,1,12) # Corrección:  esto debería generarse aparte,  no dentro de otra función. Fijate que después abrís el archivo. Comentando esta línea el programa funciona igual si lo tenés pregenerado.  
 
     temps_max = [-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100]
     temps_min = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
@@ -247,133 +247,136 @@ def temp_min_max(estacion: str, anho: str) -> dict:
 # Ejercicio 3 (ii):
 
 def data_de_la_primavera(hemisferio: str):
-  # pre: recibe string 'hemisferio' de una letra (y necesita acesso al archivo 2018.txt)
-  # post: crea un archivo 2018p.txt con los datos correspondiente a la primavera del 2018
-  precondition = hemisferio == 'n' or hemisferio == 's'
-  assert precondition, 'Error: data_de_la_primavera() acepta "n" o "s" como argumento'
+    # pre: recibe string 'hemisferio' de una letra (y necesita acesso al archivo 2018.txt)
+    # post: crea un archivo 2018p.txt con los datos correspondiente a la primavera del 2018
+    precondition = hemisferio == 'n' or hemisferio == 's'
+    assert precondition, 'Error: data_de_la_primavera() acepta "n" o "s" como argumento'
 
-  data_anho = '2018.txt'
-  data_primavera = '2018p.txt'
+    data_anho = '2018.txt'
+    data_primavera = '2018p.txt'
 
-  datos = open(DIR + data_anho, 'r')
-  archivo = open(DIR + data_primavera,'w')
+    datos = open(DIR + data_anho, 'r')
+    archivo = open(DIR + data_primavera,'w')
 
-  comienzo_primavera = ''
-  fin_primavera = ''
+    comienzo_primavera = ''
+    fin_primavera = ''
 
-  # elije el rango de las fechas de la primavera según el hemisferio de la ciudad elegido
-  if hemisferio == 'n':
-      comienzo_primavera = '20180321'
-      fin_primavera = '20180621'
-  else:
-      comienzo_primavera = '20180921'
-      fin_primavera = '20181221'
+    # elije el rango de las fechas de la primavera según el hemisferio de la ciudad elegido
+    if hemisferio == 'n':
+            comienzo_primavera = '20180321'
+            fin_primavera = '20180621'
+    else:
+            comienzo_primavera = '20180921'
+            fin_primavera = '20181221'
 
-  # itera por los datos en 2018.txt, copiando los de la primavera a 2018p.txt
-  for linea in datos:
-      dia = ast.literal_eval(linea)
-      dia_llave = list(dia.keys())[0]
-      if comienzo_primavera <= dia_llave and dia_llave < fin_primavera:
-          archivo.write(linea)
+    # itera por los datos en 2018.txt, copiando los de la primavera a 2018p.txt
+    for linea in datos:
+            dia = ast.literal_eval(linea)
+            dia_llave = list(dia.keys())[0]
+            if comienzo_primavera <= dia_llave and dia_llave < fin_primavera:
+                    archivo.write(linea)
 
-  archivo.close()
-  datos.close()
+    archivo.close()
+    datos.close()
 
 def temp_max(estacion: str, mes_ini, mes_fin: int) -> float:
-  # pre: recibe una sigla de 4 letras 'estacion', y dos numeros enteros entre 1 y 12 tal que mes_ini <= mes_fin
-  # post: devuelve el promedio de temperaturas máximas diarias durante la primavera del año 2018 en la ciudad elegida como float (con opción para devolver un int en vez)
-  precondition = type(estacion) == str and type(mes_ini) == type(mes_fin) == int and estacion.isalpha() and len(estacion) == 4 and 1 <= mes_ini <= mes_fin <= 12
-  assert precondition, "Error: temp_max() recibe 3 parámetros: el estación como sigla de 4 letras, y 2 numeros, mes_inicial y mes_final, 1 <= mes_inicial <= mes_final <= 12"
-    
-  # si 2018.txt no estaba generado anteriormente (con temp_min_max()), hay que ejecutar lo siguiente:
-  # clima_anho(estacion,'2018',mes_ini,mes_fin)
+    # pre: recibe una sigla de 4 letras 'estacion', y dos numeros enteros entre 1 y 12 tal que mes_ini <= mes_fin
+    # post: devuelve el promedio de temperaturas máximas diarias durante la primavera del año 2018 en la ciudad elegida como float (con opción para devolver un int en vez)
+    precondition = type(estacion) == str and type(mes_ini) == type(mes_fin) == int and estacion.isalpha() and len(estacion) == 4 and 1 <= mes_ini <= mes_fin <= 12
+    assert precondition, "Error: temp_max() recibe 3 parámetros: el estación como sigla de 4 letras, y 2 numeros, mes_inicial y mes_final, 1 <= mes_inicial <= mes_final <= 12"
+        
+    # si 2018.txt no estaba generado anteriormente (con temp_min_max()), hay que ejecutar lo siguiente:
+    # clima_anho(estacion,'2018',mes_ini,mes_fin)
 
-  # genera 2018p.txt de 2018.txt (si hace falta generar 2018.txt, ejecutar la línea justo arriba de esta)
-  if (mes_ini == 3 or mes_ini == 4) and (mes_fin == 5 or mes_fin == 6):
-      data_de_la_primavera('n')
-  else:
-      data_de_la_primavera('s')
+    # genera 2018p.txt de 2018.txt (si hace falta generar 2018.txt, ejecutar la línea justo arriba de esta)
+    if (mes_ini == 3 or mes_ini == 4) and (mes_fin == 5 or mes_fin == 6):
+            data_de_la_primavera('n')
+    else:
+            data_de_la_primavera('s')
 
-  # itera por los datos de la primavera de 2018, agregando la temperatura máxima de cada día a la lista temps_de_la_primavera
-  temps_de_la_primavera = []
-  archivo = open(DIR + '2018p.txt','r')
-  for linea in archivo:
-      dia = ast.literal_eval(linea)
-      max_min = max_min_del_dia(dia)
-      temps_de_la_primavera.append(max_min[0])
+    # itera por los datos de la primavera de 2018, agregando la temperatura máxima de cada día a la lista temps_de_la_primavera
+    temps_de_la_primavera = []
+    archivo = open(DIR + '2018p.txt','r') # Corrección: es preferible guardar todo en memoria.
+    for linea in archivo:
+            dia = ast.literal_eval(linea)
+            # print(str(dia)[:50], end='')
+            max_min = max_min_del_dia(dia)
+            # print(max_min)
+            temps_de_la_primavera.append(max_min[0])
 
-  # promedia las máximas diarios
-  dias_p = len(temps_de_la_primavera)
-  sum_temps = 0
-  for temp in temps_de_la_primavera:
-      sum_temps = sum_temps + temps_de_la_primavera[temp]
-  # promedio como float
-  promedio = sum_temps / dias_p
-  # promedio como int
-  # promedio = sum_temps // dias_p
+    # promedia las máximas diarios
+    dias_p = len(temps_de_la_primavera)
+    sum_temps = 0
+    for temp in temps_de_la_primavera:
+            # sum_temps = sum_temps + temps_de_la_primavera[temp] # Corrección:  aquí te confundiste es: sum_temps = sum_temps + temp
+            sum_temps = sum_temps + temp 
+    # promedio como float
+    promedio = sum_temps / dias_p
+    # promedio como int
+    # promedio = sum_temps // dias_p
 
-  archivo.close()
-  return promedio
+    archivo.close()
+    return promedio
 
 # Ejercicio 3 (iii):
 
 def dir_viento(estacion, mes_ini, mes_fin):
-  # pre: recibe una sigla de 4 letras 'estacion', y dos números enteros entre 1 y 12 tal que mes_ini <= mes_fin
-  # post: devuelve la dirección del viento predominante durante la primavera del año 2018 en la ciudad elegida
-  precondition = type(estacion) == str and type(mes_ini) == type(mes_fin) == int and estacion.isalpha() and len(estacion) == 4 and 1 <= mes_ini <= mes_fin <= 12
-  assert precondition, "Error: dir_viento() recibe 3 parámetros: el estación como sigla de 4 letras, y 2 numeros, mes_inicial y mes_final, 1 <= mes_inicial <= mes_final <= 12"
+    # pre: recibe una sigla de 4 letras 'estacion', y dos números enteros entre 1 y 12 tal que mes_ini <= mes_fin
+    # post: devuelve la dirección del viento predominante durante la primavera del año 2018 en la ciudad elegida
+    precondition = type(estacion) == str and type(mes_ini) == type(mes_fin) == int and estacion.isalpha() and len(estacion) == 4 and 1 <= mes_ini <= mes_fin <= 12
+    assert precondition, "Error: dir_viento() recibe 3 parámetros: el estación como sigla de 4 letras, y 2 numeros, mes_inicial y mes_final, 1 <= mes_inicial <= mes_final <= 12"
+        
+
+    # si ya han sido generados 2018.txt (con temp_min_max()) y 2018p.txt (con temp_max()), no hace falta ejecutar el siguiente bloque:
+    '''
+    # si 2018.txt no estaba generado anteriormente (con temp_min_max()), hay que ejecutar lo siguiente:
+    # clima_anho(estacion,'2018',mes_ini,mes_fin)
+
+    # genera 2018p.txt de 2018.txt (si hace falta generar 2018.txt, ejecutar la línea justo arriba de esta)
+    if (mes_ini == 3 or mes_ini == 4) and (mes_fin == 5 or mes_fin == 6):
+            data_de_la_primavera('n')
+    else:
+            data_de_la_primavera('s')
+    '''
+
+    direcciones = {'Norte': 0, 'Nordeste': 0, 'Este': 0, 'Sureste': 0, 'Sur': 0, 'Suroeste': 0, 'Oeste': 0, 'Noroeste': 0, 'En calma': 0, 'Variable': 0}
+
+    # itera por cada hora de cada día en 2018p.txt, sumando 1 en el dict direcciones a la dirección del viento encontrando
+    archivo = open(DIR + '2018p.txt','r')
+    for linea in archivo:
+            dia = ast.literal_eval(linea)
+            dia_llave = list(dia.keys())[0]
+            horas = list(dia[dia_llave].keys())
+            for hora in horas:
+                viento = dia[dia_llave][hora]['dir']
+                if viento != None:
+                    direcciones[viento] = direcciones[viento] + 1
     
+    archivo.close()
 
-  # si ya han sido generados 2018.txt (con temp_min_max()) y 2018p.txt (con temp_max()), no hace falta ejecutar el siguiente bloque:
-  '''
-  # si 2018.txt no estaba generado anteriormente (con temp_min_max()), hay que ejecutar lo siguiente:
-  # clima_anho(estacion,'2018',mes_ini,mes_fin)
+    # itera por las direcciones, buscando la dirección correspondiende al número más alto
+    direcciones_lista = list(direcciones.items())
+    predominante = ''
+    cuenta = 0
+    for tupla in direcciones_lista:
+            if tupla[1] > cuenta:
+                    cuenta = tupla[1]
+                    predominante = tupla[0]
 
-  # genera 2018p.txt de 2018.txt (si hace falta generar 2018.txt, ejecutar la línea justo arriba de esta)
-  if (mes_ini == 3 or mes_ini == 4) and (mes_fin == 5 or mes_fin == 6):
-      data_de_la_primavera('n')
-  else:
-      data_de_la_primavera('s')
-  '''
-
-  direcciones = {'Norte': 0, 'Nordeste': 0, 'Este': 0, 'Sureste': 0, 'Sur': 0, 'Suroeste': 0, 'Oeste': 0, 'Noroeste': 0, 'En calma': 0, 'Variable': 0}
-
-  # itera por cada hora de cada día en 2018p.txt, sumando 1 en el dict direcciones a la dirección del viento encontrando
-  archivo = open(DIR + '2018p.txt','r')
-  for linea in archivo:
-      dia = ast.literal_eval(linea)
-      dia_llave = list(dia.keys())[0]
-      horas = list(dia[dia_llave].keys())
-      for hora in horas:
-          viento = dia[dia_llave][hora]['dir']
-          if viento != None:
-              direcciones[viento] = direcciones[viento] + 1
-  
-  archivo.close()
-
-  # itera por las direcciones, buscando la dirección correspondiende al número más alto
-  direcciones_lista = list(direcciones.items())
-  predominante = ''
-  cuenta = 0
-  for tupla in direcciones_lista:
-      if tupla[1] > cuenta:
-          cuenta = tupla[1]
-          predominante = tupla[0]
-
-  return predominante
+    return predominante
 
 # Resultados
 
-# He probado con EHAM en Holanda y CWDK en Canada.
+# He probado con EHAM en Holanda y cwdk en Canada.
 def main():
     estacion, anho = 'cwdk', '2018' # Claresholm
-    clima_anho(estacion, anho, 1, 12)
-    #todo_anho = temp_min_max('CWDK', '2018')
-    #print('Las temperaturas máximas y mínimas de cada mes del año 2018 de la ciudad elegida son (en ˚C):\n', todo_anho)
-    #promedio = temp_max('CWDK', 3, 6)
-    #print('El promedio de temperaturas máximas diarias durante la primavera del año 2018 en la ciudad elegida es: ', promedio, '˚C')
-    #viento = dir_viento('CWDK', 3, 6)
-    #print('La dirección del viento predominante durante la primavera del año 2018 en la ciudad elegida es: ', viento)
+    # clima_anho(estacion, anho, 1, 12)
+    todo_anho = temp_min_max('cwdk', '2018')
+    print('Las temperaturas máximas y mínimas de cada mes del año 2018 de la ciudad elegida son (en ˚C):\n', todo_anho)
+    promedio = temp_max('cwdk', 3, 6)
+    print('El promedio de temperaturas máximas diarias durante la primavera del año 2018 en la ciudad elegida es: ', promedio, '˚C')
+    viento = dir_viento('cwdk', 3, 6)
+    print('La dirección del viento predominante durante la primavera del año 2018 en la ciudad elegida es: ', viento)
 
 # RUN
 
