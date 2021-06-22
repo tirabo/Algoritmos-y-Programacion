@@ -224,7 +224,7 @@ def dir_viento(estacion, mes_ini, mes_fin):
             dic_viento.append(viento)     
             repeticion.append(direccion_viento_total.count(viento))
     viento_predomina = dic_viento[direccion.index(max(viento))] #busco la repeticion que se encuntra el nombre del viento
-    print('Predomina en primavera el viento de dirección: '+ viento_predomina)
+    print('Predominaen primavera el viento de dirección: '+ viento_predomina)
     archivo.close()
 
 
