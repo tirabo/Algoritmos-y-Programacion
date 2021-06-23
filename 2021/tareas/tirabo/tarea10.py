@@ -150,16 +150,16 @@ def temp_max(estacion, fecha_ini, fecha_fin):
                 t_max_list.append(t_max_dia)
                 # print(t_max_dia)
     t_max_prom =  sum(t_max_list) / len(t_max_list)
-    print('El promedio de temperaturas máximas en primavera en '+ estacion + ' en el año ' + anho + ' es : ' + str(round(t_max_prom,1)))
+    print('El promedio de temperaturas máximas entre '+ fecha_ini + ' y ' + fecha_fin + ' en '+ estacion + ' fue : '  + str(round(t_max_prom,1)))
     return t_max_prom
 
 
-# Esto es la moda de una lista (de las direcciones del viento). Se puede hace con alguna función de alguna biblioteca.
+# Esto es la moda de una lista (de las direcciones del viento). Se puede hacer con alguna función de alguna biblioteca.
 # pero lo hacemos "a mano"
 def moda(lista: list[str]):
     # Post: calcula la moda de una lista
     conj_val = set(lista) # conjunto de posibles valores
-    moda_lista = ['', -1]
+    moda_lista = ['', 0]
     for valor in conj_val:
         cant = lista.count(valor)
         if cant > moda_lista[1]:
@@ -178,13 +178,13 @@ def dir_viento(estacion, fecha_ini, fecha_fin):
             for hora in datos[dia]:
                 if datos[dia][hora]['dir'] != None:
                     t_dir_list.append(datos[dia][hora]['dir'])
-    print('La dirección del viento predominante durante la primavera del año '+ anho +' en '+ estacion + ' es : ' + moda(t_dir_list))
+    print('La dirección del viento predominantes entre '+ fecha_ini + ' y ' + fecha_fin + ' en '+ estacion + ' fue : ' + moda(t_dir_list))
     return moda(t_dir_list)
 
 
 def main():
-    primavera_sur = ('20180921', '20181221')
-    primavera_nor = ('20180321', '20180621')
+    primavera_sur = ('20180921', '20181220')
+    primavera_nor = ('20180321', '20180620')
     # estacion, anho = 'eddl', '2018' # Düsseldorf
     # estacion, anho = 'saco', '2018' # Córdoba
     # estacion, anho = 'eddb', '2018' # Berlín

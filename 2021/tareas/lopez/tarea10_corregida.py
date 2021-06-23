@@ -1,10 +1,9 @@
-CLAVES = ['hora', 'desc', 'temp', 'dir', 'vel', 'hum', 'pres'] 
-
-#pip install beautifulsoup4
-#pip install lxml
 import json
 import requests
 from bs4 import BeautifulSoup
+
+DIR = './2021/tareas/lopez/'
+CLAVES = ['hora', 'desc', 'temp', 'dir', 'vel', 'hum', 'pres'] 
 
 def registro_fila_tabla(fila_tabla) -> dict: # procesa una fila de la tabla, devuelve un diccionario con las mediciones registradas en esa fila
     celdas_fila = fila_tabla.findAll('td')
@@ -20,17 +19,16 @@ def registro_fila_tabla(fila_tabla) -> dict: # procesa una fila de la tabla, dev
     return registro
 
 def registros_tabla(tabla) -> dict:          # procesa una tabla, devuelve un diccionario de registros contenidos en esa tabla
-    registros = {}
-    if tabla == None:
-      registros = None
-    else  :
-      for fila_tabla in tabla.findAll('tr'):
-          registro = registro_fila_tabla(fila_tabla)  
-          if len(registro) != 0:
-              hora = registro.pop('hora')
-              hh = int(hora[:2])
-              registro = eliminar_unidades(registro)
-              registros[hh] = registro        
+    try:
+        registros = {}
+        for fila_tabla in tabla.findAll('tr'):
+            registro = registro_fila_tabla(fila_tabla)
+            if len(registro) != 0:
+                hora = registro.pop('hora')
+                hh = int(hora[:2])
+                registros[hh] = registro
+    except:
+        registros = {}     
     return registros
 
 def registros_dia(estacion:str , fecha: str) -> dict:
@@ -61,7 +59,7 @@ def eliminar_unidades(registro: dict):
     
 
 def clima_anho(estacion: str, anho: str, mes_ini: int, mes_fin: int):
-  archivo = open(anho + '.txt', 'w')
+  archivo = open(DIR + anho + '.txt', 'w')
   registros = {}
   for i in range(mes_ini,mes_fin+1):
     if i == 1 or i == 3 or i == 5 or i == 7 or i == 8 :
@@ -107,14 +105,14 @@ def clima_anho(estacion: str, anho: str, mes_ini: int, mes_fin: int):
   archivo.close()
   
 
-def clima_estacion(estacion: str, anho: str):
-  clima_anho(estacion, anho)
-  texto = open(anho + '.txt', 'r')
-  dias = []
-  for linea in texto:
-    dias.append(json.loads(linea))
-  texto.close() 
-  return dias  
+# def clima_estacion(estacion: str, anho: str):
+#   clima_anho(estacion, anho)
+#   texto = open(DIR + anho + '.txt', 'r')
+#   dias = []
+#   for linea in texto:
+#     dias.append(json.loads(linea))
+#   texto.close() 
+#   return dias  
 
 def es_bisiesto(anho: int) -> bool:
   if anho%100==0:
@@ -139,7 +137,7 @@ def dias_del_anho_actual(fecha: tuple) -> int:
 
 def temp_min_max(estacion: str , anho: str):
   for i in range(1,13):
-    texto=open(anho + '.txt', 'r')
+    texto=open(DIR + anho + '.txt', 'r')
     dias = []
     mes = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)  
     if es_bisiesto(int(anho)):
@@ -167,7 +165,7 @@ def temp_max(estacion, mes_ini, mes_fin):
     suma =  0
     cantidad_mediciones = 0
     for i in range(mes_ini,mes_fin+1):
-      texto=open('2018.txt', 'r')
+      texto=open(DIR + '2018.txt', 'r')
       dias = []
       mes = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)  
       if es_bisiesto(int(anho)):
@@ -190,7 +188,7 @@ def temp_max(estacion, mes_ini, mes_fin):
 
 def dir_viento(estacion, mes_ini, mes_fin):
   for i in range(mes_ini,mes_fin+1):
-     texto=open('2018.txt', 'r')
+     texto=open(DIR + '2018.txt', 'r')
      viento = []
      dias = []
      mes = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)  
