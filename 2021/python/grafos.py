@@ -11,7 +11,7 @@ class Grafo:
         # pre: vértices_o es el conjunto de vértices y arista_o es un lista de pares (x,y) con x, y in vértices_o
         # Incluimos estos parámetros para tener la posibilidad de empezar con un grafo no vacío.
         # Los vértices son elementos donde existe la relación '<' (enteros, cadenas, etc)
-        # Las aristas son (x_0, x_1) con x_0, x_1 vértices y x_0 < x_1
+        # Cuando se devuelven aristas las aristas son (x_0, x_1) con x_0, x_1 vértices y x_0 < x_1
         assert type(vertices_o) == set and type(aristas_o) == set and all(type(x) == tuple and len(x) == 2 for x in aristas_o) , 'Error: no son conjuntos apropiados.'
         assert all(x[0] < x[1] and all(y in vertices_o for y in x) for x in aristas_o) , 'Error: aristas no apropiadas.'
         
@@ -160,7 +160,8 @@ def coloracion_vertices(G: Grafo):
 
 ## FIN: algoritmo greedy para coloración de vértices
 
-#INICIO: Algoritmo de Kruskal para MST.
+
+# INICIO: Algoritmo de Kruskal para MST.
 # Pseudocódigo Cormen.
 # def Kruskal(G = (V,E): grafo; length: E -> int):
 #   n = len(V)
@@ -174,7 +175,6 @@ def coloracion_vertices(G: Grafo):
 #           mst.agregar_arista((u,v))
 #           unir(conjunto_de(u), conjunto_de(v)) 
 #   return mst
-
 
 def kruskal(G: Grafo, pesos):
     # pre: G grafo conexo, pesos es diccionario donde las claves son las aristas y los valores son enteros no negativos 
@@ -192,25 +192,58 @@ def kruskal(G: Grafo, pesos):
             conjunto_de[e[1]] = conjunto_de[e[0]] # unión de los conjuntos
     return mst
 
-
 #FIN: Algoritmo de Kruskal para MST.
 
 
 
-## INICIO: algoritmo Prim para MST con pesos (implementado según Wikipedia en)
-# Sea G árbol con pesos
-# 1. Asociar a cada vértice v del grafo un número C[v], el costo más bajo de conexión a v, y una arista E[v], la arista que da la conexión con costo más bajo.
-# Para inicializar estos valores, se ponen todos los valores de C[v] a +∞ poner a E[v] un valor bandera especial que dice que la arista no conecta v a vértices anteriores.
-# 2. Inicializar un foresta vacía F y un conjunto Q de vértices que no están en F (inicialmente, todos los vértices).
-# 3. Repetir los siguientes pasos hasta que Q sea vacío:
-#   a) Encontrar un vértice v de Q que tenga el mínimo valor posible de C[v] y removerlo de Q.
-#   b) Agregar v a F y si E[v] no tiene el valor bandera especial también agregar E[v] a F. 
-#   c) Iterar sobre las aristas vw que conectan v con otros vértices w. Para cada una de estas aristas, si w pertenece a Q y vw tiene menos peso que C[w], realizar los siguientes pasos:
-#       i)  Darle a C[w] el valor del costo de la arista vw.
-#       ii) Poner E[w] como la arista vw.
+## INICIO: algoritmo Prim para MST con pesos (implementado según Cormen)
+#
+# def prim(G: Grafo , pesos):
+#     r = vértice de G
+#     for u in G.vertices():
+#         key[u] = INFINITO 
+#         padre[u] = NONE # Cuando el algoritmo termina  padre[v] será el padre de v en el MST, para los v que no son raíz (el vértice r). 
+#     key[r] = 0
+#     cola = G.vertices()
+#     while cola != {}:
+#         u = un vértice de cola con key[u] mínima
+#         cola.remove(u)
+#         for v in u.adyacentes():
+#             if v in cola and w(u, v) < key[v]:
+#                 padre[v] = u
+#                 key[v] = w(u, v)
+#     mst = Grafo(G.vertices(), {}) # este va a ser el MST. Se inicializa como un grafo con todos los vértices de G y si aristas. 
+#     for v in mst.vértices() - {r}:
+#         mst.agregar_arista((v,padre[v]))
+#     return  mst
 
-
-## FIN: algoritmo Prim para MST con pesos (implementado según Wikipedia en)
+def prim(G: Grafo , pesos):
+    # pre: pesos un diccionario donde las claves son las aristas  y los valores son reales no negativos. 
+    # post: devuelve mst un MST  de G. 
+    r =  next(iter(G.vertices())) # toma un vértice de G sin quitarlo
+    key, padre = {}, {} # dos diccionarios vacíos. El primero es una "cola de prioridad". El segundo indicará quien será el padre en el MST.
+    INFINITO = 0
+    for arista in G.aristas():
+        INFINITO = max(INFINITO, pesos[arista])
+    INFINITO += INFINITO # INFINITO es un valor más alto que todos los pesos
+    for u in G.vertices():
+        key[u] = INFINITO 
+        padre[u] = None # Cuando el algoritmo termina  padre[v] será el padre de v en el MST, para los v que no son raíz (el vértice r). 
+    key[r] = 0
+    cola = G.vertices()
+    while cola != set({}):
+        u = min([[key[v],v] for v in cola])[1] # un vértice de cola con key[u] mínima
+        cola.remove(u)
+        for v in G.adyacentes(u):
+            arista = (u,v) if u < v else (v, u)
+            if v in cola and pesos[arista] < key[v]:
+                padre[v] = u
+                key[v] = pesos[arista]
+    mst = Grafo(G.vertices(), set({})) # este va a ser el MST. Se inicializa como un grafo con todos los vértices de G y si aristas. 
+    for v in mst.vertices() - {r}:
+        mst.agregar_arista((v,padre[v]))
+    return  mst
+## FIN: algoritmo Prim para MST con pesos (implementado según Cormen)
 
 def main():
     # Grafos de prueba
@@ -270,6 +303,7 @@ def main():
     pesos_G1 =  {(0, 3):5, (0, 4):0, (0, 5):0, (0, 6):0, (1, 2):10, (1, 4):0, (2, 5):0, (3, 4):0, (4, 5):0, (5, 6):0}
 
     print(kruskal(G1, pesos_G1))
+    print(prim(G1, pesos_G1))
 
 
     return 0
