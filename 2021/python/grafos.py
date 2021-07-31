@@ -35,7 +35,7 @@ class Grafo:
         return {v for v in self.__graph.keys()}
 
     def aristas(self):
-        # post:  devuelve el conjunto de aristas del grafo. Las aristas son frozensets de 2 elementos. 
+        # post:  devuelve el conjunto de aristas del grafo. Las aristas son 2-uplas. 
         arsts = set({})
         for v in self.__graph:
             for w in self.__graph[v]:
