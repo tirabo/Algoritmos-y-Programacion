@@ -55,3 +55,22 @@ def prime_list(n):
             else:
                 primes.append(i)
         return primes
+    
+def fibbonaci(n):
+    # Given a natural number n >= 0 returns the list of all fibonacci numbers less than n.
+    # The function should return an empty list if n < 0.
+    if n < 0:
+        return []
+    if n == 0:
+        return []
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0, 1]
+    else:
+        fib = [0, 1]
+        for i in range(2, n):
+            fib.append(fib[i-1] + fib[i-2])
+        return fib
+
+def is_pr
