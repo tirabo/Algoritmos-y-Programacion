@@ -29,10 +29,21 @@ def dias_del_anho_actual(fecha: tuple) -> int:
 
 
 def dias_desde_epoch(fecha: tuple) -> int:
-  # pre: fecha tiene el formato (DD, MM, AAAA)
-  # post: dias desde 1-1-1970 a DD-MM-AAAA
-  dia, mes, anho = fecha
-  
-  nro_de_dias = (anho - 1970) * 365 + bisiestos_hasta(anho - 1969) + dias_del_anho_actual(fecha)
-  return nro_de_dias
+    # pre: fecha tiene el formato (DD, MM, AAAA)
+    # post: dias desde 1-1-1970 a DD-MM-AAAA
+    dia, mes, anho = fecha
+    
+    nro_de_dias = (anho - 1970) * 365 + bisiestos_hasta(anho - 1969) + dias_del_anho_actual(fecha)
+    return nro_de_dias
 
+def add_n(n):
+    def pp(v):
+        return [u + n for u in v]
+    return pp
+
+M1 = [[1, 2, 3], [-2, 3, 7]]
+M2 = [[1,0,0],[0,1,0],[0,0,1]]
+def array_mult(M, N):
+    return [[sum(a*b for a, b in zip(row, col)) for col in zip(*N)] for row in M]
+
+print(array_mult(M1, M2))
