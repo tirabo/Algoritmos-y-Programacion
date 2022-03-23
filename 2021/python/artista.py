@@ -22,7 +22,7 @@ bgcolor('green')
 color('black')
 pensize(5)
 speed(1)
-
+"""
 forward(100)
 left(120)
 forward(100)
@@ -36,7 +36,7 @@ left(120)
 forward(100)
 left(120)
 forward(100)
-
+"""
 
 for _ in range(3):
     forward(100)
@@ -45,6 +45,7 @@ for _ in range(3):
     left(120)
     forward(100)
     left(120)
+    forward(100)
 done()
 
 
