@@ -2,17 +2,19 @@ from turtle import *
 import random
 import time
 
-# JUEGO DE LA VIDA TOROIDAL
-# El juego se desrrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
-# (más sencillo: un rectángulo donde lo de arriba se continúa con lo de abajo, lo de la izquierda con lo de la derecha). 
-# Las reglas son 
-# 1) Cada pixel de tablero es 1 o 0 (negro o blanco). 
-# 2) Hay una cantidad de pixeles inciales que está en 1 (patrón o semilla). 
-# 3) Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
-# 4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener la nueva distribución de pixeles en el paso n
-#      a) En la configuración n-1 cualquier pixel 1 con dos o tres vecinos vivos sigue siendo 1 en la configuración n.
-#      b) En la configuración n-1 cualquier pixel 0 con tres vecinos 1 pasa a ser 1 en la configuración n.
-#      c) Todas los otros pixeles de la configuración n-1 pasan a 0 en la configuración n.
+"""
+JUEGO DE LA VIDA TOROIDAL
+El juego se desrrolla en un toro S^1 x S^1 con diámetros WIDTH y HEIGHT respectivamente 
+(más sencillo: un rectángulo donde lo de arriba se continúa con lo de abajo, lo de la izquierda con lo de la derecha). 
+Las reglas son 
+1) Cada pixel de tablero es 1 o 0 (negro o blanco). 
+2) Hay una cantidad de pixeles inciales que está en 1 (patrón o semilla). 
+3) Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
+4) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener la nueva distribución de pixeles en el paso n
+     a) En la configuración n-1 cualquier pixel 1 con dos o tres vecinos vivos sigue siendo 1 en la configuración n.
+     b) En la configuración n-1 cualquier pixel 0 con tres vecinos 1 pasa a ser 1 en la configuración n.
+     c) Todas los otros pixeles de la configuración n-1 pasan a 0 en la configuración n.
+"""
 
 # CONSTANTES
 
