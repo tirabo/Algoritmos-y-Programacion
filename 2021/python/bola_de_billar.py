@@ -55,7 +55,7 @@ def pizarra_vacia(velocidad = 5, grosor_lapiz = 5):
     speed(velocidad)
     pensize(grosor_lapiz)
 
-def bola_de_billar(n: int):
+def bola_de_billar(n: int, repet: int):
     # pre: n de 1 a 12
     # post: dibuja la trayectoria de una bola de billar con velocidad n que parte de (pos_x, pos_y)
     #       con direccion direc. Los trs números pos_x, pos_y, direc son elegidos al azar.
@@ -71,9 +71,9 @@ def bola_de_billar(n: int):
     print(pos_x, pos_y, direc)
     limite = 0
     
-    while not (pos_x == 0 and pos_y == 0) and limite < 10000:
-        pos_x, pos_y = position()
+    while not (pos_x == 0 and pos_y == 0) and limite < repet:
         forward(1)
+        pos_x, pos_y = position()
         if pos_x >= 400 or pos_x <= -400:
             # setposition(400, pos_y)
             direc = 180 - direc
@@ -92,7 +92,7 @@ def bola_de_billar(n: int):
 
 def main():
     pizarra_vacia()
-    bola_de_billar(12)
+    bola_de_billar(12,  5000)
     done()
     return 0
 
