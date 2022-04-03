@@ -117,7 +117,7 @@ def bola_de_billar(n: int, repet: int):
 
 def main():
     pizarra_vacia()
-    bola_de_billar(12, 2000)
+    bola_de_billar(12, 10000)
     done()
     return 0
 
