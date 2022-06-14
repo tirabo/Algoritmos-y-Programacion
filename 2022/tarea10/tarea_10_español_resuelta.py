@@ -3,6 +3,7 @@ from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt 
 import requests
+import os
 # from wordcloud import WordCloud
 
 # def bajar_libro(url, titulo):
@@ -36,6 +37,12 @@ def main():
     # texto_ori = bajar_libro(url_libro, titulo)
     # text_minuscula_1 = formatear_texto(texto_ori)
     # frecuencias = check_freq(text_minuscula_1)
+
+    # print(os.getcwd())
+    # print(os.listdir('../../../'))
+
+    imagen = Image.open('../../../Pictures/perro.png')
+    imagen.show() # muestra la imagen
 
 # RUN
 
