@@ -1,0 +1,7 @@
+# python -m venv .\envs\ayp # crea el enviroment como subdirecorio del workspace (fabrica el directorio)
+# .\envs\ayp\Scripts\activate # activa el enviroment desde cmd
+# Crt-Shift-P - Python: seleccionar intérprete y  eligir en VS Code el enviroment
+# pip install -r entorno_virtual.txt # instala los paquetes listados más abajo
+PIL
+numpy
+matplotlib
