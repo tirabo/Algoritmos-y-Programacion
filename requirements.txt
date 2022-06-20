@@ -1,0 +1,9 @@
+# python -m venv .\envs\ayp # crea el enviroment como subdirecorio del workspace (fabrica el directorio)
+# .\envs\ayp\Scripts\activate # activa el enviroment desde cmd
+# Crt-K-P elige en VS Code el enviroment
+# pip install -r requirements.txt # instala los paquetes listados más abajo
+python-binance
+requests
+mplfinance
+pandas
+numpy
