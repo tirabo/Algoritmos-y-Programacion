@@ -4,6 +4,80 @@ import copy
 # valencia de un vertice, vertices adyacentes, agregar arista, quitar arista
 
 
+
+class Grafo: 
+    def __init__(self, vertices_o = set({}), aristas_o = set({})):
+        # pre: vertices_o es el conjunto de vértices y arista_o es un conjunto de pares (x,y) con x, y in vertices_o
+        #      Las aristas se ingresan como pares ordenados pero internamente se convierten a frozenset
+        # Incluimos estos parámetros para tener la posibilidad de empezar con un grafo no vacío.
+        assert type(vertices_o) == set and type(aristas_o) == set and all(type(x) == tuple and len(x) == 2 for x in aristas_o) , 'Error: no son conjuntos apropiados.'
+        assert all(x[0] != x[1] and all(y in vertices_o for y in x) for x in aristas_o) , 'Error: aristas no apropiadas.'
+    
+        self.__aristas = {frozenset(e) for e in aristas_o} # una copia de aristas y se convierten a frozenset (conjuntos por comprensión, similar a listas)
+        self.__vertices = {v for v in vertices_o}  # una copia de el conjunto de los vértices del grafo
+        # Las variable anteriores nos dan el estado del grafo (sus vértices y aristas)
+    
+    def vertices(self):
+        # post:  devuelve el conjunto de vértices del grafo
+        return {v for v in self.__vertices}
+    
+    def aristas(self):
+        # post:  devuelve el conjunto de aristas del grafo
+        return {tuple(e) for e in self.__aristas}
+
+    def __str__(self):
+        return str((self.vertices(), self.aristas())) # imprime el conjunto de vértices y el conjunto de aristas del grafo
+    
+    def adyacentes(self, vertice): 
+        # pre: vertice es un vértice del grafo
+        # post: devuelve el conjunto de vertices adyacentes a vertice
+        ady = set()
+        for ar in self.__aristas:
+                arista = tuple(ar)
+                if vertice == arista[1]:
+                    ady.add(arista[0])
+                if vertice == arista[0]:
+                    ady.add(arista[1])
+        return ady
+
+    def valencia(self, vertice):
+        return len(self.adyacentes(vertice))
+
+    def lista_de_adyacencia(self):
+        # post:  devuelve la lista de adyacencia del grafo: un diccionario cuyas claves son los vértices y los valores son listas de adyacencia
+        lst_ady = {}
+        for vertice in self.__vertices:
+            lst_ady[vertice] = list(self.adyacentes(vertice))
+            lst_ady[vertice].sort()
+        return lst_ady
+    
+    def agregar_vertice(self, new_vert):
+        # post: agrega un vértice, si el vértice ya estaba no cambia nada
+        self.__vertices.add(new_vert) # aumento en 1 la cantidad de vértices (si el vértice no estaba). 
+    
+    def quitar_arista(self, e):
+        # pre: e == (x, y) arista
+        # post: quita arista frozenset((x, y)) (si está). En  caso contrario no hace nada.
+        assert type(e) == tuple and len(e) == 2, 'Error: el argumento debe ser una 2-upla' 
+        arista = frozenset(e)
+        if arista in self.__aristas:
+            self.__aristas.remove(arista)
+    
+    def agregar_arista(self, e):
+        # pre: e == (x, y) 
+        # post: si x, y son vértices del grafo, agrega arista e = {x, y} (si no está).
+        #       En  caso contrario no hace nada.
+        assert type(e) == tuple and len(e) == 2 and e[0] != e[1], 'Error: el argumento debe ser una 2-upla de dos elementos'  
+        e_set = frozenset(e)
+        if e_set.issubset(self.__vertices): # comprueba que los vértices de e son vértices del grafo
+            self.__aristas.add(e_set) # agrega la arista
+    
+    def copiar(self):
+        # post: devuelve una copia del grafo
+        return Grafo(self.__vertices, self.aristas())
+
+"""
+
 ###  Clase Grafo
 
 class Grafo:
@@ -32,16 +106,11 @@ class Grafo:
 
     def vertices(self):
         # post:  devuelve el conjunto de vértices del grafo
-        return {v for v in self.__graph.keys()}
+        return self.vertices()
 
     def aristas(self):
         # post:  devuelve el conjunto de aristas del grafo. Las aristas son 2-uplas. 
-        arsts = set({})
-        for v in self.__graph:
-            for w in self.__graph[v]:
-                if v < w:
-                    arsts.add((v, w))
-        return arsts
+        return self.aristas()
 
     def valencia(self, vert):
         # pre: 0 <= vert < len(self.__vertices)
@@ -54,6 +123,9 @@ class Grafo:
         # post: devuelve los vertices adyacentes a vert
         assert vert in self.__graph, 'Error:  el vértice '+str(vert)+' no pertenece al grafo'
         return {z for z in self.__graph[vert]}
+
+    def lista_de_adyacencia(self):
+        return self.__graph
     
     def agregar_vertice(self, new_vert):
         # post: agrega un vértice 
@@ -84,13 +156,13 @@ class Grafo:
     def copiar(self):
         # post: devuelve una copia del grafo
         return Grafo(self.vertices(), self.aristas())
-
+"""
 
 # ALGORITMOS SOBRE GRAFOS
 
 def recorrido_euleriano_max(L: Grafo, v_ini):
     # pre: v_ini vértice de L
-    # post: devuelve caminata, una caminata exhaustiva que no repite aristas
+    # post: devuelve caminata, una caminata exhaustiva que no repite aristas 
     # mod: L termino siendo el grafo original menos la caminata
     sub_caminata = [v_ini]  # sub caminata
     p0 = v_ini
@@ -249,42 +321,42 @@ def main():
     # Grafos de prueba
     
     # Grafo 0 (el gran tour)
-    G0 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 1), (0, 2), (0, 4), (0, 5), (1, 2), (1, 4), (1, 5), (2, 3), (2, 5), (3, 4), (4, 5)})
+    # G0 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 1), (0, 2), (0, 4), (0, 5), (1, 2), (1, 4), (1, 5), (2, 3), (2, 5), (3, 4), (4, 5)})
     # print(G0)
     # print(recorrido_euleriano_max(G0, 0))
     # lista ady= [[1,2,4,5],[0,2,4,5],[0,1,3,5],[2,4],[0,1,3,5],[0,1,2,4]]
 
     # Grafo 1
-    G1 = Grafo({0, 1, 2, 3, 4, 5, 6}, {(0, 3), (0, 4), (0, 5), (0, 6), (1, 2), (1, 4), (2, 5), (3, 4), (4, 5), (5, 6)})
+    # G1 = Grafo({0, 1, 2, 3, 4, 5, 6}, {(0, 3), (0, 4), (0, 5), (0, 6), (1, 2), (1, 4), (2, 5), (3, 4), (4, 5), (5, 6)})
     #print(G1)
     #print(recorrido_euleriano_max(G1, 0),'\n')
     #lista_ady [[3,4,5,6], [2,4], [1,5], [0,4], [0,1,3,5], [0,2,4,6], [0,5]]
 
     # Grafo 2 (cíclico)
-    G2 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 1), (0, 5), (1, 2), (2, 3), (3, 4), (4, 5)})
+    # G2 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 1), (0, 5), (1, 2), (2, 3), (3, 4), (4, 5)})
     # print(G2)
     # print(recorrido_euleriano_max(G2, 0),'\n')
     #lista_ady [[1,5],[0, 2],[1,3],[2,4],[3,5],[4,0]]
 
     # Grafo 3 
-    G3 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 2), (0, 4), (0, 5), (1, 3), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (4, 5)})
+    # G3 = Grafo({0, 1, 2, 3, 4, 5}, {(0, 2), (0, 4), (0, 5), (1, 3), (1, 5), (2, 3), (2, 4), (2, 5), (3, 4), (4, 5)})
     # print(G3)
     # print(recorrido_euleriano_max(G3, 0))
     # print(recorrido_euleriano_max(G3, 1),'\n')
     #lista_ady [[2, 4, 5], [3, 5], [0, 3, 4, 5], [1, 2, 4], [0, 2, 3, 5], [0, 1, 2, 4]]
 
     # Grafo 4
-    G4 = Grafo({0, 1, 2, 3, 4, 5, 6}, {(0, 3), (0, 4), (0, 5), (1, 2), (1, 4), (2, 5), (3, 4), (4, 5), (5, 6)})
+    # G4 = Grafo({0, 1, 2, 3, 4, 5, 6}, {(0, 3), (0, 4), (0, 5), (1, 2), (1, 4), (2, 5), (3, 4), (4, 5), (5, 6)})
     # print(recorrido_euleriano_max(G4, 0))
     #lista_ady [[3,4,5], [2,4], [1,5], [0,4], [0,1,3,5], [0,2,4,6], [5]]
     
     # Grafo 6 (dos valencias impares)
-    G6 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, {(0, 1), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (8, 11), (9, 10)})
+    # G6 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, {(0, 1), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (8, 11), (9, 10)})
     #print(G6)
     #print(caminata_euleriana(G6, 0))
 
     # Grafo 7 (todas valencias pares)
-    G7 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, {(0, 1), (0, 11), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (8, 11), (9, 10)})
+    # G7 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, {(0, 1), (0, 11), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (8, 11), (9, 10)})
     # print(G7)
     #print(recorrido_euleriano_max(G7,0))
     # G7.agregar_vertice()
@@ -294,16 +366,38 @@ def main():
     # print(caminata_euleriana(G7, 0))
     # print(isinstance(G7, Grafo)  )
 
+    # Grafo 8 (todas valencias pares)
+    # G8 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, {(0, 1), (0, 11), (0,10), (0,12), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (8, 11), (9, 10), (10, 12)})
+    # print(G8)
+    # print(G8.lista_de_adyacencia())
+    # print(recorrido_euleriano_max(G8,0)) # ojo, modifica el grafo
+    # G8.agregar_vertice()
+    # print(G8)
+    # G8.agregar_arista([12, 1])
+    # print(G8)
+    # print(caminata_euleriana(G8, 1))
+    # print(isinstance(G8, Grafo)  )
+
+    G9 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {(0, 1), (0,10), (1, 2), (2, 3), (2, 4), (2, 7), (3, 4), (4, 5), (4, 6), (5, 6), (7, 8), (8, 9), (8, 10), (9, 10)})
+    print(G9)
+    print(G9.lista_de_adyacencia())
+    print(caminata_euleriana(G9, 8))
+
+    G10 = Grafo({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10},  {(0,1), (0, 9), (0, 10), (1, 2), (2, 3), (3, 4), (3, 5), (3, 8), (4, 5), (5, 6), (5, 7), (6, 7), (8, 9), (9, 10)})
+    print(G10)
+    print(G10.lista_de_adyacencia())
+    print(caminata_euleriana(G10, 9))
+
     #print(coloracion_vertices(G1))
     #print(coloracion_vertices(G7))
 
 
 
     # Pesos en G1
-    pesos_G1 =  {(0, 3):5, (0, 4):0, (0, 5):0, (0, 6):0, (1, 2):10, (1, 4):0, (2, 5):0, (3, 4):0, (4, 5):0, (5, 6):0}
+    # pesos_G1 =  {(0, 3):5, (0, 4):0, (0, 5):0, (0, 6):0, (1, 2):10, (1, 4):0, (2, 5):0, (3, 4):0, (4, 5):0, (5, 6):0}
 
-    print(kruskal(G1, pesos_G1))
-    print(prim(G1, pesos_G1))
+    # print(kruskal(G1, pesos_G1))
+    # print(prim(G1, pesos_G1))
 
 
     return 0
