@@ -48,6 +48,7 @@ def dibujar_rectangulo(ancho, alto, col = 'black', grosor_lapiz = 2):
         forward(alto)
         right(90)
     penup()
+    color('black') 
 
 
 
@@ -72,7 +73,6 @@ def bola_de_billar(n: int, repet: int):
     #           1) "cae" en una caja roja de 50 x 50  centrada, o bien,
     #           2) el número de movimientos es > repet
     dibujar_rectangulo(50, 50, 'red')
-    color('black')
     speed(n)
     pos_x0, pos_y0 = randint(-400, 400), randint(-250,250)
     penup()
