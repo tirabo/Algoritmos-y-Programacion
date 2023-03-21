@@ -26,57 +26,41 @@ Estado de la tortuga
 - ycor(), devuelve la coordenada y
 - heading(), devuelve la dirección en grados
 
+Observación:  el sistema de coordenadas está centrado en la esquina inferior derecha de la ventana 
+
 """
+
+
+
+
+def dibujar_rectangulo(ancho, alto, col = 'black', grosor_lapiz = 2):
+    # pre: ancho y alto son números enteros positivos, col es un color, grosor_lapiz de 1 a 20
+    # post: dibuja una rectángulo ancho x alto en el centro de la ventana
+    penup()
+    pensize(grosor_lapiz)
+    setposition(-ancho//2, alto//2) # (-ancho//2, alto//2) es el centro.  
+    setheading(0)
+    color(col)
+    pendown()
+    for _ in range(2):
+        forward(ancho)
+        right(90)
+        forward(alto)
+        right(90)
+    penup()
+
 
 
 def pizarra_vacia(velocidad = 5, grosor_lapiz = 5):
     # inicializa la pizarra con velocidad 5 y ancho del lápiz igual 5
     # Dibuja un marco de 5 px de grosor
     screensize(800, 500)
+    dibujar_rectangulo(800, 500, 'grey', 5) # dibuja el marco
     hideturtle()
-    penup()
-    setposition(-400, -250)
-    setheading(0)
-    pendown()
-    # dibuja el marco
-    pensize(5)
-    color('grey')
-    forward(800)
-    left(90)
-    forward(500)
-    left(90)
-    forward(800)
-    left(90)
-    forward(500)
-    # finaliza de dibujar el marco
-    penup()
-    setposition(0, 0)
-    setheading(0)
-    pendown()
-    color('black')
     bgcolor('white')
     color('black')
     speed(velocidad)
     pensize(grosor_lapiz)
-
-
-def dibujar_caja(ancho, alto, col = 'black'):
-    # pre: ancho y alto son números enteros positivos
-    # post: dibuja una rectángulo ancho x alto centrado en (0,0)
-    penup()
-    pensize(2)
-    setposition(-ancho//2, alto//2)
-    setheading(0)
-    color(col)
-    pendown()
-    forward(ancho)
-    right(90)
-    forward(alto)
-    right(90)
-    forward(ancho)
-    right(90)
-    forward(alto)
-    color('black')
 
 
 def bola_de_billar(n: int, repet: int):
@@ -87,7 +71,8 @@ def bola_de_billar(n: int, repet: int):
     #       La bola de billar se detiene si 
     #           1) "cae" en una caja roja de 50 x 50  centrada, o bien,
     #           2) el número de movimientos es > repet
-    dibujar_caja(50, 50, 'red')
+    dibujar_rectangulo(50, 50, 'red')
+    color('black')
     speed(n)
     pos_x0, pos_y0 = randint(-400, 400), randint(-250,250)
     penup()
