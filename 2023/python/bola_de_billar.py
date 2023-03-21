@@ -62,7 +62,7 @@ def pizarra_vacia(velocidad = 5, grosor_lapiz = 5):
 
 def dibujar_caja(ancho, alto, col = 'black'):
     # pre: ancho y alto son números enteros positivos
-    # post: dibuja una caja de ancho y alto centrada en (0,0)
+    # post: dibuja una rectángulo ancho x alto centrado en (0,0)
     penup()
     pensize(2)
     setposition(-ancho//2, alto//2)
@@ -82,8 +82,11 @@ def dibujar_caja(ancho, alto, col = 'black'):
 def bola_de_billar(n: int, repet: int):
     # pre: n de 1 a 12
     # post: dibuja la trayectoria de una bola de billar con velocidad n que parte de (pos_x, pos_y)
-    #       con direccion direc. Los trs números pos_x, pos_y, direc son elegidos al azar.
+    #       con direccion direc. Los tres números pos_x, pos_y, direc son elegidos al azar.
     #       devuelve  pos_x, pos_y, direc
+    #       La bola de billar se detiene si 
+    #           1) "cae" en una caja roja de 50 x 50  centrada, o bien,
+    #           2) el número de movimientos es > repet
     dibujar_caja(50, 50, 'red')
     speed(n)
     pos_x0, pos_y0 = randint(-400, 400), randint(-250,250)
