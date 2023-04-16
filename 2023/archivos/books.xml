@@ -11,6 +11,7 @@
    </book>
    <book id="bk102">
       <author>Ralls, Kim</author>
+      <author>Gambardella, Matthew</author>
       <title>Midnight Rain</title>
       <genre>Fantasy</genre>
       <price>5.95</price>
