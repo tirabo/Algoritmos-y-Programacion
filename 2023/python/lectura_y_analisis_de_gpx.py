@@ -70,7 +70,7 @@ def leer_gpx(nombre: str):
             cadence = np.append(cadence, np.nan)
         # FIN OPCIONALES
     
-    # ELIMINAMOS PUNTOS A DISTANCIA PLANA 0
+    # ELIMINAMOS PUNTOS A DISTANCIA PLANA = 0 
     lat_n, lon_n, ele_n = np.array([lat[0]]), np.array([lon[0]]), np.array([ele[0]])
     time_n, temp_n, heart_rate_n, cadence_n = np.array([time[0]]), np.array([temp[0]]), np.array([heart_rate[0]]), np.array([cadence[0]])
     for i in range(1, len(lat)):
