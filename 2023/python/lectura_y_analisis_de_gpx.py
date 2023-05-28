@@ -115,9 +115,10 @@ def declive_acumulado_positivo(elevacion):
 
 
 def main():
-    print('directorio actual:', os.getcwd())
-    # lectura_gpx = leer_gpx('./bicicleta/gpx/Ascochinga_MTB.gpx')
-    lectura_gpx = leer_gpx('./bicicleta/gpx/Punilla_Observatorio.gpx')
+    print('Directorio actual:', os.getcwd())
+    # lectura_gpx = leer_gpx('./2023/archivos/Ascochinga_MTB.gpx')
+    # lectura_gpx = leer_gpx('./2023/archivos/Punilla_MTB.gpx')
+    lectura_gpx = leer_gpx('./2023/archivos/Punilla_Observatorio.gpx')
     latitud, longitud, elevacion = lectura_gpx[0], lectura_gpx[1], lectura_gpx[2]
     time, temp, heart_rate, cadence = lectura_gpx[3], lectura_gpx[4], lectura_gpx[5], lectura_gpx[6]
     # latitud, longitud, elevacion = 
@@ -152,7 +153,7 @@ def main():
     y_new = interpolate.splev(x_new, tck, der=0)
     print('Declive acumulado positivo corregido:', int(declive_acumulado_positivo(y_new)), 'metros.')
     mask = (~np.isnan(cadence)) & (cadence > 0) # para sacar los NaN y los 0 (esto indica cuando hay movimiento)
-    print('La cadencia promedio:', int(np.mean(cadence[mask])), 'rpm.')
+    print('La cadencia promedio en movimiento:', int(np.mean(cadence[mask])), 'rpm.')
     mask_ht = (~np.isnan(heart_rate))  # para sacar los NaN 
     print('La frecuencia cardiaca promedio:', int(np.mean(heart_rate[mask_ht])), 'bpm.')
     dif_dis, dif_time = np.diff(dis[mask]), np.diff(time[mask]) # ver si está bien
