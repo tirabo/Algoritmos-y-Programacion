@@ -194,15 +194,14 @@ def main():
     """
     lat, lon, ele, dis, dec = recorrido_proc(latitud, longitud, elevacion)
     print('Número de puntos de la muestra procesada:', len(lat))
-    print('Declive acumulado positivo:', int(declive_acumulado_positivo(ele)), 'metros.')
-
 
     plt.plot(dis, ele, '.', label='Datos originales')
-    x_new, y_new = interpolar_dis_otro(dis, ele)
-    plt.plot(x_new, y_new, label='Curva ajustada')
+    dis_new, ele_new = interpolar_dis_otro(dis, ele)
+    print('Declive acumulado positivo:', int(declive_acumulado_positivo(ele_new)), 'metros.')
+    plt.plot(dis_new, ele_new, label='Curva ajustada')
     plt.legend()
     plt.show()
-    print('Declive acumulado positivo corregido:', int(declive_acumulado_positivo(y_new)), 'metros.')
+
 
     
     if len(time) > 0:
