@@ -48,8 +48,7 @@ def leer_gpx(nombre: str):
         lon = np.append(lon, longitud)
         ele = np.append(ele, elevacion)
 
-        # EXTENSIONES PARA RECORRIDOS REALIZADOS: 
-        #   hora, temperatura ambiente, ritmo cardiaco y cadencia.
+        # OPCIONALES: hora, temperatura ambiente, ritmo cardiaco y cadencia son opcionales (solo aparecen estos datos en recorridos realizados)
         data =  ubicacion.getElementsByTagName('time')
         if len(data) > 0:
             date_str = data[0].firstChild.data
@@ -60,7 +59,7 @@ def leer_gpx(nombre: str):
         if len(ubicacion.getElementsByTagName('ns3:atemp')) > 0:
             temp = np.append(temp, float(ubicacion.getElementsByTagName('ns3:atemp')[0].firstChild.data))
         else:
-            temp = np.append(temp, np.nan)
+            time = np.append(temp, np.nan)
         if len(ubicacion.getElementsByTagName('ns3:hr')) > 0:
             heart_rate = np.append(heart_rate, float(ubicacion.getElementsByTagName('ns3:hr')[0].firstChild.data))
         else:
@@ -69,17 +68,16 @@ def leer_gpx(nombre: str):
             cadence = np.append(cadence, float(ubicacion.getElementsByTagName('ns3:cad')[0].firstChild.data))
         else:
             cadence = np.append(cadence, np.nan)
-        # FIN EXTENSIONES
+        # FIN OPCIONALES
     
-    lat_n, lon_n, ele_n = np.array([]), np.array([]), np.array([]) # datos obligatorios
-    time_n, temp_n, heart_rate_n, cadence_n = np.array([]), np.array([]), np.array([]), np.array([]) # datos opcionales (solo si es un recorrido realizado)
-    for i in range(len(lat)):
-        # if R*acos(cos(lat[i-1])*cos(lat[i])*cos(lon[i-1]-lon[i]) + sin(lat[i-1])*sin(lat[i])) != 0: # ELIMINAMOS PUNTOS A DISTANCIA PLANA = 0 
-        lat_n = np.append(lat_n, lat[i])
-        lon_n = np.append(lon_n, lon[i])
-        ele_n = np.append(ele_n, ele[i])
-    if ~np.isnan(time[0]):
-        for i in range(len(lat)):
+    # ELIMINAMOS PUNTOS A DISTANCIA PLANA = 0 
+    lat_n, lon_n, ele_n = np.array([lat[0]]), np.array([lon[0]]), np.array([ele[0]])
+    time_n, temp_n, heart_rate_n, cadence_n = np.array([time[0]]), np.array([temp[0]]), np.array([heart_rate[0]]), np.array([cadence[0]])
+    for i in range(1, len(lat)):
+        if R*acos(cos(lat[i-1])*cos(lat[i])*cos(lon[i-1]-lon[i]) + sin(lat[i-1])*sin(lat[i])) != 0:
+            lat_n = np.append(lat_n, lat[i])
+            lon_n = np.append(lon_n, lon[i])
+            ele_n = np.append(ele_n, ele[i])
             time_n = np.append(time_n, time[i])
             temp_n = np.append(temp_n, temp[i])
             heart_rate_n = np.append(heart_rate_n, heart_rate[i])
@@ -101,8 +99,7 @@ def recorrido_proc(lat, lon, ele):
         dis = np.append(dis, distancia_total)
         # pendiente
         dist_plana = R*acos(cos(lat[i-1])*cos(lat[i])*cos(lon[i-1]-lon[i]) + sin(lat[i-1])*sin(lat[i]))
-        if dist_plana != 0:
-            pendiente = 100 * (ele[i] - ele[i-1]) / dist_plana
+        pendiente = 100 * (ele[i] - ele[i-1]) / dist_plana
         pen = np.append(pen, pendiente)
     return lat, lon, ele, dis, pen
 
@@ -117,63 +114,11 @@ def declive_acumulado_positivo(elevacion):
     return declive_acumulado
 
 
-def velocidad_instantanea(distancia, tiempo):
-    # pre: distancia es un array numpy con los datos de distancia que devuelve recorrido_proc()
-    #      tiempo es un array numpy con los datos de tiempo que devuelve leer_gpx()
-    # post: devuelve la velocidad instantánea en cada punto del recorrido
-    dif_dis, dif_time = np.diff(distancia), np.diff(tiempo)
-    diferencia_dist, diferencia_tiempo = dif_dis.copy(), dif_time.copy() 
-    diferencia_dist = np.insert(diferencia_dist, 0, 0) # agrega un 0 al principio
-    diferencia_tiempo = np.insert(diferencia_tiempo, 0, 1) # agrega un 1 al principio     
-    return 3.6 * diferencia_dist / diferencia_tiempo # en km/h
-
-
-def intervalos_movimiento(cadencia, velocidad):
-    # pre: cadencia es un array numpy con los datos de cadencia que devuelve leer_gpx()
-    #      velocidad es un array numpy con los datos de velocidad que devuelve velocidad_instantanea()
-    # post: devuelve una ndarray con True si el punto es de movimiento y False si no lo es
-    #      (se considera que es de movimiento si la cadencia es mayor a 0 y la velocidad es mayor a 0)  
-    cadence = cadencia.copy() # para no modificar el array original
-    cadence[np.isnan(cadence)] = 0 # reemplaza los NaN por 0
-    mask = (cadence > 0) & (velocidad > 0)
-    return mask 
-
-
-def tiempo_en_movimiento(mask_mov, tiempo):
-    # pre: mask_mov es un array numpy con los datos de movimiento que devuelve intervalos_movimiento()
-    #      tiempo es un array numpy con los datos de tiempo que devuelve leer_gpx()
-    # post: devuelve el tiempo total en movimiento
-    tiempo_mov = 0
-    for i in range(1, len(mask_mov)):
-        if mask_mov[i] == True:
-            tiempo_mov += tiempo[i] - tiempo[i-1]
-    return tiempo_mov
-
-
-def interpolar_dis_otro(distancia, otro):
-    # pre: distancia es un array numpy con los datos de distancia que devuelve recorrido_proc()
-    #      otro es un array numpy con los datos de elevacion o declive, etc, que devuelve recorrido_proc() o leer_gpx()
-    # post: devuelve una 2-upla (distancia, otro) con los datos interpolados
-    # https://docs.scipy.org/doc/scipy/tutorial/interpolate/smoothing_splines.html
-    mask = np.array([True]) # máscara para saber qué puntos interpolamos (todas las distancias deben ser distintas)
-    for i in range(1, len(distancia)):
-        if distancia[i] == distancia[i-1]:
-            mask = np.append(mask, False)
-        else:
-            mask = np.append(mask, True)
-    x, y = distancia[mask], otro[mask]
-    tck = interpolate.splrep(x, y, s = 0) # es mejor suavidad 0 para y = altura
-    x_new = np.linspace(x.min(), x.max(), int(len(x) * 1.2)) # 20% más de puntos
-    y_new = interpolate.splev(x_new, tck, der=0)
-    return x_new, y_new
-
-
 def main():
     print('Directorio actual:', os.getcwd())
-    # archivo_gpx = 'Ascochinga_MTB.gpx'
-    # archivo_gpx = 'Punilla_MTB.gpx'
-    archivo_gpx = 'Punilla_Observatorio.gpx'
-    lectura_gpx = leer_gpx('./2023/archivos/' +  archivo_gpx)
+    # lectura_gpx = leer_gpx('./2023/archivos/Ascochinga_MTB.gpx')
+    # lectura_gpx = leer_gpx('./2023/archivos/Punilla_MTB.gpx')
+    lectura_gpx = leer_gpx('./2023/archivos/Punilla_Observatorio.gpx')
     latitud, longitud, elevacion = lectura_gpx[0], lectura_gpx[1], lectura_gpx[2]
     time, temp, heart_rate, cadence = lectura_gpx[3], lectura_gpx[4], lectura_gpx[5], lectura_gpx[6]
     # latitud, longitud, elevacion = 
@@ -196,31 +141,33 @@ def main():
     print('Número de puntos de la muestra procesada:', len(lat))
     print('Declive acumulado positivo:', int(declive_acumulado_positivo(ele)), 'metros.')
 
+    # for i in range(len(dis)):
+    #     print(dis[i],dec[i])
+    x, y = dis, ele # distancia, elevación
+    # x, y = dis, dec # distancia, declive
 
-    plt.plot(dis, ele, '.', label='Datos originales')
-    x_new, y_new = interpolar_dis_otro(dis, ele)
+    # LA MEJOR
+    # https://docs.scipy.org/doc/scipy/tutorial/interpolate/smoothing_splines.html
+    tck = interpolate.splrep(x, y, s = 0) # es mejor suavidad 0 para y = altura
+    x_new = np.linspace(x.min(), x.max(), int(nro_puntos * 1.2))
+    y_new = interpolate.splev(x_new, tck, der=0)
+    print(y_new) 
+    plt.plot(x, y, '.', label='Datos originales')
+    # plt.plot(x, heart_rate, label='Frecuencia cardiaca')
+    # plt.plot(x, cadence, label='Cadencia')
     plt.plot(x_new, y_new, label='Curva ajustada')
     plt.legend()
     plt.show()
     print('Declive acumulado positivo corregido:', int(declive_acumulado_positivo(y_new)), 'metros.')
-
+    mask = (~np.isnan(cadence)) & (cadence > 0) # para sacar los NaN y los 0 (esto indica cuando hay movimiento)
+    print('La cadencia promedio en movimiento:', int(np.mean(cadence[mask])), 'rpm.')
+    mask_ht = (~np.isnan(heart_rate))  # para sacar los NaN 
+    print('La frecuencia cardiaca promedio:', int(np.mean(heart_rate[mask_ht])), 'bpm.')
+    dif_dis, dif_time = np.diff(dis[mask]), np.diff(time[mask]) # ver si está bien
+    print('La velocidad promedio (en movimiento):', round(3.6 * np.mean(dif_dis / dif_time),1), 'km/h.')  # ver si está bien
+    print('El tiempo total:', round((time[-1] - time[0]) / 3600,2), 'horas.')
+    print('El tiempo total en movimiento:', round(np.sum(dif_time) / 3600,2), 'horas.') # no está bien
     
-    if len(time) > 0:
-        velocidad = velocidad_instantanea(dis, time)
-        mask_mov = intervalos_movimiento(cadence, velocidad)
-        print('La cadencia promedio en movimiento:', int(np.mean(cadence[mask_mov])), 'rpm.')
-        mask_ht = (~np.isnan(heart_rate))  # para sacar los NaN 
-        print('La frecuencia cardiaca promedio:', int(np.mean(heart_rate[mask_ht])), 'bpm.')
-        velocidad_mov = velocidad[mask_mov]
-        print('La velocidad promedio (en movimiento):', round(np.mean(velocidad_mov),1), 'km/h.')  # ver si está bien
-        print('El tiempo total:', round((time[-1] - time[0]) / 3600,2), 'horas.')
-        print('El tiempo total en movimiento:',round(tiempo_en_movimiento(mask_mov, time) / 3600,2), 'horas.') # no está bien
-        # plt.plot(dis, heart_rate, label='Frecuencia cardiaca')
-        # plt.plot(dis, cadence, label='Cadencia')
-        # plt.legend()
-        # plt.show()
-        
-
 # Para ver métodos de suavizado: https://pythonguia.com/suavizado-python-scipy/
 
 
