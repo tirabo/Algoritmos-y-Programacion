@@ -155,14 +155,15 @@ def interpolar_dis_otro(distancia, otro):
     #      otro es un array numpy con los datos de elevacion o declive, etc, que devuelve recorrido_proc() o leer_gpx()
     # post: devuelve una 2-upla (distancia, otro) con los datos interpolados
     # https://docs.scipy.org/doc/scipy/tutorial/interpolate/smoothing_splines.html
-    mask = np.array([True]) # máscara para saber qué puntos interpolamos (todas las distancias deben ser distintas)
+    mask = np.array([True]) # máscara para saber qué puntos interpolamos 
+    # (todas las distancias deben ser distintas, si no, no interpola)
     for i in range(1, len(distancia)):
         if distancia[i] == distancia[i-1]:
             mask = np.append(mask, False)
         else:
             mask = np.append(mask, True)
     x, y = distancia[mask], otro[mask]
-    tck = interpolate.splrep(x, y, s = 0) # es mejor suavidad 0 para y = altura
+    tck = interpolate.splrep(x, y, s = 0) # es mejor suavidad 0 
     x_new = np.linspace(x.min(), x.max(), int(len(x) * 1.2)) # 20% más de puntos
     y_new = interpolate.splev(x_new, tck, der=0)
     return x_new, y_new
@@ -176,33 +177,18 @@ def main():
     lectura_gpx = leer_gpx('./2023/archivos/' +  archivo_gpx)
     latitud, longitud, elevacion = lectura_gpx[0], lectura_gpx[1], lectura_gpx[2]
     time, temp, heart_rate, cadence = lectura_gpx[3], lectura_gpx[4], lectura_gpx[5], lectura_gpx[6]
-    # latitud, longitud, elevacion = 
     nro_puntos = len(latitud)
     print('Número de puntos de la muestra:', nro_puntos)
-    # print('puntos 0', len(recorrido))
-    # for ubicacion in recorrido:
-    #     print(ubicacion)
-    """
-    rec_proc = recorrido_proc(recorrido)
-    print('puntos 1',len(rec_proc))
-    # for i in range (1, 100):
-    #     print(rec_proc[i])
-    with open('./bicicleta/datos.txt', 'w') as file:
-        for punto in rec_proc:
-            file.write(str(punto)+'\n')
-    lat, lon, ele, dis, dec = recorrido_np(rec_proc)
-    """
-    lat, lon, ele, dis, dec = recorrido_proc(latitud, longitud, elevacion)
-    print('Número de puntos de la muestra procesada:', len(lat))
 
+    lat, lon, ele, dis, dec = recorrido_proc(latitud, longitud, elevacion)
+    print('Declive acumulado positivo:', int(declive_acumulado_positivo(ele_new)), 'metros.')
+
+    # Dibujamos distancia vs elevación
     plt.plot(dis, ele, '.', label='Datos originales')
     dis_new, ele_new = interpolar_dis_otro(dis, ele)
-    print('Declive acumulado positivo:', int(declive_acumulado_positivo(ele_new)), 'metros.')
     plt.plot(dis_new, ele_new, label='Curva ajustada')
     plt.legend()
     plt.show()
-
-
     
     if len(time) > 0:
         velocidad = velocidad_instantanea(dis, time)
