@@ -8,31 +8,31 @@ sections:
   title: Clase 03
 - file: "./04 - Programaci\xF3n en Python turtle (1).ipynb"
   title: Clase 04
-- file: "./05 - Programaci\xF3n en Python turtle (2).ipynb"
-  title: Clase 05
-- file: ./06 - Condicionales y ciclos.ipynb
-  title: Clase 06
-- file: ./07 - Primeros pasos en Python.ipynb
-  title: Clase 07
-- file: "./08 - Variables, expresiones y sentencias - Funciones (1\xB0).ipynb"
-  title: Clase 08
-- file: "./09 - Funciones (2\xBA ).ipynb"
-  title: Clase 09
-- file: ./10 - Condicionales.ipynb
-  title: Clase 10
-- file: ./11 - Ciclos.ipynb
-  title: Clase 11
-- file: ./12 - Cadenas.ipynb
-  title: Clase 12
-- file: ./13 - Listas y tuplas.ipynb
-  title: Clase 13
-- file: ./14 - Diccionarios y conjuntos.ipynb
-  title: Clase 14
-- file: ./15 - Invariantes.ipynb
-  title: Clase 15
-- file: "./16 - Recursi\xF3n.ipynb"
-  title: Clase 16
-- file: "./17 - Clases (1\xB0 parte).ipynb"
-  title: Clase 17
-- file: "./18 - Clases (2\xB0 parte).ipynb"
-  title: Clase 18
+# - file: "./05 - Programaci\xF3n en Python turtle (2).ipynb"
+#   title: Clase 05
+# - file: ./06 - Condicionales y ciclos.ipynb
+#   title: Clase 06
+# - file: ./07 - Primeros pasos en Python.ipynb
+#   title: Clase 07
+# - file: "./08 - Variables, expresiones y sentencias - Funciones (1\xB0).ipynb"
+#   title: Clase 08
+# - file: "./09 - Funciones (2\xBA ).ipynb"
+#   title: Clase 09
+# - file: ./10 - Condicionales.ipynb
+#   title: Clase 10
+# - file: ./11 - Ciclos.ipynb
+#   title: Clase 11
+# - file: ./12 - Cadenas.ipynb
+#   title: Clase 12
+# - file: ./13 - Listas y tuplas.ipynb
+#   title: Clase 13
+# - file: ./14 - Diccionarios y conjuntos.ipynb
+#   title: Clase 14
+# - file: ./15 - Invariantes.ipynb
+#   title: Clase 15
+# - file: "./16 - Recursi\xF3n.ipynb"
+#   title: Clase 16
+# - file: "./17 - Clases (1\xB0 parte).ipynb"
+#   title: Clase 17
+# - file: "./18 - Clases (2\xB0 parte).ipynb"
+#   title: Clase 18
