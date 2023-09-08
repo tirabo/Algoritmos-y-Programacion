@@ -22,8 +22,8 @@ def datos_usuario(dominio, card_number, surname=''):
         data = response.json()
         return data
     else:
-        print('Hubo un problema al cargar el archivo JSON')
-    print(response.status_code)
+        print('Hubo un problema al cargar el archivo JSON del usuario con cardnumber', card_number, 'en', dominio, '(status code:', str(response.status_code)+')' )
+
 
 def prestamos_usuario(dominio, card_number, surname=''):
     # pre : dominio es la url  admin del koha de la biblioteca
@@ -45,8 +45,8 @@ def prestamos_usuario(dominio, card_number, surname=''):
             data = response.json()
             return (socio[0]['restricted'], data)
         else:
-            print('Hubo un problema al cargar el archivo JSON')
-        print(response.status_code)
+            print('Hubo un problema al cargar el archivo JSON de préstamos del usuario con cardnumber', card_number, 'en', dominio, '(status code:', str(response.status_code)+')' )
+
 
 def listar_bibliotecas(dominio):
     url = dominio + '/api/v1/libraries'
@@ -56,8 +56,8 @@ def listar_bibliotecas(dominio):
         data = response.json()
         return data
     else:
-        print('Hubo un problema al cargar el archivo JSON')
-    print(response.status_code)
+        print('Hubo un problema al cargar el archivo JSON de bibliotecas en', dominio, '(status code:', str(response.status_code)+')' )
+
 
 def datos_item(dominio, item_id):
     # pre: url administrativa del sistema de gestión de la biblioteca
@@ -71,8 +71,8 @@ def datos_item(dominio, item_id):
         data_item = response.json()
         return data_item 
     else:
-        print('Hubo un problema al cargar el archivo JSON')
-    print(response.status_code)
+        print('Hubo un problema al cargar el archivo JSON del item con itemnunber', item_id, 'en', dominio, '(status code:', str(response.status_code)+')' )
+
 
 def verificar_socio(dominios, card_number, surname=''):
     # pre: dominios es una lista de dominios administrativos del sistema de gestión de bibliotecas
@@ -112,11 +112,12 @@ def mostrar_socio_verificado(socio_verificado):
                 for libro in biblioteca[6]:
                     item = datos_item(dominio, libro)
                     # print(libro, item)
-                    print('- El item con  código de barras', item['external_id'], 'está prestado', end='')
-                    # https://faud.biblioadmin.unc.edu.ar/cgi-bin/koha/catalogue/moredetail.pl?biblionumber=48232&itemnumber=83627
-                    # print(' (ver en', str(dominio)+'/cgi-bin/koha/catalogue/moredetail.pl?biblionumber='+str(item['biblio_id'])+'&itemnumber='+str(item['item_id'])+')')
-                    # o bien https://faud.biblio.unc.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=48232
-                    print(' (ver en', str(dominio)+'/cgi-bin/koha/opac-detail.pl?biblionumber='+str(item['biblio_id'])+')')
+                    if item:
+                        print('- El item con  código de barras', item['external_id'], 'está prestado', end='')
+                        # https://faud.biblioadmin.unc.edu.ar/cgi-bin/koha/catalogue/moredetail.pl?biblionumber=48232&itemnumber=83627
+                        # print(' (ver en', str(dominio)+'/cgi-bin/koha/catalogue/moredetail.pl?biblionumber='+str(item['biblio_id'])+'&itemnumber='+str(item['item_id'])+')')
+                        # o bien https://faud.biblio.unc.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=48232
+                        print(' (ver en', str(dominio)+'/cgi-bin/koha/opac-detail.pl?biblionumber='+str(item['biblio_id'])+')')
             else:
                 print('No')
                         
@@ -181,9 +182,9 @@ def main():
     # card_number = '14121588'
     v_socio = verificar_socio(dominios, card_number)
     # print(v_socio)
-    # mostrar_socio_verificado(v_socio)
-    card_number, surname = '462', 'ENC'
-    v_socio = verificar_socio(dominios, card_number, surname)
+    mostrar_socio_verificado(v_socio)
+    # card_number, surname = '462', 'ENCUADERNACI'
+    # v_socio = verificar_socio(dominios, card_number, surname)
     # mostrar_socio_verificado(v_socio)
 
     
