@@ -99,17 +99,17 @@ def mostrar_socio_verificado(socio_verificado):
     # post: muestra por pantalla los datos del socio verificado
     for biblioteca in socio_verificado:
         if biblioteca[3]:
-            dominio, card_number, surname  = biblioteca[0], biblioteca[1], biblioteca[2]
+            dominio, card_number, surname, es_socio, suspendido, tiene_prestamos, prestamos  = biblioteca[0], biblioteca[1], biblioteca[2], biblioteca[3], biblioteca[4], biblioteca[5], biblioteca[6]
             socio = datos_usuario(dominio, card_number, surname)
             apellido, nombre = socio[0]['surname'], socio[0]['firstname']
             print('\nSocio: ', apellido+',', nombre, '(' + str(card_number) + ')', 'en', biblioteca[0])
-            suspendido = 'Sí' if biblioteca[4] else 'No'
-            print('Suspendido:', suspendido)
+            susp= 'Sí' if suspendido else 'No'
+            print('Suspendido:', susp)
             print('Prestamos: ', end='')
-            if len(biblioteca[6]) > 0:
+            if len(prestamos) > 0:
                 print('Sí')
                 print('Libros no devueltos:')
-                for libro in biblioteca[6]:
+                for libro in prestamos:
                     item = datos_item(dominio, libro)
                     # print(libro, item)
                     if item:
@@ -118,6 +118,10 @@ def mostrar_socio_verificado(socio_verificado):
                         # print(' (ver en', str(dominio)+'/cgi-bin/koha/catalogue/moredetail.pl?biblionumber='+str(item['biblio_id'])+'&itemnumber='+str(item['item_id'])+')')
                         # o bien https://faud.biblio.unc.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=48232
                         print(' (ver en', str(dominio)+'/cgi-bin/koha/opac-detail.pl?biblionumber='+str(item['biblio_id'])+')')
+                if len(prestamos) >= 20:
+                    print('La cantidad de préstamos es 20 o más')
+                else:
+                    print('La cantidad de préstamos es', len(prestamos))
             else:
                 print('No')
                         
@@ -176,16 +180,16 @@ def main():
     #     print(rr['cardnumber'], rr['firstname'], rr['surname'])
 
 
-    #card_number = '21062181'
+    # card_number = '21062181'
     # card_number = '38111171'
     card_number = '13821438'
     # card_number = '14121588'
     v_socio = verificar_socio(dominios, card_number)
     # print(v_socio)
     mostrar_socio_verificado(v_socio)
-    # card_number, surname = '462', 'ENCUADERNACI'
-    # v_socio = verificar_socio(dominios, card_number, surname)
-    # mostrar_socio_verificado(v_socio)
+    card_number, surname = '462', 'ENCUADERNACI'
+    v_socio = verificar_socio(dominios, card_number, surname)
+    mostrar_socio_verificado(v_socio)
 
     
 
