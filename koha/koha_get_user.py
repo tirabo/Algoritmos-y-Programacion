@@ -113,7 +113,7 @@ def mostrar_socio_verificado(socio_verificado):
                     item = datos_item(dominio, libro)
                     # print(libro, item)
                     if item:
-                        print('- El item con código de barras', item['external_id'], 'está prestado', end='')
+                        print('- El item con  código de barras', item['external_id'], 'está prestado', end='')
                         # https://faud.biblioadmin.unc.edu.ar/cgi-bin/koha/catalogue/moredetail.pl?biblionumber=48232&itemnumber=83627
                         # print(' (ver en', str(dominio)+'/cgi-bin/koha/catalogue/moredetail.pl?biblionumber='+str(item['biblio_id'])+'&itemnumber='+str(item['item_id'])+')')
                         # o bien https://faud.biblio.unc.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=48232
@@ -137,7 +137,7 @@ def main():
     #     print(bib['library_id'],':', bib['name'])
 
     socio =  datos_usuario(dominios[0], '21062181')
-    print(socio)
+    # print(socio)
     socio =  datos_usuario(dominios[0], '13821438')
     # print(socio)
     socio =  datos_usuario(dominios[0], '462','ENC')
@@ -185,7 +185,7 @@ def main():
     card_number = '13821438'
     # card_number = '14121588'
     v_socio = verificar_socio(dominios, card_number)
-    print(v_socio)
+    # print(v_socio)
     mostrar_socio_verificado(v_socio)
     card_number, surname = '462', 'ENCUADERNACI'
     v_socio = verificar_socio(dominios, card_number, surname)
