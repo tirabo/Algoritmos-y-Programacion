@@ -66,7 +66,8 @@ def dibujar_helecho(n):
 
 def main():
     n = 1000000 # número de puntos del helecho
-    x, y = dibujar_helecho(n)
+    x, y = dibujar_helecho(n    )
+    
     # dibujar los puntos
     plt.plot(x, y, '.', color='b', markersize=1)
     plt.title('Helecho {:.2e} puntos'.format(n)) # la cantidad de puntos en notación exponencial
