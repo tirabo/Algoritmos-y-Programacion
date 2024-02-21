@@ -13,6 +13,7 @@ Funciones que podés usar:
 - right(degrees)
 - left(degrees)
 - setheading(degrees), para apuntar en cierta dirección
+- setposition(x, y), para mover la tortuga a la posición (x, y)
 - setx(x), para cambiar la coordenada x
 - sety(y), para cambiar la coordenada y
 - penup(), levanta el lápiz, para poder desplazarse sin dejar huella
@@ -56,12 +57,12 @@ def pizarra_vacia(velocidad = 5, grosor_lapiz = 5):
     # inicializa la pizarra con velocidad 5 y ancho del lápiz igual 5
     # Dibuja un marco de 5 px de grosor
     screensize(800, 500)
-    dibujar_rectangulo(800, 500, 'grey', 5) # dibuja el marco
+    dibujar_rectangulo(800, 500, 'black', 10) # dibuja el marco
     hideturtle()
     bgcolor('white')
     color('black')
     speed(velocidad)
-    pensize(grosor_lapiz)
+    pensize(20)
 
 
 def bola_de_billar(n: int, repet: int):
@@ -86,18 +87,39 @@ def bola_de_billar(n: int, repet: int):
     
     while not (-25 <= pos_x <= 25 and -25 <= pos_y <= 25) and limite < repet:
         pos_x, pos_y = position()
-        forward(1)
-        if pos_x >= 400 or pos_x <= -400:
-            # setposition(400, pos_y)
-            direc = 180 - direc
+        if pos_x >= 400:
+            print('direccion:', direc)
             print('pos_x >= 400:', pos_x, pos_y, direc)
+            direc = 180 - direc
+            print('direccion:', direc)
+            setheading(direc)
+            setposition(400, pos_y) 
+            # forward(5) # para salir de la encerrona
+        elif pos_x <= -400:
+            print('direccion:', direc)
+            print('pos_x <= -400:', pos_x, pos_y, direc)
+            direc = 180 - direc
+            print('direccion:', direc)
+            setposition(-400, pos_y)
             setheading(direc) 
-            forward(2) # para salir de la encerrona
+            # forward(5) # para salir de la encerrona
+        elif pos_y >= 250:
+            direc = 360 - direc
+            print('pos_y >= 250:', pos_x, pos_y, direc)
+            setposition(pos_x, 250)
+            setheading(direc)
+            # forward(5)
+        elif pos_y <= -250:
+            direc = 360 - direc
+            print('pos_y <= -250:', pos_x, pos_y, direc)
+            setposition(pos_x, -250)
+            setheading(direc)
+            # forward(2)
         elif pos_y >= 250 or  pos_y <= -250:
             direc = 360 - direc
             print('pos_y >= 250:', pos_x, pos_y, direc)
             setheading(direc)
-            forward(2)
+        forward(5)
         limite += 1
     print('limite:', limite)
     return pos_x0, pos_y0, direc0
