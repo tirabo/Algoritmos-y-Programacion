@@ -55,14 +55,14 @@ def dibujar_rectangulo(ancho, alto, col = 'black', grosor_lapiz = 2):
 
 def pizarra_vacia(velocidad = 5, grosor_lapiz = 5):
     # inicializa la pizarra con velocidad 5 y ancho del lápiz igual 5
-    # Dibuja un marco de 5 px de grosor
+    # Dibuja un marco de 10 px de grosor
     screensize(800, 500)
     dibujar_rectangulo(800, 500, 'black', 10) # dibuja el marco
     hideturtle()
     bgcolor('white')
     color('black')
     speed(velocidad)
-    pensize(20)
+    pensize(5)
 
 
 def bola_de_billar(n: int, repet: int):
