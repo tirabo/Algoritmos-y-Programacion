@@ -82,42 +82,25 @@ def bola_de_billar(n: int, repet: int):
     setheading(direc0) # la tortuga apunta a direc
     pendown()
     pos_x, pos_y, direc = pos_x0, pos_y0, direc0
-    print(pos_x, pos_y, direc)
+
     limite = 0
-    
     while not (-25 <= pos_x <= 25 and -25 <= pos_y <= 25) and limite < repet:
         pos_x, pos_y = position()
         if pos_x >= 400:
-            print('direccion:', direc)
-            print('pos_x >= 400:', pos_x, pos_y, direc)
             direc = 180 - direc
-            print('direccion:', direc)
             setheading(direc)
             setposition(400, pos_y) 
-            # forward(5) # para salir de la encerrona
         elif pos_x <= -400:
-            print('direccion:', direc)
-            print('pos_x <= -400:', pos_x, pos_y, direc)
             direc = 180 - direc
-            print('direccion:', direc)
             setposition(-400, pos_y)
             setheading(direc) 
-            # forward(5) # para salir de la encerrona
         elif pos_y >= 250:
             direc = 360 - direc
-            print('pos_y >= 250:', pos_x, pos_y, direc)
             setposition(pos_x, 250)
             setheading(direc)
-            # forward(5)
         elif pos_y <= -250:
             direc = 360 - direc
-            print('pos_y <= -250:', pos_x, pos_y, direc)
             setposition(pos_x, -250)
-            setheading(direc)
-            # forward(2)
-        elif pos_y >= 250 or  pos_y <= -250:
-            direc = 360 - direc
-            print('pos_y >= 250:', pos_x, pos_y, direc)
             setheading(direc)
         forward(5)
         limite += 1

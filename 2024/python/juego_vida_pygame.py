@@ -29,7 +29,6 @@ def crear_ventana(titulo: str, width = 120, height = 80, e = 10, colors =  ['gra
     #      e: tamaño del pixel. Un pixel es  e x e  de pygame
     #      colors: color de fondo y color de dibujo
     #      
-
     global WIDTH, HEIGHT, E, COLORES
     WIDTH, HEIGHT, E, COLORES = width, height, e, colors
     pygame.init()
@@ -38,6 +37,7 @@ def crear_ventana(titulo: str, width = 120, height = 80, e = 10, colors =  ['gra
     screen.fill(COLORES[0])
     pygame.display.update()
     return screen
+
 
 def make_tablero():
     # post: Construye un array de WIDTH x HEIGHT con 0 en todas partes y lo devuelve
