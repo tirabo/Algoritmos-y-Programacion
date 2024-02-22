@@ -128,11 +128,11 @@ def juego_vida(tablero, screen, patron, grilla = False):
         pygame.display.update()
         # time.sleep(0.1)
 
-def patron_aleatorio(n: int):
+def patron_aleatorio(n: int, ancho = 120, alto = 80):
     # post: devuelve una lista de n tuplas (x,y) con 0 <= x < WIDTH y 0 <= y < HEIGHT
     patron = []
     for i in range(n):
-        patron.append((random.randint(0,WIDTH-1), random.randint(0,HEIGHT-1)))
+        patron.append((random.randint(0,ancho-1), random.randint(0,alto-1)))
     return patron
     
 
@@ -142,7 +142,7 @@ def main():
     # patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
     # patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
     # patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
-    patron = patron_aleatorio(500)
+    patron = patron_aleatorio(50,40,20)
     juego_vida(tablero, screen, patron)
 
 
