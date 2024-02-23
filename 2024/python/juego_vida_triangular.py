@@ -23,7 +23,7 @@ Si un triangulo es de tipo "E" y tiene centro en (m,n) entonces sus vecinos son
     * Derecha: (m+1,n), (m+2,n)
     * Abajo: (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)  
 Si un triangulo es de tipo "O" y tiene centro en (m,n) entonces sus vecinos son
-    * Arriba: (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m21,n+1)
+    * Arriba: (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1)
     * Izquierda: (m-1,n), (m-2,n)
     * Derecha: (m+1,n), (m+2,n)
     * Abajo: (m-1,n-1), (m,n-1), (m+1,n-1)
@@ -56,27 +56,25 @@ def put_pixel(tablero, screen, x:int, y:int, color:int):
     pygame.draw.rect(screen, colores[color], (E*x,E*y,E,E), 0)
     tablero[x][y] = color
 
-def num_vecinos_vivos_dic(tablero, m:int, n:int):
+
+
+def vecinos_vivos(tablero, m:int, n:int):
+    """
+    tablero es un conjunto de pares (m,n) con m,n enteros. Son los pixeles vivos.
+    """
     """
     - Si (m + n) % 2 == 0 sus vecinos son: 
     (m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)  
     - Si (m + n) % 2 == 1 sus vecinos son:
-    (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m21,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)
-    post: devuelve la cantidad de vecinos que valen 1.
+    (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)
+    post: devuelve el conjunto de vecinos vivos.
     """
-    if abs(m) > WIDTH // 2 - 1 or abs(n) > HEIGHT // 2 - 1:
-        print('Error: m o n fuera de rango', m, n)
-        exit(0)  
-    num_vecinos_vivos = 0
-    vecinos_E = [(m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)]
-    vecinos_O = [(m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)]
     if (m + n) % 2 == 0:
-        for vecino in vecinos_E:
-            num_vecinos_vivos += tablero[vecino[0]][vecino[1]]
+        vecinos = {(m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)}
     else:
-        for vecino in vecinos_O:
-            num_vecinos_vivos += tablero[vecino[0]][vecino[1]]
-    return num_vecinos_vivos
+        vecinos = {(m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)}
+    
+    return tablero & vecinos
 
 
 def num_vecinos_vivos_dic(tablero, u):
@@ -85,7 +83,7 @@ def num_vecinos_vivos_dic(tablero, u):
     - Si (m + n) % 2 == 0 sus vecinos son: 
     (m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)  
     - Si (m + n) % 2 == 1 sus vecinos son:
-    (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m21,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)
+    (m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)
     post: devuelve la cantidad de vecinos que valen 1.
     """
     (m,n) = u
@@ -102,84 +100,47 @@ def num_vecinos_vivos_dic(tablero, u):
                 num_vecinos_vivos += tablero[(vecino[0],vecino[1])]
     return num_vecinos_vivos
 
-def vivos(tablero):
-    # post: devuelve la cantidad de pixeles vivos en tablero
-    vivos = 0
-    for u in tablero:
-            if tablero[u] == 1:
-                vivos = vivos + 1
-    return vivos
 
+def vecinos(tablero, u):
+    (m,n) = u
+    if (m + n) % 2 == 0:
+        vecinos = {(m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)}
+    else:
+        vecinos = {(m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)}
+    return vecinos
 
-def juego_vida_dic(screen, LFR, patron):
-    # tablero: es un diccionario con claves (m,n) y valores 0 o 1
-    tablero = {}
-    for u in patron:
-        tablero[u] = 1
-    print('Patron:', vivos(tablero),'vivos')
-    print('Comienza el juego')
-    pasos = 0
-    while pasos < 100:
-        print('Vivos:', vivos(tablero), pasos)
-        tablero_orig = tablero.copy()
-        for u in tablero_orig:
-            (m,n) = u
-            if (m + n) % 2 == 0:
-                vecinos = [(m-1,n+1), (m,n+1), (m+1,n+1), (m-2,n), (m-1,n), (m+1,n), (m+2,n), (m-2,n-1), (m-1,n-1), (m,n-1), (m+1,n-1), (m+2,n-1)]
-            else:
-                vecinos = [(m-2,n+1), (m-1,n+1), (m,n+1), (m+1,n+1), (m+2,n+1), (m-1,n), (m-2,n), (m+1,n), (m+2,n), (m-1,n-1), (m,n-1), (m+1,n-1)]
-            for v in vecinos:
-                if v not in tablero:
-                    tablero[v] = 0
-            if tablero_orig[u] == 1 and not(LFR[0] <= num_vecinos_vivos_dic(tablero_orig,u) <= LFR[1]):
-                    tablero[u] = 0
-            elif tablero_orig[u] == 0 and LFR[2] <= num_vecinos_vivos_dic(tablero_orig,u) <= LFR[3]:
-                    tablero[u] = 1
-                    print('Vivo:', u)
-        pasos += 1
-        # print(pasos)
-    print(len(tablero))
-    tablero_arr = [[0]*(HEIGHT // 2) for _ in range(WIDTH // 2)  ]
-    for i in range(WIDTH // 2):
-        for j in range(HEIGHT // 2):
-            if (i,j) in tablero:
-                tablero_arr[i][j] = tablero[(i,j)]
-    print('Vivos:', vivos(tablero))
-                
+def num_vecinos_vivos(tablero, u):
+    return len(vecinos(tablero, u) & tablero)
 
 
 def juego_vida(screen, LFR, patron):
-    """ 
-        pre: tablero es un tablero, LFR es la regla (4-upla) y patron es la lista de los pixeles iniciales en 1
-        post: juego de la vida con reglas LFR
-    """
-    tablero =  [[0]*HEIGHT for _ in range(WIDTH)] # tablero de ceros WIDTH x HEIGHT
-    # tablero lo pensaremos como un array que en la primera coordenada es desde -WIDHT//2 hasta WIDTH//2 y en la segunda desde -HEIGHT//2 hasta HEIGHT//2 (Phyton nos permite pensarlo así). 
+    # LFR = (El, Eh, Fl, Fh) # regla del juego de la vida
+    # patron: es un conjunto de pixeles vivos
+    tablero = set()
     for u in patron:
-        tablero[u[0]][u[1]] = 1
-
-    tablero_orig =  [[0]*HEIGHT for _ in range(WIDTH)]
-
+        tablero = tablero | {u}
+    print('Patron:', len(tablero),'vivos')
     print('Comienza el juego')
     pasos = 0
-    cambios = {}
-    while True:
-        # for eventos in pygame.event.get():
-        #     if eventos.type == QUIT:
-        #         exit(0) # apretando "x" arriba drecha cierra la ventana
-        for i in range(-WIDTH //2, WIDTH // 2):
-            for j in range(-HEIGHT // 2, HEIGHT // 2):
-                 tablero_orig[i][j] = tablero[i][j]
-        for i in range(-WIDTH //2 + 1, WIDTH // 2 - 1):
-            for j in range(-HEIGHT // 2 + 1, HEIGHT // 2 - 1):
-                if tablero_orig[i][j] == 1 and not(LFR[0] <= num_vecinos_vivos(tablero_orig,i,j) <= LFR[1]):
-                    tablero[i][j] = 0
-                elif tablero_orig[i][j] == 0 and LFR[2] <= num_vecinos_vivos(tablero_orig,i,j) <= LFR[3]:
-                    tablero[i][j] = 1
+    print('vecinos vivos de (0,0)', len(vecinos(tablero, (0,0)) & tablero))
+    while pasos < 10:
+        print('Vivos:',tablero, pasos)
+        tablero_orig = tablero.copy()
+        print('Vivos 2:',tablero_orig, pasos)
+        for u in tablero_orig:
+            entorno = vecinos(tablero_orig,u) | {u} # u y todos sus vecinos
+            # print('entorno de', u, entorno)
+            for v in entorno:
+                n_vivos = num_vecinos_vivos(tablero_orig, v)
+                if  v in tablero_orig and not(LFR[0] <= n_vivos <= LFR[1]):
+                    print('muere', v)
+                    tablero = tablero - {v}
+                elif v not in tablero_orig and LFR[2] <= n_vivos <= LFR[3]:
+                    print('nace', v)
+                    tablero = tablero | {v}
         pasos += 1
-        print('Pasos:', pasos)
-        # pygame.display.update()
-        #time.sleep(1)
+
+                
 
     
 
@@ -188,10 +149,11 @@ def main():
     # patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
     # patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
     # patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
-    patron = [(i,j) for  i in range(10) for j in range(10)]
+    
+    patron = {(-1,1), (0,1), (1,1), (-2,0), (-1,0)} # (0,0) tiene 5 vecinos
 
     # juego_vida_dic(screen, (2,3,3,3), patron)
-    juego_vida_dic(screen, (4,6,4,4), patron)
+    juego_vida(screen, (3,4,4,6), patron)
     return 0
 
 # RUN
