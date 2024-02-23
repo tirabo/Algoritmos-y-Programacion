@@ -28,9 +28,6 @@ WIDTH = 120
 HEIGHT = 80
 E = 10 # E es la escala, la pantalla se dibuja de WIDTH * E x HEIGHT * E
 colores = {0:'white',1:'black',2:'red'}
-patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
-# patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
-# patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
 
 # FUNCIONES
 
@@ -81,14 +78,20 @@ def juego_vida(tablero, screen, patron):
     print('Dibujamos patron')
     for u in patron:
         put_pixel(tablero, screen, u[0] + WIDTH//2,u[1] + HEIGHT//2,1)
-    pygame.display.update()
+    
+    t_ini = time.time()
+    while time.time() - t_ini < 3: # 3 segundos muestra el patron
+        for eventos in pygame.event.get():
+            if eventos.type == QUIT:
+                exit(0) # apretando "x" arriba drecha cierra la ventana
+        pygame.display.update()
     
     tablero_orig = []
     for i in range(WIDTH):
         tablero_orig.append([])
         for j in range(HEIGHT):
             tablero_orig[i].append(0)
-    time.sleep(2)
+    
 
     print('Comienza el juego')
     while True:
@@ -133,6 +136,10 @@ def main():
     pygame.display.update()
     tablero = make_tablero()
     # pygame.draw.rect(screen, color, (x,y,width,height), thickness)
+    patron = [(0,0), (2,0),(2,1), (4,2),(4,3),(4,4), (6,3),(6,4),(6,5),(7,4)]
+    # patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
+    # patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
+
     juego_vida(tablero, screen, patron)
     """
     while True:
