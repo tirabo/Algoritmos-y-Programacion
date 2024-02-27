@@ -59,7 +59,7 @@ def crear_ventana(titulo: str, width = 120, height = 80, e = 10, colors =  ['gra
     return screen
 
 
-def actualizar_tablero(screen, width, height, e, colors, tablero_original, tablero_nuevo):
+def actualizar_tablero(screen, width, height, e, colors, tablero_original, tablero_nuevo, plano = True):
     """
     pre: screen es la ventana de dibujo, width, height son enteros, e es entero, colors es una lista de dos colores.
          tablero_original es el conjunto de pixeles vivos original, tablero_nuevo es el conjunto de pixeles vivos nuevos
@@ -70,14 +70,20 @@ def actualizar_tablero(screen, width, height, e, colors, tablero_original, table
     """
     tablero_v = tablero_nuevo - tablero_original # los que nacieron
     tablero_m = tablero_original - tablero_nuevo # los que murieron
-    for u in tablero_v:
-        (m,n)  = u
-        # pygame.draw.rect(screen, colors[1], (e * (m + width//2), e * (n + height//2),e,e), 0) # plano
-        pygame.draw.rect(screen, colors[1], (e * ((m + width//2) % width), e * ((n + height//2) % height),e,e),0) # toroidal 
-    for u in tablero_m:
-        (m,n)  = u
-        # pygame.draw.rect(screen, colors[0], (e * (m + width//2), e * (n + height//2),e,e), 0) # plano
-        pygame.draw.rect(screen, colors[0], (e * ((m + width//2) % width), e * ((n + height//2) % height),e,e),0) # toroidal 
+    if plano == True:
+        for u in tablero_v:
+            (m,n)  = u
+            pygame.draw.rect(screen, colors[1], (e * (m + width//2), e * (n + height//2),e,e), 0) # plano
+        for u in tablero_m:
+            (m,n)  = u
+            pygame.draw.rect(screen, colors[0], (e * (m + width//2), e * (n + height//2),e,e), 0) # plano
+    else:
+        for u in tablero_v:
+            (m,n)  = u
+            pygame.draw.rect(screen, colors[1], (e * ((m + width//2) % width), e * ((n + height//2) % height),e,e),0) # toroidal 
+        for u in tablero_m:
+            (m,n)  = u 
+            pygame.draw.rect(screen, colors[0], (e * ((m + width//2) % width), e * ((n + height//2) % height),e,e),0) # toroidal 
     pygame.display.update()
 
 
@@ -88,23 +94,12 @@ def dibujar_grilla(screen, width, height, e):
     for y in range(height + 1):
         pygame.draw.line(screen, "black", (0, e * y), (e * width, e * y), 1) # Draw a horizontal line
     for x in range(width + 1):
-        pygame.draw.line(screen, "black", (e * x, 0), (e * x, e * height), 1) # Draw a horizontal line
+        pygame.draw.line(screen, "black", (e * x, 0), (e * x, e * height), 1) # Draw a vertical line
     pygame.display.update()
 
-"""
-def put_borde_pixel(screen, x, y, clr = 'black'):
-    # post: dibuja un cuadradito de la grilla en la posición (x,y) con los bordes de color clr (coordenadas de la grilla, no de pygame)
-    pygame.draw.polygon(screen, clr, [(E*x, E*y),(E*x + E, E*y),(E*x + E, E*y + E),(E*x, E*y + E), (E*x, E*y)], 1)
-    pygame.display.update()
 
-def put_pixel(screen, width, height, e, colors, tablero, col, u):
-    # pre: col = 0 o 1 
-    # post: dibuja el pixel u con  color "col"
-    x, y = u[0] % width, u[1] % height
-    pygame.draw.rect(screen, colors[col], (e*x,e*y,e,e), 0)
-"""
 
-def juego_vida(screen, width, height, e, colors, patron):
+def juego_vida(screen, width, height, e, colors, patron, plano = True):
     """
     pre:  screen es la ventana de dibujo, patron es la lista de los pixeles iniciales
     post: tablero será el conjunto de pixeles vivos
@@ -120,81 +115,27 @@ def juego_vida(screen, width, height, e, colors, patron):
     tablero = set()
     for u in patron:
         tablero = tablero | {u}
-    print('Patron:', len(tablero),'vivos')
-    print('Comienza el juego')
     pasos = 0
-    print('vecinos vivos de (0,0)', len(vecinos_vivos(tablero, (0,0))))
     while True:
         for eventos in pygame.event.get():
             if eventos.type == QUIT:
+                print('Número de generaciones:', pasos)
                 exit(0) # apretando "x" arriba derecha cierra la ventana
-        print('Vivos:',tablero, pasos)
         tablero_orig = tablero.copy()
-        print('Vivos 2:',tablero_orig, pasos)
         for u in tablero_orig:
             entorno = vecinos(u) | {u} # u y todos sus vecinos
             # print('entorno de', u, entorno)
             for v in entorno:
                 n_vecinos_vivos = len(vecinos_vivos(tablero_orig, v))
                 if  v in tablero_orig and not(2 <= n_vecinos_vivos  <= 3):
-                    print('muere', v)
                     tablero = tablero - {v}
                 elif v not in tablero_orig and n_vecinos_vivos == 3:
-                    print('nace', v)
                     tablero = tablero | {v}
-        actualizar_tablero(screen, width, height, e, colors, tablero_orig, tablero)
+        actualizar_tablero(screen, width, height, e, colors, tablero_orig, tablero, plano)
         pasos += 1
         # time.sleep(0.01)
 
 
-"""
-def juego_vida(tablero, screen, patron, grilla = False):
-    # pre: tablero es un tablero y patron es la lista de los pixeles iniciales
-    # post: cada pixel de tablero es 1 o 0 (1 se dibuja color lapiz, 0 se dibuja color background).
-    #      1) se pone 1 en los pixeles de patron
-    #      Cada pixel (x,y) tiene 8 vecinos: (x-1,y+1), (x,y+1), (x+1,y+1), (x-1,y), (x+1,y), (x-1,y-1), (x,y-1), (x+1,y-1).
-    #      2) En cada paso se cambian los pixeles de 1 a 0 o de 0 a 1 según las siguientes reglas: para obtener el tablero n se usan los valores del tablero n-1 y
-    #         a) Cualquier pixel 1 con dos o tres vecinos vivos sigue siendo 1.
-    #         b) Cualquier pixel 0 con tres vecinos 1 se convierte a 1.
-    #         c) Todas los otros pixeles pasan a 0.
-    if grilla:
-        print("Dibujamos la grilla")
-        dibujar_grilla(screen)
-    print('Dibujamos patron')
-    for u in patron:
-        put_pixel(tablero, screen, u[0] + WIDTH//2,u[1] + HEIGHT//2, 1)
-        # put_pixel(tablero, screen, u[0],u[1])
-    pygame.display.update()
-    
-    tablero_orig = []
-    for i in range(WIDTH):
-        tablero_orig.append([])
-        for j in range(HEIGHT):
-            tablero_orig[i].append(0)
-    time.sleep(2)
-
-    print('Comienza el juego')
-    while True:
-        for eventos in pygame.event.get():
-            if eventos.type == QUIT:
-                exit(0) # apretando "x" arriba derecha cierra la ventana
-        for i in range(WIDTH):
-            for j in range(HEIGHT):
-                tablero_orig[i][j] = tablero[i][j]
-        for i in range(WIDTH):
-            for j in range(HEIGHT):
-                if tablero_orig[i][j] == 1 and (num_vecinos(tablero_orig,i,j) == 2 or num_vecinos(tablero_orig,i,j) == 3):
-                    pass
-                elif tablero_orig[i][j] == 0 and num_vecinos(tablero_orig,i,j) == 3:
-                    put_pixel(tablero, screen, i, j, 1)
-                else:
-                    if tablero_orig[i][j] == 1:
-                        put_pixel(tablero,screen, i, j, 0)
-                        if grilla:
-                            put_borde_pixel(screen,i, j)
-        pygame.display.update()
-        # time.sleep(0.1)
-"""
 def patron_aleatorio(n: int, ancho = 120, alto = 80):
     # post: devuelve una lista de n tuplas (x,y) con 0 <= x < WIDTH y 0 <= y < HEIGHT
     patron = []
@@ -205,8 +146,10 @@ def patron_aleatorio(n: int, ancho = 120, alto = 80):
 
 def main():
     titulo = "Juego de la vida"
-    width, height, e = 300, 200, 4
+    # width, height, e = 300, 200, 4
+    width, height, e = 150, 100, 10
     colors =  ['gray', 'black']
+    plano = False
     screen = crear_ventana(titulo, width, height, e, colors)
     # dibujar_grilla(screen, width, height, e)
 
@@ -214,7 +157,7 @@ def main():
     # patron = [(0,1), (1,2), (2,0), (2,1),(2,2)]
     # patron = [(1,5),(1,6),(2,5),(2,6),(11,5),(11,6),(11,7),(12,4),(12,8),(13,3),(13,9),(14,3),(14,9),(15,6),(16,4),(16,8), (17,5),(17,6),(17,7),(18,6),(21,3),(21,4),(21,5),(22,3),(22,4),(22,5),(23,2),(23,6),(25,1),(25,2),(25,6),(25,7),(35,3),(35,4),(36,3),(36,4)]
     # patron = patron_aleatorio(50,40,20)
-    juego_vida(screen, width, height, e, colors, patron)
+    juego_vida(screen, width, height, e, colors, patron, plano)
 
 
 
