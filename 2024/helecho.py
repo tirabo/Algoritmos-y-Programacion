@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 # Helecho de Barnsley
 
 
+
 def transformation_1(p):
     x = p[0]
     y = p[1]
