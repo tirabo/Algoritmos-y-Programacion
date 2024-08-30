@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Algoritmos y Programación: introducción &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_Introduccion';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dibujando con una tortuga" href="01_Dibujando_con_Python_Turtle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F00_Introduccion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/00_Introduccion.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Algoritmos y Programación: introducción</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenciatura-en-matematica-aplicada-famaf">Licenciatura en Matemática Aplicada (FAMAF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-materia">Objetivos de la materia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-imperativa">Programación ¿imperativa?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contenidos-minimos">Contenidos mínimos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-de-aprendizaje">Metodología de aprendizaje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-las-clases">Dinámica de las clases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularidad">Regularidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promocion">Promoción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aprobacion-en-caso-de-no-promocionar">Aprobación (en caso de no promocionar)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprender-a-programar-aprender-un-lenguaje">Aprender a programar  ≠ Aprender un lenguaje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-python">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-sobre-python">Bibliografía sobre Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-bibliografia-sobre-python">Más bibliografía sobre Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendiendo-un-lenguaje-de-programacion">Aprendiendo un lenguaje de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Objetivos de la materia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="algoritmos-y-programacion-introduccion">
+<h1>Algoritmos y Programación: introducción<a class="headerlink" href="#algoritmos-y-programacion-introduccion" title="Link to this heading">#</a></h1>
+<section id="licenciatura-en-matematica-aplicada-famaf">
+<h2>Licenciatura en Matemática Aplicada (FAMAF)<a class="headerlink" href="#licenciatura-en-matematica-aplicada-famaf" title="Link to this heading">#</a></h2>
+<section id="objetivos-de-la-materia">
+<h3>Objetivos de la materia<a class="headerlink" href="#objetivos-de-la-materia" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Asimilar conceptos fundamentales de programación imperativa mediante la ejercitación. 🚴</p></li>
+<li><p>Familiarizarse con técnicas de programación. 🔧</p></li>
+<li><p>Incorporar buenas prácticas de programación. ⛐</p></li>
+<li><p>Reconocer la necesidad de comprobar el buen funcionamiento de los programas. 🔍</p></li>
+<li><p>Adquirir habilidad en el abordaje computacional de problemas numéricos simples. ❌ ➗</p></li>
+</ul>
+</section>
+<section id="programacion-imperativa">
+<h3>Programación ¿imperativa?<a class="headerlink" href="#programacion-imperativa" title="Link to this heading">#</a></h3>
+<p>Existen distintos enfoques, “paradigmas”, o modelos de programación:</p>
+<ul class="simple">
+<li><p>Imperativa (se estudia en esta materia)</p></li>
+<li><p>Orientada a objetos (veremos algo en la materia)</p></li>
+<li><p>Funcional</p></li>
+<li><p>Lógica</p></li>
+<li><p>Otras</p>
+<ul>
+<li><p>Dirigida por eventos</p></li>
+<li><p>Orientada a aspectos</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="contenidos-minimos">
+<h3>Contenidos mínimos<a class="headerlink" href="#contenidos-minimos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Introducción a la programación imperativa.</p></li>
+<li><p>Entrada/Salida.</p></li>
+<li><p>Estado, variable y asignación. Condicional.</p></li>
+<li><p>Iteración.</p></li>
+<li><p>Variante e invariante.</p></li>
+<li><p>Programación estructurada.</p></li>
+<li><p>Subalgoritmos: bloques, funciones y procedimientos.</p></li>
+<li><p>Pasaje de parámetros.</p></li>
+<li><p>Recursión.</p></li>
+<li><p>Diseño top-down y bottom-up.</p></li>
+<li><p>Abstracción. Tipos elementales y estructurados.</p></li>
+<li><p>Especificación e implementación.</p></li>
+<li><p>Correctitud. Verificación.</p></li>
+<li><p>Programación de algoritmos elementales de teoría de números.</p></li>
+</ul>
+</section>
+<section id="metodologia-de-aprendizaje">
+<h3>Metodología de aprendizaje<a class="headerlink" href="#metodologia-de-aprendizaje" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Clases eminentemente prácticas.</p></li>
+<li><p>Secuencia de ejercicios.</p></li>
+<li><p>Dificultad incremental.</p></li>
+<li><p>Introduciendo <strong>conceptos</strong> gradualmente 🌑🌒🌓🌔🌕.</p></li>
+<li><p>Interrumpiendo la ejercitación para discutirlos, señalar buenos y malos <strong>hábitos.</strong></p></li>
+<li><p>La ejercitación ayudará a fijar los conceptos, reconocer los vicios y adquirir buenas técnicas.</p></li>
+</ul>
+</section>
+<section id="dinamica-de-las-clases">
+<h3>Dinámica de las clases<a class="headerlink" href="#dinamica-de-las-clases" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Filminas + pizarrón</p></li>
+<li><p>Pueden realizar preguntas en cualquier momento</p>
+<ul>
+<li><p>interrumpiéndome</p></li>
+<li><p>levantando la mano</p></li>
+</ul>
+</li>
+<li><p>Cuando trabajemos con código pueden experimentar con su propio código durante la clase</p></li>
+</ul>
+</section>
+<section id="regularidad">
+<h3>Regularidad<a class="headerlink" href="#regularidad" title="Link to this heading">#</a></h3>
+<p>Artículo 5° del Anexo I de la Resolución CD N° 73/2021.</p>
+<ul class="simple">
+<li><p>estar inscripto en la materia como alumno/a regular</p></li>
+<li><p>aprobar los tres parciales</p></li>
+<li><p>en caso de no aprobar un parcial, se puede rendir un recuperatorio</p></li>
+</ul>
+</section>
+<section id="promocion">
+<h3>Promoción<a class="headerlink" href="#promocion" title="Link to this heading">#</a></h3>
+<p>Artículo 7° del Anexo I de la Resolución CD N° 73/2021.</p>
+<ul class="simple">
+<li><p>estar inscripto en la materia como alumno/a regular</p></li>
+<li><p>haber aprobado el cursillo de nivelación</p></li>
+<li><p>aprobar los tres parciales con nota no inferior a <span class="math notranslate nohighlight">\(6\)</span></p></li>
+<li><p>el promedio de los parciales debe ser <span class="math notranslate nohighlight">\(&gt;= 7\)</span>.</p></li>
+</ul>
+<p>En  caso de promocionar la nota de la materia es el promedio de los parciales redondeado.</p>
+</section>
+<section id="aprobacion-en-caso-de-no-promocionar">
+<h3>Aprobación (en caso de no promocionar)<a class="headerlink" href="#aprobacion-en-caso-de-no-promocionar" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Se tomará un examen que contendrá una parte de  ejercicios de programación y una parte de preguntas conceptuales,</p></li>
+<li><p>Para aprobar el examen se deberá tener un 50% de los ejercicios de programación  correctamente realizados.</p></li>
+</ul>
+</section>
+</section>
+<section id="aprender-a-programar-aprender-un-lenguaje">
+<h2>Aprender a programar  ≠ Aprender un lenguaje<a class="headerlink" href="#aprender-a-programar-aprender-un-lenguaje" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Aprender programación no es lo mismo que aprender un lenguaje de programación.</p></li>
+<li><p>Pero para aprender a programar necesitamos ejercitarnos.</p></li>
+<li><p>Para ello elegiremos un lenguaje de programación: Python.</p></li>
+<li><p>Necesitaremos ir aprendiendo <strong>particularidades</strong> de Python.</p></li>
+<li><p>Importante mantener el foco en lo <strong>conceptual</strong> de la programación imperativa.</p></li>
+<li><p>Habrá un conflicto constante entre lo <strong>conceptual</strong> y lo <strong>particular</strong>, estemos atentos para separar uno del otro.</p></li>
+</ul>
+<section id="por-que-python">
+<h3>¿Por qué Python? 🐍<a class="headerlink" href="#por-que-python" title="Link to this heading">#</a></h3>
+<p>Existen numerosos lenguajes de programación imperativa: C, C++, Java, JavaScript, … ¿por qué Python?</p>
+<p>Cada uno de los siguientes links da alguna idea de lo importante que es Python en este momento como lenguaje de programación.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nextu.com/blog/razones-aprender-python/#:~:text=Es%20uno%20de%20los%20lenguajes,f%C3%A1cilmente%20otros%20lenguajes%20de%20programaci%C3%B3n">10 razones por las que debes aprender Python</a> | <a class="reference external" href="http://nextu.com">nextu.com</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;mindfiresolutions.usa/python-7-important-reasons-why-you-should-use-python-5801a98a0d0b#:~:text=Python%20is%20a%20general%20purpose,care%20of%20common%20programming%20tasks.">Python: 7 Important Reasons Why You Should Use Python</a></p></li>
+<li><p><a class="reference external" href="https://www.pluralsight.com/blog/software-development/why-python">5 reasons you should learn Python now</a> | Pluralsight</p></li>
+<li><p><a class="reference external" href="http://www.bestprogramminglanguagefor.me/why-learn-python">Why Learn Python - Best Programming Language</a></p></li>
+<li><p><a class="reference external" href="https://www.techrepublic.com/article/why-python-is-considered-the-top-programming-language-ahead-of-javascript-and-c/">Why Python is considered the top programming language ahead of JavaScript and C++</a></p></li>
+<li><p><a class="reference external" href="https://www.makeuseof.com/tag/python-language-future/">6 Reasons Why Python Is the Programming Language of the future</a></p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>¿Por qué Python? 🐍<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Pero quizás es más fácil preguntarle a ChatGPT:
+¿Python es un buen lenguaje de programación para aprender a programar? Dígame sus virtudes y defectos.
+Verán una fuerte recomendación a favor de Python con argumentos muy sólidos.</p>
+</section>
+<section id="id2">
+<h3>¿Por qué Python? 🐍<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Existen herramientas muy convenientes para aprender Python.</p>
+<ul class="simple">
+<li><p><strong>Jupyter Notebook:</strong> nos permite escribir en celdas. Algunas texto con formato y ecuaciones matemáticas; otras con código Python que puede ser ejecutado. Es un  “cuaderno” interactivo.</p></li>
+<li><p><strong>Google Colab:</strong> una implementación de los cuadernos Jupyter en la nube. No hay necesidad de instalar nada en nuestras computadoras. Si estás logueado en una cuenta de Google podés empezar a trabajar <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a></p></li>
+</ul>
+</section>
+<section id="bibliografia-sobre-python">
+<h3>Bibliografía sobre Python<a class="headerlink" href="#bibliografia-sobre-python" title="Link to this heading">#</a></h3>
+<p>Hay abundante material disponible, por ejemplo:</p>
+<ul class="simple">
+<li><p><em>Algoritmos de Programación con Python.</em>  R. Wachenchauzer, M. Manterola, M. Curia, M. Medrano, N. Paez. <a class="reference external" href="http://uniwebsidad.com">uniwebsidad.com</a></p></li>
+<li><p><em>Introduction to programming using Python.</em> Daniel Liang. Armstrong Atlantic State University, 2013.</p></li>
+<li><p><em>Tutorial de Python — documentación de Python - 3.9.1.</em></p></li>
+<li><p><em>Python Practice Book</em>, 2019, Anand Chitipothu (creative commons).</p></li>
+</ul>
+</section>
+<section id="mas-bibliografia-sobre-python">
+<h3>Más bibliografía sobre Python<a class="headerlink" href="#mas-bibliografia-sobre-python" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em>Introduction to Computation and Programming Using Python</em>, MIT Press, 2013, John V. Guttag</p></li>
+<li><p><em>Pensar en Python</em>, 2015, 2da ed., Allen B. Downey.</p></li>
+<li><p>Innumerables recursos: <a class="reference external" href="http://python.org">python.org</a>, <a class="reference external" href="http://python.org.ar">python.org.ar</a> (material en castellano)</p></li>
+</ul>
+</section>
+</section>
+<section id="aprendiendo-un-lenguaje-de-programacion">
+<h2>Aprendiendo un lenguaje de programación<a class="headerlink" href="#aprendiendo-un-lenguaje-de-programacion" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Aprendiendo los fundamentos.</p></li>
+<li><p>Escribiendo programas básicos y aumentándoles progresivamente la dificultad.</p></li>
+<li><p>Ejecutando, mirando y modificando programas escritos por nosotros y por otros.</p></li>
+<li><p>Ante la duda sobre qué hace un cierto programa, o un fragmento de un programa, intentar descubrirlo modificándolo, ejecutándolo.</p></li>
+<li><p>Consultar los manuales del lenguaje, consultar internet.</p></li>
+<li><p>Consultar con un compañero o con profes o el chat.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Objetivos de la materia<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Enseñarles conceptos fundamentales de programación imperativa.</p></li>
+<li><p>Proporcionarles habilidad en el uso de Python para resolver problemas numéricos, en lo posible relacionados con los contenidos previos o impartidos en otras asignaturas de este cuatrimestre.</p></li>
+<li><p>Prepararles para las materias siguientes, en particular para Análisis Numérico I y II (2º año) y Algoritmos y Estructura de Datos (3er año).</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="01_Dibujando_con_Python_Turtle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dibujando con  una tortuga</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licenciatura-en-matematica-aplicada-famaf">Licenciatura en Matemática Aplicada (FAMAF)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-la-materia">Objetivos de la materia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-imperativa">Programación ¿imperativa?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contenidos-minimos">Contenidos mínimos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodologia-de-aprendizaje">Metodología de aprendizaje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamica-de-las-clases">Dinámica de las clases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularidad">Regularidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#promocion">Promoción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aprobacion-en-caso-de-no-promocionar">Aprobación (en caso de no promocionar)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprender-a-programar-aprender-un-lenguaje">Aprender a programar  ≠ Aprender un lenguaje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-python">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">¿Por qué Python? 🐍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliografia-sobre-python">Bibliografía sobre Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-bibliografia-sobre-python">Más bibliografía sobre Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aprendiendo-un-lenguaje-de-programacion">Aprendiendo un lenguaje de programación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Objetivos de la materia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1197 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Condicionales &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06_Condicionales';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ciclos" href="07_Ciclos.html" />
+    <link rel="prev" title="Funciones" href="05_Funciones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F06_Condicionales.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/06_Condicionales.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Condicionales</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-booleanas">1. Expresiones booleanas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">2. Operadores lógicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-condicional">3. Ejecución condicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-alternativa">4. Ejecución alternativa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-encadenados">5.Condicionales encadenados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-anidados">6. Condicionales anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-coordenadas">7. Ejemplo: conversión de formatos de coordenadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentacion-o-sangria-en-python">8. Indentación o sangría en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentacion">Indentación</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="condicionales">
+<h1>Condicionales<a class="headerlink" href="#condicionales" title="Link to this heading">#</a></h1>
+<p>Aunque este tema ya ha sido  parcialmente estudiado,  aquí lo presentamos en forma sistemática y más formalmente.</p>
+<section id="expresiones-booleanas">
+<h2>1. Expresiones booleanas<a class="headerlink" href="#expresiones-booleanas" title="Link to this heading">#</a></h2>
+<p>Una expresión booleana es una expresión verdadera o falsa. Los siguientes ejemplos usan el operador <code class="docutils literal notranslate"><span class="pre">==</span></code>, que compara dos operandos y produce <code class="docutils literal notranslate"><span class="pre">True</span></code> si son iguales y <code class="docutils literal notranslate"><span class="pre">False</span></code> en caso contrario:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">True</span></code> y<code class="docutils literal notranslate"> <span class="pre">False</span></code> son valores especiales que pertenecen al tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>; no son cadenas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>El tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code> es muy especial: solo contiene dos valores <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">==</span></code> es uno de los <em>operadores relacionales</em>. La siguiente es la lista de todos los operadores relacionales:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">==</span> <span class="n">y</span> <span class="c1"># x es igual a y</span>
+    <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span> <span class="c1"># x no es igual a y</span>
+    <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="c1"># x es mayor que y</span>
+    <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="c1"># x es menor que y</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span> <span class="c1"># x es mayor o igual que y</span>
+    <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="c1"># x es menor o igual que y</span>
+</pre></div>
+</div>
+<p>Aunque estas operaciones probablemente le resulten familiares, a veces el uso de los símbolos en Python es diferente al uso en la matemática. Un error común es usar un solo signo igual (<code class="docutils literal notranslate"><span class="pre">=</span></code>) en lugar de un doble signo igual (<code class="docutils literal notranslate"><span class="pre">==</span></code>). Recordá que <code class="docutils literal notranslate"><span class="pre">=</span></code> es un operador de asignación y <code class="docutils literal notranslate"><span class="pre">==</span></code> es un operador relacional. No existe tal cosa como <code class="docutils literal notranslate"><span class="pre">=&lt;</span></code> o <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>.</p>
+</section>
+<section id="operadores-logicos">
+<h2>2. Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h2>
+<p>Los operadores lógicos toman sentencias lógicas escritas en Python (que pueden ser <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>) y hacen operaciones lógicas.</p>
+<p>Los operadores lógicos son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span></code>: es <span class="math notranslate nohighlight">\(p \wedge q\)</span> y devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">p</span></code> y <code class="docutils literal notranslate"><span class="pre">q</span></code> son <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code>: es <span class="math notranslate nohighlight">\(p \vee q\)</span> y devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">p</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code>  o <code class="docutils literal notranslate"><span class="pre">q</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span></code>: es <span class="math notranslate nohighlight">\(\neg p\)</span> y devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">p</span></code> es <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+<p>No existe <code class="docutils literal notranslate"><span class="pre">p</span></code> implica <code class="docutils literal notranslate"><span class="pre">q</span></code>  u otros operadores lógicos. Solo los de arriba y estos nos permiten escribir todos los operadores lógicos, por ejemplo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code> es <span class="math notranslate nohighlight">\((\neg p) \vee q\)</span> y es equivalente a  <code class="docutils literal notranslate"><span class="pre">p</span></code> implica <code class="docutils literal notranslate"><span class="pre">q</span></code> (<span class="math notranslate nohighlight">\(p ⇒q\)</span>) y  solo devuelve <code class="docutils literal notranslate"><span class="pre">False</span></code> cuando <code class="docutils literal notranslate"><span class="pre">p</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">q</span></code> es <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ul>
+<p>Corramos los siguiente ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;p :&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">q :&#39;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">r :&#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">t :&#39;</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt; &lt;class &#39;bool&#39;&gt; &lt;class &#39;bool&#39;&gt; &lt;class &#39;bool&#39;&gt;
+p : True 
+q : True 
+r : False 
+t : False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="ow">and</span> <span class="n">q</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="ow">and</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="ow">or</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">r</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span> <span class="ow">or</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">p</span> <span class="ow">or</span> <span class="n">r</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La tabla de verdad de =&gt; es</span>
+<span class="c1"># True =&gt; False es False</span>
+<span class="c1"># True =&gt; True es True</span>
+<span class="c1"># False =&gt; p es True</span>
+<span class="c1"># Ahora bien p =&gt; q es equivalente a  (not p) or q</span>
+<span class="nb">print</span><span class="p">((</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,(</span><span class="ow">not</span> <span class="n">p</span><span class="p">)</span> <span class="ow">or</span> <span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True =&gt; True : True
+True =&gt; False : False
+False =&gt; True : True
+False =&gt; False : True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># p or q es equivalente not (not p and not q)</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">))</span> <span class="c1"># True or  False</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">))</span> <span class="c1"># True or True</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">))</span> <span class="c1"># False or True</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">False</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">))</span> <span class="c1"># False or False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">{</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">}:</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="p">{</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">}:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="n">p</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">q</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">p</span> <span class="ow">or</span> <span class="n">q</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False False True
+False True True
+True False True
+True True True
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ejercicio (difícil).</em> Obtener con el operador <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">q</span></code> los operadores <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span></code>. Es decir con el operador <span class="math notranslate nohighlight">\(\neg p \wedge \neg q\)</span> se pueden obtener todos los operadores lógicos.</p>
+</section>
+<section id="ejecucion-condicional">
+<h2>3. Ejecución condicional<a class="headerlink" href="#ejecucion-condicional" title="Link to this heading">#</a></h2>
+<p>Para escribir programas útiles, casi siempre necesitamos la capacidad de verificar condiciones y cambiar el comportamiento del programa en consecuencia. Las <em>declaraciones condicionales</em> nos dan esta capacidad. La forma más simple es la declaración <code class="docutils literal notranslate"><span class="pre">if</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># cambiar el valor para hacer pruebas</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es positivo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es positivo
+</pre></div>
+</div>
+</div>
+</div>
+<p>La expresión booleana después de <code class="docutils literal notranslate"><span class="pre">if</span></code> se llama <em>condición</em>. Si es verdadera, se ejecuta la declaración con sangría. Si no, no pasa nada.</p>
+<p>Las declaraciones <code class="docutils literal notranslate"><span class="pre">if</span></code> tienen la misma estructura que las definiciones de funciones: un encabezado seguido de un cuerpo con sangría. Las declaraciones como ésta se denominan <em>declaraciones compuestas</em>.</p>
+<p>No hay límite en la cantidad de declaraciones que pueden aparecer en el cuerpo, pero debe haber al menos una. De vez en cuando, es útil tener un cuerpo sin declaraciones (generalmente como un lugar para guardar el código que aún no ha escrito). En ese caso, puede usar la instrucción <code class="docutils literal notranslate"><span class="pre">pass</span></code>, que no hace nada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">pass</span> <span class="c1"># TODO (&#39;Por Hacer&#39;): ¡es necesario manejar valores negativos!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejecucion-alternativa">
+<h2>4. Ejecución alternativa<a class="headerlink" href="#ejecucion-alternativa" title="Link to this heading">#</a></h2>
+<p>Una segunda forma de la instrucción <code class="docutils literal notranslate"><span class="pre">if</span></code> es la <em>ejecución alternativa</em>, en la que hay dos posibilidades y la condición determina cuál se ejecuta. La sintaxis se ve así:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condición</span><span class="p">:</span>
+    <span class="n">ejecutar1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ejecutar2</span>
+</pre></div>
+</div>
+<p>Si se cumple <code class="docutils literal notranslate"><span class="pre">condición</span></code> se hace <code class="docutils literal notranslate"><span class="pre">ejecutar1</span></code>. En caso contrario se hace <code class="docutils literal notranslate"><span class="pre">ejecutar2</span></code>. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es par&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es impar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es par
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si el resto cuando <code class="docutils literal notranslate"><span class="pre">x</span></code> se divide por 2 es 0, entonces sabemos que <code class="docutils literal notranslate"><span class="pre">x</span></code> es par y el programa muestra un mensaje apropiado. Si la condición es falsa, se ejecuta el segundo conjunto de declaraciones. Dado que la condición debe ser verdadera o falsa, se ejecutará exactamente una de las alternativas. Las alternativas se denominan <em>ramas</em>, porque son ramas en el flujo de ejecución.</p>
+<p>Cuando en <em>cada rama</em> de la ejecución alternativa hay <em>una sola instrucción</em>, Python permite escribirla en forma más compacta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es par&#39;</span><span class="p">)</span> <span class="k">if</span>  <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es impar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es par
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="condicionales-encadenados">
+<h2>5.Condicionales encadenados<a class="headerlink" href="#condicionales-encadenados" title="Link to this heading">#</a></h2>
+<p>A veces hay más de dos posibilidades y necesitamos más de dos ramas. Una forma de expresar un cálculo como ese es un <em>condicional encadenado</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span> <span class="c1"># cambiar valores para hacer pruebas</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es menor que y&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es mayor que y&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x e y son iguales&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es mayor que y
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> es una abreviatura de “else if”. Nuevamente, se ejecutará exactamente una rama. No hay límite en el número de declaraciones <code class="docutils literal notranslate"><span class="pre">elif</span></code>. Si hay una cláusula <code class="docutils literal notranslate"><span class="pre">else</span></code>, tiene que estar al final, pero no tiene que haberla. Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elección</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span> <span class="c1"># cambiar valor para hacer pruebas</span>
+<span class="k">if</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es a&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es b&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El valor es a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cada condición se comprueba en orden. Si el primero es falso, se marca el siguiente y así sucesivamente. Si uno de ellos es verdadero, se ejecuta la rama correspondiente y finaliza la declaración. Incluso si más de una condición es verdadera, solo se ejecuta la primera rama verdadera.</p>
+<p><em>Observación.</em> Un  error muy común al escribir condicionales encadenados es reemplazar los <code class="docutils literal notranslate"><span class="pre">elif</span></code> por  los <code class="docutils literal notranslate"><span class="pre">if</span></code>. Por ejemplo, en la celda de código anterior como <code class="docutils literal notranslate"><span class="pre">elección</span></code> puede tomar solo un valor,  entonces ese código es lógicamente equivalente a:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elección</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span> <span class="c1"># cambiar valor para hacer pruebas</span>
+<span class="k">if</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es a&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es b&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">elección</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor es c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El valor es c
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, el hecho de que <code class="docutils literal notranslate"><span class="pre">elif</span></code> termina el condicional encadenado es importante en otros casos. Por ejemplo,  si queremos determinar que vocales se encuentran en determinada palabra, podemos hacer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;piragua&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;e&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;e es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;o&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;o es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;u&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;u es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a es una vocal que aparece en piragua
+i es una vocal que aparece en piragua
+u es una vocal que aparece en piragua
+</pre></div>
+</div>
+</div>
+</div>
+<p>que no hace lo mismo que</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;piragua&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s1">&#39;e&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;e es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s1">&#39;o&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;o es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s1">&#39;u&#39;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;u es una vocal que aparece en&#39;</span><span class="p">,</span> <span class="n">palabra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a es una vocal que aparece en
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> piragua
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  realidad,  la primera secuencia de código no es un “condicional encadenado”, sino una sucesión de condicionales, uno tras otro.</p>
+</section>
+<section id="condicionales-anidados">
+<h2>6. Condicionales anidados<a class="headerlink" href="#condicionales-anidados" title="Link to this heading">#</a></h2>
+<p>Un condicional también se puede anidar dentro de otro. Podríamos haber escrito el ejemplo en la sección anterior así:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x e y son iguales&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x es menor que y&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es mayor que y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es mayor que y
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El primer condicional contiene dos ramas. La primera rama contiene una declaración simple. La segunda rama contiene otra instrucción <code class="docutils literal notranslate"><span class="pre">if</span></code>, que a su vez tiene dos ramas propias. Esas dos ramas son declaraciones simples, aunque también podrían haber sido declaraciones condicionales.</p>
+<p>Aunque la sangría de las declaraciones hace que la estructura sea evidente, los <em>condicionales anidados</em> en general no son fáciles de leer. Es una buena idea evitarlos siempre que pueda.</p>
+<p>Los operadores lógicos a menudo proporcionan una forma de simplificar las declaraciones condicionales anidadas. Por ejemplo, el siguiente código:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es un número positivo de un solo dígito.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>se puede reescribir usando un solo condicional. La instrucción <code class="docutils literal notranslate"><span class="pre">print</span></code> se ejecuta solo si superamos ambos condicionales, por lo que podemos obtener el mismo efecto con el operador <code class="docutils literal notranslate"><span class="pre">and</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x es un número positivo de un solo dígito.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para este tipo de condición, Python incluso proporciona una opción más concisa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x es un número positivo de un solo dígito.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="ejemplo-conversion-de-formatos-de-coordenadas">
+<h2>7. Ejemplo: conversión de formatos de coordenadas<a class="headerlink" href="#ejemplo-conversion-de-formatos-de-coordenadas" title="Link to this heading">#</a></h2>
+<p>Vimos en una clase anterior las funciones que convierten grados decimales a grados sexagesimales, donde grados es no negativo. Estas funciones son:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">sexa_a_deci</span><span class="p">(</span><span class="n">grados</span><span class="p">:</span> <span class="nb">int</span> <span class="p">,</span> <span class="n">minutos</span><span class="p">:</span> <span class="nb">int</span> <span class="p">,</span> <span class="n">segundos</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="c1"># pre: 0 &lt;= grados, 0 &lt;= minutos &lt; 60, 0 &lt;= segundos &lt; 60</span>
+    <span class="c1"># post: devuelve los grados en notación decimal</span>
+    <span class="k">return</span> <span class="n">grados</span> <span class="o">+</span> <span class="n">minutos</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">segundos</span> <span class="o">/</span> <span class="mi">3600</span>
+
+<span class="k">def</span> <span class="nf">deci_a_sexa</span><span class="p">(</span><span class="n">pos</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="c1"># pre: pos son grados en notación decimal, pos &gt;= 0</span>
+    <span class="c1"># post:  devuelve pos en una 3-upla grados, minutos, segundos</span>
+    <span class="n">grados</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+    <span class="n">resto</span> <span class="o">=</span> <span class="n">pos</span> <span class="o">-</span> <span class="n">grados</span>
+    <span class="n">minutos</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">resto</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">resto</span> <span class="o">=</span> <span class="n">resto</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">-</span> <span class="n">minutos</span>
+    <span class="n">segundos</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">resto</span>
+    <span class="k">return</span> <span class="n">grados</span><span class="p">,</span> <span class="n">minutos</span><span class="p">,</span> <span class="n">segundos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos ahora las conversiones que nos servirán para convertir coordenadas terrestres decimales  a coordenadas terrestres sexagesimales,  y viceversa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gms2gd</span><span class="p">(</span><span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">,</span> <span class="n">hem_ns</span><span class="p">,</span> <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">,</span> <span class="n">hem_eo</span><span class="p">):</span>
+    <span class="c1"># pre: lat_g, lat_m, lat_s, es la latitud en grados, minutos, segundos,</span>
+    <span class="c1">#      hem_ns es &#39;N&#39; o &#39;S&#39;. 0 &lt;= lat_g &lt; 90, 0 &lt;= lat_m, lat_s &lt; 60</span>
+    <span class="c1">#      lon_g, lon_m, lon_s, es la longitud en grados, minutos, segundos,</span>
+    <span class="c1">#      hem_eo es &#39;E&#39; u &#39;O&#39; 0 &lt;= lon_g &lt; 180, 0 &lt;=  lon_m, lon_s &lt; 60</span>
+    <span class="c1"># post: devuelve latitud_d, longitud_d donde</span>
+    <span class="c1">#      latitud_d : latitud en decimales, longitud_d : longitud en decimales</span>
+    <span class="n">latitud_d</span> <span class="o">=</span> <span class="n">sexa_a_deci</span><span class="p">(</span><span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">)</span>
+    <span class="n">longitud_d</span> <span class="o">=</span> <span class="n">sexa_a_deci</span><span class="p">(</span><span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hem_ns</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
+        <span class="n">latitud_d</span> <span class="o">=</span> <span class="o">-</span><span class="n">latitud_d</span>
+    <span class="k">if</span> <span class="n">hem_eo</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+        <span class="n">longitud_d</span> <span class="o">=</span> <span class="o">-</span><span class="n">longitud_d</span>
+
+    <span class="k">return</span> <span class="n">latitud_d</span><span class="p">,</span> <span class="n">longitud_d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por ejemplo, podemos ver que las coordenadas de la ciudad de Bogotá 4°36′45.5″N, 74°4′13.8″ O en decimales es  4.612639°, -74.0705°.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdec</span> <span class="o">=</span> <span class="n">gms2gd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">45.5</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gdec</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.612638888888888, -74.0705)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La funión recíproca es:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gd2gms</span><span class="p">(</span><span class="n">latitud_d</span><span class="p">,</span> <span class="n">longitud_d</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="c1"># pre: -90 &lt; latitud_d &lt; 90, -180 &lt; longitud_d &lt; 180 indican un punto en</span>
+    <span class="c1">#      la Tierra en esas coordenadas decimales.</span>
+    <span class="c1"># post: devuelve lat, lon coordenadas sexagesimales</span>
+    <span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span> <span class="o">=</span> <span class="n">deci_a_sexa</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">latitud_d</span><span class="p">))</span>
+    <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span> <span class="o">=</span> <span class="n">deci_a_sexa</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">longitud_d</span><span class="p">))</span>
+    <span class="n">hem_ns</span><span class="p">,</span> <span class="n">hem_eo</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span>
+    <span class="k">if</span> <span class="n">latitud_d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hem_ns</span> <span class="o">=</span> <span class="s1">&#39;S&#39;</span>
+    <span class="k">if</span> <span class="n">longitud_d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hem_eo</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+
+    <span class="k">return</span> <span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">,</span><span class="n">hem_ns</span><span class="p">,</span> <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">,</span> <span class="n">hem_eo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hagamos de nuevo el cálculo para Bogotá:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">gd2gms</span><span class="p">(</span><span class="mf">4.612639</span><span class="p">,</span> <span class="o">-</span><span class="mf">74.0705</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 36, 45.50039999999896, &#39;N&#39;, 74, 4, 13.799999999984038, &#39;O&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">gms2gd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">45.5</span><span class="p">,</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="s1">&#39;O&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gdec</span><span class="p">)</span>
+<span class="n">coord</span> <span class="o">=</span> <span class="n">gd2gms</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coord</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.612638888888888, -74.0705)
+(4, 36, 45.49999999999784, &#39;N&#39;, 74, 4, 13.799999999984038, &#39;O&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos mejorar las dos funciones escribiendo en forma más completa la signaturra y utilizando <code class="docutils literal notranslate"><span class="pre">assert</span></code> para comprobar las precondiciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gms2gd</span><span class="p">(</span><span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">hem_ns</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">hem_eo</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="c1"># pre: lat_g, lat_m, lat_s, es la latitud en grados, minutos, segundos, hem_ns es &#39;N&#39; o &#39;S&#39;. 0 &lt;= lat_g &lt; 90</span>
+    <span class="c1">#      lon_g, lon_m, lon_s, es la longitud en grados, minutos, segundos, hem_eo es &#39;E&#39; u &#39;O&#39; 0 &lt;= lon_g &lt; 180</span>
+    <span class="c1"># post: devuelve latitud, longitud_d latitud y longitud decimales</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">lat_g</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lat_m</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lat_s</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lon_g</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lon_m</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">lon_s</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;Error en los tipos de datos&#39;</span>
+    <span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lat_g</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lat_m</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lat_s</span> <span class="o">&lt;</span> <span class="mi">60</span>  <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lon_g</span> <span class="o">&lt;</span> <span class="mi">180</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lon_m</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">lon_s</span> <span class="o">&lt;</span> <span class="mi">60</span> <span class="p">,</span> <span class="s1">&#39;Error en los valores de latitud y longitud&#39;</span>
+    <span class="k">assert</span> <span class="n">hem_ns</span> <span class="o">==</span> <span class="s1">&#39;N&#39;</span> <span class="ow">or</span> <span class="n">hem_ns</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">and</span> <span class="n">hem_eo</span> <span class="o">==</span> <span class="s1">&#39;E&#39;</span> <span class="ow">or</span> <span class="n">hem_eo</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">,</span> <span class="s1">&#39;Error en los valores de hemisferio&#39;</span>
+
+    <span class="n">latitud_d</span><span class="p">,</span> <span class="n">longitud_d</span> <span class="o">=</span> <span class="n">sexa_a_deci</span><span class="p">(</span><span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">),</span> <span class="n">sexa_a_deci</span><span class="p">(</span><span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hem_ns</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span><span class="p">:</span>
+        <span class="n">latitud_d</span> <span class="o">=</span> <span class="o">-</span><span class="n">latitud_d</span>
+    <span class="k">if</span> <span class="n">hem_eo</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+        <span class="n">longitud_d</span> <span class="o">=</span> <span class="o">-</span><span class="n">longitud_d</span>
+    <span class="k">return</span> <span class="n">latitud_d</span><span class="p">,</span> <span class="n">longitud_d</span>
+
+
+<span class="k">def</span> <span class="nf">gd2gms</span><span class="p">(</span><span class="n">latitud_d</span><span class="p">,</span> <span class="n">longitud_d</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+    <span class="c1"># pre: -90 &lt; latitud &lt; 90, -180 &lt; longitud_d &lt; 180 indican un punto en la Tierra en esas coordenadas decimales.</span>
+    <span class="c1"># post: devuelve lat, lon coordenadas sexagesimales</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">latitud_d</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">longitud_d</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">,</span> <span class="s1">&#39;Los tipos de datos son incorrectos&#39;</span>
+    <span class="k">assert</span> <span class="o">-</span><span class="mi">90</span> <span class="o">&lt;</span> <span class="n">latitud_d</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="ow">and</span> <span class="o">-</span><span class="mi">180</span> <span class="o">&lt;</span> <span class="n">longitud_d</span> <span class="o">&lt;</span> <span class="mi">180</span><span class="p">,</span> <span class="s1">&#39;los valores de latitud y longitud están fuera de rango&#39;</span>
+    <span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span> <span class="o">=</span> <span class="n">deci_a_sexa</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">latitud_d</span><span class="p">))</span>
+    <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span> <span class="o">=</span> <span class="n">deci_a_sexa</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">longitud_d</span><span class="p">))</span>
+    <span class="n">hem_ns</span><span class="p">,</span> <span class="n">hem_eo</span> <span class="o">=</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span>
+    <span class="k">if</span> <span class="n">latitud_d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hem_ns</span> <span class="o">=</span> <span class="s1">&#39;S&#39;</span>
+    <span class="k">if</span> <span class="n">longitud_d</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">hem_eo</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+    <span class="k">return</span> <span class="n">lat_g</span><span class="p">,</span> <span class="n">lat_m</span><span class="p">,</span> <span class="n">lat_s</span><span class="p">,</span><span class="n">hem_ns</span><span class="p">,</span> <span class="n">lon_g</span><span class="p">,</span> <span class="n">lon_m</span><span class="p">,</span> <span class="n">lon_s</span><span class="p">,</span> <span class="n">hem_eo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los <code class="docutils literal notranslate"><span class="pre">assert</span></code> hacen un poco más complicada la lectura del código pero aseguran las precondiciones.</p>
+<p>Observar que entre las dos funciones se dejan dos líneas. Esa es la práctica recomendada. A  veces es conveniente agregar líneas vacías para separar porciones de código, eso depende del criterio de cada programador, pero es conveniente dejar una sola línea vacía (no dos o más) excepto para separar funciones donde usamos dos líneas vacías.</p>
+</section>
+<section id="indentacion-o-sangria-en-python">
+<h2>8. Indentación o sangría en Python<a class="headerlink" href="#indentacion-o-sangria-en-python" title="Link to this heading">#</a></h2>
+<p>Como ya habrán observado en todo el código que hemos escrito anteriormente la indentación es un concepto muy importante de Python. Sin una indentación adecuada del código Python, terminarás obteniendo <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> y el código no será compilado.</p>
+<section id="indentacion">
+<h3>Indentación<a class="headerlink" href="#indentacion" title="Link to this heading">#</a></h3>
+<p>En términos simples, la indentación se refiere a la adición de espacio en blanco antes de una declaración. Pero la pregunta que surge es si es necesario.</p>
+<p>Para entender esto considera una situación en la que estás leyendo un libro y de repente todos los números de página del libro desaparecen. Así que no sabes dónde continuar leyendo y te confundes. Esta situación es similar con Python. Sin la indentación, Python no sabe qué declaración ejecutar a continuación o qué declaración pertenece a qué bloque. Esto conducirá a <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 sentencia1                                                  comienza bloque 1
+2 if condición1:                                              bloque 1 continúa
+3     if condición2:                                              comienza bloque 2
+4         sentencia2      ---visualización del interprete--&gt;          comienza bloque 3
+5     else:                                                       bloque 2 continúa
+6         sentencia3                                                  bloque 3 continúa
+7 sentencia4                                                  bloque 1 continúa
+</pre></div>
+</div>
+<p>En el ejemplo anterior,</p>
+<ul class="simple">
+<li><p>La <code class="docutils literal notranslate"><span class="pre">sentencia1</span></code>, la condición if de línea 2 y la <code class="docutils literal notranslate"><span class="pre">sentencia4</span></code> pertenecen al mismo bloque, lo que significa que después de la <code class="docutils literal notranslate"><span class="pre">sentencia1</span></code> se ejecutará la condición if, y si la condición if se convierte en <code class="docutils literal notranslate"><span class="pre">False</span></code>, Python saltará a la última sentencia para ejecutarla.</p></li>
+<li><p>El if-else anidado pertenece al bloque 2, lo que significa que si el if anidado se convierte en False, entonces Python ejecutará las sentencias dentro de la condición else.</p></li>
+<li><p>Las sentencias dentro del if-else anidado pertenecen al bloque 3 y sólo se ejecutará una sentencia dependiendo de la condición if-else.</p></li>
+</ul>
+<p>La indentación en Python es una forma de indicar al intérprete de Python que el grupo de sentencias pertenece a un bloque de código particular. Un bloque es una combinación de todas estas sentencias. Un bloque puede ser considerado como una agrupación de sentencias para un propósito específico. La mayoría de los lenguajes de programación como C, C++, Java utilizan llaves <code class="docutils literal notranslate"><span class="pre">{</span></code> <code class="docutils literal notranslate"><span class="pre">}</span></code> para definir un bloque de código.
+Python utiliza la indentación para resaltar los bloques de código. Es conveniente utilizar 4 espacios en blanco para hacer la indentación. Todas las sentencias con la misma distancia a la derecha pertenecen al mismo bloque de código. Si un bloque tiene que ser anidado más profundamente, simplemente se indenta más a la derecha. Puedes entenderlo mejor mirando las siguientes líneas de código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Programa Python mostrando indentación</span>
+
+<span class="n">facultad</span> <span class="o">=</span> <span class="s1">&#39;FAMAF&#39;</span>
+<span class="k">if</span> <span class="n">facultad</span> <span class="o">==</span> <span class="s1">&#39;FAMAF&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usted está ingresando a la FAMAF&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Volvé a escribir el nombre de la facultad.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¡Todo listo!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usted está ingresando a la FAMAF
+¡Todo listo!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las líneas <code class="docutils literal notranslate"><span class="pre">print('Usted</span> <span class="pre">está</span> <span class="pre">ingresando</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">FAMAF')</span></code> y <code class="docutils literal notranslate"><span class="pre">print('Volvé</span> <span class="pre">a</span> <span class="pre">escribir</span> <span class="pre">el</span> <span class="pre">nombre</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">facultad.')</span></code> son dos bloques de código separados. Los dos bloques de código en nuestro ejemplo de declaración if tienen una sangría de cuatro espacios. El <code class="docutils literal notranslate"><span class="pre">print('¡Todo</span> <span class="pre">listo!')</span></code> final no tiene sangría, por lo que no pertenece al bloque else.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_Funciones.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Funciones</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07_Ciclos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ciclos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-booleanas">1. Expresiones booleanas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-logicos">2. Operadores lógicos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-condicional">3. Ejecución condicional</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-alternativa">4. Ejecución alternativa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-encadenados">5.Condicionales encadenados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicionales-anidados">6. Condicionales anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-coordenadas">7. Ejemplo: conversión de formatos de coordenadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentacion-o-sangria-en-python">8. Indentación o sangría en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentacion">Indentación</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1460 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Recursión &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '12_Recursion';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recursión (2° parte)" href="13_Recursion_%28continuacion%29.html" />
+    <link rel="prev" title="Invariantes" href="11_Invariantes_Desarrollos_en_base_b.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F12_Recursion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/12_Recursion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Recursión</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-por-recursion">1. Definiciones por recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-definicion-recursiva-funcion-factorial">2. Ejemplo de definición recursiva: función factorial.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-potencia-de-un-numero">3. Ejemplo: potencia de un número.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-optimizada-de-potencia-de-un-numero">Versión optimizada de potencia de un número.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sucesion-de-fibonacci">4. Ejemplo: sucesión de Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-numero-combinatorio">5. Ejemplo: el número combinatorio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangulo-de-pascal">5.1 Triángulo de Pascal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otra-implementacion-recursiva-del-numero-combinatorio">5.2. Otra implementación recursiva del número combinatorio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-sobre-listas">6. Recursión sobre listas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="recursion">
+<h1>Recursión<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h1>
+<section id="definiciones-por-recursion">
+<h2>1. Definiciones por recursión<a class="headerlink" href="#definiciones-por-recursion" title="Link to this heading">#</a></h2>
+<p>Frecuentemente encontramos definida una sucesión de números <span class="math notranslate nohighlight">\(u_n\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> indica cualquier entero positivo, por una fórmula donde aparecen operadores y funciones conocidas y se pueden calcular de un solo paso. Por ejemplo, podríamos tener <span class="math notranslate nohighlight">\(u_n=3n+2\)</span>, o <span class="math notranslate nohighlight">\(u_n = (n+1)(n+2)(n+3)\)</span>. En estos ejemplos <span class="math notranslate nohighlight">\(u_n\)</span> es dado por una fórmula explícita llamada <em>fórmula cerrada</em> y no existe dificultad en calcular <span class="math notranslate nohighlight">\(u_n\)</span> cuando se nos da un valor específico para <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Sin embargo, en muchos casos no conocemos una fórmula cerrada para <span class="math notranslate nohighlight">\(u_n\)</span>; es más, nuestro problema puede ser encontrarla. En estos casos pueden darnos ciertos valores de <span class="math notranslate nohighlight">\(u_n\)</span> para enteros positivos <span class="math notranslate nohighlight">\(n\)</span> pequeños, y una relación entre el <span class="math notranslate nohighlight">\(u_n\)</span> general y algunos de los <span class="math notranslate nohighlight">\(u_r\)</span> con <span class="math notranslate nohighlight">\(r &lt; n\)</span>.</p>
+<p>Por ejemplo, supongamos nos es dado
+$<span class="math notranslate nohighlight">\(
+u_1=1, \qquad u_2=2, \qquad u_n =u_{n-1} +u_{n-2}, \qquad n\ge 3.
+\)</span><span class="math notranslate nohighlight">\(
+Para calcular los valores de \)</span>u_n<span class="math notranslate nohighlight">\( para todo \)</span>n<span class="math notranslate nohighlight">\( de \)</span>\mathbb N<span class="math notranslate nohighlight">\( podemos proceder como sigue:
+\)</span><span class="math notranslate nohighlight">\(
+\begin{matrix}
+u_3 &amp; = &amp; u_2 + u_1 &amp; = &amp; 2+1 &amp;=&amp; 3, \\
+u_4 &amp; = &amp; u_3 + u_2 &amp; = &amp; 3+2 &amp;=&amp; 5, \\
+u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
+\end{matrix}
+\)</span>$
+y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p>
+<p>Una función definida por recursión debe:</p>
+<ul class="simple">
+<li><p>determinar el valor deseado para el <em>caso base</em> (o los casos base), por ejemplo, para <span class="math notranslate nohighlight">\(n = 1\)</span> o <span class="math notranslate nohighlight">\(n = 2\)</span>.</p></li>
+<li><p>determinar la manera de calcular el valor para <span class="math notranslate nohighlight">\(n\)</span> conociendo el valor de la función para algunos valores menores, por ejemplo  <span class="math notranslate nohighlight">\(n-1\)</span> o <span class="math notranslate nohighlight">\(n-1\)</span> y <span class="math notranslate nohighlight">\(n-2\)</span>.</p></li>
+</ul>
+<p>Los lenguajes de programación modernos permiten la definición de funciones recursivas. Un  esquema de una definición recursiva podría ser (partiendo  de <span class="math notranslate nohighlight">\(n =1\)</span>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="n">res</span> <span class="o">=</span> <span class="n">caso</span> <span class="n">base</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="n">bloque</span><span class="o">&gt;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="o">...</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">...</span>
+        <span class="o">&lt;</span><span class="n">bloque</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">bloque</span><span class="o">&gt;</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</section>
+<section id="ejemplo-de-definicion-recursiva-funcion-factorial">
+<h2>2. Ejemplo de definición recursiva: función factorial.<a class="headerlink" href="#ejemplo-de-definicion-recursiva-funcion-factorial" title="Link to this heading">#</a></h2>
+<p>Hemos visto una manera iterativa de definir la función factorial:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de 1 * 2 * 3 * ... * (n-1) * n</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<p>La definición anterior <em>no</em> es recursiva,  es <em>iterativa.</em> También se puede definir por recursión, valiéndonos de que sabemos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0! = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n! = n \cdot (n-1)!\)</span>, si <span class="math notranslate nohighlight">\(n &gt; 0\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial_r</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de 1 * 2 * 3 * ... * (n-1) * n</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial_r</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial_r</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para probar que el programa es correcto se puede hacer una demostración por inducción.</p>
+<p>Probemos por inducción en <code class="docutils literal notranslate"><span class="pre">n</span></code> que para todo <code class="docutils literal notranslate"><span class="pre">n</span></code> entero no negativo, <code class="docutils literal notranslate"><span class="pre">factorial(n)</span> <span class="pre">==</span> <span class="pre">n!</span></code>.</p>
+<ul class="simple">
+<li><p>Caso base: <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">0</span></code>. <code class="docutils literal notranslate"><span class="pre">factorial(n)</span> <span class="pre">==</span> <span class="pre">factorial(0)</span> <span class="pre">==</span> <span class="pre">1</span> <span class="pre">==</span> <span class="pre">0!</span> <span class="pre">==</span> <span class="pre">n!</span></code>.</p></li>
+<li><p>Paso inductivo: asumimos que <code class="docutils literal notranslate"><span class="pre">factorial(n)</span> <span class="pre">==</span> <span class="pre">n!</span></code>. Probemos que <code class="docutils literal notranslate"><span class="pre">factorial(n+1)</span> <span class="pre">==</span> <span class="pre">(n+1)!</span></code>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    factorial(n+1) == (n+1) * factorial(n + 1 - 1) == (n+1) * factorial(n) == (n+1) * n! == (n+1)!.
+</pre></div>
+</div>
+<p>Así queda demostrada la afirmación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1">#print(factorial(-3))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>24
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-potencia-de-un-numero">
+<h2>3. Ejemplo: potencia de un número.<a class="headerlink" href="#ejemplo-potencia-de-un-numero" title="Link to this heading">#</a></h2>
+<p>La definición de la potencia entera de un número es una definición recursiva.</p>
+<p><strong>Definición.</strong> Sea <span class="math notranslate nohighlight">\(a \in \mathbb R\)</span> y <span class="math notranslate nohighlight">\(n \in \mathbb N_0\)</span>, definimos <em><span class="math notranslate nohighlight">\(a\)</span> a la <span class="math notranslate nohighlight">\(n\)</span></em> por</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a^0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^n = a \cdot a^{n-1}\)</span>, si <span class="math notranslate nohighlight">\(n &gt; 0\)</span></p></li>
+</ul>
+<p>A partir de esta definición podemos hacer directamente una definición recursiva en Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: a numero real, n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de a * a * a * ... * a * a , n veces</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hagamos alguna pruebas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">potencia</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+1125899906842624
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span> <span class="o">*</span> <span class="n">potencia</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">299</span><span class="p">)</span> <span class="c1"># 2**1099</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6791492645246929246386757141796333893017469234658722748742598348639065463771209243602696041603780296149289131476923691737519362771617464985577774171400314360942881749703195165891432072082340365383418580263111588256399217886064978276677643016101540190387879866160099492547442002034558061542073937718591829233732574474395276372082688
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># potencia(2,1099) # excede el límite de llamadas recursivas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La versión iterativa de potencia sería:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: a numero real, n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de a * a * a * ... * a * a , n veces</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<section id="version-optimizada-de-potencia-de-un-numero">
+<h3>Versión optimizada de potencia de un número.<a class="headerlink" href="#version-optimizada-de-potencia-de-un-numero" title="Link to this heading">#</a></h3>
+<p>Observemos que la definición recursiva anterior de <span class="math notranslate nohighlight">\(a^n\)</span> requiere <span class="math notranslate nohighlight">\(n\)</span> pasos pues <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n)</span></code> se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1)</span></code>,  que a su vez se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">2)</span></code> y así sucesivamente.</p>
+<p>Observemos que si <span class="math notranslate nohighlight">\(n\)</span>  es potencia de <span class="math notranslate nohighlight">\(2\)</span>,  entonces podemos simplificar el cálculo de la siguiente manera, por ejemplo para <span class="math notranslate nohighlight">\(n = 32\)</span>:</p>
+<p>\begin{align*}
+&amp;1.&amp; &amp;a^{32} = a^{16}\cdot a^{16} \
+&amp;2.&amp; &amp;a^{16} =   a^{8} \cdot a^{8} \
+&amp;3.&amp; &amp;a^{8} =   a^{4} \cdot a^{4} \
+&amp;4.&amp; &amp;a^{4} =   a^{2} \cdot a^{2} \
+&amp;5.&amp; &amp;a^{2} =   a^{1} \cdot a^{1} = a \cdot a
+\end{align*}</p>
+<p>Es decir, para averiguar <span class="math notranslate nohighlight">\(a^{32}\)</span>, averiguamos</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a^2 = a \cdot a\)</span> (1º paso),</p></li>
+<li><p><span class="math notranslate nohighlight">\(a^4 = a^2 \cdot a^2\)</span> (2º paso),</p></li>
+<li><p><span class="math notranslate nohighlight">\(a^8 = a^4 \cdot a^4\)</span> (3º paso),</p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{16} = a^8 \cdot a^8\)</span> (4º paso), y</p></li>
+<li><p><span class="math notranslate nohighlight">\(a^{32} = a^{16} \cdot a^{16}\)</span> (5º paso).</p></li>
+</ul>
+<p>Son 5 pasos en vez de 32.</p>
+<p>En general, si quisieramos calcular <span class="math notranslate nohighlight">\(a\)</span> a la una potencia de <span class="math notranslate nohighlight">\(2\)</span>,  es decir <span class="math notranslate nohighlight">\(a^{2^k}\)</span>, podríamos hacer,  recursivamente,
+\begin{align*}
+&amp;1.&amp; &amp;a^{2^k} = a^{2 \cdot 2^{k-1}} = a^{2^{k-1} + 2^{k-1}} = a^{2^{k-1}} \cdot a^{2^{k-1}} \
+&amp;2.&amp; &amp;a^{2^{k-1}} =   a^{2^{k-2}} \cdot a^{2^{k-2}} \
+&amp;3.&amp; &amp;a^{2^{k-2}} =   a^{2^{k-3}} \cdot a^{2^{k-3}} \
+&amp;&amp;…&amp; \
+&amp;k-1.&amp; &amp;a^{2} =   a^{1} \cdot a^{1}
+\end{align*}</p>
+<p>Es decir <span class="math notranslate nohighlight">\(a^{2^k}\)</span> se pueder calcular en alrededor de  <span class="math notranslate nohighlight">\(k = \operatorname{log}_2(2^k)\)</span> pasos, muchos menos que con el método directo.</p>
+<p>¿Para qué nos sirve esto para calcular la potencia arbitraria de un número?</p>
+<p>Veamos como se aplica esto en un ejemplo, por ejemplo calculemos <span class="math notranslate nohighlight">\(a^{27}\)</span>:</p>
+<p>\begin{align*}
+&amp;1.&amp; &amp;a^{27} = a^{26}\cdot a \
+&amp;2.&amp; &amp;a^{26} =   a^{13} \cdot a^{13} \
+&amp;3.&amp; &amp;a^{13} =   a^{12} \cdot a \
+&amp;4.&amp; &amp;a^{12} =   a^{6} \cdot a^{6} \
+&amp;5.&amp; &amp;a^{6} =   a^{3} \cdot a^{3} \
+&amp;6.&amp; &amp;a^{3} =   a^{2} \cdot a \
+&amp;7.&amp; &amp;a^{2} =   a^{1} \cdot a^{1} = a \cdot a
+\end{align*}</p>
+<p>Luego, para calucular <span class="math notranslate nohighlight">\(a^{27}\)</span>, calculamos <span class="math notranslate nohighlight">\(a^2\)</span>, luego <span class="math notranslate nohighlight">\(a^3\)</span>, <span class="math notranslate nohighlight">\(a^6\)</span>, <span class="math notranslate nohighlight">\(a^{12}\)</span>, <span class="math notranslate nohighlight">\(a^{13}\)</span>, <span class="math notranslate nohighlight">\(a^{26}\)</span> y finalmente <span class="math notranslate nohighlight">\(a^{27}\)</span>. Es decir, lo podemos hacer en 7 pasos en vez de 27.</p>
+<p>Basándonos en la idea anterior se puede definir recursivamente <span class="math notranslate nohighlight">\(a^n\)</span> para cualquier <span class="math notranslate nohighlight">\(n\)</span> en una recursión que lleva alrededor de <span class="math notranslate nohighlight">\(\operatorname{log}_2(n)\)</span> pasos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a^0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a^n = a \cdot a^{n-1}\)</span>, si <span class="math notranslate nohighlight">\(n &gt; 0\)</span>, <span class="math notranslate nohighlight">\(n\)</span> impar.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a^n = {(a^{\frac{n}{2}})}^2\)</span>, si <span class="math notranslate nohighlight">\(n &gt; 0\)</span>, <span class="math notranslate nohighlight">\(n\)</span> par.</p></li>
+</ul>
+<p>Su implementación en Python es sencilla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de a * a * a * ... * a * a , n veces</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">potencia</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10099</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12645214788035477780833747012304970973185843332835288169848789914254502838560051538629491431436156796205715003374944844127559425637068683357188426288310422673615829329615482105090787197616047243677777129144729546461873025383421382927863498442017413919712457287165999262436053613531013670776465543932306291728643872290754779836194232892577359642555497241328726605939213467874189066226238245056424852556877028877151433085117049154611172427502198888865653013856460717504264919853261316908657529859703796479777359329935749443077374265028907660789404653113637841680729928789865210492003550947294897430466021778462772260419168612135639828803131570274659511259626235038143319808431446706260017525369783755792689868998090492677503466114400168908381661508455456084257429757257062175242905694426821880093530730680369069544584035931252641870022643653594540294784946757510800799520910668754858105736212123089921563860914710785322491778082476583470858058052318299784868883571045360724199681777240102907341316983263659164136520492908991835007304886117790962457060842552692082889427794951233041692131840302594325406414298806168382294857269968846138067710596292767446655452221403803137266262567486246120326813578875966486378577207282816897342055112334904588942947560897203722982091422376097235368497996002797826568260213356557341344930497956381424742918345330249698148968619393055681250544551352635398573111679450260451360616474285437441053553149204703140172701695848252296012738656785843484918044867812953476371973401159267266126186749010820498912280835466741013066401488906981357628317758542670637769040538377601600801127127651677410766985504275293166173368803836255029309001925919529323216355263577147409279932998067779574934333189747922021274236785732951740511155163495750570472884381145197332793843045477318577211683262576702239449224062113320802536510377868081548128006639163295662471761914522800675793271444303222869459654634088157498355662353294830798017531834735031092167822676948827512390739156574240885472898572635663451255234871995376902518987523240405660419852661336545890875314752405288301427719819689583140365641889452256066964680070867128072676281112330564299303468255662635680271661185964687087594282757361003337555059527458901936293518525222666227509025715596352501994177174193487571959134275200735779086804242834692781866729760838107456547895632480696881492076739343520010992444715746013041940770610891687692420045185134613700343702971278488975163107207569359889101632994205444493143414586918107103760645484912194839740898021641392659033599664272468493725522430850067867209505572207603255435288288442709463279286317320275424560868739830751050735462450898992544548593850073633318333810544633575553792188214557716157945737199220457596426262506373678788715940256059572848458575558327459162150792099648977792879617534861296965843756541076879500848168712945402734744770690132941452173899334638465542587618596050976003414297002917105679841151363059485450826333637259008242051047475247141786221981998309981447313676866623742466174098764556402688
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2**10099 tiene&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10099</span><span class="p">))),</span> <span class="s1">&#39;dígitos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2**10099 tiene 3041 dígitos
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Para calcular 2**10099 utilizamos alrededor de&#39;</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="mi">10099</span><span class="p">)),</span> <span class="s1">&#39;pasos.&#39;</span><span class="p">)</span> <span class="c1"># en</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Para calcular 2**10099 utilizamos alrededor de 13 pasos.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-sucesion-de-fibonacci">
+<h2>4. Ejemplo: sucesión de Fibonacci<a class="headerlink" href="#ejemplo-sucesion-de-fibonacci" title="Link to this heading">#</a></h2>
+<p>La <em>sucesión de Fibonacci</em> es la siguiente sucesión infinita de números naturales:
+$<span class="math notranslate nohighlight">\(
+0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597, \ldots \,
+\)</span>$</p>
+<p>La sucesión comienza con los números 0 y 1 y a partir de estos, “el siguiente término es la suma de los dos anteriores”, es decir, si <span class="math notranslate nohighlight">\(a_n\)</span> denota el <span class="math notranslate nohighlight">\(n\)</span>-ésimo término de la sucesión de Fibonacci:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_0 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_1 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_n = a_{n-1} + a_{n-2}\quad \)</span> si <span class="math notranslate nohighlight">\(n &gt; 1\)</span></p></li>
+</ul>
+<p>La primera implementación recursiva que se nos ocurre de la sucesión de Fibonacci es la transcripción directa de la definición:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el n-ésimo término de la sucesión de Fibonacci</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>o equivalentemente</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el n-ésimo término de la sucesión de Fibonacci</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verifiquemos contrastando con la lista de más arriba</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podríamos haber hecho algo parecido utilizando listas por comprensión:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">([</span><span class="n">fib</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
+</pre></div>
+</div>
+</div>
+</div>
+<p>O más prolijo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">([</span><span class="n">fib</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">)])[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora bien, esta implementación no es una buena implementación de la sucesión de Fibonacci pues como cada caso se basa en dos anteriores y el compilador si alguna vez calcula <code class="docutils literal notranslate"><span class="pre">fib(k)</span></code> para <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">&lt;</span> <span class="pre">n</span></code> y después lo necesita de nuevo, no lo recuerda y lo hace otra vez. Con este algoritmo podemos estimar que <code class="docutils literal notranslate"><span class="pre">fib(n)</span></code> necesita alrededor de <span class="math notranslate nohighlight">\(2^n\)</span> pasos y esto computacionalmente no es admisible. Por ejemplo, podemos calcular fácilmente <em>a mano</em> el término <span class="math notranslate nohighlight">\(50\)</span>  de la sucesión de Fibonacci, pero si ejecutamos <code class="docutils literal notranslate"><span class="pre">fib(50)</span></code> veremos que no termina.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fib(50)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una solución a este problema es una implementación iterativa con el uso de la llamada <em>programación dinámica</em>. No explicaremos lo que es programación dinámica en este curso, pero diremos que evita la repetición de cálculos guardando algunos resultados anteriores en una tabla. Solo daremos la sucesión de Fibonacci  con programación dinámica a modo ilustrativo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_din</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el n-ésimo término de la sucesión de Fibonacci</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este algoritmo es mucho más eficiente que el anterior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fib_din</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otra solución:</p>
+<p>Observemos que el algoritmo no es recursivo en el sentido que nosotros definimos, sin embargo tiene cierta similitud a una definición recursiva debido a  que para calcular el término <span class="math notranslate nohighlight">\(i\)</span>-ésimo de <code class="docutils literal notranslate"><span class="pre">f</span></code> se utilizan los términos <span class="math notranslate nohighlight">\(i-1\)</span> y <span class="math notranslate nohighlight">\(i-2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_3</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el n-ésimo término de la sucesión de Fibonacci</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">fib_3</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">fib_3</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">fibx</span> <span class="o">=</span> <span class="n">fib_3</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  el espíritu de la definición anterior podemos hacer un algoritmo recursivo y eficiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib_2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 1</span>
+    <span class="c1"># post: devuelve el (fn, fn_1) de Fibonacci</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">fib_2</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (fib n-1, fib n-2)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># fib_2(n) = (fib n-1 + fib n-2, fib n-1)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib_2</span><span class="p">(</span><span class="mi">50</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib_din</span><span class="p">(</span><span class="mi">50</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12586269025
+12586269025
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, la versión más conveniente para calcular la sucesión de Fibonacci es una versión iterativa muy similar a la versión de programación dinámica pero que  ocupa menos espacio en memoria, pues solo se acuerda de los dos últimos números de la serie:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s1">&#39;:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 :	 0
+1 :	 1
+2 :	 1
+3 :	 2
+4 :	 3
+5 :	 5
+6 :	 8
+7 :	 13
+8 :	 21
+9 :	 34
+10 :	 55
+11 :	 89
+12 :	 144
+13 :	 233
+14 :	 377
+15 :	 610
+16 :	 987
+17 :	 1597
+18 :	 2584
+19 :	 4181
+20 :	 6765
+21 :	 10946
+22 :	 17711
+23 :	 28657
+24 :	 46368
+25 :	 75025
+26 :	 121393
+27 :	 196418
+28 :	 317811
+29 :	 514229
+30 :	 832040
+31 :	 1346269
+32 :	 2178309
+33 :	 3524578
+34 :	 5702887
+35 :	 9227465
+36 :	 14930352
+37 :	 24157817
+38 :	 39088169
+39 :	 63245986
+40 :	 102334155
+41 :	 165580141
+42 :	 267914296
+43 :	 433494437
+44 :	 701408733
+45 :	 1134903170
+46 :	 1836311903
+47 :	 2971215073
+48 :	 4807526976
+49 :	 7778742049
+50 :	 12586269025
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">1000</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>209
+</pre></div>
+</div>
+</div>
+</div>
+<p>El algoritmo anterior es tan eficiente como el primero de programación dinámica, pero ocupa menos espacio “aprovechándose”  de que Fibonacci de un entero usa el Fibonacci de los dos enteros anteriores.</p>
+</section>
+<section id="ejemplo-el-numero-combinatorio">
+<h2>5. Ejemplo: el número combinatorio<a class="headerlink" href="#ejemplo-el-numero-combinatorio" title="Link to this heading">#</a></h2>
+<p>El número combinatorio <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span> debe su nombre a que cuenta el número exacto de combinaciones posibles de <span class="math notranslate nohighlight">\(m\)</span> elementos de un universo de <span class="math notranslate nohighlight">\(n\)</span> elementos. Es decir, dado un conjunto de <span class="math notranslate nohighlight">\(n\)</span> elementos, cuántos subconjuntos de <span class="math notranslate nohighlight">\(m\)</span> elementos tiene.</p>
+<p>Es de gran utilidad en múltiples ramas de la matemática: teoría de números, combinatoria, probabilidades, etc.</p>
+<p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
+<div class="math notranslate nohighlight">
+\[\binom{n}{m} = \frac{n!}{(n-m)!m! }.\]</div>
+<p>Una forma de calcular el número combinatorio sería calcular <span class="math notranslate nohighlight">\(n!\)</span>, <span class="math notranslate nohighlight">\(m!\)</span>, <span class="math notranslate nohighlight">\((n-m)!\)</span> y después hacer las multiplicaciones y divisiones correspondientes. Este método no presenta inconvenientes y se podría implementar de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial_iter</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve el valor de 1 * 2 * 3 * ... * (n-1) * n</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="k">def</span> <span class="nf">combinatorio</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 0, m &gt;= 0, m &lt;= n</span>
+    <span class="c1"># post: devuelve el valor de n! / ((n-m)! * m!)</span>
+    <span class="k">return</span> <span class="n">factorial_iter</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">factorial_iter</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">factorial_iter</span><span class="p">(</span><span class="n">m</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funciona bien para números no demasiado grandes, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span>  <span class="nn">math</span> <span class="kn">import</span> <span class="n">log10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">3528</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">log10</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">3528</span><span class="p">,</span> <span class="mi">500</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">3528</span><span class="p">,</span> <span class="mi">500</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>347037219422984055239946843485683195580755864868346398088954443243876858031326934041766900371421981603299332669125824443513273758730486737240388293753111040271376864820662935047743500565974068858958660864508319978485472663185175258151990702870976299330246762698109020782440494028587404516961987864170936153949349357936578831033231820646380406118118751945715370379524709132263015522289636564532743071925775700930595659527798993201077754709658538159822996393987723794876174961139726360694255939081404708123162873769320381438691114830516816142328311152120564780303157035369684339130036470841518815949034843718202973695637705600
+623.540376054973
+624
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero mejor no intentés descomentar y correr la siguiente línea:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combinatorio(10**50, 500)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veremos a continuación una forma recursiva de definir el número combinatorio.</p>
+<section id="triangulo-de-pascal">
+<h3>5.1 Triángulo de Pascal<a class="headerlink" href="#triangulo-de-pascal" title="Link to this heading">#</a></h3>
+<p>Si escribimos los números combinatorios de tal manera que en la fila <span class="math notranslate nohighlight">\(n\)</span> se encuentren todos los números combinatorios <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{k}\)</span> con <span class="math notranslate nohighlight">\(0 \le k  \le n\)</span>,  en ese orden, y los acomodamos convenientemente, obtenemos el <em>triángulo de Pascal</em> o <em>Tartaglia</em>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lcccccccccccccccc}
+n = 0 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 0 \choose 0 \\
+n = 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 \choose 0 &amp; &amp; 1 \choose 1 \\
+n = 2 &amp; &amp; &amp; &amp; &amp; &amp; &amp; 2 \choose 0 &amp; &amp; 2 \choose 1 &amp; &amp; 2 \choose 2 \\
+n = 3 &amp; &amp; &amp; &amp; &amp; &amp; 3 \choose 0 &amp; &amp; 3 \choose 1 &amp; &amp; 3 \choose 2 &amp; &amp; 3 \choose 3\\
+n = 4 &amp; &amp; &amp; &amp; &amp; 4 \choose 0 &amp; &amp; 4 \choose 1 &amp; &amp; 4 \choose 2 &amp; &amp; 4 \choose 3 &amp; &amp; 4 \choose 4\\
+n = 5 &amp; &amp; &amp; &amp; 5 \choose 0 &amp; &amp; 5 \choose 1 &amp; &amp; 5 \choose 2 &amp; &amp; 5 \choose 3 &amp; &amp; 5 \choose 4 &amp; &amp; 5 \choose 5\\
+n = 6 &amp; &amp; &amp; 6 \choose 0 &amp; &amp; 6 \choose 1 &amp; &amp; 6 \choose 2 &amp; &amp; 6 \choose 3 &amp; &amp; 6 \choose 4 &amp; &amp; 6 \choose 5 &amp; &amp; 6 \choose 6\\
+n = 7 &amp; &amp; 7 \choose 0 &amp; &amp; 7 \choose 1 &amp; &amp; 7 \choose 2 &amp; &amp; 7 \choose 3 &amp; &amp; 7 \choose 4 &amp; &amp; 7 \choose 5 &amp; &amp; 7 \choose 6 &amp; &amp; 7 \choose 7
+\end{array}\end{split}\]</div>
+<p>Si reemplazamos cada expresión por su valor, observamos que cada uno de los valores que están en su interior, pueden calcularse como la suma de los dos que se encuentran inmediatamente arriba:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lcccccccccccccccc}
+n = 0 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 \\
+n = 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 1 \\
+n = 2 &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 2 &amp; &amp; 1 \\
+n = 3 &amp; &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 3 &amp; &amp; 3 &amp; &amp; 1\\
+n = 4 &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 4 &amp; &amp; 6 &amp; &amp; 4 &amp; &amp; 1\\
+n = 5 &amp; &amp; &amp; &amp; 1 &amp; &amp; 5 &amp; &amp; 10 &amp; &amp; 10 &amp; &amp; 5 &amp; &amp; 1\\
+n = 6 &amp; &amp; &amp; 1 &amp; &amp; 6 &amp; &amp; 15 &amp; &amp; 20 &amp; &amp; 15 &amp; &amp; 6 &amp; &amp; 1\\
+n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &amp; &amp; 21 &amp; &amp; 7 &amp; &amp; 1
+\end{array}\end{split}\]</div>
+<p>Esto nos permite obtener  una fórmula recursiva para calcular el número combinatorio:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\binom{n}{0} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\binom{n}{n} = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}= \displaystyle\binom{n-1}{m-1} + \displaystyle\binom{n-1}{m}\)</span>, si <span class="math notranslate nohighlight">\(m \not= 0 \wedge m \not= n\)</span></p></li>
+</ul>
+<p>Estas tres ecuaciones se pueden demostrar matemáticamente.</p>
+<p>A nosotros nos interesan estas ecuaciones porque podemos tomarlo como una definición recursiva del número combinatorio</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combinatorio</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0 and 0 &lt;= m &lt;= n</span>
+    <span class="c1"># post: devuelve el número combinatorio de &quot;n elementos tomados de a m&quot;</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">m</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;Error en los parámetros de la función &quot;combinatorio&quot;&#39;</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">m</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">combinatorio</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">combinatorio</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probemos algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># print(combinatorio(40,20)) # mejor no descomentar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+35
+780
+9880
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este es un buen ejemplo de recursión, pero no es para nada eficiente. Como en el caso de la sucesión de Fibonacci, la llamada recursiva a la función en dos valores aumenta enormemente el tiempo de ejecución para casos no demasiado grandes.</p>
+<p>Como ejercicio, definir <code class="docutils literal notranslate"><span class="pre">combinatorio()</span></code> con programación dinámica. En  este caso habrá que usar una lista de listas.</p>
+</section>
+<section id="otra-implementacion-recursiva-del-numero-combinatorio">
+<h3>5.2. Otra implementación recursiva del número combinatorio<a class="headerlink" href="#otra-implementacion-recursiva-del-numero-combinatorio" title="Link to this heading">#</a></h3>
+<p>Observemos  que si <span class="math notranslate nohighlight">\(n,m &gt; 0\)</span> y <span class="math notranslate nohighlight">\(n \ge m\)</span>,</p>
+<p>\begin{equation*}
+\binom{n}{m} = \frac{n!}{ (n-m)!m!} =  \frac{n}{m} \frac{(n-1)!}{(n-m)!(m-1)! } . \tag{<em>}
+\end{equation</em>}</p>
+<p>Observar que</p>
+<div class="math notranslate nohighlight">
+\[
+\binom{n-1}{m-1} = \frac{(n-1)!}{(n-1-(m-1))!(m-1)!}  = \frac{(n-1)!}{(n-1-m+1))!(m-1)!} =  \frac{(n-1)!}{(n-m)!(m-1)!}
+\]</div>
+<p>Luego, reemplazando en (*) obtenenmos:</p>
+<p>\begin{equation*}
+\binom{n}{m} =  \frac{n}{m} \binom{n-1}{m-1} .
+\end{equation*}</p>
+<p>En  base a esta última recursión podemos definir una función para obtener el número combinatorio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combinatorio_recursivo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 0, m &gt;= 0, m &lt;= n</span>
+    <span class="c1"># post: devuelve el valor de n! / (m! * (n-m)!)</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">combinatorio_recursivo</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">m</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este es un algoritmo eficiente para calcular el número combinatorio y vemos por la definición misma de la función que el cálculo del combinatorio <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span> se concreta en alrededor de <span class="math notranslate nohighlight">\(m\)</span> pasos. Por lo tanto si <span class="math notranslate nohighlight">\(m\)</span> no es muy grande calcula rápidamente el número combinatorio incluso para valores grandes de <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">combinatorio_recursivo</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23865.913591464865
+</pre></div>
+</div>
+</div>
+</div>
+<p>El número anterior tiene 23866 dígitos. Python puede manejar números inmensos, sin embargo si tratan de imprimir el número obtendrán una excepción, pues Python no maneja la conversión a cadenas de enteros de más de 4300 dígitos.</p>
+<p><em>Observación.</em> Existen métodos iterativos relativamente eficientes para calcular el número combinatorio. Si definimos la función
+$<span class="math notranslate nohighlight">\(
+\operatorname{Var}(n, k) = \frac{n!}{k!} = n \cdot (n-1) \cdot \ldots \cdot (k + 1),
+\)</span><span class="math notranslate nohighlight">\(
+entonces esta función se puede implementar fácilmente por la segunda igualdad, sin calcular \)</span>n!<span class="math notranslate nohighlight">\( y \)</span>k!$:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="c1"># pre: n, k enteros no negativos, n &gt;= k.</span>
+    <span class="c1"># post: devuelve n! / k!</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">res</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">//</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># para incrédulos, lo comprobamos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19958400
+19958400
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para calcular el número combinatorio usaremos la función <span class="math notranslate nohighlight">\(\operatorname{Var}(n, k)\)</span>:
+$<span class="math notranslate nohighlight">\(
+\binom{n}{m} = \frac{n!}{(n-m)!m!} =  \frac{n!}{(n-m)!} \frac{1}{m!} = \operatorname{Var}(n, n-m) / m!.
+\)</span><span class="math notranslate nohighlight">\(
+Como \)</span>\operatorname{Var}(i, 0) = i!<span class="math notranslate nohighlight">\(, tenemos:
+\)</span><span class="math notranslate nohighlight">\(
+\binom{n}{m} = \operatorname{Var}(n, n-m) /\operatorname{Var}(m, 0).
+\)</span><span class="math notranslate nohighlight">\(
+Entonces, hagamos una implementación del número combinatorio  utilizando solo la función \)</span>\operatorname{Var}$:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combinatorio_var</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="c1"># pre: n &gt;= 0, m &gt;= 0, m &lt;= n</span>
+    <span class="c1"># post: devuelve el valor de n! / (m! * (n-m)!)</span>
+    <span class="k">return</span> <span class="n">var</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">//</span> <span class="n">var</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">combinatorio_var</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30045015
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">combinatorio_var</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23865.913591464865
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="recursion-sobre-listas">
+<h2>6. Recursión sobre listas<a class="headerlink" href="#recursion-sobre-listas" title="Link to this heading">#</a></h2>
+<p>La recursión sobre listas es una técnica de programación que consiste en dividir una lista en sub-listas más pequeñas y resolver el problema en cada una de las sub-listas de forma recursiva.</p>
+<p>La idea principal para la recusión más sencilla sobre una lista es que una lista se puede dividir en dos partes, la cabeza y la cola, donde la cabeza es el primer elemento de la lista y la cola es el resto de la lista. Luego, el problema se puede resolver aplicando una función recursiva en la cola de la lista y combinando el resultado con la cabeza.</p>
+<p>Por ejemplo, si se quiere calcular la suma de los elementos de una lista, se puede utilizar la recursión sobre listas para sumar el primer elemento con la suma del resto de los elementos de la lista.</p>
+<p>Escribamos entonces una función recursiva, <code class="docutils literal notranslate"><span class="pre">suma_lista()</span></code> que tome una lista de enteros y devuelva la suma de todos los enteros en la lista”. Por ejemplo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>suma_lista([1, 3, 4, 5, 6])
+</pre></div>
+</div>
+<p>debe devolver <code class="docutils literal notranslate"><span class="pre">19</span></code>. Es decir, el algoritmo debe devolver la sumatoria de todos los elementos de la lista.</p>
+<p>Sabemos como hacer esto de la manera iterativa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_lista_iter</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>o con un <code class="docutils literal notranslate"><span class="pre">for</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_lista_iter</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)):</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo,  ahora estamos interesados en hacer este programa en forma recursiva. Recordemos que primero debemos hacer el caso cuando la lista tiene longitud 1 y  luego hacer el caso inductivo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_lista_rec</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">suma_lista_rec</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="n">suma_lista_rec</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<p>El algoritmo anterior tiene un problema: si tratamos de hacer</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>suma_lista([])
+</pre></div>
+</div>
+<p>obtenemos un error. Esto se de bebe que cuando en el cuerpo de la función se ingresa al <code class="docutils literal notranslate"><span class="pre">else</span></code> el programa trata de calcular <code class="docutils literal notranslate"><span class="pre">xs[0]</span></code> y ese valor no existe. Una opción es tener cuidado de no ingresar una lista vacía a esta función o cambiar levemente la definición recursiva:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">suma_lista_rec</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+    <span class="c1"># pre: xs es lista de números</span>
+    <span class="c1"># post: devuelve la suma de todos los elementos de la lista</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="s1">&#39;el input debe ser una lista&#39;</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">suma_lista_rec</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">suma_lista_rec</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">suma_lista_rec</span><span class="p">([]))</span>
+<span class="c1"># suma_lista_rec(5) # genera excepción</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11_Invariantes_Desarrollos_en_base_b.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Invariantes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="13_Recursion_%28continuacion%29.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recursión (2° parte)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definiciones-por-recursion">1. Definiciones por recursión</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-definicion-recursiva-funcion-factorial">2. Ejemplo de definición recursiva: función factorial.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-potencia-de-un-numero">3. Ejemplo: potencia de un número.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-optimizada-de-potencia-de-un-numero">Versión optimizada de potencia de un número.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-sucesion-de-fibonacci">4. Ejemplo: sucesión de Fibonacci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-numero-combinatorio">5. Ejemplo: el número combinatorio</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#triangulo-de-pascal">5.1 Triángulo de Pascal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otra-implementacion-recursiva-del-numero-combinatorio">5.2. Otra implementación recursiva del número combinatorio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recursion-sobre-listas">6. Recursión sobre listas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

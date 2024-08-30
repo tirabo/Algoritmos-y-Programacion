@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clases y objetos &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '14_Clases_y_objetos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Los números notables (optativa)" href="13.1_Numeros_notables.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clases y objetos</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F14_Clases_y_objetos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/14_Clases_y_objetos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Clases y objetos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-abstractos-de-datos">1. Tipos abstractos de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-clases">2. Definición de clases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocultar-los-atributos-de-una-clase">3. Ocultar los atributos de una clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobrecarga-de-operadores-y-metodos-especiales">4. Sobrecarga de operadores y métodos especiales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tuplas-como-vectores">Ejemplo. Tuplas como vectores.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="clases-y-objetos">
+<h1>Clases y objetos<a class="headerlink" href="#clases-y-objetos" title="Link to this heading">#</a></h1>
+<p>Una clase permite trabajar con un conjunto de objetos que comparten características.</p>
+<p>Después de haber aprendido lo que hemos visto de programación hasta ahora somos capaces de resolver muchos problemas utilizando selecciones, bucles y funciones. Sin embargo, estas características no son suficientes para desarrollar un software a gran escala.</p>
+<p>En este cuaderno se introduce la programación orientada a objetos lo cual permite definir tipos de datos y modularizar más aún los programas que escribimos  o los proyectos en que participamos.</p>
+<section id="tipos-abstractos-de-datos">
+<h2>1. Tipos abstractos de datos<a class="headerlink" href="#tipos-abstractos-de-datos" title="Link to this heading">#</a></h2>
+<p>Hemos visto ejemplos y ejercicios con muchas de las estructuras de datos usuales de los lenguajes de programación: enteros, reales, booleanos, strings, arreglos, tuplas, listas.</p>
+<p>Con estas estructuras de datos también es posible representar otras. Por ejemplo, hemos representado los naturales usando enteros y hemos representado las fechas utilizando ternas de enteros.</p>
+<p>De todas formas, no se obtiene el mismo grado de confianza en el funcionamiento de las operaciones sobre los tipos de datos nuestros que sobre los de Python: cuando representamos, por ejemplo, a las fechas como ternas de enteros, no hay ninguna garantía de que el programador los utilice apropiadamente: por error puede alterar el valor de uno de los elementos de la terna y transformar una fecha válida en una que no lo es.</p>
+<p>De la misma manera, cuando representamos a los naturales como enteros, puede ocurrir que por error modificamos el número y pasa a ser negativo.</p>
+<p>En nuestro auxilio surge la posibilidad, que tienen la mayoría de los lenguajes de programación, de definir apropiadamente un tipo nuevo, de manera de que el funcionamiento sea más confiable, entre muchas otras ventajas. La idea es definir un tipo nuevo y sus operaciones, de manera de que luego solamente se lo pueda manipular a través de dichas operaciones.</p>
+<p>En Python, y en la mayor parte de los lenguajes de programación modernos, definir un tipo nuevo es definir una <em>clase</em> y  cada elemento que pertenezca a esa clase (a ese tipo) se llamará un <em>objeto</em> de la clase. Los tipos ya definidos en Python son clases,  aunque nunca lo hayamos mecionado, por ejemplo <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">7]</span></code> es un objeto o <em>instancia</em> de la clase <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+</section>
+<section id="definicion-de-clases">
+<h2>2. Definición de clases<a class="headerlink" href="#definicion-de-clases" title="Link to this heading">#</a></h2>
+<p>Crear una clase es como si definiéramos un tipo nuevo  en el lenguaje. Utilizando la clase definida podemos crear elementos de esa clase, llamados objetos o instancias, y podemos operar sobre ellos con métodos propios de la clase.</p>
+<p>Los ingredientes más importantes de la definición de una clase son</p>
+<ul class="simple">
+<li><p>sus <em>atributos</em>, también llamados <em>campos</em> (fields) o <em>variables de estado</em> (instance variables)</p></li>
+<li><p>sus <em>métodos</em>, también llamados <em>métodos de instancias</em> (instance methods).</p></li>
+</ul>
+<p>Los atributos son los datos que utilizamos para representar el estado de un objeto. Los métodos son las funciones que se utilizan para acceder a los datos y modificarlos.</p>
+<p>Además de utilizar variables para almacenar datos y definir métodos, una clase proporciona un método especial, <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Este método, conocido como <em>inicializador</em> y se invoca para inicializar el estado de un nuevo objeto cuando se crea. Un inicializador puede realizar cualquier acción, pero los inicializadores en general se utilizan para crear las variables de estado de un objeto con valores iniciales.</p>
+<p>Python utiliza la siguiente sintaxis para definir una clase:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Nombre</span><span class="p">:</span>
+    <span class="n">inicializador</span>
+    <span class="n">métodos</span>
+</pre></div>
+</div>
+<p>Por  convención los nombres de las clases definidas por el programador tienen la primera letra mayúscula y todas las demás minúsculas</p>
+<p><strong>Ejemplo. Círculos.</strong> Ejemplifiquemos clases con  el ejemplo de  la  página 217 de Liang. Se quiere definir una clase que sea una abstracción de los círculos. No nos interesan las posibles coordenadas del círculo (su ubicación en el plano) solo el tamaño que tiene. Es decir el único atributo o variable de estado que nos interesa, y que abstrae el concepto de círculo, es el radio <span class="math notranslate nohighlight">\(r\)</span>,  que es un número real mayor que 0.</p>
+<p>Una vez dado el círculo nos interesa saber cual es su radio,  su perímetro y su área. También nos interesa modificar su radio. Todo es muy sencillo, esto sólo es un ejemplo para introducir el tema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Circulo</span><span class="p">:</span>
+<span class="c1"># Definición de objeto Circulo</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;el radio debe ser mayor que 0&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">get_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio</span>
+    <span class="k">def</span> <span class="nf">get_perimetro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">set_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;el radio debe ser mayor que 0&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radio</span> <span class="o">=</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cada clase comienza con una definición <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">__init__()</span></code>  (guión bajo,  guión bajo, init, guión bajo, guión bajo) que crea el objeto cuando se invoca la clase.  En  el <code class="docutils literal notranslate"><span class="pre">__init__</span></code> se determinan los estados iniciales del objeto.</p>
+<p>Cadá método que se aplica a un objeto de la cases debe ser tipo <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">metodo(self,</span> <span class="pre">...</span> <span class="pre">otros</span> <span class="pre">parámetros</span> <span class="pre">...)</span></code>.</p>
+<p>Es decir, todos los métodos de los objetos , incluido el inicializador, tienen el primer parámetro <code class="docutils literal notranslate"><span class="pre">self</span></code>. Este parámetro se refiere al objeto que invoca el método. El parámetro <code class="docutils literal notranslate"><span class="pre">self</span></code> en los métodos se establece para hacer referencia al objeto que se acaba de crear.</p>
+<p>Se pueden definir funciones sin <code class="docutils literal notranslate"><span class="pre">self</span></code> y  estas funciones serán de la clase,  no de  objetos. Más tarde veremos ejemplos.</p>
+<p>Veamos un ejemplo del uso de esta clase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">()</span> <span class="c1"># círculo de radio 1 (el valor por defecto)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el objeto t:&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el objeto t: &lt;__main__.Circulo object at 0x0000024969F23E80&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el radio del círculo t:&#39;</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el radio del círculo t: 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># círculo de radio 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el nuevo objeto s:&#39;</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo objeto s: &lt;__main__.Circulo object at 0x0000024969F23BB0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el radio de s:&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el perímetro de s:&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">get_perimetro</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el area de s:&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">get_area</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el radio de s: 5
+Imprimimos el perímetro de s: 31.41592653589793
+Imprimimos el area de s: 78.53981633974483
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">set_radio</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el nuevo radio de s:&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="n">t</span><span class="o">.</span><span class="n">set_radio</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imprimimos el nuevo radio de t:&#39;</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo radio de s: 3
+Imprimimos el nuevo radio de t: 3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t y s son objetos diferentes:&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span>
+<span class="c1"># False: t y s son objetos diferentes (aunque son</span>
+<span class="c1"># circulos con el mismo radio)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t y s son objetos diferentes: False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Coloquialmente, un método que obtiene datos se conoce como <em>getter</em>, y un método donde se modifican atributos se denomina <em>setter</em>.</p>
+<p>Un método getter puede tener un encabezado del tipo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_nombre_de_la_propiedad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Si el tipo de retorno es booleano, por convención un método getter suele definirse de la siguiente manera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_nombre</span> <span class="n">de_la_propiedad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Un método setter puede tener la siguiente cabecera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_nombre_de_la_propiedad</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Obviamente los nombres de los métodos pueden ser arbitrarios, con los límites sintácticos que impone Python</p>
+</section>
+<section id="ocultar-los-atributos-de-una-clase">
+<h2>3. Ocultar los atributos de una clase<a class="headerlink" href="#ocultar-los-atributos-de-una-clase" title="Link to this heading">#</a></h2>
+<p>Los atributos definidos en la clase  <code class="docutils literal notranslate"><span class="pre">Circulo</span></code>, así como fueron definidos son públicos, podemos acceder a ellos directamente.</p>
+<p>Podés acceder a los  datos a través de variables de estado directamente desde un objeto. Por ejemplo, el siguiente código, que permite acceder al radio del círculo desde <code class="docutils literal notranslate"><span class="pre">c.radio</span></code>, es legal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="n">c</span><span class="o">.</span><span class="n">radio</span> <span class="o">=</span> <span class="mf">5.4</span> <span class="c1"># Se accede directamente a la variable radio de la instancia c y se la modifica</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">radio</span><span class="p">)</span> <span class="c1"># Se accede directamente a la variable radio de la instancia c y se imprime</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span> <span class="c1">#  Se accede al radio de c por el método especificado en la clase</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+5.4
+5.4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, el acceso directo a un atributo de un objeto no es una buena práctica por dos razones:</p>
+<ul class="simple">
+<li><p>En primer lugar, los datos pueden ser manipulados. Por ejemplo, el radio en la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> debe ser positivo, pero puede ser fijado por error a un valor arbitrario (por ejemplo <code class="docutils literal notranslate"><span class="pre">c.radio</span> <span class="pre">=</span> <span class="pre">-5</span></code>).</p></li>
+<li><p>En segundo lugar, la clase se vuelve difícil de mantener y vulnerable a los errores. Veremos ejemplos de esto más adelante.</p></li>
+</ul>
+<p>Ahora veamos un ejemplo con la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> de asignaciones no desadas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">radio</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="n">c</span><span class="o">.</span><span class="n">radio</span> <span class="o">=</span> <span class="s1">&#39;Hola&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+Hola
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para evitar las modificaciones directas de los campos de datos, no se debe permitir el acceso directo a las variables de estado o atributos de la clase.</p>
+<p>Esto se conoce como <em>ocultación de datos</em>. Esto se puede hacer definiendo <em>variables privadas</em>. En Python, las variables privadas se definen con dos guiones bajos iniciales. También podés definir un método privado con dos guiones bajos al comienzo del nombre del método.</p>
+<p>Modifiquemos la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> de tal forma que todas las variables de estado sean privadas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Circulo</span><span class="p">:</span>
+<span class="c1"># Definición de objeto Circulo</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">get_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span>
+    <span class="k">def</span> <span class="nf">get_perimetro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">set_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;El radio debe ser mayor que 0&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">=</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora cualquier intento de acceder directamente a las variables de estado de la clase resultarán en un error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">()</span> <span class="c1"># círculo de radio 1 (el valor por defecto)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="c1"># print(c.__radio) # Atributo privado (descomentar la línea produce error)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># t.__radio = 2 # Atributo privado (descomentar la línea produce error)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">get_radio</span><span class="p">())</span>
+<span class="n">t</span><span class="o">.</span><span class="n">set_radio</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Esto está bien</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sobrecarga-de-operadores-y-metodos-especiales">
+<h2>4. Sobrecarga de operadores y métodos especiales<a class="headerlink" href="#sobrecarga-de-operadores-y-metodos-especiales" title="Link to this heading">#</a></h2>
+<p>Python permite definir en las clases <em>métodos especiales</em> para operadores y funciones para realizar operaciones comunes. Estos métodos tienen un nombre específico para que Python reconozca la asociación.</p>
+<p>Expliquemos desarrollando un poco más la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code>.  Supongamos que queremos hacer los siguiente</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="s1">&#39;circulo de radio 3&#39;</span>
+</pre></div>
+</div>
+<p>Sin embargo,  como ya hemos visto que escibiendo el siguiente código</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circulo object at 0x0000024969F23460&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>nos dice que <code class="docutils literal notranslate"><span class="pre">c</span></code> es un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> y nos da un número de referencia.</p>
+<p>¿Cómo podemos hacer que el <code class="docutils literal notranslate"><span class="pre">print</span></code> se comporte como queremos?</p>
+<p>Lo  que debemos hacer es sobreescribir el  método <code class="docutils literal notranslate"><span class="pre">__str__</span></code> de la clase. Este es un método oculto común a todas las clases que convierte un objeto en una cadena, es decir en una representación legible del objeto.</p>
+<p>Reescribamos entonces la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Circulo</span><span class="p">:</span>
+<span class="c1"># Definición de objeto Circulo</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="nf">get_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span>
+    <span class="k">def</span> <span class="nf">get_perimetro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+    <span class="k">def</span> <span class="nf">set_radio</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;El radio debe ser mayor que 0&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;círculo de radio &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__radio</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># otro es objeto de la clase círculo</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__radio</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__radio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probemos entonces la nueva definción de la clase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">circulo</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">circulo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>círculo de radio 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>O directamente</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>círculo de radio 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obervemos que en la clase hemos agregado otro método, <code class="docutils literal notranslate"><span class="pre">__eq__</span></code>, para averiguar si dos círculos son iguales, donde consideramos dos círculos iguales si tienen el mismo radio. Antes de introducir este método la igualdad entre objetos diferentes siempre resultaba falsa, aún para círculos del mismo radio. La igualdad incorporada por defecto en las nuevas clases solo se verifica si el objeto es el mismo,  no si son conceptualmente iguales.</p>
+<p>Verifiquemos la igualdad:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>
+<span class="n">c2</span><span class="o">.</span><span class="n">set_radio</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">==</span> <span class="n">c2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los métodos <code class="docutils literal notranslate"><span class="pre">__str__</span></code> y <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> son solo algunos métodos que podemos sobreescribir  en una clase.</p>
+<p>Python tiene métodos especiales que refieren a operadores muy utilizados,  como ser <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, etc. y que nos permiten definir,  si así lo deseamos, estos operadores en nuestras clases.</p>
+<section id="ejemplo-tuplas-como-vectores">
+<h3>Ejemplo. Tuplas como vectores.<a class="headerlink" href="#ejemplo-tuplas-como-vectores" title="Link to this heading">#</a></h3>
+<p>Definamos la clase de 2-uplas de números <code class="docutils literal notranslate"><span class="pre">int</span></code> o <code class="docutils literal notranslate"><span class="pre">float</span></code> con la suma y resta coordenada a coordenada. Para hacer esto vamos a sobreescribir dós métodos especiales: la suma y la resta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dos_upla</span><span class="p">:</span>
+<span class="c1"># Definición de objeto 2-upla</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser int o float&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># suma dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># resta dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probemos la nueva clase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+<span class="n">otro_par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">+</span> <span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">-</span> <span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">+</span> <span class="n">otro_par</span> <span class="o">==</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">+</span> <span class="n">otro_par</span> <span class="o">==</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0, 4.0)
+(-5.0, 2.0)
+(-2.0, 6.0)
+(8.0, 2.0)
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>El  opuesto de un vector se hace sobrescribiendo el método <code class="docutils literal notranslate"><span class="pre">__neg__</span></code>, si <code class="docutils literal notranslate"><span class="pre">v</span></code> es la dos ulpla que representa <span class="math notranslate nohighlight">\((a,b)\)</span> entonces <code class="docutils literal notranslate"><span class="pre">-v</span></code> será <span class="math notranslate nohighlight">\((-a, -b)\)</span>.</p>
+<p>El producto escalar de dos vectores de  <span class="math notranslate nohighlight">\(\mathbb R^2\)</span> se define como
+$<span class="math notranslate nohighlight">\(
+(a, b) \cdot (a', b') = aa' + bb'.
+\)</span>$
+Este producto se definirá sobrecargando el  operador <code class="docutils literal notranslate"><span class="pre">*</span></code>, es decir definiendo el método <code class="docutils literal notranslate"><span class="pre">__prod__</span></code> en la definición de la clase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dos_upla</span><span class="p">:</span>
+<span class="c1"># Definición de objeto 2-upla</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser int o float&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># suma dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># resta dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># el opuesto de una 2-upla</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">otro</span><span class="p">,</span> <span class="n">Dos_upla</span><span class="p">),</span> <span class="s1">&#39;Ambos factores deben ser Dos_upla&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">*</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">*</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Problemos esta clase con los nuevos métodos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="n">par</span><span class="p">)</span> <span class="c1"># opuesto</span>
+<span class="n">otro_par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">*</span> <span class="n">otro_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0, 4.0)
+(-3.0, -4.0)
+(-5.0, 2.0)
+-7.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>En nuestra clase está faltando una operación elemental: recuperar cada coordenada. Cuando tenemos una lista o una tupla de Python la notación corchete nos permite recuperar los elementos de la lista o tupla, por ejemplo si <code class="docutils literal notranslate"><span class="pre">v</span></code> es una lista o tupla, <code class="docutils literal notranslate"><span class="pre">v[1]</span></code> recuperará el segundo elemento de <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+<p>Los métodos especiales también nos permite, con el método <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>, recuperar las coordenadas del par con la notación <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Más aún, el  método <code class="docutils literal notranslate"><span class="pre">__setitem__</span></code> permite modificar las coordenadas del par  con la notación <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dos_upla</span><span class="p">:</span>
+<span class="c1"># Definición de objeto 2-upla</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser int o float&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="c1"># Se accede a los elementos de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;El índice debe ser 0 o 1&quot;</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="c1"># Se modifica un elemento de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;El índice debe ser 0 o 1&quot;</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;El valor debe ser un int o float&quot;</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">=</span> <span class="n">valor</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">=</span> <span class="n">valor</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">valor</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="ow">or</span> <span class="n">valor</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># suma dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># resta dos 2-uplas</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">-</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># el opuesto de una 2-upla</span>
+        <span class="k">return</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">otro</span><span class="p">,</span> <span class="n">Dos_upla</span><span class="p">),</span> <span class="s1">&#39;Ambos factores deben ser Dos_upla&#39;</span>
+        <span class="k">return</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_x</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">__upla_y</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__upla_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También agregamos un método especial <code class="docutils literal notranslate"><span class="pre">__contains__</span></code> que nos permite verificar si un elemento está en la 2-upla. Por  ejemplo, si <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">in</span> <span class="pre">Dos_upla(-1,2)</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code> y  <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">in</span> <span class="pre">Dos_upla(-1,2)</span></code> es <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Problemos la clase con algunos ejemplos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># esto corresponde al método especial __getitem__</span>
+<span class="n">par</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="c1"># esto corresponde al método especial __setitem__</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span><span class="p">)</span>
+<span class="n">otro_par</span> <span class="o">=</span> <span class="n">Dos_upla</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">par</span> <span class="o">==</span> <span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="mi">4</span> <span class="ow">in</span> <span class="n">otro_par</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="n">otro_par</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0, 4.0)
+3.0
+(-3.0, 4.0)
+True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Más generalmente, podemos definir <span class="math notranslate nohighlight">\(n\)</span>-uplas. Es muy similar a las 2-uplas. Implementamos parcialmente la clase y  dejamos como ejercicio completarla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">N_upla</span><span class="p">:</span>
+<span class="c1"># Definición de objeto n-upla</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># x es una n-tupla</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">,</span> <span class="s1">&#39;el parametro debe ser una tupla&#39;</span>
+        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">for</span>  <span class="n">elem</span> <span class="ow">in</span> <span class="n">x</span><span class="p">),</span> <span class="s2">&quot;las coordenadas deben ser int o float&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__x</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="c1"># Se accede a los elementos de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s2">&quot;índice fuera de rango&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="c1"># Se modifica un elemento de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s2">&quot;índice fuera de rango&quot;</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;el valor debe ser un entero&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">valor</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="n">__suma</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s1">&#39;las uplas deben ser de la misma dimensión&#39;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__suma</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">N_upla</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">__suma</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">valor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># definir la resta</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># producto escalar</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s1">&#39;las uplas deben ser de la misma dimensión&#39;</span>
+        <span class="n">__esc</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__esc</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">otro</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">__esc</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1">#definir la igualdad</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">__ret</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__ret</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
+        <span class="n">__ret</span> <span class="o">=</span> <span class="n">__ret</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span><span class="s1">&#39;)&#39;</span>
+        <span class="k">return</span> <span class="n">__ret</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3)
+(1, -1, 2)
+(2, 1, 5)
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observemos primero que para trabajar con la clase <code class="docutils literal notranslate"><span class="pre">N_upla</span></code> siempre debemos trabajar con objetos de la misma longitud, en caso contrario se producirán errores en el caso de queres sumarlas o hacer otras operaciones binarias. Por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="c1"># 4 coordenadas</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 3 coordenadas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="c1"># print(x + y) # descomentar esta linea produce un error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 4)
+(1, -1, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lo más conveniente es agregar instrucciones <code class="docutils literal notranslate"><span class="pre">assert</span></code> en la suma y producto para comprobar que los vectores tiene la misma longitud.</p>
+<p>Otra observación importante es que no tenemos un método para recuperar cada coordenada de los vectores. Veremos que esto se puede implementar como en el caso de <code class="docutils literal notranslate"><span class="pre">Dos_upla</span></code>, pero por ahora tratar de recuperar un elemento con la notación corchete devuelve un error, por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1"># x[1] # descomentar esta linea produce un error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sin embargo, cuando definimos le método <code class="docutils literal notranslate"><span class="pre">__add__</span></code> y  el  método <code class="docutils literal notranslate"><span class="pre">__mul__</span></code>en la clase <code class="docutils literal notranslate"><span class="pre">N_upla</span></code> usamos la notación corchete y no tuvimos problemas. Esto se debe a que cuando trabajamos internamente en la clase ella “sabe” que los objetos de la clase son en realidad listas.</p>
+<p>Ejemplificamos con la clase <code class="docutils literal notranslate"><span class="pre">N_upla</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">N_upla</span><span class="p">:</span>
+<span class="c1"># Definición de objeto n-upla</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># x es una n-tupla</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">,</span> <span class="s1">&#39;el parametro debe ser una tupla&#39;</span>
+        <span class="c1"># Hacer un assert para verificar que son todos enteros</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__x</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="c1"># Se accede a los elementos de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s2">&quot;El índice debe ser correcto&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="c1"># Se modifica un elemento de la tupla por medio de índices</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s2">&quot;El índice debe ser correcto&quot;</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;El valor debe ser un entero&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">valor</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s1">&#39;las uplas deben ser de la misma dimensión&#39;</span>
+        <span class="n">__suma</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__suma</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">N_upla</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">__suma</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">valor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># definir la resta</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1"># producto escalar</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__len</span><span class="p">,</span> <span class="s1">&#39;las uplas deben ser de la misma dimensión&#39;</span>
+        <span class="n">__esc</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__esc</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">otro</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">__esc</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="c1">#definir la igualdad</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">__ret</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__len</span> <span class="p">):</span>
+            <span class="n">__ret</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span>
+        <span class="n">__ret</span> <span class="o">=</span> <span class="n">__ret</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span><span class="s1">&#39;)&#39;</span>
+        <span class="k">return</span> <span class="n">__ret</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">N_upla</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 3
+1 -100 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Ejemplo: los números complejos</p>
+<p>Los números complejos (<span class="math notranslate nohighlight">\(\mathbb C\)</span>) están determinados por un par de números, la parte real y la parte imaginaria. Es decir,  un número complejo es  un <span class="math notranslate nohighlight">\(a + bi\)</span>,  con <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> reales e <span class="math notranslate nohighlight">\(i\)</span> que simboliza <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>.</p>
+<p>La suma de complejos es:
+$<span class="math notranslate nohighlight">\(
+(a+ bi) + (a' + b'i) = (a+a') + (b+b')i.
+\)</span><span class="math notranslate nohighlight">\(
+El producto de números complejos respeta que \)</span>i \cdot i = -1<span class="math notranslate nohighlight">\( y  las prpiedades asociativas, conmutativas y distributivas. Lo que resulta en,
+\)</span><span class="math notranslate nohighlight">\(
+(a+ bi) \cdot (a' + b'i) = (aa'-bb') + (ab'+ba)i.
+\)</span>$</p>
+<p>¿Cuando <span class="math notranslate nohighlight">\(a+ bi\)</span>  y <span class="math notranslate nohighlight">\(a' + b'i\)</span> son iguales? Son iguales si y solo si <span class="math notranslate nohighlight">\(a=a'\)</span> y <span class="math notranslate nohighlight">\(b = b'\)</span>.</p>
+<p>Hagamos una posible definición de la clase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Complejo</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser int o float&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__real</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__imag</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">otro</span><span class="p">,</span> <span class="n">Complejo</span><span class="p">),</span> <span class="s1">&#39;los sumandos deben ser complejos&#39;</span>
+        <span class="k">return</span> <span class="n">Complejo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__real</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__real</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__imag</span> <span class="o">+</span> <span class="n">otro</span><span class="o">.</span><span class="n">__imag</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">otro</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">otro</span><span class="p">,</span> <span class="n">Complejo</span><span class="p">),</span> <span class="s1">&#39;deben ser complejos&#39;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__real</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__real</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__imag</span> <span class="o">==</span> <span class="n">otro</span><span class="o">.</span><span class="n">__imag</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__real</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39; + &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__imag</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; i&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">Complejo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">Complejo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">+</span><span class="n">w</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">Complejo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">u</span> <span class="o">==</span> <span class="n">z</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.0 + 6.0 i
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>##5. Métodos especiales</p>
+<p>Una lista de métodos especiales de Python, no todos, es la siguiente:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Operador/función</p></th>
+<th class="head text-left"><p>Método</p></th>
+<th class="head text-left"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Suma</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Multiplicación</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Resta</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__neg__(self)</span></code></p></td>
+<td class="text-left"><p>Opuesto</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>División</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__mod__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Resto</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__lt__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Menor que</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__le__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Menor igual que</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__eq__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Igual a</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__ne__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Distinto a</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__gt__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Mayor que</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__ge__(self,</span> <span class="pre">otro)</span></code></p></td>
+<td class="text-left"><p>Mayor o igual que</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[index]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__getitem__(self,</span> <span class="pre">index)</span></code></p></td>
+<td class="text-left"><p>Obtiene la coordenada index</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">[index]</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__setitem__(self,</span> <span class="pre">index,</span> <span class="pre">valor)</span></code></p></td>
+<td class="text-left"><p>Modifica la coordenada index</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__contains__(self,</span> <span class="pre">valor)</span></code></p></td>
+<td class="text-left"><p>Controla pertenencia</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></p></td>
+<td class="text-left"><p>El número de elementos</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">__str__(self)</span></code></p></td>
+<td class="text-left"><p>La representación como cadena</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="13.1_Numeros_notables.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Los números notables (optativa)</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-abstractos-de-datos">1. Tipos abstractos de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-clases">2. Definición de clases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocultar-los-atributos-de-una-clase">3. Ocultar los atributos de una clase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobrecarga-de-operadores-y-metodos-especiales">4. Sobrecarga de operadores y métodos especiales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tuplas-como-vectores">Ejemplo. Tuplas como vectores.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

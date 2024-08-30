@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Análisis y graficación de recorridos GPX (optativa) &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '19.1_Ejemplo_recorridos_GPX';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Introducción a Matplotlib" href="19_PyPlot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F19.1_Ejemplo_recorridos_GPX.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/19.1_Ejemplo_recorridos_GPX.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Análisis y graficación de recorridos GPX (optativa)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-procesamiento-de-recorridos-gpx">1. Lectura y procesamiento de recorridos GPX</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-y-graficacion-de-recorridos-gpx-optativa">
+<h1>Análisis y graficación de recorridos GPX (optativa)<a class="headerlink" href="#analisis-y-graficacion-de-recorridos-gpx-optativa" title="Link to this heading">#</a></h1>
+<p>Los ciclistas, los maratonistas también,  suelen guardar y procesar en  la computadora los recorridos que realizan para luego analizar su desempeño. No solo se guarda el recorrido sino  también otros datos relevantes, en el caso del ciclismo: elevación, tiempo (en cada punto del recorrido), ritmo cardiaco,  cadencia, potencia, temperatura ambiental,  etc.</p>
+<p>La adquisición de datos se realiza por medio de computadora,  reloj o celular y, por supuesto, depende de los sensores disponibles al momento de hacer el recorrido.</p>
+<p>El almacenamiento de los datos se hace en un archivo y unos de los formatos más utilizados para almacenar este tipo de datos es GPX,  que es un formato  básico que tiene muchas extensiones.</p>
+<p>El formato GPX (GPS Exchange Format) es un estándar abierto para el intercambio de datos de GPS (Global Positioning System) entre aplicaciones, dispositivos y servicios. Es un formato de archivo XML que contiene información sobre la posición geográfica, la altitud, la velocidad y el tiempo de un registro de seguimiento GPS.</p>
+<p>El formato GPX se utiliza comúnmente en aplicaciones y servicios de navegación, como Google Maps, MapMyRun, Strava y otros. También es compatible con una amplia gama de dispositivos GPS, como relojes deportivos, dispositivos de navegación portátiles y teléfonos inteligentes.</p>
+<p>Además de la información de seguimiento GPS, el formato GPX también puede contener otros datos relevantes, como notas, fotos y enlaces a sitios web relacionados con la ubicación. Los archivos GPX se pueden editar y compartir fácilmente y se han convertido en un formato popular para compartir rutas y registros de seguimiento entre atletas, excursionistas, ciclistas y otros entusiastas de las actividades al aire libre.</p>
+<p>En  este cuaderno analizaremos y procesaremos archivos GPX de un recorrido y graficaremos  algunos resultados que puedan resultar de interés.</p>
+<section id="lectura-y-procesamiento-de-recorridos-gpx">
+<h2>1. Lectura y procesamiento de recorridos GPX<a class="headerlink" href="#lectura-y-procesamiento-de-recorridos-gpx" title="Link to this heading">#</a></h2>
+<p>Los archivos GPX son XML y  en su forma más sencila estos registros contienen una serie de datos con la siguiente imformación</p>
+<ul class="simple">
+<li><p>latitud y longitud (decimales)</p></li>
+<li><p>elevación (metros sobre al nivel del mar)</p></li>
+</ul>
+<p>En el XML de los archivos GPX estos datos están representados de la siguiente manera,  por ejemplo,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &lt;trkpt lat=&quot;-31.396528892219066619873046875&quot; lon=&quot;-64.46706810034811496734619140625&quot;&gt;
+    &lt;ele&gt;662&lt;/ele&gt;
+  &lt;/trkpt&gt;
+</pre></div>
+</div>
+<p>Es decir la tag de los elementos principales es <code class="docutils literal notranslate"><span class="pre">trkpt</span></code>, la latitud y longitud son atributos de cada uno de esos elementos. A su vez cada elemento <code class="docutils literal notranslate"><span class="pre">trkpt</span></code> contiene un elemento <code class="docutils literal notranslate"><span class="pre">ele</span></code> que da la elevación en metros de ese punto.</p>
+<p>En  la computadora,  entonces un recorrido se representa con un archivo con  cierta cantidad de muestras y cada muestra se representa con un <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/trkpt&gt;</span></code>.
+Como estamos usando Colab, lo primero que debemos hacer es cargar archivos GPX en “Archivos” de este cuaderno.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esta celda de código es para cargar el archivo en &quot;Archivos&quot; de este cuaderno.</span>
+<span class="c1"># No hace falta si estamos trabajando en nuestra computadora y el archivo se encuentra localmente</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">archivos</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ascochinga_MTB.gpx&#39;</span><span class="p">,</span> <span class="s1">&#39;Punilla_MTB.gpx&#39;</span><span class="p">,</span> <span class="s1">&#39;Punilla_Observatorio.gpx&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">archivos</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/tirabo/Algoritmos-y-Programacion/main/2023/archivos/&#39;</span> <span class="o">+</span> <span class="n">archivo</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">datos</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="c1"># datos es una str</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/&#39;</span> <span class="o">+</span> <span class="n">archivo</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hubo un problema al cargar el archivo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">datos</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="c1"># datos es una str</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/&#39;</span> <span class="o">+</span> <span class="n">archivo</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~\Documents\GitHub\Algoritmos-y-Programacion\envs\ayp\lib\site-packages\IPython\core\interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/Ascochinga_MTB.gpx&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La celda anterior carga “localmente” tres archivos GPX.</p>
+<p>En la siguiente celda cargamos la bibliotecas que nos interesana así como dos constantes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
+<span class="kn">from</span>  <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">dateutil.parser</span> <span class="kn">import</span> <span class="n">parse</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="mi">6371000</span> <span class="c1"># radio terrestre en metros</span>
+<span class="n">PI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># el pi de numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  la siguiente celda definimos una función que lee el archivo GPX y devuelve 3 arreglos Numpy: <code class="docutils literal notranslate"><span class="pre">latitud</span></code>, <code class="docutils literal notranslate"><span class="pre">longitud</span></code> y <code class="docutils literal notranslate"><span class="pre">elevacion</span></code>. Es decir,  si <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(latitud)</span></code>,  entonces <code class="docutils literal notranslate"><span class="pre">latitud[i]</span></code>, <code class="docutils literal notranslate"><span class="pre">longitud[i]</span></code>, <code class="docutils literal notranslate"><span class="pre">elevacion[i]</span></code> son las latitud y longitud geográficas y la elevacón en la muestra <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leer_gpx</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="c1"># pre: nombre es el archivo a ser leido (poner path completo ./bicicleta/gpx/altas_cumbres.gpx, por ejemplo)</span>
+    <span class="c1"># post: devuelve una lista de 3-uplas (latitud, longitud,  elevacion)</span>
+    <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># datos obligatorios</span>
+    <span class="c1"># Parsear el documento</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+    <span class="c1"># getElementsByTagName() devuelve una lista de</span>
+    <span class="c1"># elementos con el nombre dado. Aquí &lt;trkpt&gt;</span>
+    <span class="k">for</span> <span class="n">ubicacion</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;trkpt&#39;</span><span class="p">):</span>
+        <span class="c1"># getAttribute() devuelve un valor asociado a una clave dada</span>
+        <span class="c1"># dentro de una etiqueta.</span>
+        <span class="n">latitud_p</span> <span class="o">=</span>  <span class="n">radians</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;lat&#39;</span><span class="p">)))</span>
+        <span class="n">longitud_p</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">)))</span>
+        <span class="c1"># 1. De nuevo getElementsByTagName() devuelve una lista.</span>
+        <span class="c1"># 2. Usamos sólo el primer elemento de la lista ([0]).</span>
+        <span class="c1"># 3. De ahí obtenemos el primer hijo (puede ser un nodo de datos</span>
+        <span class="c1"># u otro elemento)</span>
+        <span class="c1"># 4. Del nodo de datos obtenemos los datos reales</span>
+        <span class="n">elevacion_p</span> <span class="o">=</span>  <span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ele&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># latitud, longitud, elevacion son obligatorios en el archivo gpx</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">latitud_p</span><span class="p">)</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">longitud_p</span><span class="p">)</span>
+        <span class="n">ele</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ele</span><span class="p">,</span> <span class="n">elevacion_p</span><span class="p">)</span>
+    <span class="k">return</span>  <span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos si funciona:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">archivo</span> <span class="o">=</span> <span class="n">archivos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">leer_gpx</span><span class="p">(</span><span class="s1">&#39;/content/&#39;</span> <span class="o">+</span> <span class="n">archivo</span><span class="p">)</span>
+<span class="c1"># lat=&quot;-31.403840000000002&quot; lon=&quot;-64.5113&quot; &lt;ele&gt;657.8000000000001&lt;/ele&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([-0.54810041, -0.54808941, -0.54808208, ..., -0.54835121,
+        -0.54835121, -0.5483547 ]),
+ array([-1.12593459, -1.1259414 , -1.12594541, ..., -1.12568047,
+        -1.12567646, -1.12566755]),
+ array([657.8 , 658.06, 657.83, ..., 647.98, 647.98, 647.81]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con estos datos podemos hacer algunos cálculos: distancias parciales y distancia total recorrida y pendiente instantanea.  Para poder calcular esto  primero necesitamos definir una función que nos de la distancia de dos puntos sobre la tierra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_distancia</span><span class="p">(</span><span class="n">punto1</span><span class="p">,</span> <span class="n">punto2</span><span class="p">):</span>
+    <span class="c1"># pre:  punto1 y punto2 son coordenadas de dos puntos en radianes y su elevación en metros.</span>
+    <span class="c1"># post: distancia entre los dos puntos en metros</span>
+    <span class="n">lat1</span><span class="p">,</span> <span class="n">lon1</span><span class="p">,</span> <span class="n">ele1</span> <span class="o">=</span> <span class="n">punto1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">punto1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">punto1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">lat2</span><span class="p">,</span> <span class="n">lon2</span><span class="p">,</span> <span class="n">ele2</span> <span class="o">=</span> <span class="n">punto2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">punto2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">punto2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">dif_ele</span> <span class="o">=</span> <span class="n">ele2</span> <span class="o">-</span> <span class="n">ele1</span>
+    <span class="n">dist_plana</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">acos</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lon1</span><span class="o">-</span><span class="n">lon2</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">lat2</span><span class="p">))</span> <span class="c1"># en metros</span>
+    <span class="k">return</span>  <span class="p">(</span><span class="n">dist_plana</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dif_ele</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora sí podemos recuperar latitud, longitud, elevacion, distancia total desde el origen hasta ese punto y pendiente, que es el porcentaje de elevación entre ese punto y el anterior (la primera pendiente es 0.0)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">recorrido_proc</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span><span class="p">):</span>
+    <span class="c1"># pre: recorrido es una lista de ternas de (latitud, longitud, elevacion)</span>
+    <span class="c1"># post: devuelve una 5-upla (latitud, longitud, elevacion, distancia, pendiente) donde</span>
+    <span class="c1">#       - distancia en una coordenada es la distancia total desde el origen hasta ese punto</span>
+    <span class="c1">#       - pendiente es el % de elevación entre ese punto y el anterior (la primera es 0.0)</span>
+    <span class="n">dis</span><span class="p">,</span> <span class="n">pen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">distancia_total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat</span><span class="p">)):</span>
+        <span class="c1"># distancia total</span>
+        <span class="n">dist</span> <span class="o">=</span> <span class="n">calc_distancia</span><span class="p">((</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lon</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ele</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lon</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ele</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">distancia_total</span> <span class="o">+=</span> <span class="n">dist</span>
+        <span class="n">dis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dis</span><span class="p">,</span> <span class="n">distancia_total</span><span class="p">)</span>
+        <span class="c1"># pendiente</span>
+        <span class="n">dist_plana</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">acos</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lon</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">lon</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">lat</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">dist_plana</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">pendiente</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">ele</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">ele</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">dist_plana</span>
+        <span class="n">pen</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pen</span><span class="p">,</span> <span class="n">pendiente</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span><span class="p">,</span> <span class="n">dis</span><span class="p">,</span> <span class="n">pen</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos entonces aplicar esta función a un archivo GPX y almacenar los resultados</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">archivo</span> <span class="o">=</span> <span class="n">archivos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">lectura_gpx</span> <span class="o">=</span> <span class="n">leer_gpx</span><span class="p">(</span><span class="s1">&#39;/content/&#39;</span> <span class="o">+</span> <span class="n">archivo</span><span class="p">)</span>
+<span class="n">latitud</span><span class="p">,</span> <span class="n">longitud</span><span class="p">,</span> <span class="n">elevacion</span><span class="p">,</span> <span class="n">distancia</span><span class="p">,</span> <span class="n">pendiente</span> <span class="o">=</span> <span class="n">recorrido_proc</span><span class="p">(</span><span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entonces, por ejemplo, imprimamos la distancia recorrida, la elevación y la pendiente en los primeros 30 puntos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia rec.    Elevación    Pendiente&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">distancia</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;    </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">elevacion</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;    </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">pendiente</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distancia rec.    Elevación    Pendiente
+0.0     	 657.8     	 0.0
+79.2     	 658.1     	 0.3
+130.8     	 657.8     	 -0.4
+182.3     	 658.6     	 1.5
+190.0     	 658.8     	 2.9
+197.9     	 659.0     	 1.8
+294.6     	 659.9     	 1.0
+391.2     	 661.9     	 2.1
+487.9     	 664.5     	 2.7
+584.5     	 666.9     	 2.4
+639.1     	 668.1     	 2.2
+693.7     	 670.0     	 3.4
+694.9     	 670.0     	 0.0
+761.0     	 673.5     	 5.3
+827.2     	 676.4     	 4.4
+892.0     	 671.3     	 -7.9
+950.2     	 668.6     	 -4.7
+1001.7     	 667.3     	 -2.4
+1062.2     	 667.4     	 0.2
+1110.3     	 668.2     	 1.6
+1133.4     	 668.4     	 0.7
+1158.2     	 668.5     	 0.5
+1239.0     	 671.9     	 4.2
+1320.3     	 682.3     	 12.8
+1325.4     	 683.8     	 31.4
+1333.1     	 683.8     	 0.0
+1355.1     	 688.1     	 19.9
+1366.8     	 689.4     	 11.7
+1379.2     	 690.7     	 9.9
+1419.8     	 694.7     	 10.1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos también obtener la distancia total del trayecto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">distancia</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia total del trayecto:&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">distancia</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;km&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distancia total del trayecto: 43.4 km
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro dato que le interesa a los deportistas que hace recorridos es la altura positiva acumulada,  es decir los metros que han subido (sin importar los que han bajado).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">declive_acumulado_positivo</span><span class="p">(</span><span class="n">elevacion</span><span class="p">):</span>
+    <span class="c1"># pre: elevacion es un array numpy con los datos de altura en cada punto del recorrido (interpolados)</span>
+    <span class="c1"># post: devuelve el declive acumulado positivo</span>
+    <span class="n">declive_acumulado</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">elevacion</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">elevacion</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">elevacion</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">declive_acumulado</span> <span class="o">+=</span> <span class="n">elevacion</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">elevacion</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">declive_acumulado</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  este caso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Altura acumulada positiva:&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">declive_acumulado_positivo</span><span class="p">(</span><span class="n">elevacion</span><span class="p">)),</span> <span class="s1">&#39;metros&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Altura acumulada positiva: 945 metros
+</pre></div>
+</div>
+</div>
+</div>
+<p>##2. Algunos gráficos relacionados con recorridos GPX</p>
+<p>En las aplicaciones destinadas al deporte se dibujan algunos cuadros que pueden ser de interés para el deportista y  que surgen del procesamiento de los datos de los recorridos GPX.</p>
+<p>En  este caso lo más interesante para dibujar o graficar es el “perfil”  del recorrido,  es decir la elevación en función de la distancia.</p>
+<p>Primero debemos importar el módulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entonces graficamos de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dibujamos distancia vs elevación</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">elevacion</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;distancia/elevación&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45994326a9c2ba5ceefd321e05fe4100169e97a8500ccd44bde09e4b1ee4afaf.png" src="_images/45994326a9c2ba5ceefd321e05fe4100169e97a8500ccd44bde09e4b1ee4afaf.png" />
+</div>
+</div>
+<p>La relativa simetría respecto a la recta que pasa por el centro del cuadro se debe a que es un recorrido “de ida y vuelta”. Grafiquemos los datos de latitud y longitud como si la Tierra fuera plana:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">longitud</span><span class="p">,</span> <span class="n">latitud</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;lon/lat&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ac3654a141fceabed04b15651f1a5666029800443a88deb2edeffcdfda87088a.png" src="_images/ac3654a141fceabed04b15651f1a5666029800443a88deb2edeffcdfda87088a.png" />
+</div>
+</div>
+<p>No hay simetría absoluta,  debido a que la vuelta no es por el mismo lugar que la ida.</p>
+<p>Podemos  dibujar una animación del recorrido con el código de la siguiente celda, pero en Colab no se puede apreciar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+
+<span class="c1"># Grafiquemos el recorrido animado</span>
+<span class="c1"># Si lo hacemos con todos los puntos será muy lento</span>
+<span class="n">velocidad_de_animacion</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># cada velocidad_de_animacion  puntos se muestra uno</span>
+<span class="c1"># Configuración de la figura y el eje</span>
+<span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">longitud</span><span class="p">),</span> <span class="n">velocidad_de_animacion</span><span class="p">)</span>
+<span class="n">lon_new</span><span class="p">,</span> <span class="n">lat_new</span> <span class="o">=</span> <span class="n">longitud</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span> <span class="n">latitud</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">lon_new</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">lon_new</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">lat_new</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">lat_new</span><span class="p">))</span>
+
+<span class="c1"># Función de actualización de la animación</span>
+<span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">lon_new</span><span class="p">[:</span><span class="n">frame</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">lat_new</span><span class="p">[:</span><span class="n">frame</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># Función de inicialización de la animación</span>
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">([],</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="n">line</span><span class="p">,</span>
+
+<span class="c1"># Creación de la animación</span>
+<span class="n">ani</span> <span class="o">=</span> <span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">lon_new</span><span class="p">),</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">blit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la animación</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/51b091e7d3198512e6117a09e7fa3709b1cad5c01d03e91ae69a7d0ab4080ffb.png" src="_images/51b091e7d3198512e6117a09e7fa3709b1cad5c01d03e91ae69a7d0ab4080ffb.png" />
+</div>
+</div>
+<p>##3. Recorridos GPX generados por una actividad</p>
+<p>En  el caso de recorridos generados a partir de una actividad,  cada muestra (<code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span> <span class="pre">...</span> <span class="pre">&lt;/trkpt&gt;</span></code>) puede contener datos adicionales. Estos registros contienen puntos que describen el recorrido y  en cada punto tenemos, por ejemplo,  la siguiente imformación</p>
+<ul class="simple">
+<li><p>latitud y longitud (decimales)</p></li>
+<li><p>elevación (metros sobre al nivel del mar)</p></li>
+<li><p>tiempo (día y hora)</p></li>
+<li><p>temperatura ambiental (en grados centígrados)</p></li>
+<li><p>ritmo cardiaco (pulsaciones por minuto)</p></li>
+<li><p>cadencia (revoluciones por minuto del pedal)</p></li>
+</ul>
+<p>En XML  estos datos están representados de la siguiente manera,  por ejemplo,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &lt;trkpt lat=&quot;-31.396528892219066619873046875&quot; lon=&quot;-64.46706810034811496734619140625&quot;&gt;
+    &lt;ele&gt;662&lt;/ele&gt;
+    &lt;time&gt;2023-03-01T19:17:48.000Z&lt;/time&gt;
+    &lt;extensions&gt;
+      &lt;ns3:TrackPointExtension&gt;
+        &lt;ns3:atemp&gt;33.0&lt;/ns3:atemp&gt;
+        &lt;ns3:hr&gt;152&lt;/ns3:hr&gt;
+        &lt;ns3:cad&gt;65&lt;/ns3:cad&gt;
+      &lt;/ns3:TrackPointExtension&gt;
+    &lt;/extensions&gt;
+  &lt;/trkpt&gt;
+</pre></div>
+</div>
+<p>A  continuación tomaremos en cuenta estos datos y calcularemos, por ejemplo, las pulsaciones medias del ciclista o la duración del recorrido. También graficaremos diversos aspectos del recorrido.</p>
+<p>El código para ler un archivo GPX con estos datos es una extensión o ampliación del código anterior y es un poco más complicado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">leer_gpx</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="c1"># pre: nombre es el archivo a ser leido (poner path completo ./bicicleta/gpx/altas_cumbres.gpx, por ejemplo)</span>
+    <span class="c1"># post: devuelve una lista de 3-uplas (latitud, longitud,  elevacion)</span>
+    <span class="n">recorrido</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># datos obligatorios</span>
+    <span class="n">time</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">heart_rate</span><span class="p">,</span> <span class="n">cadence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># datos opcionales (solo si es un recorrido realizado)</span>
+    <span class="c1"># Parse the document</span>
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+    <span class="c1"># getElementsByTagName() returns a list of</span>
+    <span class="c1"># elements with the given name. Here &lt;trkpt&gt;</span>
+    <span class="k">for</span> <span class="n">ubicacion</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;trkpt&#39;</span><span class="p">):</span>
+        <span class="c1"># getAttribute() returns a value associated with a given key</span>
+        <span class="c1"># within a tag. Here &lt;species name=&#39;xxxxx&#39;&gt;</span>
+        <span class="n">latitud_p</span> <span class="o">=</span>  <span class="n">radians</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;lat&#39;</span><span class="p">)))</span>
+        <span class="n">longitud_p</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">)))</span>
+        <span class="c1"># 1. Again getElementsByTagName() returns a list.</span>
+        <span class="c1"># 2. We use just the first element of the list ([0]).</span>
+        <span class="c1"># 3. From that we obtain the first child (could be a data node</span>
+        <span class="c1"># or another element)</span>
+        <span class="c1"># 4. From the data node we obtain the actual data</span>
+        <span class="c1"># Here: &lt;common-name&gt;xxxx&lt;/common-name&gt;</span>
+        <span class="n">elevacion_p</span> <span class="o">=</span>  <span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ele&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># latitud, longitud, elevacion son obligatorios en el archivo gpx</span>
+        <span class="n">lat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">latitud_p</span><span class="p">)</span>
+        <span class="n">lon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">longitud_p</span><span class="p">)</span>
+        <span class="n">ele</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ele</span><span class="p">,</span> <span class="n">elevacion_p</span><span class="p">)</span>
+
+        <span class="c1"># EXTENSIONES PARA RECORRIDOS REALIZADOS:</span>
+        <span class="c1">#   hora, temperatura ambiente, ritmo cardiaco y cadencia.</span>
+        <span class="n">data</span> <span class="o">=</span>  <span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">date_str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">time_epoch</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span> <span class="c1"># convierte &quot;2023-02-16T19:18:18.000Z&quot; a segundos desde 1970</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">time_epoch</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:atemp&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:atemp&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:hr&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">heart_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:hr&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">heart_rate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:cad&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cadence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cadence</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">ubicacion</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;ns3:cad&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cadence</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cadence</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="c1"># FIN EXTENSIONES</span>
+
+    <span class="k">return</span>  <span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">ele</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">heart_rate</span><span class="p">,</span> <span class="n">cadence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos definir diferentes funciones de utilidad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">velocidad_instantanea</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">tiempo</span><span class="p">):</span>
+    <span class="c1"># pre: distancia es un array numpy con los datos de distancia que devuelve recorrido_proc()</span>
+    <span class="c1">#      tiempo es un array numpy con los datos de tiempo que devuelve leer_gpx()</span>
+    <span class="c1"># post: devuelve la velocidad instantánea en cada punto del recorrido</span>
+    <span class="n">diferencia_dist</span><span class="p">,</span> <span class="n">diferencia_tiempo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">distancia</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">tiempo</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">diferencia_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">diferencia_dist</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="c1"># agrega un 0 al principio</span>
+    <span class="n">diferencia_tiempo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">diferencia_tiempo</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="c1"># agrega un 1 al principio</span>
+    <span class="n">v_inst</span> <span class="o">=</span>  <span class="mf">3.6</span> <span class="o">*</span> <span class="n">diferencia_dist</span> <span class="o">/</span> <span class="n">diferencia_tiempo</span>
+    <span class="k">return</span> <span class="n">v_inst</span> <span class="c1"># en km/h</span>
+
+
+<span class="k">def</span> <span class="nf">intervalos_movimiento</span><span class="p">(</span><span class="n">cadencia</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">):</span>
+    <span class="c1"># pre: cadencia es un array numpy con los datos de cadencia que devuelve leer_gpx()</span>
+    <span class="c1">#      velocidad es un array numpy con los datos de velocidad que devuelve velocidad_instantanea()</span>
+    <span class="c1"># post: devuelve una ndarray con True si el punto es de movimiento y False si no lo es</span>
+    <span class="c1">#      (se considera que es de movimiento si la cadencia es mayor a 0 y la velocidad es mayor a 1.0)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">cadencia</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">((</span><span class="n">cadencia</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">velocidad</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">))</span> <span class="c1"># True si hay movimiento, False si no lo es</span>
+    <span class="k">return</span> <span class="n">mask</span>
+
+
+<span class="k">def</span> <span class="nf">tiempo_en_movimiento</span><span class="p">(</span><span class="n">mask_mov</span><span class="p">,</span> <span class="n">tiempo</span><span class="p">):</span>
+    <span class="c1"># pre: mask_mov es un array numpy con los datos de movimiento que devuelve intervalos_movimiento()</span>
+    <span class="c1">#      tiempo es un array numpy con los datos de tiempo que devuelve leer_gpx()</span>
+    <span class="c1"># post: devuelve el tiempo total en movimiento</span>
+    <span class="n">tiempo_mov</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mask_mov</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">mask_mov</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">tiempo_mov</span> <span class="o">+=</span> <span class="n">tiempo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">tiempo</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">tiempo_mov</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">recorrido_proc()</span></code> es igual,  así que no la redefiniremos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">archivo</span> <span class="o">=</span> <span class="n">archivos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">lectura_gpx</span> <span class="o">=</span> <span class="n">leer_gpx</span><span class="p">(</span><span class="s1">&#39;/content/&#39;</span> <span class="o">+</span> <span class="n">archivo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">latitud</span><span class="p">,</span> <span class="n">longitud</span><span class="p">,</span> <span class="n">elevacion</span><span class="p">,</span> <span class="n">distancia</span><span class="p">,</span> <span class="n">pendiente</span> <span class="o">=</span> <span class="n">recorrido_proc</span><span class="p">(</span><span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">time</span><span class="p">,</span> <span class="n">temp</span><span class="p">,</span> <span class="n">heart_rate</span><span class="p">,</span> <span class="n">cadence</span> <span class="o">=</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">lectura_gpx</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">nro_puntos</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">latitud</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número de puntos de la muestra:&#39;</span><span class="p">,</span> <span class="n">nro_puntos</span><span class="p">)</span>
+<span class="n">distancia_total</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distancia</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># distancia en km</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distancia total:&#39;</span><span class="p">,</span> <span class="n">distancia_total</span><span class="p">,</span> <span class="s1">&#39;km.&#39;</span><span class="p">)</span>
+<span class="n">desnivel_positivo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">declive_acumulado_positivo</span><span class="p">(</span><span class="n">elevacion</span><span class="p">))</span> <span class="c1"># desnivel en metros</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Declive acumulado positivo:&#39;</span><span class="p">,</span> <span class="n">desnivel_positivo</span><span class="p">,</span> <span class="s1">&#39;metros.&#39;</span><span class="p">)</span>
+
+<span class="n">velocidad</span> <span class="o">=</span> <span class="n">velocidad_instantanea</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La velocidad máxima:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span><span class="o">*</span><span class="mf">3.6</span><span class="p">,</span> <span class="s1">&#39;km/h.&#39;</span><span class="p">)</span>
+
+<span class="n">mask_mov</span> <span class="o">=</span> <span class="n">intervalos_movimiento</span><span class="p">(</span><span class="n">cadence</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La cadencia promedio en movimiento:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cadence</span><span class="p">[</span><span class="n">mask_mov</span><span class="p">])),</span> <span class="s1">&#39;rpm.&#39;</span><span class="p">)</span>
+<span class="n">mask_mov_cad</span> <span class="o">=</span> <span class="n">mask_mov</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cadence</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La cadencia promedio pedaleando:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cadence</span><span class="p">[</span><span class="n">mask_mov_cad</span><span class="p">])),</span> <span class="s1">&#39;rpm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cadencia máxima:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">cadence</span><span class="p">[</span><span class="n">mask_mov</span><span class="p">])),</span> <span class="s1">&#39;rpm.&#39;</span><span class="p">)</span>
+<span class="n">mask_ht</span> <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">))</span>  <span class="c1"># para sacar los NaN</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La frecuencia cardiaca promedio:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_ht</span><span class="p">])),</span> <span class="s1">&#39;bpm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La frecuencia cardiaca máxima:&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_ht</span><span class="p">])),</span> <span class="s1">&#39;bpm.&#39;</span><span class="p">)</span>
+<span class="n">horas</span><span class="p">,</span> <span class="n">minutos</span><span class="p">,</span> <span class="n">segundos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">),</span> <span class="nb">int</span><span class="p">(((</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">),</span> <span class="nb">int</span><span class="p">(((</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El tiempo total: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">horas</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">minutos</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">segundos</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">tiempo_mov</span> <span class="o">=</span> <span class="n">tiempo_en_movimiento</span><span class="p">(</span><span class="n">mask_mov</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+<span class="n">horas_mov</span><span class="p">,</span> <span class="n">minutos_mov</span><span class="p">,</span> <span class="n">segundos_mov</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tiempo_mov</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">tiempo_mov</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">tiempo_mov</span> <span class="o">%</span> <span class="mi">3600</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El tiempo total en movimiento: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">horas_mov</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">minutos_mov</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">segundos_mov</span><span class="p">))</span>
+<span class="n">velocidad_promedio</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">distancia_total</span> <span class="o">/</span> <span class="p">(</span><span class="n">tiempo_mov</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La velocidad promedio (en movimiento):&#39;</span><span class="p">,</span> <span class="n">velocidad_promedio</span><span class="p">,</span> <span class="s1">&#39;km/h.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de puntos de la muestra: 15741
+Distancia total: 96.4 km.
+Declive acumulado positivo: 1683 metros.
+La velocidad máxima: 249.98133562996753 km/h.
+La cadencia promedio en movimiento: 61 rpm.
+La cadencia promedio pedaleando: 73 rpm.
+Cadencia máxima: 129 rpm.
+La frecuencia cardiaca promedio: 144 bpm.
+La frecuencia cardiaca máxima: 169 bpm.
+El tiempo total: 6:29:17.
+El tiempo total en movimiento: 5:42:24
+La velocidad promedio (en movimiento): 16.9 km/h.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los datos procesados de este recorrido  pueden compararse con los datos procesados del mismo recorrido en Strava:</p>
+<p><img alt="image.png" src="data:image/png;base64,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" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dibujamos distancia vs elevación</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">elevacion</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dis/ele&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/69419bfe15a32c33d5d2f16854ebdcb9b2bb4ac2cadcadc7909cbdd9ac14d866.png" src="_images/69419bfe15a32c33d5d2f16854ebdcb9b2bb4ac2cadcadc7909cbdd9ac14d866.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;distancia / velocidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/12b927e38457a1e363a280157ee1b8872ca4bd47d39531bb19ea848a764a66dc.png" src="_images/12b927e38457a1e363a280157ee1b8872ca4bd47d39531bb19ea848a764a66dc.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">heart_rate</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Frecuencia cardiaca&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distancia</span><span class="p">,</span> <span class="n">cadence</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cadencia&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d3148b7452db9b7e3374baf4b1f6bd22b6de14181311a4778e281ca818cd13ca.png" src="_images/d3148b7452db9b7e3374baf4b1f6bd22b6de14181311a4778e281ca818cd13ca.png" />
+</div>
+</div>
+<p>Un dato importante en un entrenamiento ciclístico son las zonas de ritmo cardiaco utilizadas durante el mismo. Las <em>zonas de ritmo cardiaco</em> dependen de cada persona y tienen como base las pulsaciones máximas que la persona puede tener.Este parámetro se llama <em>FCM (frecuencia cardiaca maxima)</em>. La FCM se calcula haciendo un esfuerzo máximo y viendo las pulsaciones en ese momento  o, si no se quiere arriesgar, a 220 le restamos la edad. Las zonas de ritmo cardiaco se determinan  de la siguiente manera:</p>
+<ul class="simple">
+<li><p>Zona 1: Muy ligera, del 50 al 60 por ciento de la FCM.</p></li>
+<li><p>Zona 2: Ligero, del 60 al 70 por ciento de la FCM.</p></li>
+<li><p>Zona 3: Moderada, del 70 al 80 por ciento de la FCM.</p></li>
+<li><p>Zona 4: Difícil, del 80 al 90 por ciento de la FCM.</p></li>
+<li><p>Zona 5: Muy duro, del 90 al 100 por ciento de la FCM.</p></li>
+</ul>
+<p>En el caso de  el recorrido anterior la persona tiene una FCM de 170, por lo tanto</p>
+<ul class="simple">
+<li><p>Zona 1: Muy ligera, menor al 60 por ciento de la FCM.</p></li>
+<li><p>Zona 2: Ligero, del 60 al 70 por ciento de la FCM.</p></li>
+<li><p>Zona 3: Moderada, del 70 al 80 por ciento de la FCM.</p></li>
+<li><p>Zona 4: Difícil, del 80 al 90 por ciento de la FCM.</p></li>
+<li><p>Zona 5: Muy duro, del 90 al 100 por ciento de la FCM.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FCM</span> <span class="o">=</span> <span class="mi">170</span>
+<span class="n">zona_1</span> <span class="o">=</span> <span class="n">FCM</span> <span class="o">*</span> <span class="mf">0.58</span>
+<span class="n">zona_2</span> <span class="o">=</span> <span class="n">FCM</span> <span class="o">*</span> <span class="mf">0.77</span>
+<span class="n">zona_3</span> <span class="o">=</span> <span class="n">FCM</span> <span class="o">*</span> <span class="mf">0.87</span>
+<span class="n">zona_4</span> <span class="o">=</span> <span class="n">FCM</span> <span class="o">*</span> <span class="mf">0.96</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zona 1: hasta&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_1</span><span class="p">),</span><span class="s1">&#39;ppm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zona 2: de&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_2</span><span class="p">),</span><span class="s1">&#39;ppm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zona 3: de&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_3</span><span class="p">),</span><span class="s1">&#39;ppm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zona 4: de&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_4</span><span class="p">),</span><span class="s1">&#39;ppm.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zona 5: desde&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;ppm.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zona 1: hasta 99 ppm.
+Zona 2: de 100 a 131 ppm.
+Zona 3: de 132 a 148 ppm.
+Zona 4: de 149 a 163 ppm.
+Zona 5: desde 164 ppm.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hagamos un gráfico de barras que nos indique cuanto tiempo ha estado el ciclista en cada zona.</p>
+<p>Como primer paso,  hagamos las máscaras por zona:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">heart_rate</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">zona_1</span><span class="p">))</span>
+<span class="n">mask_2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">heart_rate</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">heart_rate</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">zona_2</span><span class="p">))</span>
+<span class="n">mask_3</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">heart_rate</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">heart_rate</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">zona_3</span><span class="p">))</span>
+<span class="n">mask_4</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_3</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">heart_rate</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">heart_rate</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">zona_4</span><span class="p">))</span>
+<span class="n">mask_5</span> <span class="o">=</span> <span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">zona_4</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">heart_rate</span> <span class="p">)</span>
+
+<span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">z3</span><span class="p">,</span> <span class="n">z4</span><span class="p">,</span> <span class="n">z5</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_1</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_2</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_3</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_4</span><span class="p">]),</span> <span class="nb">len</span><span class="p">(</span><span class="n">heart_rate</span><span class="p">[</span><span class="n">mask_5</span><span class="p">])</span>
+<span class="n">zonas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span> <span class="n">z3</span><span class="p">,</span> <span class="n">z4</span><span class="p">,</span> <span class="n">z5</span><span class="p">])</span>
+<span class="n">total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">zonas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">zonas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15740 [  27 3924 3931 7101  757]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si suponemos que  las muestras se distribuyen uniformemente en el tiempo, lo cual no es necesariamente cierto, el porcentaje de permanencia en cada zona está en relación directa con la cantidad de muestras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">zonas</span> <span class="o">/</span> <span class="n">total</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de barras&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Porcentaje&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Zonas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d14afd75ffc445ada04b3b3967199e571960b1a29038a95a435dc5646ce42d16.png" src="_images/d14afd75ffc445ada04b3b3967199e571960b1a29038a95a435dc5646ce42d16.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="19_PyPlot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción a Matplotlib</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-procesamiento-de-recorridos-gpx">1. Lectura y procesamiento de recorridos GPX</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

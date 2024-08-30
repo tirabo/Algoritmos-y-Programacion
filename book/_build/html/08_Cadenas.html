@@ -1,0 +1,1470 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cadenas &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08_Cadenas';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Ciclos" href="07_Ciclos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cadenas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F08_Cadenas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/08_Cadenas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cadenas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recorriendo-cadenas">2. Recorriendo cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-slice">3. Notación slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-cadenas">4. Métodos de cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-operador-in">5. El operador <code class="docutils literal notranslate"><span class="pre">in</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-cadenas">6. Comparación de cadenas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cadenas">
+<h1>Cadenas<a class="headerlink" href="#cadenas" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>1. Cadenas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Las cadenas no son entidades que representan un concepto matemático como los números enteros, números punto flotante o los booleanos. Una cadena es una <em>secuencia de caracteres</em>, lo que significa que es una colección ordenada de  caracteres.</p>
+<p>Las cadenas, el tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>, son de suma utilidad en la programación y Python provee un manejo muy intuitivo de ellas que hace que las podamos manejar con facilidad</p>
+<p><strong>Una cadena es una secuencia.</strong> Como ya dijimos, una cadena es una secuencia de caracteres.  Para especificar una cadena  en Python hay que escribir una secuencia de caracteres encerrados entre comillas simple o dobles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola
+Hola
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede acceder a los caracteres de uno en uno con el operador de corchetes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">letra</span> <span class="o">=</span> <span class="n">fruta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+</pre></div>
+</div>
+</div>
+</div>
+<p>La segunda declaración selecciona el carácter número 1 de <code class="docutils literal notranslate"><span class="pre">fruta</span></code> y lo asigna a la variable <code class="docutils literal notranslate"><span class="pre">letra</span></code>.</p>
+<p>La expresión entre corchetes se llama <em>índice</em>. El índice indica qué carácter de la secuencia desea (de ahí el nombre).</p>
+<p>En  una cadena el primer carácter tiene índice <code class="docutils literal notranslate"><span class="pre">0</span></code>, el segundo tiene índice <code class="docutils literal notranslate"><span class="pre">1</span></code> y así sucesivamente. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b
+a
+n
+</pre></div>
+</div>
+</div>
+</div>
+<p>nos imprime en pantalla <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code> respectivamente.</p>
+<p>Se puede usar como índices expresiones que contengan variables y operadores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana
+a
+n
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero el valor del índice debe ser un número entero. De lo contrario, se obtiene un error.</p>
+<p>Si tratamos de acceder a una posición no negativa donde la cadena no está definida, obtenemos error. Por ejemplo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;banana&#39;</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>es legal, mientras que</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;banana&#39;</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="s1">&#39;banana&#39;</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>son expresiones que devuelven error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;banana&#39;</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;banana&#39;[6] # descomentar esta línea produce error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Concatenar cadenas.</strong> Una de las operaciones más útiles entre cadenas es la de  <em>concatenación</em> que simplemente “pega” dos cadenas,  una después de otra. Para concatenar  cadenas se usa el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tipo_doc</span> <span class="o">=</span> <span class="s1">&#39;DNI: &#39;</span>
+<span class="n">nro_doc</span> <span class="o">=</span> <span class="s1">&#39;99456321&#39;</span>
+<span class="n">tipo_doc</span> <span class="o">+</span> <span class="n">nro_doc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;DNI: 99456321&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede aplicar varias veces en una misma expresión entre cadenas el operador <code class="docutils literal notranslate"><span class="pre">+</span></code>. El operador <code class="docutils literal notranslate"><span class="pre">+</span></code> es asociativo,  pero, obviamente, no es conmutativo. El <em>neutro</em> es la cadena vacía <code class="docutils literal notranslate"><span class="pre">''</span></code>,  es decir</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span> <span class="o">==</span> <span class="n">cadena</span>
+</pre></div>
+</div>
+<p><strong>La función <code class="docutils literal notranslate"><span class="pre">len</span></code>.</strong> <code class="docutils literal notranslate"><span class="pre">len</span></code> es una función incorporada que devuelve el número de caracteres en una cadena:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que para obtener la última letra de una cadena debemos  usar como índice la longitud de la cadena menos 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La instrucción <code class="docutils literal notranslate"><span class="pre">fruta[len(fruta)]</span></code> nos devolverá un error pues el índice <code class="docutils literal notranslate"><span class="pre">len(fruta)</span></code> se refiere al elemento   <code class="docutils literal notranslate"><span class="pre">len(fruta)+1</span></code>-ésimo de la cadena y  ese elemento no existe. En este caso particular, el motivo del error es que no hay ninguna letra en<code class="docutils literal notranslate"> <span class="pre">'banana'</span></code> con el índice 6. Como empezamos a contar desde cero, las seis letras están numeradas del 0 al 5. Para obtener el último carácter, se debe restar 1 de <code class="docutils literal notranslate"><span class="pre">len(fruta)</span></code>:</p>
+<p>También se  pueden usar índices negativos, que cuentan hacia atrás desde el final de la cadena. La expresión <code class="docutils literal notranslate"><span class="pre">fruta[-1]</span></code> da como resultado la última letra, <code class="docutils literal notranslate"><span class="pre">fruta[-2]</span></code> da como resultado la penúltima, y ​​así sucesivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo de uso de len en el for</span>
+<span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;anocheciendo&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">palabra</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 a
+1 n
+2 o
+3 c
+4 h
+5 e
+6 c
+7 i
+8 e
+9 n
+10 d
+11 o
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podríamos haber hecho:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+n
+o
+c
+h
+e
+c
+i
+e
+n
+d
+o
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo. Letras que están en índices pares</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">palabra</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 a
+2 o
+4 h
+6 c
+8 e
+10 d
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">palabra</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 a
+2 o
+4 h
+6 c
+8 e
+10 d
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">),</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">palabra</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 a
+2 o
+4 h
+6 c
+8 e
+10 d
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Las cadenas son inmutables.</strong>  Es tentador usar el operador <code class="docutils literal notranslate"><span class="pre">[]</span></code> en el lado izquierdo de una asignación, con la intención de cambiar un carácter en una cadena. Por ejemplo, si ejecutamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;ab&#39;</span>
+<span class="c1"># cadena[0] = &#39;x&#39; # descomentar este línea produce un error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>nos devuelve</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+<p>que nos dice que el tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> no admite asignación de items.</p>
+<p>El motivo del error es que las cadenas son <em>inmutables</em>, lo que significa que no se puede cambiar un cadena existente. Lo que sí se puede hacer es crear una nueva cadena que es una variación del original:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;ab&#39;</span>
+<span class="n">cadena2</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span> <span class="o">+</span> <span class="n">cadena</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cadena2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;xb&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este ejemplo concatena una nueva primera letra con el final de <code class="docutils literal notranslate"><span class="pre">cadena</span></code> y no tiene ningún efecto sobre la cadena original. Por supuesto, que también podríamos haber hecho</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;ab&#39;</span>
+<span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span> <span class="o">+</span> <span class="n">cadena</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">cadena</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;xb&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, en la segunda instrucción se destruye la variable original <code class="docutils literal notranslate"><span class="pre">cadena</span></code> y se crea otra variable,  que llamamos nuevamente <code class="docutils literal notranslate"><span class="pre">cadena</span></code>,  con otros valores. Estas tres líneas de programación <em>simulan</em> el cambio de un carácter en una cadena.</p>
+</section>
+<section id="recorriendo-cadenas">
+<h2>2. Recorriendo cadenas<a class="headerlink" href="#recorriendo-cadenas" title="Link to this heading">#</a></h2>
+<p>Muchos cálculos implican procesar una cadena de un carácter a la vez. A menudo se comienza por el principio, seleccionan un carácter por vez, se hace algo y se continúa hasta el final. Este patrón de procesamiento se llama <em>recorrido</em>. Una forma de escribir un recorrido es con un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">índice</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">índice</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruta</span><span class="p">):</span>
+    <span class="n">letra</span> <span class="o">=</span> <span class="n">fruta</span><span class="p">[</span><span class="n">índice</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+    <span class="n">índice</span> <span class="o">=</span> <span class="n">índice</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b
+a
+n
+a
+n
+a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este ciclo recorre la cadena y muestra cada letra en una línea. La condición del ciclo es <code class="docutils literal notranslate"><span class="pre">índice</span> <span class="pre">&lt;</span> <span class="pre">len(fruta)</span></code>, por lo que cuando <code class="docutils literal notranslate"><span class="pre">índice</span></code> es igual a la longitud de la cadena, la condición es falsa y el cuerpo del ciclo no se ejecuta. El último carácter al que se accede es el que tiene el índice <code class="docutils literal notranslate"><span class="pre">len(fruta)</span> <span class="pre">-</span> <span class="pre">1</span></code>, que es el último carácter de la cadena.</p>
+<p>Como ejercicio, escribamos una función que tome una cadena como argumento y muestre las letras al revés, una por línea.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">índice</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">índice</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">letra</span> <span class="o">=</span> <span class="n">fruta</span><span class="p">[</span><span class="n">índice</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+    <span class="n">índice</span> <span class="o">=</span> <span class="n">índice</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+n
+a
+n
+a
+b
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como ya mencionamos, las cadena son iterables y por lo tanto pueden ser recorridas por un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">fruta</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b
+a
+n
+a
+n
+a
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cada vez que pasa por el ciclo, el siguiente carácter de la cadena se asigna a la variable <code class="docutils literal notranslate"><span class="pre">letra</span></code>. El ciclo continúa hasta que no quedan caracteres.</p>
+<p>El siguiente ejemplo muestra cómo usar la concatenación (suma de cadenas) y un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para generar una serie de 9 items numerados, donde el contenido del ítem siempre es el mismo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prefijo</span> <span class="o">=</span> <span class="s1">&#39;123456789&#39;</span>
+<span class="n">item</span> <span class="o">=</span> <span class="s1">&#39;valija&#39;</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">prefijo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="s1">&#39;. &#39;</span> <span class="o">+</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. valija
+2. valija
+3. valija
+4. valija
+5. valija
+6. valija
+7. valija
+8. valija
+9. valija
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="notacion-slice">
+<h2>3. Notación slice<a class="headerlink" href="#notacion-slice" title="Link to this heading">#</a></h2>
+<p>Un segmento de una cadena es lo que se llama una <em>rebanada</em> o <em>slice</em> por su traducción al inglés. Seleccionar una slice es similar a seleccionar un carácter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ba
+nana
+</pre></div>
+</div>
+</div>
+</div>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">[n</span> <span class="pre">:</span> <span class="pre">m]</span></code> devuelve la rebanada de la cadena del caracteres entre el “corte” <code class="docutils literal notranslate"><span class="pre">n</span></code>y el “corte” <code class="docutils literal notranslate"><span class="pre">m</span></code>. Ahora explicaremos lo que significa “corte”, pero primero debemos aclarar que <em>no</em> se refiere a un índice,  sino al corte entre dos elementos. Ejemplifiquemos con la cadena <code class="docutils literal notranslate"><span class="pre">banana</span></code>:
+$<span class="math notranslate nohighlight">\(
+\begin{matrix}
+\text{Cadena:} &amp;|&amp;\tt b&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp; \\
+\text{Corte:}\;\;\;&amp;0&amp;&amp;1&amp;&amp;2&amp;&amp;3&amp;&amp;4&amp;&amp;5&amp;&amp;6&amp; \\
+\end{matrix}
+\)</span>$</p>
+<p>Observar que (imaginariamente) hemos puesto cada carácter en una casilla y  los cortes son las paredes de las casillas. Entonces las primeras 2 letras están entre las paredes 0 y 2  y las últimas 4 letras entre las paredes 2 y 6.</p>
+<p>Si se omite el primer índice (antes de los dos puntos), el segmento comienza al principio de la cadena. Si omite el segundo índice, el segmento va al final de la cadena:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+
+<span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;sobretodo&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cadena</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="n">cadena</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ba
+nana
+sobretodo
+sobre
+todo
+sobre
+sobretodo
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la notación slice siempre <code class="docutils literal notranslate"><span class="pre">cadena</span> <span class="pre">==</span> <span class="pre">cadena[:n]</span> <span class="pre">+</span> <span class="pre">cadena[n:]</span></code>.</p>
+<p>Si el primer índice es mayor o igual que el segundo, el resultado es una cadena vacía, representada por dos comillas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una cadena vacía no contiene caracteres y tiene una longitud 0, pero aparte de eso, es igual que cualquier otra cadena.</p>
+<p>Continuando con este ejemplo, ¿qué crees que significa <code class="docutils literal notranslate"><span class="pre">fruta[:]</span></code>? Veamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+<span class="n">fruta2</span> <span class="o">=</span> <span class="n">fruta</span><span class="p">[:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta2</span><span class="p">)</span>
+
+<span class="n">fruta3</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fruta</span><span class="p">:</span>
+    <span class="n">fruta3</span> <span class="o">=</span> <span class="n">fruta3</span> <span class="o">+</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana
+banana
+banana
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como habrás observado, <code class="docutils literal notranslate"><span class="pre">fruta[:]</span></code> reproduce la cadena original. Está instrucción es muy útil cuando queremos crear otra cadena copia de la cadena original:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="n">fruta_2</span> <span class="o">=</span> <span class="n">fruta</span><span class="p">[:]</span>
+<span class="n">fruta_3</span> <span class="o">=</span> <span class="n">fruta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las variables <code class="docutils literal notranslate"><span class="pre">fruta</span></code>, <code class="docutils literal notranslate"><span class="pre">fruta_2</span></code> y <code class="docutils literal notranslate"><span class="pre">fruta_3</span></code> son variable diferentes que tienen el mismo valor. Es una diferencia sutil, pero es importante saber que existe. Por ejemplo, si yo destruyo y rehago por asignación la variable <code class="docutils literal notranslate"><span class="pre">fruta_2</span></code> o <code class="docutils literal notranslate"><span class="pre">fruta_3</span></code>, la variable <code class="docutils literal notranslate"><span class="pre">fruta</span></code> no cambia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">,</span> <span class="n">fruta_2</span><span class="p">,</span> <span class="n">fruta_3</span><span class="p">)</span>
+<span class="n">fruta_2</span> <span class="o">=</span> <span class="s1">&#39;pera&#39;</span>
+<span class="n">fruta_3</span> <span class="o">=</span> <span class="s1">&#39;manzana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">,</span> <span class="n">fruta_2</span><span class="p">,</span> <span class="n">fruta_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>banana banana banana
+banana pera manzana
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una propiedad importante de la notación slice, es que nunca devuelve error si los cortes son números enteros,  aunque a veces devuelve la cadena vacía:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orden</span> <span class="o">=</span> <span class="s1">&#39;0123456789&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:])</span>  <span class="c1"># desde el corte -4 (contando desde el último corte) hasta el corte 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orden</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">orden</span><span class="p">)</span> <span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">orden</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># desde el corte -4 (contando desde el último corte) hasta el corte -2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># desde el corte -4 hasta el corte 0 (es la cadena vacía)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;orden[-4: 8] = &#39;</span><span class="p">,</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="mi">8</span><span class="p">])</span> <span class="c1"># desde el corte -4 (contando desde el último corte) hasta el corte 8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;orden[6: 8] = &#39;</span><span class="p">,</span><span class="n">orden</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">orden</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6789
+6789
+6789
+67
+
+orden[-4: 8] =  67
+orden[6: 8] =  67
+0123456789
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para no confundirse, solo hay que tener en cuenta que un entero negativo indica la posición (negativa) desde el último corte (que es <code class="docutils literal notranslate"><span class="pre">len(cadena)</span></code>)  y  un entero positivo indica la posición desde el primer corte.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix}
+\text{Cadena:} &amp;|&amp;\tt b&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp; \\
+\text{Corte:}\;\;\;&amp;-6&amp;&amp;-5&amp;&amp;-4&amp;&amp;-3&amp;&amp;-2&amp;&amp;-1&amp;&amp;&amp; \\
+\end{matrix}
+\end{split}\]</div>
+<p>Es decir, si <code class="docutils literal notranslate"><span class="pre">-len(cadena)</span> <span class="pre">&lt;=</span> <span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>,  el corte <code class="docutils literal notranslate"><span class="pre">n</span></code> de <code class="docutils literal notranslate"><span class="pre">cadena</span></code> es igual  al corte <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">+</span> <span class="pre">len(cadena)</span></code> y si <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&lt;</span> <span class="pre">-len(cadena)</span></code> el corte <code class="docutils literal notranslate"><span class="pre">n</span></code> es el corte <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orden</span> <span class="o">=</span> <span class="s1">&#39;0123456789&#39;</span>
+<span class="n">lon</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">orden</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span> <span class="mi">8</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span> <span class="o">+</span> <span class="n">lon</span><span class="p">:</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
+67
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente, observar que si <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">cadena[n-1</span> <span class="pre">:</span> <span class="pre">n]</span></code> devuelve <code class="docutils literal notranslate"><span class="pre">cadena[n</span> <span class="pre">-</span> <span class="pre">1]</span></code> si existe, y si no, devuelve la cadena vacía, mientras que  <code class="docutils literal notranslate"><span class="pre">cadena[n</span> <span class="pre">-</span> <span class="pre">1]</span></code> devuelve  el ítem <code class="docutils literal notranslate"><span class="pre">n</span></code>-ésimo de <code class="docutils literal notranslate"><span class="pre">cadena</span></code> si existe y si no produce un error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orden</span> <span class="o">=</span> <span class="s1">&#39;0123456789&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># imprime 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># imprime 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># imprime 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span> <span class="c1"># imprime 8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="n">orden</span><span class="p">[</span><span class="mi">9</span><span class="p">])</span> <span class="c1"># imprime 9 dos veces</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">orden</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">11</span><span class="p">])</span> <span class="c1"># imprime la cadena vacía</span>
+<span class="c1"># print(orden[10]) # descomentada devuelve error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0123456789
+0
+1
+2
+8
+9 9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metodos-de-cadenas">
+<h2>4. Métodos de cadenas<a class="headerlink" href="#metodos-de-cadenas" title="Link to this heading">#</a></h2>
+<p>Las cadenas proporcionan métodos que realizan una variedad de operaciones útiles. Un método es similar a una función, toma argumentos y
+devuelve un valor, pero la sintaxis es diferente. Por ejemplo, el método <code class="docutils literal notranslate"><span class="pre">upper()</span></code> toma una cadena y devuelve una nueva cadena con todas las letras mayúsculas.</p>
+<p>En lugar de utilizar la sintaxis de función <code class="docutils literal notranslate"><span class="pre">upper(palabra)</span></code>, se utiliza la sintaxis de método <code class="docutils literal notranslate"><span class="pre">palabra.upper()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;colección año 2019&#39;</span>
+<span class="n">nueva_palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nueva_palabra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LECCIÓN AÑO 2019
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta forma de notación con puntos especifica el nombre del método, <code class="docutils literal notranslate"><span class="pre">upper()</span></code>, y el nombre de la cadena a la que aplicar el método,<code class="docutils literal notranslate"><span class="pre">palabra</span></code>. Los paréntesis vacíos indican que este método  acepta ser utilizado sin argumentos. En  realidad, el método <code class="docutils literal notranslate"><span class="pre">upper()</span></code> no acepta argumentos.</p>
+<p>Una llamada a un método se denomina <em>invocación</em>; en este caso, diríamos que estamos invocando <code class="docutils literal notranslate"><span class="pre">upper()</span></code> en <code class="docutils literal notranslate"><span class="pre">palabra</span></code>.</p>
+<p>Hay un método de cadena llamado <code class="docutils literal notranslate"><span class="pre">find()</span></code> que devuelve la coordenada de la primera ocurrencia de una cadena en otra cadena:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;colección&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ci&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ce&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+0
+-1
+5
+-1
+-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este ejemplo, invocamos <code class="docutils literal notranslate"><span class="pre">find()</span></code> en <code class="docutils literal notranslate"><span class="pre">palabra</span></code> y pasamos la cadena que estamos buscando como parámetro. Cuando <code class="docutils literal notranslate"><span class="pre">find()</span></code> no encuentra lo que busca devuelve <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<p>De forma predeterminada, <code class="docutils literal notranslate"><span class="pre">find()</span></code> comienza al principio de la cadena, pero puede tomar un segundo argumento, el índice donde comienza a buscar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;le&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>colección
+2
+0
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este es un ejemplo de un <em>argumento opcional</em>; <code class="docutils literal notranslate"><span class="pre">find()</span></code> también puede tomar un tercer argumento, el índice donde detiene la búsqueda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código anterior encuentra la primera ocurrencia de <code class="docutils literal notranslate"><span class="pre">a</span></code> en la palabra <code class="docutils literal notranslate"><span class="pre">banana</span></code> entre los índices 2 y 6.</p>
+<p><strong>Otros métodos útiles.</strong> Hay una gran cantidad de métodos del tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> incorporados al lenguaje Python. Veremos a continuación algunos que resultan útiles con alguna breve explicación de que es lo que hacen.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Método</p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-left"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>find()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>busca en la cadena un valor especificado y devuelve la posición de donde lo encontró</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>rfind()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>busca en la cadena un valor especificado y devuelve la última posición donde lo encontró</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>replace()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve una cadena donde un el 1º valor especificado se reemplaza por el 2º valor especificado</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>strip()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena sin espacios, tabs, saltos al comienzo y al final</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>lstrip()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena sin espacios, tabs, saltos al comienzo</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>rstrip()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena sin espacios, tabs, saltos al final</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>upper()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena original convertida a mayúsculas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>lower()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena original convertida a minúsculas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>capitalize()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena original con el primer carácter a mayúsculas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>title()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve la cadena original con el primer carácter de cada palabra a mayúsculas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>islower()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si todos los caracteres de la cadena son minúsculas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>isupper()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si todos los caracteres de la cadena están en mayúsculas</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>isnumeric()</p></td>
+<td class="text-center"><p>:</p></td>
+<td class="text-left"><p>devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si todos los caracteres de la cadena son dígitos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ninguno de estos métodos modifica la cadena original.</p>
+<p>Hay algunos métodos más y si importamos la biblioteca <code class="docutils literal notranslate"><span class="pre">string</span></code> aún habrá más métodos disponibles. No es necesario saberse de memoria muchos métodos, siempre está el recurso de internet para saber cual es el nombre de un método o cuales son los métodos disponibles.</p>
+<p>Veamos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra</span> <span class="o">=</span> <span class="s1">&#39;colección&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">))</span> <span class="c1"># reemplaza todas la ocurrencias de &#39;c&#39; por &#39;x&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="c1"># el método replace() no modifica la variable original</span>
+<span class="n">fruta</span> <span class="o">=</span> <span class="s1">&#39;  banana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+<span class="n">fruta</span> <span class="o">=</span> <span class="n">fruta</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruta</span><span class="p">)</span>
+<span class="n">materia</span> <span class="o">=</span> <span class="s1">&#39;álgebra lineal&#39;</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">materia</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span> <span class="c1"># Observar que capitaliza también palabras con tilde</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materia</span><span class="p">)</span> <span class="c1"># el método title() no modifica la variable original</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+xolexxión
+colección
+  banana
+banana
+Álgebra Lineal
+álgebra lineal
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Caracteres especiales.</strong> Hay en Python algunos pocos caracteres especiales que sirven para representar ciertas cadenas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\n</span></code> - nueva línea.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\t</span></code> - tabulación.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\r</span></code> - carriage return.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\b</span></code> - retroceso.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\'</span></code> - comilla simple.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> - comilla doble.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\\</span></code> - barra invertida.</p></li>
+</ul>
+<p>Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La lista de nominados es: </span><span class="se">\</span>
+<span class="s1">    </span><span class="se">\n\t</span><span class="s1">1. Alberto &quot;el bocha</span><span class="se">\&quot;</span><span class="s1"> Gandolfo,</span><span class="se">\n\t</span><span class="s1">2. Carlos </span><span class="se">\&#39;</span><span class="s1">terremoto</span><span class="se">\&#39;</span><span class="s1"> Rodríguez. &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La lista de nominados es:     
+	1. Alberto &quot;el bocha&quot; Gandolfo,
+	2. Carlos &#39;terremoto&#39; Rodríguez. 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-operador-in">
+<h2>5. El operador <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#el-operador-in" title="Link to this heading">#</a></h2>
+<p>La palabra <code class="docutils literal notranslate"><span class="pre">in</span></code> es un operador booleano que toma dos cadenas y devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si el primero aparece como una subcadena en el segundo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;an&#39;</span> <span class="ow">in</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;es&#39;</span> <span class="ow">in</span>  <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por ejemplo, la siguiente función imprime todas los
+letras de <code class="docutils literal notranslate"><span class="pre">palabra1</span></code> que también aparecen en <code class="docutils literal notranslate"><span class="pre">palabra2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">en_ambas</span><span class="p">(</span><span class="n">palabra1</span><span class="p">,</span> <span class="n">palabra2</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+     <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">palabra1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">palabra2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;Los parametros deben ser </span><span class="se">\&#39;</span><span class="s1">str</span><span class="se">\&#39;</span><span class="s1">&#39;</span>
+     <span class="c1"># post: imprime todas los letras (una tras otra) de palabra1 que también aparecen en palabra2</span>
+     <span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palabra1</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palabra2</span><span class="p">:</span>
+             <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># end = &#39;&#39; no pasa de línea</span>
+
+<span class="n">en_ambas</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pajaron&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span> <span class="c1"># pasa de línea</span>
+<span class="n">en_ambas</span><span class="p">(</span><span class="s1">&#39;recolectar&#39;</span><span class="p">,</span> <span class="s1">&#39;coz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>anana
+coc
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparacion-de-cadenas">
+<h2>6. Comparación de cadenas<a class="headerlink" href="#comparacion-de-cadenas" title="Link to this heading">#</a></h2>
+<p>Los operadores relacionales funcionan con cadenas. Para ver si dos cadenas son iguales, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">palabra1</span><span class="p">,</span> <span class="n">palabra2</span><span class="p">,</span> <span class="n">palabra3</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;anana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra1</span> <span class="o">==</span> <span class="n">palabra2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">palabra1</span> <span class="o">==</span> <span class="n">palabra3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otras operaciones relacionales son útiles para poner palabras en orden alfabético. El operador <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> funciona como orden alfabético, llamado <em>orden lexicogáfico</em>, en las cadenas donde todos los caracteres son letras minúsculas y sin tilde:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">orden_alfabetico</span><span class="p">(</span><span class="n">palabra1</span><span class="p">,</span> <span class="n">palabra2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">palabra1</span> <span class="o">&lt;</span> <span class="n">palabra2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La primera palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra1</span> <span class="o">+</span> <span class="s1">&#39;&quot;, viene antes que la segunda palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra2</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">palabra1</span> <span class="o">&gt;</span> <span class="n">palabra2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La segunda palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra2</span> <span class="o">+</span> <span class="s1">&#39;&quot;, viene antes que la primera palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra1</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ambas balabras son iguales: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra1</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;anana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;anana&#39;</span><span class="p">)</span>
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;anana&#39;</span><span class="p">,</span> <span class="s1">&#39;anana&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La primera palabra: &quot;anana&quot;, viene antes que la segunda palabra: &quot;banana&quot;.
+La segunda palabra: &quot;anana&quot;, viene antes que la primera palabra: &quot;banana&quot;.
+Ambas balabras son iguales: &quot;anana&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python no maneja letras mayúsculas y minúsculas de la misma manera
+lo hace la gente. Todas las letras mayúsculas vienen antes de todas las
+letras minúsculas, entonces:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;anana&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La primera palabra: &quot;Banana&quot;, viene antes que la segunda palabra: &quot;anana&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una forma común de abordar el problema de hacer un orden alfabético con palabras que admitan mayúsculas es convertir las cadenas en un
+formato estándar, como ser todo en minúsculas, antes de realizar la
+comparación.</p>
+<p>Modificamos la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">orden_alfabetico</span><span class="p">(</span><span class="n">palabra1</span><span class="p">,</span> <span class="n">palabra2</span><span class="p">):</span>
+    <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">palabra1</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">palabra2</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">p1</span> <span class="o">&lt;</span> <span class="n">p2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La primera palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra1</span> <span class="o">+</span> <span class="s1">&#39;&quot;, viene antes que la segunda palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra2</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">p1</span> <span class="o">&gt;</span> <span class="n">p2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La segunda palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra2</span> <span class="o">+</span> <span class="s1">&#39;&quot;, viene antes que la primera palabra: &quot;&#39;</span> <span class="o">+</span> <span class="n">palabra1</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ambas balabras tienen la misma posición: &quot;&#39;</span> <span class="o">+</span> <span class="n">p1</span> <span class="o">+</span> <span class="s1">&#39;&quot;.&#39;</span><span class="p">)</span>
+
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;anana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;Banana&#39;</span><span class="p">,</span> <span class="s1">&#39;anana&#39;</span><span class="p">)</span>
+<span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;anana&#39;</span><span class="p">,</span> <span class="s1">&#39;Anana&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La primera palabra: &quot;anana&quot;, viene antes que la segunda palabra: &quot;banana&quot;.
+La segunda palabra: &quot;anana&quot;, viene antes que la primera palabra: &quot;Banana&quot;.
+Ambas balabras tienen la misma posición: &quot;anana&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro problema es con las letras con tilde: estas van después de todas las letras mayúsculas y minúsculas sin tilde</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orden_alfabetico</span><span class="p">(</span><span class="s1">&#39;ábaco&#39;</span><span class="p">,</span> <span class="s1">&#39;calculadora&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La segunda palabra: &quot;calculadora&quot;, viene antes que la primera palabra: &quot;ábaco&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto es un poco más complicado de solucionar que el caso anterior y no lo veremos aquí.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07_Ciclos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ciclos</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recorriendo-cadenas">2. Recorriendo cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacion-slice">3. Notación slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-cadenas">4. Métodos de cadenas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-operador-in">5. El operador <code class="docutils literal notranslate"><span class="pre">in</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-de-cadenas">6. Comparación de cadenas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

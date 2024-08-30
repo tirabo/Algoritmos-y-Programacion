@@ -1,0 +1,1823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Variables y funciones aplicadas a Turtle &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_Variables_Funciones_en_Turtle';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Primeros pasos con Python" href="04_Primeros_pasos_en_Python.html" />
+    <link rel="prev" title="Practicando con Colab Turtle" href="02_M%C3%A1s_dibujos_con_Turtle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_Variables_Funciones_en_Turtle.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03_Variables_Funciones_en_Turtle.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Variables y funciones aplicadas a Turtle</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">1. Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos">2. Ciclos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-for">Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">3. Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-sobre-las-variables">Comentarios sobre las variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for">Comentarios adicionales sobre las variables que se usan como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ciclo-while-mientras">4. El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> (mientras)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-canon"><strong>Ejemplo.</strong> El cañón.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-funciones">5. Definición de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-dibujar-cuadrado">Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-el-ciclo-for">Ejemplo con el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valores">Funciones que devuelven valores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-sobre-las-funciones">Comentarios sobre las funciones:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-bola-de-billar">6. La bola de billar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-dibujar-un-triangulo-arbitrario">7. Ejemplo: dibujar un triángulo arbitrario</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="variables-y-funciones-aplicadas-a-turtle">
+<h1>Variables y funciones aplicadas a Turtle<a class="headerlink" href="#variables-y-funciones-aplicadas-a-turtle" title="Link to this heading">#</a></h1>
+<p>Como  en el comienzo de cada cuadernos, necesitamos instalar la biblioteca  “ColabTurtle”. La instalamos ejecutando la siguiente línea, clicando <img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAABcklEQVRYCe2VvQ2DMBCFMxsttNBCyw4wBEMwBC1DULOJo1c86XKyzz+JIgoX1tnGPn9595PXfd/uCeP1BAgwVBAdiapIVUQroNc1R36myHmebts2N8/zx8AevumHYuvs0BzH4YZhcE3TmGOaJoezMQB+zwJZlsV83Ae3rmsSTDLIOI7ZEASDOvzlIZsEUqIEIWhjykRBEGc6+9ZaORMF6fs+CIJw5ahlhcgEQRlaKqB0EfN9313btuZZ+gmVtgmCnkAHPksQwOCBlISGT1/CmiB4yAfAPQkC59d1RUOl7xDqpyB0aoXq7yBd13nV/AsIQoN+wdD5bBFIbrKiPH2Py72iZM0p31AoJATmReWL5LMaGhSIhUKCoLyZ0NqaVYPDj2nxgMlp41IBOYcPrYJcRxXh4ZSuKR+Wcysk9J8MggslysSUKALBJeRMijo4Y/3tE4A2SxFegkUZoiegQcmBvVCJyvt6XgyiHX27riBawcco8gakA+ZpeypPEgAAAABJRU5ErkJggg==" />:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>ColabTurtle
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ColabTurtle in c:\users\tirab\documents\github\algoritmos-y-programacion\envs\ayp\lib\site-packages (2.1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hemos instalado la biblioteca. La primera linea de la siguiente celda de código nos permite utilizar <em>todas</em> las instrucciones de esa biblioteca. La segunda línea nos permite usar la función <code class="docutils literal notranslate"><span class="pre">choice</span></code> de la biblioteca <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ColabTurtle.Turtle</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="introduccion">
+<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<p>En la clase pasada definimos la función <code class="docutils literal notranslate"><span class="pre">pizarra_vacía()</span></code> que inicializa la pantalla de la forma que nosotros consideramos conveniente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">():</span>
+    <span class="n">initializeTurtle</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        
+        <g visibility=visible transform="rotate(90,400,250) translate(382, 232)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Como ya mencionamos una función debe comenzar con la palabra reservada <code class="docutils literal notranslate"><span class="pre">def</span></code>,  a continuación colocamos el nombre de la función (y sus argumentos) y finalizamos la línea con <code class="docutils literal notranslate"><span class="pre">:</span></code> (dos puntos). Las líneas siguientes si están sangradas forman parte del <em>cuerpo</em> de la función y son las sentencias que se ejecutan cuando utilizamos la función. La definición de la función termina cuando termina el código o comenzamos una línea pegada al margen.</p>
+<p>Podemos definir, por ejemplo, una función para dibujar triángulos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibujar_triangulo</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+    <span class="n">hideturtle</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola&#39;</span><span class="p">)</span> <span class="c1"># no es parte de la definición de la función</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_triangulo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="500.0" y1="250.0" x2="450.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="336.603" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(90,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Dentro de esta función utilizamos el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para dibujar los tres lados del triángulo. Esta función no tiene argumentos y siempre dibuja un triángulo equilátero de lados <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span> <span class="c1"># inicializar pantalla</span>
+<span class="n">dibujar_triangulo</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">face</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">showturtle</span><span class="p">()</span>
+<span class="n">dibujar_triangulo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="500.0" y1="250.0" x2="450.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="336.603" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="500.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:blue;stroke-width:4"/><line x1="400.0" y1="250.0" x2="450.0" y2="163.397" stroke-linecap="round" style="stroke:blue;stroke-width:4"/><line x1="450.0" y1="163.397" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:blue;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(270,500.0,250.0) translate(482.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:blue;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p><strong>Ejercicio.</strong> Usando la función <code class="docutils literal notranslate"><span class="pre">dibujar_triangulo()</span></code> definir la función <code class="docutils literal notranslate"><span class="pre">dibujar_hexagono()</span></code>que dibuja un hexágono con sus diagonales. En otra celda ejecutar la función.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibujar_hexagomo</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">dibujar_triangulo</span><span class="p">()</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">dibujar_hexagomo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="500.0" y1="250.0" x2="450.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="336.603" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="450.0" y2="163.397" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="163.397" x2="500.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="500.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="350.0" y2="163.397" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="163.397" x2="450.0" y2="163.397" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="163.397" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="300.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="300.0" y1="250.0" x2="350.0" y2="163.397" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="163.397" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="350.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="336.603" x2="300.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="300.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="250.0" x2="450.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="336.603" x2="350.0" y2="336.603" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="336.603" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(90,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+</section>
+<section id="ciclos">
+<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Link to this heading">#</a></h2>
+<p>Además del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>, que permite hacer un número determinado de repeticiones, ya mencionamos que hay un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> que se ejecuta bajo cierta condición y  deja de ejecutarse cuando esa condición no se cumple.</p>
+<p>En ambos ciclos se suele llamar <em>cuerpo</em> a las instrucciones que siguen a cada ciclo y se repiten. Dentro del cuerpo muy frecuentemente pueden distinguirse instrucciones que son para el procesamiento propiamente dicho, y otras instrucciones que son preparatorias del siguiente procesamiento. Se recomienda que esas dos porciones de código sean nítidamente identificables.</p>
+<p>Los ciclos <code class="docutils literal notranslate"><span class="pre">while</span></code> son ciclos de una complejidad mayor y  pueden dar lugar a programas cuya ejecución nunca termina.</p>
+<p>Veremos más adelante,  en esta clase, la definición del ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>y  algunos ejemplos.</p>
+<p>Repasemos a continuación con un ejemplo el ciclo <code class="docutils literal notranslate"><span class="pre">para</span></code> o <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<section id="ciclo-for">
+<h3>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Link to this heading">#</a></h3>
+<p>Recordemos que la sintaxis del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> que utilizamos hasta ahora era</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+     <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">código</span> <span class="n">a</span> <span class="n">ejecutar</span> <span class="n">n</span> <span class="n">veces</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Esto nos permitía dibujar estructuras repetitivas, por ejemplo un cuadrado repitiendo el dibujo de los lados 4 veces:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="420.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="250.0" x2="420.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="270.0" x2="400.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="270.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Incluso podemos repetir patrones ya definido por repetición con el uso de bloques anidados.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="c1"># procesamiento propiamente dicho (esta y las dos líneas siguentes)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span> <span class="c1"># preparatorias del siguiente procesamiento (esta y las dos líneas siguentes)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="420.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="250.0" x2="420.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="270.0" x2="400.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="400.0" y1="270.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="430.0" y1="250.0" x2="450.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="250.0" x2="450.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="270.0" x2="430.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="430.0" y1="270.0" x2="430.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="460.0" y1="250.0" x2="480.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="480.0" y1="250.0" x2="480.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="480.0" y1="270.0" x2="460.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="460.0" y1="270.0" x2="460.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="490.0" y1="250.0" x2="510.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="510.0" y1="250.0" x2="510.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="510.0" y1="270.0" x2="490.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="490.0" y1="270.0" x2="490.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="520.0" y1="250.0" x2="540.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="540.0" y1="250.0" x2="540.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="540.0" y1="270.0" x2="520.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="520.0" y1="270.0" x2="520.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="550.0" y1="250.0" x2="570.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="570.0" y1="250.0" x2="570.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="570.0" y1="270.0" x2="550.0" y2="270.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="550.0" y1="270.0" x2="550.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,580.0,250.0) translate(562.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>El uso que le damos al <code class="docutils literal notranslate"><span class="pre">for</span></code>hasta ahora es muy limitado.</p>
+<p>Supongamos que queremos dibujar una espiral de la siguiente forma:</p>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAABqCAYAAACLb76IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMDSURBVHhe7d2/jqFRHMbxY0MpGR2FhkKl0EkU6MUlaHWuQII7wR1wAyi01BJBhY5IRGnfw28zs4hi3r/n8XySkznvOzuTmf3uchzjndDVoshof+QtGYwRATAiAEYEwIgAGBEAIwJgRACMCIARATAiAEYEwIgAGBEAIwJwLWKn01GxWOw29JxcpJ8UdtpgMNBPNP839Dlyhyv/E+fzucy+vTpHzuB9IgBGBMCIABgRACMCYEQAjAiAEQEwIgBXXouh90rb7bYc3enjVqslR681m001nU5VIpFQmUxGzuLYbrdquVyqZDKput2unHXAbfPNYVawp71Tfe6dUqn09DHIIx6Py3duX2BuTieTicw+w36/V/1+X47sCUxE6x+UzD7H5XKRmT1c2PjIqfv9wCxsQqGQzL49fg6T6YXMZrORo7vRaKSstYAc2aAjOu03C5vHP68HklcLNyuivNce3pwCYEQAjAiAEQEwIgBGBGB0xH8/oKwfY/o5UqmUfEX+MDbicDi8bQYcj0c545/1eq3y+bwcec/YiEH7YeTFYiEz7xkbMZfLySwYotGozLxnbMRqtXq7Of36+pIz/kqn0zLzntELG72hfjgcbk9jeTn0xnWQGB2R7hgRACMCYEQAjAiAEQEwIgBGBMCIABgRACMCYEQAjAiAEQEwIgBGBMCIABgRACMCYEQAjAiAEQEwIgBGBMCIABgRACMCYEQAjAiAEQEwIgBeoO8X9Gv0e72eHN3pC+29e91iuVxW4/FYju4+4gJ9Jo1sNivfyWu8QJ8BdrudzLwXmIivbk5NEg6HZea9wEQsFosyM1O9XpeZ9/grFWyYzWbqfD6rWq12G+98xMIGHRc29BYjAmBEAIwIgBEBMCIAzyLqx4k/r9b7aePxMaKTXIno5wVcTXI6nWRmjysR/dwMNslqtZKZPa5ELBQKMqN3KpWKzGySnRvH6W0m677gaauJQ10jkci10WjI35R9rmyAk7f4EAMAIwJgRACMCIARATAiAEYEwIgAGNF4Sv0F6XPqHNXumMIAAAAASUVORK5CYII=" /></p>
+<p>Podemos realizar el dibujo dibujando los 8 segmentos que componen el espiral uno por uno. Eso lo hacemos con el siguiente programa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>¿Es esta una forma conveniente de resolverlo?</p>
+<p>Claramente no, ya que estamos escribiendo 8 veces <em>casi</em> el mismo trozo de programa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span>  <span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sin embargo,  no alcanza con un  <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">_</span> <span class="pre">in</span> <span class="pre">range(8)</span></code> que nos permitiría repetir <em>exactamente</em> lo mismo 8 veces. En este programa no se repite exactamente lo mismo: en cada ejecución del <em>cuerpo</em> del ciclo debe dibujar una línea de una longitud <em>diferente</em>.</p>
+<p>El problema es que   el argumento de <code class="docutils literal notranslate"><span class="pre">forward()</span></code> es <em>variable</em>. En la próxima sección explicamos el uso de variables lo que, en particular,  nos permitirá escribir elegantemente el código de la espiral cuadrada.</p>
+</section>
+</section>
+<section id="variables">
+<h2>3. Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Afortunadamente, los lenguajes de programación nos permiten utilizar <em>variables</em>. Una variable sirve justamente para representar un valor que puede ser diferente en cada ejecución del código:</p>
+<p>Una variable está representada por un nombre, digamos <code class="docutils literal notranslate"><span class="pre">longitud</span></code>, y le podemos asignar un valor, supongamos <code class="docutils literal notranslate"><span class="pre">25</span></code>. En Python se hace de la siguiente manera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span>
+</pre></div>
+</div>
+<p>Entonces, podemos usar <code class="docutils literal notranslate"><span class="pre">longitud</span></code> en diferentes partes del código e ir variando su valor según nos convenga.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span> <span class="c1"># avanza 25</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># gira 90 grados</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># cambiamos el valor de la variable</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span> <span class="c1"># avanza 30</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># gira 90 grados</span>
+</pre></div>
+</div>
+<p>Repitamos nuesto código de la espiral cuadrada, pero donde el alrgumento de los <code class="docutils literal notranslate"><span class="pre">forward()</span></code> sea una variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">55</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>En este ejemplo <code class="docutils literal notranslate"><span class="pre">longitud</span></code> es una variable.</p>
+<p>Cada vez que se ejecuten estas dos instrucciones:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>se dibujará una línea cuyo largo estará determinado por el valor de la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code> en ese momento, y luego girará 90 grados a la derecha.</p>
+<p>La solución al ejercicio, consistiría en ejecutar esas dos instrucciones sucesivamente con los siguientes valores de la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code>: 25, 30, 35, 40, 45, 50, 55 y 60.</p>
+<p>Existen diferentes maneras de escribir esto en Python utilizando el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Una podría ser la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="k">for</span> <span class="n">contador</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span> <span class="c1"># contador tomas los valores 0, 1, 2, 3, 4, 5, 6, 7</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">+</span> <span class="n">contador</span> <span class="o">*</span> <span class="mi">5</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Aclaremos que la sintaxis de la línea 8  indica que la variable <code class="docutils literal notranslate"><span class="pre">contador</span></code> va a variar de a <span class="math notranslate nohighlight">\(1\)</span> de <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(7\)</span> y en ese orden. Es decir los valores sucesivos de la variable <code class="docutils literal notranslate"><span class="pre">contador</span></code> serán: <span class="math notranslate nohighlight">\(0\)</span>, <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(5\)</span>, <span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(7\)</span>.</p>
+<p>Podemos escribir equivalentemente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>En el código anterior en  la línea 6 inicializamos el valor de la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code> a 25. Una vez dentro del ciclo, en la línea 8 incrementamos la variable en  <code class="docutils literal notranslate"><span class="pre">5</span></code>. Es decir, a la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code> le asignamos el valor actual de ella misma más <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p><strong>La función <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</strong> Hasta aquí  usamos dos variables <code class="docutils literal notranslate"><span class="pre">contador</span></code> y <code class="docutils literal notranslate"><span class="pre">longitud</span></code>. La variable longitud puede ser eliminada como veremos en las próximas líneas de código. En  cambio la variable <code class="docutils literal notranslate"><span class="pre">contador</span></code> o algo equivalente no puede ser eliminado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="k">for</span> <span class="n">contador</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">25</span> <span class="o">+</span> <span class="n">contador</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">range()</span></code> es muy versátil y nos permite obtener un código más compacto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(90,380.0,230.0) translate(362.0, 212.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Después veremos mejor la función <code class="docutils literal notranslate"><span class="pre">range()</span></code> pero por ahora digamos  que</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>recorre todos los valores de 25 a 60 “saltando”  de a 5.</p>
+<p>Podemos modificar los argumentos del range y se generarán otros dibujos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># dibuja espiral</span>
+<span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="420.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="250.0" x2="420.0" y2="275.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="420.0" y1="275.0" x2="390.0" y2="275.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="275.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="430.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="430.0" y1="240.0" x2="430.0" y2="285.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="430.0" y1="285.0" x2="380.0" y2="285.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="285.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="230.0" x2="440.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="440.0" y1="230.0" x2="440.0" y2="295.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="440.0" y1="295.0" x2="370.0" y2="295.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="370.0" y1="295.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="370.0" y1="220.0" x2="450.0" y2="220.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="220.0" x2="450.0" y2="305.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="450.0" y1="305.0" x2="360.0" y2="305.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="360.0" y1="305.0" x2="360.0" y2="210.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="360.0" y1="210.0" x2="460.0" y2="210.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="460.0" y1="210.0" x2="460.0" y2="315.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="460.0" y1="315.0" x2="350.0" y2="315.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="315.0" x2="350.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="200.0" x2="470.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(180,470.0,200.0) translate(452.0, 182.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Veamos que podemos generalizar fácilmente la solución para construir espirales más grandes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+
+<span class="c1"># dibuja espiral</span>
+<span class="n">lados</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># cantidad de lados de la espiral</span>
+<span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">lados</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="white"/>
+        <line x1="400" y1="250" x2="425.0" y2="250.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="250.0" x2="425.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="425.0" y1="280.0" x2="390.0" y2="280.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="280.0" x2="390.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="390.0" y1="240.0" x2="435.0" y2="240.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="240.0" x2="435.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="435.0" y1="290.0" x2="380.0" y2="290.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="290.0" x2="380.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="380.0" y1="230.0" x2="445.0" y2="230.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="445.0" y1="230.0" x2="445.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="445.0" y1="300.0" x2="370.0" y2="300.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="370.0" y1="300.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="370.0" y1="220.0" x2="455.0" y2="220.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="455.0" y1="220.0" x2="455.0" y2="310.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="455.0" y1="310.0" x2="360.0" y2="310.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="360.0" y1="310.0" x2="360.0" y2="210.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="360.0" y1="210.0" x2="465.0" y2="210.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="465.0" y1="210.0" x2="465.0" y2="320.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="465.0" y1="320.0" x2="350.0" y2="320.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="320.0" x2="350.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="350.0" y1="200.0" x2="475.0" y2="200.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="475.0" y1="200.0" x2="475.0" y2="330.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="475.0" y1="330.0" x2="340.0" y2="330.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="340.0" y1="330.0" x2="340.0" y2="190.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="340.0" y1="190.0" x2="485.0" y2="190.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="485.0" y1="190.0" x2="485.0" y2="340.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="485.0" y1="340.0" x2="330.0" y2="340.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="330.0" y1="340.0" x2="330.0" y2="180.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="330.0" y1="180.0" x2="495.0" y2="180.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="495.0" y1="180.0" x2="495.0" y2="350.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="495.0" y1="350.0" x2="320.0" y2="350.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="320.0" y1="350.0" x2="320.0" y2="170.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="320.0" y1="170.0" x2="505.0" y2="170.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="505.0" y1="170.0" x2="505.0" y2="360.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="505.0" y1="360.0" x2="310.0" y2="360.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="310.0" y1="360.0" x2="310.0" y2="160.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="310.0" y1="160.0" x2="515.0" y2="160.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="515.0" y1="160.0" x2="515.0" y2="370.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="515.0" y1="370.0" x2="300.0" y2="370.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="300.0" y1="370.0" x2="300.0" y2="150.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="300.0" y1="150.0" x2="525.0" y2="150.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="525.0" y1="150.0" x2="525.0" y2="380.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="525.0" y1="380.0" x2="290.0" y2="380.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="290.0" y1="380.0" x2="290.0" y2="140.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="290.0" y1="140.0" x2="535.0" y2="140.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="535.0" y1="140.0" x2="535.0" y2="390.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="535.0" y1="390.0" x2="280.0" y2="390.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="280.0" y1="390.0" x2="280.0" y2="130.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="280.0" y1="130.0" x2="545.0" y2="130.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/><line x1="545.0" y1="130.0" x2="545.0" y2="400.0" stroke-linecap="round" style="stroke:black;stroke-width:4"/>
+        <g visibility=visible transform="rotate(270,545.0,400.0) translate(527.0, 382.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:black;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Aquí la variable <code class="docutils literal notranslate"><span class="pre">lados</span></code> no es imprescindible pero sirve para clarificar un poco el código.</p>
+<section id="comentarios-sobre-las-variables">
+<h3>Comentarios sobre las variables:<a class="headerlink" href="#comentarios-sobre-las-variables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Representan valores que pueden ser diferentes cada vez que se ejecuta la porción de código donde aparece</p></li>
+<li><p>Permite nombrar un elemento, por ejemplo, llamarle <code class="docutils literal notranslate"><span class="pre">longitud</span></code> al valor, esto aporta legibilidad</p></li>
+<li><p>Durante la ejecución del programa, se les destina un espacio en la memoria</p></li>
+<li><p>Convención (Python): los nombres de las variables van en minúscula, puede ser una letra, una palabra, o más de una palabra separadas por guion bajo (por ejemplo: <code class="docutils literal notranslate"><span class="pre">longitud_lado</span></code>).</p></li>
+<li><p>Recomendación: evitar nombres extremadamente largos o extremadamente cortos o incomprensibles (mejor <code class="docutils literal notranslate"><span class="pre">longitud_lado</span></code> que <code class="docutils literal notranslate"><span class="pre">lgtdld</span></code>). Nunca llamar <code class="docutils literal notranslate"><span class="pre">l</span></code> (la letra ele) o <code class="docutils literal notranslate"><span class="pre">O</span></code> (la letra o mayúscula) a una variable.</p></li>
+</ul>
+</section>
+<section id="comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for">
+<h3>Comentarios adicionales sobre las variables que se usan como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>:<a class="headerlink" href="#comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Es común usar nombres muy cortos (<code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code> …) aunque siempre es recomendable usar nombres “informativos”</p></li>
+<li><p>No es recomendable que la variable que se usa como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code> se utilice fuera del cuerpo del <code class="docutils literal notranslate"><span class="pre">for</span></code>, aunque Python lo permite.</p></li>
+<li><p><strong>Nunca</strong> modificar dentro del <code class="docutils literal notranslate"><span class="pre">for</span></code> la variable que se usa como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>, aunque Python lo permite.</p></li>
+<li><p>Cuando la variable no aparece en el cuerpo del <code class="docutils literal notranslate"><span class="pre">for</span></code> se trata de un <code class="docutils literal notranslate"><span class="pre">repetir</span> <span class="pre">n</span> <span class="pre">veces</span></code>, se recomienda reemplazar por guion bajo <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+</ul>
+<p>Como ejemplo de lo que <strong>no</strong> hay que hacer es  el siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i final:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i: 0
+i: 1
+i: 2
+i: 3
+i: 4
+i: 5
+i: 6
+i: 7
+i: 8
+i: 9
+i final: 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>El resultado es confuso y por lo tanto es mejor no hacer este tipo de cosas.</p>
+</section>
+</section>
+<section id="el-ciclo-while-mientras">
+<h2>4. El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> (mientras)<a class="headerlink" href="#el-ciclo-while-mientras" title="Link to this heading">#</a></h2>
+<p>No siempre podemos modelizar un problema con un <code class="docutils literal notranslate"><span class="pre">for</span></code>, pues,  como ya mencionamos, hay veces que no sabemos cuantas iteraciones debemos hacer. En  esos casos debemos usar un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> se utiliza para repetir un bloque de código mientras una condición sea verdadera. Es importante resaltar que la condición se evalúa antes de ejecutar el bloque de código.</p>
+<p>La sintaxis es la siguiente:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    while condición:
+        &lt;bloque de código a ejecutar mientras la condición sea verdadera&gt;
+</pre></div>
+</div>
+<p>Hagamos un ejemplo sencillo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Expliquemos línea a línea el código:</p>
+<ol class="arabic simple">
+<li><p>En la línea 1 creamos la variable <code class="docutils literal notranslate"><span class="pre">i</span></code>y le asignamos el valor <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>En la línea 2 comenzamos el ciclo con el <code class="docutils literal notranslate"><span class="pre">while</span></code> y  a continuación escribimos la condición <em>i menor o igual a 5</em>. Podrìamos traducir toda la línea 2 al lenguaje coloquial: <em>mientras i sea menor o igual a 5</em>.</p></li>
+</ol>
+<p>En las dos líneas siguientes ponemos el bloque de código que será ejecutado mientras la variable  <code class="docutils literal notranslate"><span class="pre">i</span></code>sea menor o igual a <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<ol class="arabic simple" start="3">
+<li><p>en la línea 3 imprimimos en pantalla el valor de la variable.</p></li>
+<li><p>en la línea 4  incrementamos la variable en  <code class="docutils literal notranslate"><span class="pre">1</span></code>. Es decir,  a la variable <code class="docutils literal notranslate"><span class="pre">i</span></code>le asignamos el valor actual de ella misma más <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ol>
+<p>En  interesante probar el código en  <a class="reference external" href="https://pythontutor.com/python-compiler.html#mode=edit">Python Tutor</a> y así ver como funciona.</p>
+<p>Volveremos sobre este tema más adelante. Algo que debemos mencionar, es que con los <code class="docutils literal notranslate"><span class="pre">while</span></code>se introduce una herramienta poderosa pero que  puede producir programas que no terminen. Por ejemplo,  si ejecutamos el programa</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Su ejecución no termina, pues al comienzo <code class="docutils literal notranslate"><span class="pre">i</span></code>vale <code class="docutils literal notranslate"><span class="pre">1</span></code> y por lo tanto cumple con la condición. Luego de cada iteración el valor de <code class="docutils literal notranslate"><span class="pre">i</span></code> siempre es mayor que <code class="docutils literal notranslate"><span class="pre">1</span></code>y por lo tanto la condición del <code class="docutils literal notranslate"><span class="pre">while</span></code> nunca deja de valer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejecutar esta celda no termina</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<section id="ejemplo-el-canon">
+<h3><strong>Ejemplo.</strong> El cañón.<a class="headerlink" href="#ejemplo-el-canon" title="Link to this heading">#</a></h3>
+<p>Hagamos un ejemplo con Turtle del uso del  ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+<p>En el costado derecho  de la pantalla de Turtle  aparecerá un punto verde a la altura 250 y con coordenada x entre 401 y 800, elegida al azar,  que será un “objetivo”. En  el lado izquierdo de la pantalla se ubicará un “cañonero”,  un punto negro,  a la misma altura que el objetivo. El cañonero no sabe la distancia al objetivo, pero enviará una bala de cañón  roja que avanzará de a 1 unidad hasta alcanzar el objetivo.</p>
+<p>Primero dibujemos el objetivo y el cañonero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">x_o</span><span class="p">,</span> <span class="n">y_o</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span> <span class="mi">800</span><span class="p">),</span> <span class="mi">250</span> <span class="c1"># posición del objetivo</span>
+<span class="n">x_c</span><span class="p">,</span> <span class="n">y_c</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="mi">250</span> <span class="c1"># posición del cañonero (a la misma altura que el objetivo)</span>
+
+<span class="n">hideturtle</span><span class="p">()</span> <span class="c1"># oculto la tortuga</span>
+<span class="n">width</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># ensanchamos el lápiz para que se vean objetivo y cañonero</span>
+
+<span class="c1"># Dibujo el objetivo</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">x_o</span><span class="p">,</span> <span class="n">y_o</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Dibujo el cañonero</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">x_c</span><span class="p">,</span> <span class="n">y_c</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora lanzamos la bala de cañón:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">width</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># hacemos una trazado fino de la trayectoria</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># la bala hace una trayectoria roja</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># velocidad de la bala</span>
+
+<span class="n">pos_bala</span> <span class="o">=</span> <span class="n">x_c</span>  <span class="c1"># la bala parte de la posición del cañonero</span>
+<span class="k">while</span> <span class="n">pos_bala</span> <span class="o">&lt;</span> <span class="n">x_o</span><span class="p">:</span> <span class="c1"># mientras la bala no llegue al objetivo.</span>
+    <span class="n">pos_bala</span> <span class="o">=</span> <span class="n">pos_bala</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># avanzo 1 la bala</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># dibujo la bala</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podíamos haber hecho que el cañonero esté también a una altura al azar, pero para solucionar el problema hubiera requerido un poco de trigonometría y  algunas modificaciones menores del código. Como la idea es solo mostrar el funcionamiento del <code class="docutils literal notranslate"><span class="pre">while</span></code> preferimos hacer el problema más sencillo.</p>
+<p>Encapsulemos el código en funciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bala_canhon</span><span class="p">():</span>
+    <span class="c1"># Dibujo el objetivo</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">x_o</span><span class="p">,</span> <span class="n">y_o</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Dibujo el cañonero</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">x_c</span><span class="p">,</span> <span class="n">y_c</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">width</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># hacemos una trazado fino de la trayectoria</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span> <span class="c1"># la bala hace una trayectoria roja</span>
+    <span class="n">speed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># velocidad de la bala</span>
+
+    <span class="n">pos_bala</span> <span class="o">=</span> <span class="n">x_c</span>  <span class="c1"># la bala parte de la posición del cañonero</span>
+    <span class="k">while</span> <span class="n">pos_bala</span> <span class="o">&lt;</span> <span class="n">x_o</span><span class="p">:</span> <span class="c1"># mientras la bala no llegue al objetivo.</span>
+        <span class="n">pos_bala</span> <span class="o">=</span> <span class="n">pos_bala</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># avanzo 1 la bala</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">bala_canhon</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="definicion-de-funciones">
+<h2>5. Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Link to this heading">#</a></h2>
+<p>Ya hemos hablado un poco de funciones y como definirlas,  ahora profundizaremos un poco más sobre el tema.</p>
+<p>Recordemos que podemos dibujar un cuadrado de lado 50  utilizando el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="c1"># dibuja cuadrado</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estas líneas están bien y el programa hace lo que nosotros queremos. Sin embargo,  si queremos usar repetidamente la pizarra o si queremos dibujar muchos cuadrado en una pizarra, convendrá modularizar un poco. Para inicializar la pizarras hemos definido la siguiente función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">():</span>
+    <span class="n">initializeTurtle</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta función no tiene argumentos e inicializa la pantalla.</p>
+<p>Veamos a continuación una función que nos permitirá dibujar cuadrados de tamaño arbitrario.</p>
+<section id="funcion-dibujar-cuadrado">
+<h3>Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code><a class="headerlink" href="#funcion-dibujar-cuadrado" title="Link to this heading">#</a></h3>
+<p>Vamos a definir ahora una función con un argumento,  específicamente la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code> que toma un argumento y dibuja un cuadrado cuyos lados tienen la longitud dada por el argumento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud_lado</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">longitud_lado</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entonces podemos hacer</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>y</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la definición de <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code> la expresión <code class="docutils literal notranslate"><span class="pre">longitud_lado</span></code> es una variable. Cuando escribimos la definición de la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado</span></code>, desconocemos el valor de la variable. Su valor recién se conocerá cuando se utilice la función.</p>
+<p>Esta variable se llama <em>parámetro</em> de la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code>.</p>
+</section>
+<section id="ejemplo-con-el-ciclo-for">
+<h3>Ejemplo con el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ejemplo-con-el-ciclo-for" title="Link to this heading">#</a></h3>
+<p>Queremos hacer el siguiente dibujo:</p>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAACUCAYAAACeC7vXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQvSURBVHhe7d1NSiNBGIfxiggdESQeIKBewAO4MOJFPIIbwYVgBBfexiPoFdwI7ty5caHgwg/UyZu8GTHp9Eza+redyvODYqp7eiaDeZiU/THT+OwJgMCC/whER1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckCEu6Ng99LHZb8tIY6ysrHyen5/7Ozud6A9oZFkWXl9ffQsp6AUWHh8ffev/RY+r0Wj4DCkpk0n0NRdxYSh6XPaxCJhKvltsNpv9v1ZTH3nyjhuObrfrR32xfXnHDkeevOOGI9ZrlMGpCMgQF2SICzLEBRniggxxQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBhrggQ1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBhrggQ1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckGl89vg8iqWlpfD8/OxbA4uLi+Ho6Mi30tXtdn32pejLe3JyMvZrbPv4+Ni3xjUaDZ99+e3XmMjiiinLMvtTMHwU6b3JY8fbviKjx9soUsVrTBL9Y/H9/d1nmHesuYTyPl7mSfS4bM2Fge3tbZ/Np+gL+tXV1fDw8OBbA81mMxweHvpW2m5ubsLd3V3Y2toKp6envjcfC/optVqtv4vA4bB9GGcL69Gvle0rMnq8jSJVvMYkrLkgQ1yQIS7IEBdkiAsyxAWZSuKy81527oTxfdj5ppRFj+vt7c1nKMNOwqYielxcuP4ZO7ufiuhxZVnmM5Rhl41SET0uu7aI6dkarNPp/PN65CypZEG/trbWv/DJmDw+Pj7CxcWFf8XSUElcmE/EBRniggxxQYa4IENckIl+D/36+nq4vb31rYFWqxX29/d9Cz+Rdz2y6C1M6h76drv9975rRjWjiN0vP3q87SsyeryNMqJ/LD49PfkM8y56XAsLLOOqlPcRVhfRS9jY2PAZqlDnB2+jL+h3dnbC5eWlbw3YtcW9vT3fwk/V7cHbiSyumDqdzreFoA3bh9+R1IIeGCIuyBAXZIgLMsQFGeKCjn/XGE3eqQhGvcbMnoq4v7/3Geqqqgdvo8fFhev6q+rB2+hxtdttn6GuqnrwNnpcu7u7PkPdVP3gbSXfLdqF0t76jvHLo+oHbyuJC/OJuCBDXJAhLsgQF2SICzLR76HPu2fbzq3YwGwYff9MqUwsrpgODg6+XfBkpDHKiP6xeHV15TPMu+hx8Q/upqfsg7fR4zo7O+v/b/xIR9kHb6Mv6M319XX/f4Z9eXkJm5ubYXl52X8Gs2KaB28nkcQFGM5zQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBJIQ/7XOc/oiO7HoAAAAASUVORK5CYII=" /></p>
+<p>Observemos que esto lo podemos pensar como la superposición de 5  cuadrados de diferente tamaño.</p>
+<p>Nuevamente,  no alcanza con <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">_</span> <span class="pre">in</span> <span class="pre">range(5)</span></code> que nos permitiría repetir <em>exactamente</em> lo mismo 5 veces, ya que en esta solución no se repite exactamente lo mismo: en cada ejecución del cuerpo del ciclo se dibuja un cuadrado de una longitud diferente.</p>
+<p>Podemos realizar el dibujo del ejercicio con el siguiente programa, por cierto espantoso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="c1"># dibuja túnel</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># 1° cuadrado</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="c1"># 2° cuadrado</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span> <span class="c1"># 3° cuadrado</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="c1"># 4° cuadrado</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># 5° cuadrado</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O el programa siguiente que es un poco mejor y se basa en que está definida la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code> con la longitud del lado como parámetro:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="c1"># dibuja túnel</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># 1° cuadrado</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="c1"># 2° cuadrado</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span> <span class="c1"># 3° cuadrado</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="c1"># 4° cuadrado</span>
+<span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># 5° cuadrado</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nuevamente podemos valernos del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para evitar la repetición de código y nos quede un código correcto,  elegante y modular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="c1"># dibuja túnel</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nuevamente, escribiendo convenientemente el código, agregar unos cuadrados más es muy sencillo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="c1"># dibuja túnel</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También lo podríamos haber hecho con un <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
+
+<span class="c1"># dibuja túnel</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">longitud</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+    <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funciones-que-devuelven-valores">
+<h3>Funciones que devuelven valores<a class="headerlink" href="#funciones-que-devuelven-valores" title="Link to this heading">#</a></h3>
+<p>Las funciones que definimos arriba no devuelven valores, pero es claro que nos interesa tener funciones que devuelvan valores. Por ejemplo, definamos la función que calcula el área de un triángulo sabiendo su base y altura:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La instrucción <code class="docutils literal notranslate"><span class="pre">return</span></code> devuelve el valor que sigue a continuación y detiene la ejecución de la función. Aunque no es obligatorio, siempre es conveniente que sea la última línea del cuerpo de la función.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">area</span>
+
+<span class="n">area_triangulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">area_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código de arriba no es lo mismo que</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+
+<span class="n">area_triangulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">area_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la línea 3 se detiene la ejecución de código de la función, por eso el <code class="docutils literal notranslate"><span class="pre">print</span></code> de la línea 4 no produce ningún resultado.</p>
+<p>Las funciones juegan un rol extremadamente importante en los lenguajes modernos de programación  y profundizaremos en ellas en clases subsiguientes.</p>
+</section>
+<section id="comentarios-sobre-las-funciones">
+<h3>Comentarios sobre las funciones:<a class="headerlink" href="#comentarios-sobre-las-funciones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Todos los lenguajes de programación modernos permiten definir funciones.</p></li>
+<li><p>Esto contribuye a generalizar y dar nombres a porciones de código, facilitando su reutilización.</p></li>
+<li><p>Realizan abstracciones que aportan legibilidad.</p></li>
+<li><p>Se deben definir funciones cuando se identifican <em>porciones de código que tienen sentido.</em></p></li>
+<li><p>Convención (Python): los nombres de las funciones van en minúscula, puede ser una palabra, o más de una palabra separadas por guion bajo (por ejemplo: <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado</span></code>).</p></li>
+</ul>
+<p>Las funciones pueden tener 0, 1, 2 ó más parámetros. Incluso pueden tener un número indeterminado de parámetros.</p>
+<p>Un ejemplo de función sin parámetros es <code class="docutils literal notranslate"><span class="pre">pizarra_vacía()</span></code>. A veces se dicen, quizás lo escucharán en algunos ámbitos, que una función sin parámetros es un <em>procedimiento</em>.</p>
+<p>Un ejemplo de función con 1 parámetro es <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code>.</p>
+<p>En  ejemplos anteriores hemos aumentado o cambiado la velocidad de la tortuga por comodidad. Podemos mejorar la definición de la función <code class="docutils literal notranslate"><span class="pre">pizarra_vacia()</span></code> agregando un parámetro que indique la velocidad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">(</span><span class="n">velocidad</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="n">initializeTurtle</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta función tiene una parámetro <em>optativo</em>, el parámetro <code class="docutils literal notranslate"><span class="pre">velocidad</span></code>. Cuando le damos un valor al parámetro entonces esa será la velocidad de la tortuga. En  cambio, si no le damos un valor, la velocidad será 5,  el <em>valor por defecto</em>. Eso quiere decir que cuando  invocamos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>internamente la variable <code class="docutils literal notranslate"><span class="pre">velocidad</span></code> vale <code class="docutils literal notranslate"><span class="pre">5</span></code>. Mientras que si ejecutamos, por ejemplo,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>la velocidad de la tortuga será  <code class="docutils literal notranslate"><span class="pre">12</span></code>.</p>
+<p>Podríamos hacer que la función <code class="docutils literal notranslate"><span class="pre">pizarra_vacia()</span></code> tenga más parámetros optativos,  como el color de la pizarra y el color del lápiz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">(</span><span class="n">velocidad</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fondo</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">lapiz</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ancho</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">initializeTurtle</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="n">fondo</span><span class="p">)</span>
+    <span class="n">color</span><span class="p">(</span><span class="n">lapiz</span><span class="p">)</span>
+    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
+    <span class="n">width</span><span class="p">(</span><span class="n">ancho</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Entonces, la podríamos utilizar de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los parámetro son optativos y obedecen a ciertas reglas. Por ejemplo,  no estaría bien poner</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>porque pensaría que <code class="docutils literal notranslate"><span class="pre">green</span></code> es la velocidad. Si queremos saltear algún parámetro optativo, los otros debe ser especificados explícitamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="n">fondo</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="n">lapiz</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">fondo</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="la-bola-de-billar">
+<h2>6. La bola de billar<a class="headerlink" href="#la-bola-de-billar" title="Link to this heading">#</a></h2>
+<p>Un  ejemplo bastante más complejo del uso de funciones, bucles y condicionales en Python es el de <em>La bola de billar</em>.</p>
+<p>En  este ejemplo se hace una simulación de una bola de billar rebotando contra las paredes de la mesa.</p>
+<p>Es un ejemplo demasiado legro para desarrollarlo en clase, pero el  alumno interesado puede verlo en un Colab que se ha subido junto a esta clase, llamado <code class="docutils literal notranslate"><span class="pre">La</span> <span class="pre">bola</span> <span class="pre">de</span> <span class="pre">billar</span></code>. En  ese cuaderno se explica pasa a paso la implementación.</p>
+<p>También hemos subido  la implementación del mismo problema en el Turtle de Python puro (no Colab) y es un poco diferente, pues la biblioteca Turtle de Colab  no es igual a la biblioteca Turtle de Python. El archivo es <code class="docutils literal notranslate"><span class="pre">bola_de_billar.py</span></code>.</p>
+<p>Finalmente, hemos subido una implementación utilizando la biblioteca <code class="docutils literal notranslate"><span class="pre">pygame</span></code>. Esta es un biblioteca orientada a juegos (tipo Pacman) y  en este caso se implementa la bola de billar en forma mucho más eficiente y de mejor aspecto. El archivo es <code class="docutils literal notranslate"><span class="pre">bola_de_billar_pygame.py</span></code></p>
+<p>Obviamente, la lógica en todas las implementaciones es muy similar.</p>
+</section>
+<section id="ejemplo-dibujar-un-triangulo-arbitrario">
+<h2>7. Ejemplo: dibujar un triángulo arbitrario<a class="headerlink" href="#ejemplo-dibujar-un-triangulo-arbitrario" title="Link to this heading">#</a></h2>
+<p>Todos sabemos (creo) que el triángulo es una figura geométrica <em>rígida</em>,  es decir es indeformable. Está es una importante propiedad utilizada, por ejemplo, en algunos sistemas constructivos.</p>
+<p>La propiedad de ser indeformable es equivalente a la propiedad de que dados tres segmentos existe a lo más un único polígono de tres lados formado por esos segmentos.</p>
+<p>Más específicamente,  dadas tres medidas <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> mayores que <span class="math notranslate nohighlight">\(0\)</span> y tal que la suma de  cualesquiera dos de ellas es mayor que la tercera,  existe un único triángulo (salvo desplazamientos y rotaciones) con lados que tienen esas tres medidas.</p>
+<p>Pero, ¿cómo construimos un triángulo con lados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>?</p>
+<p>Debemos usar el teorema del coseno que es una generalización del teorema de Pitágoras.</p>
+<p><strong>Teorema del coseno.</strong> <em>Dado un triángulo cualquiera, siendo <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span> los ángulos, y <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, los lados respectivamente opuestos a estos ángulos entonces:</em>
+$<span class="math notranslate nohighlight">\(
+c^{2}=a^{2}+b^{2}-2ab\cos \gamma.
+\)</span>$</p>
+<p>Por lo tanto, podemos despejar los ángulos usando dos veces el teorema y el hecho de que la suma de los ángulos interiores de un triángulo es <span class="math notranslate nohighlight">\(180^º\)</span>.</p>
+<p>\begin{align}
+a^{2}&amp;=b^{2}+c^{2}-2bc\cos \alpha,\
+b^{2}&amp;=a^{2}+c^{2}-2ac\cos \beta. \
+\end{align}<br />
+En consecuencia,
+\begin{align}
+\cos \alpha &amp;= \frac{b^{2}+c^{2}- a^{2}}{2bc}, \
+\cos \beta &amp;= \frac{a^{2}+c^{2}- b^{2}}{2ac}.\
+\end{align}
+Por consiguiente,
+\begin{align}
+\alpha &amp;= \arccos\left(\frac{b^{2}+c^{2}- a^{2}}{2ab}\right), \tag{1}\
+\beta &amp;= \arccos\left(\frac{a^{2}+c^{2}- b^{2}}{2ac}\right),\tag{2}\
+\gamma &amp;= 180 - \alpha- \beta.\tag{3}
+\end{align}</p>
+<p>Intentemos ahora usando las fórmulas (1), (2) y (3) dibujar un triángulo de lados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>. Debemos tener en cuenta las siguientes consideraciones</p>
+<ul class="simple">
+<li><p>Python no tiene en forma nativa la función <span class="math notranslate nohighlight">\(\arccos(\theta)\)</span> y  debemos importar el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> para adquirirla.</p></li>
+<li><p>Las funciones trigonométricas del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> tienen como argumentos ángulos en <em>radianes</em>, no en grados sexagesimales.</p></li>
+</ul>
+<p>Esto último no influye demasiado en las fórmulas. En realidad (1) y (2) quedan iguales y solo debemos tener cuadrado con la fórmula (3) que pasaría a ser
+$<span class="math notranslate nohighlight">\(
+\gamma = \pi - \alpha- \beta.\tag{3'}
+\)</span>$</p>
+<p>Lo más importante de la segunda observación es que como <code class="docutils literal notranslate"><span class="pre">turtle</span></code> maneja solo grados sexagesimales necesitamos funciones para convertir grados a radianes y radianes a grados.</p>
+<p>Comencemos,  y lo primero que debemos hacer es importar el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> y lo haremos de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta forma de importar <code class="docutils literal notranslate"><span class="pre">math</span></code> permite traer todas las funciones y usarlas en forma sencilla. También importa algunas constantes importantes, como, por ejemplo, el valor aproximado de <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span> <span class="c1"># debería dar -1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span> <span class="c1"># debería dar 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># aproximadamente raíz de 2 sobre 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># raiz de 2 sobre 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acos</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># pi. arcocoseno es la función acos() de Python math</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acos</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># pi/2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">acos</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Veamos ahora las funciones para convertir grados a radianes y radianes a grados. Son muy sencillas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grad_a_rad</span><span class="p">(</span><span class="n">angulo_g</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">angulo_g</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+<span class="k">def</span> <span class="nf">rad_a_grad</span><span class="p">(</span><span class="n">angulo_r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">angulo_r</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recordemos que el <code class="docutils literal notranslate"><span class="pre">return</span></code> indica que la función devuelve un valor. En el caso  de la función  <code class="docutils literal notranslate"><span class="pre">grad_a_rad()</span></code> recibe el valor de un ángulo en radianes, lo convierte a grados y lo devuelve. Ese valor que devuelve puede ser asignado a una variable que luego podrá ser utilizada. Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ang_1</span> <span class="o">=</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">ang_2</span> <span class="o">=</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ang_1</span><span class="p">,</span> <span class="n">ang_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya estamos en condiciones de definir  funciones que nos devuelvan los ángulos del triángulo. Podríamos definir tres funciones, pero será más sencillo hacer una función que devuelva tres valores. Los valores que devuelve son una traducción directa a Python de las fórmulas matemáticas (1), (2) y (3’),</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">angulos_triangulo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="c1"># pre: a, b, c números tq a + b &gt; c, a + c &gt; b, b + c &gt; a</span>
+    <span class="c1"># post: devuelve los ángulos alfa, beta, gama del triángulo abc en radianes</span>
+    <span class="n">alfa</span> <span class="o">=</span> <span class="n">acos</span><span class="p">((</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="p">))</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">acos</span><span class="p">((</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">))</span>
+    <span class="n">gama</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">-</span> <span class="n">alfa</span> <span class="o">-</span> <span class="n">beta</span>
+    <span class="k">return</span> <span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como ya fue dicho, cuando se ejecuta un <code class="docutils literal notranslate"><span class="pre">return</span></code> se detiene la ejecución de la función. En consecuencia, no puedo devolver 2 o más valores con varios <code class="docutils literal notranslate"><span class="pre">return</span></code> (el primero que se ejecuta “para” la función). La forma de devolver varios valores es poniéndolos a la derecha del <code class="docutils literal notranslate"><span class="pre">return</span></code> separados por comas.</p>
+<p>Por ejemplo ¿cuáles son los  ángulos de un triángulo  con lados  3, 5 y 8?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span> <span class="o">=</span> <span class="n">angulos_triangulo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="c1"># ángulos del triángulo abc en radianes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rad_a_grad</span><span class="p">(</span><span class="n">alfa</span><span class="p">),</span><span class="n">rad_a_grad</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span><span class="n">rad_a_grad</span><span class="p">(</span><span class="n">gama</span><span class="p">))</span> <span class="c1"># en grado sexagesimales</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la línea 1 se recuperan en tres variables separadas por comas los tres valores que devuelve la función <code class="docutils literal notranslate"><span class="pre">angulos_triangulo()</span></code>.</p>
+<p>En la linea 2 se imprimen esto valores.</p>
+<p>Si nos interesa saber los valores en grados sexagesimales podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span> <span class="o">=</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">alfa</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">gama</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la linea 1 le reasignamos los valores a las variables, incluso usando las misma variables.</p>
+<p>En  la linea 2 imprimimos los valores en grados sexagesimales en notación decimal (por ejemplo <span class="math notranslate nohighlight">\(10.5\)</span> son <span class="math notranslate nohighlight">\(10° 30'\)</span>).</p>
+<p>Ahora podemos definir la función para dibujar un triángulo  de lados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dibujar_triangulo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="c1"># pre: a, b, c números a, b, c &gt; 0 tq a + b &gt; c, a + c &gt; b, b + c &gt; a</span>
+    <span class="c1"># post: dibuja el triángulo abc</span>
+    <span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span> <span class="o">=</span> <span class="n">angulos_triangulo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># ángulos del triángulo abc en radianes</span>
+    <span class="n">ang_a</span><span class="p">,</span> <span class="n">ang_b</span><span class="p">,</span> <span class="n">ang_c</span> <span class="o">=</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">alfa</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">gama</span><span class="p">)</span>
+    <span class="c1">#  ángulos en grado sexagesimales</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ángulos del triángulo:&#39;</span><span class="p">,</span><span class="n">ang_a</span><span class="p">,</span> <span class="n">ang_b</span><span class="p">,</span>  <span class="n">ang_c</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_c</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_a</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la línea 4 se recuperan en tres variables separadas por comas los tres valores que devuelve la función <code class="docutils literal notranslate"><span class="pre">angulos_triangulo()</span></code>.</p>
+<p>En la línea 5 se hace una asignación simultanea de 3  variables.</p>
+<p>Observen que estamos usando funciones dentro de funciones y  el código lejos de ser “código espagueti” está modularizado.</p>
+<p>Algunas funciones no las hemos utilizado, pero no importa, el objetivo es que el código sea lo más claro posible y también se busca que sea reutilizable y generalizable.</p>
+<p>Probemos dibujar triángulos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo equilátero</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="c1"># triángulo isosceles</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
+<span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo escaleno</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por supuesto que podemos extender la función y dibujar triángulos en diferentes orientaciones, con diferentes colores, etc. Dejamos eso a ustedes por si quieren experimentar.</p>
+<p>Otra forma de dibujar,  más lenta pero interesante, es avanzando de a 1 y usar iteraciones. Para eso también modularizamos y definimos nuestra propia versión de la función <code class="docutils literal notranslate"><span class="pre">forward()</span></code>, que llamaremos <code class="docutils literal notranslate"><span class="pre">avanzar()</span></code>, utilizando la instrucción <code class="docutils literal notranslate"><span class="pre">forward(1)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">avanzar</span><span class="p">(</span><span class="n">pixeles</span><span class="p">):</span>
+    <span class="c1"># pre: pixeles entero &gt;= 0</span>
+    <span class="c1"># post: avanza pixeles en la dirección actual</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pixeles</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego podemos definir otra función que dibuja triángulos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">triangulo_lento</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="c1"># pre: a, b, c números tq a + b &gt; c, a + c &gt; b, b + c &gt; a</span>
+    <span class="c1"># post: dibuja el triángulo abc</span>
+    <span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gama</span> <span class="o">=</span> <span class="n">angulos_triangulo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># ángulos del triángulo abc en radianes</span>
+    <span class="n">ang_a</span><span class="p">,</span> <span class="n">ang_b</span><span class="p">,</span> <span class="n">ang_c</span> <span class="o">=</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">alfa</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">beta</span><span class="p">),</span> <span class="n">rad_a_grad</span><span class="p">(</span><span class="n">gama</span><span class="p">)</span> <span class="c1">#  ángulos en grado sexagesimales</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ang_a</span><span class="p">,</span> <span class="n">ang_b</span><span class="p">,</span>  <span class="n">ang_c</span><span class="p">)</span>
+    <span class="n">avanzar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_c</span><span class="p">)</span>
+    <span class="n">avanzar</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_a</span><span class="p">)</span>
+    <span class="n">avanzar</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">ang_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probemosla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># la aceleramos un poco</span>
+<span class="n">triangulo_lento</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo escaleno</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">getheading()</span></code> devuelve el ángulo hacia donde apunta la tortuga, la función <code class="docutils literal notranslate"><span class="pre">goto()</span></code> envía la tortuga a las coordenada especificadas. las funciones <code class="docutils literal notranslate"><span class="pre">getx()</span></code>, <code class="docutils literal notranslate"><span class="pre">gety()</span></code> devuelven las coordenadas <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, respectivamente, de la posición de la tortuga. Utilizando estas funciones resolver el siguiente ejercicio.</p>
+<p><strong>Ejercicio.</strong> Definir la función <code class="docutils literal notranslate"><span class="pre">avanzar()</span></code> sin usar <code class="docutils literal notranslate"><span class="pre">forward()</span></code> ni <code class="docutils literal notranslate"><span class="pre">forward(1)</span></code>, solo usando  <code class="docutils literal notranslate"><span class="pre">getheading()</span></code>, <code class="docutils literal notranslate"><span class="pre">goto()</span></code>, <code class="docutils literal notranslate"><span class="pre">getx()</span></code> y <code class="docutils literal notranslate"><span class="pre">gety()</span></code>.</p>
+<p><em>Observación.</em> No es difícil, usando un poco de trigonometría, dibujar un segmento que parta de cierta posición y vaya en la dirección correcta. Primero deberías pensar en este problema.</p>
+<p>Un poco más complicado es darse cuenta de como dibujar el segmento con la longitud deseada.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">avanzar</span><span class="p">(</span><span class="n">pixeles</span><span class="p">):</span>
+    <span class="c1"># pre: pixeles entero &gt;= 0</span>
+    <span class="c1"># post: avanza pixeles en la dirección actual</span>
+    <span class="k">pass</span>  <span class="c1"># reemplazar `pass` (que no hace nada) por líneas de código</span>
+
+<span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># la aceleramos un poco</span>
+<span class="n">face</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">avanzar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_M%C3%A1s_dibujos_con_Turtle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Practicando con Colab Turtle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_Primeros_pasos_en_Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Primeros pasos con Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">1. Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos">2. Ciclos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclo-for">Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">3. Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-sobre-las-variables">Comentarios sobre las variables:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for">Comentarios adicionales sobre las variables que se usan como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ciclo-while-mientras">4. El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> (mientras)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-canon"><strong>Ejemplo.</strong> El cañón.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-funciones">5. Definición de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-dibujar-cuadrado">Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-el-ciclo-for">Ejemplo con el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valores">Funciones que devuelven valores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios-sobre-las-funciones">Comentarios sobre las funciones:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-bola-de-billar">6. La bola de billar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-dibujar-un-triangulo-arbitrario">7. Ejemplo: dibujar un triángulo arbitrario</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

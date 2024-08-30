@@ -1,0 +1,3180 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ciclos &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_Ciclos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cadenas" href="08_Cadenas.html" />
+    <link rel="prev" title="Condicionales" href="06_Condicionales.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F07_Ciclos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/07_Ciclos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ciclos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-instruccion-for">1. La instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-range">La función <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-instruccion-while">2. La instrucción <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-o-no-break">3. ¿<code class="docutils literal notranslate"><span class="pre">break</span></code> o no <code class="docutils literal notranslate"><span class="pre">break</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-uso-correcto-de-ciclos">4. Ejemplos de uso correcto de ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-newton-para-la-raiz-cuadrada">5. Método de Newton para la raíz cuadrada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-defensiva">6. Programación defensiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones-revisado">Precondiciones y postcondiciones (revisado)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-iterativa-de-funciones-recursivas">7. Implementación iterativa de funciones recursivas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ciclos">
+<h1>Ciclos<a class="headerlink" href="#ciclos" title="Link to this heading">#</a></h1>
+<section id="la-instruccion-for">
+<h2>1. La instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#la-instruccion-for" title="Link to this heading">#</a></h2>
+<p>Ya hemos visto la instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code>, la cual permite iterar una cantidad determinada de veces. El  esquema general del <code class="docutils literal notranslate"><span class="pre">for</span></code> es</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">var</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instrucción</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Aquí <code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span></code> denota una variable cualquiera e <code class="docutils literal notranslate"><span class="pre">&lt;iterable&gt;</span></code> es un objeto iterable,  es decir un objeto que puede ser recorrido secuencialmente, como puede ser una cadena o una lista, un diccionario, un conjunto, etc.,  estructuras que veremos más adelante.</p>
+<p>El primer uso que dimos del <code class="docutils literal notranslate"><span class="pre">for</span></code> fue recorrer una lista de enteros de <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> (para un <code class="docutils literal notranslate"><span class="pre">n</span></code> determinado) y  eso se hace con una instrucción del tipo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">var</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">instrucción</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Es decir <code class="docutils literal notranslate"><span class="pre">range(n)</span></code> es un iterable que contiene todos los números enteros de <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code> en orden. El <code class="docutils literal notranslate"><span class="pre">for</span></code> la va dando a la variable todos los valores de <code class="docutils literal notranslate"><span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>  y en ese orden. Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>imprime <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, en ese orden.</p>
+<p>La  función <code class="docutils literal notranslate"><span class="pre">range()</span></code> además puede tomar otros argumentos: si <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code> son dos enteros,  entonces <code class="docutils literal notranslate"><span class="pre">range(m,</span> <span class="pre">n)</span></code> es un iterable  que tiene todos los enteros de <code class="docutils literal notranslate"><span class="pre">m</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>. Por  ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Un iterable conocido son las cadenas. Con el <code class="docutils literal notranslate"><span class="pre">for</span></code> podemos recorrer una cadena desde el primer carácter hasta el último, por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s1">&#39;diccionario&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d
+i
+c
+c
+i
+o
+n
+a
+r
+i
+o
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definamos una función que dada una palabra devuelva la palabra con las vocales eliminadas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_vocales</span><span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># pre: cadena es una cadena de caracteres</span>
+    <span class="c1"># post: devuelve cadena sin vocales minúsculas</span>
+    <span class="n">sin_vocales</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cadena</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;e&#39;</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;i&#39;</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;o&#39;</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="s1">&#39;u&#39;</span><span class="p">:</span>
+            <span class="n">sin_vocales</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">sin_vocales</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando reglas elementales de lógica (<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">(p</span> <span class="pre">or</span> <span class="pre">q)</span> <span class="pre">==</span> <span class="pre">not</span> <span class="pre">p</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">q</span></code>) podemos hacer una segunda definición de la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_vocales</span><span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># pre: cadena es una cadena de caracteres</span>
+    <span class="c1"># post: devuelve cadena sin vocales minúsculas</span>
+    <span class="n">sin_vocales</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cadena</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;i&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;o&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;u&#39;</span><span class="p">):</span>
+            <span class="n">sin_vocales</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">sin_vocales</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos simplificar un poco la definición de la función con el uso de conjuntos (que veremos más adelante)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_vocales</span><span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># pre: cadena es una cadena de caracteres</span>
+    <span class="c1"># post: devuelve cadena sin vocales minúsculas</span>
+    <span class="n">sin_vocales</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cadena</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">}:</span>
+            <span class="n">sin_vocales</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">sin_vocales</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O con listas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eliminar_vocales</span><span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># pre: cadena es una cadena de caracteres</span>
+    <span class="c1"># post: devuelve cadena sin vocales minúsculas</span>
+    <span class="n">sin_vocales</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cadena</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]:</span>
+            <span class="n">sin_vocales</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">sin_vocales</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta última definición es quizás la más clara.</p>
+<p>Probemos la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">eliminar_vocales</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eliminar_vocales</span><span class="p">(</span><span class="s1">&#39;abracadabra&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eliminar_vocales</span><span class="p">(</span><span class="s1">&#39;murcielago&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eliminar_vocales</span><span class="p">(</span><span class="s1">&#39;Algoritmos y programación&#39;</span><span class="p">))</span> <span class="c1"># elimina vocales en cadenas de caracteres pero no detecta mayúsculas y acentos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hl
+brcdbr
+mrclg
+Algrtms y prgrmcón
+</pre></div>
+</div>
+</div>
+</div>
+<section id="la-funcion-range">
+<h3>La función <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#la-funcion-range" title="Link to this heading">#</a></h3>
+<p>La función <code class="docutils literal notranslate"><span class="pre">range()</span></code> además de tomar como argumento un entero positivo puede tomar otros argumentos: si <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code> son dos enteros, entonces <code class="docutils literal notranslate"><span class="pre">range(m,</span> <span class="pre">n)</span></code> es un iterable que tiene todos los enteros de <code class="docutils literal notranslate"><span class="pre">m</span></code> a <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">-</span> <span class="pre">1</span></code>. Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+4
+5
+6
+7
+</pre></div>
+</div>
+</div>
+</div>
+<p>imprime <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">6</span></code>, <code class="docutils literal notranslate"><span class="pre">7</span></code>, en ese orden. Observar que</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es un conjunto de instrucciones correctas pero no imprime nada porque el iterable <code class="docutils literal notranslate"><span class="pre">range(8,</span> <span class="pre">3)</span></code> es vacío.</p>
+<p>La  función <code class="docutils literal notranslate"><span class="pre">range()</span></code> también puede tomar tres argumentos: si <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code> son tres enteros,  entonces</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>range(m, n, k)
+</pre></div>
+</div>
+<p>es un iterable  que tiene todos los enteros desde <code class="docutils literal notranslate"><span class="pre">m</span></code> al entero <em>anterior</em> a <code class="docutils literal notranslate"><span class="pre">n</span> </code> “saltando”  de <code class="docutils literal notranslate"><span class="pre">k</span></code> en <code class="docutils literal notranslate"><span class="pre">k</span></code>. Por  ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+10
+12
+14
+</pre></div>
+</div>
+</div>
+</div>
+<p>imprime todo los enteros pares de <code class="docutils literal notranslate"><span class="pre">8</span></code> a <code class="docutils literal notranslate"><span class="pre">15</span></code>. Otro ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+14
+12
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>imprime todo los enteros pares de <code class="docutils literal notranslate"><span class="pre">16</span></code> a <code class="docutils literal notranslate"><span class="pre">10</span></code> en orden descendente. Es decir,  en este caso  <code class="docutils literal notranslate"><span class="pre">range(16,</span> <span class="pre">8,</span> <span class="pre">-2)</span></code> representa los enteros <code class="docutils literal notranslate"><span class="pre">16</span></code>, <code class="docutils literal notranslate"><span class="pre">14</span></code>, <code class="docutils literal notranslate"><span class="pre">12</span></code>,  <code class="docutils literal notranslate"><span class="pre">10</span></code>, en ese orden.</p>
+<p>Es importante observar que <code class="docutils literal notranslate"><span class="pre">range(m,</span> <span class="pre">n,</span> <span class="pre">1)</span></code> es lo mismo que <code class="docutils literal notranslate"><span class="pre">range(m,</span> <span class="pre">n)</span></code> y  que <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">n,</span> <span class="pre">1)</span></code> es lo mismo que <code class="docutils literal notranslate"><span class="pre">range(n)</span></code>. Si los argumentos de <code class="docutils literal notranslate"><span class="pre">range()</span></code> no son enteros obtenemos un error.</p>
+<p>Cerremos esta sección con un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cuenta_regresiva</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="c1"># pre: n  es un entero positivo</span>
+    <span class="c1"># post: imprime los enteros de n a 1 y finalmente la palabra ¡Despegue!</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¡Despegue!&#39;</span><span class="p">)</span>
+
+<span class="n">cuenta_regresiva</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+¡Despegue!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que fue necesario poner como segundo argumento de <code class="docutils literal notranslate"><span class="pre">range()</span></code> el  número <code class="docutils literal notranslate"><span class="pre">0</span></code> pues el <code class="docutils literal notranslate"><span class="pre">for</span></code> recorre desde el  primer número (en este caso <code class="docutils literal notranslate"><span class="pre">10</span></code>) hasta el anterior a <code class="docutils literal notranslate"><span class="pre">0</span></code>,  que en este caso es <code class="docutils literal notranslate"><span class="pre">1</span></code>, pues el recorrido se hace de mayor a menor (eso es lo que indica el tercer parámetro de <code class="docutils literal notranslate"><span class="pre">range()</span></code>).</p>
+</section>
+</section>
+<section id="la-instruccion-while">
+<h2>2. La instrucción <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#la-instruccion-while" title="Link to this heading">#</a></h2>
+<p>Las computadoras se utilizan a menudo para automatizar tareas repetitivas. Repetir tareas idénticas o similares sin cometer errores es algo que las computadoras hacen bien y las personas hacen mal. En un programa de computadora, la repetición también se llama <em>iteración</em>.</p>
+<p>Python proporciona instrucciones para hacer iteración. Una es la instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code> que vimos más arriba.</p>
+<p>Otra es la instrucción <code class="docutils literal notranslate"><span class="pre">while</span></code>. El uso del <code class="docutils literal notranslate"><span class="pre">while</span></code> nos permite ejecutar una sección de código repetidas veces, de ahí su nombre. El código se ejecutará mientras una condición determinada se cumpla. Cuando se deje de cumplir, se saldrá del bucle y se continuará la ejecución normal. Llamaremos <em>iteración</em> a una ejecución completa del bloque de código.</p>
+<p>La sintaxis es:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instrucción</span><span class="p">(</span><span class="n">es</span><span class="p">)</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Mientras se cumpla la <code class="docutils literal notranslate"><span class="pre">&lt;condición&gt;</span></code> se ejecutará el cuerpo del <code class="docutils literal notranslate"><span class="pre">while</span></code>,  es decir las <code class="docutils literal notranslate"><span class="pre">&lt;instrucción(es)&gt;</span></code>, y cuando estas se terminen de ejecutar se  vuelve a comprobar la <code class="docutils literal notranslate"><span class="pre">&lt;condiciòn&gt;</span></code>. Cuando deje de cumplirse la <code class="docutils literal notranslate"><span class="pre">&lt;condición&gt;</span></code>, la ejecución abandonará el <code class="docutils literal notranslate"><span class="pre">while</span></code> y pasará a la instrucción siguiente.</p>
+<p>Aquí hay una versión de <code class="docutils literal notranslate"><span class="pre">cuenta_regresiva()</span></code> que usa  <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cuenta_regresiva</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;el parámetro debe ser un entero positivo&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n  es un entero positivo</span>
+<span class="sd">    post: imprime los enteros de n a 1 y finalmente la palabra ¡Despegue!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;¡Despegue!&#39;</span><span class="p">)</span>
+
+<span class="n">cuenta_regresiva</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+¡Despegue!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si traducimos del inglés la palabra <code class="docutils literal notranslate"><span class="pre">while</span></code> (“mientras” en castellano) la declaración dice casi textualmente lo que hace: “Mientras <code class="docutils literal notranslate"><span class="pre">n</span></code> es mayor  que <code class="docutils literal notranslate"><span class="pre">0</span></code>, imprimir <code class="docutils literal notranslate"><span class="pre">n</span></code> y luego disminuir <code class="docutils literal notranslate"><span class="pre">n</span></code> en <code class="docutils literal notranslate"><span class="pre">1</span></code>. Cuando llegués a <code class="docutils literal notranslate"><span class="pre">0</span></code>, imprimir <code class="docutils literal notranslate"><span class="pre">¡Despegue!</span></code>”</p>
+<p>Más formalmente, aquí está el flujo de ejecución para una declaración <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<ol class="arabic simple">
+<li><p>Determinar si la condición es verdadera o falsa.</p></li>
+<li><p>Si es falsa, salir de la instrucción <code class="docutils literal notranslate"><span class="pre">while</span></code> y continuar la ejecución de la siguiente instrucción.</p></li>
+<li><p>Si la condición es verdadera, ejecutar el cuerpo y volver al paso 1.</p></li>
+</ol>
+<p>Este tipo de flujo se llama <em>bucle</em> o <em>ciclo</em> porque el tercer paso vuelve a la parte superior.</p>
+<p>El cuerpo del ciclo debe cambiar el valor de una o más variables para que la condición en algún momento se vuelva falsa y el ciclo termine. De lo contrario, el ciclo se repetirá para siempre, lo que se denomina <em>ciclo infinito</em>.</p>
+<p>En el caso de <code class="docutils literal notranslate"><span class="pre">cuenta_regresiva()</span></code> podemos probar que el ciclo termina: si <code class="docutils literal notranslate"><span class="pre">n</span></code> es negativo, el ciclo nunca se ejecuta. De lo contrario, <code class="docutils literal notranslate"><span class="pre">n</span></code> se vuelve más pequeño cada vez que pasa por el ciclo, por lo que siempre llegaremos a 0.</p>
+<p>Para algunos otros bucles, no es tan fácil de decir. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">m</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span> <span class="c1"># tambien llamado &quot;Algoritmo de Siracusa&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: m &gt; 0</span>
+<span class="sd">    post: imprime el todos los n (intermedios y final) que resultan de aplicar</span>
+<span class="sd">          el algoritmo de Collatz</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># n es par</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># n es impar</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fin de Collatz para m =&#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">&#39;pasos&#39;</span><span class="p">)</span>
+
+<span class="n">collatz</span><span class="p">(</span><span class="mi">645646456437465346536576756747456746774663655677</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>645646456437465346536576756747456746774663655677
+1936939369312396039609730270242370240323990967032
+968469684656198019804865135121185120161995483516
+484234842328099009902432567560592560080997741758
+242117421164049504951216283780296280040498870879
+726352263492148514853648851340888840121496612638
+363176131746074257426824425670444420060748306319
+1089528395238222772280473277011333260182244918958
+544764197619111386140236638505666630091122459479
+1634292592857334158420709915516999890273367378438
+817146296428667079210354957758499945136683689219
+2451438889286001237631064873275499835410051067658
+1225719444643000618815532436637749917705025533829
+3677158333929001856446597309913249753115076601488
+1838579166964500928223298654956624876557538300744
+919289583482250464111649327478312438278769150372
+459644791741125232055824663739156219139384575186
+229822395870562616027912331869578109569692287593
+689467187611687848083736995608734328709076862780
+344733593805843924041868497804367164354538431390
+172366796902921962020934248902183582177269215695
+517100390708765886062802746706550746531807647086
+258550195354382943031401373353275373265903823543
+775650586063148829094204120059826119797711470630
+387825293031574414547102060029913059898855735315
+1163475879094723243641306180089739179696567205946
+581737939547361621820653090044869589848283602973
+1745213818642084865461959270134608769544850808920
+872606909321042432730979635067304384772425404460
+436303454660521216365489817533652192386212702230
+218151727330260608182744908766826096193106351115
+654455181990781824548234726300478288579319053346
+327227590995390912274117363150239144289659526673
+981682772986172736822352089450717432868978580020
+490841386493086368411176044725358716434489290010
+245420693246543184205588022362679358217244645005
+736262079739629552616764067088038074651733935016
+368131039869814776308382033544019037325866967508
+184065519934907388154191016772009518662933483754
+92032759967453694077095508386004759331466741877
+276098279902361082231286525158014277994400225632
+138049139951180541115643262579007138997200112816
+69024569975590270557821631289503569498600056408
+34512284987795135278910815644751784749300028204
+17256142493897567639455407822375892374650014102
+8628071246948783819727703911187946187325007051
+25884213740846351459183111733563838561975021154
+12942106870423175729591555866781919280987510577
+38826320611269527188774667600345757842962531732
+19413160305634763594387333800172878921481265866
+9706580152817381797193666900086439460740632933
+29119740458452145391581000700259318382221898800
+14559870229226072695790500350129659191110949400
+7279935114613036347895250175064829595555474700
+3639967557306518173947625087532414797777737350
+1819983778653259086973812543766207398888868675
+5459951335959777260921437631298622196666606026
+2729975667979888630460718815649311098333303013
+8189927003939665891382156446947933294999909040
+4094963501969832945691078223473966647499954520
+2047481750984916472845539111736983323749977260
+1023740875492458236422769555868491661874988630
+511870437746229118211384777934245830937494315
+1535611313238687354634154333802737492812482946
+767805656619343677317077166901368746406241473
+2303416969858031031951231500704106239218724420
+1151708484929015515975615750352053119609362210
+575854242464507757987807875176026559804681105
+1727562727393523273963423625528079679414043316
+863781363696761636981711812764039839707021658
+431890681848380818490855906382019919853510829
+1295672045545142455472567719146059759560532488
+647836022772571227736283859573029879780266244
+323918011386285613868141929786514939890133122
+161959005693142806934070964893257469945066561
+485877017079428420802212894679772409835199684
+242938508539714210401106447339886204917599842
+121469254269857105200553223669943102458799921
+364407762809571315601659671009829307376399764
+182203881404785657800829835504914653688199882
+91101940702392828900414917752457326844099941
+273305822107178486701244753257371980532299824
+136652911053589243350622376628685990266149912
+68326455526794621675311188314342995133074956
+34163227763397310837655594157171497566537478
+17081613881698655418827797078585748783268739
+51244841645095966256483391235757246349806218
+25622420822547983128241695617878623174903109
+76867262467643949384725086853635869524709328
+38433631233821974692362543426817934762354664
+19216815616910987346181271713408967381177332
+9608407808455493673090635856704483690588666
+4804203904227746836545317928352241845294333
+14412611712683240509635953785056725535883000
+7206305856341620254817976892528362767941500
+3603152928170810127408988446264181383970750
+1801576464085405063704494223132090691985375
+5404729392256215191113482669396272075956126
+2702364696128107595556741334698136037978063
+8107094088384322786670224004094408113934190
+4053547044192161393335112002047204056967095
+12160641132576484180005336006141612170901286
+6080320566288242090002668003070806085450643
+18240961698864726270008004009212418256351930
+9120480849432363135004002004606209128175965
+27361442548297089405012006013818627384527896
+13680721274148544702506003006909313692263948
+6840360637074272351253001503454656846131974
+3420180318537136175626500751727328423065987
+10260540955611408526879502255181985269197962
+5130270477805704263439751127590992634598981
+15390811433417112790319253382772977903796944
+7695405716708556395159626691386488951898472
+3847702858354278197579813345693244475949236
+1923851429177139098789906672846622237974618
+961925714588569549394953336423311118987309
+2885777143765708648184860009269933356961928
+1442888571882854324092430004634966678480964
+721444285941427162046215002317483339240482
+360722142970713581023107501158741669620241
+1082166428912140743069322503476225008860724
+541083214456070371534661251738112504430362
+270541607228035185767330625869056252215181
+811624821684105557301991877607168756645544
+405812410842052778650995938803584378322772
+202906205421026389325497969401792189161386
+101453102710513194662748984700896094580693
+304359308131539583988246954102688283742080
+152179654065769791994123477051344141871040
+76089827032884895997061738525672070935520
+38044913516442447998530869262836035467760
+19022456758221223999265434631418017733880
+9511228379110611999632717315709008866940
+4755614189555305999816358657854504433470
+2377807094777652999908179328927252216735
+7133421284332958999724537986781756650206
+3566710642166479499862268993390878325103
+10700131926499438499586806980172634975310
+5350065963249719249793403490086317487655
+16050197889749157749380210470258952462966
+8025098944874578874690105235129476231483
+24075296834623736624070315705388428694450
+12037648417311868312035157852694214347225
+36112945251935604936105473558082643041676
+18056472625967802468052736779041321520838
+9028236312983901234026368389520660760419
+27084708938951703702079105168561982281258
+13542354469475851851039552584280991140629
+40627063408427555553118657752842973421888
+20313531704213777776559328876421486710944
+10156765852106888888279664438210743355472
+5078382926053444444139832219105371677736
+2539191463026722222069916109552685838868
+1269595731513361111034958054776342919434
+634797865756680555517479027388171459717
+1904393597270041666552437082164514379152
+952196798635020833276218541082257189576
+476098399317510416638109270541128594788
+238049199658755208319054635270564297394
+119024599829377604159527317635282148697
+357073799488132812478581952905846446092
+178536899744066406239290976452923223046
+89268449872033203119645488226461611523
+267805349616099609358936464679384834570
+133902674808049804679468232339692417285
+401708024424149414038404697019077251856
+200854012212074707019202348509538625928
+100427006106037353509601174254769312964
+50213503053018676754800587127384656482
+25106751526509338377400293563692328241
+75320254579528015132200880691076984724
+37660127289764007566100440345538492362
+18830063644882003783050220172769246181
+56490190934646011349150660518307738544
+28245095467323005674575330259153869272
+14122547733661502837287665129576934636
+7061273866830751418643832564788467318
+3530636933415375709321916282394233659
+10591910800246127127965748847182700978
+5295955400123063563982874423591350489
+15887866200369190691948623270774051468
+7943933100184595345974311635387025734
+3971966550092297672987155817693512867
+11915899650276893018961467453080538602
+5957949825138446509480733726540269301
+17873849475415339528442201179620807904
+8936924737707669764221100589810403952
+4468462368853834882110550294905201976
+2234231184426917441055275147452600988
+1117115592213458720527637573726300494
+558557796106729360263818786863150247
+1675673388320188080791456360589450742
+837836694160094040395728180294725371
+2513510082480282121187184540884176114
+1256755041240141060593592270442088057
+3770265123720423181780776811326264172
+1885132561860211590890388405663132086
+942566280930105795445194202831566043
+2827698842790317386335582608494698130
+1413849421395158693167791304247349065
+4241548264185476079503373912742047196
+2120774132092738039751686956371023598
+1060387066046369019875843478185511799
+3181161198139107059627530434556535398
+1590580599069553529813765217278267699
+4771741797208660589441295651834803098
+2385870898604330294720647825917401549
+7157612695812990884161943477752204648
+3578806347906495442080971738876102324
+1789403173953247721040485869438051162
+894701586976623860520242934719025581
+2684104760929871581560728804157076744
+1342052380464935790780364402078538372
+671026190232467895390182201039269186
+335513095116233947695091100519634593
+1006539285348701843085273301558903780
+503269642674350921542636650779451890
+251634821337175460771318325389725945
+754904464011526382313954976169177836
+377452232005763191156977488084588918
+188726116002881595578488744042294459
+566178348008644786735466232126883378
+283089174004322393367733116063441689
+849267522012967180103199348190325068
+424633761006483590051599674095162534
+212316880503241795025799837047581267
+636950641509725385077399511142743802
+318475320754862692538699755571371901
+955425962264588077616099266714115704
+477712981132294038808049633357057852
+238856490566147019404024816678528926
+119428245283073509702012408339264463
+358284735849220529106037225017793390
+179142367924610264553018612508896695
+537427103773830793659055837526690086
+268713551886915396829527918763345043
+806140655660746190488583756290035130
+403070327830373095244291878145017565
+1209210983491119285732875634435052696
+604605491745559642866437817217526348
+302302745872779821433218908608763174
+151151372936389910716609454304381587
+453454118809169732149828362913144762
+226727059404584866074914181456572381
+680181178213754598224742544369717144
+340090589106877299112371272184858572
+170045294553438649556185636092429286
+85022647276719324778092818046214643
+255067941830157974334278454138643930
+127533970915078987167139227069321965
+382601912745236961501417681207965896
+191300956372618480750708840603982948
+95650478186309240375354420301991474
+47825239093154620187677210150995737
+143475717279463860563031630452987212
+71737858639731930281515815226493606
+35868929319865965140757907613246803
+107606787959597895422273722839740410
+53803393979798947711136861419870205
+161410181939396843133410584259610616
+80705090969698421566705292129805308
+40352545484849210783352646064902654
+20176272742424605391676323032451327
+60528818227273816175028969097353982
+30264409113636908087514484548676991
+90793227340910724262543453646030974
+45396613670455362131271726823015487
+136189841011366086393815180469046462
+68094920505683043196907590234523231
+204284761517049129590722770703569694
+102142380758524564795361385351784847
+306427142275573694386084156055354542
+153213571137786847193042078027677271
+459640713413360541579126234083031814
+229820356706680270789563117041515907
+689461070120040812368689351124547722
+344730535060020406184344675562273861
+1034191605180061218553034026686821584
+517095802590030609276517013343410792
+258547901295015304638258506671705396
+129273950647507652319129253335852698
+64636975323753826159564626667926349
+193910925971261478478693880003779048
+96955462985630739239346940001889524
+48477731492815369619673470000944762
+24238865746407684809836735000472381
+72716597239223054429510205001417144
+36358298619611527214755102500708572
+18179149309805763607377551250354286
+9089574654902881803688775625177143
+27268723964708645411066326875531430
+13634361982354322705533163437765715
+40903085947062968116599490313297146
+20451542973531484058299745156648573
+61354628920594452174899235469945720
+30677314460297226087449617734972860
+15338657230148613043724808867486430
+7669328615074306521862404433743215
+23007985845222919565587213301229646
+11503992922611459782793606650614823
+34511978767834379348380819951844470
+17255989383917189674190409975922235
+51767968151751569022571229927766706
+25883984075875784511285614963883353
+77651952227627353533856844891650060
+38825976113813676766928422445825030
+19412988056906838383464211222912515
+58238964170720515150392633668737546
+29119482085360257575196316834368773
+87358446256080772725588950503106320
+43679223128040386362794475251553160
+21839611564020193181397237625776580
+10919805782010096590698618812888290
+5459902891005048295349309406444145
+16379708673015144886047928219332436
+8189854336507572443023964109666218
+4094927168253786221511982054833109
+12284781504761358664535946164499328
+6142390752380679332267973082249664
+3071195376190339666133986541124832
+1535597688095169833066993270562416
+767798844047584916533496635281208
+383899422023792458266748317640604
+191949711011896229133374158820302
+95974855505948114566687079410151
+287924566517844343700061238230454
+143962283258922171850030619115227
+431886849776766515550091857345682
+215943424888383257775045928672841
+647830274665149773325137786018524
+323915137332574886662568893009262
+161957568666287443331284446504631
+485872705998862329993853339513894
+242936352999431164996926669756947
+728809058998293494990780009270842
+364404529499146747495390004635421
+1093213588497440242486170013906264
+546606794248720121243085006953132
+273303397124360060621542503476566
+136651698562180030310771251738283
+409955095686540090932313755214850
+204977547843270045466156877607425
+614932643529810136398470632822276
+307466321764905068199235316411138
+153733160882452534099617658205569
+461199482647357602298852974616708
+230599741323678801149426487308354
+115299870661839400574713243654177
+345899611985518201724139730962532
+172949805992759100862069865481266
+86474902996379550431034932740633
+259424708989138651293104798221900
+129712354494569325646552399110950
+64856177247284662823276199555475
+194568531741853988469828598666426
+97284265870926994234914299333213
+291852797612780982704742897999640
+145926398806390491352371448999820
+72963199403195245676185724499910
+36481599701597622838092862249955
+109444799104792868514278586749866
+54722399552396434257139293374933
+164167198657189302771417880124800
+82083599328594651385708940062400
+41041799664297325692854470031200
+20520899832148662846427235015600
+10260449916074331423213617507800
+5130224958037165711606808753900
+2565112479018582855803404376950
+1282556239509291427901702188475
+3847668718527874283705106565426
+1923834359263937141852553282713
+5771503077791811425557659848140
+2885751538895905712778829924070
+1442875769447952856389414962035
+4328627308343858569168244886106
+2164313654171929284584122443053
+6492940962515787853752367329160
+3246470481257893926876183664580
+1623235240628946963438091832290
+811617620314473481719045916145
+2434852860943420445157137748436
+1217426430471710222578568874218
+608713215235855111289284437109
+1826139645707565333867853311328
+913069822853782666933926655664
+456534911426891333466963327832
+228267455713445666733481663916
+114133727856722833366740831958
+57066863928361416683370415979
+171200591785084250050111247938
+85600295892542125025055623969
+256800887677626375075166871908
+128400443838813187537583435954
+64200221919406593768791717977
+192600665758219781306375153932
+96300332879109890653187576966
+48150166439554945326593788483
+144450499318664835979781365450
+72225249659332417989890682725
+216675748977997253969672048176
+108337874488998626984836024088
+54168937244499313492418012044
+27084468622249656746209006022
+13542234311124828373104503011
+40626702933374485119313509034
+20313351466687242559656754517
+60940054400061727678970263552
+30470027200030863839485131776
+15235013600015431919742565888
+7617506800007715959871282944
+3808753400003857979935641472
+1904376700001928989967820736
+952188350000964494983910368
+476094175000482247491955184
+238047087500241123745977592
+119023543750120561872988796
+59511771875060280936494398
+29755885937530140468247199
+89267657812590421404741598
+44633828906295210702370799
+133901486718885632107112398
+66950743359442816053556199
+200852230078328448160668598
+100426115039164224080334299
+301278345117492672241002898
+150639172558746336120501449
+451917517676239008361504348
+225958758838119504180752174
+112979379419059752090376087
+338938138257179256271128262
+169469069128589628135564131
+508407207385768884406692394
+254203603692884442203346197
+762610811078653326610038592
+381305405539326663305019296
+190652702769663331652509648
+95326351384831665826254824
+47663175692415832913127412
+23831587846207916456563706
+11915793923103958228281853
+35747381769311874684845560
+17873690884655937342422780
+8936845442327968671211390
+4468422721163984335605695
+13405268163491953006817086
+6702634081745976503408543
+20107902245237929510225630
+10053951122618964755112815
+30161853367856894265338446
+15080926683928447132669223
+45242780051785341398007670
+22621390025892670699003835
+67864170077678012097011506
+33932085038839006048505753
+101796255116517018145517260
+50898127558258509072758630
+25449063779129254536379315
+76347191337387763609137946
+38173595668693881804568973
+114520787006081645413706920
+57260393503040822706853460
+28630196751520411353426730
+14315098375760205676713365
+42945295127280617030140096
+21472647563640308515070048
+10736323781820154257535024
+5368161890910077128767512
+2684080945455038564383756
+1342040472727519282191878
+671020236363759641095939
+2013060709091278923287818
+1006530354545639461643909
+3019591063636918384931728
+1509795531818459192465864
+754897765909229596232932
+377448882954614798116466
+188724441477307399058233
+566173324431922197174700
+283086662215961098587350
+141543331107980549293675
+424629993323941647881026
+212314996661970823940513
+636944989985912471821540
+318472494992956235910770
+159236247496478117955385
+477708742489434353866156
+238854371244717176933078
+119427185622358588466539
+358281556867075765399618
+179140778433537882699809
+537422335300613648099428
+268711167650306824049714
+134355583825153412024857
+403066751475460236074572
+201533375737730118037286
+100766687868865059018643
+302300063606595177055930
+151150031803297588527965
+453450095409892765583896
+226725047704946382791948
+113362523852473191395974
+56681261926236595697987
+170043785778709787093962
+85021892889354893546981
+255065678668064680640944
+127532839334032340320472
+63766419667016170160236
+31883209833508085080118
+15941604916754042540059
+47824814750262127620178
+23912407375131063810089
+71737222125393191430268
+35868611062696595715134
+17934305531348297857567
+53802916594044893572702
+26901458297022446786351
+80704374891067340359054
+40352187445533670179527
+121056562336601010538582
+60528281168300505269291
+181584843504901515807874
+90792421752450757903937
+272377265257352273711812
+136188632628676136855906
+68094316314338068427953
+204282948943014205283860
+102141474471507102641930
+51070737235753551320965
+153212211707260653962896
+76606105853630326981448
+38303052926815163490724
+19151526463407581745362
+9575763231703790872681
+28727289695111372618044
+14363644847555686309022
+7181822423777843154511
+21545467271333529463534
+10772733635666764731767
+32318200907000294195302
+16159100453500147097651
+48477301360500441292954
+24238650680250220646477
+72715952040750661939432
+36357976020375330969716
+18178988010187665484858
+9089494005093832742429
+27268482015281498227288
+13634241007640749113644
+6817120503820374556822
+3408560251910187278411
+10225680755730561835234
+5112840377865280917617
+15338521133595842752852
+7669260566797921376426
+3834630283398960688213
+11503890850196882064640
+5751945425098441032320
+2875972712549220516160
+1437986356274610258080
+718993178137305129040
+359496589068652564520
+179748294534326282260
+89874147267163141130
+44937073633581570565
+134811220900744711696
+67405610450372355848
+33702805225186177924
+16851402612593088962
+8425701306296544481
+25277103918889633444
+12638551959444816722
+6319275979722408361
+18957827939167225084
+9478913969583612542
+4739456984791806271
+14218370954375418814
+7109185477187709407
+21327556431563128222
+10663778215781564111
+31991334647344692334
+15995667323672346167
+47987001971017038502
+23993500985508519251
+71980502956525557754
+35990251478262778877
+107970754434788336632
+53985377217394168316
+26992688608697084158
+13496344304348542079
+40489032913045626238
+20244516456522813119
+60733549369568439358
+30366774684784219679
+91100324054352659038
+45550162027176329519
+136650486081528988558
+68325243040764494279
+204975729122293482838
+102487864561146741419
+307463593683440224258
+153731796841720112129
+461195390525160336388
+230597695262580168194
+115298847631290084097
+345896542893870252292
+172948271446935126146
+86474135723467563073
+259422407170402689220
+129711203585201344610
+64855601792600672305
+194566805377802016916
+97283402688901008458
+48641701344450504229
+145925104033351512688
+72962552016675756344
+36481276008337878172
+18240638004168939086
+9120319002084469543
+27360957006253408630
+13680478503126704315
+41041435509380112946
+20520717754690056473
+61562153264070169420
+30781076632035084710
+15390538316017542355
+46171614948052627066
+23085807474026313533
+69257422422078940600
+34628711211039470300
+17314355605519735150
+8657177802759867575
+25971533408279602726
+12985766704139801363
+38957300112419404090
+19478650056209702045
+58435950168629106136
+29217975084314553068
+14608987542157276534
+7304493771078638267
+21913481313235914802
+10956740656617957401
+32870221969853872204
+16435110984926936102
+8217555492463468051
+24652666477390404154
+12326333238695202077
+36978999716085606232
+18489499858042803116
+9244749929021401558
+4622374964510700779
+13867124893532102338
+6933562446766051169
+20800687340298153508
+10400343670149076754
+5200171835074538377
+15600515505223615132
+7800257752611807566
+3900128876305903783
+11700386628917711350
+5850193314458855675
+17550579943376567026
+8775289971688283513
+26325869915064850540
+13162934957532425270
+6581467478766212635
+19744402436298637906
+9872201218149318953
+29616603654447956860
+14808301827223978430
+7404150913611989215
+22212452740835967646
+11106226370417983823
+33318679111253951470
+16659339555626975735
+49978018666880927206
+24989009333440463603
+74967028000321390810
+37483514000160695405
+112450542000482086216
+56225271000241043108
+28112635500120521554
+14056317750060260777
+42168953250180782332
+21084476625090391166
+10542238312545195583
+31626714937635586750
+15813357468817793375
+47440072406453380126
+23720036203226690063
+71160108609680070190
+35580054304840035095
+106740162914520105286
+53370081457260052643
+160110244371780157930
+80055122185890078965
+240165366557670236896
+120082683278835118448
+60041341639417559224
+30020670819708779612
+15010335409854389806
+7505167704927194903
+22515503114781584710
+11257751557390792355
+33773254672172377066
+16886627336086188533
+50659882008258565600
+25329941004129282800
+12664970502064641400
+6332485251032320700
+3166242625516160350
+1583121312758080175
+4749363938274240526
+2374681969137120263
+7124045907411360790
+3562022953705680395
+10686068861117041186
+5343034430558520593
+16029103291675561780
+8014551645837780890
+4007275822918890445
+12021827468756671336
+6010913734378335668
+3005456867189167834
+1502728433594583917
+4508185300783751752
+2254092650391875876
+1127046325195937938
+563523162597968969
+1690569487793906908
+845284743896953454
+422642371948476727
+1267927115845430182
+633963557922715091
+1901890673768145274
+950945336884072637
+2852836010652217912
+1426418005326108956
+713209002663054478
+356604501331527239
+1069813503994581718
+534906751997290859
+1604720255991872578
+802360127995936289
+2407080383987808868
+1203540191993904434
+601770095996952217
+1805310287990856652
+902655143995428326
+451327571997714163
+1353982715993142490
+676991357996571245
+2030974073989713736
+1015487036994856868
+507743518497428434
+253871759248714217
+761615277746142652
+380807638873071326
+190403819436535663
+571211458309606990
+285605729154803495
+856817187464410486
+428408593732205243
+1285225781196615730
+642612890598307865
+1927838671794923596
+963919335897461798
+481959667948730899
+1445879003846192698
+722939501923096349
+2168818505769289048
+1084409252884644524
+542204626442322262
+271102313221161131
+813306939663483394
+406653469831741697
+1219960409495225092
+609980204747612546
+304990102373806273
+914970307121418820
+457485153560709410
+228742576780354705
+686227730341064116
+343113865170532058
+171556932585266029
+514670797755798088
+257335398877899044
+128667699438949522
+64333849719474761
+193001549158424284
+96500774579212142
+48250387289606071
+144751161868818214
+72375580934409107
+217126742803227322
+108563371401613661
+325690114204840984
+162845057102420492
+81422528551210246
+40711264275605123
+122133792826815370
+61066896413407685
+183200689240223056
+91600344620111528
+45800172310055764
+22900086155027882
+11450043077513941
+34350129232541824
+17175064616270912
+8587532308135456
+4293766154067728
+2146883077033864
+1073441538516932
+536720769258466
+268360384629233
+805081153887700
+402540576943850
+201270288471925
+603810865415776
+301905432707888
+150952716353944
+75476358176972
+37738179088486
+18869089544243
+56607268632730
+28303634316365
+84910902949096
+42455451474548
+21227725737274
+10613862868637
+31841588605912
+15920794302956
+7960397151478
+3980198575739
+11940595727218
+5970297863609
+17910893590828
+8955446795414
+4477723397707
+13433170193122
+6716585096561
+20149755289684
+10074877644842
+5037438822421
+15112316467264
+7556158233632
+3778079116816
+1889039558408
+944519779204
+472259889602
+236129944801
+708389834404
+354194917202
+177097458601
+531292375804
+265646187902
+132823093951
+398469281854
+199234640927
+597703922782
+298851961391
+896555884174
+448277942087
+1344833826262
+672416913131
+2017250739394
+1008625369697
+3025876109092
+1512938054546
+756469027273
+2269407081820
+1134703540910
+567351770455
+1702055311366
+851027655683
+2553082967050
+1276541483525
+3829624450576
+1914812225288
+957406112644
+478703056322
+239351528161
+718054584484
+359027292242
+179513646121
+538540938364
+269270469182
+134635234591
+403905703774
+201952851887
+605858555662
+302929277831
+908787833494
+454393916747
+1363181750242
+681590875121
+2044772625364
+1022386312682
+511193156341
+1533579469024
+766789734512
+383394867256
+191697433628
+95848716814
+47924358407
+143773075222
+71886537611
+215659612834
+107829806417
+323489419252
+161744709626
+80872354813
+242617064440
+121308532220
+60654266110
+30327133055
+90981399166
+45490699583
+136472098750
+68236049375
+204708148126
+102354074063
+307062222190
+153531111095
+460593333286
+230296666643
+690889999930
+345444999965
+1036334999896
+518167499948
+259083749974
+129541874987
+388625624962
+194312812481
+582938437444
+291469218722
+145734609361
+437203828084
+218601914042
+109300957021
+327902871064
+163951435532
+81975717766
+40987858883
+122963576650
+61481788325
+184445364976
+92222682488
+46111341244
+23055670622
+11527835311
+34583505934
+17291752967
+51875258902
+25937629451
+77812888354
+38906444177
+116719332532
+58359666266
+29179833133
+87539499400
+43769749700
+21884874850
+10942437425
+32827312276
+16413656138
+8206828069
+24620484208
+12310242104
+6155121052
+3077560526
+1538780263
+4616340790
+2308170395
+6924511186
+3462255593
+10386766780
+5193383390
+2596691695
+7790075086
+3895037543
+11685112630
+5842556315
+17527668946
+8763834473
+26291503420
+13145751710
+6572875855
+19718627566
+9859313783
+29577941350
+14788970675
+44366912026
+22183456013
+66550368040
+33275184020
+16637592010
+8318796005
+24956388016
+12478194008
+6239097004
+3119548502
+1559774251
+4679322754
+2339661377
+7018984132
+3509492066
+1754746033
+5264238100
+2632119050
+1316059525
+3948178576
+1974089288
+987044644
+493522322
+246761161
+740283484
+370141742
+185070871
+555212614
+277606307
+832818922
+416409461
+1249228384
+624614192
+312307096
+156153548
+78076774
+39038387
+117115162
+58557581
+175672744
+87836372
+43918186
+21959093
+65877280
+32938640
+16469320
+8234660
+4117330
+2058665
+6175996
+3087998
+1543999
+4631998
+2315999
+6947998
+3473999
+10421998
+5210999
+15632998
+7816499
+23449498
+11724749
+35174248
+17587124
+8793562
+4396781
+13190344
+6595172
+3297586
+1648793
+4946380
+2473190
+1236595
+3709786
+1854893
+5564680
+2782340
+1391170
+695585
+2086756
+1043378
+521689
+1565068
+782534
+391267
+1173802
+586901
+1760704
+880352
+440176
+220088
+110044
+55022
+27511
+82534
+41267
+123802
+61901
+185704
+92852
+46426
+23213
+69640
+34820
+17410
+8705
+26116
+13058
+6529
+19588
+9794
+4897
+14692
+7346
+3673
+11020
+5510
+2755
+8266
+4133
+12400
+6200
+3100
+1550
+775
+2326
+1163
+3490
+1745
+5236
+2618
+1309
+3928
+1964
+982
+491
+1474
+737
+2212
+1106
+553
+1660
+830
+415
+1246
+623
+1870
+935
+2806
+1403
+4210
+2105
+6316
+3158
+1579
+4738
+2369
+7108
+3554
+1777
+5332
+2666
+1333
+4000
+2000
+1000
+500
+250
+125
+376
+188
+94
+47
+142
+71
+214
+107
+322
+161
+484
+242
+121
+364
+182
+91
+274
+137
+412
+206
+103
+310
+155
+466
+233
+700
+350
+175
+526
+263
+790
+395
+1186
+593
+1780
+890
+445
+1336
+668
+334
+167
+502
+251
+754
+377
+1132
+566
+283
+850
+425
+1276
+638
+319
+958
+479
+1438
+719
+2158
+1079
+3238
+1619
+4858
+2429
+7288
+3644
+1822
+911
+2734
+1367
+4102
+2051
+6154
+3077
+9232
+4616
+2308
+1154
+577
+1732
+866
+433
+1300
+650
+325
+976
+488
+244
+122
+61
+184
+92
+46
+23
+70
+35
+106
+53
+160
+80
+40
+20
+10
+5
+16
+8
+4
+2
+1
+fin de Collatz para m = 645646456437465346536576756747456746774663655677 en 1268 pasos
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición para este ciclo es <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">!=</span> <span class="pre">1</span></code>, por lo que el ciclo continuará hasta que <code class="docutils literal notranslate"><span class="pre">n</span></code> sea <code class="docutils literal notranslate"><span class="pre">1</span></code>, lo que hace que la condición sea falsa.</p>
+<p>Cada vez que pasa por el ciclo, el programa genera el valor de <code class="docutils literal notranslate"><span class="pre">n</span></code> y luego verifica si es par o impar. Si es par, <code class="docutils literal notranslate"><span class="pre">n</span></code> se divide por 2. Si es impar, el valor de <code class="docutils literal notranslate"><span class="pre">n</span></code> se reemplaza con <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">1</span></code>. Por ejemplo, si el argumento pasado a <code class="docutils literal notranslate"><span class="pre">collatz()</span></code> es 3, los valores resultantes de <code class="docutils literal notranslate"><span class="pre">n</span></code> son 3, 10, 5, 16, 8, 4, 2, 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">collatz</span><span class="p">(</span><span class="mi">31242341</span><span class="p">)</span> <span class="c1"># probar para números grandes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+10
+5
+16
+8
+4
+2
+1
+fin de Collatz para m = 3 en 7 pasos
+31242341
+93727024
+46863512
+23431756
+11715878
+5857939
+17573818
+8786909
+26360728
+13180364
+6590182
+3295091
+9885274
+4942637
+14827912
+7413956
+3706978
+1853489
+5560468
+2780234
+1390117
+4170352
+2085176
+1042588
+521294
+260647
+781942
+390971
+1172914
+586457
+1759372
+879686
+439843
+1319530
+659765
+1979296
+989648
+494824
+247412
+123706
+61853
+185560
+92780
+46390
+23195
+69586
+34793
+104380
+52190
+26095
+78286
+39143
+117430
+58715
+176146
+88073
+264220
+132110
+66055
+198166
+99083
+297250
+148625
+445876
+222938
+111469
+334408
+167204
+83602
+41801
+125404
+62702
+31351
+94054
+47027
+141082
+70541
+211624
+105812
+52906
+26453
+79360
+39680
+19840
+9920
+4960
+2480
+1240
+620
+310
+155
+466
+233
+700
+350
+175
+526
+263
+790
+395
+1186
+593
+1780
+890
+445
+1336
+668
+334
+167
+502
+251
+754
+377
+1132
+566
+283
+850
+425
+1276
+638
+319
+958
+479
+1438
+719
+2158
+1079
+3238
+1619
+4858
+2429
+7288
+3644
+1822
+911
+2734
+1367
+4102
+2051
+6154
+3077
+9232
+4616
+2308
+1154
+577
+1732
+866
+433
+1300
+650
+325
+976
+488
+244
+122
+61
+184
+92
+46
+23
+70
+35
+106
+53
+160
+80
+40
+20
+10
+5
+16
+8
+4
+2
+1
+fin de Collatz para m = 31242341 en 175 pasos
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dado que <code class="docutils literal notranslate"><span class="pre">n</span></code> a veces aumenta y a veces disminuye, no hay pruebas obvias de que <code class="docutils literal notranslate"><span class="pre">n</span></code> alguna vez llegue a 1, o de que el programa finalice. Para algunos valores particulares de <code class="docutils literal notranslate"><span class="pre">n</span></code>, podemos probar la terminación. Por ejemplo, si el valor inicial es una potencia de dos, <code class="docutils literal notranslate"><span class="pre">n</span></code> será par y  mas chico cada vez que pase por el ciclo hasta que llegue a 1. El ejemplo anterior termina con una secuencia de este tipo, comenzando con 16.</p>
+<p>Otro ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collatz</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1048576
+524288
+262144
+131072
+65536
+32768
+16384
+8192
+4096
+2048
+1024
+512
+256
+128
+64
+32
+16
+8
+4
+2
+1
+fin de Collatz para m = 1048576 en 20 pasos
+</pre></div>
+</div>
+</div>
+</div>
+<p>La pregunta difícil es si podemos probar que este programa termina para <em>todos</em> los valores positivos de <code class="docutils literal notranslate"><span class="pre">n</span></code>. Hasta ahora, nadie ha podido probarlo o refutarlo, pero se conjetura que el algoritmo siempre termina. Para más información ver en Wikipedia <a class="reference external" href="https://es.wikipedia.org/wiki/Conjetura_de_Collatz">“Conjetura de Collatz”</a> o el vídeo <a class="reference external" href="https://youtu.be/094y1Z2wpJg">“El problema matemático más simple que nadie puede resolver - Conjetura de Collatz”</a>.</p>
+<p>Veamos otro ejemplo del ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>. Definamos la función <code class="docutils literal notranslate"><span class="pre">raiz_entera()</span></code> que dado un entero no negativo  <code class="docutils literal notranslate"><span class="pre">n</span></code> devuelve la raíz cuadrada entera de <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p><em>Definición.</em> Sea <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Entonces <span class="math notranslate nohighlight">\(k\)</span> es la <em>raíz entera de <span class="math notranslate nohighlight">\(n\)</span></em> si $<span class="math notranslate nohighlight">\(k^2 \le n &lt; (k+1)^2.\)</span>$</p>
+<p>Imprimiendo la lista de cuadrados de 1 a 19 podemos ver que la raíz entera de <code class="docutils literal notranslate"><span class="pre">200</span></code> es <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0
+1 1
+2 4
+3 9
+4 16
+5 25
+6 36
+7 49
+8 64
+9 81
+10 100
+11 121
+12 144
+13 169
+14 196
+15 225
+16 256
+17 289
+18 324
+19 361
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviamente el método anterior, “por inspección”  no es el más conveniente para encontrar la raíz entera de un número.</p>
+<p>A  continuación, una forma de implementar la función raíz entera de <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_entera</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n &gt;= 0</span>
+<span class="sd">    post: devuelve k tal que k**2 &lt;= n &lt; (k + 1)**2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_entera</span><span class="p">(</span><span class="mi">17</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_entera</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_entera</span><span class="p">(</span><span class="mi">2000000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+14
+1414
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que el ciclo termina debido a que en cada paso <code class="docutils literal notranslate"><span class="pre">k</span></code> aumenta en 1 y entonces en algún paso <code class="docutils literal notranslate"><span class="pre">k**2</span></code> va a superar a <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<p>En  el ejemplo anterior no podemos reemplazar el <code class="docutils literal notranslate"><span class="pre">while</span></code> por un <code class="docutils literal notranslate"><span class="pre">for</span></code> debido que <em>a priori</em> no sabemos cuantos pasos debemos hacer.</p>
+<p><strong>Observación.</strong> Todo ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> con argumentos enteros puede ser reemplazado fácilmente   por un <code class="docutils literal notranslate"><span class="pre">while</span></code>,  por ejemplo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">código</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>puede ser reemplazado por</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">código</span><span class="o">&gt;</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>En el caso de trabajar con iterables es un poco más complicado pero es posible hacerlo. No lo veremos en este curso.</p>
+</section>
+<section id="break-o-no-break">
+<h2>3. ¿<code class="docutils literal notranslate"><span class="pre">break</span></code> o no <code class="docutils literal notranslate"><span class="pre">break</span></code>?<a class="headerlink" href="#break-o-no-break" title="Link to this heading">#</a></h2>
+<p>La respuesta corta es (casi) nunca usar <code class="docutils literal notranslate"><span class="pre">break</span></code>, pero veamos primero que significa esta instrucción.</p>
+<p>A veces no es clara cual es la condición para terminar un bucle hasta que se llega a una parte intermedia del cuerpo de instrucciones. En ese caso, es posible utilizar la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code> para terminar el ciclo.</p>
+<p>Por ejemplo, suponga que desea recibir información que el usuario ingresa por teclado hasta que escribe <code class="docutils literal notranslate"><span class="pre">listo</span></code>. Podrías escribir:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">linea</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">linea</span> <span class="o">==</span> <span class="s1">&#39;listo&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¡Listo!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">linea</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">linea</span> <span class="o">==</span> <span class="s1">&#39;listo&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">break</span>
+
+<span class="nn">File ~\Documents\GitHub\Algoritmos-y-Programacion\envs\ayp\lib\site-packages\ipykernel\kernelbase.py:1281,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1281</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1283</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1285</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1286</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1287</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición del bucle es <code class="docutils literal notranslate"><span class="pre">True</span></code>, que siempre es verdadera, por lo que el bucle se ejecuta hasta que llega a la sentencia <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>Cada vez ingresa al cuerpo del <code class="docutils literal notranslate"><span class="pre">while</span></code> el programa  le muestra al usuario un corchete angular. Si el usuario escribe <code class="docutils literal notranslate"><span class="pre">listo</span></code>, la instrucción <code class="docutils literal notranslate"><span class="pre">break</span></code> termina el ciclo. De lo contrario, el programa imprime lo que escribe el usuario y vuelve al principio del ciclo. Aquí hay una muestra de ejecución:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; Hola
+Hola
+&gt; listo
+¡Listo!
+</pre></div>
+</div>
+<p>Sin embargo, no se recomienda escribir bucles con <code class="docutils literal notranslate"><span class="pre">break</span></code>. En  general, debe controlarse la iteración en el bucle por la condición  del <code class="docutils literal notranslate"><span class="pre">while</span></code>. Agregar un medio para detener repentinamente el ciclo fuera del enfoque normal puede hacer que el código sea difícil de entender y depurar. En el código anterior podría haberse evitado fácilmente el uso del <code class="docutils literal notranslate"><span class="pre">break</span></code> con lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linea</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">while</span> <span class="n">linea</span> <span class="o">!=</span> <span class="s1">&#39;listo&#39;</span><span class="p">:</span>
+    <span class="n">linea</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¡Listo!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otro ejemplo de lo que <em>no</em> hay que hacer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_entera</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve k tal que k**2 &lt;= n &lt; (k + 1)**2</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">k</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_entera</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La forma correcta de calcular la raíz entera es como se vió en la sección anterior, es decir:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_entera</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt;= 0</span>
+    <span class="c1"># post: devuelve k tal que k**2 &lt;= n &lt; (k + 1)**2</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplos-de-uso-correcto-de-ciclos">
+<h2>4. Ejemplos de uso correcto de ciclos<a class="headerlink" href="#ejemplos-de-uso-correcto-de-ciclos" title="Link to this heading">#</a></h2>
+<p>Como ya vimos (casi) nunca debemos usar <code class="docutils literal notranslate"><span class="pre">break</span></code> en los ciclos.</p>
+<p>Veamos otro ejemplo, ahora con el <code class="docutils literal notranslate"><span class="pre">for</span></code>: supongamos  que queremos averiguar si un número <code class="docutils literal notranslate"><span class="pre">n</span></code> es primo o no. Una forma sencilla de hacerlo es ir dividiendo por todos los números de <code class="docutils literal notranslate"><span class="pre">2</span></code> hasta <code class="docutils literal notranslate"><span class="pre">n-1</span></code> y si encontramos que uno de esos número divide a <code class="docutils literal notranslate"><span class="pre">n</span></code> el número es compuesto, en caso contrario es primo. Una implementación rápida podría ser</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;es divisor de&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">primo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">1070567</span><span class="p">))</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">10705671</span><span class="p">))</span> <span class="c1"># False</span>
+<span class="c1"># print(es_primo(10705670567056811)) # False (tarda mucho)</span>
+<span class="c1"># print(es_primo(563456345634569)) # True (tarda mucho)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que esta función verifica <em>todos</em> los números menores que el número de input. En particular <code class="docutils literal notranslate"><span class="pre">es_primo(n)</span></code> imprime todos los divisores de <code class="docutils literal notranslate"><span class="pre">n</span></code>. Por lo tanto,  no es una función eficiente, ni mucho menos, especialmente cuando el número es divisible por primos “pequeños”.</p>
+<p>Con eso en mente, podemos implementar un  código que refleje la siguiente idea: “todo número es primo hasta que se demuestre lo contrario y en ese caso devuelvo <code class="docutils literal notranslate"><span class="pre">False</span></code>”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="c1"># print(i, &#39;es divisor de&#39;, n)</span>
+            <span class="k">break</span>
+    <span class="k">return</span> <span class="n">primo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">1070567</span><span class="p">))</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">10705671</span><span class="p">))</span> <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">10705670567056811</span><span class="p">))</span> <span class="c1"># False</span>
+<span class="c1"># print(es_primo(563456345634569)) # True (tarda mucho)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta implementación es correcta y traduce eficientemente el algoritmo que habíamos pensado.  Sin embargo, “romper” un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> con un <code class="docutils literal notranslate"><span class="pre">break</span></code> no es una práctica recomendada. En este caso, donde el código es muy sencillo, no habría problemas, pero para códigos más complejos,  como ya dijimos, puede traer problemas.</p>
+<p>Una propuesta sin el uso de <code class="docutils literal notranslate"><span class="pre">break</span></code> puede ser la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">primo</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">primo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">1070567</span><span class="p">))</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">10705671</span><span class="p">))</span> <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">10705670567056811</span><span class="p">))</span> <span class="c1"># False</span>
+<span class="c1"># print(es_primo(563456345634569)) # True (tarda mucho)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El código anterior es igual de eficiente que el del <code class="docutils literal notranslate"><span class="pre">for</span></code> con un <code class="docutils literal notranslate"><span class="pre">break</span></code> pero está mejor estructurado.</p>
+<p>Observemos que el <code class="docutils literal notranslate"><span class="pre">for</span></code> debió ser reemplazado por el <code class="docutils literal notranslate"><span class="pre">while</span></code> puesto que estamos en el caso de un ciclo que no sabemos cuantas repeticiones tendrá.</p>
+<p>Hay muchas formas  de hacer este programa, veamos otra forma. Usualmente podemos usar la negación de la condición que disparaba el <code class="docutils literal notranslate"><span class="pre">break</span></code> como una condición del <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">563456345634567</span><span class="p">))</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función definida arriba tiene dos <code class="docutils literal notranslate"><span class="pre">return</span></code> y eso es algo que debería evitarse, lo ideal es que haya un solo <code class="docutils literal notranslate"><span class="pre">return</span></code> al final del cuerpo de la función.</p>
+<p>Es preferible la siguiente definición:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">primo</span> <span class="o">=</span>  <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">primo</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">es_primo</span><span class="p">(</span><span class="mi">563456345634567</span><span class="p">))</span> <span class="c1"># False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O la forma más concisa,  que pareciera ser la mejor con este algoritmo en mente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># pre: n &gt; 0</span>
+    <span class="c1"># post: devuelve True si n  es primo, en caso contrario devuelve False</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">i</span> <span class="o">==</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metodo-de-newton-para-la-raiz-cuadrada">
+<h2>5. Método de Newton para la raíz cuadrada<a class="headerlink" href="#metodo-de-newton-para-la-raiz-cuadrada" title="Link to this heading">#</a></h2>
+<p>El <em>método de Newton</em> o de <em>Newton-Raphson</em> es un algoritmo para encontrar aproximaciones de los ceros o raíces de una función real. Una explicación completa se puede encontrar en Wikipedia en el artículo <a class="reference external" href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton">Método de Newton</a>.</p>
+<p>Se puede utilizar el  método de Newton para encontrar una aproximación numérica de la raíz cuadrada de un número real. Observar que si <span class="math notranslate nohighlight">\(a &gt;0\)</span>
+$<span class="math notranslate nohighlight">\(
+b = \sqrt{a}\quad \Leftrightarrow \quad b^2 = a \quad\Leftrightarrow\quad b^2-a=0.
+\)</span><span class="math notranslate nohighlight">\(
+Es decir, \)</span>\sqrt{a}<span class="math notranslate nohighlight">\( es raíz de la función \)</span>f(x) = x^2 -a<span class="math notranslate nohighlight">\(. El algoritmo que se obtiene de aplicar el  método de Newton a \)</span>f$ se puede describir de la siguiente forma:</p>
+<ol class="arabic simple">
+<li><p>Sea <span class="math notranslate nohighlight">\(x_0\)</span> un valor inicial arbitrario (<span class="math notranslate nohighlight">\(&gt;0\)</span>).</p></li>
+<li><p>Sea
+\begin{equation}
+x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
+\end{equation}
+para <span class="math notranslate nohighlight">\(n \ge 0\)</span>.</p></li>
+<li><p>Aplique la fórmula (*) desde <span class="math notranslate nohighlight">\(n=0\)</span> en adelante hasta obtener un <span class="math notranslate nohighlight">\(x_n\)</span> que se aproxime “lo suficiente”.</p></li>
+</ol>
+<p>En el ítem 3. la frase “lo suficiente” no es del todo clara y  trataremos de interpretarla a lo largo de la sección.</p>
+<p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (<em>) se reescribe:
+\begin{equation}
+y = \frac12(x + \frac{a}{x}) \tag{</em>}
+\end{equation}</p>
+<p>Con esta fórmula en mente, la primera aproximación a <span class="math notranslate nohighlight">\(\sqrt{4} =2\)</span> es</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El resultado es <code class="docutils literal notranslate"><span class="pre">2.1666666666666665</span></code> que está más cerca que <code class="docutils literal notranslate"><span class="pre">3</span></code> de la respuesta correcta (<span class="math notranslate nohighlight">\(\sqrt{4} = 2\)</span>). Si nosotros repetimos el proceso con la nueva estimación, se acerca aún más:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># el nuevo x es el y  anterior</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>De la celda anterior obtenemos <code class="docutils literal notranslate"><span class="pre">2.0064102564102564</span></code>. Después de algunas actualizaciones más, la estimación es muy precisa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente,  con una aproximación más obtenemos el resultado exacto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general, no sabemos de antemano cuántos pasos se necesitan para llegar a la respuesta correcta, pero sabemos cuándo llegamos porque la estimación
+deja de cambiar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">==</span> <span class="pre">x</span></code>, podemos detenernos. Aquí hay un bucle que comienza
+con una estimación inicial, <code class="docutils literal notranslate"><span class="pre">x</span></code>, y la mejora hasta que deja de cambiar. Podemos escribir la función <code class="docutils literal notranslate"><span class="pre">raiz_cuadrada()</span></code> de la siguiente forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="c1"># pre: a &gt; 0</span>
+    <span class="c1"># post: devuelve y una aproximación de la raíz cuadrada de a</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># aproximamos la raíz de a por a/2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">y</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="c1"># el último calculado pasa a ser el que se usa para calcular el próximo</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">101</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">102</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para muchos de los valores de <code class="docutils literal notranslate"><span class="pre">a</span></code> esto funciona bien, pero en general no es recomendable probar la igualdad de dos <code class="docutils literal notranslate"><span class="pre">float</span></code>. Los valores de coma flotante son solo aproximadamente correctos: la mayoría de los números racionales, como <span class="math notranslate nohighlight">\( 1/3 \)</span>, y los números irracionales, como <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>, no se pueden representar exactamente con un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>En lugar de comprobar si <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> son exactamente iguales, es más seguro usar la función <code class="docutils literal notranslate"><span class="pre">abs</span></code> que devuelve el valor absoluto de un número real:  detenemos el bucle cuando <code class="docutils literal notranslate"><span class="pre">abs(x</span> <span class="pre">-</span> <span class="pre">y)</span></code> es menor que un error que consideramos aceptable. Redefinamos la función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="c1"># pre: a &gt; 0</span>
+    <span class="c1"># post: devuelve y una aproximación de la raíz cuadrada de a</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># aproximamos la raíz de a por a/2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="mf">0.0001</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">error</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">101</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">102</span><span class="p">),</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: a &gt; 0</span>
+<span class="sd">    post: devuelve y una aproximación de la raíz cuadrada de a</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># aproximamos la raíz de a por a/2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="mf">0.00001</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">error</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raíz cuadrada de:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;que elevado al cuadrado  es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raíz cuadrada de:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;que elevado al cuadrado  es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raíz cuadrada de:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;que elevado al cuadrado  es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raíz cuadrada de:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;que elevado al cuadrado  es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">102</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;raíz cuadrada de:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;que elevado al cuadrado  es&#39;</span><span class="p">,</span> <span class="n">raiz_cuadrada</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta última sería la forma más correcta de escribir la función. La primera forma, sin el error, depende mucho de la implementación del compilador y se pueden obtener resultados inciertos.</p>
+</section>
+<section id="programacion-defensiva">
+<h2>6. Programación defensiva<a class="headerlink" href="#programacion-defensiva" title="Link to this heading">#</a></h2>
+<p>El primer paso para obtener las resultados correctos de nuestros programas es asumir que los errores sucederán y protegerse contra ellos. Esto se llama programación defensiva, y la forma más común de hacerlo es agregar aserciones a nuestro código para que se compruebe a sí mismo a medida que se ejecuta. Una <em>aserción</em> es simplemente una declaración de que algo debe ser cierto en un cierto punto de un programa. La sintaxis de la aserción es la siguiente</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">condición</span><span class="p">,</span> <span class="s1">&#39;Cadena  que se imprime cuando condición == False&#39;</span>
+</pre></div>
+</div>
+<p>Cuando Python ve una aserción, evalúa la condición de la aserción. Si es cierta, Python no hace nada, pero si es falsa, Python detiene el programa inmediatamente e imprime el mensaje de error explicitado por el programador. Por ejemplo, este fragmento de código suma todos los números de una lista de números positivos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">]</span> <span class="c1"># lista de números (veremos esto en profundidad más adelante)</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;Los datos solo deben contener valores positivos (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &lt;= 0).&#39;</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El total es:&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  caso que la lista de números contenga un número no positivo,  obtendremos un error por el <code class="docutils literal notranslate"><span class="pre">assert</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">4.4</span><span class="p">]</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;Los datos solo deben contener valores positivos (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &lt;= 0).&#39;</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">n</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El total es:&#39;</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="precondiciones-y-postcondiciones-revisado">
+<h3>Precondiciones y postcondiciones (revisado)<a class="headerlink" href="#precondiciones-y-postcondiciones-revisado" title="Link to this heading">#</a></h3>
+<p>Repasemos el concepto de precondición y postcondición y veamos que en algunos casos pueden verificarse con el comando <code class="docutils literal notranslate"><span class="pre">assert</span></code>. Como ya vimos, las <em>precondiciones</em> y <em>postcondiciones</em> son anotaciones dentro del cuerpo de una función que nos sirven para saber como deben ser los parámetros que recibe la función y  que es lo que hace la función:</p>
+<ul class="simple">
+<li><p><em>Precondición:</em> es algo que debe ser cierto cuando comienza la la función, para que esta funcione correctamente.</p></li>
+<li><p><em>Postcondición:</em> es algo que la función garantiza cierto cuando la misma termina.</p></li>
+</ul>
+<p>Las precondiciones y postcondiciones son parte de la documentación del programa y suelen escribirse como comentarios formales cuando se puede, o en caso contrario informales.</p>
+<p>En el caso que se puedan formalizar en Python,  se pueden reemplazar o completar con <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
+<p>Veamos un ejemplo con el máximo común divisor. La función escrita en la siguiente celda de código determina  el máximo común divisor de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> son enteros no negativos y uno de ellos es mayor que 0.</p>
+<p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:
+\begin{align}
+\operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \
+\operatorname{mcd}(0, y) &amp;= y.
+\end{align}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1º versión.</span>
+<span class="k">def</span> <span class="nf">mcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># &quot;mientras x distinto de 0&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">mcd</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<span class="c1">#mcd(-3, 2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta función se comporta bien mientras <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cumplan que son no negativos y al menos uno sea no nulo. Verificar, por ejemplo, que</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>es una instrucción que no termina.</p>
+<p>Agreguemos ahora precondiciones y postcondiciones de manera informal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2º versión.</span>
+<span class="k">def</span> <span class="nf">mcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: a y b no negativos, al menos uno de ellos no nulo.</span>
+    <span class="c1"># post: devuelve el mcd de a y b</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># &quot;mientras x distinto de 0&quot;</span>
+      <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En  la tercera versión la precondición se escribe de manera formal, pero sigue siendo un comentario:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3º versión</span>
+<span class="k">def</span> <span class="nf">mcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: (a &gt;= 0 and b &gt;=0) and (a != 0 or b != 0).</span>
+    <span class="c1"># post: devuelve el mdc de a y b</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># &quot;mientras x distinto de 0&quot;</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La tercera versión no difiere en nada, al tiempo de ejecutarse, a la segunda versión, por lo tanto existe la posiblidad de entrar en un ciclo infinito para ciertos valores de <code class="docutils literal notranslate"><span class="pre">a</span></code>  y <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>En  la tercera versión hemos formalizado la precondición en lenguaje Python y por lo tanto  la podemos formalizar programáticamente con <code class="docutils literal notranslate"><span class="pre">assert</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4º versión</span>
+<span class="k">def</span> <span class="nf">mcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: (a &gt;= 0 and b &gt;=0) and (a != 0 or b != 0).</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;Los parámetros deben ser enteros&quot;</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser no negativos, al menos uno de ellos no nulo&quot;</span>
+    <span class="c1"># post: devuelve el mdc de a y b</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># &quot;mientras x distinto de 0&quot;</span>
+      <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mcd</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">24</span><span class="p">))</span>
+<span class="c1"># print(mcd(-3, 2))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta cuarta versión produce un error y detiene el programa cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> no cumplen la precondición. En  este caso el <code class="docutils literal notranslate"><span class="pre">assert</span></code> nos garantiza que no se producirá un ciclo infinito y por lo tanto juega un rol importante em el programa.</p>
+<p>En el caso de la función <code class="docutils literal notranslate"><span class="pre">mcd()</span></code> formalizar matemáticamente la  postcondición es posible, pero en general la postcondición no se implementa con un <code class="docutils literal notranslate"><span class="pre">assert</span></code>. Por lo tanto la podemos dejar escrita de manera informal o la escribimos con el formalismo de la matemática, pero sin hacer un <code class="docutils literal notranslate"><span class="pre">assert</span></code> para verificarla.</p>
+<p>Por otro  lado, hacer un <code class="docutils literal notranslate"><span class="pre">assert</span></code> para la postcondición no parece razonable, puesto que si la función está bien implementada la postcondición siempre debe cumplirse y si ocurriera en algún caso que no se cumple es porque la función está mal definida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5º versión</span>
+<span class="k">def</span> <span class="nf">mcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># pre: (a &gt;= 0 and b &gt;=0) and (a != 0 or b != 0).</span>
+    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;Los parámetros deben ser enteros&quot;</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;Los parámetros deben ser no negativos, al menos uno de ellos no nulo&quot;</span>
+    <span class="c1"># post: devuelve d tal que</span>
+    <span class="c1">#       1) a % d == 0 and b % d == 0, y</span>
+    <span class="c1">#       2) si c entero y (a % c == 0 and b % c == 0) =&gt; d % c == 0</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># &quot;mientras x distinto de 0&quot;</span>
+
+      <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="implementacion-iterativa-de-funciones-recursivas">
+<h2>7. Implementación iterativa de funciones recursivas<a class="headerlink" href="#implementacion-iterativa-de-funciones-recursivas" title="Link to this heading">#</a></h2>
+<p>Se puede implementar de forma iterativa una función recursiva y veremos a continuación algunos ejemplos.</p>
+<p>Implementemos la función <span class="math notranslate nohighlight">\(n!\)</span>,  es decir la función definida recursivamente como <span class="math notranslate nohighlight">\(0!=1\)</span> y <span class="math notranslate nohighlight">\(n! = n \cdot (n-1)!\)</span> para <span class="math notranslate nohighlight">\(n \ge 1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span>  <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n entero &gt;= 0.</span>
+<span class="sd">    post: devuelve n!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ret</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>que se podría escribir en forma más simple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span>  <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n entero &gt;= 0.</span>
+<span class="sd">    post: devuelve n!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">ret</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como se puede observar la implementación iterativa de la recursión  es bastante sencilla:  sa va guardando  en una variable los valores intermedios y se van obteniendo nuevos valores usando la fórmula recursiva.</p>
+<p>Probemos la función para algunos valores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;! =&#39;</span><span class="p">,</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora implementemos  la siguiente función:
+$<span class="math notranslate nohighlight">\(f(n) = \begin{cases}
+  7,  \qquad\qquad\qquad\;\text{ si \)</span>n=1<span class="math notranslate nohighlight">\(}  \\n^2f({n-1}) +2n, \text{ para \)</span>n\geq 2<span class="math notranslate nohighlight">\(}.
+  \end{cases}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n entero &gt;= 1.</span>
+<span class="sd">    post: devuelve f(n)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ret</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Que podemos escribir en forma equivalente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n entero &gt;= 1.</span>
+<span class="sd">    post: devuelve f(n)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ret</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es interesante ver la función en Python Tutor.</p>
+<p>Python Tutor es una herramienta en línea que permite visualizar el flujo de ejecución de programas escritos en Python. Python Tutor muestra el estado de las variables en cada línea de código y permite avanzar o retroceder en la ejecución del programa.</p>
+<p>Pegue el código anterior en Python Tutor (<a class="reference external" href="https://pythontutor.com">https://pythontutor.com</a>) y calcule <code class="docutils literal notranslate"><span class="pre">f(4)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f(&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;) =&#39;</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando la función se basa en más de un caso anterior, también es posible obtenerla de forma iterativa. Por ejemplo sea:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ g(n) = \begin{cases}
+     3, \text{ si $n=0$}\\
+     5, \text{ si $n=1$}\\ n\cdot g(n-1)+6g(n-2), \text{ para $n\geq 2$}.
+    \end{cases}
+\end{split}\]</div>
+<p>Su implementación en Python podría ser:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: n &gt;= 0</span>
+<span class="sd">    post: devuelve g(n)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span> <span class="c1"># x es el anterior, y  es el anterior del anterior</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como se observará,  ya no es tan sencillo como en los casos anteriores. Veamos como funciona la iteración, como para aclarar un poco.</p>
+<p>Supongamos que queremos calcular <code class="docutils literal notranslate"><span class="pre">g(3)</span></code>,  entonces se ingresa a la rama del <code class="docutils literal notranslate"><span class="pre">else</span></code> y  en el primer renglón establecemos que</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = 3 (es g(0))
+y = 5 (es g(1))
+</pre></div>
+</div>
+<p>Estos son los dos valores que se utilizarán para hallar el próximo valor. En la primera iteración del <code class="docutils literal notranslate"><span class="pre">for</span></code> tenemos  que <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">2</span></code> y por  lo tanto</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = 2 * 5 + 6 * 3 = 28 (es g(2))
+y = 5                  (es g(1))
+</pre></div>
+</div>
+<p>Finalmente, <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">3</span></code> y</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x = 3 * 28 + 6 * 5 = 114 (es g(3))
+y = 28                   (es g(2))
+</pre></div>
+</div>
+<p>Es decir, obtenemos que <code class="docutils literal notranslate"><span class="pre">g(3)</span> <span class="pre">=</span> <span class="pre">114</span></code>.</p>
+<p>Verifiquemos algunos valores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g(&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;) = &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos visualizar todos estos pasos en Python Tutor.</p>
+<p>Finalmente, implementaremos la sumatoria de un serie de valores numéricos.</p>
+<p>Para ello necesitamos definir una función en Python con un número variable de parámetros. Para definir en Python una función con un número variable de parámetros, se utiliza el carácter asterisco (<code class="docutils literal notranslate"><span class="pre">*</span></code>) antes del nombre del último parámetro en la lista de parámetros de la función. Este parámetro se llama <em>parámetro de expansión</em> o <em>parámetro de lista</em>, y permite que la función acepte cualquier número de argumentos posicionales. Los argumentos se pasan separados por comas.</p>
+<p>En el caso que queramos definir sumatoria lo podremos hacer de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumatoria</span><span class="p">(</span><span class="o">*</span><span class="n">numeros</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    pre: numeros es una lista de números separados por comas</span>
+<span class="sd">    post: devuelve la suma de todo los números de la lista numeros</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+        <span class="n">suma</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">+</span> <span class="n">numero</span>
+    <span class="k">return</span> <span class="n">suma</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probemos la función en algunos casos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sumatoria</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># imprime 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumatoria</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>  <span class="c1"># imprime 150</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumatoria</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># imprime 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sumatoria</span><span class="p">())</span> <span class="c1"># imprime 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06_Condicionales.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Condicionales</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08_Cadenas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cadenas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-instruccion-for">1. La instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-range">La función <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-instruccion-while">2. La instrucción <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-o-no-break">3. ¿<code class="docutils literal notranslate"><span class="pre">break</span></code> o no <code class="docutils literal notranslate"><span class="pre">break</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-uso-correcto-de-ciclos">4. Ejemplos de uso correcto de ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-newton-para-la-raiz-cuadrada">5. Método de Newton para la raíz cuadrada</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programacion-defensiva">6. Programación defensiva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones-revisado">Precondiciones y postcondiciones (revisado)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacion-iterativa-de-funciones-recursivas">7. Implementación iterativa de funciones recursivas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

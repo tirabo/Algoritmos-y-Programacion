@@ -1,0 +1,1349 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interacción con archivos CSV, XML y JSON &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '17_Archivos_CSV_XML_JSON_APIs';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introducción a NumPy" href="18_NumPy.html" />
+    <link rel="prev" title="Input y output" href="16_Input_y_output.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F17_Archivos_CSV_XML_JSON_APIs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/17_Archivos_CSV_XML_JSON_APIs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interacción con archivos CSV, XML y JSON</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-json">2. Lectura y escritura de archivos JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-json-en-internet">3. Lectura de archivos JSON en internet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-xml">4. Lectura y escritura de archivos XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-y-atributos">4.1. Elementos y atributos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-dom">4.2. xml.dom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">4.3. Ejemplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-apis">5. Uso de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-la-api-del-noaa">Ejemplo: la API del NOAA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-ejemplos-de-apis">Otros ejemplos de APIs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis-de-servicios-populares">APIs de servicios populares</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="interaccion-con-archivos-csv-xml-y-json">
+<h1>Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Link to this heading">#</a></h1>
+<p>Es común que cuando interactuamos y obtenemos datos de páginas o sitios de Internet estos datos se encuentren en formatos estructurados. Veremos a continuación, brevemente, como podemos obtener datos de archivos CSV, XML y JSON.</p>
+<section id="archivos-csv">
+<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Link to this heading">#</a></h2>
+<p>La forma estructurada más sencilla de información es un archivo CSV,  que es similar a una hoja de una planilla de cálculo.</p>
+<p>Un archivo CSV (Comma Separated Values) es un tipo de archivo de texto que se utiliza comúnmente para almacenar datos tabulares. Los datos en un archivo CSV se organizan en filas y columnas, donde cada fila corresponde a un registro y cada columna corresponde a un campo en ese registro. Los campos en un archivo CSV se separan por un carácter delimitador, como una coma, un punto y coma o una tabulación.</p>
+<p>Cada registro en un archivo CSV se almacena en una nueva línea, y los valores de los campos pueden estar rodeados de comillas dobles si contienen el carácter delimitador. Por ejemplo, el siguiente es un ejemplo de un archivo CSV que contiene información sobre personas:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nombre,edad,ciudad
+Juan,30,&quot;Quito, Centro&quot;
+María,25,Medellín
+Pedro,40,Lima
+</pre></div>
+</div>
+<p>En este ejemplo, la primera línea del archivo CSV contiene los nombres de los campos (<code class="docutils literal notranslate"><span class="pre">nombre</span></code>, <code class="docutils literal notranslate"><span class="pre">edad</span></code> y <code class="docutils literal notranslate"><span class="pre">ciudad</span></code>), mientras que las siguientes líneas contienen los datos de los registros.</p>
+<p>Los archivos CSV son una forma común de intercambiar datos entre diferentes programas o sistemas, ya que son un formato simple y legible por humanos. También se pueden abrir y editar fácilmente en programas de hojas de cálculo, como Microsoft Excel o Google Sheets.</p>
+<p>Por otro lado,  tiene la limitación de que la información se puede estructurar unicamente en filas y columnas.</p>
+<p>Construyamos un ejemplo sencillo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;archivo.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;nombre, edad,ciudad</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&quot;Perez,Juan&quot;, 30, Quito</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;María, 25, Medellín</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Pedro, 40, Lima</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para leer un archivo CSV en Python, puede utilizar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este módulo proporciona una forma fácil de leer y escribir archivos CSV. A continuación, se muestra un ejemplo de cómo leer un archivo CSV y obtener los valores de los campos:</p>
+<p>Usaremos un archivo CSV  que nos provee Colab. Leamos el archivo <code class="docutils literal notranslate"><span class="pre">california_housing_test.csv</span></code>  con el siguiente contenido:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>longitude,latitude,housing_median_age,total_rooms,total_bedrooms,population,households,median_income,median_house_value
+-122.050000,37.370000,27.000000,3885.000000,661.000000,1537.000000,606.000000,6.608500,344700.000000
+-118.300000,34.260000,43.000000,1510.000000,310.000000,809.000000,277.000000,3.599000,176500.000000
+-117.810000,33.780000,27.000000,3589.000000,507.000000,1484.000000,495.000000,5.793400,270500.000000
+...
+</pre></div>
+</div>
+<p>Para leer este archivo, se puede usar el siguiente código en Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># abre el archivo CSV en modo lectura</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/sample_data/california_housing_test.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="c1"># crea un objeto reader de CSV</span>
+    <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># iteramos sobre las filas del archivo CSV:</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">csv</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># abre el archivo CSV en modo lectura</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/sample_data/california_housing_test.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="c1"># crea un objeto reader de CSV</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File ~\Documents\GitHub\Algoritmos-y-Programacion\envs\ayp\lib\site-packages\IPython\core\interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/content/sample_data/california_housing_test.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># imprime algunos valores de las primera filas</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El tipo de cada fila es:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La cantidad de campos es:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">fila</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1"># print(fila)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fila</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fila</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El tipo de cada fila es: &lt;class &#39;list&#39;&gt;
+La cantidad de campos es: 9
+longitude latitude housing_median_age
+-122.050000 37.370000 27.000000
+-118.300000 34.260000 43.000000
+-117.810000 33.780000 27.000000
+-118.360000 33.820000 28.000000
+-119.670000 36.330000 19.000000
+-119.560000 36.510000 37.000000
+-121.430000 38.630000 43.000000
+-120.650000 35.480000 19.000000
+-122.840000 38.400000 15.000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este código, usamos la función <code class="docutils literal notranslate"><span class="pre">open()</span></code> para abrir el archivo CSV en modo lectura. A continuación, creamos un objeto lector de CSV usando la función <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>. Este objeto lector toma el archivo CSV y los parámetros <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> y <code class="docutils literal notranslate"><span class="pre">quotechar</span></code>, que indican el carácter delimitador y el carácter de comillas, respectivamente. En este ejemplo, estamos usando comas como delimitadores y comillas dobles como caracteres de comillas.</p>
+<p>Luego, iteramos sobre las filas del archivo CSV utilizando un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Guardamos las filas del archivo CSV  en la lista <code class="docutils literal notranslate"><span class="pre">valores</span></code> y  luego imprimimos algunos valores de las primeras filas.</p>
+<p>En resumen, para leer un archivo CSV en Python, puede usar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code> y la función <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>. Para obtener los valores de los campos, simplemente iteramos sobre el objeto <code class="docutils literal notranslate"><span class="pre">reader</span></code>.</p>
+<p>También podríamos haber hecho <code class="docutils literal notranslate"><span class="pre">valores</span> <span class="pre">=</span> <span class="pre">list(reader)</span></code> e iteramos sobre la lista.</p>
+<p>Finalmente,  como la primera fila son los id de los campos, no son valores que nos interesan. Una forma eficiente de leer solo los valores es la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/sample_data/california_housing_test.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="c1"># crea un objeto reader de CSV</span>
+    <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> <span class="c1"># salta la primera fila</span>
+    <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectura-y-escritura-de-archivos-json">
+<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Link to this heading">#</a></h2>
+<p>JSON, cuyo nombre corresponde a las siglas <em>JavaScript Object Notation</em> o <em>Notación de Objetos de JavaScript</em>, es un formato ligero de intercambio de datos, que resulta sencillo de leer y escribir para los programadores y simple de interpretar y generar para las máquinas.</p>
+<p>JSON es un formato de texto completamente independiente de lenguaje y puede ser interpretado y creado por los siguientes lenguajes:</p>
+<ul class="simple">
+<li><p>C</p></li>
+<li><p>C++</p></li>
+<li><p>C#</p></li>
+<li><p>Java</p></li>
+<li><p>JavaScript</p></li>
+<li><p>Perl</p></li>
+<li><p>Python</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>Muchos lenguajes de programación proporcionan métodos para analizar una cadena de texto con este formato en un objeto nativo y viceversa.</p>
+<p>Pese a su nombre, no es necesariamente parte de JavaScript, de hecho, es un estándar basado en texto plano para el intercambio de datos, por lo que se usa en muchos sistemas que requieren mostrar o enviar información para ser interpretada por otros sistemas.</p>
+<p>Una de las características de JSON, al ser un formato que es independiente de cualquier lenguaje de programación, es que los servicios que comparten información por este método no necesitan hablar el mismo idioma, es decir, el emisor puede ser Java y el receptor Python, pues cada uno tiene su propia librería para codificar y decodificar cadenas en este formato.</p>
+<p>Veamos como leer y escribir archivos json:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./sample_data/anscombe.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># data es una str</span>
+
+<span class="n">archivo</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># archivo es (en este caso) una lista de diccionarios</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tipo del archivo:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">archivo</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tipo del primer elemento del archivo:&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">archivo</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Imprimimos todo el archivo:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Imprimimos alguna información del archivo:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tipo del archivo: &lt;class &#39;list&#39;&gt;
+Tipo del primer elemento del archivo: &lt;class &#39;dict&#39;&gt;
+
+Imprimimos todo el archivo:
+[{&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 10.0, &#39;Y&#39;: 8.04}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 6.95}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 13.0, &#39;Y&#39;: 7.58}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 9.0, &#39;Y&#39;: 8.81}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 11.0, &#39;Y&#39;: 8.33}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 14.0, &#39;Y&#39;: 9.96}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 6.0, &#39;Y&#39;: 7.24}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 4.0, &#39;Y&#39;: 4.26}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 12.0, &#39;Y&#39;: 10.84}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 7.0, &#39;Y&#39;: 4.81}, {&#39;Series&#39;: &#39;I&#39;, &#39;X&#39;: 5.0, &#39;Y&#39;: 5.68}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 10.0, &#39;Y&#39;: 9.14}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 8.14}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 13.0, &#39;Y&#39;: 8.74}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 9.0, &#39;Y&#39;: 8.77}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 11.0, &#39;Y&#39;: 9.26}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 14.0, &#39;Y&#39;: 8.1}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 6.0, &#39;Y&#39;: 6.13}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 4.0, &#39;Y&#39;: 3.1}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 12.0, &#39;Y&#39;: 9.13}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 7.0, &#39;Y&#39;: 7.26}, {&#39;Series&#39;: &#39;II&#39;, &#39;X&#39;: 5.0, &#39;Y&#39;: 4.74}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 10.0, &#39;Y&#39;: 7.46}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 6.77}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 13.0, &#39;Y&#39;: 12.74}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 9.0, &#39;Y&#39;: 7.11}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 11.0, &#39;Y&#39;: 7.81}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 14.0, &#39;Y&#39;: 8.84}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 6.0, &#39;Y&#39;: 6.08}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 4.0, &#39;Y&#39;: 5.39}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 12.0, &#39;Y&#39;: 8.15}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 7.0, &#39;Y&#39;: 6.42}, {&#39;Series&#39;: &#39;III&#39;, &#39;X&#39;: 5.0, &#39;Y&#39;: 5.73}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 6.58}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 5.76}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 7.71}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 8.84}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 8.47}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 7.04}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 5.25}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 19.0, &#39;Y&#39;: 12.5}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 5.56}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 7.91}, {&#39;Series&#39;: &#39;IV&#39;, &#39;X&#39;: 8.0, &#39;Y&#39;: 6.89}]
+
+Imprimimos alguna información del archivo:
+10.0
+8.0
+13.0
+9.0
+11.0
+14.0
+6.0
+4.0
+12.0
+7.0
+5.0
+10.0
+8.0
+13.0
+9.0
+11.0
+14.0
+6.0
+4.0
+12.0
+7.0
+5.0
+10.0
+8.0
+13.0
+9.0
+11.0
+14.0
+6.0
+4.0
+12.0
+7.0
+5.0
+8.0
+8.0
+8.0
+8.0
+8.0
+8.0
+8.0
+19.0
+8.0
+8.0
+8.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lo notable de JSON  es que los archivos de texto en formato JSON son muy parecidos a los diccionarios y listas de Python,  con una sintaxis idéntica.</p>
+<p>La operación inversa a <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> es <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code>:  transforma un diccionario o lista en una cadena con  estructura JSON.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span> <span class="p">:</span> <span class="mi">0</span> <span class="p">},</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">}}</span> <span class="c1"># u es un diccionario</span>
+<span class="n">cadena</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cadena:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">cadena</span><span class="p">),</span><span class="n">cadena</span><span class="p">)</span>
+<span class="c1"># dic = json.loads(cadena) # no  funciona</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Un diccionario:</span><span class="se">\t\t\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="n">u</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span> <span class="p">:</span> <span class="mi">0</span> <span class="p">},</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">}})</span> <span class="c1"># transforma a JSON (es una str)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Un JSON:</span><span class="se">\t\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;De nuevo un diccionario:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cadena: &lt;class &#39;str&#39;&gt; {&#39;a&#39;: {2: 0}, &#39;b&#39;: {1: 5}}
+Un diccionario:			 &lt;class &#39;dict&#39;&gt; {&#39;a&#39;: {2: 0}, &#39;b&#39;: {1: 5}}
+Un JSON:			 &lt;class &#39;str&#39;&gt; {&quot;a&quot;: {&quot;2&quot;: 0}, &quot;b&quot;: {&quot;1&quot;: 5}}
+De nuevo un diccionario:	 &lt;class &#39;dict&#39;&gt; {&#39;a&#39;: {&#39;2&#39;: 0}, &#39;b&#39;: {&#39;1&#39;: 5}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que el diccionario original cambia las claves numérica de <em>TODOS</em> los diccionarios a tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>, incluso los diccionarios que son valores de otro diccionario.</p>
+<p>Los valores numéricos se mantienen numéricos. Si un valor es un lista,  se mantiene lista.</p>
+<p><strong>Ejemplo.</strong> Crearemos una lista de diccionarios y queremos escribir uno por línea en un archivo, para que luego sea leido usando <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>.</p>
+<p>En  la celda de código siguiente implementamos un ejemplo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Creamos una lista con 100 diccionarios tipo</span>
+<span class="c1"># {&#39;x&#39; : entero al azar, &#39;y&#39; : entero al azar, nº de orden en la lista : [entero al azar, entero al azar] }</span>
+<span class="c1"># Los guardaremos en el archivo prueba.txt, uno en cada linea.</span>
+
+<span class="n">lista_dic</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+  <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">w1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+  <span class="n">lista_dic</span><span class="o">.</span><span class="n">append</span><span class="p">({</span> <span class="s1">&#39;x&#39;</span> <span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span> <span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="n">i</span> <span class="p">:</span> <span class="p">[</span><span class="n">w0</span> <span class="p">,</span> <span class="n">w1</span><span class="p">]})</span>
+
+<span class="c1"># Guardamos en el archivo prueba.txt, línea por línea el diccionario.</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prueba.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lista_dic</span><span class="p">)):</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">lista_dic</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1"># \n pasa de renglón</span>
+
+<span class="c1"># Revisar el archivo prueba.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para leer debemos hacerlo también linea por linea, pues el archivo</span>
+<span class="c1"># no tiene la estructura lógica de un diccionario o lista</span>
+<span class="c1"># (debería abrir con { o [ y cerrar con } o  ],  respectivamente)</span>
+
+<span class="c1"># Ahora haremos una lista de diccionarios a partir de prueba.txt</span>
+
+<span class="n">lista_dic2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prueba.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lista_dic2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">linea</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_dic2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lista_dic2</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="n">lista_dic2</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># comprobamos que cada coordenada</span>
+<span class="c1"># es un diccionario</span>
+
+<span class="c1"># Importante:  las claves numéricas pasaron a str. Los valores matienen su tipo (int, list, etc)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_dic</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_dic2</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;3&#39;</span><span class="p">])</span> <span class="c1"># No estaría bien  print(lista_dic2[3][3])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Ejemplos de cosas que  <strong>NO</strong> funcionan.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="c1"># Si hacemos json.dumps()  de una string, Python lo hace, pero no es el resultado que esperamos.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="s2">&quot;{&#39;a&#39;: {2 : 0 }, &#39;b&#39;: {1 : 5 }}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># json.loads() en este caso devuelve una string!</span>
+<span class="c1"># y es una string que &quot;parece&quot; un diccionario. Pero no lo es.</span>
+<span class="c1"># z = json.loads(y) #  esto directamente da error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los lineamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
+</section>
+<section id="lectura-de-archivos-json-en-internet">
+<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Link to this heading">#</a></h2>
+<p>Para leer un archivo JSON desde internet utilizando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code> en Python, se puede hacer lo siguiente:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import requests
+</pre></div>
+</div>
+<p>Hcemos una solicitud HTTP GET al servidor que contiene el archivo JSON utilizando la función <code class="docutils literal notranslate"><span class="pre">get()</span></code> de <code class="docutils literal notranslate"><span class="pre">requests</span></code>. La respuesta de la solicitud será un objeto <code class="docutils literal notranslate"><span class="pre">Response</span></code> que contiene la información de la respuesta del servidor.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>response = requests.get(url)
+</pre></div>
+</div>
+<p>Donde <code class="docutils literal notranslate"><span class="pre">url</span></code> es la dirección URL del archivo JSON que deseamos leer.</p>
+<p>Verificamos que la solicitud se haya realizado correctamente en base al código de estado de la respuesta. Si el código de estado es <code class="docutils literal notranslate"><span class="pre">200</span></code>, significa que la solicitud se realizó correctamente.</p>
+<p>Si la solicitud se realizó correctamente, puedes acceder al contenido del archivo JSON utilizando el método <code class="docutils literal notranslate"><span class="pre">json()</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">Response</span></code>. Este método decodifica el contenido JSON y devuelve un objeto Python que representa los datos del archivo JSON.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if response.status_code == 200:
+    # El archivo JSON fue encontrado y cargado correctamente
+    data = response.json()
+else:
+    print(&#39;Hubo un problema al cargar el archivo JSON&#39;)
+</pre></div>
+</div>
+<p>El objeto data ahora contiene los datos del archivo JSON, los cuales podemos utilizar en tu programa como cualquier otro objeto Python.</p>
+<p><strong>Ejemplo.</strong> Leeremos un archivo de internet con los siguientes datos:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;catalog&quot;:
+    {&quot;book&quot;:
+    [
+        {&quot;@id&quot;: &quot;bk101&quot;,
+            &quot;author&quot;: [&quot;Gambardella, Matthew&quot;],
+            &quot;title&quot;: &quot;XML Developer&#39;s Guide&quot;,
+            &quot;genre&quot;: &quot;Computer&quot;,
+            &quot;price&quot;: &quot;44.95&quot;,
+            &quot;publish_date&quot;: &quot;2000-10-01&quot;,
+            &quot;description&quot;: &quot;An in-depth look at creating applications with XML.&quot;},
+        {&quot;@id&quot;: &quot;bk102&quot;,
+            &quot;author&quot;: [&quot;Ralls, Kim&quot;, &quot;Gambardella, Matthew&quot;],
+            &quot;title&quot;: &quot;Midnight Rain&quot;,
+            &quot;genre&quot;: &quot;Fantasy&quot;,
+            &quot;price&quot;: &quot;5.95&quot;,
+            &quot;publish_date&quot;: &quot;2000-12-16&quot;,
+            &quot;description&quot;: &quot;A former architect battles ...&quot;},
+        ...
+        ...
+    ]
+    }
+}
+</pre></div>
+</div>
+<p>El archivo completo se encuentra en</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://raw.githubusercontent.com/tirabo/Algoritmos-y-Programacion/main/2023/archivos/books.json
+</pre></div>
+</div>
+<p>Leamos el archivo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/tirabo/Algoritmos-y-Programacion/main/2023/archivos/books.json&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># El archivo JSON fue encontrado y cargado correctamente</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hubo un problema al cargar el archivo JSON&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imprimamos su contenido:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego si deseamos obtener metadatos del primer libro podemos hacer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;catalog&#39;</span><span class="p">][</span><span class="s1">&#39;book&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si deseamos imprimir los títulos de todos los libros podemos hacer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;catalog&#39;</span><span class="p">][</span><span class="s1">&#39;book&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">libro</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectura-y-escritura-de-archivos-xml">
+<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Link to this heading">#</a></h2>
+<p>Un archivo XML (Extensible Markup Language) es un tipo de archivo de texto que se utiliza para almacenar y transportar datos de manera estructurada. Un archivo XML está compuesto por una serie de etiquetas que definen elementos y atributos que describen la estructura y los datos contenidos en el archivo.</p>
+<p>Cada elemento en un archivo XML está compuesto por una etiqueta de apertura y una etiqueta de cierre, y puede contener elementos anidados y atributos. Por ejemplo, el siguiente es un ejemplo simple de un archivo XML que contiene información sobre una persona:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;persona&gt;
+&lt;nombre&gt;Juan&lt;/nombre&gt;
+&lt;edad&gt;30&lt;/edad&gt;
+&lt;ciudad&gt;Córdoba&lt;/ciudad&gt;
+&lt;/persona&gt;
+</pre></div>
+</div>
+<p>En este ejemplo, el elemento <code class="docutils literal notranslate"><span class="pre">persona</span></code> es el elemento raíz del archivo XML, y contiene tres elementos anidados: <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, <code class="docutils literal notranslate"><span class="pre">edad</span></code> y <code class="docutils literal notranslate"><span class="pre">ciudad</span></code>. Cada uno de estos elementos tiene un valor asociado, que se encuentra entre las etiquetas de apertura y cierre.</p>
+<p>Los archivos XML se utilizan comúnmente para intercambiar datos entre diferentes sistemas o aplicaciones, ya que proporcionan una forma estructurada y legible por máquinas para representar la información. También se pueden utilizar para definir y describir documentos y aplicaciones complejas, como documentos de ayuda en línea, aplicaciones web y formatos de archivo personalizados.</p>
+<p>Esta estructura se puede implmentar en JSON también:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;persona&#39;:  [{&#39;nombre&#39;: &#39;Juan&#39;}, {&#39;edad&#39;: &#39;30&#39;}, {&#39;ciudad&#39;: &#39;Córdoba&#39;}]
+</pre></div>
+</div>
+<p>Obviamente hay otras formas de hacerlo.</p>
+<section id="elementos-y-atributos">
+<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Link to this heading">#</a></h3>
+<p>En XML, los <em>elementos</em> son las partes principales de un documento XML y representan los distintos elementos de información que se están describiendo en el documento. Los elementos tienen un nombre que los identifica y pueden contener <em>otros elementos</em>, <em>atributos</em> o <em>texto</em>.</p>
+<p>Por ejemplo, en el siguiente fragmento de código XML, <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;ele&gt;</span></code> son elementos:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;trkpt lat=&quot;-30.9424310&quot; lon=&quot;-64.2770290&quot;&gt;
+    &lt;ele&gt;740.7&lt;/ele&gt;
+&lt;/trkpt&gt;
+</pre></div>
+</div>
+<p>Los <em>atributos</em>, por otro lado, proporcionan información adicional sobre los elementos y se utilizan para describir características específicas del elemento. Los atributos se incluyen dentro de la etiqueta del elemento y tienen un nombre y un valor.</p>
+<p>En el ejemplo anterior, <code class="docutils literal notranslate"><span class="pre">lat</span></code> y <code class="docutils literal notranslate"><span class="pre">lon</span></code> son atributos del elemento <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span></code>. El valor de los atributos se especifica entre comillas dobles después del nombre del atributo, separado por un signo igual.</p>
+<p>Los elementos y atributos en XML se utilizan para estructurar y describir los datos de forma clara y organizada. Los elementos proporcionan la estructura general del documento XML y los atributos permiten proporcionar información adicional sobre los elementos.</p>
+</section>
+<section id="xml-dom">
+<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Link to this heading">#</a></h3>
+<p>La biblioteca <code class="docutils literal notranslate"><span class="pre">xml.dom</span></code> de Python es una biblioteca estándar que proporciona una forma de analizar y manipular documentos XML mediante el modelo de objetos del documento (DOM, por sus siglas en inglés). El modelo DOM representa el documento XML como un árbol de nodos, donde cada nodo representa un elemento, atributo, texto u otro tipo de contenido en el documento.</p>
+<p>Para obtener elementos y atributos de un documento XML utilizando la biblioteca xml.dom, puedes seguir estos pasos:</p>
+<p>Importar la biblioteca y abrir el archivo XML:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import xml.dom.minidom
+# Abrir archivo XML
+doc = xml.dom.minidom.parse(&quot;archivo.xml&quot;)
+</pre></div>
+</div>
+<p>Si los datos vienen dados por una cadena, en vez de un archivo,  cambia un poco el código:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import xml.dom.minidom
+# Abrir cadena XML
+doc = xml.dom.minidom.parseString(xml_string)
+</pre></div>
+</div>
+<p>Obtener los elementos del documento mediante el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Obtener elementos
+elementos = doc.getElementsByTagName(&quot;nombre_del_elemento&quot;)
+</pre></div>
+</div>
+<p>Obtener los atributos de un elemento mediante el método <code class="docutils literal notranslate"><span class="pre">getAttribute</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Obtener atributo
+valor_atributo = elementos[0].getAttribute(&quot;nombre_del_atributo&quot;)
+</pre></div>
+</div>
+<p>Obtener el contenido de un elemento mediante el método <code class="docutils literal notranslate"><span class="pre">firstChild.nodeValue</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Obtener contenido
+contenido = elementos[0].firstChild.nodeValue
+</pre></div>
+</div>
+<p>En el ejemplo anterior, se utiliza <code class="docutils literal notranslate"><span class="pre">xml.dom.minidom</span></code> para parsear el archivo XML y convertirlo en un objeto <code class="docutils literal notranslate"><span class="pre">Document</span></code>. Luego, se utiliza el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> para obtener todos los elementos del documento con un nombre de etiqueta específico. Una vez que se tienen los elementos, se pueden obtener sus atributos utilizando el método <code class="docutils literal notranslate"><span class="pre">getAttribute</span></code> y su contenido utilizando la propiedad <code class="docutils literal notranslate"><span class="pre">firstChild.nodeValue</span></code>.</p>
+<p>Es importante tener en cuenta que el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> devuelve una lista de elementos, incluso si solo hay un elemento con el nombre de etiqueta especificado en el documento. Por lo tanto, en el ejemplo anterior se utiliza <code class="docutils literal notranslate"><span class="pre">elementos[0]</span></code> para acceder al primer elemento de la lista. Si se espera que solo haya un elemento con el nombre de etiqueta especificado en el documento, se puede utilizar <code class="docutils literal notranslate"><span class="pre">getElementsByTagName(nombre_del_elemento)[0]</span></code> para obtener directamente ese elemento.</p>
+</section>
+<section id="ejemplo">
+<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<p>Veamos ahora un archivo XML de internet,  con una estructura no demasiado complicada pero con más registros. El archivo que vamos a leer es <code class="docutils literal notranslate"><span class="pre">books.xml</span></code> y su estrucura es:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;catalog&gt;
+&lt;book id=&quot;bk101&quot;&gt;
+    &lt;author&gt;Gambardella, Matthew&lt;/author&gt;
+    &lt;title&gt;XML Developer&#39;s Guide&lt;/title&gt;
+    &lt;genre&gt;Computer&lt;/genre&gt;
+    &lt;price&gt;44.95&lt;/price&gt;
+    &lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;
+    &lt;description&gt;An in-depth look at creating applications
+    with XML.&lt;/description&gt;
+&lt;/book&gt;
+&lt;book id=&quot;bk102&quot;&gt;
+    &lt;author&gt;Ralls, Kim&lt;/author&gt;
+    &lt;author&gt;Gambardella, Matthew&lt;/author&gt;
+    &lt;title&gt;Midnight Rain&lt;/title&gt;
+    &lt;genre&gt;Fantasy&lt;/genre&gt;
+    &lt;price&gt;5.95&lt;/price&gt;
+    &lt;publish_date&gt;2000-12-16&lt;/publish_date&gt;
+    &lt;description&gt;A former architect battles corporate zombies,
+    an evil sorceress, and her own childhood to become queen
+    of the world.&lt;/description&gt;
+&lt;/book&gt;
+    ...
+    ...
+&lt;/catalog&gt;
+</pre></div>
+</div>
+<p>Es decir, es un catálogo de libros y  cada libro contiene información sobre el título,  su autor o autores,  etc. Observar que este archivo no puede ser representado en formato CSV, pues el elemento <code class="docutils literal notranslate"><span class="pre">author</span></code>se puede repetir un número indeterminado de veces.</p>
+<p>La ubicación del archivo es</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://raw.githubusercontent.com/tirabo/Algoritmos-y-Programacion/main/2023/archivos/books.xml
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/tirabo/Algoritmos-y-Programacion/main/2023/archivos/books.xml&#39;</span><span class="p">)</span>
+<span class="n">xml_string</span> <span class="o">=</span> <span class="n">respuesta</span><span class="o">.</span><span class="n">content</span>
+<span class="n">respuesta</span><span class="o">.</span><span class="n">status_code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">200</span></code> nos indica que el archivo ha sido leido sin inconvenientes.</p>
+<p>Ahora procederemos a “parsear”  el archivo (que es un XML), usando las instrucciones que vimos más arriba:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xml.dom.minidom</span>
+<span class="c1"># Abrir cadena XML</span>
+<span class="n">dom</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">dom</span><span class="o">.</span><span class="n">minidom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="n">xml_string</span><span class="p">)</span> <span class="c1"># cuando viene dado por una cadena</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tipo  de dom:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">dom</span><span class="p">))</span>
+<span class="c1"># Obtener elementos</span>
+<span class="n">elementos</span> <span class="o">=</span> <span class="n">dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;book&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El  primer elemento book:&#39;</span><span class="p">,</span><span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El  segundo elemento book:&#39;</span><span class="p">,</span><span class="n">elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># Obtener atributo</span>
+<span class="n">valor_atributo</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Atributo </span><span class="se">\&#39;</span><span class="s1">id</span><span class="se">\&#39;</span><span class="s1"> del primer elemento </span><span class="se">\&#39;</span><span class="s1">book</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">valor_atributo</span><span class="p">)</span>
+<span class="n">valor_atributo_1</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Atributo </span><span class="se">\&#39;</span><span class="s1">id</span><span class="se">\&#39;</span><span class="s1"> del segundo elemento </span><span class="se">\&#39;</span><span class="s1">book</span><span class="se">\&#39;</span><span class="s1">:&#39;</span><span class="p">,</span> <span class="n">valor_atributo_1</span><span class="p">)</span>
+
+<span class="c1"># Obtener contenido</span>
+<span class="n">contenido</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">nodeValue</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">contenido</span><span class="p">),</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">contenido</span><span class="p">)</span> <span class="c1"># no hay contenido de texto</span>
+<span class="n">autor</span> <span class="o">=</span> <span class="n">elementos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">)</span>
+<span class="n">contenido</span> <span class="o">=</span> <span class="n">autor</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">nodeValue</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El primer autor del primer libro es:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">contenido</span><span class="p">),</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">contenido</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que el segundo libro tiene dos autores, por lo tanto para recuperar todos los autores por cada <code class="docutils literal notranslate"><span class="pre">id</span></code> podemos hacer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">libros</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">elementos</span><span class="p">:</span>
+    <span class="n">id_libro</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+    <span class="n">autores_obj</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;author&quot;</span><span class="p">)</span>
+    <span class="n">autores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">autor</span> <span class="ow">in</span> <span class="n">autores_obj</span><span class="p">:</span>
+        <span class="n">autores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">autor</span><span class="o">.</span><span class="n">firstChild</span><span class="o">.</span><span class="n">nodeValue</span><span class="p">)</span>
+    <span class="n">libros</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">id_libro</span><span class="p">,</span>  <span class="n">autores</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">libros</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">libro</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="uso-de-apis">
+<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Link to this heading">#</a></h2>
+<p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen e intercambien datos entre sí. Es como un puente que conecta aplicaciones y les permite compartir información y funcionalidades.</p>
+<p>Por ejemplo, (ver [2]), si se tiene una app para móviles acerca de recetas y se hace una búsqueda de una determinada receta, se puede utilizar una API para que esta aplicación se comunique con el sitio web de recetas y pida las recetas que cumplen con los criterios de búsqueda. La API entonces se encarga de recibir la solicitud, buscar las recetas apropiadas y regresar los resultados a la aplicación. Una API es una forma de conectar diferentes aplicaciones y hacer que trabajen juntas de manera más eficiente y efectiva. Son usadas generalmente en las bibliotecas.</p>
+<p>Las APIS <em>no</em> son lenguaje dependientes,  es decir cualquier lenguaje moderno de programación (Python, Java, C++, etc) puede invocar y utilizar una API bien definida.</p>
+<p>Algunas características clave de las APIs:</p>
+<ul class="simple">
+<li><p>Permiten que aplicaciones se comuniquen de manera segura y controlada, sin exponer todos los detalles internos de cada sistema. [1][2][4]</p></li>
+<li><p>Proporcionan una forma estandarizada y documentada para que los desarrolladores puedan acceder a los datos y funcionalidades de otras aplicaciones. [1][2][4]</p></li>
+<li><p>Facilitan el desarrollo de aplicaciones al permitir reutilizar funciones y datos existentes, en lugar de tener que crearlos desde cero. [1][4]</p></li>
+<li><p>Pueden ser públicas (abiertas al público), privadas (solo para uso interno) o asociadas a socios comerciales. [1][4]</p></li>
+<li><p>Utilizan protocolos como HTTP, REST y SOAP para definir cómo se realizan las solicitudes y respuestas entre aplicaciones. [3][4]</p></li>
+</ul>
+<p>En resumen, las APIs son la forma en que las aplicaciones se comunican y comparten información de manera segura y estandarizada, lo que permite a los desarrolladores crear nuevas funcionalidades y experiencias de usuario más rápidamente. [1][4]</p>
+<p>Referencias:</p>
+<ul class="simple">
+<li><p>[1] <a class="reference external" href="https://www.ibm.com/topics/api">https://www.ibm.com/topics/api</a></p></li>
+<li><p>[2] <a class="reference external" href="https://es.wikipedia.org/wiki/API">https://es.wikipedia.org/wiki/API</a></p></li>
+<li><p>[3] <a class="reference external" href="https://www.techtarget.com/searchapparchitecture/definition/application-program-interface-API">https://www.techtarget.com/searchapparchitecture/definition/application-program-interface-API</a></p></li>
+<li><p>[4] <a class="reference external" href="https://www.mulesoft.com/resources/api/what-is-an-api">https://www.mulesoft.com/resources/api/what-is-an-api</a></p></li>
+<li><p>[5] <a class="reference external" href="https://www.computer.org/publications/tech-news/trends/what-are-apis/">https://www.computer.org/publications/tech-news/trends/what-are-apis/</a></p></li>
+</ul>
+<section id="ejemplo-la-api-del-noaa">
+<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Link to this heading">#</a></h3>
+<p>La Oficina Nacional de Administración Oceánica y Atmosférica (National Oceanic and Atmospheric Administration, NOAA) es una agencia científica del Departamento de Comercio de los Estados Unidos cuyas actividades se centran en monitorear las condiciones de los océanos y la atmósfera.</p>
+<p>El NOAA ofrece distintos <em>datasets</em> (conjuntos de datos estructurados) sin limitaciones. Los datos puedes ser bajados directamente del sitio web <a class="reference external" href="https://www.noaa.gov/">https://www.noaa.gov/</a> o, alternativamente, accedidos por API.</p>
+<p>En esta sección accederemos a los datasets utilizando la API. Para utilizar la API se debe solicitar  un <em>token</em> al NOAA (ver <em>Referencias</em>, más abajo). El token es una cadena de caracteres que funciona como id y password al mismo tiempo.</p>
+<p>Ahora utilizaremos un token obtenido para esta clase,  pero pueden obtener rápidamente una en forma individual.</p>
+<p>Si al comienzo ponemos</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import requests
+token = &#39;nuestro token&#39;
+my_headers = {&#39;token&#39; : token}
+response = requests.get(&#39;https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets&#39;, headers=my_headers)
+respuesta = response.json()
+resultados = respuesta[&#39;results&#39;] # Datasets disponible
+for w in resultados:
+  pass
+  print(w[&#39;uid&#39;],&#39;:&#39;,w[&#39;name&#39;])
+</pre></div>
+</div>
+<p>obtendremos el <code class="docutils literal notranslate"><span class="pre">id</span></code> de cada uno de los datasets ofrecidos por el NOAA via API y una breve descripción de los mismos.</p>
+<p>Implementamos el código de más arriba agregando el token y  excepciones para que el código sea más robusto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;LsJXpYprYMzOKjMtqAlDmMUzwGelIQDf&#39;</span>
+<span class="n">my_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;token&#39;</span> <span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+<span class="k">try</span> <span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">my_headers</span><span class="p">)</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="c1"># imprime en la terminal el error que se produjo</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="mi">550</span>
+
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">resultados</span> <span class="o">=</span> <span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span> <span class="c1"># Datasets disponible</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">resultados</span><span class="p">:</span>
+    <span class="k">pass</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="s1">&#39;uid&#39;</span><span class="p">],</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">w</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gov.noaa.ncdc:C00861 : Daily Summaries
+gov.noaa.ncdc:C00946 : Global Summary of the Month
+gov.noaa.ncdc:C00947 : Global Summary of the Year
+gov.noaa.ncdc:C00345 : Weather Radar (Level II)
+gov.noaa.ncdc:C00708 : Weather Radar (Level III)
+gov.noaa.ncdc:C00821 : Normals Annual/Seasonal
+gov.noaa.ncdc:C00823 : Normals Daily
+gov.noaa.ncdc:C00824 : Normals Hourly
+gov.noaa.ncdc:C00822 : Normals Monthly
+gov.noaa.ncdc:C00505 : Precipitation 15 Minute
+gov.noaa.ncdc:C00313 : Precipitation Hourly
+</pre></div>
+</div>
+</div>
+</div>
+<p>La API permite una variedad de consultas, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejemplo: datasets  disponible en la ciudad US390029</span>
+<span class="k">try</span> <span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets?locationid=CITY:US390029&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">my_headers</span><span class="p">)</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="c1"># imprime en la terminal el error que se produjo</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="mi">550</span>
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>nos devuelve todos los datasets disponibles para determinada localidad,  en este caso <code class="docutils literal notranslate"><span class="pre">US390029</span></code> que es la ciudad de Zanesville, OH US.</p>
+<p>También podemos obtener, por ejemplo, datos climatológicos de una determinada localidad durante un período determinado de tiempo: la consulta</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Datos climatológicos diarios (temperatura máxima, temperatura mínima y precipitaciones) en un período de tiempo en</span>
+<span class="c1"># la estación meteorológica  AR000087344 (Aeropuerto de Córdoba)</span>
+<span class="n">fecha_ini</span><span class="p">,</span> <span class="n">fecha_fin</span> <span class="o">=</span> <span class="s1">&#39;2024-04-24&#39;</span><span class="p">,</span> <span class="s1">&#39;2024-04-30&#39;</span>
+<span class="k">try</span> <span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&amp;stationid=GHCND:AR000087344&amp;limit=1000&amp;units=metric&amp;startdate=&#39;</span><span class="o">+</span><span class="n">fecha_ini</span><span class="o">+</span><span class="s1">&#39;&amp;enddate=&#39;</span><span class="o">+</span><span class="n">fecha_fin</span><span class="o">+</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">my_headers</span><span class="p">)</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="c1"># imprime en la terminal el error que se produjo</span>
+    <span class="n">status_code</span> <span class="o">=</span> <span class="mi">550</span>
+<span class="n">respuesta</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">respuesta</span><span class="p">))</span>
+<span class="k">for</span>  <span class="n">item</span> <span class="ow">in</span> <span class="n">respuesta</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+metadata
+results
+</pre></div>
+</div>
+</div>
+</div>
+<p>nos devuelve un sumario de temperaturas y precipitaciones diarias en el mes de mayo de la estación meteorológica del Aeropuerto de Córdoba,  que está codificada <code class="docutils literal notranslate"><span class="pre">AR000087344</span></code>.</p>
+<p>Observar que la respuesta recibida puede ser convertida a JSON, pues así lo permite la API. En  este caso particular, la respuesta JSON es un diccionario con dos claves: <code class="docutils literal notranslate"><span class="pre">metadata</span></code> y <code class="docutils literal notranslate"><span class="pre">results</span></code>. El campo <code class="docutils literal notranslate"><span class="pre">metadata</span></code> nos da información sobre tipo de datos, formato, etc. Mientras que <code class="docutils literal notranslate"><span class="pre">results</span></code> es el contenido que nos interesa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 14, &#39;limit&#39;: 1000}}
+[{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}, {&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}, {&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">respuesta['results']</span></code>es una lista con datos meteorológicos de la localidad en el período especificado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">data</span> <span class="ow">in</span> <span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}
+{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}
+{&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}
+{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}
+{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}
+{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}
+{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}
+{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}
+{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}
+{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}
+{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que cada elemento de  <code class="docutils literal notranslate"><span class="pre">resultados</span></code> es un diccionario y en ese diccionario  estan las claves<code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">datatype</span></code> y <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code> indica el día.</p></li>
+<li><p>Si el <code class="docutils literal notranslate"><span class="pre">datatype</span></code> es <code class="docutils literal notranslate"><span class="pre">TMAX</span></code>,  entonces <code class="docutils literal notranslate"><span class="pre">value</span></code> indica la temperatura máxima del día.</p></li>
+<li><p>Si el <code class="docutils literal notranslate"><span class="pre">datatype</span></code> es <code class="docutils literal notranslate"><span class="pre">TMIN</span></code>,  entonces <code class="docutils literal notranslate"><span class="pre">value</span></code> indica la temperatura mínima del día.</p></li>
+<li><p>Si el <code class="docutils literal notranslate"><span class="pre">datatype</span></code> es <code class="docutils literal notranslate"><span class="pre">TAVG</span></code>,  entonces <code class="docutils literal notranslate"><span class="pre">value</span></code> indica la temperatura promedio del día.</p></li>
+<li><p>Si el <code class="docutils literal notranslate"><span class="pre">datatype</span></code> es <code class="docutils literal notranslate"><span class="pre">PRCP</span></code>,  entonces <code class="docutils literal notranslate"><span class="pre">value</span></code> indica la precipitación (en mm) de ese día.</p></li>
+</ul>
+<p>Es importante notar que no todos los datos se encuentran para todos los días.</p>
+<p>En las referencias a continuación se encuentra como obtener el token, la descripción de la API, la lista de estaciones meteorológicas y mucha más información.</p>
+<p><em>Referencias</em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.ncdc.noaa.gov/">https://www.ncdc.noaa.gov/</a> National Centers for Environmental Information (37 petabytes)</p></li>
+<li><p><a class="reference external" href="https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation">https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation</a></p></li>
+<li><p>Para bajar estaciones meteorolgógicas:  <a class="reference external" href="https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt">https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt</a></p></li>
+<li><p><a class="reference external" href="https://www.ncdc.noaa.gov/ghcn-daily-description">https://www.ncdc.noaa.gov/ghcn-daily-description</a></p></li>
+<li><p>Para bajar manual de ghcn-daily: <a class="reference external" href="https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt">https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt</a></p></li>
+<li><p>Para pedir token: <a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web/token">https://www.ncdc.noaa.gov/cdo-web/token</a></p></li>
+<li><p>Climate Data Online - Web Services Documentation: <a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted">https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted</a></p></li>
+<li><p>Manual genérico para uso de APIs en Python: <a class="reference external" href="https://www.nylas.com/blog/use-python-requests-module-rest-apis/">https://www.nylas.com/blog/use-python-requests-module-rest-apis/</a></p></li>
+</ul>
+</section>
+<section id="otros-ejemplos-de-apis">
+<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Link to this heading">#</a></h3>
+<p>Algunas APIs interesantes para practicar son:</p>
+<ul class="simple">
+<li><p><strong>PokéAPI</strong>: Proporciona datos sobre Pokémon como movimientos, habilidades, tipos, etc. Permite crear fácilmente un Pokédex. [2][3]</p></li>
+<li><p><strong>API de la NASA</strong>: Permite acceder a datos de la NASA como imágenes de satélites, clima en Marte, etc. Requiere registro para obtener acceso a algunos datos. [1][2]</p></li>
+<li><p><strong>API de Marvel</strong>: Ofrece contenido de Marvel como personajes, cómics, películas y videojuegos. Requiere registro en <a class="reference external" href="http://developer.marvel.com">developer.marvel.com</a>. [3]</p></li>
+<li><p><strong>COVID Tracking API</strong>: Proporciona datos de COVID-19 a nivel mundial como contagios, pruebas, hospitalizaciones y muertes. [3]</p></li>
+<li><p><strong>OpenWeather APIs</strong>: Permite obtener información meteorológica actual, histórica y pronósticos. También ofrece mapas. [3]</p></li>
+</ul>
+<p>Todas estas APIs son de datos públicos,  algunas requieren registro. Tambén algunas pueden tener un límite diario de consultas.</p>
+<p>Las siguientes APIs  son de suma utilidad para algunos desarrolladores, pero o bien son pagas o bien requieren un un complicado proceso de registro. O  ambas cosas!</p>
+</section>
+</section>
+<section id="apis-de-servicios-populares">
+<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>API de Google Maps</strong>: Agrega funcionalidades de mapas a aplicaciones web como mostrar ubicaciones, calcular rutas, obtener direcciones. [4]</p></li>
+<li><p><strong>API de Facebook</strong>: Integra funcionalidades sociales como compartir contenido, autenticación de usuarios, conexión a la red de Facebook. [4]</p></li>
+<li><p><strong>API de Twitter</strong>: Permite enviar y recibir tweets, buscar tweets, compartir contenido a través de Twitter. [4]</p></li>
+</ul>
+<p>Referencias:</p>
+<ul class="simple">
+<li><p>[1] <a class="reference external" href="https://platzi.com/blog/12-api-gratis-para-desarrolladores-frontend/">https://platzi.com/blog/12-api-gratis-para-desarrolladores-frontend/</a></p></li>
+<li><p>[2] <a class="reference external" href="https://www.youtube.com/watch?v=xOsqjAyIWwI">https://www.youtube.com/watch?v=xOsqjAyIWwI</a></p></li>
+<li><p>[3] <a class="reference external" href="https://ed.team/blog/las-mejores-apis-publicas-para-practicar">https://ed.team/blog/las-mejores-apis-publicas-para-practicar</a></p></li>
+<li><p>[4] <a class="reference external" href="https://www.nucba.com.ar/blog/posts/mejores-apis-para-practicar">https://www.nucba.com.ar/blog/posts/mejores-apis-para-practicar</a></p></li>
+<li><p>[5] <a class="reference external" href="https://www.youtube.com/watch?v=ZgV3ohcNXYQ">https://www.youtube.com/watch?v=ZgV3ohcNXYQ</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="16_Input_y_output.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Input y output</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="18_NumPy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introducción a NumPy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-json">2. Lectura y escritura de archivos JSON</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-json-en-internet">3. Lectura de archivos JSON en internet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-xml">4. Lectura y escritura de archivos XML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-y-atributos">4.1. Elementos y atributos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xml-dom">4.2. xml.dom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo">4.3. Ejemplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-apis">5. Uso de APIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-la-api-del-noaa">Ejemplo: la API del NOAA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-ejemplos-de-apis">Otros ejemplos de APIs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apis-de-servicios-populares">APIs de servicios populares</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
