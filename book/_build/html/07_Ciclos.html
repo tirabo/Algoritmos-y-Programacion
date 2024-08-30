@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -191,6 +191,21 @@
 <li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ciclos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -2259,7 +2274,11 @@ fin de Collatz para m = 1048576 en 20 pasos
 </div>
 <p>La pregunta difícil es si podemos probar que este programa termina para <em>todos</em> los valores positivos de <code class="docutils literal notranslate"><span class="pre">n</span></code>. Hasta ahora, nadie ha podido probarlo o refutarlo, pero se conjetura que el algoritmo siempre termina. Para más información ver en Wikipedia <a class="reference external" href="https://es.wikipedia.org/wiki/Conjetura_de_Collatz">“Conjetura de Collatz”</a> o el vídeo <a class="reference external" href="https://youtu.be/094y1Z2wpJg">“El problema matemático más simple que nadie puede resolver - Conjetura de Collatz”</a>.</p>
 <p>Veamos otro ejemplo del ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>. Definamos la función <code class="docutils literal notranslate"><span class="pre">raiz_entera()</span></code> que dado un entero no negativo  <code class="docutils literal notranslate"><span class="pre">n</span></code> devuelve la raíz cuadrada entera de <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
-<p><em>Definición.</em> Sea <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Entonces <span class="math notranslate nohighlight">\(k\)</span> es la <em>raíz entera de <span class="math notranslate nohighlight">\(n\)</span></em> si $<span class="math notranslate nohighlight">\(k^2 \le n &lt; (k+1)^2.\)</span>$</p>
+<p><em>Definición.</em> Sea <span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>. Entonces <span class="math notranslate nohighlight">\(k\)</span> es la <em>raíz entera de <span class="math notranslate nohighlight">\(n\)</span></em> si</p>
+<div class="math notranslate nohighlight">
+\[
+k^2 \le n &lt; (k+1)^2.
+\]</div>
 <p>Imprimiendo la lista de cuadrados de 1 a 19 podemos ver que la raíz entera de <code class="docutils literal notranslate"><span class="pre">200</span></code> es <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
