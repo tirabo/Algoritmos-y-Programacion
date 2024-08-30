@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dibujando con una tortuga &#8212; Algoritmos y Programación</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_Dibujando_con_Python_Turtle';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Algoritmos y Programación: introducción" href="00_Introduccion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00_Introduccion.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Algoritmos y Programación - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Algoritmos y Programación - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_Introduccion.html">
+                    Algoritmos y Programación: introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dibujando con  una tortuga</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_Dibujando_con_Python_Turtle.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/01_Dibujando_con_Python_Turtle.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dibujando con  una tortuga</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primeros-pasos">1. Primeros pasos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos">2. Ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos-anidados">2. Ciclos anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-condicionales">3. Instrucciones condicionales</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="dibujando-con-una-tortuga">
+<h1>Dibujando con  una tortuga<a class="headerlink" href="#dibujando-con-una-tortuga" title="Link to this heading">#</a></h1>
+<p>Para comenzar a programar en Python utilizaremos Colab y una biblioteca que nos permite dibujar en  pantalla.</p>
+<p>Colab Turtle es una implementación de Python Turtle que se ejecuta en Google Colaboratory, un entorno de desarrollo en línea gratuito que permite a los usuarios escribir y ejecutar código Python en un navegador web. Python Turtle es un módulo de Python que permite a los usuarios crear gráficos utilizando una tortuga virtual. Los usuarios pueden controlar la tortuga mediante comandos de Python para dibujar formas y patrones en la pantalla.</p>
+<p>Para utilizar Colab Turtle necesitamos instalar la <em>biblioteca</em> de instrucciones “ColabTurtle”. La instalamos ejecutando la línea de la celda siguiente, clicando <img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAkCAYAAADsHujfAAABcklEQVRYCe2VvQ2DMBCFMxsttNBCyw4wBEMwBC1DULOJo1c86XKyzz+JIgoX1tnGPn9595PXfd/uCeP1BAgwVBAdiapIVUQroNc1R36myHmebts2N8/zx8AevumHYuvs0BzH4YZhcE3TmGOaJoezMQB+zwJZlsV83Ae3rmsSTDLIOI7ZEASDOvzlIZsEUqIEIWhjykRBEGc6+9ZaORMF6fs+CIJw5ahlhcgEQRlaKqB0EfN9313btuZZ+gmVtgmCnkAHPksQwOCBlISGT1/CmiB4yAfAPQkC59d1RUOl7xDqpyB0aoXq7yBd13nV/AsIQoN+wdD5bBFIbrKiPH2Py72iZM0p31AoJATmReWL5LMaGhSIhUKCoLyZ0NqaVYPDj2nxgMlp41IBOYcPrYJcRxXh4ZSuKR+Wcysk9J8MggslysSUKALBJeRMijo4Y/3tE4A2SxFegkUZoiegQcmBvVCJyvt6XgyiHX27riBawcco8gakA+ZpeypPEgAAAABJRU5ErkJggg==" />:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>ColabTurtle
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ColabTurtle in c:\users\tirab\documents\github\algoritmos-y-programacion\envs\ayp\lib\site-packages (2.1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install ColabTurtlePlus  # implementacón alternativa, parecido pero cambian los dibujos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con la siguiente instrucción haremos accesible todas las funciones e instrucciones de la biblioteca Colab Trurtle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ColabTurtle.Turtle</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from ColabTurtlePlus.Turtle import * # implementacón alternativa, parecido pero cambian los dibujos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="primeros-pasos">
+<h2>1. Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Link to this heading">#</a></h2>
+<p>Para dibujar necesitamos un “pizarrón”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="200.0" x2="350.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="200.0" x2="350.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(90,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>El “juego” consiste en mover la tortuga y dibujar.</p>
+<p>Movamos para adelante la tortuga 50 posiciones</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por supuesto,  hay una instrucción para girar la tortuga: <code class="docutils literal notranslate"><span class="pre">left(n)</span></code> gira la  tortuga  a la izquierda <code class="docutils literal notranslate"><span class="pre">n</span></code> grados. La frase “a la izquierda” significa en contra del sentido de giro de las agujas de un reloj.</p>
+<p>Por ejemplo,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto nos permite dibujar una “L” con los dos lados iguales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No se nota demasiado que los dos lados son iguales, pero  podemos esconder la tortuga para ver mejor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mostremos la tortuga de nuevo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">showturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terminemos nuestro primer dibujo dibujando un cuadrado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 1.</strong> Dibujar una escalera como la siguiente:</p>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWAAAAFwCAYAAACGt6HXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAahSURBVHhe7dwxTltZFIDhZ6ZJmdYrcBvS0sAG2AIbQbKR2BekcJ3aK6BkB3iC50oTjYZJ8IT8gL9POuLoiuoVv6wrP8+madp+GwB+s6PxF4DfTIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAAz9ltVpN9/f3u3nc+TW2xhjzX3N+fr79p8ezf/tf8/PjEzDwQ8fHx2P72+fPn8fGvgQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgIEfms1mY+NXEmCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADe9lut2NjXwIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFgDtrNzc308PCwe6vLPD3L5XI8MX4lAeZgXV9fT6enp9NsNhsnPMdisRgb+xJgDtbJycnY2Md8Ph8b+xJgDtbd3d3Y2Md6vR4b+xJgDtZmsxkbz/F4J3x7eztdXl6OE/YlwPCdq6ur3Z2weXqOjo6ms7Oz8cT4PwQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAHKzHt7qgJMAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQGG72y327HByxNggIgAA0QEGCAiwAARAQaICDBARIABIgIMEBFggIgAv0M3NzfTw8PD7q0u8/Qsl8vxxKAhwO/M9fX1dHp6Os1ms3HCcywWi7HByxPgd+bk5GRs7GM+n48NXp4AvzN3d3djYx/r9Xps8PIE+J3ZbDZj4zke74Rvb2+ny8vLcQIvT4APwNXV1e5O2Dw9R0dH09nZ2Xhi8HsIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgN+Zx7e6gLdBgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAgwQEWCAiAADRAQYICLAABEBBogIMEBEgAEiAnwAttvt2IDXRIABIgIMEBFggIgAA0QEGCAiwAARAQaICDBARIABIm8mwKvVarq/v9+91WWenuVyOZ4Y8Nq9iQCfn5/vwvLx48dxwnMsFouxAa/Jmwjw8fHx2NjHfD4fG/CavIkAf/36dWzsY71ejw14Tf74Nqu/1tdrs9lMs9ls+vTp0/Thw4dxyo883gl/+fJluri4GCfAazL7Nn6rECDga2gAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAASICDBARYICIAANEBBggIsAAEQEGiAgwQESAARLT9CdbhlnuLYVKHgAAAABJRU5ErkJggg==" /></p>
+<p>Como la consigna no es precisa (matemáticamente hablando) hay cierto grado de libertad en la  ubicación y tamaño de la escalera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dibujar zigzag (un símbolo # al comienzo de una linea es un comentario)</span>
+<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span> <span class="c1"># equivalente a rigth(90)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="460.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="460.0" y1="250.0" x2="460.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="460.0" y1="190.0" x2="520.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="520.0" y1="190.0" x2="520.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="520.0" y1="130.0" x2="580.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="580.0" y1="130.0" x2="580.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(360,580.0,70.0) translate(562.0, 52.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+</section>
+<section id="ciclos">
+<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Link to this heading">#</a></h2>
+<p>Un ciclo en programación es una estructura que permite repetir un conjunto de instrucciones varias veces. Los ciclos son útiles cuando se necesita realizar una tarea varias veces, en lugar de escribir las mismas instrucciones una y otra vez. En Python, hay dos tipos de ciclos: el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> y el ciclo   <code class="docutils literal notranslate"><span class="pre">while</span></code>. El ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> se utiliza para iterar un número determinado de veces, mientras que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> se utiliza para repetir un conjunto de instrucciones mientras se cumpla una condición determinada.</p>
+<p>Ahora utilizaremos el  ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para simplificar la forma en que dibujamos el cuadrado.</p>
+<p>Lo primero que debemos hacer para comenzar un nuevo dibujo es “olvidarnos” del  pizarrón viejo y  crear uno nuevo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="200.0" x2="350.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="200.0" x2="350.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Ahora peguemos las instrucciones que nos permitieron dibujar el  cuadrado y ejecutémolas todas juntas (sin ocultar la tortuga):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observar que repetimos cuatro veces las instrucciones</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    forward(50)
+    left(90)
+</pre></div>
+</div>
+<p>¿Hay una forma de hacerlo sin repetir la escritura de las instrucciones? Sí, por supuesto.</p>
+<p>La escritura no es muy didáctica, pero posteriormente en el curso quedará más claro.</p>
+<p>La forma de hacerlo  en general es</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    for _ in range(n):
+        &lt;instrucciones&gt;
+</pre></div>
+</div>
+<p>repite <span class="math notranslate nohighlight">\(n\)</span> veces el conjunto de instrucciones que están por debajo y  corridas 4 espacios respecto al <code class="docutils literal notranslate"><span class="pre">for</span></code>. En nuestro caso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="200.0" x2="350.0" y2="200.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="200.0" x2="350.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="350.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,400.0,250.0) translate(382.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>La instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code> crea un <em>ciclo</em> que es una estructura que repite instrucciones dentro de un programa. Los ciclos son una parte fundamental de los programas y sin ciclos la utilidad de las computadoras sería muy limitada.</p>
+<p><strong>Ejercicio 2.</strong> Dibujar la escalera del ejercicio 1 utilizando un <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dibujar escalera con for</span>
+<span class="c1"># Dibujar zigzag (un símbolo # al comienzo de una linea es un comentario)</span>
+<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span> <span class="c1"># equivalente a rigth(90)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="460.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="460.0" y1="250.0" x2="460.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="460.0" y1="190.0" x2="520.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="520.0" y1="190.0" x2="520.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="520.0" y1="130.0" x2="580.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="580.0" y1="130.0" x2="580.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(360,580.0,70.0) translate(562.0, 52.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+</section>
+<section id="ciclos-anidados">
+<h2>2. Ciclos anidados<a class="headerlink" href="#ciclos-anidados" title="Link to this heading">#</a></h2>
+<p>Uno de los asuntos más delicados en la programación es la anidación de bucles o ciclos, cuando se pone un ciclo dentro de otro. Es fuente de muchos errores.</p>
+<p>Para perderle el miedo y minimizar errores lógicos lo mejor es practicar.</p>
+<p>Ahora, para ejemplificar, nuestro objetivo será dibujar 4 cuadrados como el anterior de tal forma que se haga un dibujo como este:</p>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEbCAYAAAA8iPpEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAbHSURBVHhe7d0xiiJNHMbh9kuEuYEnMPQAJp5API6ZCt7IA3TkBQwG5gTGmgmin71bvC67srCwzljL88CfqZ4xKGj4MdUd2Gua5nobgOa/8hNAEIA7QQBCEIAQBCC8ZajUer1uxuNxs9/vm4+Pj/Lbu16vu7Wf6+3trRmNRs3pdGrm83nz/v5e/kItBKFCbds2k8mkXL2m8/n8LQ6iUBdBqNDlcvmS/wD+1GazaabTabmiBp4hVKiGGHT6/X5ZUQtB4Gl2u11ZUQtHhgpdr7/estVqVVaf58d9dM80fn6u0e1puVyWK2rR3VVT0Tzy6HOfOYvFouzk7haDh581rzuODEAIAhCCwF9Ry5sPfk8QgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQeJrrgy+l5bUJAhCCAIQgACEI/4juvP6Vs1gsyk6omSDwNMPhsKyohSDwNIPBoKyohSBU6Hg8ltVr2263ZUVNupfFpqKZzWbXw+FwO7q/psvlcm3b9uHezWtPrywAHBmAO0EAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIDo3eb6fUlN1ut1Mx6Pm/1+33x8fJTf3vV63a39XG9vb81oNGpOp1Mzn8+b9/f38hdqIQgVatu2mUwm5eo1nc/nb3EQhboIQoUul8uX/AfwpzabTTOdTssVNfAMoUI1xKDT7/fLiloIAk+z2+3Kilo4MlToev31lq1Wq7L6PD/uo3um8fNzjW5Py+WyXFGL7q6aiuaRR5/7zFksFmUnd7cYPPysed1xZABCEIAQBP6KWt588HuCAIQgACEIQAgCEIIAhCAAIQhACAIQggCEIAAhCEAIAhCCAIQgACEIQAgCEIIAhCAAIQhACAIQggCEIAAhCEAIAhCCwNNcH3wpLa9NEIAQBCAEAQhB+Ed05/WvnMViUXZCzQSBpxkOh2VFLQSBpxkMBmVFLQShQsfjsaxe23a7LStq0r0sNhXNbDa7Hg6H29H9NV0ul2vbtg/3bl57emUB4MgA3AkCEIIAhCAAIQhACAIQggCEIAAhCEAIAhCCAIQgACEIQAgCEIIAhCAAIQhACAIQggCEIAAhCEAIAhCCAIQgACEIQAgCEIIAhCAAIQhACAIQggBE7zbX70tqsl6vm/F43Oz3++bj46P89q7X627t53p7e2tGo1FzOp2a+XzevL+/l79QC0GoUNu2zWQyKVev6Xw+f4uDKNRFECp0uVy+5D+AP7XZbJrpdFquqIFnCBWqIQadfr9fVtRCEHia3W5XVtTCkaFC1+uvt2y1WpXV5/lxH90zjZ+fa3R7Wi6X5YpadHfVVDSPPPrcZ85isSg7ubvF4OFnzeuOIwMQggCEIPBX1PLmg98TBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBJ7m+uBLaXltggCEIAAhCEAIwj+iO69/5SwWi7ITaiYIPM1wOCwraiEIPM1gMCgraiEIFToej2X12rbbbVlRk+5lsaloZrPZ9XA43I7ur+lyuVzbtn24d/Pa0ysLAEcG4E4QgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgBAEIQQBCEIAQBCAEAQhBAEIQgBAEIAQBCEEAQhCAEAQgere5fl9Sk/V63YzH42a/3zcfHx/lt3e9XndrP9fb21szGo2a0+nUzOfz5v39vfyFWghChdq2bSaTSbl6Tefz+VscRKEuglChy+XyJf8B/KnNZtNMp9NyRQ08Q6hQDTHo9Pv9sqIWgsDT7Ha7sqIWjgwVul5/vWWr1aqsPs+P++ieafz8XKPb03K5LFfUorurpqJ55NHnPnMWi0XZyd0tBg8/a153HBmAEAQgBIG/opY3H/yeIAAhCEAIAhCCAIQgACEIQAgCEIIAhCAAIQhACAIQggCEIAAhCEAIAhCCAIQgACEIQAgCEIIAhCAAIQhACAIQggCEIPA01wdfSstrEwQgBAEIQQBCEP4R3Xn9K2exWJSdUDNB4GmGw2FZUQtB4GkGg0FZUQtBqNDxeCyr17bdbsuKmnQvi01FM5vNrofD4XZ0f02Xy+Xatu3DvZvXnl5ZADgyAHeCAIQgACEIQAgCEIIAhCAAIQhA0TT/A0+b63nIdxfCAAAAAElFTkSuQmCC" /></p>
+<p>Tenemos la forma de dibujar un cuadrado,  ahora queremos dibujar 4 cuadrados aislados. Primero dibujemos un cuadrado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="250.0" x2="400.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,400.0,190.0) translate(382.0, 172.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Ahora, nos movemos hacia arriba para dibujar el siguiente cuadrado. Nos movemos 60 unidades para separarnos del primer cuadrado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como posiblemante se dieron cuenta antes de ejecutar la instrucción, no solo nos movemos sino que tambíen dibujamos al movernos y por lo tanto la instrucción anterior no es muy útil.</p>
+<p>Para solucionar el problema podemos usar la instrucción <code class="docutils literal notranslate"><span class="pre">penup()</span></code> que levanta el lápiz y permite mover la tortuga sin pintar.</p>
+<p>Empecemos de cero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="190.0" x2="400.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="160.0" x2="370.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="160.0" x2="370.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="190.0" x2="400.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,400.0,130.0) translate(382.0, 112.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Observemos que colocamos pegadas al margen izquierdo las instrucciones</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    penup()
+    forward(60)  
+</pre></div>
+</div>
+<p>Con esto las instrucciones no se ejecutan dentro del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>Así como tenemos la instrucción <code class="docutils literal notranslate"><span class="pre">penup()</span></code>,  tenemos la instrucción <code class="docutils literal notranslate"><span class="pre">pendown()</span></code> que vuelva a hacer que dibuje la tortuga. Podemos dibujar entonces otro cuadrado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pendown</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y ahora dejemos lista la tortuga para el próximo dibujo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Todo lo hecho hasta ahora quedaría</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="190.0" x2="400.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="160.0" x2="370.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="160.0" x2="370.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="190.0" x2="400.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,400.0,130.0) translate(382.0, 112.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Finalmente,  si  repetimos dos veces más las lineas del 8 al 13 obtenemos el dibujo deseado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="190.0" x2="400.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="160.0" x2="370.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="160.0" x2="370.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="190.0" x2="400.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="130.0" x2="400.0" y2="100.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="100.0" x2="370.0" y2="100.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="100.0" x2="370.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="130.0" x2="400.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="70.0" x2="400.0" y2="40.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="40.0" x2="370.0" y2="40.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="40.0" x2="370.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="70.0" x2="400.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(360,400.0,10.0) translate(382.0, -8.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>De nuevo tenemos repeticiones sistemáticas de código  y podemos usar un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>La estructura de nuestro programa debería ser algo así:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repetir</span> <span class="mi">4</span> <span class="n">veces</span><span class="p">:</span>
+    <span class="n">dibujar</span> <span class="n">un</span> <span class="n">cuadrado</span>
+    <span class="n">ubicarse</span> <span class="n">para</span> <span class="n">dibujar</span> <span class="n">un</span> <span class="n">nuevo</span> <span class="n">cuadrado</span>
+</pre></div>
+</div>
+<p>El código que se repite es</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>El  programa quedaría</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># la tortuga va avelocidad 6</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="190.0" x2="400.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="160.0" x2="370.0" y2="160.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="160.0" x2="370.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="190.0" x2="400.0" y2="190.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="130.0" x2="400.0" y2="100.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="100.0" x2="370.0" y2="100.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="100.0" x2="370.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="130.0" x2="400.0" y2="130.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="70.0" x2="400.0" y2="40.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="40.0" x2="370.0" y2="40.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="40.0" x2="370.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="70.0" x2="400.0" y2="70.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=hidden transform="rotate(360,400.0,10.0) translate(382.0, -8.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Observemos  que hemos incluido un ciclo dentro de otro y  así hemos escrito un programa con ciclos anidados.</p>
+<p><strong>Ejercicio 3.</strong> Modificar el programa que dibuja 4 cuadrados para obtener el siguiente dibujo</p>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATwAAABVCAYAAADUiVggAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAK/SURBVHhe7dxBShthHAXwSTeCN/AEghsP4MYjeBx3UfBEXiArL+BC8ASudSdCppnygV0M5J9YJtO83w8e/WoD/XyL17EGF13X9ZsAHL1f7VeAo2fwgBgGD4hh8IAYBg+IYfCAGAYPiGHwgBgGD4hh8IAYBg+IYfCAGAYPiGHwgBgGD4hh8IAYP/4BoA8PD93V1VX39vbWvb6+to9+WyyGv2Jap6en3eXlZff5+dnd3t52Ly8v7U8OS1d1uqrT1W6Gwdsrq9Wqn7uvr6/+4uJi9P5TRlf16KoeXe2c0Q+Wsl6v26c0b4+Pj6P3nzK6qkdX9ehqt/zo//AO8ai8j5OTk3Y6HF3V6apOV7uJ+KbF8/NzO7GNrup0VTeXroZ/HoZHvb1snlTb6dv9/X07Tefve1xfX//J34Y73d3dtd8dhq7qdFWnq90NN90rY8ZeN2WWy2W7ybdN0aOvnTJjxl43ZXRVj67qmWtXQ7wPD4hh8IAYRzd4/8t3reZAV3W6qptzV57wgBgGD4hh8IAYBg+IYfCAGAYPiGHwgBgGD4hh8IAYBg+IYfCAGAYPiGHwgBgGD4hh8IAYBg+IYfCAGAYPiGHwgBgGD4hh8IAYBg+IYfCAGAYPiBExeH3ftxPb6KpOV3Vz6coTHhDD4AExDB4Q458P3vC1+iGzXC7bTeZv7P5TRlf16KqeOXcV8YR3fn7eTmyjqzpd1c2lq4jBOzs7aye20VWdrurm0tWPBu/j46Od5u3p6amdDkdXdbqq09XuhjfI7JWbm5v+/f1982X7PK3X6361Wo3eferoqh5d1aOr3bJoB4Cj520pQAyDB8QweEAMgwfEMHhADIMHxDB4QAyDB8QweEAMgwfEMHhADIMHxDB4QAyDB8QweEAMgwfEMHhADIMHxDB4QAyDB8QweEAMgwfEMHhADIMHhOi630k9Y3oEpQTUAAAAAElFTkSuQmCC" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">penup</span><span class="p">()</span>
+    <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">pendown</span><span class="p">()</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">270</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="400.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400.0" y1="220.0" x2="370.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="220.0" x2="370.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="370.0" y1="250.0" x2="400.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="340.0" y1="250.0" x2="340.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="340.0" y1="220.0" x2="310.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="310.0" y1="220.0" x2="310.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="310.0" y1="250.0" x2="340.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="280.0" y1="250.0" x2="280.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="280.0" y1="220.0" x2="250.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="250.0" y1="220.0" x2="250.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="250.0" y1="250.0" x2="280.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="220.0" y1="250.0" x2="220.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="220.0" y1="220.0" x2="190.0" y2="220.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="190.0" y1="220.0" x2="190.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="190.0" y1="250.0" x2="220.0" y2="250.0" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,160.0,250.0) translate(142.0, 232.0)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p><em>Observación.</em> La técnica de reutilizar programas,  es decir modificar código preexistente, es muy útil y muy utilizada. No  es necesario escribir un programa desde cero si tenemos a disposición el código fuente de un programa que hace algo parecido a lo que nosotros queremos.</p>
+</section>
+<section id="instrucciones-condicionales">
+<h2>3. Instrucciones condicionales<a class="headerlink" href="#instrucciones-condicionales" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Con frecuencia es conveniente actuar de cierta manera solamente si se cumple una cierta condición. La primera forma que veremos es</p>
+<ul>
+<li><p>Si pasa “esto” hacer “algo”</p></li>
+<li><p>Seguir con la próxima instrucción</p></li>
+</ul>
+</li>
+</ul>
+<p>Las llamamos <em>instrucciones condicionales.</em></p>
+<ul>
+<li><p>La instrucción condicional en Python es</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> if &lt;condición&gt;:
+     &lt;instrucciones&gt;        
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Para continuar expliquemos un poco más de Colab Turtle.</p>
+<ul class="simple">
+<li><p>El tamaño del pizarrón es de 800 (ancho) x 500 (alto)</p></li>
+<li><p>Todo punto del pizarron está determinado por sus coordenadas <span class="math notranslate nohighlight">\((n,m)\)</span>, donde <span class="math notranslate nohighlight">\((0,0)\)</span> es la esquina superior izquierda y <span class="math notranslate nohighlight">\((800, 500)\)</span> es la esquina inferior derecha.</p></li>
+</ul>
+<p>La instrucción <code class="docutils literal notranslate"><span class="pre">goto(n,</span> <span class="pre">m)</span></code> coloca la tortuga en el coordenada <span class="math notranslate nohighlight">\((n,m)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="400" y1="250" x2="0" y2="0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="0" y1="0" x2="400" y2="0" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="400" y1="0" x2="800" y2="250" stroke-linecap="round" style="stroke:white;stroke-width:4"/><line x1="800" y1="250" x2="0" y2="500" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,0,500) translate(-18, 482)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Utilizaremos la función <code class="docutils literal notranslate"><span class="pre">randint</span></code> de la biblioteca <code class="docutils literal notranslate"><span class="pre">random</span></code> de Python que nos permite obtener un entero al azar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con la instrucción <code class="docutils literal notranslate"><span class="pre">randint(n,</span> <span class="pre">m)</span></code> con <span class="math notranslate nohighlight">\(n \le m\)</span> obtenemos un número al azar <span class="math notranslate nohighlight">\(k\)</span> tal que <span class="math notranslate nohighlight">\(n \le k \le m\)</span>.</p>
+<p>Por ejemplo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>imprime en pantalla un número al azar entre 1 y 10.</p>
+<p>Queremos ahora hacer el siguiente programa:</p>
+<ul class="simple">
+<li><p>Dibujamos un punto al azar en el pizarrón,</p></li>
+<li><p>si el punto está del lado izquierdo, movemos la tortuga (dibujando) a un punto al azar del lado derecho.</p></li>
+</ul>
+<p>Primero dibujemos la tortuga en  un  punto al azar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        
+        <g visibility=visible transform="rotate(360,148,82) translate(130, 64)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>Ya sabemos colocar la tortuga en algún punto del pizarrón. Ahora debemos verificar si ese punto está a la izquierda,  es decir si está en <span class="math notranslate nohighlight">\((n, m)\)</span> con <span class="math notranslate nohighlight">\(n \le 400\)</span> o si está a la derecha (<span class="math notranslate nohighlight">\(n &gt; 400\)</span>). Pero ¿cómo sabemos donde está la tortuga? Hay dos instrucciones que nos permiten saber las coordenadas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">getx()</span></code>: primera coodenada</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gety()</span></code>: segunda coordenada</p></li>
+</ul>
+<p>Verefiquemos en que costado está el punto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">getx</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">400</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        
+        <g visibility=visible transform="rotate(360,747,418) translate(729, 400)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+<p>La instrucción  <code class="docutils literal notranslate"><span class="pre">pass</span></code> se utiliza para “no hacer nada” y permite dejar pendiente escritura de código.</p>
+<p>Ya tenemos escrita la condición “si la tortuga está en el lado izquierdo”, ahora escribamos la instrucción “la pasamos al lado derecho”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">penup</span><span class="p">()</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">getx</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">400</span><span class="p">:</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+      <svg width="800" height="500">
+        <rect width="100%" height="100%" fill="black"/>
+        <line x1="66" y1="316" x2="576" y2="438" stroke-linecap="round" style="stroke:white;stroke-width:4"/>
+        <g visibility=visible transform="rotate(360,576,438) translate(558, 420)">
+<path style=" stroke:none;fill-rule:evenodd;fill:white;fill-opacity:1;" d="M 18.214844 0.632812 C 16.109375 1.800781 15.011719 4.074219 15.074219 7.132812 L 15.085938 7.652344 L 14.785156 7.496094 C 13.476562 6.824219 11.957031 6.671875 10.40625 7.066406 C 8.46875 7.550781 6.515625 9.15625 4.394531 11.992188 C 3.0625 13.777344 2.679688 14.636719 3.042969 15.027344 L 3.15625 15.152344 L 3.519531 15.152344 C 4.238281 15.152344 4.828125 14.886719 8.1875 13.039062 C 9.386719 12.378906 10.371094 11.839844 10.378906 11.839844 C 10.386719 11.839844 10.355469 11.929688 10.304688 12.035156 C 9.832031 13.09375 9.257812 14.820312 8.96875 16.078125 C 7.914062 20.652344 8.617188 24.53125 11.070312 27.660156 C 11.351562 28.015625 11.363281 27.914062 10.972656 28.382812 C 8.925781 30.84375 7.945312 33.28125 8.238281 35.1875 C 8.289062 35.527344 8.28125 35.523438 8.917969 35.523438 C 10.941406 35.523438 13.074219 34.207031 15.136719 31.6875 C 15.359375 31.417969 15.328125 31.425781 15.5625 31.574219 C 16.292969 32.042969 18.023438 32.964844 18.175781 32.964844 C 18.335938 32.964844 19.941406 32.210938 20.828125 31.71875 C 20.996094 31.625 21.136719 31.554688 21.136719 31.558594 C 21.203125 31.664062 21.898438 32.414062 22.222656 32.730469 C 23.835938 34.300781 25.5625 35.132812 27.582031 35.300781 C 27.90625 35.328125 27.9375 35.308594 28.007812 34.984375 C 28.382812 33.242188 27.625 30.925781 25.863281 28.425781 L 25.542969 27.96875 L 25.699219 27.785156 C 28.945312 23.960938 29.132812 18.699219 26.257812 11.96875 L 26.207031 11.84375 L 27.945312 12.703125 C 31.53125 14.476562 32.316406 14.800781 33.03125 14.800781 C 33.976562 14.800781 33.78125 13.9375 32.472656 12.292969 C 28.519531 7.355469 25.394531 5.925781 21.921875 7.472656 L 21.558594 7.636719 L 21.578125 7.542969 C 21.699219 6.992188 21.761719 5.742188 21.699219 5.164062 C 21.496094 3.296875 20.664062 1.964844 19.003906 0.855469 C 18.480469 0.503906 18.457031 0.5 18.214844 0.632812"/>
+</g>
+      </svg>
+    </div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="00_Introduccion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algoritmos y Programación: introducción</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primeros-pasos">1. Primeros pasos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos">2. Ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciclos-anidados">2. Ciclos anidados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucciones-condicionales">3. Instrucciones condicionales</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alejandro Tiraboschi
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
