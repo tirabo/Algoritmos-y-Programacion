@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Primeros pasos con Python</a></li>
 
@@ -191,6 +191,21 @@
 <li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -829,17 +844,20 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-<p>La expresión ressultante es</p>
-<p align="center">-2.4492935982947064e-16</p>
-<p>que se lee
-$<span class="math notranslate nohighlight">\(
+<p>La expresión resultante es</p>
+<div class="math notranslate nohighlight">
+\[-2.4492935982947064e-16\]</div>
+<p>que se lee</p>
+<div class="math notranslate nohighlight">
+\[
 -2.4492935982947064 \times 10^{-16}.
-\)</span><span class="math notranslate nohighlight">\(
- Es decir es
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<p>Es decir es</p>
+<div class="math notranslate nohighlight">
+\[
 -0.00000000000000024492935982947064
-\)</span><span class="math notranslate nohighlight">\(
-Nosotros esperaríamos que el resultado de ejecutar la línea de código anterior sea `0`, pero debido a que el valor de \)</span>\pi$ es una aproximación y  que la función <code class="docutils literal notranslate"><span class="pre">sin()</span></code> también devuelve aproximaciones,  el resultado es número “cercano”  a <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+\]</div>
+<p>Nosotros esperaríamos que el resultado de ejecutar la línea de código anterior sea <code class="docutils literal notranslate"><span class="pre">0</span></code>, pero debido a que el valor de <span class="math notranslate nohighlight">\(\pi\)</span> es una aproximación y  que la función <code class="docutils literal notranslate"><span class="pre">sin()</span></code> también devuelve aproximaciones,  el resultado es número “cercano”  a <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>Para ver todas las funciones del módulo ejecutamos <code class="docutils literal notranslate"><span class="pre">dir(math)</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1405,10 +1423,7 @@ SpamSpam
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 5
 </pre></div>
 </div>
 </div>
