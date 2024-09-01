@@ -8,6 +8,7 @@
         "cSpell.words": [
             "díscos",
             "indenta"
-        ]
+        ],
+        "restructuredtext.pythonRecommendation.disabled": true
     }
 }
