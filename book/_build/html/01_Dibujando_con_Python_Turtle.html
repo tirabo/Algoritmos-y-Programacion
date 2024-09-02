@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Dibujando_con_Python_Turtle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Practicando con Colab Turtle" href="02_Mas_dibujos_con_Turtle.html" />
+    <link rel="next" title="Practicando con Turtle" href="02_Mas_dibujos_con_Turtle.html" />
     <link rel="prev" title="Algoritmos y Programación: introducción" href="00_Introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -418,9 +418,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dibujando-con-una-tortuga">
 <h1>Dibujando con  una tortuga<a class="headerlink" href="#dibujando-con-una-tortuga" title="Link to this heading">#</a></h1>
-<p>En  el curso para comenzar a programar en Python utilizamos <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> o <em>Colab</em> y una biblioteca o  módulo de Colab que nos permite dibujar en  pantalla.</p>
-<p>Google Colaboratory es un entorno de desarrollo en línea gratuito que permite a los usuarios escribir y ejecutar código Python en un navegador web. Google Colaboratory implementa las Jupyter Notebooks, o Cuadernos Jupyter,  en linea. El módulo que utilizaremos es Colab Turtle,  una implementación de Python Turtle, un módulo de Python que permite a los usuarios crear gráficos utilizando una tortuga virtual. Los usuarios pueden controlar la tortuga mediante comandos de Python para dibujar formas y patrones en la pantalla.</p>
-<p>A diferencia del curso, en este sitio se utilizarán directamente las Jupyter Notebooks y la biblioteca Turtle de Python. Jupyter Notebook corre directamente en su computadora con un Python instalado.</p>
+<p>En  este curso para comenzar a programar en Python utilizamos Jupyter Notebooks o Cuadernos Jupyter y la biblioteca o módulo <code class="docutils literal notranslate"><span class="pre">turtle</span></code> que nos permite dibujar en  pantalla. Al ternativamente puede usarse <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> o <em>Colab</em> y la biblioteca <code class="docutils literal notranslate"><span class="pre">ColabTurtle</span></code>, pero las instrucciones cambian un poco.</p>
+<p>Jupyter Notebook es una aplicación web de código abierto diseñada para crear y compartir documentos que integran código, texto, visualizaciones y ecuaciones. Es especialmente popular entre científicos de datos, analistas y desarrolladores debido a su capacidad para facilitar el desarrollo, la documentación y la presentación de proyectos.</p>
+<p>Una forma de poder trabajar en tu computadora con los cuadernos Jupyter Notebooks es instalando primero Python, luego VSCode y utilizar extensiones de VSCode para interpretar los cuadernos. Para hacer esto, lo mejor es fijarse en internet como se hace, en  particular preguntando a alguna IA <em>¿Qué tengo que instalar para correr las Jupyter notebooks en visual studio code?</em>.</p>
+<p>A diferencia del curso, en este sitio se utilizarán directamente las Jupyter Notebooks y la biblioteca turtle de Python.</p>
+<p>En el curso dictado en FAMAF se utiliza Google Colaboratory, que es un entorno de desarrollo en línea gratuito que permite a los usuarios escribir y ejecutar código Python en un navegador web. Google Colaboratory implementa las Jupyter Notebooks  en linea. El módulo que puede utilizarse  es ColabTurtle,  una implementación de Python Turtle. Como ya dijimos las intrucciones de ColabTurtle no son las misma que en el módulo turtle de Python, pero los cambios son menores.</p>
+<p><em>Aviso.</em> En  el documento html que se encuentra en el sitio no se podrán ver las ventanas de <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. Para ver como funciona la biblioteca deberás bajar el Jupyter Notebook correspondiente, es decir con la flecha de arriba a la derecha bajar el documento <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> y  correrlo localmente.</p>
+<section id="primeros-pasos">
+<h2>1. Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Link to this heading">#</a></h2>
 <p>Con la siguiente instrucción haremos accesible todas las funciones e instrucciones de la biblioteca Turtle a nuestro cuaderno Jupyter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -430,9 +435,6 @@ document.write(`
 </div>
 </div>
 <p>Si se encuentra con el error <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'_tkinter'</span></code>, tendrá que instalar el paquete de interfaz Tk en su sistema.</p>
-<p><em>Aviso.</em> En  el documento html que se encuentra en el sitio no se podrán ver las ventanas de <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. Para ver como funciona la biblioteca deberás bajar el Jupyter Notebook correspondiente, es decir con la flecha de arriba a la derecha bajar el documento <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> y  correrlo localmente.</p>
-<section id="primeros-pasos">
-<h2>1. Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Link to this heading">#</a></h2>
 <p>En una pantalla dibujaremos líneas o curvas con instrucciones provistas por nosotros. Primero creamos la <em>pizarra</em> o <em>ventana</em> para dibujar:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,7 +443,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x20e59732520&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x1eaa8593d60&gt;
 </pre></div>
 </div>
 </div>
@@ -520,7 +522,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x20e595e14c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x1c7de641270&gt;
 </pre></div>
 </div>
 </div>
@@ -541,21 +543,6 @@ document.write(`
 <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Terminator</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Dibujar zigzag (un símbolo # al comienzo de una linea es un comentario, no se ejecuta)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
-
-<span class="nn">File &lt;string&gt;:5,</span> in <span class="ni">forward</span><span class="nt">(distance)</span>
-
-<span class="ne">Terminator</span>: 
 </pre></div>
 </div>
 </div>
@@ -785,6 +772,7 @@ document.write(`
 <p>Observemos  que hemos incluido un ciclo dentro de otro y  así hemos escrito un programa con ciclos anidados.</p>
 <p><strong>Ejercicio 3.</strong> Modificar el programa que dibuja 4 cuadrados para obtener el siguiente dibujo</p>
 <p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAADxCAYAAACAqETRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFOSURBVHhe7dsxCsMwEABBK///c5LCD0gUCNpjprE7scWB4NB6vl0DPe7vOMJqhNUIqxFWI6xmbNjHl+C11v33fzv39K/Cdg741e65ZqxGWI2wGmE1wmqE1QirEVYjrEZYjbAaYTXCaoTV2LbUmLEaYTXCaoTVCKsRViOsRliNsBphNcJqhNUIqxFWY9vibcshhNUIqxFWI6xGWI2wGmE1wmqE1QirEVYjrEZYzdgw25YaM1YjrEZYjbAaYTXCaoTVCKsRViOsRliNsBphNcJqbFu8bTmEsBphNcJqhNUIqxFWI6xGWI2wGmE1wmqE1QirGRtm21JjxmqE1QirEVYjrEZYjbAaYTXCaoTVCKsRViOsRliNbYu3LYcQViOsRliNsBphNcJqhNUIqxFWI6xGWI2wGmE1Y8NsW2rMWI2wGmE1wmqE1QirEVYjrOW6XnKKdY4943PcAAAAAElFTkSuQmCC" /></p>
+<p>Solución:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
@@ -824,17 +812,46 @@ document.write(`
 </ul>
 <p>Para continuar expliquemos un poco más de Turtle.</p>
 <ul class="simple">
+<li><p>El tamaño del pizarrón es de 768 (ancho) x 648 (alto), pero depende del entorno.</p></li>
+<li><p>Todo punto del pizarrón está determinado por sus coordenadas <span class="math notranslate nohighlight">\((n,m)\)</span>, donde <span class="math notranslate nohighlight">\((0,0)\)</span> es el centro de la ventana,  la esquina superior izquierda es <span class="math notranslate nohighlight">\((-384,324)\)</span>, la esquina superior derecha es <span class="math notranslate nohighlight">\((-384,324)\)</span>, la esquina inferior izquierda <span class="math notranslate nohighlight">\((-384,-324)\)</span> y la esquina inferior derecha es <span class="math notranslate nohighlight">\((384,-324)\)</span>.</p></li>
+</ul>
+<p>En ColabTurtle cambia tanto el tamaño del pizarrón, como  la ubicación  del <span class="math notranslate nohighlight">\((0,0)\)</span>:</p>
+<ul class="simple">
 <li><p>El tamaño del pizarrón es de 800 (ancho) x 500 (alto)</p></li>
 <li><p>Todo punto del pizarrón está determinado por sus coordenadas <span class="math notranslate nohighlight">\((n,m)\)</span>, donde <span class="math notranslate nohighlight">\((0,0)\)</span> es la esquina superior izquierda y <span class="math notranslate nohighlight">\((800, 500)\)</span> es la esquina inferior derecha.</p></li>
 </ul>
+<p>Si tenemos dudas, podemos averiguar el tamaño del pizarrón o ventana ejecutando las siguientes celdas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">window_width</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>768
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">window_height</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>648
+</pre></div>
+</div>
+</div>
+</div>
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">goto(n,</span> <span class="pre">m)</span></code> coloca la tortuga en el coordenada <span class="math notranslate nohighlight">\((n,m)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
-<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">((</span><span class="o">-</span><span class="mi">384</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">384</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -855,6 +872,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
 </div>
 <p>imprime en pantalla un número al azar entre 1 y 10.</p>
 <p>Queremos ahora hacer el siguiente programa:</p>
@@ -866,27 +888,27 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">initializeTurtle</span><span class="p">()</span>
+<span class="n">reset</span><span class="p">()</span>
 <span class="n">penup</span><span class="p">()</span>
-<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">384</span><span class="p">,</span><span class="mi">384</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">324</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
 <span class="n">pendown</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Ya sabemos colocar la tortuga en algún punto del pizarrón. Ahora debemos verificar si ese punto está a la izquierda,  es decir si está en <span class="math notranslate nohighlight">\((n, m)\)</span> con <span class="math notranslate nohighlight">\(n \le 400\)</span> o si está a la derecha (<span class="math notranslate nohighlight">\(n &gt; 400\)</span>). Pero ¿cómo sabemos donde está la tortuga? Hay dos instrucciones que nos permiten saber las coordenadas:</p>
+<p>Ya sabemos colocar la tortuga en algún punto del pizarrón. Ahora debemos verificar si ese punto está a la izquierda,  es decir si está en <span class="math notranslate nohighlight">\((n, m)\)</span> con <span class="math notranslate nohighlight">\(n \le 0\)</span> o si está a la derecha (<span class="math notranslate nohighlight">\(n &gt; 0\)</span>). Pero ¿cómo sabemos donde está la tortuga? Hay dos instrucciones que nos permiten saber las coordenadas:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">getx()</span></code>: primera coodenada</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gety()</span></code>: segunda coordenada</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xcor()</span></code>: primera coordenada</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ycor()</span></code>: segunda coordenada</p></li>
 </ul>
-<p>Verefiquemos en que costado está el punto:</p>
+<p>Verifiquemos en que costado está el punto:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">initializeTurtle</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
 <span class="n">penup</span><span class="p">()</span>
-<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">384</span><span class="p">,</span><span class="mi">384</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">324</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
 <span class="n">pendown</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">getx</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">400</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">xcor</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
@@ -896,17 +918,37 @@ document.write(`
 <p>Ya tenemos escrita la condición “si la tortuga está en el lado izquierdo”, ahora escribamos la instrucción “la pasamos al lado derecho”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-<span class="n">initializeTurtle</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
 <span class="n">penup</span><span class="p">()</span>
-<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">384</span><span class="p">,</span><span class="mi">384</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">324</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
 <span class="n">pendown</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">getx</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">400</span><span class="p">:</span>
-    <span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span><span class="mi">800</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">xcor</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">384</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">324</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">384</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">324</span><span class="p">,</span><span class="mi">324</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Ya hemos terminado nuestro programa,  que en pseudocódigo sería:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span> <span class="n">dibuje</span><span class="p">,</span> 
+<span class="n">Ir</span> <span class="n">a</span> <span class="n">un</span> <span class="n">punto</span> <span class="n">al</span> <span class="n">azar</span> <span class="n">en</span> <span class="n">el</span> <span class="n">pizarrón</span>
+<span class="n">Empiece</span> <span class="n">a</span> <span class="n">dibujar</span>
+<span class="n">Si</span>  <span class="n">la</span> <span class="n">coordenada</span> <span class="n">x</span> <span class="k">del</span> <span class="n">punto</span> <span class="n">es</span> <span class="n">menor</span> <span class="n">o</span> <span class="n">igual</span> <span class="n">que</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">Ir</span>  <span class="n">a</span> <span class="n">un</span> <span class="n">punto</span>  <span class="n">al</span> <span class="n">azar</span> <span class="k">del</span> <span class="n">costado</span> <span class="n">derecho</span>
+<span class="n">En</span> <span class="n">caso</span> <span class="n">contrario</span><span class="p">:</span>
+    <span class="n">Ir</span>  <span class="n">a</span> <span class="n">un</span> <span class="n">punto</span> <span class="n">al</span> <span class="n">azar</span> <span class="k">del</span> <span class="n">costado</span> <span class="n">izquierdo</span>
+
+</pre></div>
+</div>
+<p>El conjunto de instrucciones</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">predicado</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instrucciones</span> <span class="mi">1</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">instrucciones</span> <span class="mi">2</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>nos dice que si se cumple <code class="docutils literal notranslate"><span class="pre">&lt;predicado&gt;</span></code> se ejecuta <code class="docutils literal notranslate"><span class="pre">&lt;instrucciones</span> <span class="pre">1&gt;</span></code>,  en caso contrario se ejecuta <code class="docutils literal notranslate"><span class="pre">&lt;instrucciones</span> <span class="pre">2&gt;</span></code>.</p>
 </section>
 </section>
 
@@ -954,7 +996,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Practicando con Colab Turtle</p>
+        <p class="prev-next-title">Practicando con Turtle</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

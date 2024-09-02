@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Primeros pasos con Python</a></li>
 
@@ -431,7 +431,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="primeros-pasos-con-python">
 <h1>Primeros pasos con Python<a class="headerlink" href="#primeros-pasos-con-python" title="Link to this heading">#</a></h1>
-<p>Después de hacer algunos programas en Turtle donde se han visto algunos principios de programación, muchos de los relevantes, ahora haremos una introducción a la programación en general, no solo en Turtle.</p>
+<p>Después de hacer algunos programas en Turtle donde se han visto algunos principios de programación, muchos de los relevantes, ahora haremos una introducción a la programación en general.</p>
 <section id="ejecutando-python">
 <h2>1. Ejecutando  Python<a class="headerlink" href="#ejecutando-python" title="Link to this heading">#</a></h2>
 <p>Uno de los desafíos al comenzar a trabajar con Python es instalar el software relacionado en tu computadora.</p>
@@ -442,6 +442,13 @@ document.write(`
 <li><p><em>Google Colaboratory (Colab).</em> Es una versión de Jupyter Notebooks on line provista por Google. Es una fabulosa herramienta didáctica y nos permitirá hacer gran parte del curso aunque en  las últimas semanas posiblemente necesitemos otra herramienta. Las tareas y ejercicios del curso se harán con esta herramienta.</p></li>
 <li><p><em>Anaconda.</em> Anaconda es mucho más que Jupyter Notebooks y los que se sientan cómodos con esta aplicación podrán utilizarla en el curso.</p></li>
 <li><p><em>JupyterLab Desktop.</em>  Es un subproducto de Anaconda, pero mucho más fácil de instalar y manejar.</p></li>
+<li><p><em>Visual Studio Code + Python.</em> Quizás la forma más conveniente y cómoda de manejar cuadernos de Jupyter y scripts de Python puro en un solo entorno. Es altamente recomendable y  encontrarás instruciones de como instalar este entorno en la Web o preguntando a alguna IA. Conceptualmente debes seguir los siguientes pasos:</p>
+<ul>
+<li><p>Instalar Python 3.</p></li>
+<li><p>Instalar VSCode (Visual Studio  Code). Es de código abierto y libre uso.</p></li>
+<li><p>Instalar extensiones de VSCode para poder incorporar y ejecutar cuadernos Jupyter.</p></li>
+</ul>
+</li>
 </ul>
 <p>Un  cuaderno Jupyter se divide en celdas de texto con formato y celdas de código Python. Cuando creamos una celda elegimos que tipo de celda queremos (“Markdown” para texto, “Code” para Python). Obviamente lo que estamos leyendo ahora es una celda de texto. La celda siguiente es una celda de código y la podemos ejecutar cliqueando el triangulito o posicionarse en ella  y hacer <code class="docutils literal notranslate"><span class="pre">Mayus+Enter</span></code>:</p>
 <div class="cell docutils container">
@@ -458,7 +465,7 @@ document.write(`
 </div>
 <p>En muchos proyectos que involucren desarrollo de software en Python se utiliza <em>el modo de secuencia de comandos</em> o <em>modo script</em>. En este modo cada pieza de código se guarda en un archivo y luego se ejecuta este archivo, llamado <em>script</em>, en el intérprete. Por convención, los scripts de Python tienen nombres que terminan en <code class="docutils literal notranslate"><span class="pre">.py</span></code>. Si sabés cómo crear y ejecutar un script en tu computadora podrás correr todos los scripts de este curso.</p>
 <p>Hay herramientas muy útiles para escribir código llamadas IDE (Integrated Development Environment) o entornos de desarrollo integrado​s. Una IDE es una aplicación informática que proporciona servicios integrales para facilitarle al desarrollador o programador el desarrollo de software.</p>
-<p>La primera que mencionaremos es Visual Studio Code. Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código. También es personalizable, por lo que los usuarios pueden cambiar el tema del editor, los atajos de teclado y las preferencias. Es gratuito y de código abierto. Por medio de plugins es posible codificar en casi cualquier lenguaje de programación, en particular en Python.</p>
+<p>La primera que ya  mencionamos es Visual Studio Code. Visual Studio Code es un editor de código fuente desarrollado por Microsoft para Windows, Linux, macOS y Web. Incluye soporte para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código. También es personalizable, por lo que los usuarios pueden cambiar el tema del editor, los atajos de teclado y las preferencias. Es gratuito y de código abierto. Por medio de plugins es posible codificar en casi cualquier lenguaje de programación, en particular en Python.</p>
 <p>La otra herramienta a mencionar es PyCharm. PyCharm es un IDE multiplataforma dirigido principalmente a Python y al desarrollo web. Una versión de código abierto está disponible como PyCharm Community Edition. Hay una versión paga llamada PyCharm Professional Edition. Una versión especial llamada PyCharm Edu está basada en PyCharm, dirigida específicamente al aprendizaje de la programación con Python. Como alumno universitario podés aplicar a la versión académica. PyCharm tiene una distribución para Anaconda que se puede instalar junto con Anaconda y están estrechamente integradas.</p>
 <p>En la primer celda que ejecutamos usamos a Python como calculadora y ese es el uso  mas sencillo que le podemos dar. Profundizaremos más abajo en este aspecto.</p>
 <p>Ahora vemos algunos ejemplos muy sencillos de scripts:</p>
@@ -485,7 +492,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El &quot;Tata&quot; Martino&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El &#39;Tata&#39; Martino&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El </span><span class="se">\&quot;</span><span class="s2">Tata</span><span class="se">\&quot;</span><span class="s2"> Martino&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El </span><span class="se">\&quot;</span><span class="s2">Tata</span><span class="se">\&quot;</span><span class="s2"> Martino</span><span class="se">\n</span><span class="s2">Entrenador&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -493,12 +499,11 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El &quot;Tata&quot; Martino
 El &#39;Tata&#39; Martino
 El &quot;Tata&quot; Martino
-El &quot;Tata&quot; Martino
-Entrenador
 </pre></div>
 </div>
 </div>
 </div>
+<p>Alternando  comillas simple y comillas dobles o utilizando <code class="docutils literal notranslate"><span class="pre">\'</span></code> y <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> podemos imprimir comillas.</p>
 </section>
 <section id="operadores-aritmeticos">
 <h2>2. Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Link to this heading">#</a></h2>
@@ -642,7 +647,6 @@ Por ejemplo,</p>
 </div>
 </div>
 </div>
-<p><span class="math notranslate nohighlight">\(6^2\)</span></p>
 <p>No cubriremos los operadores bit a bit en este curso, pero podes leer acerca de
 ellos en <a class="reference external" href="http://wiki.python.org/moin/BitwiseOperators">http://wiki.python.org/moin/BitwiseOperators</a> (en inglés).</p>
 </section>
@@ -1069,7 +1073,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="c1"># ningún número cumple con esta condición</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span> <span class="c1"># ningún número, excepto el 0, cumple con esta condición</span>
 </pre></div>
 </div>
 </div>
