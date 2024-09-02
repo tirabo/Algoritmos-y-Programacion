@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -199,6 +199,13 @@
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -429,13 +436,14 @@ $<span class="math notranslate nohighlight">\(
 u_1=1, \qquad u_2=2, \qquad u_n =u_{n-1} +u_{n-2}, \qquad n\ge 3.
 \)</span><span class="math notranslate nohighlight">\(
 Para calcular los valores de \)</span>u_n<span class="math notranslate nohighlight">\( para todo \)</span>n<span class="math notranslate nohighlight">\( de \)</span>\mathbb N<span class="math notranslate nohighlight">\( podemos proceder como sigue:
-\)</span><span class="math notranslate nohighlight">\(
-\begin{matrix}
+\)</span>$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1797d752-d7ce-4db8-b102-219419963629">
+<span class="eqno">(11)<a class="headerlink" href="#equation-1797d752-d7ce-4db8-b102-219419963629" title="Permalink to this equation">#</a></span>\[\begin{matrix}
 u_3 &amp; = &amp; u_2 + u_1 &amp; = &amp; 2+1 &amp;=&amp; 3, \\
 u_4 &amp; = &amp; u_3 + u_2 &amp; = &amp; 3+2 &amp;=&amp; 5, \\
 u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
-\end{matrix}
-\)</span>$
+\end{matrix}\]</div>
+<p>$$
 y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p>
 <p>Una función definida por recursión debe:</p>
 <ul class="simple">
@@ -632,13 +640,14 @@ y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p
 <h3>Versión optimizada de potencia de un número.<a class="headerlink" href="#version-optimizada-de-potencia-de-un-numero" title="Link to this heading">#</a></h3>
 <p>Observemos que la definición recursiva anterior de <span class="math notranslate nohighlight">\(a^n\)</span> requiere <span class="math notranslate nohighlight">\(n\)</span> pasos pues <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n)</span></code> se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1)</span></code>,  que a su vez se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">2)</span></code> y así sucesivamente.</p>
 <p>Observemos que si <span class="math notranslate nohighlight">\(n\)</span>  es potencia de <span class="math notranslate nohighlight">\(2\)</span>,  entonces podemos simplificar el cálculo de la siguiente manera, por ejemplo para <span class="math notranslate nohighlight">\(n = 32\)</span>:</p>
-<p>\begin{align*}
-&amp;1.&amp; &amp;a^{32} = a^{16}\cdot a^{16} \
-&amp;2.&amp; &amp;a^{16} =   a^{8} \cdot a^{8} \
-&amp;3.&amp; &amp;a^{8} =   a^{4} \cdot a^{4} \
-&amp;4.&amp; &amp;a^{4} =   a^{2} \cdot a^{2} \
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;1.&amp; &amp;a^{32} = a^{16}\cdot a^{16} \\
+&amp;2.&amp; &amp;a^{16} =   a^{8} \cdot a^{8} \\
+&amp;3.&amp; &amp;a^{8} =   a^{4} \cdot a^{4} \\
+&amp;4.&amp; &amp;a^{4} =   a^{2} \cdot a^{2} \\
 &amp;5.&amp; &amp;a^{2} =   a^{1} \cdot a^{1} = a \cdot a
-\end{align*}</p>
+\end{align*}\]</div>
 <p>Es decir, para averiguar <span class="math notranslate nohighlight">\(a^{32}\)</span>, averiguamos</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(a^2 = a \cdot a\)</span> (1º paso),</p></li>
@@ -648,26 +657,28 @@ y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p
 <li><p><span class="math notranslate nohighlight">\(a^{32} = a^{16} \cdot a^{16}\)</span> (5º paso).</p></li>
 </ul>
 <p>Son 5 pasos en vez de 32.</p>
-<p>En general, si quisieramos calcular <span class="math notranslate nohighlight">\(a\)</span> a la una potencia de <span class="math notranslate nohighlight">\(2\)</span>,  es decir <span class="math notranslate nohighlight">\(a^{2^k}\)</span>, podríamos hacer,  recursivamente,
-\begin{align*}
-&amp;1.&amp; &amp;a^{2^k} = a^{2 \cdot 2^{k-1}} = a^{2^{k-1} + 2^{k-1}} = a^{2^{k-1}} \cdot a^{2^{k-1}} \
-&amp;2.&amp; &amp;a^{2^{k-1}} =   a^{2^{k-2}} \cdot a^{2^{k-2}} \
-&amp;3.&amp; &amp;a^{2^{k-2}} =   a^{2^{k-3}} \cdot a^{2^{k-3}} \
-&amp;&amp;…&amp; \
+<p>En general, si quisieramos calcular <span class="math notranslate nohighlight">\(a\)</span> a la una potencia de <span class="math notranslate nohighlight">\(2\)</span>,  es decir <span class="math notranslate nohighlight">\(a^{2^k}\)</span>, podríamos hacer,  recursivamente,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;1.&amp; &amp;a^{2^k} = a^{2 \cdot 2^{k-1}} = a^{2^{k-1} + 2^{k-1}} = a^{2^{k-1}} \cdot a^{2^{k-1}} \\
+&amp;2.&amp; &amp;a^{2^{k-1}} =   a^{2^{k-2}} \cdot a^{2^{k-2}} \\
+&amp;3.&amp; &amp;a^{2^{k-2}} =   a^{2^{k-3}} \cdot a^{2^{k-3}} \\
+&amp;&amp;...&amp; \\
 &amp;k-1.&amp; &amp;a^{2} =   a^{1} \cdot a^{1}
-\end{align*}</p>
+\end{align*}\]</div>
 <p>Es decir <span class="math notranslate nohighlight">\(a^{2^k}\)</span> se pueder calcular en alrededor de  <span class="math notranslate nohighlight">\(k = \operatorname{log}_2(2^k)\)</span> pasos, muchos menos que con el método directo.</p>
 <p>¿Para qué nos sirve esto para calcular la potencia arbitraria de un número?</p>
 <p>Veamos como se aplica esto en un ejemplo, por ejemplo calculemos <span class="math notranslate nohighlight">\(a^{27}\)</span>:</p>
-<p>\begin{align*}
-&amp;1.&amp; &amp;a^{27} = a^{26}\cdot a \
-&amp;2.&amp; &amp;a^{26} =   a^{13} \cdot a^{13} \
-&amp;3.&amp; &amp;a^{13} =   a^{12} \cdot a \
-&amp;4.&amp; &amp;a^{12} =   a^{6} \cdot a^{6} \
-&amp;5.&amp; &amp;a^{6} =   a^{3} \cdot a^{3} \
-&amp;6.&amp; &amp;a^{3} =   a^{2} \cdot a \
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;1.&amp; &amp;a^{27} = a^{26}\cdot a \\
+&amp;2.&amp; &amp;a^{26} =   a^{13} \cdot a^{13} \\
+&amp;3.&amp; &amp;a^{13} =   a^{12} \cdot a \\
+&amp;4.&amp; &amp;a^{12} =   a^{6} \cdot a^{6} \\
+&amp;5.&amp; &amp;a^{6} =   a^{3} \cdot a^{3} \\
+&amp;6.&amp; &amp;a^{3} =   a^{2} \cdot a \\
 &amp;7.&amp; &amp;a^{2} =   a^{1} \cdot a^{1} = a \cdot a
-\end{align*}</p>
+\end{align*}\]</div>
 <p>Luego, para calucular <span class="math notranslate nohighlight">\(a^{27}\)</span>, calculamos <span class="math notranslate nohighlight">\(a^2\)</span>, luego <span class="math notranslate nohighlight">\(a^3\)</span>, <span class="math notranslate nohighlight">\(a^6\)</span>, <span class="math notranslate nohighlight">\(a^{12}\)</span>, <span class="math notranslate nohighlight">\(a^{13}\)</span>, <span class="math notranslate nohighlight">\(a^{26}\)</span> y finalmente <span class="math notranslate nohighlight">\(a^{27}\)</span>. Es decir, lo podemos hacer en 7 pasos en vez de 27.</p>
 <p>Basándonos en la idea anterior se puede definir recursivamente <span class="math notranslate nohighlight">\(a^n\)</span> para cualquier <span class="math notranslate nohighlight">\(n\)</span> en una recursión que lleva alrededor de <span class="math notranslate nohighlight">\(\operatorname{log}_2(n)\)</span> pasos:</p>
 <ul class="simple">
@@ -1124,18 +1135,20 @@ n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &
 <section id="otra-implementacion-recursiva-del-numero-combinatorio">
 <h3>5.2. Otra implementación recursiva del número combinatorio<a class="headerlink" href="#otra-implementacion-recursiva-del-numero-combinatorio" title="Link to this heading">#</a></h3>
 <p>Observemos  que si <span class="math notranslate nohighlight">\(n,m &gt; 0\)</span> y <span class="math notranslate nohighlight">\(n \ge m\)</span>,</p>
-<p>\begin{equation*}
-\binom{n}{m} = \frac{n!}{ (n-m)!m!} =  \frac{n}{m} \frac{(n-1)!}{(n-m)!(m-1)! } . \tag{<em>}
-\end{equation</em>}</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\binom{n}{m} = \frac{n!}{ (n-m)!m!} =  \frac{n}{m} \frac{(n-1)!}{(n-m)!(m-1)! } . \tag{*}
+\end{equation*}\]</div>
 <p>Observar que</p>
 <div class="math notranslate nohighlight">
 \[
 \binom{n-1}{m-1} = \frac{(n-1)!}{(n-1-(m-1))!(m-1)!}  = \frac{(n-1)!}{(n-1-m+1))!(m-1)!} =  \frac{(n-1)!}{(n-m)!(m-1)!}
 \]</div>
 <p>Luego, reemplazando en (*) obtenenmos:</p>
-<p>\begin{equation*}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \binom{n}{m} =  \frac{n}{m} \binom{n-1}{m-1} .
-\end{equation*}</p>
+\end{equation*}\]</div>
 <p>En  base a esta última recursión podemos definir una función para obtener el número combinatorio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

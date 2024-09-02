@@ -4,8 +4,8 @@
 format: jb-book
 root: 00_Introduccion
 chapters:
-- file: 01_Dibujando_con_Python_Turtle
-- file: 02_Mas_dibujos_con_Turtle
+# - file: 01_Dibujando_con_Python_Turtle
+# - file: 02_Mas_dibujos_con_Turtle
 - file: 03_Variables_Funciones_en_Turtle
 - file: 04_Primeros_pasos_en_Python
 - file: 05_Funciones 

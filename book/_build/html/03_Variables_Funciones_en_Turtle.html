@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '03_Variables_Funciones_en_Turtle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Primeros pasos con Python" href="04_Primeros_pasos_en_Python.html" />
-    <link rel="prev" title="Practicando con Turtle" href="02_Mas_dibujos_con_Turtle.html" />
+    <link rel="next" title="Los números notables (optativa)" href="13.1_Numeros_notables.html" />
+    <link rel="prev" title="Algoritmos y Programación: introducción" href="00_Introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,30 +182,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables y funciones aplicadas a Turtle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -499,7 +477,7 @@ document.write(`
 </div>
 </div>
 <p>Dentro de esta función utilizamos el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para dibujar los tres lados del triángulo. Esta función no tiene argumentos y siempre dibuja un triángulo equilátero de lados <code class="docutils literal notranslate"><span class="pre">100</span></code>.</p>
-<p>Podemos utilizar varias veces la función  y el triángulo que dibuja depende de estados de la pizarra: ubicación de la torruga,  orientació y color del lápiz.</p>
+<p>Podemos utilizar varias veces la función  y el triángulo que dibuja depende de estados de la pizarra: ubicación de la tortuga,  orientación y color del lápiz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span> <span class="c1"># inicializar pantalla</span>
@@ -630,7 +608,7 @@ document.write(`
 <section id="variables">
 <h2>3. Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>Afortunadamente, los lenguajes de programación nos permiten utilizar <em>variables</em>. Una variable sirve justamente para representar un valor que puede ser diferente en cada ejecución del código:</p>
-<p>Una variable está representada por un nombre, digamos <code class="docutils literal notranslate"><span class="pre">longitud</span></code>, y le podemos asignar un valor, supongamos <code class="docutils literal notranslate"><span class="pre">25</span></code>. En Python se hace de la siguiente manera:</p>
+<p>Una variable está representada por un nombre, digamos <code class="docutils literal notranslate"><span class="pre">longitud</span></code>, y le podemos <em>asignar</em> un valor, supongamos <code class="docutils literal notranslate"><span class="pre">25</span></code>. En Python se hace de la siguiente manera:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span>
 </pre></div>
 </div>
@@ -1383,9 +1361,9 @@ i final: 5
 <h2>6. La bola de billar<a class="headerlink" href="#la-bola-de-billar" title="Link to this heading">#</a></h2>
 <p>Un  ejemplo donde se hará un uso más complejo de las funciones, bucles y condicionales en Python, es el ejemplo de lo que llamaremos  <em>La bola de billar</em>.</p>
 <p>En  este ejemplo se hace una simulación de una bola de billar rebotando contra las paredes de la mesa.</p>
-<p>Es un ejemplo demasiado largo para desarrollarlo en clase, pero el  alumno interesado puede verlo en un un cuaderno Jupyter que se puede ser bajado  cliqueando el siguiente link <a class="reference internal" href="#../files_ayp/La_bola_de_billar.ipynb"><span class="xref myst">La_bola_de_billar.ipynb</span></a>. En  ese cuaderno se explica pasa a paso la implementación.</p>
-<p>También hemos subido la implementación del mismo problema en el Turtle de Python puro (no un cuaderno Jupyter). El archivo es <a class="reference internal" href="#../files_ayp/bola_de_billar.py"><span class="xref myst">bola_de_billar.py</span></a>.</p>
-<p>Finalmente, hemos subido una implementación utilizando la biblioteca <code class="docutils literal notranslate"><span class="pre">pygame</span></code>. Esta es un biblioteca orientada a juegos (tipo Pacman) y  en este caso se implementa la bola de billar en forma mucho más eficiente y de mejor aspecto. El archivo es <a class="reference internal" href="#../files_ayp/bola_de_billar_pygame.py"><span class="xref myst">bola_de_billar_pygame.py</span></a>.</p>
+<p>Es un ejemplo demasiado largo para desarrollarlo en clase, pero el  alumno interesado puede verlo en un un cuaderno Jupyter que se puede ser bajado  cliqueando el siguiente link <a class="reference external" href="https://tirabo.github.io/files_ayp/La_bola_de_billar.ipynb">La_bola_de_billar.ipynb</a>. En  ese cuaderno se explica pasa a paso la implementación.</p>
+<p>También hemos subido la implementación del mismo problema en el Turtle de Python puro (no un cuaderno Jupyter). El archivo es <a class="reference external" href="https://tirabo.github.io/files_ayp/bola_de_billar.py">bola_de_billar.py</a>.</p>
+<p>Finalmente, hemos subido una implementación utilizando la biblioteca <code class="docutils literal notranslate"><span class="pre">pygame</span></code>. Esta es un biblioteca orientada a juegos (tipo Pacman) y  en este caso se implementa la bola de billar en forma mucho más eficiente y de mejor aspecto. El archivo es <a class="reference external" href="https://tirabo.github.io/files_ayp/bola_de_billar_pygame.py">bola_de_billar_pygame.py</a>.</p>
 <p>Estas dos últimas implementaciones es para alumnos  que ya sepan como ejecutar scripts de Python, o para aquellos que estén interesados en  aprender como hacerlo y pregunten a una persona o  en Internet como hacerlo.</p>
 <p>Obviamente, la lógica en todas las implementaciones es muy similar.</p>
 </section>
@@ -1396,35 +1374,40 @@ i final: 5
 <p>Más específicamente,  dadas tres medidas <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> mayores que <span class="math notranslate nohighlight">\(0\)</span> y tal que la suma de  cualesquiera dos de ellas es mayor que la tercera,  existe un único triángulo (salvo desplazamientos y rotaciones) con lados que tienen esas tres medidas.</p>
 <p>Pero, ¿cómo construimos un triángulo con lados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>?</p>
 <p>Debemos usar el teorema del coseno que es una generalización del teorema de Pitágoras.</p>
-<p><strong>Teorema del coseno.</strong> <em>Dado un triángulo cualquiera, siendo <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span> los ángulos, y <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, los lados respectivamente opuestos a estos ángulos entonces:</em>
-$<span class="math notranslate nohighlight">\(
+<p><strong>Teorema del coseno.</strong> <em>Dado un triángulo cualquiera, siendo <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span> los ángulos, y <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, los lados respectivamente opuestos a estos ángulos entonces:</em></p>
+<div class="math notranslate nohighlight">
+\[
 c^{2}=a^{2}+b^{2}-2ab\cos \gamma.
-\)</span>$</p>
+\]</div>
 <p>Por lo tanto, podemos despejar los ángulos usando dos veces el teorema y el hecho de que la suma de los ángulos interiores de un triángulo es <span class="math notranslate nohighlight">\(180^º\)</span>.</p>
-<p>\begin{align}
-a^{2}&amp;=b^{2}+c^{2}-2bc\cos \alpha,\
-b^{2}&amp;=a^{2}+c^{2}-2ac\cos \beta. \
-\end{align}<br />
-En consecuencia,
-\begin{align}
-\cos \alpha &amp;= \frac{b^{2}+c^{2}- a^{2}}{2bc}, \
-\cos \beta &amp;= \frac{a^{2}+c^{2}- b^{2}}{2ac}.\
-\end{align}
-Por consiguiente,
-\begin{align}
-\alpha &amp;= \arccos\left(\frac{b^{2}+c^{2}- a^{2}}{2ab}\right), \tag{1}\
-\beta &amp;= \arccos\left(\frac{a^{2}+c^{2}- b^{2}}{2ac}\right),\tag{2}\
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+a^{2}&amp;=b^{2}+c^{2}-2bc\cos \alpha,\\
+b^{2}&amp;=a^{2}+c^{2}-2ac\cos \beta. \\
+\end{align*}\]</div>
+<p>En consecuencia,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\cos \alpha &amp;= \frac{b^{2}+c^{2}- a^{2}}{2bc}, \\
+\cos \beta &amp;= \frac{a^{2}+c^{2}- b^{2}}{2ac}.\\
+\end{align*}\]</div>
+<p>Por consiguiente,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\alpha &amp;= \arccos\left(\frac{b^{2}+c^{2}- a^{2}}{2ab}\right), \tag{1}\\
+\beta &amp;= \arccos\left(\frac{a^{2}+c^{2}- b^{2}}{2ac}\right),\tag{2}\\
 \gamma &amp;= 180 - \alpha- \beta.\tag{3}
-\end{align}</p>
+\end{align*}\]</div>
 <p>Intentemos ahora usando las fórmulas (1), (2) y (3) dibujar un triángulo de lados <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>. Debemos tener en cuenta las siguientes consideraciones</p>
 <ul class="simple">
 <li><p>Python no tiene en forma nativa la función <span class="math notranslate nohighlight">\(\arccos(\theta)\)</span> y  debemos importar el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> para adquirirla.</p></li>
 <li><p>Las funciones trigonométricas del módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> tienen como argumentos ángulos en <em>radianes</em>, no en grados sexagesimales.</p></li>
 </ul>
-<p>Esto último no influye demasiado en las fórmulas. En realidad (1) y (2) quedan iguales y solo debemos tener cuidado con la fórmula (3) que pasaría a ser
-$<span class="math notranslate nohighlight">\(
+<p>Esto último no influye demasiado en las fórmulas. En realidad (1) y (2) quedan iguales y solo debemos tener cuidado con la fórmula (3) que pasaría a ser</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \gamma = \pi - \alpha- \beta.\tag{3'}
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>Lo más importante de la segunda observación es que como <code class="docutils literal notranslate"><span class="pre">turtle</span></code> maneja solo grados sexagesimales necesitamos funciones para convertir grados a radianes y radianes a grados.</p>
 <p>Comencemos,  y lo primero que debemos hacer es importar el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> y lo haremos de la siguiente manera:</p>
 <div class="cell docutils container">
@@ -1715,20 +1698,20 @@ arcocoseno de 1: 0.0
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="02_Mas_dibujos_con_Turtle.html"
+       href="00_Introduccion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Practicando con Turtle</p>
+        <p class="prev-next-title">Algoritmos y Programación: introducción</p>
       </div>
     </a>
     <a class="right-next"
-       href="04_Primeros_pasos_en_Python.html"
+       href="13.1_Numeros_notables.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Primeros pasos con Python</p>
+        <p class="prev-next-title">Los números notables (optativa)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

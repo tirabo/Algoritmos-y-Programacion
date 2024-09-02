@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '08_Cadenas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Listas y tuplas" href="09_Listas_y_tuplas.html" />
     <link rel="prev" title="Ciclos" href="07_Ciclos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_M%C3%A1s_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -190,6 +191,21 @@
 <li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -820,12 +836,13 @@ nana
 </div>
 </div>
 <p>El operador <code class="docutils literal notranslate"><span class="pre">[n</span> <span class="pre">:</span> <span class="pre">m]</span></code> devuelve la rebanada de la cadena del caracteres entre el “corte” <code class="docutils literal notranslate"><span class="pre">n</span></code>y el “corte” <code class="docutils literal notranslate"><span class="pre">m</span></code>. Ahora explicaremos lo que significa “corte”, pero primero debemos aclarar que <em>no</em> se refiere a un índice,  sino al corte entre dos elementos. Ejemplifiquemos con la cadena <code class="docutils literal notranslate"><span class="pre">banana</span></code>:
-$<span class="math notranslate nohighlight">\(
-\begin{matrix}
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-905b6189-ffa5-4194-8785-8cbf7a5f4d08">
+<span class="eqno">(7)<a class="headerlink" href="#equation-905b6189-ffa5-4194-8785-8cbf7a5f4d08" title="Permalink to this equation">#</a></span>\[\begin{matrix}
 \text{Cadena:} &amp;|&amp;\tt b&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp; \\
 \text{Corte:}\;\;\;&amp;0&amp;&amp;1&amp;&amp;2&amp;&amp;3&amp;&amp;4&amp;&amp;5&amp;&amp;6&amp; \\
-\end{matrix}
-\)</span>$</p>
+\end{matrix}\]</div>
+<p>$$</p>
 <p>Observar que (imaginariamente) hemos puesto cada carácter en una casilla y  los cortes son las paredes de las casillas. Entonces las primeras 2 letras están entre las paredes 0 y 2  y las últimas 4 letras entre las paredes 2 y 6.</p>
 <p>Si se omite el primer índice (antes de los dos puntos), el segmento comienza al principio de la cadena. Si omite el segundo índice, el segmento va al final de la cadena:</p>
 <div class="cell docutils container">
@@ -1390,6 +1407,15 @@ Ambas balabras tienen la misma posición: &quot;anana&quot;.
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Ciclos</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="09_Listas_y_tuplas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Listas y tuplas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

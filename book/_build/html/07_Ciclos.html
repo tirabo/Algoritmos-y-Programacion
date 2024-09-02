@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -640,7 +640,9 @@ Algrtms y prgrmcón
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-14
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
 12
 10
 </pre></div>
@@ -2586,18 +2588,22 @@ b = \sqrt{a}\quad \Leftrightarrow \quad b^2 = a \quad\Leftrightarrow\quad b^2-a=
 Es decir, \)</span>\sqrt{a}<span class="math notranslate nohighlight">\( es raíz de la función \)</span>f(x) = x^2 -a<span class="math notranslate nohighlight">\(. El algoritmo que se obtiene de aplicar el  método de Newton a \)</span>f$ se puede describir de la siguiente forma:</p>
 <ol class="arabic simple">
 <li><p>Sea <span class="math notranslate nohighlight">\(x_0\)</span> un valor inicial arbitrario (<span class="math notranslate nohighlight">\(&gt;0\)</span>).</p></li>
-<li><p>Sea
-\begin{equation}
+<li><p>Sea</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-0f6a6fa7-d2f8-4544-b914-18a64fd1ec08">
+<span class="eqno">(4)<a class="headerlink" href="#equation-0f6a6fa7-d2f8-4544-b914-18a64fd1ec08" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
-\end{equation}
-para <span class="math notranslate nohighlight">\(n \ge 0\)</span>.</p></li>
+\end{equation}\]</div>
+<p>para <span class="math notranslate nohighlight">\(n \ge 0\)</span>.</p>
+<ol class="arabic simple" start="3">
 <li><p>Aplique la fórmula (*) desde <span class="math notranslate nohighlight">\(n=0\)</span> en adelante hasta obtener un <span class="math notranslate nohighlight">\(x_n\)</span> que se aproxime “lo suficiente”.</p></li>
 </ol>
 <p>En el ítem 3. la frase “lo suficiente” no es del todo clara y  trataremos de interpretarla a lo largo de la sección.</p>
-<p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (<em>) se reescribe:
-\begin{equation}
-y = \frac12(x + \frac{a}{x}) \tag{</em>}
-\end{equation}</p>
+<p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (*) se reescribe:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bb4b627-92c6-41f6-af0e-05bb8048137a">
+<span class="eqno">(5)<a class="headerlink" href="#equation-4bb4b627-92c6-41f6-af0e-05bb8048137a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y = \frac12(x + \frac{a}{x}) \tag{*}
+\end{equation}\]</div>
 <p>Con esta fórmula en mente, la primera aproximación a <span class="math notranslate nohighlight">\(\sqrt{4} =2\)</span> es</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2772,11 +2778,12 @@ con una estimación inicial, <code class="docutils literal notranslate"><span cl
 <p>Las precondiciones y postcondiciones son parte de la documentación del programa y suelen escribirse como comentarios formales cuando se puede, o en caso contrario informales.</p>
 <p>En el caso que se puedan formalizar en Python,  se pueden reemplazar o completar con <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
 <p>Veamos un ejemplo con el máximo común divisor. La función escrita en la siguiente celda de código determina  el máximo común divisor de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> son enteros no negativos y uno de ellos es mayor que 0.</p>
-<p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:
-\begin{align}
-\operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \
+<p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7df0970-02dc-431c-9645-44ebf872e053">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d7df0970-02dc-431c-9645-44ebf872e053" title="Permalink to this equation">#</a></span>\[\begin{align}
+\operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \\
 \operatorname{mcd}(0, y) &amp;= y.
-\end{align}</p>
+\end{align}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1º versión.</span>

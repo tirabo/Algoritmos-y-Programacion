@@ -62,8 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '13.1_Numeros_notables';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Clases y objetos" href="14_Clases_y_objetos.html" />
-    <link rel="prev" title="Recursión (2° parte)" href="13_Recursion_%28continuacion%29.html" />
+    <link rel="prev" title="Algoritmos y Programación: introducción" href="00_Introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,23 +181,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Los números notables (optativa)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
 </ul>
 
     </div>
@@ -394,14 +377,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-contando-las-gotas-de-la-lluvia">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-poligonos-regulares">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-simplificada-del-metodo-poligonal-de-arquimedes">Versión simplificada del método poligonal de Arquímedes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi">1. Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-contando-las-gotas-de-la-lluvia">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-poligonos-regulares">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#version-simplificada-del-metodo-poligonal-de-arquimedes">Versión simplificada del método poligonal de Arquímedes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-el-metodo-de-newton">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi-moderno-una-opcion">Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-numero-e">El número <span class="math notranslate nohighlight">\(e\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-el-metodo-de-newton">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi-moderno-una-opcion">Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-numero-e">El número <span class="math notranslate nohighlight">\(e\)</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -419,15 +405,17 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(1\)</span> : elemento neutro de la multiplicación.</p>
 <p><span class="math notranslate nohighlight">\(i\)</span> : raíz cuadrada de -1.</p>
 <p><span class="math notranslate nohighlight">\(\pi\)</span> : la razón entre el perímetro de la circunferencia y el diámetro.</p>
-<p><span class="math notranslate nohighlight">\(e\)</span> : es el límite de la sucesión <span class="math notranslate nohighlight">\(\left(1 + \dfrac{1}{n}\right)^n\)</span>. Es decir,
-$<span class="math notranslate nohighlight">\(
+<p><span class="math notranslate nohighlight">\(e\)</span> : es el límite de la sucesión <span class="math notranslate nohighlight">\(\left(1 + \dfrac{1}{n}\right)^n\)</span>. Es decir,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 e = \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>Veremos en lo que sigue formas de calcular <span class="math notranslate nohighlight">\(\pi\)</span> y <span class="math notranslate nohighlight">\(e\)</span>.</p>
-<p>##1. Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span></p>
+<section id="calculo-de-pi">
+<h2>1. Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span><a class="headerlink" href="#calculo-de-pi" title="Link to this heading">#</a></h2>
 <p>Veremos diferentes métodos para calcular <span class="math notranslate nohighlight">\(\pi\)</span> que nos servirán para ilustrar diferentes estrategias de cálculo, muy distintas entre si.</p>
-<p>El primer método no es ni fue utilizado para calcular <span class="math notranslate nohighlight">\(\pi\)</span>, pero ilustra un método probabilistico de cálculo,  usando <em>Montecarlo.</em></p>
-<p>El segundo método se inspira en un método usado por Arquímedes y en occidente hasta mediados del segundo milenio, el <em>método poligonal de Arquímedes</em>. Sin embargo  difiere en el método original en muchos aspectos. La similitud es, y ahí termina, en que se usan polígonos inscriptos y circunscriptos a una circunferencia para el cálculo de <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>El primer método no es ni fue utilizado para calcular <span class="math notranslate nohighlight">\(\pi\)</span>, pero ilustra un método probabilístico de cálculo,  usando <em>Montecarlo.</em></p>
+<p>El segundo método se inspira en un método usado por Arquímedes y en occidente hasta mediados del segundo milenio, el <em>método poligonal de Arquímedes</em>. Sin embargo  difiere en el método original en muchos aspectos. La similitud es, y ahí termina, en que se usan polígonos inscritos y circunscritos a una circunferencia para el cálculo de <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>El tercer método es el que desarrolló Newton a partir del desarrollo de <span class="math notranslate nohighlight">\((a + b)^n\)</span> (el <em>binomio de Newton</em>).</p>
 <p>El cuarto método es un método relativamente moderno que calcula en forma eficiente aproximaciones de <span class="math notranslate nohighlight">\(\pi\)</span></p>
 <div class="cell docutils container">
@@ -440,22 +428,25 @@ e = \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n
 </div>
 </div>
 <section id="calcular-pi-contando-las-gotas-de-la-lluvia">
-<h2>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.<a class="headerlink" href="#calcular-pi-contando-las-gotas-de-la-lluvia" title="Link to this heading">#</a></h2>
+<h3>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.<a class="headerlink" href="#calcular-pi-contando-las-gotas-de-la-lluvia" title="Link to this heading">#</a></h3>
 <p>El método que usaremos es <em>Montecarlo</em> y es muy intuitivo.</p>
 <p>Se “dibuja” (en forma imaginaria) un cuadrado de <span class="math notranslate nohighlight">\(1 \times 1\)</span> y se “tiran al azar” puntos <span class="math notranslate nohighlight">\((x,y)\)</span>  en el cuadrado, es decir <span class="math notranslate nohighlight">\(0 \le  x, y \le 1\)</span>.</p>
-<p>La distancia del origen a  <span class="math notranslate nohighlight">\((x,y)\)</span>  es  <span class="math notranslate nohighlight">\(\sqrt{x^2 + y^2}\)</span>. Los puntos <span class="math notranslate nohighlight">\((x,y)\)</span> dentro de la circunferencia de radio <span class="math notranslate nohighlight">\(1\)</span> son
-$<span class="math notranslate nohighlight">\(
+<p>La distancia del origen a  <span class="math notranslate nohighlight">\((x,y)\)</span>  es  <span class="math notranslate nohighlight">\(\sqrt{x^2 + y^2}\)</span>. Los puntos <span class="math notranslate nohighlight">\((x,y)\)</span> dentro de la circunferencia de radio <span class="math notranslate nohighlight">\(1\)</span> son</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 D^1 = \left\{(x,y):\sqrt{x^2 + y^2} \le 1\right\}
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>Es decir, <span class="math notranslate nohighlight">\((x,y)\)</span> pertenece al círculo de radio <span class="math notranslate nohighlight">\(1\)</span> sii <span class="math notranslate nohighlight">\(x^2 + y^2 \le 1\)</span>.</p>
-<p>Ahora bien, la superficie del círculode radio 1 es <span class="math notranslate nohighlight">\(\pi\)</span> por radiom al cuadrado. En  este caso  el radio  es <span class="math notranslate nohighlight">\(1/2\)</span>, es decir la superficie del círculo de radio <span class="math notranslate nohighlight">\(1\)</span>  es <span class="math notranslate nohighlight">\(\frac\pi4\)</span>. Como la superficie del cuadrado de lado <span class="math notranslate nohighlight">\(1\)</span> es <span class="math notranslate nohighlight">\(1\)</span>, si tiramos <span class="math notranslate nohighlight">\(n\)</span> puntos al azar en un cuadrado aproximadamente <span class="math notranslate nohighlight">\(n \cdot \frac\pi4\)</span> caerán dentro del círculo.  Es decir si <span class="math notranslate nohighlight">\(k\)</span> son los puntos que han caido en el cículo:
-$<span class="math notranslate nohighlight">\(
+<p>Ahora bien, la superficie del círculode radio 1 es <span class="math notranslate nohighlight">\(\pi\)</span> por radiom al cuadrado. En  este caso  el radio  es <span class="math notranslate nohighlight">\(1/2\)</span>, es decir la superficie del círculo de radio <span class="math notranslate nohighlight">\(1\)</span>  es <span class="math notranslate nohighlight">\(\frac\pi4\)</span>. Como la superficie del cuadrado de lado <span class="math notranslate nohighlight">\(1\)</span> es <span class="math notranslate nohighlight">\(1\)</span>, si tiramos <span class="math notranslate nohighlight">\(n\)</span> puntos al azar en un cuadrado aproximadamente <span class="math notranslate nohighlight">\(n \cdot \frac\pi4\)</span> caerán dentro del círculo.  Es decir si <span class="math notranslate nohighlight">\(k\)</span> son los puntos que han caido en el cículo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 k \sim \pi\cdot \frac{1}{4}\cdot  n.
-\)</span><span class="math notranslate nohighlight">\(
-Haciendo pasaje de término,
-\)</span><span class="math notranslate nohighlight">\(
+\end{equation*}\]</div>
+<p>Haciendo pasaje de término,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \pi \sim \frac{4k}{n}
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>Implementemos un simulador de tirar puntos en el cuadrado que detecte los puntos que caen dentro del círculo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,15 +470,15 @@ Haciendo pasaje de término,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.24
-3.1
-3.1532
-3.14992
+3.072
+3.1244
+3.14068
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14174
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.140764
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141436
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1417984
 </pre></div>
 </div>
 </div>
@@ -495,30 +486,34 @@ Haciendo pasaje de término,
 <p>como verán la precisión no es muy buena, incluso tirando muchos puntos. Pero al menos nos da una idea del valor de <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 </section>
 <section id="calcular-pi-con-poligonos-regulares">
-<h2>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares<a class="headerlink" href="#calcular-pi-con-poligonos-regulares" title="Link to this heading">#</a></h2>
+<h3>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares<a class="headerlink" href="#calcular-pi-con-poligonos-regulares" title="Link to this heading">#</a></h3>
 <p>Cuando la longitud de la circunferencia se divide por la longitud del diámetro, el valor obtenido siempre se puede redondear a <span class="math notranslate nohighlight">\(3.14\)</span> un valor cercano a <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>Una de las técnicas que se pueden utilizar para encontrar una aproximación más precisa al valor de <span class="math notranslate nohighlight">\(\pi\)</span> fue desarrollada por Arquímedes. El método utilizado por él consiste en calcular una aproximación del valor <span class="math notranslate nohighlight">\(\pi\)</span> mediante polígonos con perímetros muy similares a los de una circunferencia.</p>
 <section id="version-simplificada-del-metodo-poligonal-de-arquimedes">
-<h3>Versión simplificada del método poligonal de Arquímedes<a class="headerlink" href="#version-simplificada-del-metodo-poligonal-de-arquimedes" title="Link to this heading">#</a></h3>
-<p>Primero, dibujamos una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> y se construyen un cuadrado inscrito y otro cuadrado circunscrito respecto a esta circunferencia. Calculamos el perímetro de ambos cuadrados y los denotamos <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(P\)</span>, al perímetro del inscrito y del circunscrito,  respectivamente. Si <span class="math notranslate nohighlight">\(C\)</span> es el perímetro de la circunferencia,  entonces valen las siguientes desigualdades:
-$<span class="math notranslate nohighlight">\(
+<h4>Versión simplificada del método poligonal de Arquímedes<a class="headerlink" href="#version-simplificada-del-metodo-poligonal-de-arquimedes" title="Link to this heading">#</a></h4>
+<p>Primero, dibujamos una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> y se construyen un cuadrado inscrito y otro cuadrado circunscrito respecto a esta circunferencia. Calculamos el perímetro de ambos cuadrados y los denotamos <span class="math notranslate nohighlight">\(p\)</span> y <span class="math notranslate nohighlight">\(P\)</span>, al perímetro del inscrito y del circunscrito,  respectivamente. Si <span class="math notranslate nohighlight">\(C\)</span> es el perímetro de la circunferencia,  entonces valen las siguientes desigualdades:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 p &lt; C &lt; P.
-\)</span>$</p>
-<p>El perímetro de la circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> es  <span class="math notranslate nohighlight">\(C =2\pi r\)</span>, luego:
-$<span class="math notranslate nohighlight">\(
+\end{equation*}\]</div>
+<p>El perímetro de la circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> es  <span class="math notranslate nohighlight">\(C =2\pi r\)</span>, luego:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 p &lt; C &lt; P\quad \Rightarrow \quad \frac{p}{2r} &lt; \pi &lt; \frac{P}{2r}.
-\)</span><span class="math notranslate nohighlight">\(
-Por lo tanto, \)</span>\pi$ es un número que se encuentra entre los perímetros del cuadrado más pequeño y el cuadrado más grande, ambos divididos por diámetro.</p>
-<p>Esto se puede generalizar a polígonos regulares de <span class="math notranslate nohighlight">\(n\)</span>-lados: si consideramos <span class="math notranslate nohighlight">\(r=1\)</span>, <span class="math notranslate nohighlight">\(p_n\)</span> el perímetro del polígono regular de <span class="math notranslate nohighlight">\(n\)</span> lados inscrito en  la circunferencia de radio 1,  <span class="math notranslate nohighlight">\(P_n\)</span> el perímetro del polígono regular de <span class="math notranslate nohighlight">\(n\)</span> lados circunscrito en  la circunferencia de radio 1 y <span class="math notranslate nohighlight">\(C_1 = 2\pi\)</span> el perímetro de la circunferencia de radio 1,  entonces
-\begin{equation}
+\end{equation*}\]</div>
+<p>Por lo tanto, <span class="math notranslate nohighlight">\(\pi\)</span> es un número que se encuentra entre los perímetros del cuadrado más pequeño y el cuadrado más grande, ambos divididos por diámetro.</p>
+<p>Esto se puede generalizar a polígonos regulares de <span class="math notranslate nohighlight">\(n\)</span>-lados: si consideramos <span class="math notranslate nohighlight">\(r=1\)</span>, <span class="math notranslate nohighlight">\(p_n\)</span> el perímetro del polígono regular de <span class="math notranslate nohighlight">\(n\)</span> lados inscrito en  la circunferencia de radio 1,  <span class="math notranslate nohighlight">\(P_n\)</span> el perímetro del polígono regular de <span class="math notranslate nohighlight">\(n\)</span> lados circunscrito en  la circunferencia de radio 1 y <span class="math notranslate nohighlight">\(C_1 = 2\pi\)</span> el perímetro de la circunferencia de radio 1,  entonces</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 p_n &lt; 2\pi &lt; P_n\quad \Rightarrow  \quad \frac{p_n}{2} &lt; \pi &lt; \frac{P_n}{2}. \tag{1}
-\end{equation}</p>
+\end{equation*}\]</div>
 <p>Ahora bien <span class="math notranslate nohighlight">\(p_n = n \cdot b_n\)</span> donde <span class="math notranslate nohighlight">\(b_n\)</span>  es la longitud de un lado del polígono. Un poco de trigonometría nos dice que <span class="math notranslate nohighlight">\(b_n = 2\sin({\frac{360}{n}/2}) = 2\sin(\frac{180}{n})\)</span>. Luego <span class="math notranslate nohighlight">\(p_n = 2n \sin(\frac{180}{n})\)</span>.</p>
 <p>De  forma análoga, con un poco de trigonometría,  <span class="math notranslate nohighlight">\(P_n = n \cdot B_n\)</span> donde <span class="math notranslate nohighlight">\(B_n\)</span>  es la longitud del lado y <span class="math notranslate nohighlight">\(B_n = 2\tan({\frac{360}{n}/2}) = 2\tan(\frac{180}{n})\)</span>. Luego <span class="math notranslate nohighlight">\(P_n = 2n \tan(\frac{180}{n})\)</span>.</p>
-<p>Concluyendo:  reemplazando en la fórmula (1) obtenemos
-$<span class="math notranslate nohighlight">\(
+<p>Concluyendo:  reemplazando en la fórmula (1) obtenemos</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 p_n &lt; C_1 &lt; P_n\quad =&gt; \quad n \sin(\frac{180}{n}) &lt; \pi &lt; n \tan(\frac{180}{n}).
-\)</span>$</p>
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span>  <span class="nf">calcular_pi_poligono_ins</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -571,41 +566,47 @@ p_n &lt; C_1 &lt; P_n\quad =&gt; \quad n \sin(\frac{180}{n}) &lt; \pi &lt; n \ta
 </div>
 </div>
 </div>
-<p>y por lo tanto
-$<span class="math notranslate nohighlight">\(
+<p>y por lo tanto</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 3.1410319508905093 &lt; \pi &lt;  3.1427145996453683.
-\)</span>$
-y la precisión es de 2 decimales.</p>
+\end{equation*}\]</div>
+<p>y la precisión es de 2 decimales.</p>
 </section>
 </section>
 <section id="calcular-pi-con-el-metodo-de-newton">
-<h2>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton<a class="headerlink" href="#calcular-pi-con-el-metodo-de-newton" title="Link to this heading">#</a></h2>
+<h3>Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton<a class="headerlink" href="#calcular-pi-con-el-metodo-de-newton" title="Link to this heading">#</a></h3>
 <p>La fórmula que obutvo Newton se sigue de un  caso particular de la derivada de la la función arcoseno. Está fuera del alcance de este curso la justificación y demostración de la formula y  solamente vermos  su implementación.</p>
 <p>Para mas datos ver:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="http://www.pi314.net/eng/newton.php">http://www.pi314.net/eng/newton.php</a> , o</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=9EJqxZqf63I">https://www.youtube.com/watch?v=9EJqxZqf63I</a></p></li>
+<li><p>http://www.pi314.net/eng/newton.php , o</p></li>
+<li><p>https://www.youtube.com/watch?v=9EJqxZqf63I</p></li>
 </ul>
 <p>La fórmula es la siguiente:</p>
-<div class="math notranslate nohighlight">
-\[
-\pi =  24\left(\frac{\sqrt[2]{3}}{32}- \sum_{k=0}^\infty \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}\right)
- \]</div>
-<p>Esto significa que <span class="math notranslate nohighlight">\(\pi\)</span> se puede aproximar por la suma “hasta <span class="math notranslate nohighlight">\(n\)</span>”. Es decir  dado <span class="math notranslate nohighlight">\(n \ge 0\)</span>,
-$<span class="math notranslate nohighlight">\(
- \pi/24 \sim  \frac{\sqrt[2]{3}}{32}- \sum_{k=0}^n \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}
- \)</span><span class="math notranslate nohighlight">\(
-Dicho de otra forma, si  
-\)</span><span class="math notranslate nohighlight">\(a_k = \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}
-\)</span><span class="math notranslate nohighlight">\(
-entonces
-\)</span><span class="math notranslate nohighlight">\(
-\pi/24 \sim  \frac{\sqrt[2]{3}}{32}- \sum_{k=0}^n a_k
-\)</span><span class="math notranslate nohighlight">\(
-o
-\)</span><span class="math notranslate nohighlight">\(
-\pi/24 \sim  \frac{\sqrt[2]{3}}{32}- a_0 - a_1 - a_2 - \cdots -a_n.
-\)</span>$</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \pi =  24\left(\frac{\sqrt[2]{3}}{32}- \sum_{k=0}^\infty \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}\right)
+\end{equation*}\]</div>
+<p>Esto significa que <span class="math notranslate nohighlight">\(\pi\)</span> se puede aproximar por la suma “hasta <span class="math notranslate nohighlight">\(n\)</span>”. Es decir  dado <span class="math notranslate nohighlight">\(n \ge 0\)</span>,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \pi/24 \sim  \frac{\sqrt[2]{3}}{32}- \sum_{k=0}^n \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}
+\end{equation*}\]</div>
+<p>Dicho de otra forma, si</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    a_k = \frac{ (2k)!}{2^{4k+2}(k!)^2  (2k - 1)  (2k + 3))}
+\end{equation*}\]</div>
+<p>entonces</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \pi/24 \sim  \frac{\sqrt[2]{3}}{32}- \sum_{k=0}^n a_k
+\end{equation*}\]</div>
+<p>o</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \pi/24 \sim  \frac{\sqrt[2]{3}}{32}- a_0 - a_1 - a_2 - \cdots -a_n.
+\end{equation*}\]</div>
 <p>La implementación es sencilla utilizando la función <code class="docutils literal notranslate"><span class="pre">math.factorial()</span></code>, el factorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -629,24 +630,27 @@ o
 </div>
 </section>
 <section id="calculo-de-pi-moderno-una-opcion">
-<h2>Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)<a class="headerlink" href="#calculo-de-pi-moderno-una-opcion" title="Link to this heading">#</a></h2>
-<p>Ver <a class="reference external" href="https://es.wikipedia.org/wiki/F%C3%B3rmula_de_Bailey-Borwein-Plouffe">https://es.wikipedia.org/wiki/Fórmula_de_Bailey-Borwein-Plouffe</a></p>
-<p>La fórmula Bailey-Borwein-Plouffe (fórmula BBP) es una fórmula para <span class="math notranslate nohighlight">\(\pi\)</span>. Fue descubierta en 1995 por Simon Plouffe y lleva el nombre de los autores del artículo en el que fue publicado, David H. Bailey, Peter Borwein y Plouffe. La fórmula es
-$<span class="math notranslate nohighlight">\(
-\pi = \sum_{k = 0}^\infty \frac{1}{16^k}
-\left( \frac{4}{8k + 1} - \frac{2}{8k + 4} - \frac{1}{8k + 5} - \frac{1}{8k + 6}\right).
-\)</span>$</p>
+<h3>Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)<a class="headerlink" href="#calculo-de-pi-moderno-una-opcion" title="Link to this heading">#</a></h3>
+<p>Ver https://es.wikipedia.org/wiki/F%C3%B3rmula_de_Bailey-Borwein-Plouffe</p>
+<p>La fórmula Bailey-Borwein-Plouffe (fórmula BBP) es una fórmula para <span class="math notranslate nohighlight">\(\pi\)</span>. Fue descubierta en 1995 por Simon Plouffe y lleva el nombre de los autores del artículo en el que fue publicado, David H. Bailey, Peter Borwein y Plouffe. La fórmula es</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \pi = \sum_{k = 0}^\infty \frac{1}{16^k}
+    \left( \frac{4}{8k + 1} - \frac{2}{8k + 4} - \frac{1}{8k + 5} - \frac{1}{8k + 6}\right).
+\end{equation*}\]</div>
 <p>Esta fómula permite, aunque no de manera obvia, calular el  <span class="math notranslate nohighlight">\(n\)</span>-ésimo dígito de <span class="math notranslate nohighlight">\(\pi\)</span> escrito en base <span class="math notranslate nohighlight">\(16\)</span> sin calcular los dígitos anteriores.</p>
-<p>Lo  que no es difícl de ver, basándose en la teoría de escribir un número en una base dada, que el error de las sumatoria hasta <span class="math notranslate nohighlight">\(n\)</span>  difiere con <span class="math notranslate nohighlight">\(\pi\)</span> en menos de <span class="math notranslate nohighlight">\(1/16^n\)</span>. Es decir
-$<span class="math notranslate nohighlight">\(
-0 &lt; \pi -  \sum_{k = 0}^n \frac{1}{16^k}
-\left( \frac{4}{8k + 1} - \frac{2}{8k + 4} - \frac{1}{8k + 5} - \frac{1}{8k + 6}\right) &lt; \frac{1}{16^n}.
-\)</span><span class="math notranslate nohighlight">\(
-Esto se debe  a que lo que multiplica \)</span>1/16^k<span class="math notranslate nohighlight">\( en cada término es menor que \)</span>16<span class="math notranslate nohighlight">\( (en realidad \)</span>&lt;1<span class="math notranslate nohighlight">\( si \)</span>k&gt;0$).</p>
-<p>Para implementar la fórmula observemos  que
-$<span class="math notranslate nohighlight">\(
-\frac{1}{16^k} =  \frac{1}{2^{4k}} =\left(\frac{1}{2}\right)^{4k} = 0.5^{4k}
-\)</span>$</p>
+<p>Lo  que no es difícl de ver, basándose en la teoría de escribir un número en una base dada, que el error de las sumatoria hasta <span class="math notranslate nohighlight">\(n\)</span>  difiere con <span class="math notranslate nohighlight">\(\pi\)</span> en menos de <span class="math notranslate nohighlight">\(1/16^n\)</span>. Es decir</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    0 &lt; \pi -  \sum_{k = 0}^n \frac{1}{16^k}
+    \left( \frac{4}{8k + 1} - \frac{2}{8k + 4} - \frac{1}{8k + 5} - \frac{1}{8k + 6}\right) &lt; \frac{1}{16^n}.
+\end{equation*}\]</div>
+<p>Esto se debe  a que lo que multiplica <span class="math notranslate nohighlight">\(1/16^k\)</span> en cada término es menor que <span class="math notranslate nohighlight">\(16\)</span> (en realidad <span class="math notranslate nohighlight">\(&lt;1\)</span> si <span class="math notranslate nohighlight">\(k&gt;0\)</span>).</p>
+<p>Para implementar la fórmula observemos  que</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \frac{1}{16^k} =  \frac{1}{2^{4k}} =\left(\frac{1}{2}\right)^{4k} = 0.5^{4k}
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_pi_1997</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -712,31 +716,34 @@ tiene error menor que  5.8077137562175031832834499989895222158171443590588582694
 </div>
 </div>
 </div>
-<p>Debemos decir que el cálculo de decimales  de <span class="math notranslate nohighlight">\(\pi\)</span> no es de mucha utilidad y  actualmente se realizan ese tipo de cálculos más para probar la capacidad del hardware que para obtener los dígitos de <span class="math notranslate nohighlight">\(\pi\)</span>. Para hacer estos cálculos se utiliza la fórmula de Bailey-Borwein-Plouffe vista más  arriba  o  la fórmula  de Chudnovsky (<a class="reference external" href="https://es.wikipedia.org/wiki/Algoritmo_de_Chudnovsky">https://es.wikipedia.org/wiki/Algoritmo_de_Chudnovsky</a>).</p>
+<p>Debemos decir que el cálculo de decimales  de <span class="math notranslate nohighlight">\(\pi\)</span> no es de mucha utilidad y  actualmente se realizan ese tipo de cálculos más para probar la capacidad del hardware que para obtener los dígitos de <span class="math notranslate nohighlight">\(\pi\)</span>. Para hacer estos cálculos se utiliza la fórmula de Bailey-Borwein-Plouffe vista más  arriba  o  la fórmula  de Chudnovsky (https://es.wikipedia.org/wiki/Algoritmo_de_Chudnovsky).</p>
 </section>
 <section id="el-numero-e">
-<h2>El número <span class="math notranslate nohighlight">\(e\)</span><a class="headerlink" href="#el-numero-e" title="Link to this heading">#</a></h2>
+<h3>El número <span class="math notranslate nohighlight">\(e\)</span><a class="headerlink" href="#el-numero-e" title="Link to this heading">#</a></h3>
 <p>El número <span class="math notranslate nohighlight">\(e\)</span> surge del estudio del interés compuesto, problema abordado por Jacob Bernoulli en 1683.</p>
 <p>Si se invierte un $1  con un interés del 100% anual y
 se pagan los intereses una vez al año, se obtendrán <span class="math notranslate nohighlight">\({}\)</span>$2.</p>
 <p>Si se pagan los intereses 2 veces al año, dividiendo el interés entre 2, la cantidad obtenida es <span class="math notranslate nohighlight">\({}\)</span>$1 multiplicado por <span class="math notranslate nohighlight">\(1.5\)</span> dos veces, es decir <span class="math notranslate nohighlight">\(1 \times 1.50^2 = 2.25\)</span>.</p>
 <p>Si dividimos el año en 4 períodos (trimestres), al igual que la tasa de interés, se obtienen <span class="math notranslate nohighlight">\(1 \times 1.25^4 = 2.441\ldots\)</span></p>
-<p>En el caso de pagos mensuales el monto asciende a
-$<span class="math notranslate nohighlight">\(
+<p>En el caso de pagos mensuales el monto asciende a</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 (1+\frac{1}{12})^{12} = 2.61303\ldots.
-\)</span>$</p>
-<p>Por tanto, si depositamos 1 peso en un banco que paga 100% de interés y promete <span class="math notranslate nohighlight">\(n\)</span> actualizaciones o capitalizaciones aun interes de 100/n% cada una, el dinero que recuperaremos después de un año
-\begin{equation}
+\end{equation*}\]</div>
+<p>Por tanto, si depositamos 1 peso en un banco que paga 100% de interés y promete <span class="math notranslate nohighlight">\(n\)</span> actualizaciones o capitalizaciones aun interes de 100/n% cada una, el dinero que recuperaremos después de un año</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \left(1 + \dfrac{1}{n}\right)^n \tag{2}
-\end{equation}
-pesos.</p>
-<p>Finalmente, si vamos a un banco que ofrece 100% de interés con capitalización “instantanea”,  contrario a lo que muchos puedan suponer, a lo largo de un año no vamos a entontranos con “infinito dinero” sinó con
-\begin{equation}
+\end{equation*}\]</div>
+<p>pesos.</p>
+<p>Finalmente, si vamos a un banco que ofrece 100% de interés con capitalización “instantanea”,  contrario a lo que muchos puedan suponer, a lo largo de un año no vamos a encontranos con “infinito dinero” si no con</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 e = \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n = 2.71828\ldots \tag{3}
-\end{equation}
-pesos.</p>
+\end{equation*}\]</div>
+<p>pesos.</p>
 <p>Una forma sencilla, en una computadora, de calcular <span class="math notranslate nohighlight">\(e\)</span>  es usar directamente la fórmula (2) como aproximación. Sin embargo,  esta fórmula introduce errores y no es buena computacionalmente.</p>
-<p>Aqui  implementamos la fórmula (2)  y calculamos una aproximación de <span class="math notranslate nohighlight">\(e\)</span> para 4N = 1000$.</p>
+<p>Aquí, implementamos la fórmula (2)  y calculamos una aproximación de <span class="math notranslate nohighlight">\(e\)</span> para 4N = 1000$.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_e</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
@@ -767,15 +774,18 @@ pesos.</p>
 </div>
 </div>
 </div>
-<p>También se puede calcular <span class="math notranslate nohighlight">\(e\)</span> usando la serie de  Taylor.
-$<span class="math notranslate nohighlight">\(
+<p>También se puede calcular <span class="math notranslate nohighlight">\(e\)</span> usando la serie de  Taylor.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 e = \sum_{n=0}^\infty \frac{1}{n!}.
-\)</span><span class="math notranslate nohighlight">\(
-Esta forma de calcular \)</span>e$ es más adecuada computacionalmente que la fórmula (2) y,  además, nos permite determinar fácilmente la precisión del resultado.</p>
-<p><strong>Ejercicio.</strong> Dado <span class="math notranslate nohighlight">\(m\)</span>  entero, <span class="math notranslate nohighlight">\(m&gt; 0\)</span>, implementar la aproximación por series de Taylor de <span class="math notranslate nohighlight">\(e\)</span> en grado <span class="math notranslate nohighlight">\(m\)</span>:
-$<span class="math notranslate nohighlight">\(
+\end{equation*}\]</div>
+<p>Esta forma de calcular <span class="math notranslate nohighlight">\(e\)</span> es más adecuada computacionalmente que la fórmula (2) y,  además, nos permite determinar fácilmente la precisión del resultado.</p>
+<p><strong>Ejercicio.</strong> Dado <span class="math notranslate nohighlight">\(m\)</span>  entero, <span class="math notranslate nohighlight">\(m&gt; 0\)</span>, implementar la aproximación por series de Taylor de <span class="math notranslate nohighlight">\(e\)</span> en grado <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \sum_{n=0}^m \frac{1}{n!}.
-\)</span>$</p>
+\end{equation*}\]</div>
+</section>
 </section>
 </section>
 
@@ -810,22 +820,13 @@ $<span class="math notranslate nohighlight">\(
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="13_Recursion_%28continuacion%29.html"
+       href="00_Introduccion.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Recursión (2° parte)</p>
+        <p class="prev-next-title">Algoritmos y Programación: introducción</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="14_Clases_y_objetos.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Clases y objetos</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -843,14 +844,17 @@ $<span class="math notranslate nohighlight">\(
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-contando-las-gotas-de-la-lluvia">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-poligonos-regulares">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-simplificada-del-metodo-poligonal-de-arquimedes">Versión simplificada del método poligonal de Arquímedes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi">1. Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-contando-las-gotas-de-la-lluvia">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> contando las gotas de la lluvia.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-poligonos-regulares">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con polígonos regulares</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#version-simplificada-del-metodo-poligonal-de-arquimedes">Versión simplificada del método poligonal de Arquímedes</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-el-metodo-de-newton">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi-moderno-una-opcion">Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-numero-e">El número <span class="math notranslate nohighlight">\(e\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-pi-con-el-metodo-de-newton">Calcular <span class="math notranslate nohighlight">\(\pi\)</span> con el método de Newton</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-pi-moderno-una-opcion">Cálculo de <span class="math notranslate nohighlight">\(\pi\)</span> moderno (una opción)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-numero-e">El número <span class="math notranslate nohighlight">\(e\)</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

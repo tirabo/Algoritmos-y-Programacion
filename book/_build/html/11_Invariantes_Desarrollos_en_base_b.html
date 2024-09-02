@@ -183,7 +183,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Colab Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -199,6 +199,13 @@
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -740,11 +747,12 @@ $<span class="math notranslate nohighlight">\(
 \)</span>$</p>
 <p>Una forma de obtenerlo es encontrar todos los divisores comunes de <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> y  quedarse con el máximo. Esta no es una forma eficiente y para números grandes es imposible de aplicar.</p>
 <p>La forma “correcta” de calcular el mcd es usando el <em>algoritmo de Euclides</em> y  la veremos más adelante.</p>
-<p>Como primera aproximación para calcular el mcd usaremos el algoritmo explicado en un cuaderno previo que se basa en las siguientes propiedades: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:
-\begin{align*}
-&amp;a)&amp;\operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(y - x, x) \
+<p>Como primera aproximación para calcular el mcd usaremos el algoritmo explicado en un cuaderno previo que se basa en las siguientes propiedades: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;a)&amp;\operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(y - x, x) \\
 &amp;b)&amp;\operatorname{mcd}(0, y) &amp;= y.
-\end{align*}</p>
+\end{align*}\]</div>
 <p>Por lo tanto,  la idea para obtener el mcd es hacer restas hasta que uno de los dos argumentos de la función mcd alcance el 0 y obtener el mcd por la propiedad b). Una de las implementaciones es la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -794,11 +802,12 @@ $<span class="math notranslate nohighlight">\(
 <p>Esto prueba que el ciclo es correcto y que el valor que se devuelve es el  mcd  entre <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>. La única consideración que habría que hacer es respecto a si el ciclo termina. Pero esto se puede verificar fácilmente pues en cada paso se hace una resta y  entonces uno de los argumentos del mcd va decreciendo. Luego de una cantidad suficiente de pasos llegaremos a que uno de los argumentos del mcd es 0 y  el ciclo termina.</p>
 <section id="algoritmo-de-euclides">
 <h3>Algoritmo de Euclides<a class="headerlink" href="#algoritmo-de-euclides" title="Link to this heading">#</a></h3>
-<p>El algoritmo anterior es relativamente eficiente, pero lo es mucho más el <em>algoritmo de Euclides</em> que se basa en las siguientes propiedades: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros no negativos,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:
-\begin{align*}
-&amp;a)\text{ si } x = q \cdot y + r \text{ con } 0 \le r &lt; y ;\Rightarrow; \operatorname{mcd}(x, y) = \operatorname{mcd}(y, r) \
+<p>El algoritmo anterior es relativamente eficiente, pero lo es mucho más el <em>algoritmo de Euclides</em> que se basa en las siguientes propiedades: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros no negativos,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;a)\text{ si } x = q \cdot y + r \text{ con } 0 \le r &lt; y \;\Rightarrow\; \operatorname{mcd}(x, y) = \operatorname{mcd}(y, r) \\
 &amp;b)\operatorname{mcd}(0, x) = x.
-\end{align*}</p>
+\end{align*}\]</div>
 <p>Tanto a) como b) son sencillos de probar con la definición de mcd. Observar  que a) es una generalización del a) anterior, pues <span class="math notranslate nohighlight">\(r = x - q \cdot y\)</span>,  es decir <span class="math notranslate nohighlight">\(r\)</span> es <span class="math notranslate nohighlight">\(x\)</span> restando <span class="math notranslate nohighlight">\(q\)</span> veces <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>La implementación del algoritmo es más sencilla que en método anterior y el invariante es muy parecido:</p>
 <div class="cell docutils container">
@@ -840,14 +849,15 @@ $<span class="math notranslate nohighlight">\(
 407 = r_n5^n +r_{n-1} 5^{n-1}+\cdots + r_1 5 + r_0,
 \)</span><span class="math notranslate nohighlight">\(
 con \)</span>0 \le r_i &lt; 5<span class="math notranslate nohighlight">\(. La forma de hacerlo  es, primero, dividir el número original y los sucesivos cocientes por \)</span>5<span class="math notranslate nohighlight">\(:  
-\)</span><span class="math notranslate nohighlight">\(
-\begin{align}
+\)</span>$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4aa3e2b-1013-4e4c-887d-f1a561cb6ed1">
+<span class="eqno">(8)<a class="headerlink" href="#equation-e4aa3e2b-1013-4e4c-887d-f1a561cb6ed1" title="Permalink to this equation">#</a></span>\[\begin{align}
 407 &amp;=5\cdot 81 &amp;+&amp; 2 \tag{B1}\\
 81 &amp; = 5\cdot 16 &amp;+&amp; 1  \tag{B2}\\
 16 &amp; = 5\cdot 3 &amp;+&amp; 1  \tag{B3}\\
 3 &amp; = 5\cdot 0 &amp;+&amp; 3.\tag{B4}
-\end{align}
-\)</span><span class="math notranslate nohighlight">\(
+\end{align}\]</div>
+<p>$<span class="math notranslate nohighlight">\(
 Entonces, el desarrollo en base \)</span>5<span class="math notranslate nohighlight">\( de \)</span>407$ viene dado por los restos de las divisiones sucesiva, leídos en forma ascendente.</p>
 <p>En este caso diremos que el desarrollo en base <span class="math notranslate nohighlight">\(5\)</span> de <span class="math notranslate nohighlight">\(407\)</span> es <span class="math notranslate nohighlight">\(3112\)</span> o, resumidamente, <span class="math notranslate nohighlight">\(407 = (3112)_5\)</span>.</p>
 <p>La demostración  de que este algoritmo funciona bien no es complicada, pero no la haremos aqui,  donde lo que más nos interesa es implementar correctamente el algoritmo.</p>
@@ -882,20 +892,21 @@ Entonces, el desarrollo en base \)</span>5<span class="math notranslate nohighli
 </div>
 <p>Demostremos usando invariantes  que este es el algoritmo correcto. ¿Cuál es el invariante? Recordar que debe ser una propiedad que se cumple dentro del ciclo y cuando la guarda (en este caso <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>)  es falsa,  es decir <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">==</span> <span class="pre">0</span></code>, se debe cumplir el resultado,  es decir <code class="docutils literal notranslate"><span class="pre">restos</span></code> debe ser el desarrollo en base <span class="math notranslate nohighlight">\(b\)</span>  de <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Observar que  se cumple,<br />
-$<span class="math notranslate nohighlight">\(
-\begin{align}
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1548ee19-7d54-4178-a8d0-2571ba6535be">
+<span class="eqno">(9)<a class="headerlink" href="#equation-1548ee19-7d54-4178-a8d0-2571ba6535be" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\text{B1}) \quad&amp;\Rightarrow&amp; 407 &amp;=5\cdot 81 + 2 \\
 (\text{B2}) \quad&amp;\Rightarrow&amp;  407&amp; = 5^2\cdot 16 + 5\cdot 1 +2 \\
 (\text{B3}) \quad&amp;\Rightarrow&amp;  407&amp; = 5^3\cdot  3+ 5^2\cdot 1 + 5\cdot 1 +2
-\end{align}
-\)</span><span class="math notranslate nohighlight">\(
-En  general se va a cumplir  que en  el paso \)</span>\text{(Bi)}$</p>
+\end{align}\]</div>
 <div class="math notranslate nohighlight">
 \[
-\begin{align}
+En  general se va a cumplir  que en  el paso $\text{(Bi)}$\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c93914a3-9965-4d1c-837b-c8e92e8e60a8">
+<span class="eqno">(10)<a class="headerlink" href="#equation-c93914a3-9965-4d1c-837b-c8e92e8e60a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\text{Bi}) \quad&amp;\Rightarrow&amp; n  &amp;=  a_i b^i + a_{i-1} b^{i-1} + \cdots + a_1 b + a_0
-\end{align}
-\]</div>
+\end{align}\]</div>
+<p>$$</p>
 <p>con <span class="math notranslate nohighlight">\(0 \le a_k &lt; b\)</span> para <span class="math notranslate nohighlight">\(0 \le k &lt; i\)</span>. Basandonos en estas observaciones, se propone el invariante</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>n = r[0] + r[1]*b + r[2]*b^2 + ... + r[s]*b^s + q*b^(s+1)
 </pre></div>
@@ -930,16 +941,17 @@ $<span class="math notranslate nohighlight">\(
 0.1 =  (0.0001\, 1001\, 1001\, {1001} ....)_2,
 \)</span><span class="math notranslate nohighlight">\(
 Es decir el desarrollo de base \)</span>2<span class="math notranslate nohighlight">\( de \)</span>0.1<span class="math notranslate nohighlight">\( es \)</span>0.0001<span class="math notranslate nohighlight">\( seguido por infinitas repeticiones de  \)</span>1001$, lo que se llama el <em>período.</em></p>
-<p><em>Observación.</em> Pese a que nuestra creencia es que todo número real se representa de una única forma ¿sabías que <span class="math notranslate nohighlight">\(1 = 0.9999...\)</span>? Veamos una denostración de este hecho   poco intuitivo:
-\begin{align*}
-x &amp;= 0.999\ldots \
-10x &amp;= 9.999\ldots &amp;&amp; \text{(multiplicando por <span class="math notranslate nohighlight">\(10\)</span>)}\
-10x &amp;= 9+0.999\ldots &amp;&amp; \
-10x &amp;= 9 + x &amp;&amp; \text{(por definición de <span class="math notranslate nohighlight">\(x\)</span>) }\
-9x &amp;= 9 &amp;&amp; \text{(restando <span class="math notranslate nohighlight">\(x\)</span>)}\
-x &amp;= 1 &amp;&amp; \text{(dividiendo por 9)}
-\end{align*}
-De la misma forma podemos demostrar que
+<p><em>Observación.</em> Pese a que nuestra creencia es que todo número real se representa de una única forma ¿sabías que <span class="math notranslate nohighlight">\(1 = 0.9999...\)</span>? Veamos una denostración de este hecho   poco intuitivo:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+     x &amp;= 0.999\ldots \\
+   10x &amp;= 9.999\ldots &amp;&amp; \text{(multiplicando por $10$)}\\
+   10x &amp;= 9+0.999\ldots &amp;&amp; \\
+   10x &amp;= 9 + x &amp;&amp; \text{(por definición de $x$) }\\
+   9x &amp;= 9 &amp;&amp; \text{(restando $x$)}\\
+    x &amp;= 1 &amp;&amp; \text{(dividiendo por 9)}
+\end{align*}\]</div>
+<p>De la misma forma podemos demostrar que
 $<span class="math notranslate nohighlight">\(
 (1)_2 = (0.11111...)_2.
 \)</span>$</p>
@@ -1038,7 +1050,9 @@ Se pierde exactitud en los cálculos: x**2 + y = 0.19000000000000003 . Debería 
 0.3
 0.4
 0.5
-0.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
 Los cálculos son exactos: x**2 + y = 0.19 . Debería dar (y da) 0.19
 </pre></div>
 </div>
