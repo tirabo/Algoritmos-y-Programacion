@@ -413,12 +413,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-y-argumentos">8. Parámetros y argumentos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-variables-y-los-parametros-de-una-funcion-son-locales">9. Las variables y los parámetros de una función son locales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valor-y-funciones-nulas">10. Funciones que devuelven valor y funciones nulas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valor">11. Funciones que devuelven valor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-grados">12. Ejemplo: conversión de formatos de grados</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-funciones">13. ¿Por qué funciones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depuracion">14. Depuración</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signatura">15. Signatura</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones">16. Precondiciones y postcondiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-grados">11. Ejemplo: conversión de formatos de grados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-funciones">12. ¿Por qué funciones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depuracion">13. Depuración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signatura">14. Signatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones">15. Precondiciones y postcondiciones</a></li>
 </ul>
             </nav>
         </div>
@@ -609,7 +608,7 @@ del módulo y el nombre de la función, separados por un punto. Este formato se 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45 grados son 0.7853981633974483 radianes
-sen(45º) =  0.7071067811865476
+sen(45º) =  0.7071067811865475
 </pre></div>
 </div>
 </div>
@@ -707,7 +706,7 @@ sen(45º) =  0.7071067811865476
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function imprimir_instrucciones at 0x000002BB5DE44160&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function imprimir_instrucciones at 0x6ffc4712a680&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>function
@@ -724,9 +723,7 @@ sen(45º) =  0.7071067811865476
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abra el  recipiente.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Complete el recipiente con agua.
+Complete el recipiente con agua.
 </pre></div>
 </div>
 </div>
@@ -771,20 +768,21 @@ Complete el recipiente con agua.
 </div>
 <p>Este programa contiene dos definiciones de función: <code class="docutils literal notranslate"><span class="pre">imprimir_instrucciones</span></code> y <code class="docutils literal notranslate"><span class="pre">repetir_instrucciones</span></code>. Las definiciones de funciones se ejecutan al igual que otras declaraciones, pero el efecto es crear objetos de función. Las declaraciones dentro de la función no se ejecutan hasta que se llama a la función y la definición de la función no genera salida.</p>
 <p>Como era de esperar, hay que crear una función antes de poder ejecutarla. En otras palabras, la definición de la función debe ejecutarse antes de que se llame a la función.</p>
+<p>En  las siguientes celdas de código ejemplificamos la situación.</p>
 <p>Como ejercicio, mové la última línea de este programa hacia arriba, para que la llamada a la función aparezca antes de las definiciones. Ejecutá el programa y observá qué mensaje de error se obtiene.</p>
 <p>Ahora mové la llamada a la función al final y move la definición de <code class="docutils literal notranslate"><span class="pre">imprimir_instrucciones</span></code> después de la definición de <code class="docutils literal notranslate"><span class="pre">repetir_instrucciones</span></code>. ¿Qué sucede cuando ejecutás este programa? (antes de cada ejecución reiniciar el entorno de ejecución).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orden correcto</span>
-<span class="k">def</span> <span class="nf">imprimir_instrucciones</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orden correcto 0</span>
+<span class="k">def</span> <span class="nf">imprimir_instrucciones_0</span><span class="p">():</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Abra el  recipiente.&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Complete el recipiente con agua.&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">repetir_instrucciones</span><span class="p">():</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">repetir_instrucciones_0</span><span class="p">():</span>
+    <span class="n">imprimir_instrucciones_0</span><span class="p">()</span>
+    <span class="n">imprimir_instrucciones_0</span><span class="p">()</span>
 
-<span class="n">repetir_instrucciones</span><span class="p">()</span>
+<span class="n">repetir_instrucciones_0</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -800,23 +798,28 @@ Complete el recipiente con agua.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orden incorrecto 1</span>
-<span class="n">repetir_instrucciones</span><span class="p">()</span>
+<span class="n">repetir_instrucciones_1</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">imprimir_instrucciones</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">imprimir_instrucciones_1</span><span class="p">():</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Abra el  recipiente.&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Complete el recipiente con agua.&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">repetir_instrucciones</span><span class="p">():</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">repetir_instrucciones_1</span><span class="p">():</span>
+    <span class="n">imprimir_instrucciones_1</span><span class="p">()</span>
+    <span class="n">imprimir_instrucciones_1</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abra el  recipiente.
-Complete el recipiente con agua.
-Abra el  recipiente.
-Complete el recipiente con agua.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Orden incorrecto 1</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">repetir_instrucciones_1</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">imprimir_instrucciones_1</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Abra el  recipiente.&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;repetir_instrucciones_1&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -824,15 +827,15 @@ Complete el recipiente con agua.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Orden correcto 2</span>
-<span class="k">def</span> <span class="nf">repetir_instrucciones</span><span class="p">():</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
-    <span class="n">imprimir_instrucciones</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">repetir_instrucciones_2</span><span class="p">():</span>
+    <span class="n">imprimir_instrucciones_2</span><span class="p">()</span>
+    <span class="n">imprimir_instrucciones_2</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">imprimir_instrucciones</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">imprimir_instrucciones_2</span><span class="p">():</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Abra el  recipiente.&quot;</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Complete el recipiente con agua.&quot;</span><span class="p">)</span>
 
-<span class="n">repetir_instrucciones</span><span class="p">()</span>
+<span class="n">repetir_instrucciones_2</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -933,8 +936,6 @@ Esta también
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Screen</span><span class="p">()</span>
 <span class="n">gran_cuadrado</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -954,9 +955,8 @@ Esta también
 <p>Agregamos un parámetro para que la función sea más flexible y poder dibujar cuadrados de diversos tamaños. Veamos, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -977,20 +977,9 @@ Esta también
 <p>Probemos el código:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gran_cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span> <span class="c1"># cierra la ventana al hacer clic en ella</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">kernel</span> <span class="n">se</span> <span class="n">bloqueó</span> <span class="n">al</span> <span class="n">ejecutar</span> <span class="n">código</span> <span class="n">en</span> <span class="n">la</span> <span class="n">celda</span> <span class="n">actual</span> <span class="n">o</span> <span class="n">en</span> <span class="n">una</span> <span class="n">celda</span> <span class="n">anterior</span><span class="o">.</span> 
-
-<span class="n">Revise</span> <span class="n">el</span> <span class="n">código</span> <span class="n">de</span> <span class="n">las</span> <span class="n">celdas</span> <span class="n">para</span> <span class="n">identificar</span> <span class="n">una</span> <span class="n">posible</span> <span class="n">causa</span> <span class="k">del</span> <span class="n">error</span><span class="o">.</span> 
-
-<span class="n">Haga</span> <span class="n">clic</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://aka.ms/vscodeJupyterKernelCrash&#39;</span><span class="o">&gt;</span><span class="n">aquí</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">para</span> <span class="n">obtener</span> <span class="n">más</span> <span class="n">información</span><span class="o">.</span> 
-
-<span class="n">Vea</span> <span class="n">Jupyter</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;command:jupyter.viewOutput&#39;</span><span class="o">&gt;</span><span class="n">log</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">para</span> <span class="n">obtener</span> <span class="n">más</span> <span class="n">detalles</span><span class="o">.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset</span><span class="p">()</span>
+<span class="n">gran_cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="c1"># cierra la ventana al hacer clic en ella</span>
 </pre></div>
 </div>
 </div>
@@ -1013,6 +1002,7 @@ Esta también
 </div>
 </div>
 </div>
+<p><em>Observación.</em> Esta última función que definimos para dibujar el cuadrado grande dibuja 2 veces cada línea interna. Como dibuja 4 cuadrados de lado 100 dibuja un total de <span class="math notranslate nohighlight">\(4 \times 100 \times 4 = 1600\)</span> pixeles. Ahora bien,  el cuadrado grande tiene lado <span class="math notranslate nohighlight">\(200\)</span>,  con  lo cual su perímetro es  <span class="math notranslate nohighlight">\(4 \times 200 = 800\)</span> y  cada linea interna tiene <span class="math notranslate nohighlight">\(200\)</span> pixeles, luego sumamos <span class="math notranslate nohighlight">\(2 \times 200 = 400\)</span> pixeles. Concluyendo el cuadrado grande con sus dos líneas internas tiene  <span class="math notranslate nohighlight">\(4 \times 200 + 2 \times 200 = 1200\)</span> pixeles. Es decir, en la última implementación de <code class="docutils literal notranslate"><span class="pre">gran_cuadrado()</span></code> hemos dibujado <span class="math notranslate nohighlight">\(400\)</span> pixeles innecesarios. ¿Es esto un problema? En  este caso claramente no, y  en realidad en muchos casos como este es conveniente sacrificar un poco de eficiencia en pos de una mejor modularidad y claridad: compare el código de la primera definición de <code class="docutils literal notranslate"><span class="pre">gran_cuadrado()</span></code>,  que dibuja <span class="math notranslate nohighlight">\(1500\)</span> pixeles, y la última,  que dibuja <span class="math notranslate nohighlight">\(1600\)</span> pixeles.</p>
 </section>
 <section id="flujo-de-ejecucion">
 <h2>7. Flujo de ejecución<a class="headerlink" href="#flujo-de-ejecucion" title="Link to this heading">#</a></h2>
@@ -1051,6 +1041,22 @@ Esta también
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spam
+Spam
+Spam
+Spam
+42
+42
+42
+42
+3.141592653589793
+3.141592653589793
+3.141592653589793
+3.141592653589793
+</pre></div>
+</div>
+</div>
 </div>
 <p>Las mismas reglas de composición que se aplican a las funciones predeefinidas también se aplican a las funciones definidas por el programador, por lo que podemos usar cualquier tipo de expresión como argumento para <code class="docutils literal notranslate"><span class="pre">imprimir_4_veces</span></code>:</p>
 <div class="cell docutils container">
@@ -1061,6 +1067,22 @@ Esta también
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SpamSpam
+SpamSpam
+SpamSpam
+SpamSpam
+45
+45
+45
+45
+-1.0
+-1.0
+-1.0
+-1.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>El argumento se evalúa antes de llamar a la función, por lo que en los ejemplos las expresiones <code class="docutils literal notranslate"><span class="pre">'Spam'</span> <span class="pre">*</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">42</span> <span class="pre">+</span> <span class="pre">3</span></code> y <code class="docutils literal notranslate"><span class="pre">math.cos(math.pi)</span></code> solo se evalúan una vez.</p>
 <p>También se puede utilizar una variable como argumento:</p>
@@ -1068,6 +1090,14 @@ Esta también
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">miguel</span> <span class="o">=</span> <span class="s1">&#39;el hombre que escaló la montaña&#39;</span>
 <span class="n">imprimir_4_veces</span><span class="p">(</span><span class="n">miguel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>el hombre que escaló la montaña
+el hombre que escaló la montaña
+el hombre que escaló la montaña
+el hombre que escaló la montaña
 </pre></div>
 </div>
 </div>
@@ -1087,6 +1117,14 @@ Esta también
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imprimir_4_veces_v2</span><span class="p">(</span><span class="s1">&#39;¡Hola!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Hola!
+¡Hola!
+¡Hola!
+¡Hola!
 </pre></div>
 </div>
 </div>
@@ -1110,6 +1148,15 @@ Esta también
         <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
 
 <span class="n">imprimir_veces</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;¡Adios!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¡Adios!
+¡Adios!
+¡Adios!
+¡Adios!
+¡Adios!
 </pre></div>
 </div>
 </div>
@@ -1140,6 +1187,12 @@ Esta también
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buenas tardes, mucho gusto.
+Buenas tardes, mucho gusto.
+</pre></div>
+</div>
+</div>
 </div>
 <p>Cuando termina <code class="docutils literal notranslate"><span class="pre">cat_dos_veces</span></code>, la variable <code class="docutils literal notranslate"><span class="pre">concatenado</span></code> se destruye. Si intentamos imprimirla, obtenemos una excepción:</p>
 <div class="cell docutils container">
@@ -1148,6 +1201,12 @@ Esta también
 <span class="n">linea_2</span> <span class="o">=</span> <span class="s1">&#39;mucho gusto.&#39;</span>
 <span class="n">cat_dos_veces</span><span class="p">(</span><span class="n">linea_1</span><span class="p">,</span> <span class="n">linea_2</span><span class="p">)</span>
 <span class="c1"># print(concatenado) # descomentar la línea produce un error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buenas tardes, mucho gusto.
+Buenas tardes, mucho gusto.
 </pre></div>
 </div>
 </div>
@@ -1160,23 +1219,33 @@ Esta también
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adios
+adios
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="funciones-que-devuelven-valor-y-funciones-nulas">
 <h2>10. Funciones que devuelven valor y funciones nulas<a class="headerlink" href="#funciones-que-devuelven-valor-y-funciones-nulas" title="Link to this heading">#</a></h2>
-<p>Algunas de las funciones que hemos utilizado, como las funciones matemáticas, devuelven resultados; a falta de un nombre mejor, las llamamos <em>funciones que devuelven valor</em>. Otras funciones, como <code class="docutils literal notranslate"><span class="pre">imprimir_dos_veces</span></code>, realizan una acción pero no devuelven un valor. Se llaman <em>funciones vacías</em>.</p>
+<p>Algunas de las funciones que hemos utilizado, como las funciones matemáticas, devuelven resultados; a falta de un nombre mejor, las llamamos <em>funciones que devuelven valor</em>. Otras funciones, como <code class="docutils literal notranslate"><span class="pre">imprimir_dos_veces()</span></code>, realizan una acción pero no devuelven un valor. Se llaman <em>funciones vacías</em>.</p>
 <p>A veces,  a las funciones que devuelven valor se las llama simplemente <em>funciones</em> y  a las funciones nulas se las llama <em>procedimientos</em>.</p>
 <p>Cuando se llama a una función que devuelve valor, casi siempre se quiere hacer algo con el resultado; por ejemplo, se puede asignar a una variable o usarse como parte de una expresión. Por ejemplo,  si corremos la siguiente celda de código</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.618033988749895
 </pre></div>
 </div>
 </div>
 </div>
-<p>La función <code class="docutils literal notranslate"><span class="pre">math.sqrt()</span></code> aplicada a <code class="docutils literal notranslate"><span class="pre">5</span></code> nos devuelve un valor y si ejecutamos la celda de código anterior imprimimos su valor sumado <code class="docutils literal notranslate"><span class="pre">1</span></code> y dividido por <code class="docutils literal notranslate"><span class="pre">2</span></code>. Pero  ese valor se pierde, no puede ser reutilizado y por lo tanto la instrucción no es muy útil. Pero  si escribimos y ejecutamos:</p>
+<p>la expresión de la segunda linea devuelve un valor que se imprime en pantalla, pero  ese valor se pierde, no puede ser reutilizado y por lo tanto la instrucción no es muy útil. Pero  si escribimos y ejecutamos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">num_aureo</span><span class="p">():</span>
@@ -1188,20 +1257,6 @@ Esta también
 </div>
 </div>
 <p>entonces <code class="docutils literal notranslate"><span class="pre">n_aureo</span></code> puede ser reutilizado. Por ejemplo, podemos comprobar  que si <span class="math notranslate nohighlight">\(\rho\)</span> es el <em>número áureo</em>,  entonces $<span class="math notranslate nohighlight">\(\rho^2 - \frac{1}{\rho} - 2 = 0\)</span>$</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">n_aureo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_aureo</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.618033988749895
-0.6180339887498948
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_aureo</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">n_aureo</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
@@ -1223,13 +1278,9 @@ Esta también
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">resultado</span> <span class="o">=</span> <span class="n">imprimir_dos_veces</span><span class="p">(</span><span class="s1">&#39;Bing&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;imprimir_dos_veces&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bing
+Bing
+None
 </pre></div>
 </div>
 </div>
@@ -1247,17 +1298,8 @@ Esta también
 </div>
 </div>
 </div>
-<p>Las funciones que hemos escrito hasta ahora en este cuaderno son todas nulas. Repasaremos y profundizaremos sobre las funciones que devuelven valor en la próxima sección.</p>
-</section>
-<section id="funciones-que-devuelven-valor">
-<h2>11. Funciones que devuelven valor<a class="headerlink" href="#funciones-que-devuelven-valor" title="Link to this heading">#</a></h2>
-<p>Muchas de las funciones de Python que hemos utilizado, como las funciones matemáticas, producen valores de retorno. Algunas de las funciones que hemos definido devuelven valor pero muchas otras son nulas: tienen un efecto, como imprimir un valor, pero no tienen un valor de retorno. En esta sección veremos como escribir funciones que devuelven valor.</p>
-<p>Llamar a una función que devuelve un valor,  generalmente  asigna este valor a una variable o usamos el valor como parte de una expresión. Por ejemplo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">altura</span> <span class="o">=</span> <span class="n">radio</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">radianes</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Veamos ahora un ejemplo de una función que devuelve valor definida por nosotros. La función será  <code class="docutils literal notranslate"><span class="pre">area()</span></code>, que devuelve el área de un círculo con el radio dado:</p>
+<p>Muchas de las funciones de Python que hemos utilizado, como las funciones matemáticas, producen valores de retorno. Algunas de las funciones que hemos definido devuelven valor pero muchas otras son nulas: tienen un efecto, como imprimir un valor, pero no tienen un valor de retorno.</p>
+<p>Veamos ahora otro ejemplo de una función que devuelve valor definida por nosotros. La función será  <code class="docutils literal notranslate"><span class="pre">area()</span></code>, que devuelve el área de un círculo con el radio dado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">radio</span><span class="p">):</span>
@@ -1304,8 +1346,11 @@ Esta también
 </div>
 </section>
 <section id="ejemplo-conversion-de-formatos-de-grados">
-<h2>12. Ejemplo: conversión de formatos de grados<a class="headerlink" href="#ejemplo-conversion-de-formatos-de-grados" title="Link to this heading">#</a></h2>
-<p>Las coordenadas de los mapas se representaban tradicionalmente como grados, minutos y segundos (GMS), llamados  <em>grado sexagesimales</em>. Sin embargo, en los <em>sistemas de información geográfica</em> (SIG) que se utilizan en las computadoras, la latitud y la longitud se representan como números decimales conocidos como <em>grados decimales</em>. El formato de grados, minutos y segundos se sigue utilizando y a veces, hay que convertir entre ese formato y los grados decimales para realizar cálculos y elaborar informes.</p>
+<h2>11. Ejemplo: conversión de formatos de grados<a class="headerlink" href="#ejemplo-conversion-de-formatos-de-grados" title="Link to this heading">#</a></h2>
+<p>Las coordenadas de los mapas se representaban tradicionalmente como grados, minutos y segundos (GMS), llamados  <em>grado sexagesimales</em>. Sin embargo, en los <em>sistemas de información geográfica</em> (SIG) que se utilizan en las computadoras, la latitud y la longitud se representan como números decimales conocidos como <em>grados decimales</em>.</p>
+<p>A  diferencia de los los grados sexagesimales,</p>
+<p>Los grados decimales representan una latitud o longitud por un número entero,  que indica los grados, seguidos de una “coma”, o un “punto” en la notación anglosajona, y luego una secuencia de números que indica una fracción de grado. Por ejemplo, <span class="math notranslate nohighlight">\(23.5\)</span> indica <span class="math notranslate nohighlight">\(23\)</span> grados y medio,  es decir  <span class="math notranslate nohighlight">\(23\)</span> grados y <span class="math notranslate nohighlight">\(30\)</span> minutos.</p>
+<p>El formato de grados, minutos y segundos se sigue utilizando y a veces, hay que convertir entre ese formato y los grados decimales para realizar cálculos y elaborar informes.</p>
 <p>Escribiremos las funciones que imprimen la conversión de un sistema a otro.</p>
 <p>Primero convertiremos grados sexagesimales en  grados decimales y eso es muy sencillo cuando usamos grados positivos:</p>
 <div class="cell docutils container">
@@ -1353,20 +1398,8 @@ Esta también
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deci_a_sexa</span><span class="p">(</span><span class="n">posicion</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-    <span class="c1"># pre: pos son grados en notación decimal, pos &gt;= 0</span>
-    <span class="c1"># post:  devuelve la conversión de pos a grados, minutos, segundos sexagesimales</span>
-    <span class="n">grados</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">posicion</span><span class="p">)</span> <span class="c1"># grados totales</span>
-    <span class="n">segundos</span> <span class="o">=</span> <span class="p">(</span><span class="n">posicion</span> <span class="o">-</span> <span class="n">grados</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3600</span> <span class="c1"># estos son los segundos totales restados los grados</span>
-    <span class="n">minutos</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">segundos</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="c1"># estos son los minutos totales restados los grados</span>
-    <span class="n">segundos</span> <span class="o">=</span> <span class="n">segundos</span> <span class="o">-</span> <span class="mi">60</span> <span class="o">*</span> <span class="n">minutos</span> <span class="c1"># estos son los segundos totales restados los grados y minutos</span>
-
-    <span class="k">return</span> <span class="n">grados</span><span class="p">,</span> <span class="n">minutos</span><span class="p">,</span> <span class="n">segundos</span>
-
-<span class="n">deci_a_sexa</span><span class="p">(</span><span class="mf">33.906527777777775</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(33, 54, 23.499999999990564)
 </pre></div>
 </div>
 </div>
@@ -1375,7 +1408,7 @@ Esta también
 <p>Las funciones <code class="docutils literal notranslate"><span class="pre">sexa_a_deci()</span></code> y  <code class="docutils literal notranslate"><span class="pre">deci_a_sexa()</span></code> deben considerarse funciones auxiliares que ayudarán a resolver el problema, un poco más complejo, de pasar de coordenadas terrestres sexagesimales a coordenadas terrestres decimales y viceversa. Eso lo podremos hacer usando condicionales.</p>
 </section>
 <section id="por-que-funciones">
-<h2>13. ¿Por qué funciones?<a class="headerlink" href="#por-que-funciones" title="Link to this heading">#</a></h2>
+<h2>12. ¿Por qué funciones?<a class="headerlink" href="#por-que-funciones" title="Link to this heading">#</a></h2>
 <p>Puede que no quede claro por qué vale la pena dividir un programa en funciones. Hay varias razones:</p>
 <ul class="simple">
 <li><p>La creación de una nueva función te brinda la oportunidad de nombrar a un grupo de declaraciones, lo que hace que tu programa sea más fácil de leer y depurar.</p></li>
@@ -1385,7 +1418,7 @@ Esta también
 </ul>
 </section>
 <section id="depuracion">
-<h2>14. Depuración<a class="headerlink" href="#depuracion" title="Link to this heading">#</a></h2>
+<h2>13. Depuración<a class="headerlink" href="#depuracion" title="Link to this heading">#</a></h2>
 <p>Una de las habilidades más importantes que adquirirás es la depuración. Aunque puede resultar frustrante, la depuración es una de las partes de la programación más interesantes, desafiantes e intelectualmente más enriquecedoras.</p>
 <p>De alguna manera, la depuración es como un trabajo de detective. Te enfrentás a pistas y tenés que inferir los procesos y eventos que llevaron a los resultados que ves.</p>
 <p>La depuración también es como una ciencia experimental. Una vez que tengas una idea de lo que va mal, modificá tu programa y volvé a intentarlo. Si tu hipótesis era correcta, podés predecir el resultado de la modificación y dar un paso más hacia un programa que funcione. Si tu hipótesis fue incorrecta, debés idear una nueva. Como señaló Sherlock Holmes:</p>
@@ -1394,7 +1427,7 @@ Esta también
 <p>Para algunas personas, programar y depurar son lo mismo. Es decir, la programación es el proceso de depurar gradualmente un programa hasta que hace lo que se desea. La idea es que debe comenzar con un programa que funcione y hacer pequeñas modificaciones, depurándolas a medida que se avanza.</p>
 </section>
 <section id="signatura">
-<h2>15. Signatura<a class="headerlink" href="#signatura" title="Link to this heading">#</a></h2>
+<h2>14. Signatura<a class="headerlink" href="#signatura" title="Link to this heading">#</a></h2>
 <p>La signatura o firma de una función define su entrada y su salida. Incluye por lo menos el nombre de la función y el número de sus parámetros. En algunos lenguajes de programación, puede incluir el tipo que devuelve la función o el tipo de sus parámetros.</p>
 <p>Por ejemplo, la signatura de la función que vimos antes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">imprimir_4_veces_v2</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
@@ -1426,7 +1459,7 @@ Esta también
 <p>Una vez explicitada la signatura, Python no controla que la misma se satisfaga. La signatura explícita es simplemente una notación que ayuda al programador a no cometer errores.</p>
 </section>
 <section id="precondiciones-y-postcondiciones">
-<h2>16. Precondiciones y postcondiciones<a class="headerlink" href="#precondiciones-y-postcondiciones" title="Link to this heading">#</a></h2>
+<h2>15. Precondiciones y postcondiciones<a class="headerlink" href="#precondiciones-y-postcondiciones" title="Link to this heading">#</a></h2>
 <p>Cuando definimos una función además de la signatura hay otras dos anotaciones importantes que veremos ahora:</p>
 <ul class="simple">
 <li><p>Una <em>precondición</em> de la función es algo que debe ser cierto al comienzo de la función para que esta funcione correctamente.</p></li>
@@ -1575,12 +1608,11 @@ Esta también
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-y-argumentos">8. Parámetros y argumentos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#las-variables-y-los-parametros-de-una-funcion-son-locales">9. Las variables y los parámetros de una función son locales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valor-y-funciones-nulas">10. Funciones que devuelven valor y funciones nulas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-devuelven-valor">11. Funciones que devuelven valor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-grados">12. Ejemplo: conversión de formatos de grados</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-funciones">13. ¿Por qué funciones?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depuracion">14. Depuración</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signatura">15. Signatura</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones">16. Precondiciones y postcondiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-conversion-de-formatos-de-grados">11. Ejemplo: conversión de formatos de grados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-funciones">12. ¿Por qué funciones?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depuracion">13. Depuración</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signatura">14. Signatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precondiciones-y-postcondiciones">15. Precondiciones y postcondiciones</a></li>
 </ul>
   </nav></div>
 

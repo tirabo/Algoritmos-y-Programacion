@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '03_Variables_Funciones_en_Turtle';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Los números notables (optativa)" href="13.1_Numeros_notables.html" />
+    <link rel="next" title="Primeros pasos con Python" href="04_Primeros_pasos_en_Python.html" />
     <link rel="prev" title="Algoritmos y Programación: introducción" href="00_Introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,27 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Variables y funciones aplicadas a Turtle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_Condicionales.html">Condicionales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_Ciclos.html">Ciclos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_Cadenas.html">Cadenas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_Listas_y_tuplas.html">Listas y tuplas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
 </ul>
 
     </div>
@@ -424,25 +444,39 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Creamos una pizarra o ventana para trabajar en el cuaderno:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Screen</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x7e9b5273f1c0&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <section id="introduccion">
 <h2>1. Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
 <p>En la clase pasada definimos la función <code class="docutils literal notranslate"><span class="pre">pizarra_vacía()</span></code> que inicializa la pantalla de la forma que nosotros consideramos conveniente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">():</span>
-    <span class="c1"># Define una pizarra vacía, con fondo blanco, y el lápiz dibujando con grosor 5</span>
-    <span class="n">Screen</span><span class="p">()</span>
+    <span class="c1"># pre: debe existir una pizarra activa.</span>
+    <span class="c1"># post: deja la pizarra vacía, con fondo blanco, yde 800x600 y el lápiz dibujando con grosor 5.</span>
+    <span class="n">reset</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
     <span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
     <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Agregamos la instrucción <code class="docutils literal notranslate"><span class="pre">setup(800,</span> <span class="pre">600)</span></code> que establece que la ventana tenga <span class="math notranslate nohighlight">\(800\)</span> pixeles de ancho  y <span class="math notranslate nohighlight">\(600\)</span> de alto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -470,8 +504,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_triangulo</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -487,8 +519,6 @@ document.write(`
 <span class="n">setheading</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
 <span class="n">showturtle</span><span class="p">()</span>
 <span class="n">dibujar_triangulo</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -509,8 +539,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">speed</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">dibujar_hexagono</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -538,8 +566,6 @@ document.write(`
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -556,8 +582,6 @@ document.write(`
     <span class="n">penup</span><span class="p">()</span> <span class="c1"># preparatorias del siguiente procesamiento (esta y las dos líneas siguentes)</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
     <span class="n">pendown</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -589,8 +613,6 @@ document.write(`
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">forward</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -652,8 +674,6 @@ document.write(`
 <span class="n">longitud</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>   
 </pre></div>
 </div>
 </div>
@@ -678,8 +698,6 @@ document.write(`
     <span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span> <span class="o">+</span> <span class="n">contador</span> <span class="o">*</span> <span class="mi">5</span>
     <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -698,8 +716,6 @@ document.write(`
     <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">5</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>   
 </pre></div>
 </div>
 </div>
@@ -715,8 +731,6 @@ document.write(`
 <span class="k">for</span> <span class="n">contador</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">25</span> <span class="o">+</span> <span class="n">contador</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -731,8 +745,6 @@ document.write(`
 <span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -753,8 +765,6 @@ document.write(`
 <span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -772,8 +782,6 @@ document.write(`
 <span class="k">for</span> <span class="n">longitud</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">lados</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -884,6 +892,14 @@ i final: 5
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: expected &#39;:&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <section id="ejemplo-el-canon">
 <h3><strong>Ejemplo.</strong> El cañón.<a class="headerlink" href="#ejemplo-el-canon" title="Link to this heading">#</a></h3>
@@ -929,8 +945,6 @@ i final: 5
 <span class="k">while</span> <span class="n">pos_bala</span> <span class="o">&lt;</span> <span class="n">x_o</span><span class="p">:</span> <span class="c1"># mientras la bala no llegue al objetivo.</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>        <span class="c1"># dibujo la bala</span>
     <span class="n">pos_bala</span> <span class="o">=</span> <span class="n">pos_bala</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># avanzo 1 la bala</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -945,6 +959,7 @@ i final: 5
     <span class="n">penup</span><span class="p">()</span>
     <span class="n">goto</span><span class="p">(</span><span class="n">x_o</span><span class="p">,</span> <span class="n">y_o</span><span class="p">)</span>
     <span class="n">pendown</span><span class="p">()</span>
+    <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># Dibujo el cañonero</span>
@@ -952,6 +967,7 @@ i final: 5
     <span class="n">penup</span><span class="p">()</span>
     <span class="n">goto</span><span class="p">(</span><span class="n">x_c</span><span class="p">,</span> <span class="n">y_c</span><span class="p">)</span>
     <span class="n">pendown</span><span class="p">()</span>
+    <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="n">width</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># hacemos una trazado fino de la trayectoria</span>
@@ -970,8 +986,6 @@ i final: 5
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">bala_canhon</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -985,33 +999,17 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># configuración pizarra inicial</span>
-<span class="n">Screen</span><span class="p">()</span>
-<span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-<span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">pizarra_vacia</span><span class="p">()</span>
 
 <span class="c1"># dibuja cuadrado</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
     <span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
     <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Estas líneas están bien y el programa hace lo que nosotros queremos. Sin embargo,  si queremos usar repetidamente la pizarra o si queremos dibujar muchos cuadrado en una pizarra, convendrá modularizar un poco. Para inicializar la pizarras hemos definido la siguiente función:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">():</span>
-    <span class="c1"># Define una pizarra vacía, con fondo blanco, y el lápiz dibujando con grosor 5</span>
-    <span class="n">Screen</span><span class="p">()</span>
-    <span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-    <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Esta función no tiene argumentos e inicializa la pantalla.</p>
+<p>Estas líneas están bien y el programa hace lo que nosotros queremos. Sin embargo, si queremos dibujar muchos cuadrado en una pizarra, convendrá modularizar un poco.</p>
 <p>Veamos a continuación una función que nos permitirá dibujar cuadrados de tamaño arbitrario.</p>
 <section id="funcion-dibujar-cuadrado">
 <h3>Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code><a class="headerlink" href="#funcion-dibujar-cuadrado" title="Link to this heading">#</a></h3>
@@ -1031,8 +1029,6 @@ i final: 5
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1043,8 +1039,6 @@ i final: 5
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1105,8 +1099,6 @@ i final: 5
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">forward</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
 <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1124,8 +1116,6 @@ i final: 5
 <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span> <span class="c1"># 3° cuadrado</span>
 <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="c1"># 4° cuadrado</span>
 <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="c1"># 5° cuadrado</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1142,8 +1132,6 @@ i final: 5
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1160,8 +1148,6 @@ i final: 5
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1180,8 +1166,6 @@ i final: 5
     <span class="n">dibujar_cuadrado</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
     <span class="n">longitud</span> <span class="o">=</span> <span class="n">longitud</span> <span class="o">+</span> <span class="mi">10</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span><span class="mi">1</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1206,8 +1190,6 @@ i final: 5
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">tunel</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1289,11 +1271,12 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">(</span><span class="n">velocidad</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="c1"># Define una pizarra vacía, con fondo blanco, y el lápiz dibujando con grosor 5</span>
-    <span class="n">Screen</span><span class="p">()</span>
-    <span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
-    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
+    <span class="c1"># pre: debe existir una pizarra activa. velocidad es un número entero de 1 a 10.</span>
+    <span class="c1"># post: deja la pizarra vacía, con fondo blanco, y el lápiz dibujando con grosor 5 con velocidad.</span>
+    <span class="n">reset</span><span class="p">()</span>
+    <span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
     <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1311,13 +1294,18 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pizarra_vacia</span><span class="p">(</span><span class="n">velocidad</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fondo</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">lapiz</span> <span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ancho</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="n">Screen</span><span class="p">()</span>
-    <span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+    <span class="c1"># pre: debe existir una pizarra activa. velocidad es un número entero de 1 a 10.</span>
+    <span class="c1"># post: deja la pizarra vacía, con</span>
+    <span class="c1">#       - velocidad: velocidad de dibujo de 1 a 10. </span>
+    <span class="c1">#       - fondo: color de fondo </span>
+    <span class="c1">#       - lapiz: color del lápiz</span>
+    <span class="c1">#       - ancho: grosor del lápiz</span>
+    <span class="n">reset</span><span class="p">()</span>
+    <span class="n">setup</span> <span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span> <span class="c1"># tamaño de la pizarra</span>
+    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
     <span class="n">bgcolor</span><span class="p">(</span><span class="n">fondo</span><span class="p">)</span>
     <span class="n">color</span><span class="p">(</span><span class="n">lapiz</span><span class="p">)</span>
-    <span class="n">speed</span><span class="p">(</span><span class="n">velocidad</span><span class="p">)</span>
-    <span class="n">width</span><span class="p">(</span><span class="n">ancho</span><span class="p">)</span>
-    <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1326,8 +1314,6 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1340,8 +1326,6 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="n">fondo</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1349,8 +1333,6 @@ i final: 5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="n">lapiz</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fondo</span> <span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1551,8 +1533,6 @@ arcocoseno de 1: 0.0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo equilátero</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1567,8 +1547,6 @@ arcocoseno de 1: 0.0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo isosceles</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1583,8 +1561,6 @@ arcocoseno de 1: 0.0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">()</span>
 <span class="n">dibujar_triangulo</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo escaleno</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1632,8 +1608,6 @@ arcocoseno de 1: 0.0
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pizarra_vacia</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># la aceleramos un poco</span>
 <span class="n">triangulo_lento</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span> <span class="c1"># triángulo escaleno</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1658,8 +1632,6 @@ arcocoseno de 1: 0.0
 <span class="n">setheading</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
 <span class="n">avanzar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">hideturtle</span><span class="p">()</span>
-
-<span class="n">exitonclick</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1707,11 +1679,11 @@ arcocoseno de 1: 0.0
       </div>
     </a>
     <a class="right-next"
-       href="13.1_Numeros_notables.html"
+       href="04_Primeros_pasos_en_Python.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Los números notables (optativa)</p>
+        <p class="prev-next-title">Primeros pasos con Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

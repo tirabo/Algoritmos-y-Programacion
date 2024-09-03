@@ -626,7 +626,7 @@ Sorpresa:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
-&lt;class &#39;numpy.int32&#39;&gt;
+&lt;class &#39;numpy.int64&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -848,9 +848,6 @@ Sorpresa:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.12 0.94 0.66 0.73 0.83]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Podemos reemplazar los valores en cierto rango del array por un valor determinado:</p>
@@ -1016,9 +1013,6 @@ second_new_array: [7 8]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7 4]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1334,7 +1328,7 @@ Al sumar un sólo número a un arreglo de NumPy, ese número se suma a cada elem
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 2, 2], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 2, 2])
 </pre></div>
 </div>
 </div>
@@ -1380,7 +1374,7 @@ Al sumar un sólo número a un arreglo de NumPy, ese número se suma a cada elem
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_1740\2236928128.py:1: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_18701/2236928128.py:1: RuntimeWarning: divide by zero encountered in divide
   arr_e = arr_b / arr_d
 </pre></div>
 </div>
@@ -1808,8 +1802,8 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.06778503, 0.44696348, 0.83458673, 0.00811022, 0.19438349,
-       0.27119157, 0.911701  , 0.46003535, 0.11788089, 0.45223616])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.01996291, 0.78713122, 0.7539867 , 0.85565568, 0.0693649 ,
+       0.76798262, 0.70177537, 0.94653054, 0.042055  , 0.24987825])
 </pre></div>
 </div>
 </div>
@@ -1823,10 +1817,10 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.73211807, 8.11956699, 7.03893304],
-       [7.81967958, 4.15921791, 5.69216104],
-       [9.00003333, 1.27218653, 5.42771391],
-       [6.94139085, 2.25326174, 8.87025807]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.59570158, 9.16792051, 2.66679467],
+       [5.13809841, 4.56770583, 7.48378377],
+       [2.49763099, 9.58567905, 5.30969052],
+       [7.21661732, 8.38143337, 1.20283925]])
 </pre></div>
 </div>
 </div>
@@ -1840,12 +1834,12 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.21881367, -0.73868545, -0.11037779,  1.14468891,  1.33666794,
-        1.10478297, -0.15616321,  0.17334012, -1.13316124,  1.04059447,
-        0.45117358, -0.84871086, -0.33348001, -0.56150492, -0.83375275,
-       -0.58867951,  0.44109537,  0.579832  ,  0.05267754,  0.97466421,
-        0.34687708,  0.54939337,  0.65805299, -0.24734244,  1.1063227 ,
-        0.97353221,  0.04952996, -0.66326099,  0.48466164, -2.91148664])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.57398919,  1.12411409,  0.54606302, -0.32050326,  0.54649424,
+       -0.78804859, -0.51110121, -1.70861241, -0.60612835,  1.52359816,
+        0.01145709, -0.71228635, -0.89437633, -1.75492998, -1.07040563,
+       -1.143338  ,  0.12175389, -0.49380466, -0.64013042, -0.60485008,
+        0.18985476,  0.82201244, -0.41499972, -1.44505677,  0.05391134,
+       -1.00417637, -0.4978424 , -0.53584866, -0.84083865, -0.1396643 ])
 </pre></div>
 </div>
 </div>
@@ -1858,7 +1852,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -1,   3,  11, -10, -11,   4,   9,  17, -14,  -5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 13,  13,  -5,   1,   7,  18, -10,  -4, -10, -11])
 </pre></div>
 </div>
 </div>
@@ -2431,13 +2425,13 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-52  48  20 -67 -77 -55 -96 -45 -51 -91  96  69  74 -67 -54 -62 -10  97
- -68 -64 -85  60 -47 -88  75  -5 -46  75 -69  -5  13 -11  55  10  54 -43
-  75  69  19 -53  77  66  45 -69 -52  63 -87 -79 -47   3  32  43 -43  50
- -41  17   0  44 -55   8 -42  50  93 -58 -24   0   6  22 -33  72 -87  74
-  43 -18   2 -27  12  66 -75 -91  -9 -74 -26 -53  21 -88   8  64 -50 -54
-  56 -34 -45 -65 -72 -23 -70 -93 -30  17  54 -14 -11  56  -2 -92  56  34
- -98 -77 -70  45 -98 -40  62 -55  64 -72 -26  48]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 72 -43 -13 -52   8 -53  34  25 -51 -93  18 -23 -82  29   9  78 -67  50
+ -11 -67  12  25 -13 -14  -8  87 -23 -70 -21 -77  80 -51  85  39 -47 -93
+ -70  48 -83 -89 -75 -94  35  53 -95 -67  64 -22 -55  31 -45  -8  -1  20
+ -20  32 -47 -93 -60  91 -19 -48 -44 -88 -87  43 -26  96 -39 -19  54  -3
+ -99  -8  68  77  -3  31  97  56  99 -46  75   0   6  37 -95  19  51 -94
+   5 -92 -73  -5 -24 -95 -27  14 -37  13  -3 -94  47  65 -34  77  92 -82
+ -68  28 -23  42 -55 -88  32 -45  63 -33  58 -94]
 </pre></div>
 </div>
 </div>
@@ -2451,9 +2445,9 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[48 20 96 69 74 97 60 75 75 13 55 10 54 75 69 19 77 66 45 63  3 32 43 50
- 17 44  8 50 93  6 22 72 74 43  2 12 66 21  8 64 56 17 54 56 56 34 45 62
- 64 48]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72  8 34 25 18 29  9 78 50 12 25 87 80 85 39 48 35 53 64 31 20 32 91 43
+ 96 54 68 77 31 97 56 99 75  6 37 19 51  5 14 13 47 65 77 92 28 42 32 63
+ 58]
 </pre></div>
 </div>
 </div>
@@ -2467,10 +2461,10 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-52 -67 -77 -55 -96 -45 -51 -91 -67 -54 -62 -10 -68 -64 -85 -47 -88  -5
- -46 -69  -5 -11 -43 -53 -69 -52 -87 -79 -47 -43 -41 -55 -42 -58 -24 -33
- -87 -18 -27 -75 -91  -9 -74 -26 -53 -88 -50 -54 -34 -45 -65 -72 -23 -70
- -93 -30 -14 -11  -2 -92 -98 -77 -70 -98 -40 -55 -72 -26]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-43 -13 -52 -53 -51 -93 -23 -82 -67 -11 -67 -13 -14  -8 -23 -70 -21 -77
+ -51 -47 -93 -70 -83 -89 -75 -94 -95 -67 -22 -55 -45  -8  -1 -20 -47 -93
+ -60 -19 -48 -44 -88 -87 -26 -39 -19  -3 -99  -8  -3 -46 -95 -94 -92 -73
+  -5 -24 -95 -27 -37  -3 -94 -34 -82 -68 -23 -55 -88 -45 -33 -94]
 </pre></div>
 </div>
 </div>
@@ -2484,8 +2478,7 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[96 69 74 97 60 75 75 55 54 75 69 77 66 63 93 72 74 66 64 56 54 56 56 62
- 64]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72 78 87 80 85 53 64 91 96 54 68 77 97 56 99 75 51 65 77 92 63 58]
 </pre></div>
 </div>
 </div>
@@ -2501,9 +2494,10 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 48  20 -45 -10 -47  -5 -46  -5  13 -11  10 -43  19  45 -47   3  32  43
- -43 -41  17   0  44   8 -42 -24   0   6  22 -33  43 -18   2 -27  12  -9
- -26  21   8 -34 -45 -23 -30  17 -14 -11  -2  34  45 -40 -26  48]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-43 -13   8  34  25  18 -23  29   9 -11  12  25 -13 -14  -8 -23 -21  39
+ -47  48  35 -22  31 -45  -8  -1  20 -20  32 -47 -19 -48 -44  43 -26 -39
+ -19  -3  -8  -3  31 -46   0   6  37  19   5  -5 -24 -27  14 -37  13  -3
+  47 -34  28 -23  42  32 -45 -33]
 </pre></div>
 </div>
 </div>
@@ -2518,13 +2512,10 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-52 -67 -77 -55 -96 -51 -91  96  69  74 -67 -54 -62  97 -68 -64 -85  60
- -88  75  75 -69  55  54  75  69 -53  77  66 -69 -52  63 -87 -79 -55  93
- -58  72 -87  74  66 -75 -91 -74 -53 -88  64 -54  56 -65 -72 -70 -93  54
-  56 -92  56 -98 -77 -70 -98  62 -55  64 -72]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 72 -52 -53 -51 -93 -82  78 -67 -67  87 -70 -77  80 -51  85 -93 -70 -83
+ -89 -75 -94  53 -95 -67  64 -55 -93 -60  91 -88 -87  96  54 -99  68  77
+  97  56  99  75 -95  51 -94 -92 -73 -95 -94  65  77  92 -82 -68 -55 -88
+  63  58 -94]
 </pre></div>
 </div>
 </div>
@@ -2537,8 +2528,8 @@ P = 0.6\,C + Z \frac{(10 - 0.6\,C)}{10}
 El alumno estará aprobado cuando \)</span>P<span class="math notranslate nohighlight">\( sea mayor o igual a cinco, siempre que \)</span>Z<span class="math notranslate nohighlight">\( supere un tercio de la nota máxima (\)</span>Z&gt;10/3<span class="math notranslate nohighlight">\(). En  ese cas \)</span>F= P<span class="math notranslate nohighlight">\(. En caso contrario, se queda con \)</span>F=Z<span class="math notranslate nohighlight">\(. Un grupo de alumnos ha obtenido las siguientes calificaciones en la evaluación contínua y en el examen final:
 \)</span>$</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-6bed3978-013e-42c7-9c91-95184e89372b">
-<span class="eqno">(9)<a class="headerlink" href="#equation-6bed3978-013e-42c7-9c91-95184e89372b" title="Permalink to this equation">#</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-5f0808bf-65b1-40b0-abc3-5562836a5e35">
+<span class="eqno">(9)<a class="headerlink" href="#equation-5f0808bf-65b1-40b0-abc3-5562836a5e35" title="Permalink to this equation">#</a></span>\[\begin{matrix}
 &amp;&amp;	a_0&amp; a_1&amp; a_2&amp; a_3&amp; a_4&amp; a_5&amp; a_6&amp; a_7&amp; a_8&amp; a_9 \\
 C&amp;&amp;	8.2&amp; 0.0&amp; 9.0&amp; 5.0&amp; 8.4&amp; 7.2&amp; 5.0&amp; 9.2&amp; 4.9&amp; 7.9 \\
 Z&amp;&amp;	7.1&amp; 5.1&amp; 8.8&amp; 3.1&amp; 4.6&amp; 2.0&amp; 4.1&amp; 7.4&amp; 4.4&amp; 8.8
@@ -2678,9 +2669,9 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 39 64 63 10 74 60 65 39  0 94 79 40  4 13 47 54 97 84 67 21 27 53 18
- 19 20 21 21 35 89 65 44 16  4 36 18 17 53 74 26 39 51 78 51 47 47 10 61
-  1 58]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[49 82 19  5 10 45 46 29 95 32 57  4 11 27 68 92 90 86 99  4 73 29 51 62
+ 42 90 31 29 27 82  9  1 25 71 68 41 19 99 19 65 50  2 52 83 40 33 31 38
+ 55 64]
 </pre></div>
 </div>
 </div>
@@ -2694,7 +2685,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 39 63 60 39 54 84 21 27 18 21 21 36 18 39 51 78 51]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45 57 27 90 99 51 42 90 27  9 99 33]
 </pre></div>
 </div>
 </div>
@@ -2709,11 +2700,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 10 60  0 94 40  4 97 84 20 89  4 10  1]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_1740\46176048.py:2: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_2  = arreglo[(120 % arreglo == 0) | (arreglo &gt; 80)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[82  5 10 95  4 92 90 86 99  4 90 82  1 99  2 83 40]
 </pre></div>
 </div>
 </div>
@@ -2728,12 +2715,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[39 64 63 74 65 39 79 13 47 54 67 21 27 53 18 19 21 21 35 65 44 16 36 18
- 17 53 74 26 39 51 78 51 47 47 61 58]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_1740\424766941.py:2: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_3 = arreglo[~((120 % arreglo == 0) | (arreglo &gt; 80))]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[49 19 45 46 29 32 57 11 27 68 73 29 51 62 42 31 29 27  9 25 71 68 41 19
+ 19 65 50 52 33 31 38 55 64]
 </pre></div>
 </div>
 </div>
@@ -2752,12 +2735,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[39 64 63 74 65 39 79 13 47 54 67 21 27 53 18 19 21 21 35 65 44 16 36 18
- 17 53 74 26 39 51 78 51 47 47 61 58]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_1740\129866600.py:1: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_3_v2 = arreglo[(120 % arreglo != 0) &amp; (arreglo &lt;= 80)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[49 19 45 46 29 32 57 11 27 68 73 29 51 62 42 31 29 27  9 25 71 68 41 19
+ 19 65 50 52 33 31 38 55 64]
 </pre></div>
 </div>
 </div>
@@ -2830,8 +2809,8 @@ Programáticamente es muy sencillo hacerlo en Python puro, pero lo que nos inter
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15723
-Tiempo: 5.513597726821899
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15855
+Tiempo: 2.309755802154541
 </pre></div>
 </div>
 </div>
@@ -2853,7 +2832,7 @@ Tiempo: 5.513597726821899
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 3.1656763553619385
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.9290552139282227
 </pre></div>
 </div>
 </div>
@@ -2875,8 +2854,8 @@ Tiempo: 5.513597726821899
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15723
-Tiempo: 3.5862040519714355
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15855
+Tiempo: 2.6292216777801514
 </pre></div>
 </div>
 </div>
@@ -2902,7 +2881,7 @@ Tiempo: 3.5862040519714355
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.7117748260498047
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 0.8633644580841064
 </pre></div>
 </div>
 </div>
@@ -2919,8 +2898,8 @@ Tiempo: 3.5862040519714355
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15723
-Tiempo: 0.04458260536193848
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15855
+Tiempo: 0.032941341400146484
 </pre></div>
 </div>
 </div>
@@ -2937,8 +2916,8 @@ Tiempo: 0.04458260536193848
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15723
-Tiempo: 1.7853410243988037
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15855
+Tiempo: 0.5739367008209229
 </pre></div>
 </div>
 </div>
@@ -2948,16 +2927,6 @@ Tiempo: 1.7853410243988037
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">143</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -2971,6 +2940,12 @@ Tiempo: 1.7853410243988037
 
 <span class="n">t_1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tiempo:&#39;</span><span class="p">,</span> <span class="n">t_1</span><span class="o">-</span><span class="n">t_0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15855
+Tiempo: 6.232826232910156
 </pre></div>
 </div>
 </div>
