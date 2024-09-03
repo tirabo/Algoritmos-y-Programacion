@@ -182,8 +182,6 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -850,8 +848,8 @@ $<span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(
 con \)</span>0 \le r_i &lt; 5<span class="math notranslate nohighlight">\(. La forma de hacerlo  es, primero, dividir el número original y los sucesivos cocientes por \)</span>5<span class="math notranslate nohighlight">\(:  
 \)</span>$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4aa3e2b-1013-4e4c-887d-f1a561cb6ed1">
-<span class="eqno">(8)<a class="headerlink" href="#equation-e4aa3e2b-1013-4e4c-887d-f1a561cb6ed1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-666a02b9-8d9b-41b2-bc43-c1f216932f6a">
+<span class="eqno">(5)<a class="headerlink" href="#equation-666a02b9-8d9b-41b2-bc43-c1f216932f6a" title="Permalink to this equation">#</a></span>\[\begin{align}
 407 &amp;=5\cdot 81 &amp;+&amp; 2 \tag{B1}\\
 81 &amp; = 5\cdot 16 &amp;+&amp; 1  \tag{B2}\\
 16 &amp; = 5\cdot 3 &amp;+&amp; 1  \tag{B3}\\
@@ -893,8 +891,8 @@ Entonces, el desarrollo en base \)</span>5<span class="math notranslate nohighli
 <p>Demostremos usando invariantes  que este es el algoritmo correcto. ¿Cuál es el invariante? Recordar que debe ser una propiedad que se cumple dentro del ciclo y cuando la guarda (en este caso <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>)  es falsa,  es decir <code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">==</span> <span class="pre">0</span></code>, se debe cumplir el resultado,  es decir <code class="docutils literal notranslate"><span class="pre">restos</span></code> debe ser el desarrollo en base <span class="math notranslate nohighlight">\(b\)</span>  de <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Observar que  se cumple,<br />
 $$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1548ee19-7d54-4178-a8d0-2571ba6535be">
-<span class="eqno">(9)<a class="headerlink" href="#equation-1548ee19-7d54-4178-a8d0-2571ba6535be" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b80dc798-80c2-4423-8693-49771b44b28a">
+<span class="eqno">(6)<a class="headerlink" href="#equation-b80dc798-80c2-4423-8693-49771b44b28a" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\text{B1}) \quad&amp;\Rightarrow&amp; 407 &amp;=5\cdot 81 + 2 \\
 (\text{B2}) \quad&amp;\Rightarrow&amp;  407&amp; = 5^2\cdot 16 + 5\cdot 1 +2 \\
 (\text{B3}) \quad&amp;\Rightarrow&amp;  407&amp; = 5^3\cdot  3+ 5^2\cdot 1 + 5\cdot 1 +2
@@ -902,8 +900,8 @@ $$</p>
 <div class="math notranslate nohighlight">
 \[
 En  general se va a cumplir  que en  el paso $\text{(Bi)}$\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c93914a3-9965-4d1c-837b-c8e92e8e60a8">
-<span class="eqno">(10)<a class="headerlink" href="#equation-c93914a3-9965-4d1c-837b-c8e92e8e60a8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c4f6fba4-472c-49ac-9e8f-6ded63565a02">
+<span class="eqno">(7)<a class="headerlink" href="#equation-c4f6fba4-472c-49ac-9e8f-6ded63565a02" title="Permalink to this equation">#</a></span>\[\begin{align}
 (\text{Bi}) \quad&amp;\Rightarrow&amp; n  &amp;=  a_i b^i + a_{i-1} b^{i-1} + \cdots + a_1 b + a_0
 \end{align}\]</div>
 <p>$$</p>
@@ -1050,9 +1048,7 @@ Se pierde exactitud en los cálculos: x**2 + y = 0.19000000000000003 . Debería 
 0.3
 0.4
 0.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+0.0
 Los cálculos son exactos: x**2 + y = 0.19 . Debería dar (y da) 0.19
 </pre></div>
 </div>
