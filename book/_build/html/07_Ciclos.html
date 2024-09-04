@@ -182,6 +182,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -2577,17 +2579,18 @@ Hola
 <section id="metodo-de-newton-para-la-raiz-cuadrada">
 <h2>5. Método de Newton para la raíz cuadrada<a class="headerlink" href="#metodo-de-newton-para-la-raiz-cuadrada" title="Link to this heading">#</a></h2>
 <p>El <em>método de Newton</em> o de <em>Newton-Raphson</em> es un algoritmo para encontrar aproximaciones de los ceros o raíces de una función real. Una explicación completa se puede encontrar en Wikipedia en el artículo <a class="reference external" href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Newton">Método de Newton</a>.</p>
-<p>Se puede utilizar el  método de Newton para encontrar una aproximación numérica de la raíz cuadrada de un número real. Observar que si <span class="math notranslate nohighlight">\(a &gt;0\)</span>
-$<span class="math notranslate nohighlight">\(
+<p>Se puede utilizar el  método de Newton para encontrar una aproximación numérica de la raíz cuadrada de un número real. Observar que si <span class="math notranslate nohighlight">\(a &gt;0\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 b = \sqrt{a}\quad \Leftrightarrow \quad b^2 = a \quad\Leftrightarrow\quad b^2-a=0.
-\)</span><span class="math notranslate nohighlight">\(
-Es decir, \)</span>\sqrt{a}<span class="math notranslate nohighlight">\( es raíz de la función \)</span>f(x) = x^2 -a<span class="math notranslate nohighlight">\(. El algoritmo que se obtiene de aplicar el  método de Newton a \)</span>f$ se puede describir de la siguiente forma:</p>
+\end{equation*}\]</div>
+<p>Es decir, <span class="math notranslate nohighlight">\(\sqrt{a}\)</span> es raíz de la función <span class="math notranslate nohighlight">\(f(x) = x^2 -a\)</span>. El algoritmo que se obtiene de aplicar el  método de Newton a <span class="math notranslate nohighlight">\(f\)</span> se puede describir de la siguiente forma:</p>
 <ol class="arabic simple">
 <li><p>Sea <span class="math notranslate nohighlight">\(x_0\)</span> un valor inicial arbitrario (<span class="math notranslate nohighlight">\(&gt;0\)</span>).</p></li>
 <li><p>Sea</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f4a10041-6df0-424e-a79d-22935a912ba6">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f4a10041-6df0-424e-a79d-22935a912ba6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f95aaefd-5eab-436a-8e5f-2a056f339d9e">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f95aaefd-5eab-436a-8e5f-2a056f339d9e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
 \end{equation}\]</div>
 <p>para <span class="math notranslate nohighlight">\(n \ge 0\)</span>.</p>
@@ -2596,8 +2599,8 @@ x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
 </ol>
 <p>En el ítem 3. la frase “lo suficiente” no es del todo clara y  trataremos de interpretarla a lo largo de la sección.</p>
 <p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (*) se reescribe:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad9a1690-206a-4372-a1be-9bbe6f4257e2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ad9a1690-206a-4372-a1be-9bbe6f4257e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4c57c73e-8441-471a-9769-d39fd40acc9b">
+<span class="eqno">(2)<a class="headerlink" href="#equation-4c57c73e-8441-471a-9769-d39fd40acc9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac12(x + \frac{a}{x}) \tag{*}
 \end{equation}\]</div>
 <p>Con esta fórmula en mente, la primera aproximación a <span class="math notranslate nohighlight">\(\sqrt{4} =2\)</span> es</p>
@@ -2775,8 +2778,8 @@ con una estimación inicial, <code class="docutils literal notranslate"><span cl
 <p>En el caso que se puedan formalizar en Python,  se pueden reemplazar o completar con <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
 <p>Veamos un ejemplo con el máximo común divisor. La función escrita en la siguiente celda de código determina  el máximo común divisor de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> son enteros no negativos y uno de ellos es mayor que 0.</p>
 <p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4b09e9e-dd1c-4429-b827-2d39d27d8047">
-<span class="eqno">(3)<a class="headerlink" href="#equation-d4b09e9e-dd1c-4429-b827-2d39d27d8047" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-49fcd3e8-0758-4820-98c0-4bd7bc5f6a84">
+<span class="eqno">(3)<a class="headerlink" href="#equation-49fcd3e8-0758-4820-98c0-4bd7bc5f6a84" title="Permalink to this equation">#</a></span>\[\begin{align}
 \operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \\
 \operatorname{mcd}(0, y) &amp;= y.
 \end{align}\]</div>
@@ -2930,10 +2933,12 @@ con una estimación inicial, <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 </div>
-<p>Ahora implementemos  la siguiente función:
-$<span class="math notranslate nohighlight">\(f(n) = \begin{cases}
-  7,  \qquad\qquad\qquad\;\text{ si \)</span>n=1<span class="math notranslate nohighlight">\(}  \\n^2f({n-1}) +2n, \text{ para \)</span>n\geq 2<span class="math notranslate nohighlight">\(}.
-  \end{cases}\)</span>$</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+ f(n) = \left\{\begin{matrix}
+  7,  \qquad\qquad\qquad\;\text{ si $n=1$}  \\n^2f({n-1}) +2n, \text{ para $n\geq 2$}.
+  \end{matrix}\right.
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>

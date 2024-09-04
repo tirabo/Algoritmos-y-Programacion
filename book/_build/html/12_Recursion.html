@@ -182,6 +182,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
@@ -429,20 +431,21 @@ document.write(`
 <h2>1. Definiciones por recursión<a class="headerlink" href="#definiciones-por-recursion" title="Link to this heading">#</a></h2>
 <p>Frecuentemente encontramos definida una sucesión de números <span class="math notranslate nohighlight">\(u_n\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> indica cualquier entero positivo, por una fórmula donde aparecen operadores y funciones conocidas y se pueden calcular de un solo paso. Por ejemplo, podríamos tener <span class="math notranslate nohighlight">\(u_n=3n+2\)</span>, o <span class="math notranslate nohighlight">\(u_n = (n+1)(n+2)(n+3)\)</span>. En estos ejemplos <span class="math notranslate nohighlight">\(u_n\)</span> es dado por una fórmula explícita llamada <em>fórmula cerrada</em> y no existe dificultad en calcular <span class="math notranslate nohighlight">\(u_n\)</span> cuando se nos da un valor específico para <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Sin embargo, en muchos casos no conocemos una fórmula cerrada para <span class="math notranslate nohighlight">\(u_n\)</span>; es más, nuestro problema puede ser encontrarla. En estos casos pueden darnos ciertos valores de <span class="math notranslate nohighlight">\(u_n\)</span> para enteros positivos <span class="math notranslate nohighlight">\(n\)</span> pequeños, y una relación entre el <span class="math notranslate nohighlight">\(u_n\)</span> general y algunos de los <span class="math notranslate nohighlight">\(u_r\)</span> con <span class="math notranslate nohighlight">\(r &lt; n\)</span>.</p>
-<p>Por ejemplo, supongamos nos es dado
-$<span class="math notranslate nohighlight">\(
+<p>Por ejemplo, supongamos nos es dado</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 u_1=1, \qquad u_2=2, \qquad u_n =u_{n-1} +u_{n-2}, \qquad n\ge 3.
-\)</span><span class="math notranslate nohighlight">\(
-Para calcular los valores de \)</span>u_n<span class="math notranslate nohighlight">\( para todo \)</span>n<span class="math notranslate nohighlight">\( de \)</span>\mathbb N<span class="math notranslate nohighlight">\( podemos proceder como sigue:
-\)</span>$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7eda466f-ed1a-4291-a57f-a95da2faef5f">
-<span class="eqno">(8)<a class="headerlink" href="#equation-7eda466f-ed1a-4291-a57f-a95da2faef5f" title="Permalink to this equation">#</a></span>\[\begin{matrix}
+\end{equation*}\]</div>
+<p>Para calcular los valores de <span class="math notranslate nohighlight">\(u_n\)</span> para todo <span class="math notranslate nohighlight">\(n\)</span> de <span class="math notranslate nohighlight">\(\mathbb N\)</span> podemos proceder como sigue:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{matrix}
 u_3 &amp; = &amp; u_2 + u_1 &amp; = &amp; 2+1 &amp;=&amp; 3, \\
 u_4 &amp; = &amp; u_3 + u_2 &amp; = &amp; 3+2 &amp;=&amp; 5, \\
 u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
-\end{matrix}\]</div>
-<p>$$
-y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p>
+\end{matrix}
+\end{equation*}\]</div>
+<p>y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p>
 <p>Una función definida por recursión debe:</p>
 <ul class="simple">
 <li><p>determinar el valor deseado para el <em>caso base</em> (o los casos base), por ejemplo, para <span class="math notranslate nohighlight">\(n = 1\)</span> o <span class="math notranslate nohighlight">\(n = 2\)</span>.</p></li>
@@ -742,10 +745,11 @@ y así siguiendo.  Éste es un ejemplo de una <em>definición recursiva</em>.</p
 </section>
 <section id="ejemplo-sucesion-de-fibonacci">
 <h2>4. Ejemplo: sucesión de Fibonacci<a class="headerlink" href="#ejemplo-sucesion-de-fibonacci" title="Link to this heading">#</a></h2>
-<p>La <em>sucesión de Fibonacci</em> es la siguiente sucesión infinita de números naturales:
-$<span class="math notranslate nohighlight">\(
+<p>La <em>sucesión de Fibonacci</em> es la siguiente sucesión infinita de números naturales:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597, \ldots \,
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>La sucesión comienza con los números 0 y 1 y a partir de estos, “el siguiente término es la suma de los dos anteriores”, es decir, si <span class="math notranslate nohighlight">\(a_n\)</span> denota el <span class="math notranslate nohighlight">\(n\)</span>-ésimo término de la sucesión de Fibonacci:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(a_0 = 0\)</span></p></li>
@@ -1010,8 +1014,8 @@ $<span class="math notranslate nohighlight">\(
 <p>El número combinatorio <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span> debe su nombre a que cuenta el número exacto de combinaciones posibles de <span class="math notranslate nohighlight">\(m\)</span> elementos de un universo de <span class="math notranslate nohighlight">\(n\)</span> elementos. Es decir, dado un conjunto de <span class="math notranslate nohighlight">\(n\)</span> elementos, cuántos subconjuntos de <span class="math notranslate nohighlight">\(m\)</span> elementos tiene.</p>
 <p>Es de gran utilidad en múltiples ramas de la matemática: teoría de números, combinatoria, probabilidades, etc.</p>
 <p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
-<div class="math notranslate nohighlight">
-\[\binom{n}{m} = \frac{n!}{(n-m)!m! }.\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\binom{n}{m} = \frac{n!}{(n-m)!m! }.\end{equation*}\]</div>
 <p>Una forma de calcular el número combinatorio sería calcular <span class="math notranslate nohighlight">\(n!\)</span>, <span class="math notranslate nohighlight">\(m!\)</span>, <span class="math notranslate nohighlight">\((n-m)!\)</span> y después hacer las multiplicaciones y divisiones correspondientes. Este método no presenta inconvenientes y se podría implementar de la siguiente manera:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1061,8 +1065,8 @@ $<span class="math notranslate nohighlight">\(
 <section id="triangulo-de-pascal">
 <h3>5.1 Triángulo de Pascal<a class="headerlink" href="#triangulo-de-pascal" title="Link to this heading">#</a></h3>
 <p>Si escribimos los números combinatorios de tal manera que en la fila <span class="math notranslate nohighlight">\(n\)</span> se encuentren todos los números combinatorios <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{k}\)</span> con <span class="math notranslate nohighlight">\(0 \le k  \le n\)</span>,  en ese orden, y los acomodamos convenientemente, obtenemos el <em>triángulo de Pascal</em> o <em>Tartaglia</em>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lcccccccccccccccc}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\begin{array}{lcccccccccccccccc}
 n = 0 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 0 \choose 0 \\
 n = 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 \choose 0 &amp; &amp; 1 \choose 1 \\
 n = 2 &amp; &amp; &amp; &amp; &amp; &amp; &amp; 2 \choose 0 &amp; &amp; 2 \choose 1 &amp; &amp; 2 \choose 2 \\
@@ -1071,10 +1075,10 @@ n = 4 &amp; &amp; &amp; &amp; &amp; 4 \choose 0 &amp; &amp; 4 \choose 1 &amp; &a
 n = 5 &amp; &amp; &amp; &amp; 5 \choose 0 &amp; &amp; 5 \choose 1 &amp; &amp; 5 \choose 2 &amp; &amp; 5 \choose 3 &amp; &amp; 5 \choose 4 &amp; &amp; 5 \choose 5\\
 n = 6 &amp; &amp; &amp; 6 \choose 0 &amp; &amp; 6 \choose 1 &amp; &amp; 6 \choose 2 &amp; &amp; 6 \choose 3 &amp; &amp; 6 \choose 4 &amp; &amp; 6 \choose 5 &amp; &amp; 6 \choose 6\\
 n = 7 &amp; &amp; 7 \choose 0 &amp; &amp; 7 \choose 1 &amp; &amp; 7 \choose 2 &amp; &amp; 7 \choose 3 &amp; &amp; 7 \choose 4 &amp; &amp; 7 \choose 5 &amp; &amp; 7 \choose 6 &amp; &amp; 7 \choose 7
-\end{array}\end{split}\]</div>
+\end{array}\end{equation*}\]</div>
 <p>Si reemplazamos cada expresión por su valor, observamos que cada uno de los valores que están en su interior, pueden calcularse como la suma de los dos que se encuentran inmediatamente arriba:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{lcccccccccccccccc}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}\begin{array}{lcccccccccccccccc}
 n = 0 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 \\
 n = 1 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 1 \\
 n = 2 &amp; &amp; &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 2 &amp; &amp; 1 \\
@@ -1083,7 +1087,7 @@ n = 4 &amp; &amp; &amp; &amp; &amp; 1 &amp; &amp; 4 &amp; &amp; 6 &amp; &amp; 4 
 n = 5 &amp; &amp; &amp; &amp; 1 &amp; &amp; 5 &amp; &amp; 10 &amp; &amp; 10 &amp; &amp; 5 &amp; &amp; 1\\
 n = 6 &amp; &amp; &amp; 1 &amp; &amp; 6 &amp; &amp; 15 &amp; &amp; 20 &amp; &amp; 15 &amp; &amp; 6 &amp; &amp; 1\\
 n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &amp; &amp; 21 &amp; &amp; 7 &amp; &amp; 1
-\end{array}\end{split}\]</div>
+\end{array}\end{equation*}\]</div>
 <p>Esto nos permite obtener  una fórmula recursiva para calcular el número combinatorio:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\displaystyle\binom{n}{0} = 1\)</span></p></li>
@@ -1138,10 +1142,10 @@ n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &
 \binom{n}{m} = \frac{n!}{ (n-m)!m!} =  \frac{n}{m} \frac{(n-1)!}{(n-m)!(m-1)! } . \tag{*}
 \end{equation*}\]</div>
 <p>Observar que</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \binom{n-1}{m-1} = \frac{(n-1)!}{(n-1-(m-1))!(m-1)!}  = \frac{(n-1)!}{(n-1-m+1))!(m-1)!} =  \frac{(n-1)!}{(n-m)!(m-1)!}
-\]</div>
+\end{equation*}\]</div>
 <p>Luego, reemplazando en (*) obtenenmos:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -1178,11 +1182,12 @@ n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &
 </div>
 </div>
 <p>El número anterior tiene 23866 dígitos. Python puede manejar números inmensos, sin embargo si tratan de imprimir el número obtendrán una excepción, pues Python no maneja la conversión a cadenas de enteros de más de 4300 dígitos.</p>
-<p><em>Observación.</em> Existen métodos iterativos relativamente eficientes para calcular el número combinatorio. Si definimos la función
-$<span class="math notranslate nohighlight">\(
+<p><em>Observación.</em> Existen métodos iterativos relativamente eficientes para calcular el número combinatorio. Si definimos la función</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \operatorname{Var}(n, k) = \frac{n!}{k!} = n \cdot (n-1) \cdot \ldots \cdot (k + 1),
-\)</span><span class="math notranslate nohighlight">\(
-entonces esta función se puede implementar fácilmente por la segunda igualdad, sin calcular \)</span>n!<span class="math notranslate nohighlight">\( y \)</span>k!$:</p>
+\end{equation*}\]</div>
+<p>entonces esta función se puede implementar fácilmente por la segunda igualdad, sin calcular <span class="math notranslate nohighlight">\(n!\)</span> y <span class="math notranslate nohighlight">\(k!\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">var</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
@@ -1206,15 +1211,17 @@ entonces esta función se puede implementar fácilmente por la segunda igualdad,
 </div>
 </div>
 </div>
-<p>Para calcular el número combinatorio usaremos la función <span class="math notranslate nohighlight">\(\operatorname{Var}(n, k)\)</span>:
-$<span class="math notranslate nohighlight">\(
+<p>Para calcular el número combinatorio usaremos la función <span class="math notranslate nohighlight">\(\operatorname{Var}(n, k)\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \binom{n}{m} = \frac{n!}{(n-m)!m!} =  \frac{n!}{(n-m)!} \frac{1}{m!} = \operatorname{Var}(n, n-m) / m!.
-\)</span><span class="math notranslate nohighlight">\(
-Como \)</span>\operatorname{Var}(i, 0) = i!<span class="math notranslate nohighlight">\(, tenemos:
-\)</span><span class="math notranslate nohighlight">\(
+\end{equation*}\]</div>
+<p>Como <span class="math notranslate nohighlight">\(\operatorname{Var}(i, 0) = i!\)</span>, tenemos:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \binom{n}{m} = \operatorname{Var}(n, n-m) /\operatorname{Var}(m, 0).
-\)</span><span class="math notranslate nohighlight">\(
-Entonces, hagamos una implementación del número combinatorio  utilizando solo la función \)</span>\operatorname{Var}$:</p>
+\end{equation*}\]</div>
+<p>Entonces, hagamos una implementación del número combinatorio  utilizando solo la función <span class="math notranslate nohighlight">\(\operatorname{Var}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combinatorio_var</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
