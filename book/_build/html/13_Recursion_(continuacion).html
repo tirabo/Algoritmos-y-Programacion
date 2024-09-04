@@ -403,6 +403,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-ejemplos">1. Algunos ejemplos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-recursion-torres-de-hanoi">2. Ejemplo de recursión: torres de Hanoi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quicksort">3. Quicksort</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criba-de-eratostenes-con-recursion">4. Criba de Eratóstenes con recursión</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-numero-combinatorio-2o-parte">5. Ejemplo: el número combinatorio (2º parte)</a></li>
 </ul>
@@ -507,7 +508,7 @@ f(25) = -327238
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(35) = 45299420
-Tiempo: 10.560484409332275
+Tiempo: 7.195100545883179
 </pre></div>
 </div>
 </div>
@@ -533,7 +534,7 @@ f(20) = 67717
 f(25) = -327238
 f(30) = -17109707
 f(35) = 45299420
-Tiempo: 0.0009987354278564453
+Tiempo: 0.0
 </pre></div>
 </div>
 </div>
@@ -546,7 +547,12 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10573.855812843161
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tiempo_f</span><span class="o">/</span><span class="n">tiempo_f_s</span>
+
+<span class="ne">ZeroDivisionError</span>: float division by zero
 </pre></div>
 </div>
 </div>
@@ -866,9 +872,11 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <p>La implementación de un algoritmo como este en forma iterativa  no es sencilla.</p>
-<p>##3. Quicksort</p>
+</section>
+<section id="quicksort">
+<h2>3. Quicksort<a class="headerlink" href="#quicksort" title="Link to this heading">#</a></h2>
 <p>Quicksort es un algoritmo de ordenamiento que fue desarrollado por Tony Hoare en 1959. Es uno de los algoritmos de ordenamiento más utilizados debido a su eficiencia y su simplicidad.</p>
-<p>El algoritmo quicksort se implementa con recursión sobre listas. La idea básica detrás de quicksort es la siguiente: se elige un elemento de la lista, conocido como pivote, y se reorganizan los elementos de la lista de manera que todos los elementos menores que el pivote estén a su izquierda y todos los elementos mayores que el pivote estén a su derecha. De esta forma, se logra que el pivote esté en su ubicación definitiva, es deci,  cuando la lista esté completamente ordenada.</p>
+<p>El algoritmo quicksort se implementa con recursión sobre listas. La idea básica detrás de quicksort es la siguiente: se elige un elemento de la lista, conocido como pivote, y se reorganizan los elementos de la lista de manera que todos los elementos menores que el pivote estén a su izquierda y todos los elementos mayores que el pivote estén a su derecha. De esta forma, se logra que el pivote esté en su ubicación definitiva, es decir,  la ubicación que tendría cuando la lista esté completamente ordenada.</p>
 <p>Luego, se repite el proceso en las sublistas generadas a cada lado del pivote, obteniéndose nuevos pivotes en su lugar definitivo. Si aplicamos repetidamente este proceso terminaremos con  la lista ordenada.</p>
 <p>El algoritmo se puede implementar de varias formas, pero una implementación típica de Quicksort funciona de la siguiente manera:</p>
 <ol class="arabic simple">
@@ -877,7 +885,7 @@ Tiempo: 0.0009987354278564453
 <li><p>Se llama recursivamente al algoritmo quicksort en las sublistas generadas a cada lado del pivote.</p></li>
 </ol>
 <p>El pivoteo de la lista es la parte crítica del algoritmo. Una implementación típica utiliza una técnica conocida como “partición de Hoare” para pivotear la lista en lugar de crear nuevas sublistas. La partición de Hoare mueve dos índices desde los extremos izquierdo y derecho de la lista hacia el centro, intercambiando elementos mientras se acercan. Cuando los índices se cruzan, se ha completado el pivoteo de la lista.</p>
-<p>Quicksort es un algoritmo muy eficiente en términos de tiempo de ejecución, con una complejidad de tiempo promedio de <span class="math notranslate nohighlight">\(O(n \cdot \operatorname{log}(n))\)</span> para listas de tamaño <span class="math notranslate nohighlight">\(n\)</span>. Los algoritmos más intutitivos de ordenamiento (por selección y por inserción) tienen una complejidad <span class="math notranslate nohighlight">\(O(n^2)\)</span>. Puede parecer menor la diferencia pero basta ejemplificar con una tabla la cantidad aproximada de pasos necesaria en cada caso:</p>
+<p>Quicksort es un algoritmo muy eficiente en términos de tiempo de ejecución, con una complejidad de tiempo promedio de <span class="math notranslate nohighlight">\(O(n \cdot \operatorname{log}(n))\)</span> para listas de tamaño <span class="math notranslate nohighlight">\(n\)</span>. Los algoritmos más intuitivos de ordenamiento (por selección y por inserción) tienen una complejidad <span class="math notranslate nohighlight">\(O(n^2)\)</span>. Puede parecer menor la diferencia pero basta ejemplificar con una tabla la cantidad aproximada de pasos necesaria en cada caso:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
@@ -947,7 +955,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 40, 10, 8, 2, 37, 30, 8, 2, 50, 26, 27, 17, 36, 17, 43, 1, 40, 36, 21]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 48, 12, 12, 29, 43, 30, 14, 32, 24, 15, 13, 50, 21, 35, 36, 32, 10, 21, 14]
 </pre></div>
 </div>
 </div>
@@ -960,7 +968,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 2, 8, 8, 10, 11, 17, 17, 21, 26, 27, 30, 36, 36, 37, 40, 40, 43, 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 10, 12, 12, 13, 14, 14, 15, 21, 21, 24, 29, 30, 32, 32, 35, 36, 43, 48, 50]
 </pre></div>
 </div>
 </div>
@@ -1064,7 +1072,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[38, 45, 26, 9, 12, 44, 46, 3, 5, 14, 2, 50, 15, 29, 17, 14, 46, 44, 19, 15]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 4, 17, 25, 13, 5, 18, 25, 34, 18, 23, 22, 13, 18, 9, 36, 23, 30, 4, 23]
 </pre></div>
 </div>
 </div>
@@ -1077,7 +1085,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 9, 12, 14, 14, 15, 15, 17, 19, 26, 29, 38, 44, 44, 45, 46, 46, 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 4, 5, 6, 9, 13, 13, 17, 18, 18, 18, 22, 23, 23, 23, 25, 25, 30, 34, 36]
 </pre></div>
 </div>
 </div>
@@ -1092,10 +1100,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[694170, 302725, 284116, 103821, 498021, 42853, 400491, 531999, 737056, 353445, 944727, 890448, 53098, 243205, 570900, 352988, 495735, 953818, 260917, 38588, 633019, 368586, 535133, 303195, 49300, 133912, 640382, 409756, 824632, 679944, 170167, 635785, 944883, 101804, 524918, 821793, 529606, 21334, 324440, 471329, 681379, 10355, 871166, 95250, 311112, 749857, 344404, 328496, 496251, 691970, 617140, 335406, 729264, 771791, 963230, 442594, 732875, 675501, 613097, 945766, 909479, 986454, 538331, 680715, 844389, 991272, 336319, 704978, 93743, 877945, 621912, 614317, 584708, 363976, 545625, 462980, 733491, 973535, 166681, 72605, 867666, 30475, 266814, 654039, 590424, 154960, 460765, 408967, 164605, 463255, 540252, 707624, 936216, 801235, 352565, 671822, 884071, 213561, 797466, 181061]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[969490, 677557, 498461, 917660, 356872, 576144, 190524, 791815, 58818, 79922, 657362, 212618, 914261, 420860, 49997, 997741, 647330, 701071, 651992, 262335, 740188, 880335, 955325, 259791, 834161, 204503, 913935, 291052, 800968, 582963, 140970, 659440, 822174, 63083, 56079, 202179, 24822, 144029, 289524, 533468, 909770, 783643, 460408, 685199, 794813, 359178, 491640, 36759, 701751, 807958, 252382, 881596, 599377, 897554, 690115, 686948, 405374, 511097, 343188, 600464, 569850, 34368, 502306, 591081, 450949, 705231, 422802, 955795, 98985, 819613, 616967, 337302, 610940, 577657, 121277, 339026, 227432, 224288, 339048, 828854, 617410, 325624, 488552, 808804, 87849, 771403, 439766, 697535, 420412, 379870, 342318, 738698, 368470, 987926, 261068, 914025, 651379, 138283, 893172, 478677]
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1113,7 @@ Tiempo: 0.0009987354278564453
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 44, 81, 82, 92, 94, 116, 123, 130, 130, 141, 145, 152, 161, 174, 189, 194, 218, 218, 229, 237, 240, 259, 267, 270, 285, 303, 344, 347, 355, 376, 381, 383, 395, 395, 399, 400, 401, 414, 450, 457, 497, 506, 513, 531, 537, 553, 559, 559, 567, 589, 599, 609, 636, 648, 665, 666, 670, 689, 690, 700, 726, 728, 742, 746, 771, 779, 788, 796, 799, 812, 817, 818, 819, 825, 829, 840, 844, 853, 867, 872, 881, 882, 906, 909, 909, 910, 916, 921, 934, 936, 938, 942, 958, 960, 961, 963, 1008, 1037, 1046]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 30, 32, 39, 41, 42, 42, 47, 50, 54, 75, 78, 81, 84, 90, 102, 118, 134, 166, 178, 183, 183, 195, 223, 225, 240, 251, 254, 270, 272, 278, 280, 282, 284, 292, 301, 312, 327, 337, 341, 350, 357, 368, 372, 375, 407, 421, 422, 426, 437, 441, 449, 449, 450, 461, 477, 484, 484, 489, 492, 503, 505, 524, 572, 578, 587, 590, 607, 611, 626, 629, 637, 651, 678, 682, 700, 709, 715, 722, 724, 730, 739, 761, 769, 771, 784, 785, 790, 800, 815, 817, 826, 859, 860, 872, 888, 898, 903, 913, 922]
 </pre></div>
 </div>
 </div>
@@ -1221,15 +1226,7 @@ Tiempo: 0.0009987354278564453
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># no hay problema</span>
-<span class="o">@</span> <span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># no lo puede hacer</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="o">@</span> <span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># no lo puede hacer</span>
-                                             <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unexpected EOF while parsing
+<span class="c1"># combinatorio(40,12) # no lo puede hacer</span>
 </pre></div>
 </div>
 </div>
@@ -1415,6 +1412,7 @@ Tiempo: 0.0009987354278564453
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algunos-ejemplos">1. Algunos ejemplos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-recursion-torres-de-hanoi">2. Ejemplo de recursión: torres de Hanoi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quicksort">3. Quicksort</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criba-de-eratostenes-con-recursion">4. Criba de Eratóstenes con recursión</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-el-numero-combinatorio-2o-parte">5. Ejemplo: el número combinatorio (2º parte)</a></li>
 </ul>

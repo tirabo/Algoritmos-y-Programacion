@@ -401,10 +401,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-rectangulos">1. Ejemplo. Rectángulos.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-clase-personas">2. Ejemplo. Clase Personas.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangulos">1. Rectángulos.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#personas">2. Personas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-abstracto-pila-y-su-implementacion">3. El tipo abstracto pila y  su implementación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-fracciones">4. Ejemplo. Fracciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fracciones">4. Fracciones</a></li>
 </ul>
             </nav>
         </div>
@@ -419,8 +419,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="clases-y-objetos-continuacion">
 <h1>Clases y objetos (continuación)<a class="headerlink" href="#clases-y-objetos-continuacion" title="Link to this heading">#</a></h1>
 <p>Veremos ejemplos de implementaciones de clases</p>
-<section id="ejemplo-rectangulos">
-<h2>1. Ejemplo. Rectángulos.<a class="headerlink" href="#ejemplo-rectangulos" title="Link to this heading">#</a></h2>
+<section id="rectangulos">
+<h2>1. Rectángulos.<a class="headerlink" href="#rectangulos" title="Link to this heading">#</a></h2>
 <p>Hagamos un ejemplo sencillo, con una clase análoga a <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> del cuaderno anterior, pero dependiendo de dos variables de estado que representen el ancho y el alto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,8 +493,8 @@ True
 </div>
 </div>
 </section>
-<section id="ejemplo-clase-personas">
-<h2>2. Ejemplo. Clase Personas.<a class="headerlink" href="#ejemplo-clase-personas" title="Link to this heading">#</a></h2>
+<section id="personas">
+<h2>2. Personas.<a class="headerlink" href="#personas" title="Link to this heading">#</a></h2>
 <p>Definamos una clase que sirva para almacenar datos de personas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -996,8 +996,8 @@ False
 </div>
 </div>
 </section>
-<section id="ejemplo-fracciones">
-<h2>4. Ejemplo. Fracciones<a class="headerlink" href="#ejemplo-fracciones" title="Link to this heading">#</a></h2>
+<section id="fracciones">
+<h2>4. Fracciones<a class="headerlink" href="#fracciones" title="Link to this heading">#</a></h2>
 <p>Otro  ejemplo interesante de definición de clases es el de las fracciones, que llamamos <code class="docutils literal notranslate"><span class="pre">Racional</span></code> por su correspondencia con los números racionales</p>
 <p>Lo que queremos representar son las fracciones  <span class="math notranslate nohighlight">\(\displaystyle\frac{a}{b}\)</span> donde <span class="math notranslate nohighlight">\(a, b \in \mathbb Z\)</span> y <span class="math notranslate nohighlight">\(b \ne 0\)</span>. En las fracciones queremos definir igualdad, suma, resta, multiplicación y división.</p>
 <p>Las variables de estado de la clase <code class="docutils literal notranslate"><span class="pre">Racional</span></code> serán 3: el valor absoluto del numerador,  el valor absoluto del denominador y  el signo de la fracción.</p>
@@ -1079,10 +1079,11 @@ True
 </div>
 </div>
 <p>Aún faltan métodos, el que hace la resta y el que divide, pero los dejamos para otra ocasión.  Lo  que vamos a agregar a nuestra clase es un método que reduce la fracción a la forma  <span class="math notranslate nohighlight">\(\displaystyle\frac{a}{b}\)</span>  con <span class="math notranslate nohighlight">\(\operatorname{mcd}(a,b) = 1\)</span>,  es decir modifica la representación de la fracción original a una representación como fracción reducida. Más aún,  usaremos este método para que todos los resultados se expresen como fracciones reducidas.</p>
-<p>Algebraicamente para reducir una fracción <span class="math notranslate nohighlight">\(\displaystyle\frac{a}{b}\)</span> debemos hacer:
-$<span class="math notranslate nohighlight">\(
+<p>Algebraicamente para reducir una fracción <span class="math notranslate nohighlight">\(\displaystyle\frac{a}{b}\)</span> debemos hacer:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 \frac{a}{b} = \frac{(a/\operatorname{mcd}(a,b))}{(b/\operatorname{mcd}(a,b))}.
-\)</span>$</p>
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Racional</span><span class="p">:</span>
@@ -1253,10 +1254,10 @@ True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-rectangulos">1. Ejemplo. Rectángulos.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-clase-personas">2. Ejemplo. Clase Personas.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangulos">1. Rectángulos.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#personas">2. Personas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-abstracto-pila-y-su-implementacion">3. El tipo abstracto pila y  su implementación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-fracciones">4. Ejemplo. Fracciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fracciones">4. Fracciones</a></li>
 </ul>
   </nav></div>
 
