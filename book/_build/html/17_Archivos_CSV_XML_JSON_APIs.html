@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Interacción con archivos CSV, XML y JSON &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '17_Archivos_CSV_XML_JSON_APIs';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -424,10 +426,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interaccion-con-archivos-csv-xml-y-json">
-<h1>Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Permalink to this heading">#</a></h1>
+<h1>Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Link to this heading">#</a></h1>
 <p>Es común que cuando interactuamos y obtenemos datos de páginas o sitios de Internet estos datos se encuentren en formatos estructurados. Veremos a continuación, brevemente, como podemos obtener datos de archivos CSV, XML y JSON.</p>
 <section id="archivos-csv">
-<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this heading">#</a></h2>
+<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Link to this heading">#</a></h2>
 <p>La forma estructurada más sencilla de información es un archivo CSV,  que es similar a una hoja de una planilla de cálculo.</p>
 <p>Un archivo CSV (Comma Separated Values) es un tipo de archivo de texto que se utiliza comúnmente para almacenar datos tabulares. Los datos en un archivo CSV se organizan en filas y columnas, donde cada fila corresponde a un registro y cada columna corresponde a un campo en ese registro. Los campos en un archivo CSV se separan por un carácter delimitador, como una coma, un punto y coma o una tabulación.</p>
 <p>Cada registro en un archivo CSV se almacena en una nueva línea, y los valores de los campos pueden estar rodeados de comillas dobles si contienen el carácter delimitador. Por ejemplo, el siguiente es un ejemplo de un archivo CSV que contiene información sobre personas:</p>
@@ -486,7 +488,7 @@ Pedro,40,Lima
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="c1"># crea un objeto reader de CSV</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="nn">File ~\AppData\Roaming\Python\Python310\site-packages\IPython\core\interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="nn">File ~\Documents\GitHub\Algoritmos-y-Programacion\envs\ayp\lib\site-packages\IPython\core\interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
 <span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
@@ -548,7 +550,7 @@ longitude latitude housing_median_age
 </div>
 </section>
 <section id="lectura-y-escritura-de-archivos-json">
-<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Permalink to this heading">#</a></h2>
+<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Link to this heading">#</a></h2>
 <p>JSON, cuyo nombre corresponde a las siglas <em>JavaScript Object Notation</em> o <em>Notación de Objetos de JavaScript</em>, es un formato ligero de intercambio de datos, que resulta sencillo de leer y escribir para los programadores y simple de interpretar y generar para las máquinas.</p>
 <p>JSON es un formato de texto completamente independiente de lenguaje y puede ser interpretado y creado por los siguientes lenguajes:</p>
 <ul class="simple">
@@ -739,7 +741,7 @@ De nuevo un diccionario:	 &lt;class &#39;dict&#39;&gt; {&#39;a&#39;: {&#39;2&#39
 <p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los lineamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
 </section>
 <section id="lectura-de-archivos-json-en-internet">
-<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Permalink to this heading">#</a></h2>
+<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Link to this heading">#</a></h2>
 <p>Para leer un archivo JSON desde internet utilizando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code> en Python, se puede hacer lo siguiente:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import requests
 </pre></div>
@@ -834,7 +836,7 @@ else:
 </div>
 </section>
 <section id="lectura-y-escritura-de-archivos-xml">
-<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Permalink to this heading">#</a></h2>
+<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Link to this heading">#</a></h2>
 <p>Un archivo XML (Extensible Markup Language) es un tipo de archivo de texto que se utiliza para almacenar y transportar datos de manera estructurada. Un archivo XML está compuesto por una serie de etiquetas que definen elementos y atributos que describen la estructura y los datos contenidos en el archivo.</p>
 <p>Cada elemento en un archivo XML está compuesto por una etiqueta de apertura y una etiqueta de cierre, y puede contener elementos anidados y atributos. Por ejemplo, el siguiente es un ejemplo simple de un archivo XML que contiene información sobre una persona:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;persona&gt;
@@ -852,7 +854,7 @@ else:
 </div>
 <p>Obviamente hay otras formas de hacerlo.</p>
 <section id="elementos-y-atributos">
-<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Permalink to this heading">#</a></h3>
+<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Link to this heading">#</a></h3>
 <p>En XML, los <em>elementos</em> son las partes principales de un documento XML y representan los distintos elementos de información que se están describiendo en el documento. Los elementos tienen un nombre que los identifica y pueden contener <em>otros elementos</em>, <em>atributos</em> o <em>texto</em>.</p>
 <p>Por ejemplo, en el siguiente fragmento de código XML, <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;ele&gt;</span></code> son elementos:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;trkpt lat=&quot;-30.9424310&quot; lon=&quot;-64.2770290&quot;&gt;
@@ -865,7 +867,7 @@ else:
 <p>Los elementos y atributos en XML se utilizan para estructurar y describir los datos de forma clara y organizada. Los elementos proporcionan la estructura general del documento XML y los atributos permiten proporcionar información adicional sobre los elementos.</p>
 </section>
 <section id="xml-dom">
-<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Permalink to this heading">#</a></h3>
+<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Link to this heading">#</a></h3>
 <p>La biblioteca <code class="docutils literal notranslate"><span class="pre">xml.dom</span></code> de Python es una biblioteca estándar que proporciona una forma de analizar y manipular documentos XML mediante el modelo de objetos del documento (DOM, por sus siglas en inglés). El modelo DOM representa el documento XML como un árbol de nodos, donde cada nodo representa un elemento, atributo, texto u otro tipo de contenido en el documento.</p>
 <p>Para obtener elementos y atributos de un documento XML utilizando la biblioteca xml.dom, puedes seguir estos pasos:</p>
 <p>Importar la biblioteca y abrir el archivo XML:</p>
@@ -899,7 +901,7 @@ contenido = elementos[0].firstChild.nodeValue
 <p>Es importante tener en cuenta que el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> devuelve una lista de elementos, incluso si solo hay un elemento con el nombre de etiqueta especificado en el documento. Por lo tanto, en el ejemplo anterior se utiliza <code class="docutils literal notranslate"><span class="pre">elementos[0]</span></code> para acceder al primer elemento de la lista. Si se espera que solo haya un elemento con el nombre de etiqueta especificado en el documento, se puede utilizar <code class="docutils literal notranslate"><span class="pre">getElementsByTagName(nombre_del_elemento)[0]</span></code> para obtener directamente ese elemento.</p>
 </section>
 <section id="ejemplo">
-<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this heading">#</a></h3>
+<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
 <p>Veamos ahora un archivo XML de internet,  con una estructura no demasiado complicada pero con más registros. El archivo que vamos a leer es <code class="docutils literal notranslate"><span class="pre">books.xml</span></code> y su estrucura es:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;catalog&gt;
@@ -993,7 +995,7 @@ contenido = elementos[0].firstChild.nodeValue
 </section>
 </section>
 <section id="uso-de-apis">
-<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Permalink to this heading">#</a></h2>
+<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Link to this heading">#</a></h2>
 <p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen e intercambien datos entre sí. Es como un puente que conecta aplicaciones y les permite compartir información y funcionalidades.</p>
 <p>Por ejemplo, (ver [2]), si se tiene una app para móviles acerca de recetas y se hace una búsqueda de una determinada receta, se puede utilizar una API para que esta aplicación se comunique con el sitio web de recetas y pida las recetas que cumplen con los criterios de búsqueda. La API entonces se encarga de recibir la solicitud, buscar las recetas apropiadas y regresar los resultados a la aplicación. Una API es una forma de conectar diferentes aplicaciones y hacer que trabajen juntas de manera más eficiente y efectiva. Son usadas generalmente en las bibliotecas.</p>
 <p>Las APIS <em>no</em> son lenguaje dependientes,  es decir cualquier lenguaje moderno de programación (Python, Java, C++, etc) puede invocar y utilizar una API bien definida.</p>
@@ -1015,7 +1017,7 @@ contenido = elementos[0].firstChild.nodeValue
 <li><p>[5] https://www.computer.org/publications/tech-news/trends/what-are-apis/</p></li>
 </ul>
 <section id="ejemplo-la-api-del-noaa">
-<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Link to this heading">#</a></h3>
 <p>La Oficina Nacional de Administración Oceánica y Atmosférica (National Oceanic and Atmospheric Administration, NOAA) es una agencia científica del Departamento de Comercio de los Estados Unidos cuyas actividades se centran en monitorear las condiciones de los océanos y la atmósfera.</p>
 <p>El NOAA ofrece distintos <em>datasets</em> (conjuntos de datos estructurados) sin limitaciones. Los datos puedes ser bajados directamente del sitio web https://www.noaa.gov/ o, alternativamente, accedidos por API.</p>
 <p>En esta sección accederemos a los datasets utilizando la API. Para utilizar la API se debe solicitar  un <em>token</em> al NOAA (ver <em>Referencias</em>, más abajo). El token es una cadena de caracteres que funciona como id y password al mismo tiempo.</p>
@@ -1180,7 +1182,7 @@ results
 </ul>
 </section>
 <section id="otros-ejemplos-de-apis">
-<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Permalink to this heading">#</a></h3>
+<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Link to this heading">#</a></h3>
 <p>Algunas APIs interesantes para practicar son:</p>
 <ul class="simple">
 <li><p><strong>PokéAPI</strong>: Proporciona datos sobre Pokémon como movimientos, habilidades, tipos, etc. Permite crear fácilmente un Pokédex. [2][3]</p></li>
@@ -1194,7 +1196,7 @@ results
 </section>
 </section>
 <section id="apis-de-servicios-populares">
-<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Permalink to this heading">#</a></h2>
+<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>API de Google Maps</strong>: Agrega funcionalidades de mapas a aplicaciones web como mostrar ubicaciones, calcular rutas, obtener direcciones. [4]</p></li>
 <li><p><strong>API de Facebook</strong>: Integra funcionalidades sociales como compartir contenido, autenticación de usuarios, conexión a la red de Facebook. [4]</p></li>

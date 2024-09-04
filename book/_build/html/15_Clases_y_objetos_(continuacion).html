@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Clases y objetos (continuación) &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '15_Clases_y_objetos_(continuacion)';</script>
@@ -415,10 +417,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="clases-y-objetos-continuacion">
-<h1>Clases y objetos (continuación)<a class="headerlink" href="#clases-y-objetos-continuacion" title="Permalink to this heading">#</a></h1>
+<h1>Clases y objetos (continuación)<a class="headerlink" href="#clases-y-objetos-continuacion" title="Link to this heading">#</a></h1>
 <p>Veremos ejemplos de implementaciones de clases</p>
 <section id="ejemplo-rectangulos">
-<h2>1. Ejemplo. Rectángulos.<a class="headerlink" href="#ejemplo-rectangulos" title="Permalink to this heading">#</a></h2>
+<h2>1. Ejemplo. Rectángulos.<a class="headerlink" href="#ejemplo-rectangulos" title="Link to this heading">#</a></h2>
 <p>Hagamos un ejemplo sencillo, con una clase análoga a <code class="docutils literal notranslate"><span class="pre">Circulo</span></code> del cuaderno anterior, pero dependiendo de dos variables de estado que representen el ancho y el alto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,7 +494,7 @@ True
 </div>
 </section>
 <section id="ejemplo-clase-personas">
-<h2>2. Ejemplo. Clase Personas.<a class="headerlink" href="#ejemplo-clase-personas" title="Permalink to this heading">#</a></h2>
+<h2>2. Ejemplo. Clase Personas.<a class="headerlink" href="#ejemplo-clase-personas" title="Link to this heading">#</a></h2>
 <p>Definamos una clase que sirva para almacenar datos de personas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,7 +561,7 @@ Pedro Luis Ramirez (DNI: 38678543)
 </div>
 </section>
 <section id="el-tipo-abstracto-pila-y-su-implementacion">
-<h2>3. El tipo abstracto pila y  su implementación<a class="headerlink" href="#el-tipo-abstracto-pila-y-su-implementacion" title="Permalink to this heading">#</a></h2>
+<h2>3. El tipo abstracto pila y  su implementación<a class="headerlink" href="#el-tipo-abstracto-pila-y-su-implementacion" title="Link to this heading">#</a></h2>
 <p>En ciencias de la computación, un tipo abstracto de datos (TAD) es una especificación matemática de una estructura de datos que define un conjunto de operaciones sobre la estructura sin definir la implementación subyacente. Una pila es un ejemplo común de TAD que se utiliza para almacenar y administrar elementos de datos de una manera específica.</p>
 <p>Una pila es una estructura de datos que permite almacenar y recuperar elementos en un orden específico llamado “último en entrar, primero en salir” (LIFO, por sus siglas en inglés). Es decir, el último elemento que se agrega a la pila es el primero que se elimina de ella. Las operaciones básicas de una pila incluyen la inserción de elementos en la parte superior de la pila (conocida como “push”), la eliminación del elemento superior de la pila (conocida como “pop”), y la consulta del elemento superior sin eliminarlo (conocida como “top” o “peek”).</p>
 <p>La utilidad de una pila radica en su capacidad para mantener un seguimiento de los elementos en un orden específico, lo que es especialmente útil en algoritmos que requieren un seguimiento de las llamadas a funciones o de las expresiones en notación polaca inversa. Además, las pilas son útiles para la inversión del orden de una secuencia de elementos, como en la impresión de una cadena en orden inverso, o en la evaluación de expresiones aritméticas en notación polaca inversa.</p>
@@ -995,7 +997,7 @@ False
 </div>
 </section>
 <section id="ejemplo-fracciones">
-<h2>4. Ejemplo. Fracciones<a class="headerlink" href="#ejemplo-fracciones" title="Permalink to this heading">#</a></h2>
+<h2>4. Ejemplo. Fracciones<a class="headerlink" href="#ejemplo-fracciones" title="Link to this heading">#</a></h2>
 <p>Otro  ejemplo interesante de definición de clases es el de las fracciones, que llamamos <code class="docutils literal notranslate"><span class="pre">Racional</span></code> por su correspondencia con los números racionales</p>
 <p>Lo que queremos representar son las fracciones  <span class="math notranslate nohighlight">\(\displaystyle\frac{a}{b}\)</span> donde <span class="math notranslate nohighlight">\(a, b \in \mathbb Z\)</span> y <span class="math notranslate nohighlight">\(b \ne 0\)</span>. En las fracciones queremos definir igualdad, suma, resta, multiplicación y división.</p>
 <p>Las variables de estado de la clase <code class="docutils literal notranslate"><span class="pre">Racional</span></code> serán 3: el valor absoluto del numerador,  el valor absoluto del denominador y  el signo de la fracción.</p>

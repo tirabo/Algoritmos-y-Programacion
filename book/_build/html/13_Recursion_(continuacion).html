@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Recursión (2° parte) &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '13_Recursion_(continuacion)';</script>
@@ -415,9 +417,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recursion-2-parte">
-<h1>Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Permalink to this heading">#</a></h1>
+<h1>Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Link to this heading">#</a></h1>
 <section id="algunos-ejemplos">
-<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Permalink to this heading">#</a></h2>
+<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Link to this heading">#</a></h2>
 <p>En esta primera parte veremos algunos ejemplos sencillos de recursión y recursión sobre listas.</p>
 <p><strong>Ejemplo (función recursiva).</strong> Sea la función recursiva</p>
 <div class="amsmath math notranslate nohighlight">
@@ -505,7 +507,7 @@ f(25) = -327238
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(35) = 45299420
-Tiempo: 5.242291688919067
+Tiempo: 10.560484409332275
 </pre></div>
 </div>
 </div>
@@ -531,7 +533,7 @@ f(20) = 67717
 f(25) = -327238
 f(30) = -17109707
 f(35) = 45299420
-Tiempo: 0.0
+Tiempo: 0.0009987354278564453
 </pre></div>
 </div>
 </div>
@@ -544,12 +546,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tiempo_f</span><span class="o">/</span><span class="n">tiempo_f_s</span>
-
-<span class="ne">ZeroDivisionError</span>: float division by zero
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10573.855812843161
 </pre></div>
 </div>
 </div>
@@ -615,7 +612,7 @@ Tiempo: 0.0
 </div>
 </section>
 <section id="ejemplo-de-recursion-torres-de-hanoi">
-<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Permalink to this heading">#</a></h2>
+<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Link to this heading">#</a></h2>
 <p>Las Torres de Hanói es un rompecabezas o juego matemático inventado en 1883 por el matemático francés Édouard Lucas.</p>
 <p>Es un juego de mesa y lo describimos a continuación: contamos con  tres postes verticales y <span class="math notranslate nohighlight">\(n\)</span> discos de distinto tamaño (<span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>). En el primer poste se apilan los <span class="math notranslate nohighlight">\(n\)</span> discos de mayor a menor (el más grande abajo,  el más chico arriba). Los otros dos postes quedan vacíos. El objetivo del juego consiste en pasar todos los discos desde el poste ocupado a uno de los otros postes vacíos. Para completar este objetivo, es necesario seguir tres simples reglas:</p>
 <ol class="arabic simple">
@@ -950,7 +947,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 48, 12, 12, 29, 43, 30, 14, 32, 24, 15, 13, 50, 21, 35, 36, 32, 10, 21, 14]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11, 40, 10, 8, 2, 37, 30, 8, 2, 50, 26, 27, 17, 36, 17, 43, 1, 40, 36, 21]
 </pre></div>
 </div>
 </div>
@@ -963,7 +960,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 10, 12, 12, 13, 14, 14, 15, 21, 21, 24, 29, 30, 32, 32, 35, 36, 43, 48, 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 2, 8, 8, 10, 11, 17, 17, 21, 26, 27, 30, 36, 36, 37, 40, 40, 43, 50]
 </pre></div>
 </div>
 </div>
@@ -1067,7 +1064,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 4, 17, 25, 13, 5, 18, 25, 34, 18, 23, 22, 13, 18, 9, 36, 23, 30, 4, 23]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[38, 45, 26, 9, 12, 44, 46, 3, 5, 14, 2, 50, 15, 29, 17, 14, 46, 44, 19, 15]
 </pre></div>
 </div>
 </div>
@@ -1080,7 +1077,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 4, 5, 6, 9, 13, 13, 17, 18, 18, 18, 22, 23, 23, 23, 25, 25, 30, 34, 36]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 9, 12, 14, 14, 15, 15, 17, 19, 26, 29, 38, 44, 44, 45, 46, 46, 50]
 </pre></div>
 </div>
 </div>
@@ -1095,7 +1092,10 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[969490, 677557, 498461, 917660, 356872, 576144, 190524, 791815, 58818, 79922, 657362, 212618, 914261, 420860, 49997, 997741, 647330, 701071, 651992, 262335, 740188, 880335, 955325, 259791, 834161, 204503, 913935, 291052, 800968, 582963, 140970, 659440, 822174, 63083, 56079, 202179, 24822, 144029, 289524, 533468, 909770, 783643, 460408, 685199, 794813, 359178, 491640, 36759, 701751, 807958, 252382, 881596, 599377, 897554, 690115, 686948, 405374, 511097, 343188, 600464, 569850, 34368, 502306, 591081, 450949, 705231, 422802, 955795, 98985, 819613, 616967, 337302, 610940, 577657, 121277, 339026, 227432, 224288, 339048, 828854, 617410, 325624, 488552, 808804, 87849, 771403, 439766, 697535, 420412, 379870, 342318, 738698, 368470, 987926, 261068, 914025, 651379, 138283, 893172, 478677]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[694170, 302725, 284116, 103821, 498021, 42853, 400491, 531999, 737056, 353445, 944727, 890448, 53098, 243205, 570900, 352988, 495735, 953818, 260917, 38588, 633019, 368586, 535133, 303195, 49300, 133912, 640382, 409756, 824632, 679944, 170167, 635785, 944883, 101804, 524918, 821793, 529606, 21334, 324440, 471329, 681379, 10355, 871166, 95250, 311112, 749857, 344404, 328496, 496251, 691970, 617140, 335406, 729264, 771791, 963230, 442594, 732875, 675501, 613097, 945766, 909479, 986454, 538331, 680715, 844389, 991272, 336319, 704978, 93743, 877945, 621912, 614317, 584708, 363976, 545625, 462980, 733491, 973535, 166681, 72605, 867666, 30475, 266814, 654039, 590424, 154960, 460765, 408967, 164605, 463255, 540252, 707624, 936216, 801235, 352565, 671822, 884071, 213561, 797466, 181061]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1108,7 @@ Tiempo: 0.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 30, 32, 39, 41, 42, 42, 47, 50, 54, 75, 78, 81, 84, 90, 102, 118, 134, 166, 178, 183, 183, 195, 223, 225, 240, 251, 254, 270, 272, 278, 280, 282, 284, 292, 301, 312, 327, 337, 341, 350, 357, 368, 372, 375, 407, 421, 422, 426, 437, 441, 449, 449, 450, 461, 477, 484, 484, 489, 492, 503, 505, 524, 572, 578, 587, 590, 607, 611, 626, 629, 637, 651, 678, 682, 700, 709, 715, 722, 724, 730, 739, 761, 769, 771, 784, 785, 790, 800, 815, 817, 826, 859, 860, 872, 888, 898, 903, 913, 922]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 44, 81, 82, 92, 94, 116, 123, 130, 130, 141, 145, 152, 161, 174, 189, 194, 218, 218, 229, 237, 240, 259, 267, 270, 285, 303, 344, 347, 355, 376, 381, 383, 395, 395, 399, 400, 401, 414, 450, 457, 497, 506, 513, 531, 537, 553, 559, 559, 567, 589, 599, 609, 636, 648, 665, 666, 670, 689, 690, 700, 726, 728, 742, 746, 771, 779, 788, 796, 799, 812, 817, 818, 819, 825, 829, 840, 844, 853, 867, 872, 881, 882, 906, 909, 909, 910, 916, 921, 934, 936, 938, 942, 958, 960, 961, 963, 1008, 1037, 1046]
 </pre></div>
 </div>
 </div>
@@ -1116,7 +1116,7 @@ Tiempo: 0.0
 <p>El algoritmo recursivo tiene algunas limitaciones para arreglos muy grandes debido a la falta de profundidad en Python para la recursión. Una implementación iterativa de quicksort es más eficiente y solo impone limitaciones por memoria y capacidad computacional, sin embargo  la explicación de esta implementación está fuera de los alcances del curso.</p>
 </section>
 <section id="criba-de-eratostenes-con-recursion">
-<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Permalink to this heading">#</a></h2>
+<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Link to this heading">#</a></h2>
 <p>La criba de Eratóstenes es un método antiguo  para encontrar todos los números primos menores a un número dado. El proceso comienza con el número <span class="math notranslate nohighlight">\(2\)</span>, que es el primer número primo. Luego, se van eliminando los múltiplos de cada número primo encontrado hasta que se llega al número dado.</p>
 <p>Por ejemplo, si queremos encontrar los números primos menores a <span class="math notranslate nohighlight">\(100\)</span>, comencemos con una lista con los números de <span class="math notranslate nohighlight">\(2\)</span> a <span class="math notranslate nohighlight">\(99\)</span> en orden. Comenzamos con el número <span class="math notranslate nohighlight">\(2\)</span>, que es primo y eliminamos todos los múltiplos de <span class="math notranslate nohighlight">\(2\)</span>. El próximo número de la lista, que es el <span class="math notranslate nohighlight">\(3\)</span>, es primo y ahora eliminamos todos los múltiplos de él, este proceso se repite hasta haber recorrido toda la lista.</p>
 <p>Comencemos a implementar la criba definiendo la función que elimnima los múltiplos:</p>
@@ -1187,7 +1187,7 @@ Tiempo: 0.0
 </div>
 </section>
 <section id="ejemplo-el-numero-combinatorio-2o-parte">
-<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Permalink to this heading">#</a></h2>
+<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Link to this heading">#</a></h2>
 <p>Recordemos.</p>
 <p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
 <div class="math notranslate nohighlight">
@@ -1222,6 +1222,14 @@ Tiempo: 0.0
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># no hay problema</span>
 <span class="o">@</span> <span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># no lo puede hacer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="o">@</span> <span class="n">combinatorio</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># no lo puede hacer</span>
+                                             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
 </pre></div>
 </div>
 </div>
