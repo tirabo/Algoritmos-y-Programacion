@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '14_Clases_y_objetos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Clases y objetos (continuación)" href="15_Clases_y_objetos_%28continuacion%29.html" />
+    <link rel="next" title="Input y output" href="16_Input_y_output.html" />
     <link rel="prev" title="Los números notables (optativa)" href="13.1_Numeros_notables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -199,7 +199,6 @@
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Clases y objetos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_%28continuacion%29.html">Clases y objetos (continuación)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
@@ -406,9 +405,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocultar-los-atributos-de-una-clase">3. Ocultar los atributos de una clase</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobrecarga-de-operadores-y-metodos-especiales">4. Sobrecarga de operadores y métodos especiales</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tuplas-como-vectores">Ejemplo. Tuplas como vectores.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-los-numeros-complejos">Ejemplo: los números complejos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-especiales">5. Métodos especiales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-los-numeros-complejos">Ejemplo: los números complejos</a></li>
 </ul>
             </nav>
         </div>
@@ -494,7 +494,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el objeto t: &lt;__main__.Circulo object at 0x000001CBC323C4F0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el objeto t: &lt;__main__.Circulo object at 0x73247f104790&gt;
 </pre></div>
 </div>
 </div>
@@ -519,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo objeto s: &lt;__main__.Circulo object at 0x000001CBC323CD30&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo objeto s: &lt;__main__.Circulo object at 0x73247f104580&gt;
 </pre></div>
 </div>
 </div>
@@ -692,7 +692,7 @@ Hola
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circulo object at 0x000001CBC3221700&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circulo object at 0x73247f106230&gt;
 </pre></div>
 </div>
 </div>
@@ -1154,18 +1154,19 @@ False
 </div>
 </div>
 </section>
-</section>
 <section id="ejemplo-los-numeros-complejos">
-<h2>Ejemplo: los números complejos<a class="headerlink" href="#ejemplo-los-numeros-complejos" title="Link to this heading">#</a></h2>
+<h3>Ejemplo: los números complejos<a class="headerlink" href="#ejemplo-los-numeros-complejos" title="Link to this heading">#</a></h3>
 <p>Los números complejos (<span class="math notranslate nohighlight">\(\mathbb C\)</span>) están determinados por un par de números, la parte real y la parte imaginaria. Es decir,  un número complejo es  un <span class="math notranslate nohighlight">\(a + bi\)</span>,  con <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> reales e <span class="math notranslate nohighlight">\(i\)</span> que simboliza <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>.</p>
-<p>La suma de complejos es:
-$<span class="math notranslate nohighlight">\(
+<p>La suma de complejos es:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 (a+ bi) + (a' + b'i) = (a+a') + (b+b')i.
-\)</span><span class="math notranslate nohighlight">\(
-El producto de números complejos respeta que \)</span>i \cdot i = -1<span class="math notranslate nohighlight">\( y  las prpiedades asociativas, conmutativas y distributivas. Lo que resulta en,
-\)</span><span class="math notranslate nohighlight">\(
+\end{equation*}\]</div>
+<p>El producto de números complejos respeta que <span class="math notranslate nohighlight">\(i \cdot i = -1\)</span> y  las prpiedades asociativas, conmutativas y distributivas. Lo que resulta en,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 (a+ bi) \cdot (a' + b'i) = (aa'-bb') + (ab'+ba)i.
-\)</span>$</p>
+\end{equation*}\]</div>
 <p>¿Cuando <span class="math notranslate nohighlight">\(a+ bi\)</span>  y <span class="math notranslate nohighlight">\(a' + b'i\)</span> son iguales? Son iguales si y solo si <span class="math notranslate nohighlight">\(a=a'\)</span> y <span class="math notranslate nohighlight">\(b = b'\)</span>.</p>
 <p>Hagamos una posible definición de la clase:</p>
 <div class="cell docutils container">
@@ -1206,7 +1207,9 @@ True
 </div>
 </div>
 </div>
-<p>##5. Métodos especiales</p>
+</section>
+<section id="metodos-especiales">
+<h3>5. Métodos especiales<a class="headerlink" href="#metodos-especiales" title="Link to this heading">#</a></h3>
 <p>Una lista de métodos especiales de Python, no todos, es la siguiente:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -1289,6 +1292,7 @@ True
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1330,11 +1334,11 @@ True
       </div>
     </a>
     <a class="right-next"
-       href="15_Clases_y_objetos_%28continuacion%29.html"
+       href="16_Input_y_output.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Clases y objetos (continuación)</p>
+        <p class="prev-next-title">Input y output</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1359,9 +1363,10 @@ True
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocultar-los-atributos-de-una-clase">3. Ocultar los atributos de una clase</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sobrecarga-de-operadores-y-metodos-especiales">4. Sobrecarga de operadores y métodos especiales</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-tuplas-como-vectores">Ejemplo. Tuplas como vectores.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-los-numeros-complejos">Ejemplo: los números complejos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-especiales">5. Métodos especiales</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-los-numeros-complejos">Ejemplo: los números complejos</a></li>
 </ul>
   </nav></div>
 
