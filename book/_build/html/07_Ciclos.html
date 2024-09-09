@@ -2462,9 +2462,7 @@ Hola
 11117 es divisor de 10705671
 33351 es divisor de 10705671
 100053 es divisor de 10705671
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1189519 es divisor de 10705671
+1189519 es divisor de 10705671
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3568557 es divisor de 10705671
@@ -2624,8 +2622,8 @@ x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
 </ol>
 <p>En el ítem 3. la frase “lo suficiente” no es del todo clara y  trataremos de interpretarla a lo largo de la sección.</p>
 <p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (*) se reescribe:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd7e5e06-f163-44db-8fb6-713386e679f3">
-<span class="eqno">(1)<a class="headerlink" href="#equation-bd7e5e06-f163-44db-8fb6-713386e679f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-27c954e9-d477-42aa-95a4-6de308228b77">
+<span class="eqno">(1)<a class="headerlink" href="#equation-27c954e9-d477-42aa-95a4-6de308228b77" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac12(x + \frac{a}{x}) \tag{*}
 \end{equation}\]</div>
 <p>Con esta fórmula en mente, la primera aproximación a <span class="math notranslate nohighlight">\(\sqrt{4} =2\)</span> es</p>
@@ -2875,8 +2873,8 @@ raíz cuadrada de: 102 es 10.099504938362077 que elevado al cuadrado  es 101.999
 <p>En el caso que se puedan formalizar en Python,  se pueden reemplazar o completar con <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
 <p>Veamos un ejemplo con el máximo común divisor. La función escrita en la siguiente celda de código determina  el máximo común divisor de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> son enteros no negativos y uno de ellos es mayor que 0.</p>
 <p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3f0f99d-5e4e-45bb-a644-c42cea2cc3a2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-c3f0f99d-5e4e-45bb-a644-c42cea2cc3a2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6efb6fde-b3c8-4064-bf45-5d8d0caaca43">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6efb6fde-b3c8-4064-bf45-5d8d0caaca43" title="Permalink to this equation">#</a></span>\[\begin{align}
 \operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \\
 \operatorname{mcd}(0, y) &amp;= y.
 \end{align}\]</div>
