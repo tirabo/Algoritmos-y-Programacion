@@ -9,8 +9,6 @@ parts:
         - file: 01_Dibujando_con_Python_Turtle
         - file: 02_Mas_dibujos_con_Turtle
         - file: 03_Variables_Funciones_en_Turtle
-          # sections:
-          #   - file: practicos/1_Python_Turtle
     - caption: Aprendiendo lo básico
       chapters:
         - file: 04_Primeros_pasos_en_Python
@@ -39,3 +37,6 @@ parts:
         - file: 18_NumPy
         - file: 19_PyPlot
         - file: 19.1_Ejemplo_recorridos_GPX
+    - caption: Ejercicios
+      chapters:
+        - file: 20_Ejercicios
