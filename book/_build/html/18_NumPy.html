@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,10 +181,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dibujando con Turtle</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprendiendo lo básico</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
@@ -195,13 +199,26 @@
 <li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Recursión</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Clases y objetos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_ejemplos.html">Clases y objetos: ejemplos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input y output</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy y Pyplot</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
@@ -849,6 +866,9 @@ Sorpresa:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.12 0.94 0.66 0.73 0.83]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Podemos reemplazar los valores en cierto rango del array por un valor determinado:</p>
@@ -1375,7 +1395,7 @@ Al sumar un sólo número a un arreglo de NumPy, ese número se suma a cada elem
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_2820\2236928128.py:1: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_15444\2236928128.py:1: RuntimeWarning: divide by zero encountered in divide
   arr_e = arr_b / arr_d
 </pre></div>
 </div>
@@ -1803,8 +1823,8 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.76443103, 0.24415303, 0.29493422, 0.74691878, 0.4487704 ,
-       0.53644757, 0.30904063, 0.22886357, 0.50573996, 0.84605249])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.32334034, 0.48690614, 0.6710368 , 0.66589612, 0.97695297,
+       0.325427  , 0.73870714, 0.01652994, 0.60573759, 0.21443038])
 </pre></div>
 </div>
 </div>
@@ -1818,10 +1838,10 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9.62991257, 3.13114104, 2.31881952],
-       [7.86711633, 2.97777809, 8.67799634],
-       [6.62434574, 5.79030828, 3.48538896],
-       [8.51906253, 1.98388136, 6.3093478 ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.69330718, 4.50943122, 3.7230246 ],
+       [6.51318573, 5.79683144, 6.68307149],
+       [1.75821517, 3.92915418, 3.40767724],
+       [4.08692546, 4.53194689, 8.3452141 ]])
 </pre></div>
 </div>
 </div>
@@ -1835,12 +1855,12 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.49852484,  2.39948397, -0.15065443, -0.91865785, -0.29241565,
-        0.28624694, -2.40004037, -0.29630476,  0.26016256, -1.9146777 ,
-        0.66863372,  0.28522763,  0.01556223,  0.09126197, -0.48110254,
-        0.13121062, -0.09519283,  1.87408019,  0.63500361, -0.01098553,
-       -0.72209235,  0.1589176 , -0.41986851,  0.94078417,  0.14802336,
-        0.56549206,  0.32063007,  0.69737329,  0.08646755,  0.65607229])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.70584936,  1.41816987,  0.14027795,  0.51051148, -0.20740741,
+       -0.64273213,  0.90425879,  0.44467687,  0.28937879, -1.18582657,
+       -1.59818636,  0.23695732,  1.70136112,  0.9785869 , -0.23033598,
+        0.21050637,  0.09076275,  0.50397837, -1.27386934, -1.53738455,
+        0.0211731 , -0.50484372,  1.47207134,  1.08426157, -0.14905768,
+        0.17806159,  0.23564641,  0.20788623,  0.09457478, -1.88471895])
 </pre></div>
 </div>
 </div>
@@ -1853,7 +1873,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 17,  17,   0,  13,  -7,  16,  -8, -16,   7,  -6])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 19, -15,  -4,  12, -17, -18, -16,  -2,  12, -11])
 </pre></div>
 </div>
 </div>
@@ -2185,9 +2205,7 @@ B+C = [1 2 4]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0 10 20 30 40 50 60 70 80 90]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0 20 40 60 80]
+[ 0 20 40 60 80]
 [10 20 50 80 90]
 </pre></div>
 </div>
@@ -2243,9 +2261,7 @@ B+C = [1 2 4]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+2
 3
 4
 5
@@ -2270,9 +2286,7 @@ B+C = [1 2 4]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 5 10 15 17]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20 25 30 32]
+[20 25 30 32]
 [35 40 45 47]
 </pre></div>
 </div>
@@ -2350,9 +2364,7 @@ B+C = [1 2 4]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index: 0, Element: 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index: 1, Element: 2
+Index: 1, Element: 2
 Index: 2, Element: 3
 Index: 3, Element: 4
 Index: 4, Element: 5
@@ -2374,9 +2386,7 @@ Index: 4, Element: 5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row: 0, Column: 0, Element: 5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Row: 0, Column: 1, Element: 10
+Row: 0, Column: 1, Element: 10
 Row: 0, Column: 2, Element: 15
 Row: 0, Column: 3, Element: 17
 Row: 1, Column: 0, Element: 20
@@ -2436,13 +2446,15 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-41 -10 -19 -73 -77 -81   1   0  27  23   2  97  42  77 -25 -55  31 -90
-  73  60 -98  84 -46 -89 -26  30 -33 -85  69 -26 -91 -84 -98  54  57  15
- -37  90  21  19 -18 -54  81  81  41 -99  91  38  96 -65  18  -4 -83 -76
- -78  57   7  24 -89   2   0  62  38 -85  10  87 -88  40  22   8 -61 -97
-  -1  98 -64 -26  38  90 -68  77 -48  97  47 -39  83 -82   5 -70  64 -44
-  92 -98 -59 -22 -92 -10  40  31  57  45  67  59  32  47  41  33 -33  18
- -94  26  76 -48  86  92   5  12  33   1 -16  34]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ -12  -54   61   58  -55  -94  -20  -44  -87  -88  -27   88   92   85
+  -16  -63   93  -29  -41  -25   -2   55   96  -71   14   32   22  -56
+   41   37  -37   59   19  -91   64  -74   12    1  -63   40   80  -20
+  -56  -94  -28  -81    7   27  -73   58   27 -100  -70   -3   39   60
+  -71   97  -10  -79  -47  -32  -59  -55  -42   32  -59   63   14   46
+  -89   72   61  -40   87  -14   65  -65  -94   47   75   56  -28  -89
+   -4  -77   15  -76   26    1   32  -74  -52   51  -11   50  -61  -30
+   51   -7   82   25  -42   40  -89  -80  -24  -60  -67  -26   11  -23
+   52   32  -73  -73  -71   95  -33   94]
 </pre></div>
 </div>
 </div>
@@ -2456,9 +2468,9 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1 27 23  2 97 42 77 31 73 60 84 30 69 54 57 15 90 21 19 81 81 41 91 38
- 96 18 57  7 24  2 62 38 10 87 40 22  8 98 38 90 77 97 47 83  5 64 92 40
- 31 57 45 67 59 32 47 41 33 18 26 76 86 92  5 12 33  1 34]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[61 58 88 92 85 93 55 96 14 32 22 41 37 59 19 64 12  1 40 80  7 27 58 27
+ 39 60 97 32 63 14 46 72 61 87 65 47 75 56 15 26  1 32 51 50 51 82 25 40
+ 11 52 32 95 94]
 </pre></div>
 </div>
 </div>
@@ -2472,9 +2484,11 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-41 -10 -19 -73 -77 -81 -25 -55 -90 -98 -46 -89 -26 -33 -85 -26 -91 -84
- -98 -37 -18 -54 -99 -65  -4 -83 -76 -78 -89 -85 -88 -61 -97  -1 -64 -26
- -68 -48 -39 -82 -70 -44 -98 -59 -22 -92 -10 -33 -94 -48 -16]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ -12  -54  -55  -94  -20  -44  -87  -88  -27  -16  -63  -29  -41  -25
+   -2  -71  -56  -37  -91  -74  -63  -20  -56  -94  -28  -81  -73 -100
+  -70   -3  -71  -10  -79  -47  -32  -59  -55  -42  -59  -89  -40  -14
+  -65  -94  -28  -89   -4  -77  -76  -74  -52  -11  -61  -30   -7  -42
+  -89  -80  -24  -60  -67  -26  -23  -73  -73  -71  -33]
 </pre></div>
 </div>
 </div>
@@ -2488,8 +2502,8 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[97 77 73 60 84 69 54 57 90 81 81 91 96 57 62 87 98 90 77 97 83 64 92 57
- 67 59 76 86 92]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[61 58 88 92 85 93 55 96 59 64 80 58 60 97 63 72 61 87 65 75 56 51 51 82
+ 52 95 94]
 </pre></div>
 </div>
 </div>
@@ -2505,10 +2519,9 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-41 -10 -19   1   0  27  23   2  42 -25  31 -46 -26  30 -33 -26  15 -37
-  21  19 -18  41  38  18  -4   7  24   2   0  38  10  40  22   8  -1 -26
-  38 -48  47 -39   5 -44 -22 -10  40  31  45  32  47  41  33 -33  18  26
- -48   5  12  33   1 -16  34]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-12 -20 -44 -27 -16 -29 -41 -25  -2  14  32  22  41  37 -37  19  12   1
+  40 -20 -28   7  27  27  -3  39 -10 -47 -32 -42  32  14  46 -40 -14  47
+ -28  -4  15  26   1  32 -11 -30  -7  25 -42  40 -24 -26  11 -23  32 -33]
 </pre></div>
 </div>
 </div>
@@ -2523,10 +2536,11 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-73 -77 -81  97  77 -55 -90  73  60 -98  84 -89 -85  69 -91 -84 -98  54
-  57  90 -54  81  81 -99  91  96 -65 -83 -76 -78  57 -89  62 -85  87 -88
- -61 -97  98 -64  90 -68  77  97  83 -82 -70  64  92 -98 -59 -92  57  67
-  59 -94  76  86  92]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ -54   61   58  -55  -94  -87  -88   88   92   85  -63   93   55   96
+  -71  -56   59  -91   64  -74  -63   80  -56  -94  -81  -73   58 -100
+  -70   60  -71   97  -79  -59  -55  -59   63  -89   72   61   87   65
+  -65  -94   75   56  -89  -77  -76  -74  -52   51  -61   51   82  -89
+  -80  -60  -67   52  -73  -73  -71   95   94]
 </pre></div>
 </div>
 </div>
@@ -2539,8 +2553,8 @@ P = 0.6\,C + Z \frac{(10 - 0.6\,C)}{10}
 El alumno estará aprobado cuando \)</span>P<span class="math notranslate nohighlight">\( sea mayor o igual a cinco, siempre que \)</span>Z<span class="math notranslate nohighlight">\( supere un tercio de la nota máxima (\)</span>Z&gt;10/3<span class="math notranslate nohighlight">\(). En  ese cas \)</span>F= P<span class="math notranslate nohighlight">\(. En caso contrario, se queda con \)</span>F=Z<span class="math notranslate nohighlight">\(. Un grupo de alumnos ha obtenido las siguientes calificaciones en la evaluación contínua y en el examen final:
 \)</span>$</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-d91bb0f8-8647-4318-ac8c-1570a1354d26">
-<span class="eqno">(4)<a class="headerlink" href="#equation-d91bb0f8-8647-4318-ac8c-1570a1354d26" title="Permalink to this equation">#</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-fc503921-2bcd-4188-97a0-fbf6a22fea67">
+<span class="eqno">(4)<a class="headerlink" href="#equation-fc503921-2bcd-4188-97a0-fbf6a22fea67" title="Permalink to this equation">#</a></span>\[\begin{matrix}
 &amp;&amp;	a_0&amp; a_1&amp; a_2&amp; a_3&amp; a_4&amp; a_5&amp; a_6&amp; a_7&amp; a_8&amp; a_9 \\
 C&amp;&amp;	8.2&amp; 0.0&amp; 9.0&amp; 5.0&amp; 8.4&amp; 7.2&amp; 5.0&amp; 9.2&amp; 4.9&amp; 7.9 \\
 Z&amp;&amp;	7.1&amp; 5.1&amp; 8.8&amp; 3.1&amp; 4.6&amp; 2.0&amp; 4.1&amp; 7.4&amp; 4.4&amp; 8.8
@@ -2563,9 +2577,7 @@ Z&amp;&amp;	7.1&amp; 5.1&amp; 8.8&amp; 3.1&amp; 4.6&amp; 2.0&amp; 4.1&amp; 7.4&a
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8.2 0.  9.  5.  8.4 7.2 5.  9.2 4.9 7.9]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7.1 5.8 8.8 3.1 4.6 2.  4.1 7.4 4.4 8.8]
+[7.1 5.8 8.8 3.1 4.6 2.  4.1 7.4 4.4 8.8]
 [8.5268 5.8    9.448  5.17   7.3216 5.456  5.87   8.8352 6.0464 9.3688]
 </pre></div>
 </div>
@@ -2598,9 +2610,6 @@ Entonces \)</span>F$  será la nota final.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a_0&#39; &#39;a_1&#39; &#39;a_2&#39; &#39;a_4&#39; &#39;a_6&#39; &#39;a_7&#39; &#39;a_8&#39; &#39;a_9&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2685,9 +2694,9 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17 54 60 59 45 62 68 88 97 22 59 29 68 23 76 54 71 94 57 99 29 84 88 17
- 65 37 44 93 68 20 82 50 91 86 62 33 78 27 29 69 42 60 96 51 50 26 43 24
- 20 68]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72 74 51 70 10 85 39 84 86 14 40 34 21 71 93 57  1 47 35 25 60 30 93 43
+ 53 44 29 93 10 69 16 87 87 17 98 88 73 14 96 62 89 68 97 78 42  3 10 28
+ 52 92]
 </pre></div>
 </div>
 </div>
@@ -2701,10 +2710,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[54 60 45 54 57 99 84 93 33 78 27 69 42 60 96 51 24]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72 51 39 84 21 93 57 60 30 93 93 69 87 87 96 78 42  3]
 </pre></div>
 </div>
 </div>
@@ -2719,7 +2725,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 88 97 94 99 84 88 93 20 82 91 86 60 96 24 20]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10 85 84 86 40 93  1 60 30 93 93 10 87 87 98 88 96 89 97  3 10 92]
 </pre></div>
 </div>
 </div>
@@ -2734,8 +2740,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17 54 59 45 62 68 22 59 29 68 23 76 54 71 57 29 17 65 37 44 68 50 62 33
- 78 27 29 69 42 51 50 26 43 68]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72 74 51 70 39 14 34 21 71 57 47 35 25 43 53 44 29 69 16 17 73 14 62 68
+ 78 42 28 52]
 </pre></div>
 </div>
 </div>
@@ -2754,8 +2760,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[17 54 59 45 62 68 22 59 29 68 23 76 54 71 57 29 17 65 37 44 68 50 62 33
- 78 27 29 69 42 51 50 26 43 68]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[72 74 51 70 39 14 34 21 71 57 47 35 25 43 53 44 29 69 16 17 73 14 62 68
+ 78 42 28 52]
 </pre></div>
 </div>
 </div>
@@ -2828,8 +2834,8 @@ Programáticamente es muy sencillo hacerlo en Python puro, pero lo que nos inter
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15827
-Tiempo: 5.589388608932495
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15805
+Tiempo: 6.418384075164795
 </pre></div>
 </div>
 </div>
@@ -2851,7 +2857,7 @@ Tiempo: 5.589388608932495
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 3.8148162364959717
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 3.1074345111846924
 </pre></div>
 </div>
 </div>
@@ -2873,8 +2879,8 @@ Tiempo: 5.589388608932495
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15827
-Tiempo: 4.362441539764404
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15805
+Tiempo: 3.608626127243042
 </pre></div>
 </div>
 </div>
@@ -2900,7 +2906,7 @@ Tiempo: 4.362441539764404
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.7133185863494873
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.797959804534912
 </pre></div>
 </div>
 </div>
@@ -2917,8 +2923,8 @@ Tiempo: 4.362441539764404
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15827
-Tiempo: 0.05971837043762207
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15805
+Tiempo: 0.04657101631164551
 </pre></div>
 </div>
 </div>
@@ -2935,8 +2941,8 @@ Tiempo: 0.05971837043762207
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15827
-Tiempo: 1.690340280532837
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15805
+Tiempo: 2.1780617237091064
 </pre></div>
 </div>
 </div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,10 +181,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dibujando con Turtle</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprendiendo lo básico</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
@@ -195,13 +199,26 @@
 <li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Recursión</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Clases y objetos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_ejemplos.html">Clases y objetos: ejemplos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input y output</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy y Pyplot</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
@@ -2454,7 +2471,9 @@ Hola
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-3 es divisor de 10705671
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 es divisor de 10705671
 9 es divisor de 10705671
 107 es divisor de 10705671
 321 es divisor de 10705671
@@ -2462,7 +2481,9 @@ Hola
 11117 es divisor de 10705671
 33351 es divisor de 10705671
 100053 es divisor de 10705671
-1189519 es divisor de 10705671
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1189519 es divisor de 10705671
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3568557 es divisor de 10705671
@@ -2622,8 +2643,8 @@ x_{n+1} = \frac12(x_n + \frac{a}{x_n}) \tag{*}
 </ol>
 <p>En el ítem 3. la frase “lo suficiente” no es del todo clara y  trataremos de interpretarla a lo largo de la sección.</p>
 <p>Veamos como funciona en algún caso particular, por ejemplo, si <span class="math notranslate nohighlight">\(a\)</span> es <span class="math notranslate nohighlight">\(4\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span> es <span class="math notranslate nohighlight">\(3\)</span>. De ahora en más, por ser más cómodo; llamaremos <span class="math notranslate nohighlight">\(x\)</span>  a <span class="math notranslate nohighlight">\(x_n\)</span> (el valor original) e <span class="math notranslate nohighlight">\(y\)</span> a <span class="math notranslate nohighlight">\(x_{n+1}\)</span> (el valor que se obtiene). Luego la fórmula (*) se reescribe:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27c954e9-d477-42aa-95a4-6de308228b77">
-<span class="eqno">(1)<a class="headerlink" href="#equation-27c954e9-d477-42aa-95a4-6de308228b77" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b16d434-f253-4a3e-964b-c97977961cf9">
+<span class="eqno">(1)<a class="headerlink" href="#equation-0b16d434-f253-4a3e-964b-c97977961cf9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y = \frac12(x + \frac{a}{x}) \tag{*}
 \end{equation}\]</div>
 <p>Con esta fórmula en mente, la primera aproximación a <span class="math notranslate nohighlight">\(\sqrt{4} =2\)</span> es</p>
@@ -2873,8 +2894,8 @@ raíz cuadrada de: 102 es 10.099504938362077 que elevado al cuadrado  es 101.999
 <p>En el caso que se puedan formalizar en Python,  se pueden reemplazar o completar con <code class="docutils literal notranslate"><span class="pre">assert</span></code>.</p>
 <p>Veamos un ejemplo con el máximo común divisor. La función escrita en la siguiente celda de código determina  el máximo común divisor de <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> cuando <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code> son enteros no negativos y uno de ellos es mayor que 0.</p>
 <p>El algoritmo se basa en la dos propiedades siguientes: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6efb6fde-b3c8-4064-bf45-5d8d0caaca43">
-<span class="eqno">(2)<a class="headerlink" href="#equation-6efb6fde-b3c8-4064-bf45-5d8d0caaca43" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e85a15a6-c078-4706-b1ef-09481155bd45">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e85a15a6-c078-4706-b1ef-09481155bd45" title="Permalink to this equation">#</a></span>\[\begin{align}
 \operatorname{mcd}(x, y) &amp;= \operatorname{mcd}(x, y - x) \\
 \operatorname{mcd}(0, y) &amp;= y.
 \end{align}\]</div>

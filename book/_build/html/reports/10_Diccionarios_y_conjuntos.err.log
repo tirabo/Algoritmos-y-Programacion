@@ -30,7 +30,7 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['import time', 't0 = time.time()', 'print(t0)', 'n = 50_000_000', '']
+['import time', 't0 = time.time()', 'n = 50_000_000 # 50 millones', "print('Lista de los cuadrados de los primeros',n,'números naturales')", '']
 ...
 ['', 't0 = time.time()', 'lista = [i**2 for i in range(n)] # por comprensión', 't1 = time.time()', "print('Por comprensión:',t1 - t0,'segundos')"]
 -------------------

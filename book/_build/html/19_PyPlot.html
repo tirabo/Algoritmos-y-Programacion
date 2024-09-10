@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,10 +181,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Dibujando con Turtle</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01_Dibujando_con_Python_Turtle.html">Dibujando con  una tortuga</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02_Mas_dibujos_con_Turtle.html">Practicando con Turtle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03_Variables_Funciones_en_Turtle.html">Variables y funciones aplicadas a Turtle</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Aprendiendo lo básico</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="04_Primeros_pasos_en_Python.html">Primeros pasos con Python</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="05_Funciones.html">Funciones</a></li>
@@ -195,13 +199,26 @@
 <li class="toctree-l1"><a class="reference internal" href="10_Diccionarios_y_conjuntos.html">Dicionarios y conjuntos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_Invariantes_Desarrollos_en_base_b.html">Invariantes</a></li>
 
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Recursión</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="12_Recursion.html">Recursión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13_Recursion_%28continuacion%29.html">Recursión (2° parte)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13.1_Numeros_notables.html">Los números notables (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Clases y objetos</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="14_Clases_y_objetos.html">Clases y objetos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_Clases_y_objetos_ejemplos.html">Clases y objetos: ejemplos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Input y output</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="16_Input_y_output.html">Input y output</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="17_Archivos_CSV_XML_JSON_APIs.html">Interacción con archivos CSV, XML y JSON</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy y Pyplot</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
@@ -672,9 +689,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_13792\2148584508.py:2: RuntimeWarning: divide by zero encountered in log10
   p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
-C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarning: invalid value encountered in multiply
+C:\Users\tirab\AppData\Local\Temp\ipykernel_13792\2148584508.py:2: RuntimeWarning: invalid value encountered in multiply
   p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
 </pre></div>
 </div>
@@ -727,7 +744,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dc952fa9d2939be80b5ae3fe6add0e3c7a0a7c14ec23a15117ba545363823e06.png" src="_images/dc952fa9d2939be80b5ae3fe6add0e3c7a0a7c14ec23a15117ba545363823e06.png" />
+<img alt="_images/cbdf14277ac3f907c941cf1c3b0d19036e851cba2d819547f8acd1b4b538aca2.png" src="_images/cbdf14277ac3f907c941cf1c3b0d19036e851cba2d819547f8acd1b4b538aca2.png" />
 </div>
 </div>
 <p>Si no se le proporciona ningún otro argumento a <code class="docutils literal notranslate"><span class="pre">randn()</span></code> produce floats alrededor de 0 y con una varianza = 1.</p>
@@ -740,7 +757,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/db4b83541b208c0e51eb8f65ca8a5798543378ed5d44fc19d47fa3d1e42eae25.png" src="_images/db4b83541b208c0e51eb8f65ca8a5798543378ed5d44fc19d47fa3d1e42eae25.png" />
+<img alt="_images/8ed3f2c8b72b796bc8ce6014e481d25f4cf1bbbd7e21639a3abb29db99b4f8d5.png" src="_images/8ed3f2c8b72b796bc8ce6014e481d25f4cf1bbbd7e21639a3abb29db99b4f8d5.png" />
 </div>
 </div>
 <p>El la figura de abajo se muestra el resultado de superponer ambos histogramas y luego hacemos otro gráfico.</p>
@@ -758,7 +775,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9d87108cf34c035237077fc6f1e51a3de10ca3aa5fca143fd9436cbb3c0cc76a.png" src="_images/9d87108cf34c035237077fc6f1e51a3de10ca3aa5fca143fd9436cbb3c0cc76a.png" />
+<img alt="_images/00d15a990110617215293e144bf1ed47e62f874d5adafafafa30c1f684696051.png" src="_images/00d15a990110617215293e144bf1ed47e62f874d5adafafafa30c1f684696051.png" />
 <img alt="_images/8518ead845e88889e54a5c410d920812971d1b36042590cbe113abe8aaa7bbd7.png" src="_images/8518ead845e88889e54a5c410d920812971d1b36042590cbe113abe8aaa7bbd7.png" />
 </div>
 </div>
@@ -771,10 +788,10 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 3383.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 3176.0
 </pre></div>
 </div>
-<img alt="_images/ead917bbe841730bb098303b2d1eaf50b34e8be9183e4503e1a78b31d43c7149.png" src="_images/ead917bbe841730bb098303b2d1eaf50b34e8be9183e4503e1a78b31d43c7149.png" />
+<img alt="_images/93a52e6a69e68191640469b7e962d5d3587474dec6c41f291d013d3dde874663.png" src="_images/93a52e6a69e68191640469b7e962d5d3587474dec6c41f291d013d3dde874663.png" />
 </div>
 </div>
 </section>
@@ -901,106 +918,106 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-17.  15.]
- [-17.  17.]
- [-10.  26.]
- [-13.  29.]
- [-16.  31.]
- [-19.  18.]
- [  4.   8.]
- [ 14.  28.]
- [  3.   1.]
- [ 19.  21.]
- [ 15.   0.]
- [ -8.  23.]
- [ 10.  20.]
- [-12.  20.]
- [-17.   6.]
- [  0.   4.]
- [  3.  37.]
- [  6.  20.]
- [ 14.  10.]
- [ 15.  28.]
- [ -6.  10.]
- [-20.   0.]
- [  8.  16.]
- [ 16.  18.]
- [ -3.   8.]
- [ -8.  15.]
- [ -1.   2.]
- [-15.  28.]
- [-15.  14.]
- [ 18.  34.]
- [-15.   3.]
- [  5.  34.]
- [-12.   1.]
- [-17.  10.]
- [  1.  19.]
- [ 14.  11.]
- [ 10.  13.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-18.   0.]
+ [-11.   6.]
+ [ -8.   3.]
+ [  5.  37.]
+ [  1.  31.]
+ [ -7.   8.]
+ [ 18.  38.]
+ [ 11.  17.]
+ [  0.   1.]
+ [  7.   6.]
+ [ -4.  29.]
+ [-13.  36.]
  [ 10.  21.]
- [ 14.  24.]
- [-12.  37.]
- [ 17.  14.]
- [  1.  38.]
- [-10.  19.]
- [-14.  24.]
- [-11.  18.]
- [  1.   2.]
- [ -9.  31.]
- [ 15.  20.]
- [-11.  21.]
- [-10.  38.]
- [-14.  11.]
- [-15.  16.]
- [  9.  12.]
- [ -3.  33.]
- [  2.  30.]
- [ 12.  16.]
- [ 19.  38.]
- [ 13.  39.]
- [-11.  10.]
- [-11.  35.]
- [-13.  14.]
- [ 11.  13.]
+ [ -6.  17.]
+ [-12.  20.]
+ [ -1.  13.]
  [ -2.  12.]
- [ 11.  24.]
- [  6.   0.]
- [  6.  37.]
- [ 16.  22.]
- [ -6.  13.]
- [-15.   1.]
- [  3.  37.]
- [-17.   1.]
- [-17.  37.]
- [  9.  31.]
- [-15.   1.]
- [  4.  34.]
- [ 14.  25.]
- [ 14.  38.]
- [ -5.  36.]
- [ 14.   2.]
- [  1.   5.]
- [  2.  17.]
- [-13.  25.]
- [ -2.  38.]
- [ 12.  25.]
- [-11.  20.]
+ [-20.  30.]
+ [-16.  11.]
+ [  0.   7.]
+ [  4.   3.]
+ [ 10.  14.]
+ [  7.  36.]
+ [ -5.  24.]
+ [-13.  31.]
+ [  8.   9.]
+ [  1.  10.]
+ [  5.  10.]
+ [-15.  36.]
+ [ -6.  30.]
+ [ 16.  33.]
+ [ 12.  36.]
+ [ 19.  32.]
+ [ 19.  38.]
+ [-17.  12.]
+ [  7.  19.]
+ [-20.   7.]
+ [  0.  27.]
+ [ -8.  15.]
+ [ -6.  37.]
+ [ -5.  39.]
+ [ -1.  31.]
+ [-10.   4.]
+ [  3.   6.]
+ [ 18.  21.]
+ [ -7.  38.]
  [ 17.  34.]
- [  3.  31.]
- [-13.  32.]
- [ -6.  22.]
- [ -5.  28.]
- [ -7.  34.]
- [ 18.   1.]
+ [ 10.   8.]
+ [-20.   7.]
+ [ 16.  35.]
+ [  1.  25.]
+ [ 19.   6.]
+ [  1.  13.]
+ [ 10.  13.]
+ [ -3.  33.]
+ [ -3.  19.]
+ [  5.  31.]
+ [-18.  17.]
+ [ -1.   9.]
+ [ -4.  31.]
+ [  9.  24.]
+ [  4.  22.]
+ [ -3.   0.]
+ [-19.  32.]
+ [-18.  24.]
+ [-10.  39.]
+ [ 19.  32.]
+ [  0.  23.]
+ [ 12.  13.]
+ [-12.   9.]
+ [  4.  26.]
+ [ -9.  33.]
+ [ 12.  34.]
+ [ -9.  31.]
+ [-12.  34.]
+ [-16.  38.]
+ [ -8.  24.]
+ [-20.   1.]
+ [ 19.   7.]
+ [-20.   7.]
+ [ -6.  38.]
+ [-19.  23.]
+ [ 17.  17.]
+ [ 11.  33.]
+ [ 11.   8.]
+ [-12.  37.]
+ [-12.  22.]
+ [  8.  24.]
+ [ -6.   4.]
+ [ 13.  19.]
+ [ -5.  36.]
  [-18.  18.]
- [ -9.  39.]
- [ 10.  34.]
- [-10.  37.]
- [ 19.  34.]
- [ -7.   3.]
- [ -3.  13.]
- [  7.   1.]]
+ [-17.   3.]
+ [-13.   2.]
+ [-19.  28.]
+ [ 14.  16.]
+ [ 17.  30.]
+ [  5.  26.]
+ [ -9.  29.]
+ [ -8.  30.]]
 </pre></div>
 </div>
 </div>
@@ -1014,15 +1031,15 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[15. 17. 26. 29. 31. 18.  8. 28.  1. 21.  0. 23. 20. 20.  6.  4. 37. 20.
- 10. 28. 10.  0. 16. 18.  8. 15.  2. 28. 14. 34.  3. 34.  1. 10. 19. 11.
- 13. 21. 24. 37. 14. 38. 19. 24. 18.  2. 31. 20. 21. 38. 11. 16. 12. 33.
- 30. 16. 38. 39. 10. 35. 14. 13. 12. 24.  0. 37. 22. 13.  1. 37.  1. 37.
- 31.  1. 34. 25. 38. 36.  2.  5. 17. 25. 38. 25. 20. 34. 31. 32. 22. 28.
- 34.  1. 18. 39. 34. 37. 34.  3. 13.  1.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  6.  3. 37. 31.  8. 38. 17.  1.  6. 29. 36. 21. 17. 20. 13. 12. 30.
+ 11.  7.  3. 14. 36. 24. 31.  9. 10. 10. 36. 30. 33. 36. 32. 38. 12. 19.
+  7. 27. 15. 37. 39. 31.  4.  6. 21. 38. 34.  8.  7. 35. 25.  6. 13. 13.
+ 33. 19. 31. 17.  9. 31. 24. 22.  0. 32. 24. 39. 32. 23. 13.  9. 26. 33.
+ 34. 31. 34. 38. 24.  1.  7.  7. 38. 23. 17. 33.  8. 37. 22. 24.  4. 19.
+ 36. 18.  3.  2. 28. 16. 30. 26. 29. 30.]
 </pre></div>
 </div>
-<img alt="_images/35eec963049f986047810e8e784de2c18a52a80eb90e27e7b814b07f209861ec.png" src="_images/35eec963049f986047810e8e784de2c18a52a80eb90e27e7b814b07f209861ec.png" />
+<img alt="_images/2aa8fcb810b87cb218ca123d8ad55c80db6fd3dfbd9106e3a50c4170fadaaebe.png" src="_images/2aa8fcb810b87cb218ca123d8ad55c80db6fd3dfbd9106e3a50c4170fadaaebe.png" />
 </div>
 </div>
 <p>En el ploteo anterior se grafica la 2º columna con los pares <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">x[i])</span></code>donde <code class="docutils literal notranslate"><span class="pre">x</span></code>es el arreglo.</p>
@@ -1054,7 +1071,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_21316\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc7e0af5d11fbe339fa36589e74b7cfdbec2dd48daed52ab3bc8236b1261ae1a.png" src="_images/fc7e0af5d11fbe339fa36589e74b7cfdbec2dd48daed52ab3bc8236b1261ae1a.png" />
+<img alt="_images/b677a51c8af56f6499ea73a4ae8ec0af9f050916eba62689cb8cdd8aeed1fb4d.png" src="_images/b677a51c8af56f6499ea73a4ae8ec0af9f050916eba62689cb8cdd8aeed1fb4d.png" />
 </div>
 </div>
 <p>En este caso hemos usado además algunas funciones para crear líneas y bandas horizontales y verticales.</p>
