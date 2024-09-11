@@ -40,3 +40,5 @@ parts:
     - caption: Apéndices
       chapters:
         - file: 20_Ejercicios_resueltos
+          sections:
+            - file: 20.1_Ejercicios_resueltos
