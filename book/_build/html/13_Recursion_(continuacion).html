@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Recursión (2° parte) &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '13_Recursion_(continuacion)';</script>
@@ -222,6 +220,10 @@
 <li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_Ejercicios_resueltos.html">Ejercicios resueltos</a></li>
 </ul>
 
     </div>
@@ -434,9 +436,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recursion-2-parte">
-<h1>Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Link to this heading">#</a></h1>
+<h1>Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Permalink to this heading">#</a></h1>
 <section id="algunos-ejemplos">
-<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Link to this heading">#</a></h2>
+<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Permalink to this heading">#</a></h2>
 <p>En esta primera parte veremos algunos ejemplos sencillos de recursión y recursión sobre listas.</p>
 <p><strong>Ejemplo (función recursiva).</strong> Sea la función recursiva</p>
 <div class="amsmath math notranslate nohighlight">
@@ -524,7 +526,7 @@ f(25) = -327238
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(35) = 45299420
-Tiempo: 6.608630180358887
+Tiempo: 4.530086517333984
 </pre></div>
 </div>
 </div>
@@ -634,7 +636,7 @@ Tiempo: 0.0
 </div>
 </section>
 <section id="ejemplo-de-recursion-torres-de-hanoi">
-<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Link to this heading">#</a></h2>
+<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Permalink to this heading">#</a></h2>
 <p>Las Torres de Hanói es un rompecabezas o juego matemático inventado en 1883 por el matemático francés Édouard Lucas.</p>
 <p>Es un juego de mesa y lo describimos a continuación: contamos con  tres postes verticales y <span class="math notranslate nohighlight">\(n\)</span> discos de distinto tamaño (<span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>). En el primer poste se apilan los <span class="math notranslate nohighlight">\(n\)</span> discos de mayor a menor (el más grande abajo,  el más chico arriba). Los otros dos postes quedan vacíos. El objetivo del juego consiste en pasar todos los discos desde el poste ocupado a uno de los otros postes vacíos. Para completar este objetivo, es necesario seguir tres simples reglas:</p>
 <ol class="arabic simple">
@@ -890,7 +892,7 @@ Tiempo: 0.0
 <p>La implementación de un algoritmo como este en forma iterativa  no es sencilla.</p>
 </section>
 <section id="quicksort">
-<h2>3. Quicksort<a class="headerlink" href="#quicksort" title="Link to this heading">#</a></h2>
+<h2>3. Quicksort<a class="headerlink" href="#quicksort" title="Permalink to this heading">#</a></h2>
 <p>Quicksort es un algoritmo de ordenamiento que fue desarrollado por Tony Hoare en 1959. Es uno de los algoritmos de ordenamiento más utilizados debido a su eficiencia y su simplicidad.</p>
 <p>El algoritmo quicksort se implementa con recursión sobre listas. La idea básica detrás de quicksort es la siguiente: se elige un elemento de la lista, conocido como pivote, y se reorganizan los elementos de la lista de manera que todos los elementos menores que el pivote estén a su izquierda y todos los elementos mayores que el pivote estén a su derecha. De esta forma, se logra que el pivote esté en su ubicación definitiva, es decir,  la ubicación que tendría cuando la lista esté completamente ordenada.</p>
 <p>Luego, se repite el proceso en las sublistas generadas a cada lado del pivote, obteniéndose nuevos pivotes en su lugar definitivo. Si aplicamos repetidamente este proceso terminaremos con  la lista ordenada.</p>
@@ -1137,7 +1139,7 @@ Tiempo: 0.0
 <p>El algoritmo recursivo tiene algunas limitaciones para arreglos muy grandes debido a la falta de profundidad en Python para la recursión. Una implementación iterativa de quicksort es más eficiente y solo impone limitaciones por memoria y capacidad computacional, sin embargo  la explicación de esta implementación está fuera de los alcances del curso.</p>
 </section>
 <section id="criba-de-eratostenes-con-recursion">
-<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Link to this heading">#</a></h2>
+<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Permalink to this heading">#</a></h2>
 <p>La criba de Eratóstenes es un método antiguo  para encontrar todos los números primos menores a un número dado. El proceso comienza con el número <span class="math notranslate nohighlight">\(2\)</span>, que es el primer número primo. Luego, se van eliminando los múltiplos de cada número primo encontrado hasta que se llega al número dado.</p>
 <p>Por ejemplo, si queremos encontrar los números primos menores a <span class="math notranslate nohighlight">\(100\)</span>, comencemos con una lista con los números de <span class="math notranslate nohighlight">\(2\)</span> a <span class="math notranslate nohighlight">\(99\)</span> en orden. Comenzamos con el número <span class="math notranslate nohighlight">\(2\)</span>, que es primo y eliminamos todos los múltiplos de <span class="math notranslate nohighlight">\(2\)</span>. El próximo número de la lista, que es el <span class="math notranslate nohighlight">\(3\)</span>, es primo y ahora eliminamos todos los múltiplos de él, este proceso se repite hasta haber recorrido toda la lista.</p>
 <p>Comencemos a implementar la criba definiendo la función que elimnima los múltiplos:</p>
@@ -1208,7 +1210,7 @@ Tiempo: 0.0
 </div>
 </section>
 <section id="ejemplo-el-numero-combinatorio-2o-parte">
-<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Link to this heading">#</a></h2>
+<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Permalink to this heading">#</a></h2>
 <p>Recordemos.</p>
 <p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
 <div class="math notranslate nohighlight">

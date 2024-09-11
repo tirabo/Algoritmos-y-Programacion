@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Dibujando con una tortuga &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01_Dibujando_con_Python_Turtle';</script>
@@ -222,6 +220,10 @@
 <li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_Ejercicios_resueltos.html">Ejercicios resueltos</a></li>
 </ul>
 
     </div>
@@ -433,7 +435,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dibujando-con-una-tortuga">
-<h1>Dibujando con  una tortuga<a class="headerlink" href="#dibujando-con-una-tortuga" title="Link to this heading">#</a></h1>
+<h1>Dibujando con  una tortuga<a class="headerlink" href="#dibujando-con-una-tortuga" title="Permalink to this heading">#</a></h1>
 <p>En  este curso para comenzar a programar en Python utilizamos Jupyter Notebooks o Cuadernos Jupyter y la biblioteca o módulo <code class="docutils literal notranslate"><span class="pre">turtle</span></code> que nos permite dibujar en  pantalla. Al ternativamente puede usarse <a class="reference external" href="https://colab.research.google.com/">Google Colaboratory</a> o <em>Colab</em> y la biblioteca <code class="docutils literal notranslate"><span class="pre">ColabTurtle</span></code>, pero las instrucciones cambian un poco.</p>
 <p>Jupyter Notebook es una aplicación web de código abierto diseñada para crear y compartir documentos que integran código, texto, visualizaciones y ecuaciones. Es especialmente popular entre científicos de datos, analistas y desarrolladores debido a su capacidad para facilitar el desarrollo, la documentación y la presentación de proyectos.</p>
 <p>Una forma de poder trabajar en tu computadora con los cuadernos Jupyter Notebooks es instalando primero Python, luego VSCode y utilizar extensiones de VSCode para interpretar los cuadernos. Para hacer esto, lo mejor es fijarse en internet como se hace, en  particular preguntando a alguna IA <em>¿Qué tengo que instalar para correr las Jupyter notebooks en visual studio code?</em>.</p>
@@ -441,7 +443,7 @@ document.write(`
 <p>En el curso dictado en FAMAF se utiliza Google Colaboratory, que es un entorno de desarrollo en línea gratuito que permite a los usuarios escribir y ejecutar código Python en un navegador web. Google Colaboratory implementa las Jupyter Notebooks  en linea. El módulo que puede utilizarse  es ColabTurtle,  una implementación de Python Turtle. Como ya dijimos las intrucciones de ColabTurtle no son las misma que en el módulo turtle de Python, pero los cambios son menores.</p>
 <p><em>Aviso.</em> En  el documento html que se encuentra en el sitio no se podrán ver las ventanas de <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. Para ver como funciona la biblioteca deberás bajar el Jupyter Notebook correspondiente, es decir con la flecha de arriba a la derecha bajar el documento <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> y  correrlo localmente.</p>
 <section id="primeros-pasos">
-<h2>1. Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Link to this heading">#</a></h2>
+<h2>1. Primeros pasos<a class="headerlink" href="#primeros-pasos" title="Permalink to this heading">#</a></h2>
 <p>Con la siguiente instrucción haremos accesible todas las funciones e instrucciones de la biblioteca Turtle a nuestro cuaderno Jupyter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -459,7 +461,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x1b2d89bf400&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x2299a7f65c0&gt;
 </pre></div>
 </div>
 </div>
@@ -552,7 +554,7 @@ document.write(`
 </div>
 </section>
 <section id="ciclos">
-<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Link to this heading">#</a></h2>
+<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Permalink to this heading">#</a></h2>
 <p>Un ciclo en programación es una estructura que permite repetir un conjunto de instrucciones varias veces. Los ciclos son útiles cuando se necesita realizar una tarea varias veces, en lugar de escribir las mismas instrucciones una y otra vez. En Python, hay dos tipos de ciclos: el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> y el ciclo   <code class="docutils literal notranslate"><span class="pre">while</span></code>. El ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> se utiliza para iterar un número determinado de veces, mientras que el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> se utiliza para repetir un conjunto de instrucciones mientras se cumpla una condición determinada.</p>
 <p>Ahora utilizaremos el  ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> para simplificar la forma en que dibujamos el cuadrado.</p>
 <p>Lo primero que debemos hacer para comenzar un nuevo dibujo es “olvidarnos” del  pizarrón viejo y  empezar a dibujar en un pizarrón vacío:</p>
@@ -620,7 +622,7 @@ document.write(`
 </div>
 </section>
 <section id="ciclos-anidados">
-<h2>2. Ciclos anidados<a class="headerlink" href="#ciclos-anidados" title="Link to this heading">#</a></h2>
+<h2>2. Ciclos anidados<a class="headerlink" href="#ciclos-anidados" title="Permalink to this heading">#</a></h2>
 <p>Uno de los asuntos más delicados en la programación es la anidación de bucles o ciclos, cuando se pone un ciclo dentro de otro. Es fuente de muchos errores.</p>
 <p>Para perderle el miedo y minimizar errores lógicos lo mejor es practicar.</p>
 <p>Ahora, para ejemplificar, nuestro objetivo será dibujar 4 cuadrados como el anterior de tal forma que se haga un dibujo como este:</p>
@@ -795,7 +797,7 @@ document.write(`
 <p><em>Observación.</em> La técnica de reutilizar programas,  es decir modificar código preexistente, es muy útil y muy utilizada. No  es necesario escribir un programa desde cero si tenemos a disposición el código fuente de un programa que hace algo parecido a lo que nosotros queremos.</p>
 </section>
 <section id="instrucciones-condicionales">
-<h2>3. Instrucciones condicionales<a class="headerlink" href="#instrucciones-condicionales" title="Link to this heading">#</a></h2>
+<h2>3. Instrucciones condicionales<a class="headerlink" href="#instrucciones-condicionales" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Con frecuencia es conveniente actuar de cierta manera solamente si se cumple una cierta condición. La primera forma que veremos es</p>
 <ul>
@@ -831,7 +833,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>683
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>768
 </pre></div>
 </div>
 </div>
@@ -843,7 +845,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>576
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>648
 </pre></div>
 </div>
 </div>
@@ -876,7 +878,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>

@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Recursión &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '12_Recursion';</script>
@@ -222,6 +220,10 @@
 <li class="toctree-l1"><a class="reference internal" href="18_NumPy.html">Introducción a NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19_PyPlot.html">Introducción a Matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="19.1_Ejemplo_recorridos_GPX.html">Análisis y graficación de recorridos GPX (optativa)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="20_Ejercicios_resueltos.html">Ejercicios resueltos</a></li>
 </ul>
 
     </div>
@@ -442,9 +444,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recursion">
-<h1>Recursión<a class="headerlink" href="#recursion" title="Link to this heading">#</a></h1>
+<h1>Recursión<a class="headerlink" href="#recursion" title="Permalink to this heading">#</a></h1>
 <section id="definiciones-por-recursion">
-<h2>1. Definiciones por recursión<a class="headerlink" href="#definiciones-por-recursion" title="Link to this heading">#</a></h2>
+<h2>1. Definiciones por recursión<a class="headerlink" href="#definiciones-por-recursion" title="Permalink to this heading">#</a></h2>
 <p>Frecuentemente encontramos definida una sucesión de números <span class="math notranslate nohighlight">\(u_n\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> indica cualquier entero positivo, por una fórmula donde aparecen operadores y funciones conocidas y se pueden calcular de un solo paso. Por ejemplo, podríamos tener <span class="math notranslate nohighlight">\(u_n=3n+2\)</span>, o <span class="math notranslate nohighlight">\(u_n = (n+1)(n+2)(n+3)\)</span>. En estos ejemplos <span class="math notranslate nohighlight">\(u_n\)</span> es dado por una fórmula explícita llamada <em>fórmula cerrada</em> y no existe dificultad en calcular <span class="math notranslate nohighlight">\(u_n\)</span> cuando se nos da un valor específico para <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Sin embargo, en muchos casos no conocemos una fórmula cerrada para <span class="math notranslate nohighlight">\(u_n\)</span>; es más, nuestro problema puede ser encontrarla. En estos casos pueden darnos ciertos valores de <span class="math notranslate nohighlight">\(u_n\)</span> para enteros positivos <span class="math notranslate nohighlight">\(n\)</span> pequeños, y una relación entre el <span class="math notranslate nohighlight">\(u_n\)</span> general y algunos de los <span class="math notranslate nohighlight">\(u_r\)</span> con <span class="math notranslate nohighlight">\(r &lt; n\)</span>.</p>
 <p>Por ejemplo, supongamos nos es dado</p>
@@ -481,7 +483,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 </div>
 </section>
 <section id="ejemplo-de-definicion-recursiva-funcion-factorial">
-<h2>2. Ejemplo de definición recursiva: función factorial.<a class="headerlink" href="#ejemplo-de-definicion-recursiva-funcion-factorial" title="Link to this heading">#</a></h2>
+<h2>2. Ejemplo de definición recursiva: función factorial.<a class="headerlink" href="#ejemplo-de-definicion-recursiva-funcion-factorial" title="Permalink to this heading">#</a></h2>
 <p>Hemos visto una manera iterativa de definir la función factorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,7 +566,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 </div>
 </section>
 <section id="ejemplo-potencia-de-un-numero">
-<h2>3. Ejemplo: potencia de un número.<a class="headerlink" href="#ejemplo-potencia-de-un-numero" title="Link to this heading">#</a></h2>
+<h2>3. Ejemplo: potencia de un número.<a class="headerlink" href="#ejemplo-potencia-de-un-numero" title="Permalink to this heading">#</a></h2>
 <p>La definición de la potencia entera de un número es una definición recursiva.</p>
 <p><strong>Definición.</strong> Sea <span class="math notranslate nohighlight">\(a \in \mathbb R\)</span> y <span class="math notranslate nohighlight">\(n \in \mathbb N_0\)</span>, definimos <em><span class="math notranslate nohighlight">\(a\)</span> a la <span class="math notranslate nohighlight">\(n\)</span></em> por</p>
 <ul class="simple">
@@ -654,7 +656,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 </div>
 </div>
 <section id="version-optimizada-de-potencia-de-un-numero">
-<h3>Versión optimizada de potencia de un número.<a class="headerlink" href="#version-optimizada-de-potencia-de-un-numero" title="Link to this heading">#</a></h3>
+<h3>Versión optimizada de potencia de un número.<a class="headerlink" href="#version-optimizada-de-potencia-de-un-numero" title="Permalink to this heading">#</a></h3>
 <p>Observemos que la definición recursiva anterior de <span class="math notranslate nohighlight">\(a^n\)</span> requiere <span class="math notranslate nohighlight">\(n\)</span> pasos pues <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n)</span></code> se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">1)</span></code>,  que a su vez se basa en <code class="docutils literal notranslate"><span class="pre">potencia(a,</span> <span class="pre">n</span> <span class="pre">-</span> <span class="pre">2)</span></code> y así sucesivamente.</p>
 <p>Observemos que si <span class="math notranslate nohighlight">\(n\)</span>  es potencia de <span class="math notranslate nohighlight">\(2\)</span>,  entonces podemos simplificar el cálculo de la siguiente manera, por ejemplo para <span class="math notranslate nohighlight">\(n = 32\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -760,7 +762,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 </section>
 </section>
 <section id="ejemplo-sucesion-de-fibonacci">
-<h2>4. Ejemplo: sucesión de Fibonacci<a class="headerlink" href="#ejemplo-sucesion-de-fibonacci" title="Link to this heading">#</a></h2>
+<h2>4. Ejemplo: sucesión de Fibonacci<a class="headerlink" href="#ejemplo-sucesion-de-fibonacci" title="Permalink to this heading">#</a></h2>
 <p>La <em>sucesión de Fibonacci</em> es la siguiente sucesión infinita de números naturales:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -1026,7 +1028,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 <p>El algoritmo anterior es tan eficiente como el primero de programación dinámica, pero ocupa menos espacio “aprovechándose”  de que Fibonacci de un entero usa el Fibonacci de los dos enteros anteriores.</p>
 </section>
 <section id="ejemplo-el-numero-combinatorio">
-<h2>5. Ejemplo: el número combinatorio<a class="headerlink" href="#ejemplo-el-numero-combinatorio" title="Link to this heading">#</a></h2>
+<h2>5. Ejemplo: el número combinatorio<a class="headerlink" href="#ejemplo-el-numero-combinatorio" title="Permalink to this heading">#</a></h2>
 <p>El número combinatorio <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span> debe su nombre a que cuenta el número exacto de combinaciones posibles de <span class="math notranslate nohighlight">\(m\)</span> elementos de un universo de <span class="math notranslate nohighlight">\(n\)</span> elementos. Es decir, dado un conjunto de <span class="math notranslate nohighlight">\(n\)</span> elementos, cuántos subconjuntos de <span class="math notranslate nohighlight">\(m\)</span> elementos tiene.</p>
 <p>Es de gran utilidad en múltiples ramas de la matemática: teoría de números, combinatoria, probabilidades, etc.</p>
 <p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
@@ -1079,7 +1081,7 @@ u_5 &amp; = &amp; u_4 + u_3 &amp; = &amp; 5+3 &amp;=&amp; 8,
 </div>
 <p>Veremos a continuación una forma recursiva de definir el número combinatorio.</p>
 <section id="triangulo-de-pascal">
-<h3>5.1 Triángulo de Pascal<a class="headerlink" href="#triangulo-de-pascal" title="Link to this heading">#</a></h3>
+<h3>5.1 Triángulo de Pascal<a class="headerlink" href="#triangulo-de-pascal" title="Permalink to this heading">#</a></h3>
 <p>Si escribimos los números combinatorios de tal manera que en la fila <span class="math notranslate nohighlight">\(n\)</span> se encuentren todos los números combinatorios <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{k}\)</span> con <span class="math notranslate nohighlight">\(0 \le k  \le n\)</span>,  en ese orden, y los acomodamos convenientemente, obtenemos el <em>triángulo de Pascal</em> o <em>Tartaglia</em>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}\begin{array}{lcccccccccccccccc}
@@ -1151,7 +1153,7 @@ n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &
 <p>Como ejercicio, definir <code class="docutils literal notranslate"><span class="pre">combinatorio()</span></code> con programación dinámica. En  este caso habrá que usar una lista de listas.</p>
 </section>
 <section id="otra-implementacion-recursiva-del-numero-combinatorio">
-<h3>5.2. Otra implementación recursiva del número combinatorio<a class="headerlink" href="#otra-implementacion-recursiva-del-numero-combinatorio" title="Link to this heading">#</a></h3>
+<h3>5.2. Otra implementación recursiva del número combinatorio<a class="headerlink" href="#otra-implementacion-recursiva-del-numero-combinatorio" title="Permalink to this heading">#</a></h3>
 <p>Observemos  que si <span class="math notranslate nohighlight">\(n,m &gt; 0\)</span> y <span class="math notranslate nohighlight">\(n \ge m\)</span>,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -1270,7 +1272,7 @@ n = 7 &amp; &amp; 1 &amp; &amp; 7 &amp; &amp; 21 &amp; &amp; 35 &amp; &amp; 35 &
 </section>
 </section>
 <section id="recursion-sobre-listas">
-<h2>6. Recursión sobre listas<a class="headerlink" href="#recursion-sobre-listas" title="Link to this heading">#</a></h2>
+<h2>6. Recursión sobre listas<a class="headerlink" href="#recursion-sobre-listas" title="Permalink to this heading">#</a></h2>
 <p>La recursión sobre listas es una técnica de programación que consiste en dividir una lista en sub-listas más pequeñas y resolver el problema en cada una de las sub-listas de forma recursiva.</p>
 <p>La idea principal para la recusión más sencilla sobre una lista es que una lista se puede dividir en dos partes, la cabeza y la cola, donde la cabeza es el primer elemento de la lista y la cola es el resto de la lista. Luego, el problema se puede resolver aplicando una función recursiva en la cola de la lista y combinando el resultado con la cabeza.</p>
 <p>Por ejemplo, si se quiere calcular la suma de los elementos de una lista, se puede utilizar la recursión sobre listas para sumar el primer elemento con la suma del resto de los elementos de la lista.</p>
