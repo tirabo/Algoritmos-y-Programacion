@@ -39,6 +39,14 @@ parts:
         - file: 19.1_Ejemplo_recorridos_GPX
     - caption: Apéndices
       chapters:
-        - file: 20_Ejercicios_resueltos
+        - file: 20.0_Ejercicios_resueltos
           sections:
-            - file: 20.1_Ejercicios_resueltos
+          - file: 20.1_Python_turtle
+          - file: 20.2_Expresiones_funciones_condicionales
+          - file: 20.3_Ciclos_fechas
+          - file: 20.4_Cadenas_listas_diccionarios_conjuntos
+          - file: 20.5_Recursion
+          - file: 20.6_Clases_objetos
+          - file: 20.7_Entrada_y_salida
+          - file: 20.8_Numpy_pyplot
+
