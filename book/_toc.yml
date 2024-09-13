@@ -48,5 +48,5 @@ parts:
           - file: 20.5_Recursion
           - file: 20.6_Clases_objetos
           - file: 20.7_Entrada_y_salida
-          - file: 20.8_Numpy_pyplot
+          - file: 20.8_Numpy_y_pyplot
 
