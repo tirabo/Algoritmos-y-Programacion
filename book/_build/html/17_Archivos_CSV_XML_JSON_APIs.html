@@ -429,7 +429,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-csv-de-la-red">Lectura de archivos CSV de la red</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-json">2. Lectura y escritura de archivos JSON</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-json-en-internet">3. Lectura de archivos JSON en internet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-xml">4. Lectura y escritura de archivos XML</a><ul class="nav section-nav flex-column">
@@ -475,16 +478,32 @@ Pedro,40,Lima
 <p>Construyamos un ejemplo sencillo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;archivo.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;archivo.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
     <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;nombre, edad,ciudad</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&quot;Perez,Juan&quot;, 30, Quito</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&quot;Pérez, Juan&quot;, 30, Quito</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;María, 25, Medellín</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">csvfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Pedro, 40, Lima</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Para leer un archivo CSV en Python, puede utilizar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este módulo proporciona una forma fácil de leer y escribir archivos CSV. A continuación, se muestra un ejemplo de cómo leer un archivo CSV y obtener los valores de los campos:</p>
+<p>Cuando  tenemos la información estructurada como lista de listas, donde cada elemento de la lista “exterior” es una lista que representa una fila con datos es preferible usar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="n">datos</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;nombre&#39;</span><span class="p">,</span> <span class="s1">&#39;edad&#39;</span><span class="p">,</span><span class="s1">&#39;ciudad&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Pérez, Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">,</span> <span class="s1">&#39;Quito&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;María&#39;</span><span class="p">,</span> <span class="s1">&#39;25&#39;</span><span class="p">,</span> <span class="s1">&#39;Medellín&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;40&#39;</span><span class="p">,</span> <span class="s1">&#39;Lima&#39;</span><span class="p">]]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;personas.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="c1"># Escribir cada fila individualmente</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">datos</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para leer un archivo CSV en Python, también podemos utilizar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este módulo proporciona una forma fácil de leer y escribir archivos CSV. A continuación, se muestra un ejemplo de cómo leer un archivo CSV y obtener los valores de los campos:</p>
 <p>Usaremos un archivo CSV  que recién hemos creado.</p>
 <p>Para leer este archivo, se puede usar el siguiente código en Python:</p>
 <div class="cell docutils container">
@@ -498,13 +517,33 @@ Pedro,40,Lima
     <span class="c1"># iteramos sobre las filas del archivo CSV:</span>
     <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
         <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span> <span class="c1"># [[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;Perez,Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
 </div>
-<p>En este código, usamos  <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open()</span></code> para abrir el archivo CSV en modo lectura. A continuación, creamos un objeto lector de CSV usando la función <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>. Este objeto lector toma el archivo CSV y los parámetros <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> y <code class="docutils literal notranslate"><span class="pre">quotechar</span></code>, que indican el carácter delimitador y el carácter de comillas, respectivamente. En este ejemplo, estamos usando comas como delimitadores y comillas dobles como caracteres de comillas.</p>
-<p>Luego, iteramos sobre las filas del archivo CSV utilizando un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Guardamos las filas del archivo CSV  en la lista <code class="docutils literal notranslate"><span class="pre">valores</span></code> .</p>
-<p>Imprimamos su contenido:</p>
+<p>En este código, usamos  <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open()</span></code> para abrir el archivo CSV en modo lectura. A continuación, creamos un objeto lector de CSV usando la función <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>. Este objeto lector toma el archivo CSV y los parámetros <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> y <code class="docutils literal notranslate"><span class="pre">quotechar</span></code>, que indican el carácter delimitador y el carácter de comillas, respectivamente. Estos parámetros son optativos. En este ejemplo, estamos usando comas como delimitadores y comillas dobles como caracteres de comillas.</p>
+<p>Luego, iteramos sobre las filas del archivo CSV utilizando un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. Guardamos las filas del archivo CSV  en la lista <code class="docutils literal notranslate"><span class="pre">valores</span></code> . Cada fila se lle como una lista y  esta se agrega a la lista <code class="docutils literal notranslate"><span class="pre">valores</span></code>. En  definitiva,  <code class="docutils literal notranslate"><span class="pre">valores</span></code> es una lista de listas.</p>
+<p>Imprimamos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si queremos imprimir fila por file podemos hacer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">))):</span>
@@ -515,21 +554,20 @@ Pedro,40,Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre  edad ciudad
-Perez,Juan  30  Quito
-María  25  Medellín
+PÃ©rez, Juan  30  Quito
+MarÃ­a  25  MedellÃ­n
 Pedro  40  Lima
 </pre></div>
 </div>
 </div>
 </div>
 <p>En resumen, para leer un archivo CSV en Python, puede usar el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code> y la función <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>. Para obtener los valores de los campos, simplemente iteramos sobre el objeto <code class="docutils literal notranslate"><span class="pre">reader</span></code>.</p>
-<p>También podríamos haber hecho <code class="docutils literal notranslate"><span class="pre">valores</span> <span class="pre">=</span> <span class="pre">list(reader)</span></code> e iteramos sobre la lista.</p>
 <p>Finalmente,  como la primera fila son los id de los campos, no son valores que nos interesan. Una forma eficiente de leer solo los valores es la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;archivo.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="c1"># crea un objeto reader de CSV</span>
-    <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> <span class="c1"># salta la primera fila</span>
+    <span class="n">claves</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span> <span class="c1"># salta la primera fila</span>
     <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
         <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
@@ -540,16 +578,73 @@ Pedro  40  Lima
 <p>E imprimimos su contenido:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">claves</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;Perez,Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;]
+[[&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
 </div>
+<section id="lectura-de-archivos-csv-de-la-red">
+<h3>Lectura de archivos CSV de la red<a class="headerlink" href="#lectura-de-archivos-csv-de-la-red" title="Permalink to this heading">#</a></h3>
+<p>Podemos obtener un archivo CSV  de la red usando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code>.  Si <code class="docutils literal notranslate"><span class="pre">response</span></code> es el objeto que devuelve <code class="docutils literal notranslate"><span class="pre">requests.get(url)</span></code>y  queremos leer el CSV línea por línea, podemos utilizar la instrucción <code class="docutils literal notranslate"><span class="pre">response.text.splitlines()</span></code> que convierte el archivo CSV en una lista de líneas. Luego a esa lista le aplicamos <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code> y podemos leer línea por línea,  donde cada línea será una lista de valores.</p>
+<p>Esquemáticamente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">response_text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="c1"># lista de líneas</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">response_text</span><span class="p">)</span>
+<span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span> <span class="c1"># cada fila es una lista de valores</span>
+</pre></div>
+</div>
+<p>Veamos un ejemplo concreto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Lectura de archivo csv desde una url (en GitHub)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/morethanbooks/Atlas-de-Datos/refs/heads/master/atlas</span><span class="si">%20d</span><span class="s1">e</span><span class="si">%20d</span><span class="s1">atos.csv&#39;</span>
+
+<span class="c1"># En  estos casos es importante manejar las excepciones</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response_text</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="c1"># lista de líneas</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">response_text</span><span class="p">)</span>
+    <span class="n">valores</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="n">valores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error al descargar el archivo:&#39;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hagamos una comprobación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># los primeros 5 elementos de la lista valores</span>
+<span class="k">for</span> <span class="n">dato</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dato</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;id&#39;, &#39;Nombre&#39;, &#39;Nombre breve&#39;, &#39;URL&#39;, &#39;Tipo de dato&#39;, &#39;Formato&#39;, &#39;Formato&#39;, &#39;Tipo de proyecto&#39;, &#39;Responsable&#39;, &#39;Año de comienzo&#39;, &#39;País&#39;, &#39;Ciudad&#39;, &#39;Institución&#39;, &#39;Licencia&#39;, &#39;CC?&#39;, &#39;Pago&#39;, &#39;Cantidad de datos original&#39;, &#39;Cantidad de datos normalizada&#39;, &#39;Rangos cantidad de datos&#39;, &#39;Cantidad estimada&#39;, &#39;Tipo de edición&#39;, &#39;Rangos tipos de edición&#39;, &#39;Época&#39;, &#39;Género textual&#39;, &#39;Subgénero textual&#39;, &#39;Autor&#39;, &#39;Descarga full-text&#39;, &#39;Anotación lingüística&#39;, &#39;Anotación diferente&#39;, &#39;Metadatos&#39;, &#39;Comentario&#39;]
+[&#39;1&#39;, &#39;Biblioteca Virtual Miguel de Cervantes&#39;, &#39;BVMG&#39;, &#39;www.cervantesvirtual.com&#39;, &#39;texto&#39;, &#39;HTML&#39;, &#39;markup&#39;, &#39;biblioteca digital&#39;, &#39;Vargas Llosa, Mario&#39;, &#39;1999&#39;, &#39;España&#39;, &#39;Alicante&#39;, &#39;Universidad de Alicante&#39;, &#39;?&#39;, &#39;no&#39;, &#39;no&#39;, &#39;3000&#39;, &#39;3000&#39;, &#39;4&#39;, &#39;sí&#39;, &#39;filológica&#39;, &#39;3&#39;, &#39;varios&#39;, &#39;varios&#39;, &#39;varios&#39;, &#39;varios&#39;, &#39;no&#39;, &#39;no&#39;, &#39;no&#39;, &#39;1&#39;, &#39; &#39;]
+[&#39;2&#39;, &#39;The Association for Hispanic Classical Theater&#39;, &#39;Classical Theater&#39;, &#39;wordpress.comedias.org&#39;, &#39;texto&#39;, &#39;HTML&#39;, &#39;markup&#39;, &#39;colección de textos&#39;, &#39;García, Susan&#39;, &#39;2014&#39;, &#39;Estados Unidos&#39;, &#39;Denison&#39;, &#39;AHCT&#39;, &#39;?&#39;, &#39;no&#39;, &#39;no&#39;, &#39;250&#39;, &#39;250&#39;, &#39;3&#39;, &#39;no&#39;, &#39;filológica&#39;, &#39;3&#39;, &#39;1500-1700&#39;, &#39;literatura&#39;, &#39;teatro&#39;, &#39;varios&#39;, &#39;sí&#39;, &#39;no&#39;, &#39;no&#39;, &#39;1&#39;, &#39;Año dudoso&#39;]
+[&#39;3&#39;, &#39;Biblioteca digital Arte Lope&#39;, &#39;Arte Lope&#39;, &#39;artelope.uv.es/biblioteca&#39;, &#39;texto&#39;, &#39;HTML&#39;, &#39;markup&#39;, &#39;colección de textos&#39;, &#39;Oleza Simó, Joan&#39;, &#39;2013&#39;, &#39;España&#39;, &#39;Valencia&#39;, &#39;Universitat de València&#39;, &#39;C&#39;, &#39;no&#39;, &#39;no&#39;, &#39;120&#39;, &#39;120&#39;, &#39;2&#39;, &#39;no&#39;, &#39;filológica&#39;, &#39;3&#39;, &#39;1562-1635&#39;, &#39;literatura&#39;, &#39;teatro&#39;, &#39;Lope&#39;, &#39;sí&#39;, &#39;no&#39;, &#39;sí&#39;, &#39;1&#39;, &#39; &#39;]
+[&#39;4&#39;, &#39;Wikisource&#39;, &#39;Wikisource&#39;, &#39;wikisource.org&#39;, &#39;texto&#39;, &#39;HTML&#39;, &#39;markup&#39;, &#39;colección de textos&#39;, &#39;Wales, Jimmy&#39;, &#39;2003&#39;, &#39;Estados Unidos&#39;, &#39;San Petersburgo, Florida&#39;, &#39;Wikimedia&#39;, &#39;CC BY-SA&#39;, &#39;sí&#39;, &#39;no&#39;, &#39;5000&#39;, &#39;5000&#39;, &#39;4&#39;, &#39;sí&#39;, &#39;no profesoinal&#39;, &#39;1&#39;, &#39;varios&#39;, &#39;literatura&#39;, &#39;varios&#39;, &#39;varios&#39;, &#39;no&#39;, &#39;no&#39;, &#39;no&#39;, &#39;0&#39;, &#39; &#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="lectura-y-escritura-de-archivos-json">
 <h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Permalink to this heading">#</a></h2>
@@ -602,7 +697,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 757, &#39;max&#39;: 1110, &#39;prom&#39;: 933.5}, {&#39;id&#39;: 1, &#39;min&#39;: 506, &#39;max&#39;: 1008, &#39;prom&#39;: 757.0}, {&#39;id&#39;: 2, &#39;min&#39;: 580, &#39;max&#39;: 1336, &#39;prom&#39;: 958.0}, {&#39;id&#39;: 3, &#39;min&#39;: 102, &#39;max&#39;: 1294, &#39;prom&#39;: 698.0}, {&#39;id&#39;: 4, &#39;min&#39;: 664, &#39;max&#39;: 1008, &#39;prom&#39;: 836.0}, {&#39;id&#39;: 5, &#39;min&#39;: 921, &#39;max&#39;: 1423, &#39;prom&#39;: 1172.0}, {&#39;id&#39;: 6, &#39;min&#39;: 810, &#39;max&#39;: 1917, &#39;prom&#39;: 1363.5}, {&#39;id&#39;: 7, &#39;min&#39;: 339, &#39;max&#39;: 1790, &#39;prom&#39;: 1064.5}, {&#39;id&#39;: 8, &#39;min&#39;: 820, &#39;max&#39;: 1609, &#39;prom&#39;: 1214.5}, {&#39;id&#39;: 9, &#39;min&#39;: 297, &#39;max&#39;: 1681, &#39;prom&#39;: 989.0}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 805, &#39;max&#39;: 1774, &#39;prom&#39;: 1289.5}, {&#39;id&#39;: 1, &#39;min&#39;: 496, &#39;max&#39;: 1142, &#39;prom&#39;: 819.0}, {&#39;id&#39;: 2, &#39;min&#39;: 649, &#39;max&#39;: 1046, &#39;prom&#39;: 847.5}, {&#39;id&#39;: 3, &#39;min&#39;: 597, &#39;max&#39;: 1984, &#39;prom&#39;: 1290.5}, {&#39;id&#39;: 4, &#39;min&#39;: 223, &#39;max&#39;: 1508, &#39;prom&#39;: 865.5}, {&#39;id&#39;: 5, &#39;min&#39;: 91, &#39;max&#39;: 1406, &#39;prom&#39;: 748.5}, {&#39;id&#39;: 6, &#39;min&#39;: 214, &#39;max&#39;: 1385, &#39;prom&#39;: 799.5}, {&#39;id&#39;: 7, &#39;min&#39;: 341, &#39;max&#39;: 1650, &#39;prom&#39;: 995.5}, {&#39;id&#39;: 8, &#39;min&#39;: 527, &#39;max&#39;: 1910, &#39;prom&#39;: 1218.5}, {&#39;id&#39;: 9, &#39;min&#39;: 1, &#39;max&#39;: 1072, &#39;prom&#39;: 536.5}]
 </pre></div>
 </div>
 </div>
@@ -622,7 +717,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 757, &quot;max&quot;: 1110, &quot;prom&quot;: 933.5}, {&quot;id&quot;: 1, &quot;min&quot;: 506, &quot;max&quot;: 1008, &quot;prom&quot;: 757.0}, {&quot;id&quot;: 2, &quot;min&quot;: 580, &quot;max&quot;: 1336, &quot;prom&quot;: 958.0}, {&quot;id&quot;: 3, &quot;min&quot;: 102, &quot;max&quot;: 1294, &quot;prom&quot;: 698.0}, {&quot;id&quot;: 4, &quot;min&quot;: 664, &quot;max&quot;: 1008, &quot;prom&quot;: 836.0}, {&quot;id&quot;: 5, &quot;min&quot;: 921, &quot;max&quot;: 1423, &quot;prom&quot;: 1172.0}, {&quot;id&quot;: 6, &quot;min&quot;: 810, &quot;max&quot;: 1917, &quot;prom&quot;: 1363.5}, {&quot;id&quot;: 7, &quot;min&quot;: 339, &quot;max&quot;: 1790, &quot;prom&quot;: 1064.5}, {&quot;id&quot;: 8, &quot;min&quot;: 820, &quot;max&quot;: 1609, &quot;prom&quot;: 1214.5}, {&quot;id&quot;: 9, &quot;min&quot;: 297, &quot;max&quot;: 1681, &quot;prom&quot;: 989.0}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 805, &quot;max&quot;: 1774, &quot;prom&quot;: 1289.5}, {&quot;id&quot;: 1, &quot;min&quot;: 496, &quot;max&quot;: 1142, &quot;prom&quot;: 819.0}, {&quot;id&quot;: 2, &quot;min&quot;: 649, &quot;max&quot;: 1046, &quot;prom&quot;: 847.5}, {&quot;id&quot;: 3, &quot;min&quot;: 597, &quot;max&quot;: 1984, &quot;prom&quot;: 1290.5}, {&quot;id&quot;: 4, &quot;min&quot;: 223, &quot;max&quot;: 1508, &quot;prom&quot;: 865.5}, {&quot;id&quot;: 5, &quot;min&quot;: 91, &quot;max&quot;: 1406, &quot;prom&quot;: 748.5}, {&quot;id&quot;: 6, &quot;min&quot;: 214, &quot;max&quot;: 1385, &quot;prom&quot;: 799.5}, {&quot;id&quot;: 7, &quot;min&quot;: 341, &quot;max&quot;: 1650, &quot;prom&quot;: 995.5}, {&quot;id&quot;: 8, &quot;min&quot;: 527, &quot;max&quot;: 1910, &quot;prom&quot;: 1218.5}, {&quot;id&quot;: 9, &quot;min&quot;: 1, &quot;max&quot;: 1072, &quot;prom&quot;: 536.5}]
 </pre></div>
 </div>
 </div>
@@ -652,19 +747,19 @@ Pedro  40  Lima
 Tipo del primer elemento del archivo: &lt;class &#39;dict&#39;&gt;
 
 Imprimimos todo el archivo:
-[{&#39;id&#39;: 0, &#39;min&#39;: 757, &#39;max&#39;: 1110, &#39;prom&#39;: 933.5}, {&#39;id&#39;: 1, &#39;min&#39;: 506, &#39;max&#39;: 1008, &#39;prom&#39;: 757.0}, {&#39;id&#39;: 2, &#39;min&#39;: 580, &#39;max&#39;: 1336, &#39;prom&#39;: 958.0}, {&#39;id&#39;: 3, &#39;min&#39;: 102, &#39;max&#39;: 1294, &#39;prom&#39;: 698.0}, {&#39;id&#39;: 4, &#39;min&#39;: 664, &#39;max&#39;: 1008, &#39;prom&#39;: 836.0}, {&#39;id&#39;: 5, &#39;min&#39;: 921, &#39;max&#39;: 1423, &#39;prom&#39;: 1172.0}, {&#39;id&#39;: 6, &#39;min&#39;: 810, &#39;max&#39;: 1917, &#39;prom&#39;: 1363.5}, {&#39;id&#39;: 7, &#39;min&#39;: 339, &#39;max&#39;: 1790, &#39;prom&#39;: 1064.5}, {&#39;id&#39;: 8, &#39;min&#39;: 820, &#39;max&#39;: 1609, &#39;prom&#39;: 1214.5}, {&#39;id&#39;: 9, &#39;min&#39;: 297, &#39;max&#39;: 1681, &#39;prom&#39;: 989.0}]
+[{&#39;id&#39;: 0, &#39;min&#39;: 805, &#39;max&#39;: 1774, &#39;prom&#39;: 1289.5}, {&#39;id&#39;: 1, &#39;min&#39;: 496, &#39;max&#39;: 1142, &#39;prom&#39;: 819.0}, {&#39;id&#39;: 2, &#39;min&#39;: 649, &#39;max&#39;: 1046, &#39;prom&#39;: 847.5}, {&#39;id&#39;: 3, &#39;min&#39;: 597, &#39;max&#39;: 1984, &#39;prom&#39;: 1290.5}, {&#39;id&#39;: 4, &#39;min&#39;: 223, &#39;max&#39;: 1508, &#39;prom&#39;: 865.5}, {&#39;id&#39;: 5, &#39;min&#39;: 91, &#39;max&#39;: 1406, &#39;prom&#39;: 748.5}, {&#39;id&#39;: 6, &#39;min&#39;: 214, &#39;max&#39;: 1385, &#39;prom&#39;: 799.5}, {&#39;id&#39;: 7, &#39;min&#39;: 341, &#39;max&#39;: 1650, &#39;prom&#39;: 995.5}, {&#39;id&#39;: 8, &#39;min&#39;: 527, &#39;max&#39;: 1910, &#39;prom&#39;: 1218.5}, {&#39;id&#39;: 9, &#39;min&#39;: 1, &#39;max&#39;: 1072, &#39;prom&#39;: 536.5}]
 
 Imprimimos alguna información del archivo:
-933.5
-757.0
-958.0
-698.0
-836.0
-1172.0
-1363.5
-1064.5
-1214.5
-989.0
+1289.5
+819.0
+847.5
+1290.5
+865.5
+748.5
+799.5
+995.5
+1218.5
+536.5
 </pre></div>
 </div>
 </div>
@@ -698,7 +793,7 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 <p><strong>Ejemplo.</strong> Crearemos una lista de diccionarios y queremos escribir uno por línea en un archivo, para que luego sea leido usando <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code>.</p>
 <p>En  la celda de código siguiente implementamos un ejemplo: creamos una lista con 100 diccionarios tipo</p>
 <p><code class="docutils literal notranslate"><span class="pre">{'x'</span> <span class="pre">:</span> <span class="pre">entero</span> <span class="pre">al</span> <span class="pre">azar,</span> <span class="pre">'y'</span> <span class="pre">:</span> <span class="pre">entero</span> <span class="pre">al</span> <span class="pre">azar,</span> <span class="pre">nº</span> <span class="pre">de</span> <span class="pre">orden</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">lista</span> <span class="pre">:</span> <span class="pre">[entero</span> <span class="pre">al</span> <span class="pre">azar,</span> <span class="pre">entero</span> <span class="pre">al</span> <span class="pre">azar]</span> <span class="pre">}</span></code></p>
-<p>y los guardaremos en el archivo <code class="docutils literal notranslate"><span class="pre">prueba.txt</span></code>, uno en cada linea utilizando <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code>.</p>
+<p>y los guardaremos en el archivo <code class="docutils literal notranslate"><span class="pre">prueba.txt</span></code>, uno en cada línea utilizando <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -720,13 +815,13 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 </div>
 </div>
 </div>
-<p>Para leer debemos hacerlo también linea por linea, pues el archivo no tiene la estructura lógica de un diccionario o lista (debería abrir con <code class="docutils literal notranslate"><span class="pre">{</span></code> o <code class="docutils literal notranslate"><span class="pre">[</span></code> y cerrar con <code class="docutils literal notranslate"><span class="pre">}</span></code> o  <code class="docutils literal notranslate"><span class="pre">]</span></code>,  respectivamente). Haremos una lista de diccionarios a partir de <code class="docutils literal notranslate"><span class="pre">prueba.txt</span></code>.</p>
+<p>Para leer debemos hacerlo también línea por línea, pues el archivo no tiene la estructura lógica de un diccionario o lista (debería abrir con <code class="docutils literal notranslate"><span class="pre">{</span></code> o <code class="docutils literal notranslate"><span class="pre">[</span></code> y cerrar con <code class="docutils literal notranslate"><span class="pre">}</span></code> o  <code class="docutils literal notranslate"><span class="pre">]</span></code>,  respectivamente). Haremos una lista de diccionarios a partir de <code class="docutils literal notranslate"><span class="pre">prueba.txt</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista_dic2</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;prueba.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">lista_dic2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">linea</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">línea</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">lista_dic2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">línea</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">lista_dic2</span><span class="p">)</span>
 
@@ -740,10 +835,10 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 705, &#39;y&#39;: 92, &#39;0&#39;: [30, 642]}, {&#39;x&#39;: 961, &#39;y&#39;: 900, &#39;1&#39;: [463, 663]}, {&#39;x&#39;: 923, &#39;y&#39;: 744, &#39;2&#39;: [327, 366]}, {&#39;x&#39;: 2, &#39;y&#39;: 62, &#39;3&#39;: [612, 873]}, {&#39;x&#39;: 248, &#39;y&#39;: 415, &#39;4&#39;: [309, 977]}, {&#39;x&#39;: 173, &#39;y&#39;: 373, &#39;5&#39;: [212, 298]}, {&#39;x&#39;: 951, &#39;y&#39;: 104, &#39;6&#39;: [403, 646]}, {&#39;x&#39;: 343, &#39;y&#39;: 918, &#39;7&#39;: [136, 494]}, {&#39;x&#39;: 689, &#39;y&#39;: 919, &#39;8&#39;: [73, 973]}, {&#39;x&#39;: 608, &#39;y&#39;: 521, &#39;9&#39;: [4, 577]}, {&#39;x&#39;: 356, &#39;y&#39;: 145, &#39;10&#39;: [60, 532]}, {&#39;x&#39;: 580, &#39;y&#39;: 943, &#39;11&#39;: [922, 874]}, {&#39;x&#39;: 887, &#39;y&#39;: 383, &#39;12&#39;: [198, 138]}, {&#39;x&#39;: 100, &#39;y&#39;: 321, &#39;13&#39;: [793, 510]}, {&#39;x&#39;: 733, &#39;y&#39;: 690, &#39;14&#39;: [561, 712]}, {&#39;x&#39;: 27, &#39;y&#39;: 171, &#39;15&#39;: [30, 586]}, {&#39;x&#39;: 484, &#39;y&#39;: 49, &#39;16&#39;: [492, 13]}, {&#39;x&#39;: 654, &#39;y&#39;: 633, &#39;17&#39;: [465, 919]}, {&#39;x&#39;: 111, &#39;y&#39;: 738, &#39;18&#39;: [501, 363]}, {&#39;x&#39;: 542, &#39;y&#39;: 386, &#39;19&#39;: [386, 881]}, {&#39;x&#39;: 790, &#39;y&#39;: 708, &#39;20&#39;: [370, 509]}, {&#39;x&#39;: 359, &#39;y&#39;: 954, &#39;21&#39;: [715, 556]}, {&#39;x&#39;: 109, &#39;y&#39;: 586, &#39;22&#39;: [822, 446]}, {&#39;x&#39;: 943, &#39;y&#39;: 368, &#39;23&#39;: [147, 61]}, {&#39;x&#39;: 151, &#39;y&#39;: 520, &#39;24&#39;: [193, 110]}, {&#39;x&#39;: 397, &#39;y&#39;: 938, &#39;25&#39;: [360, 64]}, {&#39;x&#39;: 448, &#39;y&#39;: 840, &#39;26&#39;: [186, 388]}, {&#39;x&#39;: 772, &#39;y&#39;: 712, &#39;27&#39;: [79, 71]}, {&#39;x&#39;: 777, &#39;y&#39;: 295, &#39;28&#39;: [508, 424]}, {&#39;x&#39;: 409, &#39;y&#39;: 10, &#39;29&#39;: [441, 961]}, {&#39;x&#39;: 575, &#39;y&#39;: 589, &#39;30&#39;: [407, 133]}, {&#39;x&#39;: 248, &#39;y&#39;: 985, &#39;31&#39;: [739, 358]}, {&#39;x&#39;: 323, &#39;y&#39;: 745, &#39;32&#39;: [278, 762]}, {&#39;x&#39;: 470, &#39;y&#39;: 807, &#39;33&#39;: [857, 168]}, {&#39;x&#39;: 849, &#39;y&#39;: 774, &#39;34&#39;: [265, 880]}, {&#39;x&#39;: 267, &#39;y&#39;: 120, &#39;35&#39;: [804, 383]}, {&#39;x&#39;: 388, &#39;y&#39;: 657, &#39;36&#39;: [881, 568]}, {&#39;x&#39;: 998, &#39;y&#39;: 704, &#39;37&#39;: [348, 735]}, {&#39;x&#39;: 603, &#39;y&#39;: 609, &#39;38&#39;: [72, 545]}, {&#39;x&#39;: 352, &#39;y&#39;: 334, &#39;39&#39;: [141, 608]}, {&#39;x&#39;: 699, &#39;y&#39;: 191, &#39;40&#39;: [961, 896]}, {&#39;x&#39;: 781, &#39;y&#39;: 802, &#39;41&#39;: [423, 33]}, {&#39;x&#39;: 641, &#39;y&#39;: 320, &#39;42&#39;: [877, 714]}, {&#39;x&#39;: 195, &#39;y&#39;: 692, &#39;43&#39;: [749, 133]}, {&#39;x&#39;: 780, &#39;y&#39;: 499, &#39;44&#39;: [211, 643]}, {&#39;x&#39;: 765, &#39;y&#39;: 413, &#39;45&#39;: [5, 432]}, {&#39;x&#39;: 30, &#39;y&#39;: 396, &#39;46&#39;: [329, 910]}, {&#39;x&#39;: 984, &#39;y&#39;: 513, &#39;47&#39;: [856, 866]}, {&#39;x&#39;: 133, &#39;y&#39;: 84, &#39;48&#39;: [906, 553]}, {&#39;x&#39;: 205, &#39;y&#39;: 264, &#39;49&#39;: [769, 635]}, {&#39;x&#39;: 980, &#39;y&#39;: 613, &#39;50&#39;: [802, 462]}, {&#39;x&#39;: 373, &#39;y&#39;: 957, &#39;51&#39;: [43, 462]}, {&#39;x&#39;: 868, &#39;y&#39;: 739, &#39;52&#39;: [778, 104]}, {&#39;x&#39;: 588, &#39;y&#39;: 204, &#39;53&#39;: [867, 893]}, {&#39;x&#39;: 260, &#39;y&#39;: 9, &#39;54&#39;: [429, 327]}, {&#39;x&#39;: 864, &#39;y&#39;: 520, &#39;55&#39;: [803, 245]}, {&#39;x&#39;: 24, &#39;y&#39;: 346, &#39;56&#39;: [644, 734]}, {&#39;x&#39;: 186, &#39;y&#39;: 916, &#39;57&#39;: [369, 389]}, {&#39;x&#39;: 746, &#39;y&#39;: 880, &#39;58&#39;: [665, 388]}, {&#39;x&#39;: 297, &#39;y&#39;: 428, &#39;59&#39;: [899, 535]}, {&#39;x&#39;: 524, &#39;y&#39;: 799, &#39;60&#39;: [939, 544]}, {&#39;x&#39;: 846, &#39;y&#39;: 76, &#39;61&#39;: [695, 129]}, {&#39;x&#39;: 244, &#39;y&#39;: 406, &#39;62&#39;: [973, 735]}, {&#39;x&#39;: 362, &#39;y&#39;: 175, &#39;63&#39;: [141, 963]}, {&#39;x&#39;: 427, &#39;y&#39;: 459, &#39;64&#39;: [571, 795]}, {&#39;x&#39;: 561, &#39;y&#39;: 969, &#39;65&#39;: [971, 61]}, {&#39;x&#39;: 583, &#39;y&#39;: 109, &#39;66&#39;: [260, 590]}, {&#39;x&#39;: 129, &#39;y&#39;: 902, &#39;67&#39;: [130, 242]}, {&#39;x&#39;: 551, &#39;y&#39;: 948, &#39;68&#39;: [151, 570]}, {&#39;x&#39;: 512, &#39;y&#39;: 466, &#39;69&#39;: [675, 578]}, {&#39;x&#39;: 460, &#39;y&#39;: 487, &#39;70&#39;: [127, 863]}, {&#39;x&#39;: 624, &#39;y&#39;: 85, &#39;71&#39;: [408, 846]}, {&#39;x&#39;: 127, &#39;y&#39;: 471, &#39;72&#39;: [874, 276]}, {&#39;x&#39;: 732, &#39;y&#39;: 655, &#39;73&#39;: [522, 148]}, {&#39;x&#39;: 331, &#39;y&#39;: 541, &#39;74&#39;: [932, 881]}, {&#39;x&#39;: 89, &#39;y&#39;: 555, &#39;75&#39;: [481, 936]}, {&#39;x&#39;: 562, &#39;y&#39;: 396, &#39;76&#39;: [321, 429]}, {&#39;x&#39;: 902, &#39;y&#39;: 577, &#39;77&#39;: [315, 257]}, {&#39;x&#39;: 55, &#39;y&#39;: 959, &#39;78&#39;: [555, 472]}, {&#39;x&#39;: 419, &#39;y&#39;: 814, &#39;79&#39;: [758, 902]}, {&#39;x&#39;: 566, &#39;y&#39;: 142, &#39;80&#39;: [742, 421]}, {&#39;x&#39;: 621, &#39;y&#39;: 991, &#39;81&#39;: [129, 66]}, {&#39;x&#39;: 989, &#39;y&#39;: 567, &#39;82&#39;: [100, 163]}, {&#39;x&#39;: 475, &#39;y&#39;: 483, &#39;83&#39;: [95, 779]}, {&#39;x&#39;: 805, &#39;y&#39;: 140, &#39;84&#39;: [412, 92]}, {&#39;x&#39;: 582, &#39;y&#39;: 1000, &#39;85&#39;: [932, 133]}, {&#39;x&#39;: 599, &#39;y&#39;: 389, &#39;86&#39;: [588, 572]}, {&#39;x&#39;: 445, &#39;y&#39;: 184, &#39;87&#39;: [720, 90]}, {&#39;x&#39;: 636, &#39;y&#39;: 180, &#39;88&#39;: [383, 517]}, {&#39;x&#39;: 795, &#39;y&#39;: 162, &#39;89&#39;: [466, 137]}, {&#39;x&#39;: 108, &#39;y&#39;: 651, &#39;90&#39;: [821, 203]}, {&#39;x&#39;: 366, &#39;y&#39;: 92, &#39;91&#39;: [253, 747]}, {&#39;x&#39;: 544, &#39;y&#39;: 599, &#39;92&#39;: [612, 688]}, {&#39;x&#39;: 892, &#39;y&#39;: 832, &#39;93&#39;: [15, 378]}, {&#39;x&#39;: 766, &#39;y&#39;: 142, &#39;94&#39;: [476, 432]}, {&#39;x&#39;: 380, &#39;y&#39;: 174, &#39;95&#39;: [690, 348]}, {&#39;x&#39;: 487, &#39;y&#39;: 668, &#39;96&#39;: [190, 201]}, {&#39;x&#39;: 820, &#39;y&#39;: 719, &#39;97&#39;: [271, 9]}, {&#39;x&#39;: 70, &#39;y&#39;: 986, &#39;98&#39;: [831, 469]}, {&#39;x&#39;: 551, &#39;y&#39;: 118, &#39;99&#39;: [779, 370]}]
-&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 2, &#39;y&#39;: 62, &#39;3&#39;: [612, 873]}
-[612, 873]
-[612, 873]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 802, &#39;y&#39;: 6, &#39;0&#39;: [959, 715]}, {&#39;x&#39;: 192, &#39;y&#39;: 8, &#39;1&#39;: [126, 420]}, {&#39;x&#39;: 492, &#39;y&#39;: 618, &#39;2&#39;: [613, 813]}, {&#39;x&#39;: 73, &#39;y&#39;: 868, &#39;3&#39;: [996, 57]}, {&#39;x&#39;: 579, &#39;y&#39;: 928, &#39;4&#39;: [186, 818]}, {&#39;x&#39;: 523, &#39;y&#39;: 575, &#39;5&#39;: [475, 942]}, {&#39;x&#39;: 847, &#39;y&#39;: 668, &#39;6&#39;: [358, 95]}, {&#39;x&#39;: 769, &#39;y&#39;: 381, &#39;7&#39;: [84, 39]}, {&#39;x&#39;: 929, &#39;y&#39;: 781, &#39;8&#39;: [264, 117]}, {&#39;x&#39;: 521, &#39;y&#39;: 170, &#39;9&#39;: [395, 328]}, {&#39;x&#39;: 616, &#39;y&#39;: 267, &#39;10&#39;: [86, 393]}, {&#39;x&#39;: 345, &#39;y&#39;: 375, &#39;11&#39;: [608, 439]}, {&#39;x&#39;: 652, &#39;y&#39;: 295, &#39;12&#39;: [163, 46]}, {&#39;x&#39;: 219, &#39;y&#39;: 628, &#39;13&#39;: [947, 119]}, {&#39;x&#39;: 749, &#39;y&#39;: 252, &#39;14&#39;: [979, 754]}, {&#39;x&#39;: 419, &#39;y&#39;: 957, &#39;15&#39;: [412, 267]}, {&#39;x&#39;: 210, &#39;y&#39;: 965, &#39;16&#39;: [306, 806]}, {&#39;x&#39;: 462, &#39;y&#39;: 953, &#39;17&#39;: [620, 888]}, {&#39;x&#39;: 427, &#39;y&#39;: 697, &#39;18&#39;: [18, 515]}, {&#39;x&#39;: 130, &#39;y&#39;: 374, &#39;19&#39;: [896, 431]}, {&#39;x&#39;: 706, &#39;y&#39;: 694, &#39;20&#39;: [107, 674]}, {&#39;x&#39;: 68, &#39;y&#39;: 72, &#39;21&#39;: [290, 505]}, {&#39;x&#39;: 368, &#39;y&#39;: 4, &#39;22&#39;: [907, 782]}, {&#39;x&#39;: 791, &#39;y&#39;: 290, &#39;23&#39;: [274, 633]}, {&#39;x&#39;: 650, &#39;y&#39;: 909, &#39;24&#39;: [228, 427]}, {&#39;x&#39;: 469, &#39;y&#39;: 483, &#39;25&#39;: [391, 183]}, {&#39;x&#39;: 330, &#39;y&#39;: 251, &#39;26&#39;: [774, 891]}, {&#39;x&#39;: 309, &#39;y&#39;: 782, &#39;27&#39;: [270, 758]}, {&#39;x&#39;: 434, &#39;y&#39;: 629, &#39;28&#39;: [928, 854]}, {&#39;x&#39;: 830, &#39;y&#39;: 189, &#39;29&#39;: [18, 810]}, {&#39;x&#39;: 814, &#39;y&#39;: 15, &#39;30&#39;: [546, 879]}, {&#39;x&#39;: 488, &#39;y&#39;: 404, &#39;31&#39;: [716, 788]}, {&#39;x&#39;: 748, &#39;y&#39;: 840, &#39;32&#39;: [522, 933]}, {&#39;x&#39;: 616, &#39;y&#39;: 254, &#39;33&#39;: [47, 774]}, {&#39;x&#39;: 345, &#39;y&#39;: 339, &#39;34&#39;: [585, 422]}, {&#39;x&#39;: 132, &#39;y&#39;: 576, &#39;35&#39;: [31, 752]}, {&#39;x&#39;: 153, &#39;y&#39;: 74, &#39;36&#39;: [893, 322]}, {&#39;x&#39;: 566, &#39;y&#39;: 868, &#39;37&#39;: [417, 155]}, {&#39;x&#39;: 97, &#39;y&#39;: 855, &#39;38&#39;: [544, 899]}, {&#39;x&#39;: 112, &#39;y&#39;: 980, &#39;39&#39;: [887, 133]}, {&#39;x&#39;: 278, &#39;y&#39;: 5, &#39;40&#39;: [237, 236]}, {&#39;x&#39;: 180, &#39;y&#39;: 847, &#39;41&#39;: [500, 196]}, {&#39;x&#39;: 536, &#39;y&#39;: 444, &#39;42&#39;: [156, 779]}, {&#39;x&#39;: 684, &#39;y&#39;: 486, &#39;43&#39;: [163, 973]}, {&#39;x&#39;: 527, &#39;y&#39;: 287, &#39;44&#39;: [944, 27]}, {&#39;x&#39;: 47, &#39;y&#39;: 17, &#39;45&#39;: [422, 43]}, {&#39;x&#39;: 961, &#39;y&#39;: 473, &#39;46&#39;: [49, 832]}, {&#39;x&#39;: 678, &#39;y&#39;: 190, &#39;47&#39;: [919, 552]}, {&#39;x&#39;: 192, &#39;y&#39;: 244, &#39;48&#39;: [80, 968]}, {&#39;x&#39;: 173, &#39;y&#39;: 323, &#39;49&#39;: [597, 684]}, {&#39;x&#39;: 963, &#39;y&#39;: 732, &#39;50&#39;: [549, 505]}, {&#39;x&#39;: 126, &#39;y&#39;: 692, &#39;51&#39;: [524, 586]}, {&#39;x&#39;: 685, &#39;y&#39;: 243, &#39;52&#39;: [500, 140]}, {&#39;x&#39;: 383, &#39;y&#39;: 248, &#39;53&#39;: [971, 530]}, {&#39;x&#39;: 876, &#39;y&#39;: 618, &#39;54&#39;: [138, 774]}, {&#39;x&#39;: 483, &#39;y&#39;: 584, &#39;55&#39;: [115, 921]}, {&#39;x&#39;: 324, &#39;y&#39;: 455, &#39;56&#39;: [236, 282]}, {&#39;x&#39;: 672, &#39;y&#39;: 183, &#39;57&#39;: [658, 541]}, {&#39;x&#39;: 814, &#39;y&#39;: 145, &#39;58&#39;: [703, 133]}, {&#39;x&#39;: 580, &#39;y&#39;: 329, &#39;59&#39;: [412, 932]}, {&#39;x&#39;: 874, &#39;y&#39;: 750, &#39;60&#39;: [759, 58]}, {&#39;x&#39;: 454, &#39;y&#39;: 253, &#39;61&#39;: [933, 63]}, {&#39;x&#39;: 786, &#39;y&#39;: 766, &#39;62&#39;: [585, 104]}, {&#39;x&#39;: 230, &#39;y&#39;: 645, &#39;63&#39;: [201, 206]}, {&#39;x&#39;: 726, &#39;y&#39;: 491, &#39;64&#39;: [760, 31]}, {&#39;x&#39;: 215, &#39;y&#39;: 448, &#39;65&#39;: [566, 425]}, {&#39;x&#39;: 875, &#39;y&#39;: 897, &#39;66&#39;: [175, 836]}, {&#39;x&#39;: 544, &#39;y&#39;: 47, &#39;67&#39;: [921, 626]}, {&#39;x&#39;: 736, &#39;y&#39;: 618, &#39;68&#39;: [372, 592]}, {&#39;x&#39;: 507, &#39;y&#39;: 854, &#39;69&#39;: [303, 682]}, {&#39;x&#39;: 160, &#39;y&#39;: 313, &#39;70&#39;: [630, 724]}, {&#39;x&#39;: 362, &#39;y&#39;: 564, &#39;71&#39;: [335, 846]}, {&#39;x&#39;: 987, &#39;y&#39;: 803, &#39;72&#39;: [633, 346]}, {&#39;x&#39;: 540, &#39;y&#39;: 954, &#39;73&#39;: [181, 24]}, {&#39;x&#39;: 162, &#39;y&#39;: 694, &#39;74&#39;: [992, 482]}, {&#39;x&#39;: 637, &#39;y&#39;: 821, &#39;75&#39;: [667, 800]}, {&#39;x&#39;: 297, &#39;y&#39;: 917, &#39;76&#39;: [982, 869]}, {&#39;x&#39;: 932, &#39;y&#39;: 746, &#39;77&#39;: [936, 597]}, {&#39;x&#39;: 568, &#39;y&#39;: 313, &#39;78&#39;: [825, 975]}, {&#39;x&#39;: 792, &#39;y&#39;: 78, &#39;79&#39;: [367, 981]}, {&#39;x&#39;: 255, &#39;y&#39;: 475, &#39;80&#39;: [944, 985]}, {&#39;x&#39;: 73, &#39;y&#39;: 281, &#39;81&#39;: [985, 26]}, {&#39;x&#39;: 169, &#39;y&#39;: 268, &#39;82&#39;: [969, 660]}, {&#39;x&#39;: 769, &#39;y&#39;: 459, &#39;83&#39;: [823, 110]}, {&#39;x&#39;: 186, &#39;y&#39;: 615, &#39;84&#39;: [934, 546]}, {&#39;x&#39;: 813, &#39;y&#39;: 401, &#39;85&#39;: [109, 283]}, {&#39;x&#39;: 700, &#39;y&#39;: 525, &#39;86&#39;: [560, 387]}, {&#39;x&#39;: 347, &#39;y&#39;: 497, &#39;87&#39;: [375, 252]}, {&#39;x&#39;: 373, &#39;y&#39;: 819, &#39;88&#39;: [858, 216]}, {&#39;x&#39;: 519, &#39;y&#39;: 423, &#39;89&#39;: [551, 712]}, {&#39;x&#39;: 190, &#39;y&#39;: 146, &#39;90&#39;: [629, 224]}, {&#39;x&#39;: 691, &#39;y&#39;: 961, &#39;91&#39;: [94, 123]}, {&#39;x&#39;: 123, &#39;y&#39;: 116, &#39;92&#39;: [125, 449]}, {&#39;x&#39;: 37, &#39;y&#39;: 890, &#39;93&#39;: [166, 595]}, {&#39;x&#39;: 696, &#39;y&#39;: 425, &#39;94&#39;: [857, 955]}, {&#39;x&#39;: 180, &#39;y&#39;: 214, &#39;95&#39;: [764, 712]}, {&#39;x&#39;: 500, &#39;y&#39;: 341, &#39;96&#39;: [133, 608]}, {&#39;x&#39;: 481, &#39;y&#39;: 984, &#39;97&#39;: [815, 242]}, {&#39;x&#39;: 190, &#39;y&#39;: 904, &#39;98&#39;: [52, 597]}, {&#39;x&#39;: 825, &#39;y&#39;: 287, &#39;99&#39;: [786, 880]}]
+&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 73, &#39;y&#39;: 868, &#39;3&#39;: [996, 57]}
+[996, 57]
+[996, 57]
 </pre></div>
 </div>
 </div>
@@ -769,7 +864,7 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 </div>
 </div>
 </div>
-<p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los lineamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
+<p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los líneamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
 </section>
 <section id="lectura-de-archivos-json-en-internet">
 <h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Permalink to this heading">#</a></h2>
@@ -836,8 +931,7 @@ else:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hubo un problema al cargar el archivo JSON
-404
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
 </pre></div>
 </div>
 </div>
@@ -851,8 +945,8 @@ else:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
-[{&quot;id&quot;: 0, &quot;min&quot;: 757, &quot;max&quot;: 1110, &quot;prom&quot;: 933.5}, {&quot;id&quot;: 1, &quot;min&quot;: 506, &quot;max&quot;: 1008, &quot;prom&quot;: 757.0}, {&quot;id&quot;: 2, &quot;min&quot;: 580, &quot;max&quot;: 1336, &quot;prom&quot;: 958.0}, {&quot;id&quot;: 3, &quot;min&quot;: 102, &quot;max&quot;: 1294, &quot;prom&quot;: 698.0}, {&quot;id&quot;: 4, &quot;min&quot;: 664, &quot;max&quot;: 1008, &quot;prom&quot;: 836.0}, {&quot;id&quot;: 5, &quot;min&quot;: 921, &quot;max&quot;: 1423, &quot;prom&quot;: 1172.0}, {&quot;id&quot;: 6, &quot;min&quot;: 810, &quot;max&quot;: 1917, &quot;prom&quot;: 1363.5}, {&quot;id&quot;: 7, &quot;min&quot;: 339, &quot;max&quot;: 1790, &quot;prom&quot;: 1064.5}, {&quot;id&quot;: 8, &quot;min&quot;: 820, &quot;max&quot;: 1609, &quot;prom&quot;: 1214.5}, {&quot;id&quot;: 9, &quot;min&quot;: 297, &quot;max&quot;: 1681, &quot;prom&quot;: 989.0}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+{&#39;catalog&#39;: {&#39;book&#39;: [{&#39;@id&#39;: &#39;bk101&#39;, &#39;author&#39;: [&#39;Gambardella, Matthew&#39;], &#39;title&#39;: &quot;XML Developer&#39;s Guide&quot;, &#39;genre&#39;: &#39;Computer&#39;, &#39;price&#39;: &#39;44.95&#39;, &#39;publish_date&#39;: &#39;2000-10-01&#39;, &#39;description&#39;: &#39;An in-depth look at creating applications with XML.&#39;}, {&#39;@id&#39;: &#39;bk102&#39;, &#39;author&#39;: [&#39;Ralls, Kim&#39;, &#39;Gambardella, Matthew&#39;], &#39;title&#39;: &#39;Midnight Rain&#39;, &#39;genre&#39;: &#39;Fantasy&#39;, &#39;price&#39;: &#39;5.95&#39;, &#39;publish_date&#39;: &#39;2000-12-16&#39;, &#39;description&#39;: &#39;A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.&#39;}, {&#39;@id&#39;: &#39;bk103&#39;, &#39;author&#39;: [&#39;Corets, Eva&#39;], &#39;title&#39;: &#39;Maeve Ascendant&#39;, &#39;genre&#39;: &#39;Fantasy&#39;, &#39;price&#39;: &#39;5.95&#39;, &#39;publish_date&#39;: &#39;2000-11-17&#39;, &#39;description&#39;: &#39;After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.&#39;}, {&#39;@id&#39;: &#39;bk104&#39;, &#39;author&#39;: [&#39;Corets, Eva&#39;], &#39;title&#39;: &quot;Oberon&#39;s Legacy&quot;, &#39;genre&#39;: &#39;Fantasy&#39;, &#39;price&#39;: &#39;5.95&#39;, &#39;publish_date&#39;: &#39;2001-03-10&#39;, &#39;description&#39;: &#39;In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant.&#39;}, {&#39;@id&#39;: &#39;bk105&#39;, &#39;author&#39;: [&#39;Corets, Eva&#39;], &#39;title&#39;: &#39;The Sundered Grail&#39;, &#39;genre&#39;: &#39;Fantasy&#39;, &#39;price&#39;: &#39;5.95&#39;, &#39;publish_date&#39;: &#39;2001-09-10&#39;, &#39;description&#39;: &quot;The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon&#39;s Legacy.&quot;}, {&#39;@id&#39;: &#39;bk106&#39;, &#39;author&#39;: [&#39;Randall, Cynthia&#39;], &#39;title&#39;: &#39;Lover Birds&#39;, &#39;genre&#39;: &#39;Romance&#39;, &#39;price&#39;: &#39;4.95&#39;, &#39;publish_date&#39;: &#39;2000-09-02&#39;, &#39;description&#39;: &#39;When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled.&#39;}, {&#39;@id&#39;: &#39;bk107&#39;, &#39;author&#39;: [&#39;Thurman, Paula&#39;], &#39;title&#39;: &#39;Splish Splash&#39;, &#39;genre&#39;: &#39;Romance&#39;, &#39;price&#39;: &#39;4.95&#39;, &#39;publish_date&#39;: &#39;2000-11-02&#39;, &#39;description&#39;: &#39;A deep sea diver finds true love twenty thousand leagues beneath the sea.&#39;}, {&#39;@id&#39;: &#39;bk108&#39;, &#39;author&#39;: [&#39;Knorr, Stefan&#39;], &#39;title&#39;: &#39;Creepy Crawlies&#39;, &#39;genre&#39;: &#39;Horror&#39;, &#39;price&#39;: &#39;4.95&#39;, &#39;publish_date&#39;: &#39;2000-12-06&#39;, &#39;description&#39;: &#39;An anthology of horror stories about roaches, centipedes, scorpions  and other insects.&#39;}, {&#39;@id&#39;: &#39;bk109&#39;, &#39;author&#39;: [&#39;Kress, Peter&#39;], &#39;title&#39;: &#39;Paradox Lost&#39;, &#39;genre&#39;: &#39;Science Fiction&#39;, &#39;price&#39;: &#39;6.95&#39;, &#39;publish_date&#39;: &#39;2000-11-02&#39;, &#39;description&#39;: &#39;After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum.&#39;}, {&#39;@id&#39;: &#39;bk110&#39;, &#39;author&#39;: [&quot;O&#39;Brien, Tim&quot;], &#39;title&#39;: &#39;Microsoft .NET: The Programming Bible&#39;, &#39;genre&#39;: &#39;Computer&#39;, &#39;price&#39;: &#39;36.95&#39;, &#39;publish_date&#39;: &#39;2000-12-09&#39;, &#39;description&#39;: &quot;Microsoft&#39;s .NET initiative is explored in detail in this deep programmer&#39;s reference.&quot;}, {&#39;@id&#39;: &#39;bk111&#39;, &#39;author&#39;: [&quot;O&#39;Brien, Tim&quot;], &#39;title&#39;: &#39;MSXML3: A Comprehensive Guide&#39;, &#39;genre&#39;: &#39;Computer&#39;, &#39;price&#39;: &#39;36.95&#39;, &#39;publish_date&#39;: &#39;2000-12-01&#39;, &#39;description&#39;: &#39;The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more.&#39;}, {&#39;@id&#39;: &#39;bk112&#39;, &#39;author&#39;: [&#39;Galos, Mike&#39;], &#39;title&#39;: &#39;Visual Studio 7: A Comprehensive Guide&#39;, &#39;genre&#39;: &#39;Computer&#39;, &#39;price&#39;: &#39;49.95&#39;, &#39;publish_date&#39;: &#39;2001-04-16&#39;, &#39;description&#39;: &#39;Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment.&#39;}]}}
 </pre></div>
 </div>
 </div>
@@ -865,12 +959,13 @@ else:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;catalog&#39;</span><span class="p">][</span><span class="s1">&#39;book&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="ne">TypeError</span>: string indices must be integers
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;@id&#39;: &#39;bk101&#39;,
+ &#39;author&#39;: [&#39;Gambardella, Matthew&#39;],
+ &#39;title&#39;: &quot;XML Developer&#39;s Guide&quot;,
+ &#39;genre&#39;: &#39;Computer&#39;,
+ &#39;price&#39;: &#39;44.95&#39;,
+ &#39;publish_date&#39;: &#39;2000-10-01&#39;,
+ &#39;description&#39;: &#39;An in-depth look at creating applications with XML.&#39;}
 </pre></div>
 </div>
 </div>
@@ -880,6 +975,22 @@ else:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;catalog&#39;</span><span class="p">][</span><span class="s1">&#39;book&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">libro</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>XML Developer&#39;s Guide
+Midnight Rain
+Maeve Ascendant
+Oberon&#39;s Legacy
+The Sundered Grail
+Lover Birds
+Splish Splash
+Creepy Crawlies
+Paradox Lost
+Microsoft .NET: The Programming Bible
+MSXML3: A Comprehensive Guide
+Visual Studio 7: A Comprehensive Guide
 </pre></div>
 </div>
 </div>
@@ -898,11 +1009,6 @@ else:
     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hubo un problema al cargar el archivo JSON&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200
 </pre></div>
 </div>
 </div>
@@ -1077,8 +1183,8 @@ contenido = elementos[0].firstChild.nodeValue
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tipo  de dom: &lt;class &#39;xml.dom.minidom.Document&#39;&gt;
-El  primer elemento book: &lt;DOM Element: book at 0x222f0b5b6d0&gt;
-El  segundo elemento book: &lt;DOM Element: book at 0x222f0ed68c0&gt;
+El  primer elemento book: &lt;DOM Element: book at 0x1cafe5820e0&gt;
+El  segundo elemento book: &lt;DOM Element: book at 0x1cafe61d000&gt;
 Atributo &#39;id&#39; del primer elemento &#39;book&#39;: bk101
 Atributo &#39;id&#39; del segundo elemento &#39;book&#39;: bk102
 &lt;class &#39;str&#39;&gt; : 
@@ -1102,6 +1208,22 @@ El primer autor del primer libro es: &lt;class &#39;str&#39;&gt; : Gambardella, 
 
 <span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">libros</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">libro</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;bk101&#39;, [&#39;Gambardella, Matthew&#39;])
+(&#39;bk102&#39;, [&#39;Ralls, Kim&#39;, &#39;Gambardella, Matthew&#39;])
+(&#39;bk103&#39;, [&#39;Corets, Eva&#39;])
+(&#39;bk104&#39;, [&#39;Corets, Eva&#39;])
+(&#39;bk105&#39;, [&#39;Corets, Eva&#39;])
+(&#39;bk106&#39;, [&#39;Randall, Cynthia&#39;])
+(&#39;bk107&#39;, [&#39;Thurman, Paula&#39;])
+(&#39;bk108&#39;, [&#39;Knorr, Stefan&#39;])
+(&#39;bk109&#39;, [&#39;Kress, Peter&#39;])
+(&#39;bk110&#39;, [&quot;O&#39;Brien, Tim&quot;])
+(&#39;bk111&#39;, [&quot;O&#39;Brien, Tim&quot;])
+(&#39;bk112&#39;, [&#39;Galos, Mike&#39;])
 </pre></div>
 </div>
 </div>
@@ -1171,7 +1293,17 @@ for w in resultados:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gov.noaa.ncdc:C00861 : Daily Summaries
+gov.noaa.ncdc:C00946 : Global Summary of the Month
+gov.noaa.ncdc:C00947 : Global Summary of the Year
+gov.noaa.ncdc:C00345 : Weather Radar (Level II)
+gov.noaa.ncdc:C00708 : Weather Radar (Level III)
+gov.noaa.ncdc:C00821 : Normals Annual/Seasonal
+gov.noaa.ncdc:C00823 : Normals Daily
+gov.noaa.ncdc:C00824 : Normals Hourly
+gov.noaa.ncdc:C00822 : Normals Monthly
+gov.noaa.ncdc:C00505 : Precipitation 15 Minute
+gov.noaa.ncdc:C00313 : Precipitation Hourly
 </pre></div>
 </div>
 </div>
@@ -1191,6 +1323,11 @@ for w in resultados:
     <span class="n">status_code</span> <span class="o">=</span> <span class="mi">550</span>
 <span class="n">respuesta</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;metadata&#39;: {&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 10, &#39;limit&#39;: 25}}, &#39;results&#39;: [{&#39;uid&#39;: &#39;gov.noaa.ncdc:C00861&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Daily Summaries&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GHCND&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00946&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-01&#39;, &#39;name&#39;: &#39;Global Summary of the Month&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOM&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00947&#39;, &#39;mindate&#39;: &#39;1763-01-01&#39;, &#39;maxdate&#39;: &#39;2024-01-01&#39;, &#39;name&#39;: &#39;Global Summary of the Year&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00345&#39;, &#39;mindate&#39;: &#39;1991-06-05&#39;, &#39;maxdate&#39;: &#39;2024-09-18&#39;, &#39;name&#39;: &#39;Weather Radar (Level II)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD2&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00708&#39;, &#39;mindate&#39;: &#39;1994-05-20&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Weather Radar (Level III)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD3&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00821&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-01-01&#39;, &#39;name&#39;: &#39;Normals Annual/Seasonal&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_ANN&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00823&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-31&#39;, &#39;name&#39;: &#39;Normals Daily&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_DLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00822&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-01&#39;, &#39;name&#39;: &#39;Normals Monthly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_MLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00505&#39;, &#39;mindate&#39;: &#39;1970-05-12&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation 15 Minute&#39;, &#39;datacoverage&#39;: 0.25, &#39;id&#39;: &#39;PRECIP_15&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00313&#39;, &#39;mindate&#39;: &#39;1900-01-01&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation Hourly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;PRECIP_HLY&#39;}]}
 </pre></div>
 </div>
 </div>
@@ -1215,6 +1352,13 @@ for w in resultados:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+metadata
+results
+</pre></div>
+</div>
+</div>
 </div>
 <p>nos devuelve un sumario de temperaturas y precipitaciones diarias en el mes de mayo de la estación meteorológica del Aeropuerto de Córdoba,  que está codificada <code class="docutils literal notranslate"><span class="pre">AR000087344</span></code>.</p>
 <p>Observar que la respuesta recibida puede ser convertida a JSON, pues así lo permite la API. En  este caso particular, la respuesta JSON es un diccionario con dos claves: <code class="docutils literal notranslate"><span class="pre">metadata</span></code> y <code class="docutils literal notranslate"><span class="pre">results</span></code>. El campo <code class="docutils literal notranslate"><span class="pre">metadata</span></code> nos da información sobre tipo de datos, formato, etc. Mientras que <code class="docutils literal notranslate"><span class="pre">results</span></code> es el contenido que nos interesa.</p>
@@ -1225,12 +1369,36 @@ for w in resultados:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 14, &#39;limit&#39;: 1000}}
+[{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}, {&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}, {&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}]
+</pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">respuesta['results']</span></code>es una lista con datos meteorológicos de la localidad en el período especificado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">data</span> <span class="ow">in</span> <span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}
+{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}
+{&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}
+{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}
+{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}
+{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}
+{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}
+{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}
+{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}
+{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}
+{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}
+{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}
 </pre></div>
 </div>
 </div>
@@ -1353,7 +1521,10 @@ for w in resultados:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#archivos-csv">1. Archivos CSV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-csv-de-la-red">Lectura de archivos CSV de la red</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-json">2. Lectura y escritura de archivos JSON</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-de-archivos-json-en-internet">3. Lectura de archivos JSON en internet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-xml">4. Lectura y escritura de archivos XML</a><ul class="nav section-nav flex-column">
