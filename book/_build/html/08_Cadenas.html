@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>8. Cadenas &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '08_Cadenas';</script>
@@ -223,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -231,7 +233,8 @@
 <li class="toctree-l2"><a class="reference internal" href="20.5_Recursion.html">5. Recursión</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
+</ul>
 </details></li>
 </ul>
 
@@ -446,9 +449,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cadenas">
-<h1>8. Cadenas<a class="headerlink" href="#cadenas" title="Permalink to this heading">#</a></h1>
+<h1>8. Cadenas<a class="headerlink" href="#cadenas" title="Link to this heading">#</a></h1>
 <section id="id1">
-<h2>1. Cadenas<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>1. Cadenas<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Las cadenas no son entidades que representan un concepto matemático como los números enteros, números punto flotante o los booleanos. Una cadena es una <em>secuencia de caracteres</em>, lo que significa que es una colección ordenada de  caracteres.</p>
 <p>Las cadenas, el tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>, son de suma utilidad en la programación y Python provee un manejo muy intuitivo de ellas que hace que las podamos manejar con facilidad</p>
 <p><strong>Una cadena es una secuencia.</strong> Como ya dijimos, una cadena es una secuencia de caracteres.  Para especificar una cadena  en Python hay que escribir una secuencia de caracteres encerrados entre comillas simple o dobles:</p>
@@ -751,7 +754,7 @@ o
 <p>En este caso, en la segunda instrucción se destruye la variable original <code class="docutils literal notranslate"><span class="pre">cadena</span></code> y se crea otra variable,  que llamamos nuevamente <code class="docutils literal notranslate"><span class="pre">cadena</span></code>,  con otros valores. Estas tres líneas de programación <em>simulan</em> el cambio de un carácter en una cadena.</p>
 </section>
 <section id="recorriendo-cadenas">
-<h2>2. Recorriendo cadenas<a class="headerlink" href="#recorriendo-cadenas" title="Permalink to this heading">#</a></h2>
+<h2>2. Recorriendo cadenas<a class="headerlink" href="#recorriendo-cadenas" title="Link to this heading">#</a></h2>
 <p>Muchos cálculos implican procesar una cadena de un carácter a la vez. A menudo se comienza por el principio, seleccionan un carácter por vez, se hace algo y se continúa hasta el final. Este patrón de procesamiento se llama <em>recorrido</em>. Una forma de escribir un recorrido es con un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,7 +848,7 @@ a
 </div>
 </section>
 <section id="notacion-slice">
-<h2>3. Notación slice<a class="headerlink" href="#notacion-slice" title="Permalink to this heading">#</a></h2>
+<h2>3. Notación slice<a class="headerlink" href="#notacion-slice" title="Link to this heading">#</a></h2>
 <p>Un segmento de una cadena es lo que se llama una <em>rebanada</em> o <em>slice</em> por su traducción al inglés. Seleccionar una slice es similar a seleccionar un carácter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,8 +866,8 @@ nana
 </div>
 </div>
 <p>El operador <code class="docutils literal notranslate"><span class="pre">[n</span> <span class="pre">:</span> <span class="pre">m]</span></code> devuelve la rebanada de la cadena del caracteres entre el “corte” <code class="docutils literal notranslate"><span class="pre">n</span></code>y el “corte” <code class="docutils literal notranslate"><span class="pre">m</span></code>. Ahora explicaremos lo que significa “corte”, pero primero debemos aclarar que <em>no</em> se refiere a un índice,  sino al corte entre dos elementos. Ejemplifiquemos con la cadena <code class="docutils literal notranslate"><span class="pre">banana</span></code>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8665b188-39b5-4f91-9295-6d9285dddcaf">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8665b188-39b5-4f91-9295-6d9285dddcaf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cd7eb5ca-6dc3-4763-ae2f-00a8fce1ebef">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cd7eb5ca-6dc3-4763-ae2f-00a8fce1ebef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \begin{matrix}
 \text{Cadena:} &amp;|&amp;\tt b&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp;\tt n&amp;|&amp;\tt a&amp;|&amp; \\
 \text{Corte:}\;\;\;&amp;0&amp;&amp;1&amp;&amp;2&amp;&amp;3&amp;&amp;4&amp;&amp;5&amp;&amp;6&amp; \\
@@ -1046,7 +1049,7 @@ orden[6: 8] =  67
 </div>
 </section>
 <section id="metodos-de-cadenas">
-<h2>4. Métodos de cadenas<a class="headerlink" href="#metodos-de-cadenas" title="Permalink to this heading">#</a></h2>
+<h2>4. Métodos de cadenas<a class="headerlink" href="#metodos-de-cadenas" title="Link to this heading">#</a></h2>
 <p>Las cadenas proporcionan métodos que realizan una variedad de operaciones útiles. Un método es similar a una función, toma argumentos y
 devuelve un valor, pero la sintaxis es diferente. Por ejemplo, el método <code class="docutils literal notranslate"><span class="pre">upper()</span></code> toma una cadena y devuelve una nueva cadena con todas las letras mayúsculas.</p>
 <p>En lugar de utilizar la sintaxis de función <code class="docutils literal notranslate"><span class="pre">upper(palabra)</span></code>, se utiliza la sintaxis de método <code class="docutils literal notranslate"><span class="pre">palabra.upper()</span></code>.</p>
@@ -1249,7 +1252,7 @@ banana
 </div>
 </section>
 <section id="el-operador-in">
-<h2>5. El operador <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#el-operador-in" title="Permalink to this heading">#</a></h2>
+<h2>5. El operador <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#el-operador-in" title="Link to this heading">#</a></h2>
 <p>La palabra <code class="docutils literal notranslate"><span class="pre">in</span></code> es un operador booleano que toma dos cadenas y devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code> si el primero aparece como una subcadena en el segundo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1293,7 +1296,7 @@ coc
 </div>
 </section>
 <section id="comparacion-de-cadenas">
-<h2>6. Comparación de cadenas<a class="headerlink" href="#comparacion-de-cadenas" title="Permalink to this heading">#</a></h2>
+<h2>6. Comparación de cadenas<a class="headerlink" href="#comparacion-de-cadenas" title="Link to this heading">#</a></h2>
 <p>Los operadores relacionales funcionan con cadenas. Para ver si dos cadenas son iguales, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

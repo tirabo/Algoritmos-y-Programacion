@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>6. Condicionales &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '06_Condicionales';</script>
@@ -223,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -231,7 +233,8 @@
 <li class="toctree-l2"><a class="reference internal" href="20.5_Recursion.html">5. Recursión</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
+</ul>
 </details></li>
 </ul>
 
@@ -451,10 +454,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="condicionales">
-<h1>6. Condicionales<a class="headerlink" href="#condicionales" title="Permalink to this heading">#</a></h1>
+<h1>6. Condicionales<a class="headerlink" href="#condicionales" title="Link to this heading">#</a></h1>
 <p>Aunque este tema ya ha sido  parcialmente estudiado,  aquí lo presentamos en forma sistemática y más formalmente.</p>
 <section id="expresiones-booleanas">
-<h2>1. Expresiones booleanas<a class="headerlink" href="#expresiones-booleanas" title="Permalink to this heading">#</a></h2>
+<h2>1. Expresiones booleanas<a class="headerlink" href="#expresiones-booleanas" title="Link to this heading">#</a></h2>
 <p>Una expresión booleana es una expresión verdadera o falsa. Los siguientes ejemplos usan el operador <code class="docutils literal notranslate"><span class="pre">==</span></code>, que compara dos operandos y produce <code class="docutils literal notranslate"><span class="pre">True</span></code> si son iguales y <code class="docutils literal notranslate"><span class="pre">False</span></code> en caso contrario:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -508,7 +511,7 @@ False
 <p>Aunque estas operaciones probablemente le resulten familiares, a veces el uso de los símbolos en Python es diferente al uso en la matemática. Un error común es usar un solo signo igual (<code class="docutils literal notranslate"><span class="pre">=</span></code>) en lugar de un doble signo igual (<code class="docutils literal notranslate"><span class="pre">==</span></code>). Recordá que <code class="docutils literal notranslate"><span class="pre">=</span></code> es un operador de asignación y <code class="docutils literal notranslate"><span class="pre">==</span></code> es un operador relacional. No existe tal cosa como <code class="docutils literal notranslate"><span class="pre">=&lt;</span></code> o <code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>.</p>
 </section>
 <section id="operadores-logicos">
-<h2>2. Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permalink to this heading">#</a></h2>
+<h2>2. Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Link to this heading">#</a></h2>
 <p>Los operadores lógicos toman sentencias lógicas escritas en Python (que pueden ser <code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>) y hacen operaciones lógicas.</p>
 <p>Los operadores lógicos son:</p>
 <ul class="simple">
@@ -676,7 +679,7 @@ True True True
 <p><em>Ejercicio (difícil).</em> Obtener con el operador <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">q</span></code> los operadores <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span></code>. Es decir con el operador <span class="math notranslate nohighlight">\(\neg p \wedge \neg q\)</span> se pueden obtener todos los operadores lógicos.</p>
 </section>
 <section id="ejecucion-condicional">
-<h2>3. Ejecución condicional<a class="headerlink" href="#ejecucion-condicional" title="Permalink to this heading">#</a></h2>
+<h2>3. Ejecución condicional<a class="headerlink" href="#ejecucion-condicional" title="Link to this heading">#</a></h2>
 <p>Para escribir programas útiles, casi siempre necesitamos la capacidad de verificar condiciones y cambiar el comportamiento del programa en consecuencia. Las <em>declaraciones condicionales</em> nos dan esta capacidad. La forma más simple es la declaración <code class="docutils literal notranslate"><span class="pre">if</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,7 +708,7 @@ True True True
 </div>
 </section>
 <section id="ejecucion-alternativa">
-<h2>4. Ejecución alternativa<a class="headerlink" href="#ejecucion-alternativa" title="Permalink to this heading">#</a></h2>
+<h2>4. Ejecución alternativa<a class="headerlink" href="#ejecucion-alternativa" title="Link to this heading">#</a></h2>
 <p>Una segunda forma de la instrucción <code class="docutils literal notranslate"><span class="pre">if</span></code> es la <em>ejecución alternativa</em>, en la que hay dos posibilidades y la condición determina cuál se ejecuta. La sintaxis se ve así:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condición</span><span class="p">:</span>
     <span class="n">ejecutar1</span>
@@ -742,14 +745,11 @@ True True True
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x es par
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
 <section id="condicionales-encadenados">
-<h2>5.Condicionales encadenados<a class="headerlink" href="#condicionales-encadenados" title="Permalink to this heading">#</a></h2>
+<h2>5.Condicionales encadenados<a class="headerlink" href="#condicionales-encadenados" title="Link to this heading">#</a></h2>
 <p>A veces hay más de dos posibilidades y necesitamos más de dos ramas. Una forma de expresar un cálculo como ese es un <em>condicional encadenado</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -859,7 +859,7 @@ u es una vocal que aparece en piragua
 <p>En  realidad,  la primera secuencia de código no es un “condicional encadenado”, sino una sucesión de condicionales, uno tras otro.</p>
 </section>
 <section id="condicionales-anidados">
-<h2>6. Condicionales anidados<a class="headerlink" href="#condicionales-anidados" title="Permalink to this heading">#</a></h2>
+<h2>6. Condicionales anidados<a class="headerlink" href="#condicionales-anidados" title="Link to this heading">#</a></h2>
 <p>Un condicional también se puede anidar dentro de otro. Podríamos haber escrito el ejemplo en la sección anterior así:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -900,7 +900,7 @@ u es una vocal que aparece en piragua
 </div>
 </section>
 <section id="ejemplo-conversion-de-formatos-de-coordenadas">
-<h2>7. Ejemplo: conversión de formatos de coordenadas<a class="headerlink" href="#ejemplo-conversion-de-formatos-de-coordenadas" title="Permalink to this heading">#</a></h2>
+<h2>7. Ejemplo: conversión de formatos de coordenadas<a class="headerlink" href="#ejemplo-conversion-de-formatos-de-coordenadas" title="Link to this heading">#</a></h2>
 <p>Vimos en una clase anterior las funciones que convierten grados decimales a grados sexagesimales, donde grados es no negativo. Estas funciones son:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1050,10 +1050,10 @@ u es una vocal que aparece en piragua
 <p>Observar que entre las dos funciones se dejan dos líneas. Esa es la práctica recomendada. A  veces es conveniente agregar líneas vacías para separar porciones de código, eso depende del criterio de cada programador, pero es conveniente dejar una sola línea vacía (no dos o más) excepto para separar funciones donde usamos dos líneas vacías.</p>
 </section>
 <section id="indentacion-o-sangria-en-python">
-<h2>8. Indentación o sangría en Python<a class="headerlink" href="#indentacion-o-sangria-en-python" title="Permalink to this heading">#</a></h2>
+<h2>8. Indentación o sangría en Python<a class="headerlink" href="#indentacion-o-sangria-en-python" title="Link to this heading">#</a></h2>
 <p>Como ya habrán observado en todo el código que hemos escrito anteriormente la indentación es un concepto muy importante de Python. Sin una indentación adecuada del código Python, terminarás obteniendo <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> y el código no será compilado.</p>
 <section id="indentacion">
-<h3>Indentación<a class="headerlink" href="#indentacion" title="Permalink to this heading">#</a></h3>
+<h3>Indentación<a class="headerlink" href="#indentacion" title="Link to this heading">#</a></h3>
 <p>En términos simples, la indentación se refiere a la adición de espacio en blanco antes de una declaración. Pero la pregunta que surge es si es necesario.</p>
 <p>Para entender esto considera una situación en la que estás leyendo un libro y de repente todos los números de página del libro desaparecen. Así que no sabes dónde continuar leyendo y te confundes. Esta situación es similar con Python. Sin la indentación, Python no sabe qué declaración ejecutar a continuación o qué declaración pertenece a qué bloque. Esto conducirá a <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1 sentencia1                                                  comienza bloque 1

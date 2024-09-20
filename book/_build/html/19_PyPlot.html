@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>19. Introducción a Matplotlib &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '19_PyPlot';</script>
@@ -223,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -231,7 +233,8 @@
 <li class="toctree-l2"><a class="reference internal" href="20.5_Recursion.html">5. Recursión</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+<li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
+</ul>
 </details></li>
 </ul>
 
@@ -447,7 +450,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-matplotlib">
-<h1>19. Introducción a Matplotlib<a class="headerlink" href="#introduccion-a-matplotlib" title="Permalink to this heading">#</a></h1>
+<h1>19. Introducción a Matplotlib<a class="headerlink" href="#introduccion-a-matplotlib" title="Link to this heading">#</a></h1>
 <p><strong>Referencias</strong></p>
 <ul class="simple">
 <li><p>https://matplotlib.org/stable/tutorials/introductory/pyplot.html</p></li>
@@ -503,7 +506,7 @@ document.write(`
   41.    47.25  54.    61.25  69.    77.25  86.    95.25 105.   115.25]
 </pre></div>
 </div>
-<img alt="_images/531afc10c9c1557432d5fbc3859753d412ab08cc86bfb525e1a8b0069a2fded6.png" src="_images/531afc10c9c1557432d5fbc3859753d412ab08cc86bfb525e1a8b0069a2fded6.png" />
+<img alt="_images/959b8d012b4e944ec2d570151d124d07c4625287e779d7f2d5f56de7635f1716.png" src="_images/959b8d012b4e944ec2d570151d124d07c4625287e779d7f2d5f56de7635f1716.png" />
 </div>
 </div>
 <p>Se crea un objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span> <span class="pre">x</span></code> a partir de la función <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> que serán  los valores del eje <code class="docutils literal notranslate"><span class="pre">x</span></code>. Los valores correspondientes en el eje <code class="docutils literal notranslate"><span class="pre">y</span></code> se almacenan en otro objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span> <span class="pre">y</span></code>. Estos valores se dibujan utilizando la función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> del submódulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> del paquete <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
@@ -523,12 +526,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dca67ea604619121fa876e74156118b5802c8d66c6b4d2a6c73abb8a3e934450.png" src="_images/dca67ea604619121fa876e74156118b5802c8d66c6b4d2a6c73abb8a3e934450.png" />
+<img alt="_images/4b4747a0c03bcc819cf4ee32a180c9d9e53001fc559934658958aeaa28749990.png" src="_images/4b4747a0c03bcc819cf4ee32a180c9d9e53001fc559934658958aeaa28749990.png" />
 </div>
 </div>
 <p>En  el código anterior “or” nos dice que se deben dibujar “dots” de color rojo.</p>
 <section id="dibujar-varias-parejas-de-datos">
-<h2>1. Dibujar varias parejas de datos<a class="headerlink" href="#dibujar-varias-parejas-de-datos" title="Permalink to this heading">#</a></h2>
+<h2>1. Dibujar varias parejas de datos<a class="headerlink" href="#dibujar-varias-parejas-de-datos" title="Link to this heading">#</a></h2>
 <p>Se pueden graficar varias funciones en el  mismo ploteo introduciendo varias parejas de datos.</p>
 <p>Veamos un ejemplo:</p>
 <div class="cell docutils container">
@@ -557,7 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca56b52dc7046edc3f53c4b6402d6f8d2fd4a2ca50add30c379c1a4268c6bee4.png" src="_images/ca56b52dc7046edc3f53c4b6402d6f8d2fd4a2ca50add30c379c1a4268c6bee4.png" />
+<img alt="_images/50435912f3c366cb2c7aad623da8da335ad23b6707d0754c0ad9ffd06256b8f5.png" src="_images/50435912f3c366cb2c7aad623da8da335ad23b6707d0754c0ad9ffd06256b8f5.png" />
 </div>
 </div>
 <p>Se pueden poner opciones de ploteo a cada pareja, por ejemplo (aunque no queda muy bien que digamos)</p>
@@ -570,12 +573,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9484e2d724c7ef22479c26ea178b8699c419fc568acc349eb7177b4d16b93f1.png" src="_images/b9484e2d724c7ef22479c26ea178b8699c419fc568acc349eb7177b4d16b93f1.png" />
+<img alt="_images/dace7bb3b2794ee94a4f6ff760a8d9643abfbb124b530b7e42c757db6b1a0593.png" src="_images/dace7bb3b2794ee94a4f6ff760a8d9643abfbb124b530b7e42c757db6b1a0593.png" />
 </div>
 </div>
 </section>
 <section id="la-funcion-subplot">
-<h2>2. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code><a class="headerlink" href="#la-funcion-subplot" title="Permalink to this heading">#</a></h2>
+<h2>2. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code><a class="headerlink" href="#la-funcion-subplot" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> permite trazar diferentes gráficos en la misma figura, pero como dibujos separados.</p>
 <p>En el siguiente script, se grafican el seno y el coseno.</p>
 <div class="cell docutils container">
@@ -602,7 +605,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a666d4fc598e1253e1f64cc02acc9146df65b2958a7e30d25ce20298b3d8f58b.png" src="_images/a666d4fc598e1253e1f64cc02acc9146df65b2958a7e30d25ce20298b3d8f58b.png" />
+<img alt="_images/ca4c0fa00e191788efdb2100f0ca5ae276b5d223825938b2727c6db7e3cb6e87.png" src="_images/ca4c0fa00e191788efdb2100f0ca5ae276b5d223825938b2727c6db7e3cb6e87.png" />
 </div>
 </div>
 <p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> de pyplot es utilizada para crear grillas de subplots en una figura de Matplotlib. Esta función acepta <em>tres</em> parámetros posicionales: <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, <code class="docutils literal notranslate"><span class="pre">ncols</span></code> e <code class="docutils literal notranslate"><span class="pre">index</span></code>, y opcionalmente otros parámetros para ajustar el tamaño, el espacio y los límites de los subplots. A continuación se describen los tres primeros parámetros de la función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>:</p>
@@ -652,7 +655,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1ec989616a1c75f4991a6156508d54e1d3ecfd3ad1ec1577ca45da6b2c43c64a.png" src="_images/1ec989616a1c75f4991a6156508d54e1d3ecfd3ad1ec1577ca45da6b2c43c64a.png" />
+<img alt="_images/1cf1e96938cc86f9cf1a28f3841936546c259cc609595421fdfc23b7aa122d39.png" src="_images/1cf1e96938cc86f9cf1a28f3841936546c259cc609595421fdfc23b7aa122d39.png" />
 </div>
 </div>
 <p>No quedó muy bien, pero se puede arrglar con un truco:</p>
@@ -679,13 +682,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a853e4671cd776aefc6d24bbb648ec953d6e8fe2ea9f0b4cf580101dfc1be4a2.png" src="_images/a853e4671cd776aefc6d24bbb648ec953d6e8fe2ea9f0b4cf580101dfc1be4a2.png" />
+<img alt="_images/ba207f60d47829bb294fcfdf99f99bfb3d292cb4cf8b2f74990e9a00cc121d66.png" src="_images/ba207f60d47829bb294fcfdf99f99bfb3d292cb4cf8b2f74990e9a00cc121d66.png" />
 </div>
 </div>
 <p>Aunque debe haber mejores formas de hacerlo.</p>
 </section>
 <section id="trabajando-con-texto-dentro-del-grafico">
-<h2>3. Trabajando con texto dentro del gráfico<a class="headerlink" href="#trabajando-con-texto-dentro-del-grafico" title="Permalink to this heading">#</a></h2>
+<h2>3. Trabajando con texto dentro del gráfico<a class="headerlink" href="#trabajando-con-texto-dentro-del-grafico" title="Link to this heading">#</a></h2>
 <p>Exiten funciones para añadir texto (etiquetas) a los ejes de la gráfica y a la gráfica en sí. Veamos algunos ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,13 +703,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_265110/2148584508.py:2: RuntimeWarning: divide by zero encountered in log10
   p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
-C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarning: invalid value encountered in multiply
+/tmp/ipykernel_265110/2148584508.py:2: RuntimeWarning: invalid value encountered in multiply
   p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
 </pre></div>
 </div>
-<img alt="_images/b0da17a9edb38801c721c24efce409e1d0c966bd981dd83d9e518917ee274ed5.png" src="_images/b0da17a9edb38801c721c24efce409e1d0c966bd981dd83d9e518917ee274ed5.png" />
+<img alt="_images/8d4768983f8319ee4b4717d252801242a26d0c44b493263707bbce0c28db8d84.png" src="_images/8d4768983f8319ee4b4717d252801242a26d0c44b493263707bbce0c28db8d84.png" />
 </div>
 </div>
 <p>En este ejemplo, se usó la función <code class="docutils literal notranslate"><span class="pre">text()</span></code> para añadir un texto arbitrario en la gráfica, cuya posición se debe dar en las unidades de la gráfica. Cuando se utilizan textos también es posible usar fórmulas con formato LaTeX. Veamos un ejemplo,:</p>
@@ -728,14 +731,14 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1d234f8ce777f5160860dab53f2ae605d9d5a1bb43d22494e73c770bfa7dac04.png" src="_images/1d234f8ce777f5160860dab53f2ae605d9d5a1bb43d22494e73c770bfa7dac04.png" />
+<img alt="_images/6a627c04213cefdd212b5e836deb28793b724ff37812af88e6f18fa563029adf.png" src="_images/6a627c04213cefdd212b5e836deb28793b724ff37812af88e6f18fa563029adf.png" />
 </div>
 </div>
 <p>Aquí hemos usado código LaTeX para escribir fórmulas matemáticas, para lo que siempre hay que escribir entre <code class="docutils literal notranslate"><span class="pre">r'$formula$'</span></code> y hemos usado un tamaño de letra mayor con el parámetro <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>. En la última línea hemos añadido una grilla con la función <code class="docutils literal notranslate"><span class="pre">grid()</span></code>.</p>
 <p><em>Nota.</em> LaTeX es un sistema de escritura orientado a contenidos matemáticos muy popular en matemática,  física teórica y ciencias de la computación.</p>
 </section>
 <section id="histogramas">
-<h2>4.  Histogramas<a class="headerlink" href="#histogramas" title="Permalink to this heading">#</a></h2>
+<h2>4.  Histogramas<a class="headerlink" href="#histogramas" title="Link to this heading">#</a></h2>
 <p>Cuando tenemos un conjunto de datos numéricos, por ejemplo como consecuencia de la medida de una cierta magnitud y queremos representarlos gráficamente para ver la distribución subyacente de los mismos se suelen usar los gráficos llamados <em>histogramas</em>.</p>
 <p>Los histogramas representan el número de veces que los valores del conjunto caen dentro de un intervalo dado, frente a los diferentes intervalos en los que queramos dividir el conjunto de valores.</p>
 <p>En Python podemos hacer histogramas muy fácilmente con la función <code class="docutils literal notranslate"><span class="pre">hist()</span></code> indicando como parámetro un array con los números del conjunto. Si no se indica nada más, se generará un histograma con 10 intervalos (llamados <em>bins</em>, en inglés) en los que se divide la diferencia entre el máximo y el mínimo valor del conjunto. Veamos un ejemplo:</p>
@@ -755,7 +758,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/11ac85dc3ba105f9a7d31969eba9736afd90b7506e0bb85743155a514b82336f.png" src="_images/11ac85dc3ba105f9a7d31969eba9736afd90b7506e0bb85743155a514b82336f.png" />
+<img alt="_images/7bf3465a138caa71059128c0ead311b8196c56d2aa22a1c692d3cc60511e6c89.png" src="_images/7bf3465a138caa71059128c0ead311b8196c56d2aa22a1c692d3cc60511e6c89.png" />
 </div>
 </div>
 <p>Si no se le proporciona ningún otro argumento a <code class="docutils literal notranslate"><span class="pre">randn()</span></code> produce floats alrededor de 0 y con una varianza = 1.</p>
@@ -768,7 +771,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3aa19477de1f26d9ebdc38ef023ff363feb2ef660aba005ff52e380c420630bb.png" src="_images/3aa19477de1f26d9ebdc38ef023ff363feb2ef660aba005ff52e380c420630bb.png" />
+<img alt="_images/bb5fdbab5c778f2dd2eb9686b9ad94bf1a7540097997e5fe31f2f4209cbbfea8.png" src="_images/bb5fdbab5c778f2dd2eb9686b9ad94bf1a7540097997e5fe31f2f4209cbbfea8.png" />
 </div>
 </div>
 <p>El la figura de abajo se muestra el resultado de superponer ambos histogramas y luego hacemos otro gráfico.</p>
@@ -786,8 +789,8 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/54bd9c919c718a841ca864a0d40215c300e7bbc3eb738b52b550d6315e75d303.png" src="_images/54bd9c919c718a841ca864a0d40215c300e7bbc3eb738b52b550d6315e75d303.png" />
-<img alt="_images/27cb13be3980920676dc3802f5938a186e97a5a7b920e628ef4453f9c213d8ee.png" src="_images/27cb13be3980920676dc3802f5938a186e97a5a7b920e628ef4453f9c213d8ee.png" />
+<img alt="_images/9ef9ff80cf0af153bf34252dc6c3745b07c9f655a5cd9a7904925004bf045b62.png" src="_images/9ef9ff80cf0af153bf34252dc6c3745b07c9f655a5cd9a7904925004bf045b62.png" />
+<img alt="_images/e37f4aacdf1eb14cdfcc75a65c242be906ff8c0b1c28058e07c4754ae10ce938.png" src="_images/e37f4aacdf1eb14cdfcc75a65c242be906ff8c0b1c28058e07c4754ae10ce938.png" />
 </div>
 </div>
 <p>La función <code class="docutils literal notranslate"><span class="pre">hist()</span></code> devuelve una tupla con tres elementos, que son un array con el número elementos en cada intervalo, un array con el punto del eje X donde empieza cada intervalo y una lista con referencias a cada una de las barras para modificar sus propiedades (consulten el manual de matplotlib para encontrar más información y mayores posibilidades de uso).</p>
@@ -799,15 +802,15 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 3057.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 3064.0
 </pre></div>
 </div>
-<img alt="_images/5445ea9977ca6e295ac1d6bd2d2c866e079a0d1c983a457b54e211e2fba69470.png" src="_images/5445ea9977ca6e295ac1d6bd2d2c866e079a0d1c983a457b54e211e2fba69470.png" />
+<img alt="_images/e25d7d3516dd32a57a1d90b4a5cc0e9b129e01993c78e501ee4b26fdf5ab05a2.png" src="_images/e25d7d3516dd32a57a1d90b4a5cc0e9b129e01993c78e501ee4b26fdf5ab05a2.png" />
 </div>
 </div>
 </section>
 <section id="graficos-de-barras">
-<h2>5. Gráficos de barras<a class="headerlink" href="#graficos-de-barras" title="Permalink to this heading">#</a></h2>
+<h2>5. Gráficos de barras<a class="headerlink" href="#graficos-de-barras" title="Link to this heading">#</a></h2>
 <p>El submódulo pyplot proporciona la función <code class="docutils literal notranslate"><span class="pre">bar</span></code>() para generar gráficos de barras. El siguiente ejemplo produce el gráfico de barras de dos àrreglos, <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,12 +829,12 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/49651282e1f5c260cebea5f4997801e502bdd4577299b6beb2ebb0931dcf0084.png" src="_images/49651282e1f5c260cebea5f4997801e502bdd4577299b6beb2ebb0931dcf0084.png" />
+<img alt="_images/d2a6f3260cfe11854022b12a3fb75011f9fc9a9aa0798f7706ce11f79ec5b1b8.png" src="_images/d2a6f3260cfe11854022b12a3fb75011f9fc9a9aa0798f7706ce11f79ec5b1b8.png" />
 </div>
 </div>
 </section>
 <section id="lectura-y-escritura-de-archivos-con-numpy">
-<h2>7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#lectura-y-escritura-de-archivos-con-numpy" title="Permalink to this heading">#</a></h2>
+<h2>7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#lectura-y-escritura-de-archivos-con-numpy" title="Link to this heading">#</a></h2>
 <p>Los objetos <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (los array de NumPy) se pueden guardar y cargar. Las funciones de entrada y salida disponibles son</p>
 <ul class="simple">
 <li><p>las funciones <code class="docutils literal notranslate"><span class="pre">load()</span></code> y <code class="docutils literal notranslate"><span class="pre">save()</span></code> manejan archivos binarios numPy (con extensión npy),</p></li>
@@ -892,7 +895,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 <p>Las funciones <code class="docutils literal notranslate"><span class="pre">savetxt()</span></code> y <code class="docutils literal notranslate"><span class="pre">loadtxt()</span></code> aceptan parámetros opcionales adicionales como la cabecera, el pie de página y el delimitador.</p>
 </section>
 <section id="representando-datos-experimentales">
-<h2>8. Representando datos experimentales<a class="headerlink" href="#representando-datos-experimentales" title="Permalink to this heading">#</a></h2>
+<h2>8. Representando datos experimentales<a class="headerlink" href="#representando-datos-experimentales" title="Link to this heading">#</a></h2>
 <p>Cuando estamos en el laboratorio (u observatorio) haciendo un experimento y midiendo algún parámetro físico solemos obtener un conjunto de números que normalmente guardaremos en un fichero de texto en cualquier ordenador. Representar datos leídos de un fichero en lugar de generarlos directamente como hemos hecho hasta ahora, es tan sencillo como leer los datos y pasarlos a arrays de numpy. Una vez hecho, se representan gráficamente como ya hemos visto. Supongamos que tenemos los resultados de un experimento en una tabla de dos columnas almacenada en el fichero “datos_2col.txt”.</p>
 <p>Primero creemos el archivo (no tenemos uno disponible)</p>
 <div class="cell docutils container">
@@ -929,106 +932,106 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 17.  22.]
- [ -7.  32.]
- [  6.  16.]
- [ 15.   3.]
- [ -2.  10.]
- [-15.   8.]
- [  6.  39.]
- [-12.  33.]
- [ 18.  22.]
- [ -8.  19.]
- [ -5.  23.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 12.  14.]
+ [  6.  28.]
+ [  8.  35.]
+ [ -5.  37.]
+ [ 16.  16.]
+ [ 17.  32.]
+ [ 17.  27.]
+ [ -5.  16.]
+ [-15.   4.]
+ [ -7.  38.]
  [ -9.  18.]
- [ 16.  33.]
- [  4.  24.]
- [-13.  30.]
- [ 17.  19.]
- [-10.  31.]
- [ -2.  11.]
- [-15.  38.]
- [  7.   4.]
- [  7.  20.]
- [-19.  27.]
- [ 13.  32.]
- [ -2.   8.]
- [-11.  14.]
- [-12.   0.]
- [ -9.  12.]
- [  8.  24.]
- [  0.   8.]
- [ 18.  11.]
- [ -8.  26.]
- [-12.  25.]
- [ -9.  28.]
- [  9.   6.]
- [-12.  22.]
- [ -7.  21.]
- [  8.   0.]
- [ 19.   6.]
- [ -8.   8.]
- [  1.  18.]
- [-20.  39.]
- [ -4.  10.]
- [-13.  31.]
- [-20.  29.]
- [-19.  16.]
- [ 14.  20.]
- [ -1.  24.]
- [-10.  31.]
- [-14.   6.]
- [ -4.  10.]
- [-18.  21.]
- [ -7.  30.]
- [  2.  35.]
- [ -6.  22.]
- [ 18.  12.]
- [  1.   3.]
- [-14.   9.]
- [  2.  15.]
- [ -2.  31.]
- [  0.  23.]
- [ -8.  11.]
- [  2.   6.]
- [ 19.  14.]
- [  6.   3.]
- [  2.  36.]
- [  6.  35.]
- [-10.  37.]
- [-18.  29.]
- [  0.  14.]
- [ 13.   1.]
+ [ -3.  19.]
+ [ 18.  19.]
+ [ -8.   9.]
+ [-19.  22.]
+ [ -7.  13.]
+ [ -4.  37.]
+ [  3.   3.]
+ [-19.  12.]
+ [ -7.  38.]
+ [-19.   7.]
+ [ 18.  35.]
+ [ 14.  34.]
+ [ 17.  25.]
+ [  8.   3.]
+ [ -3.  25.]
+ [ -9.  27.]
+ [ -5.  27.]
+ [-18.  36.]
+ [ -6.  20.]
+ [ 19.  21.]
  [  8.  12.]
- [ 11.  19.]
- [ 16.  21.]
- [-10.   2.]
- [ -7.  26.]
- [ -6.  34.]
- [  8.   7.]
- [ -3.   8.]
- [ -5.   1.]
+ [-12.  33.]
+ [ 13.  36.]
+ [-12.   5.]
+ [-13.  21.]
+ [  7.  11.]
+ [ 18.  16.]
+ [ 12.   8.]
+ [ 16.  23.]
+ [  7.   7.]
+ [-14.  31.]
  [  0.  14.]
- [  3.  30.]
- [  4.  34.]
- [ 17.   2.]
- [-14.  34.]
- [ 16.  39.]
+ [-10.  38.]
+ [  5.   3.]
+ [  6.  31.]
+ [  0.   4.]
+ [-10.  20.]
+ [ 14.  14.]
+ [  0.  36.]
+ [-18.  25.]
+ [  2.   3.]
+ [-11.   2.]
  [-14.  32.]
- [ -7.  12.]
- [ 17.  29.]
- [ 10.  22.]
- [ 16.  35.]
- [  3.  20.]
+ [ 14.  38.]
+ [ -7.   1.]
+ [ 16.   2.]
+ [-19.  12.]
+ [ -6.  12.]
+ [ -6.  38.]
+ [ -1.  34.]
+ [  7.  20.]
+ [-20.  32.]
+ [  3.  29.]
+ [-19.   7.]
+ [ 17.  25.]
+ [ -1.   7.]
+ [  2.   2.]
+ [-12.   4.]
+ [ 10.  33.]
+ [-15.   4.]
+ [ -2.  17.]
+ [-10.  12.]
+ [ 19.  14.]
+ [  9.  26.]
+ [ -6.  34.]
+ [ 11.  25.]
  [ -4.  39.]
- [-11.  38.]
- [-13.  29.]
- [-12.  27.]
- [ -2.  25.]
- [-13.  28.]
- [ -3.  23.]
- [ -8.   0.]
- [ 18.   7.]]
+ [ -1.  13.]
+ [  0.  10.]
+ [-10.  34.]
+ [  9.  19.]
+ [-18.  17.]
+ [-13.  21.]
+ [  0.   5.]
+ [  1.   3.]
+ [  0.  16.]
+ [ 11.  18.]
+ [-16.  35.]
+ [  6.  20.]
+ [ -7.  39.]
+ [-14.   9.]
+ [  1.  33.]
+ [ 14.  27.]
+ [  6.   8.]
+ [ -5.  15.]
+ [-20.  39.]
+ [ 17.  16.]
+ [  8.  25.]
+ [ 19.  14.]]
 </pre></div>
 </div>
 </div>
@@ -1042,15 +1045,15 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[22. 32. 16.  3. 10.  8. 39. 33. 22. 19. 23. 18. 33. 24. 30. 19. 31. 11.
- 38.  4. 20. 27. 32.  8. 14.  0. 12. 24.  8. 11. 26. 25. 28.  6. 22. 21.
-  0.  6.  8. 18. 39. 10. 31. 29. 16. 20. 24. 31.  6. 10. 21. 30. 35. 22.
- 12.  3.  9. 15. 31. 23. 11.  6. 14.  3. 36. 35. 37. 29. 14.  1. 12. 19.
- 21.  2. 26. 34.  7.  8.  1. 14. 30. 34.  2. 34. 39. 32. 12. 29. 22. 35.
- 20. 39. 38. 29. 27. 25. 28. 23.  0.  7.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14. 28. 35. 37. 16. 32. 27. 16.  4. 38. 18. 19. 19.  9. 22. 13. 37.  3.
+ 12. 38.  7. 35. 34. 25.  3. 25. 27. 27. 36. 20. 21. 12. 33. 36.  5. 21.
+ 11. 16.  8. 23.  7. 31. 14. 38.  3. 31.  4. 20. 14. 36. 25.  3.  2. 32.
+ 38.  1.  2. 12. 12. 38. 34. 20. 32. 29.  7. 25.  7.  2.  4. 33.  4. 17.
+ 12. 14. 26. 34. 25. 39. 13. 10. 34. 19. 17. 21.  5.  3. 16. 18. 35. 20.
+ 39.  9. 33. 27.  8. 15. 39. 16. 25. 14.]
 </pre></div>
 </div>
-<img alt="_images/0b9ada18957f6f207c69440f0dfa1a4d7680badb1fb3a32385d7f42463a000bc.png" src="_images/0b9ada18957f6f207c69440f0dfa1a4d7680badb1fb3a32385d7f42463a000bc.png" />
+<img alt="_images/7094381d3d98f4c05ee83db1cf22fc0777a2fb14ff0ca2ec2d3589321b46e761.png" src="_images/7094381d3d98f4c05ee83db1cf22fc0777a2fb14ff0ca2ec2d3589321b46e761.png" />
 </div>
 </div>
 <p>En el ploteo anterior se grafica la 2º columna con los pares <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">x[i])</span></code>donde <code class="docutils literal notranslate"><span class="pre">x</span></code>es el arreglo.</p>
@@ -1082,7 +1085,7 @@ C:\Users\tirab\AppData\Local\Temp\ipykernel_14124\2148584508.py:2: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/87880d429171326624cca1d58413430dd9d5318135844205738afcd474ff5a92.png" src="_images/87880d429171326624cca1d58413430dd9d5318135844205738afcd474ff5a92.png" />
+<img alt="_images/7d3229a8a376817efca1aab7327b1a7c83dd3faa49be48f35e45aaf6edfad4c6.png" src="_images/7d3229a8a376817efca1aab7327b1a7c83dd3faa49be48f35e45aaf6edfad4c6.png" />
 </div>
 </div>
 <p>En este caso hemos usado además algunas funciones para crear líneas y bandas horizontales y verticales.</p>

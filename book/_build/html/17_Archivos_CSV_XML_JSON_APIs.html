@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>17. Interacción con archivos CSV, XML y JSON &#8212; Algoritmos y Programación</title>
   
@@ -28,33 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '17_Archivos_CSV_XML_JSON_APIs';</script>
@@ -223,7 +225,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -232,7 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</ul>
 </details></li>
 </ul>
 
@@ -459,10 +461,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interaccion-con-archivos-csv-xml-y-json">
-<h1>17. Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Permalink to this heading">#</a></h1>
+<h1>17. Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Link to this heading">#</a></h1>
 <p>Es común que cuando interactuamos y obtenemos datos de páginas o sitios de Internet estos datos se encuentren en formatos estructurados. Veremos a continuación, brevemente, como podemos obtener datos de archivos CSV, XML y JSON.</p>
 <section id="archivos-csv">
-<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this heading">#</a></h2>
+<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Link to this heading">#</a></h2>
 <p>La forma estructurada más sencilla de información es un archivo CSV,  que es similar a una hoja de una planilla de cálculo.</p>
 <p>Un archivo CSV (Comma Separated Values) es un tipo de archivo de texto que se utiliza comúnmente para almacenar datos tabulares. Los datos en un archivo CSV se organizan en filas y columnas, donde cada fila corresponde a un registro y cada columna corresponde a un campo en ese registro. Los campos en un archivo CSV se separan por un carácter delimitador, como una coma, un punto y coma o una tabulación.</p>
 <p>Cada registro en un archivo CSV se almacena en una nueva línea, y los valores de los campos pueden estar rodeados de comillas dobles si contienen el carácter delimitador. Por ejemplo, el siguiente es un ejemplo de un archivo CSV que contiene información sobre personas:</p>
@@ -523,7 +525,7 @@ Pedro,40,Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
@@ -538,7 +540,7 @@ Pedro,40,Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
@@ -554,8 +556,8 @@ Pedro,40,Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre  edad ciudad
-PÃ©rez, Juan  30  Quito
-MarÃ­a  25  MedellÃ­n
+Pérez, Juan  30  Quito
+María  25  Medellín
 Pedro  40  Lima
 </pre></div>
 </div>
@@ -585,13 +587,13 @@ Pedro  40  Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;]
-[[&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+[[&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
 </div>
 <section id="lectura-de-archivos-csv-de-la-red">
-<h3>Lectura de archivos CSV de la red<a class="headerlink" href="#lectura-de-archivos-csv-de-la-red" title="Permalink to this heading">#</a></h3>
+<h3>Lectura de archivos CSV de la red<a class="headerlink" href="#lectura-de-archivos-csv-de-la-red" title="Link to this heading">#</a></h3>
 <p>Podemos obtener un archivo CSV  de la red usando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code>.  Si <code class="docutils literal notranslate"><span class="pre">response</span></code> es el objeto que devuelve <code class="docutils literal notranslate"><span class="pre">requests.get(url)</span></code>y  queremos leer el CSV línea por línea, podemos utilizar la instrucción <code class="docutils literal notranslate"><span class="pre">response.text.splitlines()</span></code> que convierte el archivo CSV en una lista de líneas. Luego a esa lista le aplicamos <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code> y podemos leer línea por línea,  donde cada línea será una lista de valores.</p>
 <p>Esquemáticamente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -647,7 +649,7 @@ Pedro  40  Lima
 </section>
 </section>
 <section id="lectura-y-escritura-de-archivos-json">
-<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Permalink to this heading">#</a></h2>
+<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Link to this heading">#</a></h2>
 <p>JSON, cuyo nombre corresponde a las siglas <em>JavaScript Object Notation</em> o <em>Notación de Objetos de JavaScript</em>, es un formato ligero de intercambio de datos, que resulta sencillo de leer y escribir para los programadores y simple de interpretar y generar para las máquinas.</p>
 <p>JSON es un formato de texto completamente independiente de lenguaje y puede ser interpretado y creado por los siguientes lenguajes:</p>
 <ul class="simple">
@@ -697,7 +699,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 805, &#39;max&#39;: 1774, &#39;prom&#39;: 1289.5}, {&#39;id&#39;: 1, &#39;min&#39;: 496, &#39;max&#39;: 1142, &#39;prom&#39;: 819.0}, {&#39;id&#39;: 2, &#39;min&#39;: 649, &#39;max&#39;: 1046, &#39;prom&#39;: 847.5}, {&#39;id&#39;: 3, &#39;min&#39;: 597, &#39;max&#39;: 1984, &#39;prom&#39;: 1290.5}, {&#39;id&#39;: 4, &#39;min&#39;: 223, &#39;max&#39;: 1508, &#39;prom&#39;: 865.5}, {&#39;id&#39;: 5, &#39;min&#39;: 91, &#39;max&#39;: 1406, &#39;prom&#39;: 748.5}, {&#39;id&#39;: 6, &#39;min&#39;: 214, &#39;max&#39;: 1385, &#39;prom&#39;: 799.5}, {&#39;id&#39;: 7, &#39;min&#39;: 341, &#39;max&#39;: 1650, &#39;prom&#39;: 995.5}, {&#39;id&#39;: 8, &#39;min&#39;: 527, &#39;max&#39;: 1910, &#39;prom&#39;: 1218.5}, {&#39;id&#39;: 9, &#39;min&#39;: 1, &#39;max&#39;: 1072, &#39;prom&#39;: 536.5}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 432, &#39;max&#39;: 1191, &#39;prom&#39;: 811.5}, {&#39;id&#39;: 1, &#39;min&#39;: 813, &#39;max&#39;: 1412, &#39;prom&#39;: 1112.5}, {&#39;id&#39;: 2, &#39;min&#39;: 397, &#39;max&#39;: 1187, &#39;prom&#39;: 792.0}, {&#39;id&#39;: 3, &#39;min&#39;: 37, &#39;max&#39;: 1780, &#39;prom&#39;: 908.5}, {&#39;id&#39;: 4, &#39;min&#39;: 408, &#39;max&#39;: 1998, &#39;prom&#39;: 1203.0}, {&#39;id&#39;: 5, &#39;min&#39;: 935, &#39;max&#39;: 1931, &#39;prom&#39;: 1433.0}, {&#39;id&#39;: 6, &#39;min&#39;: 631, &#39;max&#39;: 1393, &#39;prom&#39;: 1012.0}, {&#39;id&#39;: 7, &#39;min&#39;: 994, &#39;max&#39;: 1842, &#39;prom&#39;: 1418.0}, {&#39;id&#39;: 8, &#39;min&#39;: 589, &#39;max&#39;: 1469, &#39;prom&#39;: 1029.0}, {&#39;id&#39;: 9, &#39;min&#39;: 30, &#39;max&#39;: 1257, &#39;prom&#39;: 643.5}]
 </pre></div>
 </div>
 </div>
@@ -717,7 +719,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 805, &quot;max&quot;: 1774, &quot;prom&quot;: 1289.5}, {&quot;id&quot;: 1, &quot;min&quot;: 496, &quot;max&quot;: 1142, &quot;prom&quot;: 819.0}, {&quot;id&quot;: 2, &quot;min&quot;: 649, &quot;max&quot;: 1046, &quot;prom&quot;: 847.5}, {&quot;id&quot;: 3, &quot;min&quot;: 597, &quot;max&quot;: 1984, &quot;prom&quot;: 1290.5}, {&quot;id&quot;: 4, &quot;min&quot;: 223, &quot;max&quot;: 1508, &quot;prom&quot;: 865.5}, {&quot;id&quot;: 5, &quot;min&quot;: 91, &quot;max&quot;: 1406, &quot;prom&quot;: 748.5}, {&quot;id&quot;: 6, &quot;min&quot;: 214, &quot;max&quot;: 1385, &quot;prom&quot;: 799.5}, {&quot;id&quot;: 7, &quot;min&quot;: 341, &quot;max&quot;: 1650, &quot;prom&quot;: 995.5}, {&quot;id&quot;: 8, &quot;min&quot;: 527, &quot;max&quot;: 1910, &quot;prom&quot;: 1218.5}, {&quot;id&quot;: 9, &quot;min&quot;: 1, &quot;max&quot;: 1072, &quot;prom&quot;: 536.5}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 432, &quot;max&quot;: 1191, &quot;prom&quot;: 811.5}, {&quot;id&quot;: 1, &quot;min&quot;: 813, &quot;max&quot;: 1412, &quot;prom&quot;: 1112.5}, {&quot;id&quot;: 2, &quot;min&quot;: 397, &quot;max&quot;: 1187, &quot;prom&quot;: 792.0}, {&quot;id&quot;: 3, &quot;min&quot;: 37, &quot;max&quot;: 1780, &quot;prom&quot;: 908.5}, {&quot;id&quot;: 4, &quot;min&quot;: 408, &quot;max&quot;: 1998, &quot;prom&quot;: 1203.0}, {&quot;id&quot;: 5, &quot;min&quot;: 935, &quot;max&quot;: 1931, &quot;prom&quot;: 1433.0}, {&quot;id&quot;: 6, &quot;min&quot;: 631, &quot;max&quot;: 1393, &quot;prom&quot;: 1012.0}, {&quot;id&quot;: 7, &quot;min&quot;: 994, &quot;max&quot;: 1842, &quot;prom&quot;: 1418.0}, {&quot;id&quot;: 8, &quot;min&quot;: 589, &quot;max&quot;: 1469, &quot;prom&quot;: 1029.0}, {&quot;id&quot;: 9, &quot;min&quot;: 30, &quot;max&quot;: 1257, &quot;prom&quot;: 643.5}]
 </pre></div>
 </div>
 </div>
@@ -747,19 +749,19 @@ Pedro  40  Lima
 Tipo del primer elemento del archivo: &lt;class &#39;dict&#39;&gt;
 
 Imprimimos todo el archivo:
-[{&#39;id&#39;: 0, &#39;min&#39;: 805, &#39;max&#39;: 1774, &#39;prom&#39;: 1289.5}, {&#39;id&#39;: 1, &#39;min&#39;: 496, &#39;max&#39;: 1142, &#39;prom&#39;: 819.0}, {&#39;id&#39;: 2, &#39;min&#39;: 649, &#39;max&#39;: 1046, &#39;prom&#39;: 847.5}, {&#39;id&#39;: 3, &#39;min&#39;: 597, &#39;max&#39;: 1984, &#39;prom&#39;: 1290.5}, {&#39;id&#39;: 4, &#39;min&#39;: 223, &#39;max&#39;: 1508, &#39;prom&#39;: 865.5}, {&#39;id&#39;: 5, &#39;min&#39;: 91, &#39;max&#39;: 1406, &#39;prom&#39;: 748.5}, {&#39;id&#39;: 6, &#39;min&#39;: 214, &#39;max&#39;: 1385, &#39;prom&#39;: 799.5}, {&#39;id&#39;: 7, &#39;min&#39;: 341, &#39;max&#39;: 1650, &#39;prom&#39;: 995.5}, {&#39;id&#39;: 8, &#39;min&#39;: 527, &#39;max&#39;: 1910, &#39;prom&#39;: 1218.5}, {&#39;id&#39;: 9, &#39;min&#39;: 1, &#39;max&#39;: 1072, &#39;prom&#39;: 536.5}]
+[{&#39;id&#39;: 0, &#39;min&#39;: 432, &#39;max&#39;: 1191, &#39;prom&#39;: 811.5}, {&#39;id&#39;: 1, &#39;min&#39;: 813, &#39;max&#39;: 1412, &#39;prom&#39;: 1112.5}, {&#39;id&#39;: 2, &#39;min&#39;: 397, &#39;max&#39;: 1187, &#39;prom&#39;: 792.0}, {&#39;id&#39;: 3, &#39;min&#39;: 37, &#39;max&#39;: 1780, &#39;prom&#39;: 908.5}, {&#39;id&#39;: 4, &#39;min&#39;: 408, &#39;max&#39;: 1998, &#39;prom&#39;: 1203.0}, {&#39;id&#39;: 5, &#39;min&#39;: 935, &#39;max&#39;: 1931, &#39;prom&#39;: 1433.0}, {&#39;id&#39;: 6, &#39;min&#39;: 631, &#39;max&#39;: 1393, &#39;prom&#39;: 1012.0}, {&#39;id&#39;: 7, &#39;min&#39;: 994, &#39;max&#39;: 1842, &#39;prom&#39;: 1418.0}, {&#39;id&#39;: 8, &#39;min&#39;: 589, &#39;max&#39;: 1469, &#39;prom&#39;: 1029.0}, {&#39;id&#39;: 9, &#39;min&#39;: 30, &#39;max&#39;: 1257, &#39;prom&#39;: 643.5}]
 
 Imprimimos alguna información del archivo:
-1289.5
-819.0
-847.5
-1290.5
-865.5
-748.5
-799.5
-995.5
-1218.5
-536.5
+811.5
+1112.5
+792.0
+908.5
+1203.0
+1433.0
+1012.0
+1418.0
+1029.0
+643.5
 </pre></div>
 </div>
 </div>
@@ -835,10 +837,10 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 802, &#39;y&#39;: 6, &#39;0&#39;: [959, 715]}, {&#39;x&#39;: 192, &#39;y&#39;: 8, &#39;1&#39;: [126, 420]}, {&#39;x&#39;: 492, &#39;y&#39;: 618, &#39;2&#39;: [613, 813]}, {&#39;x&#39;: 73, &#39;y&#39;: 868, &#39;3&#39;: [996, 57]}, {&#39;x&#39;: 579, &#39;y&#39;: 928, &#39;4&#39;: [186, 818]}, {&#39;x&#39;: 523, &#39;y&#39;: 575, &#39;5&#39;: [475, 942]}, {&#39;x&#39;: 847, &#39;y&#39;: 668, &#39;6&#39;: [358, 95]}, {&#39;x&#39;: 769, &#39;y&#39;: 381, &#39;7&#39;: [84, 39]}, {&#39;x&#39;: 929, &#39;y&#39;: 781, &#39;8&#39;: [264, 117]}, {&#39;x&#39;: 521, &#39;y&#39;: 170, &#39;9&#39;: [395, 328]}, {&#39;x&#39;: 616, &#39;y&#39;: 267, &#39;10&#39;: [86, 393]}, {&#39;x&#39;: 345, &#39;y&#39;: 375, &#39;11&#39;: [608, 439]}, {&#39;x&#39;: 652, &#39;y&#39;: 295, &#39;12&#39;: [163, 46]}, {&#39;x&#39;: 219, &#39;y&#39;: 628, &#39;13&#39;: [947, 119]}, {&#39;x&#39;: 749, &#39;y&#39;: 252, &#39;14&#39;: [979, 754]}, {&#39;x&#39;: 419, &#39;y&#39;: 957, &#39;15&#39;: [412, 267]}, {&#39;x&#39;: 210, &#39;y&#39;: 965, &#39;16&#39;: [306, 806]}, {&#39;x&#39;: 462, &#39;y&#39;: 953, &#39;17&#39;: [620, 888]}, {&#39;x&#39;: 427, &#39;y&#39;: 697, &#39;18&#39;: [18, 515]}, {&#39;x&#39;: 130, &#39;y&#39;: 374, &#39;19&#39;: [896, 431]}, {&#39;x&#39;: 706, &#39;y&#39;: 694, &#39;20&#39;: [107, 674]}, {&#39;x&#39;: 68, &#39;y&#39;: 72, &#39;21&#39;: [290, 505]}, {&#39;x&#39;: 368, &#39;y&#39;: 4, &#39;22&#39;: [907, 782]}, {&#39;x&#39;: 791, &#39;y&#39;: 290, &#39;23&#39;: [274, 633]}, {&#39;x&#39;: 650, &#39;y&#39;: 909, &#39;24&#39;: [228, 427]}, {&#39;x&#39;: 469, &#39;y&#39;: 483, &#39;25&#39;: [391, 183]}, {&#39;x&#39;: 330, &#39;y&#39;: 251, &#39;26&#39;: [774, 891]}, {&#39;x&#39;: 309, &#39;y&#39;: 782, &#39;27&#39;: [270, 758]}, {&#39;x&#39;: 434, &#39;y&#39;: 629, &#39;28&#39;: [928, 854]}, {&#39;x&#39;: 830, &#39;y&#39;: 189, &#39;29&#39;: [18, 810]}, {&#39;x&#39;: 814, &#39;y&#39;: 15, &#39;30&#39;: [546, 879]}, {&#39;x&#39;: 488, &#39;y&#39;: 404, &#39;31&#39;: [716, 788]}, {&#39;x&#39;: 748, &#39;y&#39;: 840, &#39;32&#39;: [522, 933]}, {&#39;x&#39;: 616, &#39;y&#39;: 254, &#39;33&#39;: [47, 774]}, {&#39;x&#39;: 345, &#39;y&#39;: 339, &#39;34&#39;: [585, 422]}, {&#39;x&#39;: 132, &#39;y&#39;: 576, &#39;35&#39;: [31, 752]}, {&#39;x&#39;: 153, &#39;y&#39;: 74, &#39;36&#39;: [893, 322]}, {&#39;x&#39;: 566, &#39;y&#39;: 868, &#39;37&#39;: [417, 155]}, {&#39;x&#39;: 97, &#39;y&#39;: 855, &#39;38&#39;: [544, 899]}, {&#39;x&#39;: 112, &#39;y&#39;: 980, &#39;39&#39;: [887, 133]}, {&#39;x&#39;: 278, &#39;y&#39;: 5, &#39;40&#39;: [237, 236]}, {&#39;x&#39;: 180, &#39;y&#39;: 847, &#39;41&#39;: [500, 196]}, {&#39;x&#39;: 536, &#39;y&#39;: 444, &#39;42&#39;: [156, 779]}, {&#39;x&#39;: 684, &#39;y&#39;: 486, &#39;43&#39;: [163, 973]}, {&#39;x&#39;: 527, &#39;y&#39;: 287, &#39;44&#39;: [944, 27]}, {&#39;x&#39;: 47, &#39;y&#39;: 17, &#39;45&#39;: [422, 43]}, {&#39;x&#39;: 961, &#39;y&#39;: 473, &#39;46&#39;: [49, 832]}, {&#39;x&#39;: 678, &#39;y&#39;: 190, &#39;47&#39;: [919, 552]}, {&#39;x&#39;: 192, &#39;y&#39;: 244, &#39;48&#39;: [80, 968]}, {&#39;x&#39;: 173, &#39;y&#39;: 323, &#39;49&#39;: [597, 684]}, {&#39;x&#39;: 963, &#39;y&#39;: 732, &#39;50&#39;: [549, 505]}, {&#39;x&#39;: 126, &#39;y&#39;: 692, &#39;51&#39;: [524, 586]}, {&#39;x&#39;: 685, &#39;y&#39;: 243, &#39;52&#39;: [500, 140]}, {&#39;x&#39;: 383, &#39;y&#39;: 248, &#39;53&#39;: [971, 530]}, {&#39;x&#39;: 876, &#39;y&#39;: 618, &#39;54&#39;: [138, 774]}, {&#39;x&#39;: 483, &#39;y&#39;: 584, &#39;55&#39;: [115, 921]}, {&#39;x&#39;: 324, &#39;y&#39;: 455, &#39;56&#39;: [236, 282]}, {&#39;x&#39;: 672, &#39;y&#39;: 183, &#39;57&#39;: [658, 541]}, {&#39;x&#39;: 814, &#39;y&#39;: 145, &#39;58&#39;: [703, 133]}, {&#39;x&#39;: 580, &#39;y&#39;: 329, &#39;59&#39;: [412, 932]}, {&#39;x&#39;: 874, &#39;y&#39;: 750, &#39;60&#39;: [759, 58]}, {&#39;x&#39;: 454, &#39;y&#39;: 253, &#39;61&#39;: [933, 63]}, {&#39;x&#39;: 786, &#39;y&#39;: 766, &#39;62&#39;: [585, 104]}, {&#39;x&#39;: 230, &#39;y&#39;: 645, &#39;63&#39;: [201, 206]}, {&#39;x&#39;: 726, &#39;y&#39;: 491, &#39;64&#39;: [760, 31]}, {&#39;x&#39;: 215, &#39;y&#39;: 448, &#39;65&#39;: [566, 425]}, {&#39;x&#39;: 875, &#39;y&#39;: 897, &#39;66&#39;: [175, 836]}, {&#39;x&#39;: 544, &#39;y&#39;: 47, &#39;67&#39;: [921, 626]}, {&#39;x&#39;: 736, &#39;y&#39;: 618, &#39;68&#39;: [372, 592]}, {&#39;x&#39;: 507, &#39;y&#39;: 854, &#39;69&#39;: [303, 682]}, {&#39;x&#39;: 160, &#39;y&#39;: 313, &#39;70&#39;: [630, 724]}, {&#39;x&#39;: 362, &#39;y&#39;: 564, &#39;71&#39;: [335, 846]}, {&#39;x&#39;: 987, &#39;y&#39;: 803, &#39;72&#39;: [633, 346]}, {&#39;x&#39;: 540, &#39;y&#39;: 954, &#39;73&#39;: [181, 24]}, {&#39;x&#39;: 162, &#39;y&#39;: 694, &#39;74&#39;: [992, 482]}, {&#39;x&#39;: 637, &#39;y&#39;: 821, &#39;75&#39;: [667, 800]}, {&#39;x&#39;: 297, &#39;y&#39;: 917, &#39;76&#39;: [982, 869]}, {&#39;x&#39;: 932, &#39;y&#39;: 746, &#39;77&#39;: [936, 597]}, {&#39;x&#39;: 568, &#39;y&#39;: 313, &#39;78&#39;: [825, 975]}, {&#39;x&#39;: 792, &#39;y&#39;: 78, &#39;79&#39;: [367, 981]}, {&#39;x&#39;: 255, &#39;y&#39;: 475, &#39;80&#39;: [944, 985]}, {&#39;x&#39;: 73, &#39;y&#39;: 281, &#39;81&#39;: [985, 26]}, {&#39;x&#39;: 169, &#39;y&#39;: 268, &#39;82&#39;: [969, 660]}, {&#39;x&#39;: 769, &#39;y&#39;: 459, &#39;83&#39;: [823, 110]}, {&#39;x&#39;: 186, &#39;y&#39;: 615, &#39;84&#39;: [934, 546]}, {&#39;x&#39;: 813, &#39;y&#39;: 401, &#39;85&#39;: [109, 283]}, {&#39;x&#39;: 700, &#39;y&#39;: 525, &#39;86&#39;: [560, 387]}, {&#39;x&#39;: 347, &#39;y&#39;: 497, &#39;87&#39;: [375, 252]}, {&#39;x&#39;: 373, &#39;y&#39;: 819, &#39;88&#39;: [858, 216]}, {&#39;x&#39;: 519, &#39;y&#39;: 423, &#39;89&#39;: [551, 712]}, {&#39;x&#39;: 190, &#39;y&#39;: 146, &#39;90&#39;: [629, 224]}, {&#39;x&#39;: 691, &#39;y&#39;: 961, &#39;91&#39;: [94, 123]}, {&#39;x&#39;: 123, &#39;y&#39;: 116, &#39;92&#39;: [125, 449]}, {&#39;x&#39;: 37, &#39;y&#39;: 890, &#39;93&#39;: [166, 595]}, {&#39;x&#39;: 696, &#39;y&#39;: 425, &#39;94&#39;: [857, 955]}, {&#39;x&#39;: 180, &#39;y&#39;: 214, &#39;95&#39;: [764, 712]}, {&#39;x&#39;: 500, &#39;y&#39;: 341, &#39;96&#39;: [133, 608]}, {&#39;x&#39;: 481, &#39;y&#39;: 984, &#39;97&#39;: [815, 242]}, {&#39;x&#39;: 190, &#39;y&#39;: 904, &#39;98&#39;: [52, 597]}, {&#39;x&#39;: 825, &#39;y&#39;: 287, &#39;99&#39;: [786, 880]}]
-&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 73, &#39;y&#39;: 868, &#39;3&#39;: [996, 57]}
-[996, 57]
-[996, 57]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 855, &#39;y&#39;: 704, &#39;0&#39;: [953, 872]}, {&#39;x&#39;: 73, &#39;y&#39;: 112, &#39;1&#39;: [718, 766]}, {&#39;x&#39;: 379, &#39;y&#39;: 797, &#39;2&#39;: [445, 227]}, {&#39;x&#39;: 801, &#39;y&#39;: 19, &#39;3&#39;: [694, 724]}, {&#39;x&#39;: 958, &#39;y&#39;: 74, &#39;4&#39;: [280, 981]}, {&#39;x&#39;: 506, &#39;y&#39;: 30, &#39;5&#39;: [12, 26]}, {&#39;x&#39;: 275, &#39;y&#39;: 775, &#39;6&#39;: [792, 70]}, {&#39;x&#39;: 96, &#39;y&#39;: 708, &#39;7&#39;: [530, 679]}, {&#39;x&#39;: 891, &#39;y&#39;: 254, &#39;8&#39;: [382, 964]}, {&#39;x&#39;: 390, &#39;y&#39;: 402, &#39;9&#39;: [818, 931]}, {&#39;x&#39;: 380, &#39;y&#39;: 605, &#39;10&#39;: [683, 472]}, {&#39;x&#39;: 534, &#39;y&#39;: 615, &#39;11&#39;: [871, 197]}, {&#39;x&#39;: 566, &#39;y&#39;: 916, &#39;12&#39;: [406, 30]}, {&#39;x&#39;: 53, &#39;y&#39;: 4, &#39;13&#39;: [102, 888]}, {&#39;x&#39;: 158, &#39;y&#39;: 265, &#39;14&#39;: [129, 743]}, {&#39;x&#39;: 200, &#39;y&#39;: 84, &#39;15&#39;: [291, 481]}, {&#39;x&#39;: 417, &#39;y&#39;: 670, &#39;16&#39;: [266, 198]}, {&#39;x&#39;: 778, &#39;y&#39;: 375, &#39;17&#39;: [151, 180]}, {&#39;x&#39;: 227, &#39;y&#39;: 224, &#39;18&#39;: [568, 599]}, {&#39;x&#39;: 261, &#39;y&#39;: 322, &#39;19&#39;: [697, 241]}, {&#39;x&#39;: 131, &#39;y&#39;: 194, &#39;20&#39;: [19, 791]}, {&#39;x&#39;: 918, &#39;y&#39;: 593, &#39;21&#39;: [426, 34]}, {&#39;x&#39;: 379, &#39;y&#39;: 73, &#39;22&#39;: [389, 460]}, {&#39;x&#39;: 889, &#39;y&#39;: 318, &#39;23&#39;: [440, 576]}, {&#39;x&#39;: 190, &#39;y&#39;: 316, &#39;24&#39;: [67, 193]}, {&#39;x&#39;: 229, &#39;y&#39;: 497, &#39;25&#39;: [343, 827]}, {&#39;x&#39;: 455, &#39;y&#39;: 32, &#39;26&#39;: [796, 422]}, {&#39;x&#39;: 956, &#39;y&#39;: 143, &#39;27&#39;: [491, 641]}, {&#39;x&#39;: 555, &#39;y&#39;: 293, &#39;28&#39;: [128, 988]}, {&#39;x&#39;: 422, &#39;y&#39;: 507, &#39;29&#39;: [685, 663]}, {&#39;x&#39;: 656, &#39;y&#39;: 803, &#39;30&#39;: [36, 280]}, {&#39;x&#39;: 524, &#39;y&#39;: 622, &#39;31&#39;: [901, 308]}, {&#39;x&#39;: 288, &#39;y&#39;: 535, &#39;32&#39;: [619, 522]}, {&#39;x&#39;: 747, &#39;y&#39;: 65, &#39;33&#39;: [584, 873]}, {&#39;x&#39;: 921, &#39;y&#39;: 590, &#39;34&#39;: [582, 686]}, {&#39;x&#39;: 18, &#39;y&#39;: 516, &#39;35&#39;: [801, 156]}, {&#39;x&#39;: 494, &#39;y&#39;: 622, &#39;36&#39;: [532, 941]}, {&#39;x&#39;: 439, &#39;y&#39;: 717, &#39;37&#39;: [413, 989]}, {&#39;x&#39;: 778, &#39;y&#39;: 278, &#39;38&#39;: [112, 469]}, {&#39;x&#39;: 411, &#39;y&#39;: 705, &#39;39&#39;: [566, 690]}, {&#39;x&#39;: 278, &#39;y&#39;: 416, &#39;40&#39;: [413, 135]}, {&#39;x&#39;: 905, &#39;y&#39;: 538, &#39;41&#39;: [123, 838]}, {&#39;x&#39;: 802, &#39;y&#39;: 302, &#39;42&#39;: [672, 963]}, {&#39;x&#39;: 297, &#39;y&#39;: 124, &#39;43&#39;: [326, 573]}, {&#39;x&#39;: 701, &#39;y&#39;: 799, &#39;44&#39;: [141, 42]}, {&#39;x&#39;: 913, &#39;y&#39;: 293, &#39;45&#39;: [523, 784]}, {&#39;x&#39;: 70, &#39;y&#39;: 440, &#39;46&#39;: [464, 37]}, {&#39;x&#39;: 311, &#39;y&#39;: 54, &#39;47&#39;: [225, 956]}, {&#39;x&#39;: 451, &#39;y&#39;: 493, &#39;48&#39;: [191, 785]}, {&#39;x&#39;: 628, &#39;y&#39;: 180, &#39;49&#39;: [237, 192]}, {&#39;x&#39;: 395, &#39;y&#39;: 357, &#39;50&#39;: [785, 257]}, {&#39;x&#39;: 285, &#39;y&#39;: 649, &#39;51&#39;: [501, 540]}, {&#39;x&#39;: 625, &#39;y&#39;: 1000, &#39;52&#39;: [344, 124]}, {&#39;x&#39;: 837, &#39;y&#39;: 694, &#39;53&#39;: [161, 774]}, {&#39;x&#39;: 178, &#39;y&#39;: 134, &#39;54&#39;: [304, 460]}, {&#39;x&#39;: 459, &#39;y&#39;: 985, &#39;55&#39;: [365, 178]}, {&#39;x&#39;: 930, &#39;y&#39;: 748, &#39;56&#39;: [120, 488]}, {&#39;x&#39;: 20, &#39;y&#39;: 68, &#39;57&#39;: [594, 59]}, {&#39;x&#39;: 304, &#39;y&#39;: 271, &#39;58&#39;: [557, 664]}, {&#39;x&#39;: 413, &#39;y&#39;: 994, &#39;59&#39;: [73, 496]}, {&#39;x&#39;: 421, &#39;y&#39;: 82, &#39;60&#39;: [206, 530]}, {&#39;x&#39;: 758, &#39;y&#39;: 684, &#39;61&#39;: [449, 304]}, {&#39;x&#39;: 511, &#39;y&#39;: 606, &#39;62&#39;: [486, 196]}, {&#39;x&#39;: 977, &#39;y&#39;: 233, &#39;63&#39;: [339, 830]}, {&#39;x&#39;: 34, &#39;y&#39;: 400, &#39;64&#39;: [335, 720]}, {&#39;x&#39;: 927, &#39;y&#39;: 794, &#39;65&#39;: [822, 390]}, {&#39;x&#39;: 664, &#39;y&#39;: 793, &#39;66&#39;: [365, 949]}, {&#39;x&#39;: 962, &#39;y&#39;: 356, &#39;67&#39;: [563, 941]}, {&#39;x&#39;: 588, &#39;y&#39;: 617, &#39;68&#39;: [91, 161]}, {&#39;x&#39;: 275, &#39;y&#39;: 306, &#39;69&#39;: [893, 603]}, {&#39;x&#39;: 765, &#39;y&#39;: 218, &#39;70&#39;: [57, 988]}, {&#39;x&#39;: 140, &#39;y&#39;: 709, &#39;71&#39;: [500, 851]}, {&#39;x&#39;: 584, &#39;y&#39;: 517, &#39;72&#39;: [747, 403]}, {&#39;x&#39;: 750, &#39;y&#39;: 489, &#39;73&#39;: [753, 937]}, {&#39;x&#39;: 867, &#39;y&#39;: 358, &#39;74&#39;: [255, 538]}, {&#39;x&#39;: 544, &#39;y&#39;: 109, &#39;75&#39;: [157, 532]}, {&#39;x&#39;: 150, &#39;y&#39;: 826, &#39;76&#39;: [511, 563]}, {&#39;x&#39;: 172, &#39;y&#39;: 233, &#39;77&#39;: [447, 310]}, {&#39;x&#39;: 584, &#39;y&#39;: 868, &#39;78&#39;: [978, 177]}, {&#39;x&#39;: 305, &#39;y&#39;: 299, &#39;79&#39;: [586, 918]}, {&#39;x&#39;: 219, &#39;y&#39;: 422, &#39;80&#39;: [775, 282]}, {&#39;x&#39;: 523, &#39;y&#39;: 970, &#39;81&#39;: [235, 594]}, {&#39;x&#39;: 856, &#39;y&#39;: 938, &#39;82&#39;: [256, 534]}, {&#39;x&#39;: 28, &#39;y&#39;: 971, &#39;83&#39;: [570, 926]}, {&#39;x&#39;: 397, &#39;y&#39;: 801, &#39;84&#39;: [162, 7]}, {&#39;x&#39;: 962, &#39;y&#39;: 525, &#39;85&#39;: [407, 400]}, {&#39;x&#39;: 526, &#39;y&#39;: 848, &#39;86&#39;: [962, 396]}, {&#39;x&#39;: 45, &#39;y&#39;: 133, &#39;87&#39;: [69, 955]}, {&#39;x&#39;: 519, &#39;y&#39;: 904, &#39;88&#39;: [814, 8]}, {&#39;x&#39;: 541, &#39;y&#39;: 497, &#39;89&#39;: [412, 196]}, {&#39;x&#39;: 715, &#39;y&#39;: 247, &#39;90&#39;: [408, 60]}, {&#39;x&#39;: 965, &#39;y&#39;: 890, &#39;91&#39;: [683, 985]}, {&#39;x&#39;: 629, &#39;y&#39;: 586, &#39;92&#39;: [420, 622]}, {&#39;x&#39;: 273, &#39;y&#39;: 873, &#39;93&#39;: [672, 627]}, {&#39;x&#39;: 383, &#39;y&#39;: 106, &#39;94&#39;: [173, 611]}, {&#39;x&#39;: 923, &#39;y&#39;: 827, &#39;95&#39;: [836, 677]}, {&#39;x&#39;: 988, &#39;y&#39;: 743, &#39;96&#39;: [689, 833]}, {&#39;x&#39;: 303, &#39;y&#39;: 959, &#39;97&#39;: [39, 3]}, {&#39;x&#39;: 230, &#39;y&#39;: 461, &#39;98&#39;: [71, 713]}, {&#39;x&#39;: 840, &#39;y&#39;: 396, &#39;99&#39;: [689, 385]}]
+&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 801, &#39;y&#39;: 19, &#39;3&#39;: [694, 724]}
+[694, 724]
+[694, 724]
 </pre></div>
 </div>
 </div>
@@ -867,7 +869,7 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 <p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los líneamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
 </section>
 <section id="lectura-de-archivos-json-en-internet">
-<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Permalink to this heading">#</a></h2>
+<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Link to this heading">#</a></h2>
 <p>Para leer un archivo JSON desde internet utilizando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code> en Python, se puede hacer lo siguiente:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import requests
 </pre></div>
@@ -1039,7 +1041,7 @@ Visual Studio 7: A Comprehensive Guide
 </div>
 </section>
 <section id="lectura-y-escritura-de-archivos-xml">
-<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Permalink to this heading">#</a></h2>
+<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Link to this heading">#</a></h2>
 <p>Un archivo XML (Extensible Markup Language) es un tipo de archivo de texto que se utiliza para almacenar y transportar datos de manera estructurada. Un archivo XML está compuesto por una serie de etiquetas que definen elementos y atributos que describen la estructura y los datos contenidos en el archivo.</p>
 <p>Cada elemento en un archivo XML está compuesto por una etiqueta de apertura y una etiqueta de cierre, y puede contener elementos anidados y atributos. Por ejemplo, el siguiente es un ejemplo simple de un archivo XML que contiene información sobre una persona:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;persona&gt;
@@ -1057,7 +1059,7 @@ Visual Studio 7: A Comprehensive Guide
 </div>
 <p>Obviamente hay otras formas de hacerlo.</p>
 <section id="elementos-y-atributos">
-<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Permalink to this heading">#</a></h3>
+<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Link to this heading">#</a></h3>
 <p>En XML, los <em>elementos</em> son las partes principales de un documento XML y representan los distintos elementos de información que se están describiendo en el documento. Los elementos tienen un nombre que los identifica y pueden contener <em>otros elementos</em>, <em>atributos</em> o <em>texto</em>.</p>
 <p>Por ejemplo, en el siguiente fragmento de código XML, <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;ele&gt;</span></code> son elementos:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;trkpt lat=&quot;-30.9424310&quot; lon=&quot;-64.2770290&quot;&gt;
@@ -1070,7 +1072,7 @@ Visual Studio 7: A Comprehensive Guide
 <p>Los elementos y atributos en XML se utilizan para estructurar y describir los datos de forma clara y organizada. Los elementos proporcionan la estructura general del documento XML y los atributos permiten proporcionar información adicional sobre los elementos.</p>
 </section>
 <section id="xml-dom">
-<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Permalink to this heading">#</a></h3>
+<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Link to this heading">#</a></h3>
 <p>La biblioteca <code class="docutils literal notranslate"><span class="pre">xml.dom</span></code> de Python es una biblioteca estándar que proporciona una forma de analizar y manipular documentos XML mediante el modelo de objetos del documento (DOM, por sus siglas en inglés). El modelo DOM representa el documento XML como un árbol de nodos, donde cada nodo representa un elemento, atributo, texto u otro tipo de contenido en el documento.</p>
 <p>Para obtener elementos y atributos de un documento XML utilizando la biblioteca xml.dom, puedes seguir estos pasos:</p>
 <p>Importar la biblioteca y abrir el archivo XML:</p>
@@ -1104,7 +1106,7 @@ contenido = elementos[0].firstChild.nodeValue
 <p>Es importante tener en cuenta que el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> devuelve una lista de elementos, incluso si solo hay un elemento con el nombre de etiqueta especificado en el documento. Por lo tanto, en el ejemplo anterior se utiliza <code class="docutils literal notranslate"><span class="pre">elementos[0]</span></code> para acceder al primer elemento de la lista. Si se espera que solo haya un elemento con el nombre de etiqueta especificado en el documento, se puede utilizar <code class="docutils literal notranslate"><span class="pre">getElementsByTagName(nombre_del_elemento)[0]</span></code> para obtener directamente ese elemento.</p>
 </section>
 <section id="ejemplo">
-<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this heading">#</a></h3>
+<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
 <p>Veamos ahora un archivo XML de internet,  con una estructura no demasiado complicada pero con más registros. El archivo que vamos a leer es <code class="docutils literal notranslate"><span class="pre">books.xml</span></code> y su estrucura es:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;catalog&gt;
@@ -1183,8 +1185,8 @@ contenido = elementos[0].firstChild.nodeValue
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tipo  de dom: &lt;class &#39;xml.dom.minidom.Document&#39;&gt;
-El  primer elemento book: &lt;DOM Element: book at 0x1cafe5820e0&gt;
-El  segundo elemento book: &lt;DOM Element: book at 0x1cafe61d000&gt;
+El  primer elemento book: &lt;DOM Element: book at 0x76b86a32beb0&gt;
+El  segundo elemento book: &lt;DOM Element: book at 0x76b86a3cedd0&gt;
 Atributo &#39;id&#39; del primer elemento &#39;book&#39;: bk101
 Atributo &#39;id&#39; del segundo elemento &#39;book&#39;: bk102
 &lt;class &#39;str&#39;&gt; : 
@@ -1231,7 +1233,7 @@ El primer autor del primer libro es: &lt;class &#39;str&#39;&gt; : Gambardella, 
 </section>
 </section>
 <section id="uso-de-apis">
-<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Permalink to this heading">#</a></h2>
+<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Link to this heading">#</a></h2>
 <p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen e intercambien datos entre sí. Es como un puente que conecta aplicaciones y les permite compartir información y funcionalidades.</p>
 <p>Por ejemplo, (ver [2]), si se tiene una app para móviles acerca de recetas y se hace una búsqueda de una determinada receta, se puede utilizar una API para que esta aplicación se comunique con el sitio web de recetas y pida las recetas que cumplen con los criterios de búsqueda. La API entonces se encarga de recibir la solicitud, buscar las recetas apropiadas y regresar los resultados a la aplicación. Una API es una forma de conectar diferentes aplicaciones y hacer que trabajen juntas de manera más eficiente y efectiva.</p>
 <p>Las APIS <em>no</em> son lenguaje dependientes,  es decir cualquier lenguaje moderno de programación (Python, Java, C++, etc) puede invocar y utilizar una API bien definida.</p>
@@ -1253,7 +1255,7 @@ El primer autor del primer libro es: &lt;class &#39;str&#39;&gt; : Gambardella, 
 <li><p>[5] https://www.computer.org/publications/tech-news/trends/what-are-apis/</p></li>
 </ul>
 <section id="ejemplo-la-api-del-noaa">
-<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Permalink to this heading">#</a></h3>
+<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Link to this heading">#</a></h3>
 <p>La Oficina Nacional de Administración Oceánica y Atmosférica (National Oceanic and Atmospheric Administration, NOAA) es una agencia científica del Departamento de Comercio de los Estados Unidos cuyas actividades se centran en monitorear las condiciones de los océanos y la atmósfera.</p>
 <p>El NOAA ofrece distintos <em>datasets</em> (conjuntos de datos estructurados) sin limitaciones. Los datos puedes ser bajados directamente del sitio web https://www.noaa.gov/ o, alternativamente, accedidos por API.</p>
 <p>En esta sección accederemos a los datasets utilizando la API. Para utilizar la API se debe solicitar  un <em>token</em> al NOAA (ver <em>Referencias</em>, más abajo). El token es una cadena de caracteres que funciona como id y password al mismo tiempo.</p>
@@ -1327,7 +1329,7 @@ gov.noaa.ncdc:C00313 : Precipitation Hourly
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;metadata&#39;: {&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 10, &#39;limit&#39;: 25}}, &#39;results&#39;: [{&#39;uid&#39;: &#39;gov.noaa.ncdc:C00861&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Daily Summaries&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GHCND&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00946&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-01&#39;, &#39;name&#39;: &#39;Global Summary of the Month&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOM&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00947&#39;, &#39;mindate&#39;: &#39;1763-01-01&#39;, &#39;maxdate&#39;: &#39;2024-01-01&#39;, &#39;name&#39;: &#39;Global Summary of the Year&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00345&#39;, &#39;mindate&#39;: &#39;1991-06-05&#39;, &#39;maxdate&#39;: &#39;2024-09-18&#39;, &#39;name&#39;: &#39;Weather Radar (Level II)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD2&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00708&#39;, &#39;mindate&#39;: &#39;1994-05-20&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Weather Radar (Level III)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD3&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00821&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-01-01&#39;, &#39;name&#39;: &#39;Normals Annual/Seasonal&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_ANN&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00823&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-31&#39;, &#39;name&#39;: &#39;Normals Daily&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_DLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00822&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-01&#39;, &#39;name&#39;: &#39;Normals Monthly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_MLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00505&#39;, &#39;mindate&#39;: &#39;1970-05-12&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation 15 Minute&#39;, &#39;datacoverage&#39;: 0.25, &#39;id&#39;: &#39;PRECIP_15&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00313&#39;, &#39;mindate&#39;: &#39;1900-01-01&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation Hourly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;PRECIP_HLY&#39;}]}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;metadata&#39;: {&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 10, &#39;limit&#39;: 25}}, &#39;results&#39;: [{&#39;uid&#39;: &#39;gov.noaa.ncdc:C00861&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-18&#39;, &#39;name&#39;: &#39;Daily Summaries&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GHCND&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00946&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-01&#39;, &#39;name&#39;: &#39;Global Summary of the Month&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOM&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00947&#39;, &#39;mindate&#39;: &#39;1763-01-01&#39;, &#39;maxdate&#39;: &#39;2024-01-01&#39;, &#39;name&#39;: &#39;Global Summary of the Year&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00345&#39;, &#39;mindate&#39;: &#39;1991-06-05&#39;, &#39;maxdate&#39;: &#39;2024-09-19&#39;, &#39;name&#39;: &#39;Weather Radar (Level II)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD2&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00708&#39;, &#39;mindate&#39;: &#39;1994-05-20&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Weather Radar (Level III)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD3&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00821&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-01-01&#39;, &#39;name&#39;: &#39;Normals Annual/Seasonal&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_ANN&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00823&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-31&#39;, &#39;name&#39;: &#39;Normals Daily&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_DLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00822&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-01&#39;, &#39;name&#39;: &#39;Normals Monthly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_MLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00505&#39;, &#39;mindate&#39;: &#39;1970-05-12&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation 15 Minute&#39;, &#39;datacoverage&#39;: 0.25, &#39;id&#39;: &#39;PRECIP_15&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00313&#39;, &#39;mindate&#39;: &#39;1900-01-01&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation Hourly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;PRECIP_HLY&#39;}]}
 </pre></div>
 </div>
 </div>
@@ -1426,7 +1428,7 @@ results
 </ul>
 </section>
 <section id="otros-ejemplos-de-apis">
-<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Permalink to this heading">#</a></h3>
+<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Link to this heading">#</a></h3>
 <p>Algunas APIs interesantes para practicar son:</p>
 <ul class="simple">
 <li><p><strong>PokéAPI</strong>: Proporciona datos sobre Pokémon como movimientos, habilidades, tipos, etc. Permite crear fácilmente un Pokédex. [2][3]</p></li>
@@ -1440,7 +1442,7 @@ results
 </section>
 </section>
 <section id="apis-de-servicios-populares">
-<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Permalink to this heading">#</a></h2>
+<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>API de Google Maps</strong>: Agrega funcionalidades de mapas a aplicaciones web como mostrar ubicaciones, calcular rutas, obtener direcciones. [4]</p></li>
 <li><p><strong>API de Facebook</strong>: Integra funcionalidades sociales como compartir contenido, autenticación de usuarios, conexión a la red de Facebook. [4]</p></li>
