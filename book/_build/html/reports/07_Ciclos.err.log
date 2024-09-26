@@ -1,17 +1,17 @@
 Traceback (most recent call last):
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/nbclient/client.py", line 1314, in execute
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+  File "C:\Users\tirab\AppData\Roaming\Python\Python310\site-packages\jupyter_core\utils\__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
-  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
     return future.result()
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/nbclient/client.py", line 709, in async_execute
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/alejandrotiraboschi/.local/lib/python3.10/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "C:\Users\tirab\AppData\Local\Programs\Python\Python310\lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -24,14 +24,14 @@ print('El total es:', total)
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mAssertionError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[38], line 4[0m
-[1;32m      2[0m total [38;5;241m=[39m [38;5;241m0.0[39m
-[1;32m      3[0m [38;5;28;01mfor[39;00m n [38;5;129;01min[39;00m numeros:
-[0;32m----> 4[0m     [38;5;28;01massert[39;00m n [38;5;241m>[39m [38;5;241m0.0[39m, [38;5;124m'[39m[38;5;124mLos datos solo deben contener valores positivos ([39m[38;5;124m'[39m [38;5;241m+[39m [38;5;28mstr[39m(n) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m <= 0).[39m[38;5;124m'[39m
-[1;32m      5[0m     total [38;5;241m+[39m[38;5;241m=[39m n
-[1;32m      6[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mEl total es:[39m[38;5;124m'[39m, total)
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mAssertionError[0m                            Traceback (most recent call last)
+Cell [1;32mIn[38], line 4[0m
+[0;32m      2[0m total [38;5;241m=[39m [38;5;241m0.0[39m
+[0;32m      3[0m [38;5;28;01mfor[39;00m n [38;5;129;01min[39;00m numeros:
+[1;32m----> 4[0m     [38;5;28;01massert[39;00m n [38;5;241m>[39m [38;5;241m0.0[39m, [38;5;124m'[39m[38;5;124mLos datos solo deben contener valores positivos ([39m[38;5;124m'[39m [38;5;241m+[39m [38;5;28mstr[39m(n) [38;5;241m+[39m [38;5;124m'[39m[38;5;124m <= 0).[39m[38;5;124m'[39m
+[0;32m      5[0m     total [38;5;241m+[39m[38;5;241m=[39m n
+[0;32m      6[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mEl total es:[39m[38;5;124m'[39m, total)
 
-[0;31mAssertionError[0m: Los datos solo deben contener valores positivos (-0.001 <= 0).
+[1;31mAssertionError[0m: Los datos solo deben contener valores positivos (-0.001 <= 0).
 

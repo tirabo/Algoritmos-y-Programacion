@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>18. Introducción a NumPy &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '18_NumPy';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -466,7 +464,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-numpy">
-<h1>18. Introducción a NumPy<a class="headerlink" href="#introduccion-a-numpy" title="Link to this heading">#</a></h1>
+<h1>18. Introducción a NumPy<a class="headerlink" href="#introduccion-a-numpy" title="Permalink to this heading">#</a></h1>
 <p><strong>Referencias:</strong></p>
 <ul class="simple">
 <li><p>https://www.freecodecamp.org/espanol/news/la-guia-definitiva-del-paquete-numpy-para-computacion-cientifica-en-python/</p></li>
@@ -476,7 +474,7 @@ document.write(`
 <p><em>Esencialmente</em> NumPy es una biblioteca donde la estructura más destacada es la de <em>arreglo</em> o <em>array</em> en inglés. NumPy también permite a los desarrolladores o usuarios de Python realizar en forma rápida una amplia variedad de cálculos numéricos en arreglos considerados “inmensos”.</p>
 <p>Es de mucho uso en las aplicaciones numéricas y  en ciencia de datos.</p>
 <section id="que-es-numpy">
-<h2>1. ¿Qué es NumPy?<a class="headerlink" href="#que-es-numpy" title="Link to this heading">#</a></h2>
+<h2>1. ¿Qué es NumPy?<a class="headerlink" href="#que-es-numpy" title="Permalink to this heading">#</a></h2>
 <p>NumPy es el paquete fundamental para la computación científica en Python. Es una biblioteca de Python que proporciona matrices multidimensionales, varios objetos derivados (como matrices y matrices enmascaradas), y un surtido de rutinas para realizar operaciones rápidas con matrices, incluyendo operaciones matemáticas, lógicas, de manipulación de formas, de ordenación, de selección, de E/S, de transformadas discretas de Fourier, de álgebra lineal básica, de operaciones estadísticas básicas, de simulación aleatoria y mucho más.</p>
 <p><strong>Principales características</strong></p>
 <ol class="arabic simple">
@@ -491,7 +489,7 @@ NumPy ofrece funciones matemáticas completas, generadores de números aleatorio
 </ol>
 </section>
 <section id="instalacion-de-numpy">
-<h2>2. Instalación de NumPy<a class="headerlink" href="#instalacion-de-numpy" title="Link to this heading">#</a></h2>
+<h2>2. Instalación de NumPy<a class="headerlink" href="#instalacion-de-numpy" title="Permalink to this heading">#</a></h2>
 <p>En Colab no es necesario hacer ninguna instalación para utilizar NumPy, solo hay que importarlo y usarlo.</p>
 <p>En  el caso de una instalación de Python en una PC, se debe instalar haciendo</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
@@ -508,7 +506,7 @@ NumPy ofrece funciones matemáticas completas, generadores de números aleatorio
 <p>La tradición es renombrar <code class="docutils literal notranslate"><span class="pre">numpy</span></code> como <code class="docutils literal notranslate"><span class="pre">np</span></code>, pero se podría haber elegido otro nombre.</p>
 </section>
 <section id="arreglos-de-numpy-introduccion">
-<h2>3. Arreglos de NumPy: introducción<a class="headerlink" href="#arreglos-de-numpy-introduccion" title="Link to this heading">#</a></h2>
+<h2>3. Arreglos de NumPy: introducción<a class="headerlink" href="#arreglos-de-numpy-introduccion" title="Permalink to this heading">#</a></h2>
 <p>En esta sección aprenderemos algunas características de los arreglos de NumPy.</p>
 <p><strong>¿Qué son los Arreglos de NumPy?</strong></p>
 <p>Los arreglos NumPy son la forma principal de almacenar datos utilizando la biblioteca NumPy. Son similares a las listas normales en Python, pero tienen la ventaja de ser más rápidos y tener más métodos integrados.</p>
@@ -658,7 +656,7 @@ Sorpresa:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
-&lt;class &#39;numpy.int64&#39;&gt;
+&lt;class &#39;numpy.int32&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -766,7 +764,7 @@ Sorpresa:
 <p>La inserción de un <code class="docutils literal notranslate"><span class="pre">float</span></code> en un arreglo de <code class="docutils literal notranslate"><span class="pre">int</span></code> crea un arreglo de <code class="docutils literal notranslate"><span class="pre">float</span></code>. La inserción de un <code class="docutils literal notranslate"><span class="pre">int</span></code> en un arreglo de <code class="docutils literal notranslate"><span class="pre">float</span></code> transforma el <code class="docutils literal notranslate"><span class="pre">int</span></code> en <code class="docutils literal notranslate"><span class="pre">float</span></code> y lo inserta.</p>
 </section>
 <section id="indexacion-y-asignacion-en-numpy">
-<h2>4. Indexación y asignación en NumPy<a class="headerlink" href="#indexacion-y-asignacion-en-numpy" title="Link to this heading">#</a></h2>
+<h2>4. Indexación y asignación en NumPy<a class="headerlink" href="#indexacion-y-asignacion-en-numpy" title="Permalink to this heading">#</a></h2>
 <p>En esta sección, exploraremos la indexación y la asignación en arreglos NumPy.</p>
 <p>Primero creamos un arreglo para ejemplificar las operaciones</p>
 <div class="cell docutils container">
@@ -1017,7 +1015,7 @@ Sorpresa:
 <p>Cuando hacemos <code class="docutils literal notranslate"><span class="pre">mat[:,</span> <span class="pre">1:2]</span></code>, estás seleccionando un “rebanada” del arreglo <code class="docutils literal notranslate"><span class="pre">mat</span></code> que incluye todas las filas y la segunda columna. Aunque estás seleccionando la misma columna que en el caso anterior, la diferencia es que la notación <code class="docutils literal notranslate"><span class="pre">1:</span></code>2 devuelve un subarreglo bidimensional,  en este caso 3 filas y 1 columna.</p>
 </section>
 <section id="referenciacion-de-arreglos-en-numpy">
-<h2>5. Referenciación de arreglos en NumPy<a class="headerlink" href="#referenciacion-de-arreglos-en-numpy" title="Link to this heading">#</a></h2>
+<h2>5. Referenciación de arreglos en NumPy<a class="headerlink" href="#referenciacion-de-arreglos-en-numpy" title="Permalink to this heading">#</a></h2>
 <p>NumPy hace uso de un concepto llamado <em>referencia de arreglos</em> (array referencing) que es una fuente común de confusiones para las personas que son nuevas en la biblioteca.</p>
 <p>Para entender la referencia de arreglos, primero veamos un ejemplo:</p>
 <div class="cell docutils container">
@@ -1102,7 +1100,7 @@ second_new_array: [7 8]
 <p>La referencia de arreglos también se aplica a arreglos bidimensionales en NumPy, así que hay que asegurarse de utilizar el método <code class="docutils literal notranslate"><span class="pre">copy()</span></code> si se desea evitar modificar inadvertidamente un arreglo original después de guardar una porción de él en un nuevo nombre de variable.</p>
 </section>
 <section id="operaciones-aritmeticas-con-arreglos-de-numpy">
-<h2>6. Operaciones aritméticas con arreglos de NumPy<a class="headerlink" href="#operaciones-aritmeticas-con-arreglos-de-numpy" title="Link to this heading">#</a></h2>
+<h2>6. Operaciones aritméticas con arreglos de NumPy<a class="headerlink" href="#operaciones-aritmeticas-con-arreglos-de-numpy" title="Permalink to this heading">#</a></h2>
 <p>NumPy nos permite realizar operaciones aritméticas con arreglos. Puedes realizarlas usando el arreglo y un sólo número, o puedes realizarlas entre dos arreglos NumPy.</p>
 <p>Exploramos cada una de las principales operaciones matemáticas a continuación.</p>
 <p>Utilicemos algunos arreglos para hacer nuestro ejemplos.</p>
@@ -1360,7 +1358,7 @@ Al sumar un sólo número a un arreglo de NumPy, ese número se suma a cada elem
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 2, 2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 1, 2, 2], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1406,7 +1404,7 @@ Al sumar un sólo número a un arreglo de NumPy, ese número se suma a cada elem
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_264994/2236928128.py:1: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_7160\2236928128.py:1: RuntimeWarning: divide by zero encountered in true_divide
   arr_e = arr_b / arr_d
 </pre></div>
 </div>
@@ -1581,7 +1579,7 @@ $<span class="math notranslate nohighlight">\(
 <p>Veremos luego  diferentes formas de iterar en arreglos NumPy, pero el ejemplo anterior nos muestra que las formas válidas para listas o cadenas también se pueden utilizar.</p>
 </section>
 <section id="metodos-incorporados">
-<h2>7. Métodos incorporados<a class="headerlink" href="#metodos-incorporados" title="Link to this heading">#</a></h2>
+<h2>7. Métodos incorporados<a class="headerlink" href="#metodos-incorporados" title="Permalink to this heading">#</a></h2>
 <p>Los arreglos de NumPy vienen con un número de métodos incorporados útiles. Analizaremos a continuación algunos de estos métodos con ejemplos.</p>
 <p><strong>Obtener un rango de números utilizando Numpy</strong></p>
 <p>NumPy tiene un método útil llamado <code class="docutils literal notranslate"><span class="pre">arange</span></code> que toma dos números y devuelve un arreglo de números enteros que son mayores o iguales al primer número y menores que el segundo número. Es muy parecido al método de Python <code class="docutils literal notranslate"><span class="pre">range</span></code>, pero <code class="docutils literal notranslate"><span class="pre">arange</span></code> devuelve un objeto <code class="docutils literal notranslate"><span class="pre">array</span></code> de NumPy</p>
@@ -1834,8 +1832,8 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.25636114, 0.0022575 , 0.18340769, 0.3762838 , 0.50242668,
-       0.5565786 , 0.75056804, 0.86074226, 0.36815825, 0.97331554])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.15012035, 0.69421928, 0.15381212, 0.32489462, 0.78131986,
+       0.53920508, 0.5750403 , 0.10596862, 0.38562858, 0.21505518])
 </pre></div>
 </div>
 </div>
@@ -1849,10 +1847,10 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.21516935, 1.41402733, 4.12851637],
-       [4.30222801, 0.82406599, 4.61785145],
-       [0.39573433, 4.10522602, 9.4370446 ],
-       [6.88319178, 4.3524734 , 2.11122573]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.45507485, 4.40006783, 4.25673124],
+       [0.80276419, 8.27751208, 5.44231631],
+       [7.33969579, 8.25483631, 5.13392265],
+       [6.505062  , 3.83178688, 8.30557205]])
 </pre></div>
 </div>
 </div>
@@ -1866,12 +1864,12 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.70419232,  0.10624449, -1.04663651, -0.47440119, -1.4277711 ,
-        1.13116859,  0.12164424, -0.00459041,  0.82682988,  0.49784662,
-       -1.33709237,  0.11414304, -0.11606585, -1.28863287, -1.61188844,
-        1.07113309, -0.61303967,  0.17717651, -1.89738789,  1.55959721,
-       -0.71221546, -0.23778715, -1.30089233,  1.02763726,  1.03621214,
-       -0.79319352, -0.11041843, -1.35377885,  0.45438796,  0.45681607])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.07713859,  1.72884442,  2.67666603,  1.73468834,  0.05685617,
+       -0.21245007,  0.35586374, -1.03291762,  0.50526333,  1.52365409,
+        0.26166688, -0.99854387,  0.20445927, -1.27631321, -0.33334526,
+        1.30257296, -0.03376189,  0.42847739, -0.68468226, -0.36724053,
+        1.21266314,  0.79747549, -0.85594335,  1.82730358,  0.18079378,
+       -1.71839796, -0.10939543,  0.03588552, -0.30908714, -0.53768047])
 </pre></div>
 </div>
 </div>
@@ -1884,7 +1882,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 11,  -3,  -8, -16,   6,   0,   3,  12,  -3,  10])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  2,   2, -15,   0,  -9,  18,  10,   0,  16, -19])
 </pre></div>
 </div>
 </div>
@@ -2079,7 +2077,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="arrays-booleanos">
-<h2>8. Arrays booleanos<a class="headerlink" href="#arrays-booleanos" title="Link to this heading">#</a></h2>
+<h2>8. Arrays booleanos<a class="headerlink" href="#arrays-booleanos" title="Permalink to this heading">#</a></h2>
 <p>Una gran utilidad de los arrays es la posibilidad de usarlos con datos booleanos (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>) y operar entre ellos o incluso mezclados con arrays con números. Veamos algunos ejemplos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2254,10 +2252,10 @@ B+C = [1 2 4]
 <p>La creación de array booleanos para ser usados como índices de arrays numéricos es una característica <em>muy útil</em> y <em>muy utilizada</em> en NumPy (remarcamos esto). A estos array booleanos suele llamárselos <em>máscaras</em> y se utilizan, por ejemplo, para “limpiar” datos espurios de una muestra.</p>
 </section>
 <section id="iterar-sobre-arreglos-numpy">
-<h2>9. Iterar sobre arreglos Numpy<a class="headerlink" href="#iterar-sobre-arreglos-numpy" title="Link to this heading">#</a></h2>
+<h2>9. Iterar sobre arreglos Numpy<a class="headerlink" href="#iterar-sobre-arreglos-numpy" title="Permalink to this heading">#</a></h2>
 <p>Iterar un arreglo NumPy se puede realizar de varias formas, dependiendo de tus necesidades específicas. Aquí hay algunas de las maneras más comunes:</p>
 <section id="iterar-sobre-los-elementos-del-arreglo-arreglo-unidimensional">
-<h3>9.1. Iterar sobre los elementos del arreglo (arreglo unidimensional)<a class="headerlink" href="#iterar-sobre-los-elementos-del-arreglo-arreglo-unidimensional" title="Link to this heading">#</a></h3>
+<h3>9.1. Iterar sobre los elementos del arreglo (arreglo unidimensional)<a class="headerlink" href="#iterar-sobre-los-elementos-del-arreglo-arreglo-unidimensional" title="Permalink to this heading">#</a></h3>
 <p>Si tienes un arreglo unidimensional, puedes iterar sobre sus elementos de manera similar a cómo lo harías con una lista en Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2282,7 +2280,7 @@ B+C = [1 2 4]
 </div>
 </section>
 <section id="iterar-sobre-las-filas-de-un-arreglo-bidimensional">
-<h3>9.2. Iterar sobre las filas de un arreglo bidimensional<a class="headerlink" href="#iterar-sobre-las-filas-de-un-arreglo-bidimensional" title="Link to this heading">#</a></h3>
+<h3>9.2. Iterar sobre las filas de un arreglo bidimensional<a class="headerlink" href="#iterar-sobre-las-filas-de-un-arreglo-bidimensional" title="Permalink to this heading">#</a></h3>
 <p>Esto es escencialmente lo mismo que se hace en el punto anterior, pero ahora los elementos son filas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2305,7 +2303,7 @@ B+C = [1 2 4]
 </div>
 </section>
 <section id="iterar-sobre-los-elementos-de-un-arreglo-bidimensional-anidando-loops">
-<h3>9.3. Iterar sobre los elementos de un arreglo bidimensional (anidando loops)<a class="headerlink" href="#iterar-sobre-los-elementos-de-un-arreglo-bidimensional-anidando-loops" title="Link to this heading">#</a></h3>
+<h3>9.3. Iterar sobre los elementos de un arreglo bidimensional (anidando loops)<a class="headerlink" href="#iterar-sobre-los-elementos-de-un-arreglo-bidimensional-anidando-loops" title="Permalink to this heading">#</a></h3>
 <p>Puedes anidar loops para iterar sobre cada elemento en un arreglo bidimensional. Es exactamente igual a como se hace en listas de listas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2334,7 +2332,7 @@ B+C = [1 2 4]
 </div>
 </section>
 <section id="iterar-usando-nditer">
-<h3>9.4. Iterar usando <code class="docutils literal notranslate"><span class="pre">nditer</span></code><a class="headerlink" href="#iterar-usando-nditer" title="Link to this heading">#</a></h3>
+<h3>9.4. Iterar usando <code class="docutils literal notranslate"><span class="pre">nditer</span></code><a class="headerlink" href="#iterar-usando-nditer" title="Permalink to this heading">#</a></h3>
 <p>NumPy proporciona <code class="docutils literal notranslate"><span class="pre">np.nditer</span></code> para iterar de manera eficiente sobre cualquier arreglo, independientemente de su forma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2362,10 +2360,10 @@ B+C = [1 2 4]
 </div>
 </section>
 <section id="iterar-con-enumerate">
-<h3>9.5. Iterar con <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#iterar-con-enumerate" title="Link to this heading">#</a></h3>
+<h3>9.5. Iterar con <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#iterar-con-enumerate" title="Permalink to this heading">#</a></h3>
 <p>Si necesitas los índices junto con los elementos, puedes usar <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
 <section id="unidimensional">
-<h4>Unidimensional<a class="headerlink" href="#unidimensional" title="Link to this heading">#</a></h4>
+<h4>Unidimensional<a class="headerlink" href="#unidimensional" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">element</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
@@ -2385,7 +2383,7 @@ Index: 4, Element: 5
 </div>
 </section>
 <section id="bidimensional">
-<h4>Bidimensional<a class="headerlink" href="#bidimensional" title="Link to this heading">#</a></h4>
+<h4>Bidimensional<a class="headerlink" href="#bidimensional" title="Permalink to this heading">#</a></h4>
 <p>Para un arreglo bidimensional, puedes anidar <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> para obtener tanto las filas como las columnas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2415,7 +2413,7 @@ Row: 2, Column: 3, Element: 47
 </section>
 </section>
 <section id="iterar-con-np-ndenumerate">
-<h3>9.6. Iterar con <code class="docutils literal notranslate"><span class="pre">np.ndenumerate</span></code><a class="headerlink" href="#iterar-con-np-ndenumerate" title="Link to this heading">#</a></h3>
+<h3>9.6. Iterar con <code class="docutils literal notranslate"><span class="pre">np.ndenumerate</span></code><a class="headerlink" href="#iterar-con-np-ndenumerate" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">np.ndenumerate</span></code> es útil para iterar sobre todos los elementos de un arreglo junto con sus índices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2444,7 +2442,7 @@ Index: (2, 3), Element: 47
 </section>
 </section>
 <section id="ejemplos">
-<h2>Ejemplos<a class="headerlink" href="#ejemplos" title="Link to this heading">#</a></h2>
+<h2>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Crear un array de 120 números enteros aleatorios con valores de -100 a +100. Usando arrays de booleanos crear otros arrays que contengan los positivos, los negativos, los mayores de 50 y los <span class="math notranslate nohighlight">\(x\)</span> tal que <span class="math notranslate nohighlight">\(-50 &lt; x &lt; 50\)</span> del array original.</p></li>
 </ol>
@@ -2457,13 +2455,13 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 46 -61  20  24 -71 -15  97 -64  22  76  97  74 -10 -69 -88  77  80  75
-  34 -56   3 -47 -55  48   3  13  61  95 -50 -48 -28  85  69 -93 -15  78
-  76  -5  32 -56 -59  -5   8  48 -26  47 -17 -58 -77  49  13 -81 -84  -1
- -22  22  24 -70   4  93 -96 -82   9  94 -78   6   6 -82 -60 -71 -80  73
- -48  87  45 -74  -9 -97 -86 -14 -61 -16 -47 -88 -60  96  11  99  99 -47
- -59  27  58 -44  68 -15 -76 -34 -58  16 -67  60 -39 -99 -97  18  73  32
-  68 -12 -32 -22  -9  81  49 -36 -10  15 -46  91]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-65 -80 -59  84   3  -6 -26 -48  14   9 -59 -74  -1 -60   0  33  19  -4
+  52  45  35  82 -15  85 -87 -76  58   0 -62  70  46 -76  27   4 -22  32
+  -7 -46  -8 -35  52 -17  47  22 -86  89  22 -97  59 -28  15  10 -84 -91
+ -10 -37   9 -78 -90 -39  16 -65 -94 -60 -22  39  94  69  38  42 -19  96
+  39  55 -97  48 -65  54   5 -84 -88  27  14 -14  93  22 -37   1  72  -9
+ -55  57 -97   1 -15  22   8   5  86 -30  95  84  -2  16 -72 -62  39   7
+ -37  85   4 -11 -22 -76 -62 -26  98   7   3 -56]
 </pre></div>
 </div>
 </div>
@@ -2477,9 +2475,9 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[46 20 24 97 22 76 97 74 77 80 75 34  3 48  3 13 61 95 85 69 78 76 32  8
- 48 47 49 13 22 24  4 93  9 94  6  6 73 87 45 96 11 99 99 27 58 68 16 60
- 18 73 32 68 81 49 15 91]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[84  3 14  9 33 19 52 45 35 82 85 58 70 46 27  4 32 52 47 22 89 22 59 15
+ 10  9 16 39 94 69 38 42 96 39 55 48 54  5 27 14 93 22  1 72 57  1 22  8
+  5 86 95 84 16 39  7 85  4 98  7  3]
 </pre></div>
 </div>
 </div>
@@ -2493,10 +2491,10 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-61 -71 -15 -64 -10 -69 -88 -56 -47 -55 -50 -48 -28 -93 -15  -5 -56 -59
-  -5 -26 -17 -58 -77 -81 -84  -1 -22 -70 -96 -82 -78 -82 -60 -71 -80 -48
- -74  -9 -97 -86 -14 -61 -16 -47 -88 -60 -47 -59 -44 -15 -76 -34 -58 -67
- -39 -99 -97 -12 -32 -22  -9 -36 -10 -46]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-65 -80 -59  -6 -26 -48 -59 -74  -1 -60  -4 -15 -87 -76 -62 -76 -22  -7
+ -46  -8 -35 -17 -86 -97 -28 -84 -91 -10 -37 -78 -90 -39 -65 -94 -60 -22
+ -19 -97 -65 -84 -88 -14 -37  -9 -55 -97 -15 -30  -2 -72 -62 -37 -11 -22
+ -76 -62 -26 -56]
 </pre></div>
 </div>
 </div>
@@ -2510,8 +2508,7 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[97 76 97 74 77 80 75 61 95 85 69 78 76 93 94 73 87 96 99 99 58 68 60 73
- 68 81 91]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[84 52 82 85 58 70 52 89 59 94 69 96 55 54 93 72 57 86 95 84 85 98]
 </pre></div>
 </div>
 </div>
@@ -2527,10 +2524,10 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 46  20  24 -15  22 -10  34   3 -47  48   3  13 -48 -28 -15  -5  32  -5
-   8  48 -26  47 -17  49  13  -1 -22  22  24   4   9   6   6 -48  45  -9
- -14 -16 -47  11 -47  27 -44 -15 -34  16 -39  18  32 -12 -32 -22  -9  49
- -36 -10  15 -46]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  3  -6 -26 -48  14   9  -1   0  33  19  -4  45  35 -15   0  46  27   4
+ -22  32  -7 -46  -8 -35 -17  47  22  22 -28  15  10 -10 -37   9 -39  16
+ -22  39  38  42 -19  39  48   5  27  14 -14  22 -37   1  -9   1 -15  22
+   8   5 -30  -2  16  39   7 -37   4 -11 -22 -26   7   3]
 </pre></div>
 </div>
 </div>
@@ -2545,10 +2542,9 @@ Index: (2, 3), Element: 47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-61 -71  97 -64  76  97  74 -69 -88  77  80  75 -56 -55  61  95  85  69
- -93  78  76 -56 -59 -58 -77 -81 -84 -70  93 -96 -82  94 -78 -82 -60 -71
- -80  73  87 -74 -97 -86 -61 -88 -60  96  99  99 -59  58  68 -76 -58 -67
-  60 -99 -97  73  68  81  91]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-65 -80 -59  84 -59 -74 -60  52  82  85 -87 -76  58 -62  70 -76  52 -86
+  89 -97  59 -84 -91 -78 -90 -65 -94 -60  94  69  96  55 -97 -65  54 -84
+ -88  93  72 -55  57 -97  86  95  84 -72 -62  85 -76 -62  98 -56]
 </pre></div>
 </div>
 </div>
@@ -2561,8 +2557,8 @@ P = 0.6\,C + Z \frac{(10 - 0.6\,C)}{10}
 El alumno estará aprobado cuando \)</span>P<span class="math notranslate nohighlight">\( sea mayor o igual a cinco, siempre que \)</span>Z<span class="math notranslate nohighlight">\( supere un tercio de la nota máxima (\)</span>Z&gt;10/3<span class="math notranslate nohighlight">\(). En  ese cas \)</span>F= P<span class="math notranslate nohighlight">\(. En caso contrario, se queda con \)</span>F=Z<span class="math notranslate nohighlight">\(. Un grupo de alumnos ha obtenido las siguientes calificaciones en la evaluación contínua y en el examen final:
 \)</span>$</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-1d5b0051-6aed-456b-b42a-4e24a6484b54">
-<span class="eqno">(4)<a class="headerlink" href="#equation-1d5b0051-6aed-456b-b42a-4e24a6484b54" title="Permalink to this equation">#</a></span>\[\begin{matrix}
+<div class="amsmath math notranslate nohighlight" id="equation-2ab8bbfa-250f-4969-96d2-e3145b5bdc22">
+<span class="eqno">(4)<a class="headerlink" href="#equation-2ab8bbfa-250f-4969-96d2-e3145b5bdc22" title="Permalink to this equation">#</a></span>\[\begin{matrix}
 &amp;&amp;	a_0&amp; a_1&amp; a_2&amp; a_3&amp; a_4&amp; a_5&amp; a_6&amp; a_7&amp; a_8&amp; a_9 \\
 C&amp;&amp;	8.2&amp; 0.0&amp; 9.0&amp; 5.0&amp; 8.4&amp; 7.2&amp; 5.0&amp; 9.2&amp; 4.9&amp; 7.9 \\
 Z&amp;&amp;	7.1&amp; 5.1&amp; 8.8&amp; 3.1&amp; 4.6&amp; 2.0&amp; 4.1&amp; 7.4&amp; 4.4&amp; 8.8
@@ -2702,9 +2698,9 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 90 78  8 20 55 65 64 99 23 82 51 58 16 31 82 27 66 76 97 26 45 70 74
-  0 18 16 74 46 91 73 16 32 51 32 68 12 47 40 99 15 97 45 72 53 71 13 79
- 46 46]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16 92 17 63 57 76 68 11 35 13 73 42 85 97 37 47 18 74 79 80 94 78 25  8
+ 93 56 28 24 39 78 68 97 61 19 77 28 19 34 24 56 31 31 43 12 98 85 98 80
+ 67 32]
 </pre></div>
 </div>
 </div>
@@ -2718,7 +2714,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 90 78 99 51 27 66 45 18 51 12 99 15 45 72]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[63 57 42 18 78 93 24 39 78 24 12]
 </pre></div>
 </div>
 </div>
@@ -2733,11 +2729,7 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[60 90  8 20 99 82 82 97  0 91 12 40 99 15 97]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_264994/46176048.py:2: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_2  = arreglo[(120 % arreglo == 0) | (arreglo &gt; 80)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[92 85 97 94  8 93 24 97 24 12 98 85 98]
 </pre></div>
 </div>
 </div>
@@ -2752,12 +2744,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[78 55 65 64 23 51 58 16 31 27 66 76 26 45 70 74 18 16 74 46 73 16 32 51
- 32 68 47 45 72 53 71 13 79 46 46]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_264994/424766941.py:2: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_3 = arreglo[~((120 % arreglo == 0) | (arreglo &gt; 80))]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16 17 63 57 76 68 11 35 13 73 42 37 47 18 74 79 80 78 25 56 28 39 78 68
+ 61 19 77 28 19 34 56 31 31 43 80 67 32]
 </pre></div>
 </div>
 </div>
@@ -2776,12 +2764,8 @@ Promedio de las notas finales: 6.6
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[78 55 65 64 23 51 58 16 31 27 66 76 26 45 70 74 18 16 74 46 73 16 32 51
- 32 68 47 45 72 53 71 13 79 46 46]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_264994/129866600.py:1: RuntimeWarning: divide by zero encountered in remainder
-  arreglo_3_v2 = arreglo[(120 % arreglo != 0) &amp; (arreglo &lt;= 80)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[16 17 63 57 76 68 11 35 13 73 42 37 47 18 74 79 80 78 25 56 28 39 78 68
+ 61 19 77 28 19 34 56 31 31 43 80 67 32]
 </pre></div>
 </div>
 </div>
@@ -2789,7 +2773,7 @@ Promedio de las notas finales: 6.6
 <p>Obviamnete, para encontrar el complemento es más fácil negar que hacer lo que hicimos al final.</p>
 </section>
 <section id="eficiencia">
-<h2>11. Eficiencia<a class="headerlink" href="#eficiencia" title="Link to this heading">#</a></h2>
+<h2>11. Eficiencia<a class="headerlink" href="#eficiencia" title="Permalink to this heading">#</a></h2>
 <p>Un artículo sobre la eficiencia de las diferentes librerías y lenguajes de programación  para el tratamiento de datos:</p>
 <p>https://datapythonista.me/blog/how-fast-can-we-process-a-csv-file</p>
 <p>El repositorio de los archivos que utiliza el artículo es:</p>
@@ -2854,8 +2838,8 @@ Programáticamente es muy sencillo hacerlo en Python puro, pero lo que nos inter
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15678
-Tiempo: 2.404783248901367
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15764
+Tiempo: 3.968038320541382
 </pre></div>
 </div>
 </div>
@@ -2877,7 +2861,7 @@ Tiempo: 2.404783248901367
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.9851903915405273
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 2.4215946197509766
 </pre></div>
 </div>
 </div>
@@ -2899,8 +2883,8 @@ Tiempo: 2.404783248901367
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15678
-Tiempo: 2.755683422088623
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15764
+Tiempo: 2.906834363937378
 </pre></div>
 </div>
 </div>
@@ -2926,7 +2910,7 @@ Tiempo: 2.755683422088623
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 0.839972972869873
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tiempo: 1.344644546508789
 </pre></div>
 </div>
 </div>
@@ -2943,8 +2927,8 @@ Tiempo: 2.755683422088623
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15678
-Tiempo: 0.03154349327087402
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15764
+Tiempo: 0.031218290328979492
 </pre></div>
 </div>
 </div>
@@ -2961,8 +2945,8 @@ Tiempo: 0.03154349327087402
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15678
-Tiempo: 0.5669732093811035
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok: 15764
+Tiempo: 4.330385684967041
 </pre></div>
 </div>
 </div>
@@ -2989,8 +2973,8 @@ Tiempo: 0.5669732093811035
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15678
-Tiempo: 6.197246789932251
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15764
+Tiempo: 6.5948216915130615
 </pre></div>
 </div>
 </div>

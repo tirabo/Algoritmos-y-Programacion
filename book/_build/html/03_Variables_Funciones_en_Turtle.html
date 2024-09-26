@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>3. Variables y funciones aplicadas a Turtle &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_Variables_Funciones_en_Turtle';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -466,7 +464,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables-y-funciones-aplicadas-a-turtle">
-<h1>3. Variables y funciones aplicadas a Turtle<a class="headerlink" href="#variables-y-funciones-aplicadas-a-turtle" title="Link to this heading">#</a></h1>
+<h1>3. Variables y funciones aplicadas a Turtle<a class="headerlink" href="#variables-y-funciones-aplicadas-a-turtle" title="Permalink to this heading">#</a></h1>
 <p>La primera linea de la siguiente celda de código nos permite utilizar <em>todas</em> las instrucciones de esa biblioteca. La segunda línea nos permite usar la función <code class="docutils literal notranslate"><span class="pre">choice</span></code> de la biblioteca <code class="docutils literal notranslate"><span class="pre">random</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -484,13 +482,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x7a9169539ae0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;turtle._Screen at 0x20af2e8e2c0&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="introduccion">
-<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<h2>1. Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <p>En la clase pasada definimos la función <code class="docutils literal notranslate"><span class="pre">pizarra_vacía()</span></code> que inicializa la pantalla de la forma que nosotros consideramos conveniente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,14 +575,14 @@ document.write(`
 </div>
 </section>
 <section id="ciclos">
-<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Link to this heading">#</a></h2>
+<h2>2. Ciclos<a class="headerlink" href="#ciclos" title="Permalink to this heading">#</a></h2>
 <p>Además del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>, que permite hacer un número determinado de repeticiones, ya mencionamos que hay un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> que se ejecuta bajo cierta condición y  deja de ejecutarse cuando esa condición no se cumple.</p>
 <p>En ambos ciclos se suele llamar <em>cuerpo</em> a las instrucciones que siguen a cada ciclo y se repiten. Dentro del cuerpo muy frecuentemente pueden distinguirse instrucciones que son para el procesamiento propiamente dicho, y otras instrucciones que son preparatorias del siguiente procesamiento. Se recomienda que esas dos porciones de código sean nítidamente identificables.</p>
 <p>Los ciclos <code class="docutils literal notranslate"><span class="pre">while</span></code> son ciclos de una complejidad mayor y  pueden dar lugar a programas cuya ejecución nunca termina.</p>
 <p>Veremos más adelante,  en esta clase, la definición del ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>y  algunos ejemplos.</p>
 <p>Repasemos a continuación con un ejemplo el ciclo  <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <section id="ciclo-for">
-<h3>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Link to this heading">#</a></h3>
+<h3>Ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ciclo-for" title="Permalink to this heading">#</a></h3>
 <p>Recordemos que la sintaxis del ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code> que utilizamos hasta ahora era</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
      <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">código</span> <span class="n">a</span> <span class="n">ejecutar</span> <span class="n">n</span> <span class="n">veces</span><span class="o">&gt;</span>
@@ -660,7 +658,7 @@ document.write(`
 </section>
 </section>
 <section id="variables">
-<h2>3. Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<h2>3. Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Afortunadamente, los lenguajes de programación nos permiten utilizar <em>variables</em>. Una variable sirve justamente para representar un valor que puede ser diferente en cada ejecución del código:</p>
 <p>Una variable está representada por un nombre, digamos <code class="docutils literal notranslate"><span class="pre">longitud</span></code>, y le podemos <em>asignar</em> un valor, supongamos <code class="docutils literal notranslate"><span class="pre">25</span></code>. En Python se hace de la siguiente manera:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">longitud</span> <span class="o">=</span> <span class="mi">25</span>
@@ -820,7 +818,7 @@ document.write(`
 </div>
 <p>Aquí la variable <code class="docutils literal notranslate"><span class="pre">lados</span></code> no es imprescindible pero sirve para clarificar un poco el código.</p>
 <section id="comentarios-sobre-las-variables">
-<h3>Comentarios sobre las variables:<a class="headerlink" href="#comentarios-sobre-las-variables" title="Link to this heading">#</a></h3>
+<h3>Comentarios sobre las variables:<a class="headerlink" href="#comentarios-sobre-las-variables" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Representan valores que pueden ser diferentes cada vez que se ejecuta la porción de código donde aparecen.</p></li>
 <li><p>Permite nombrar un elemento, por ejemplo, llamarle <code class="docutils literal notranslate"><span class="pre">longitud</span></code> al valor, esto aporta legibilidad.</p></li>
@@ -830,7 +828,7 @@ document.write(`
 </ul>
 </section>
 <section id="comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for">
-<h3>Comentarios adicionales sobre las variables que se usan como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>:<a class="headerlink" href="#comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for" title="Link to this heading">#</a></h3>
+<h3>Comentarios adicionales sobre las variables que se usan como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code>:<a class="headerlink" href="#comentarios-adicionales-sobre-las-variables-que-se-usan-como-indice-del-for" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Es común usar nombres muy cortos (<code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code> …) aunque siempre es recomendable usar nombres “informativos”.</p></li>
 <li><p>No es recomendable que la variable que se usa como índice del <code class="docutils literal notranslate"><span class="pre">for</span></code> se utilice fuera del cuerpo del <code class="docutils literal notranslate"><span class="pre">for</span></code>, aunque Python lo permite.</p></li>
@@ -867,7 +865,7 @@ i final: 5
 </section>
 </section>
 <section id="el-ciclo-while-mientras">
-<h2>4. El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> (mientras)<a class="headerlink" href="#el-ciclo-while-mientras" title="Link to this heading">#</a></h2>
+<h2>4. El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> (mientras)<a class="headerlink" href="#el-ciclo-while-mientras" title="Permalink to this heading">#</a></h2>
 <p>No siempre podemos modelizar un problema con un <code class="docutils literal notranslate"><span class="pre">for</span></code>, pues,  como ya mencionamos, hay veces que no sabemos cuantas iteraciones debemos hacer. En  esos casos debemos usar un ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <p>El ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> se utiliza para repetir un bloque de código mientras una condición sea verdadera. Es importante resaltar que la condición se evalúa antes de ejecutar el bloque de código.</p>
 <p>La sintaxis es la siguiente:</p>
@@ -934,7 +932,7 @@ i final: 5
 </div>
 </div>
 <section id="ejemplo-el-canon">
-<h3><strong>Ejemplo.</strong> El cañón.<a class="headerlink" href="#ejemplo-el-canon" title="Link to this heading">#</a></h3>
+<h3><strong>Ejemplo.</strong> El cañón.<a class="headerlink" href="#ejemplo-el-canon" title="Permalink to this heading">#</a></h3>
 <p>Hagamos un ejemplo con Turtle del uso del  ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 <p>En el costado derecho  de la pantalla de Turtle  aparecerá un punto verde a la altura 250 y con coordenada x entre 401 y 800, elegida al azar,  que será un “objetivo”. En  el lado izquierdo de la pantalla se ubicará un “cañonero”,  un punto negro,  a la misma altura que el objetivo. El cañonero no sabe la distancia al objetivo, pero enviará una bala de cañón  roja que avanzará de a 1 unidad hasta alcanzar el objetivo.</p>
 <p>Primero dibujemos el objetivo y el cañonero.</p>
@@ -1025,7 +1023,7 @@ i final: 5
 </section>
 </section>
 <section id="definicion-de-funciones">
-<h2>5. Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Link to this heading">#</a></h2>
+<h2>5. Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>Ya hemos hablado un poco de funciones y como definirlas,  ahora profundizaremos un poco más sobre el tema.</p>
 <p>Recordemos que podemos dibujar un cuadrado de lado 50  utilizando el siguiente código:</p>
 <div class="cell docutils container">
@@ -1044,7 +1042,7 @@ i final: 5
 <p>Estas líneas están bien y el programa hace lo que nosotros queremos. Sin embargo, si queremos dibujar muchos cuadrado en una pizarra, convendrá modularizar un poco.</p>
 <p>Veamos a continuación una función que nos permitirá dibujar cuadrados de tamaño arbitrario.</p>
 <section id="funcion-dibujar-cuadrado">
-<h3>Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code><a class="headerlink" href="#funcion-dibujar-cuadrado" title="Link to this heading">#</a></h3>
+<h3>Función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code><a class="headerlink" href="#funcion-dibujar-cuadrado" title="Permalink to this heading">#</a></h3>
 <p>Vamos a definir ahora una función con un argumento,  específicamente la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code> que toma un argumento y dibuja un cuadrado cuyos lados tienen la longitud dada por el argumento.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1079,7 +1077,7 @@ i final: 5
 <p>Esta variable se llama <em>parámetro</em> de la función <code class="docutils literal notranslate"><span class="pre">dibujar_cuadrado()</span></code>.</p>
 </section>
 <section id="ejemplo-con-el-ciclo-for">
-<h3>Ejemplo con el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ejemplo-con-el-ciclo-for" title="Link to this heading">#</a></h3>
+<h3>Ejemplo con el ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#ejemplo-con-el-ciclo-for" title="Permalink to this heading">#</a></h3>
 <p>Queremos hacer el siguiente dibujo:</p>
 <p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAACUCAYAAACeC7vXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQvSURBVHhe7d1NSiNBGIfxiggdESQeIKBewAO4MOJFPIIbwYVgBBfexiPoFdwI7ty5caHgwg/UyZu8GTHp9Eza+redyvODYqp7eiaDeZiU/THT+OwJgMCC/whER1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckCEu6Ng99LHZb8tIY6ysrHyen5/7Ozud6A9oZFkWXl9ffQsp6AUWHh8ffev/RY+r0Wj4DCkpk0n0NRdxYSh6XPaxCJhKvltsNpv9v1ZTH3nyjhuObrfrR32xfXnHDkeevOOGI9ZrlMGpCMgQF2SICzLEBRniggxxQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBhrggQ1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBhrggQ1yQIS7IEBdkiAsyxAUZ4oIMcUGGuCBDXJAhLsgQF2SICzLEBRniggxxQYa4IENckGl89vg8iqWlpfD8/OxbA4uLi+Ho6Mi30tXtdn32pejLe3JyMvZrbPv4+Ni3xjUaDZ99+e3XmMjiiinLMvtTMHwU6b3JY8fbviKjx9soUsVrTBL9Y/H9/d1nmHesuYTyPl7mSfS4bM2Fge3tbZ/Np+gL+tXV1fDw8OBbA81mMxweHvpW2m5ubsLd3V3Y2toKp6envjcfC/optVqtv4vA4bB9GGcL69Gvle0rMnq8jSJVvMYkrLkgQ1yQIS7IEBdkiAsyxAWZSuKy81527oTxfdj5ppRFj+vt7c1nKMNOwqYielxcuP4ZO7ufiuhxZVnmM5Rhl41SET0uu7aI6dkarNPp/PN65CypZEG/trbWv/DJmDw+Pj7CxcWFf8XSUElcmE/EBRniggxxQYa4IENckIl+D/36+nq4vb31rYFWqxX29/d9Cz+Rdz2y6C1M6h76drv9975rRjWjiN0vP3q87SsyeryNMqJ/LD49PfkM8y56XAsLLOOqlPcRVhfRS9jY2PAZqlDnB2+jL+h3dnbC5eWlbw3YtcW9vT3fwk/V7cHbiSyumDqdzreFoA3bh9+R1IIeGCIuyBAXZIgLMsQFGeKCjn/XGE3eqQhGvcbMnoq4v7/3Geqqqgdvo8fFhev6q+rB2+hxtdttn6GuqnrwNnpcu7u7PkPdVP3gbSXfLdqF0t76jvHLo+oHbyuJC/OJuCBDXJAhLsgQF2SICzLR76HPu2fbzq3YwGwYff9MqUwsrpgODg6+XfBkpDHKiP6xeHV15TPMu+hx8Q/upqfsg7fR4zo7O+v/b/xIR9kHb6Mv6M319XX/f4Z9eXkJm5ubYXl52X8Gs2KaB28nkcQFGM5zQYa4IENckCEuyBAXZIgLMsQFGeKCDHFBJIQ/7XOc/oiO7HoAAAAASUVORK5CYII=" /></p>
 <p>Observemos que esto lo podemos pensar como la superposición de 5  cuadrados de diferente tamaño.</p>
@@ -1228,7 +1226,7 @@ i final: 5
 </div>
 </section>
 <section id="funciones-que-devuelven-valores">
-<h3>Funciones que devuelven valores<a class="headerlink" href="#funciones-que-devuelven-valores" title="Link to this heading">#</a></h3>
+<h3>Funciones que devuelven valores<a class="headerlink" href="#funciones-que-devuelven-valores" title="Permalink to this heading">#</a></h3>
 <p>Las funciones que definimos arriba no devuelven valores, pero es claro que nos interesa tener funciones que devuelvan valores. Por ejemplo, definamos la función que calcula el área de un triángulo sabiendo su base y altura:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1288,7 +1286,7 @@ i final: 5
 <p>Las funciones juegan un rol extremadamente importante en los lenguajes modernos de programación  y profundizaremos en ellas en clases subsiguientes.</p>
 </section>
 <section id="comentarios-sobre-las-funciones">
-<h3>Comentarios sobre las funciones:<a class="headerlink" href="#comentarios-sobre-las-funciones" title="Link to this heading">#</a></h3>
+<h3>Comentarios sobre las funciones:<a class="headerlink" href="#comentarios-sobre-las-funciones" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Todos los lenguajes de programación modernos permiten definir funciones.</p></li>
 <li><p>Esto contribuye a generalizar y dar nombres a porciones de código, facilitando su reutilización.</p></li>
@@ -1372,7 +1370,7 @@ i final: 5
 </section>
 </section>
 <section id="la-bola-de-billar">
-<h2>6. La bola de billar<a class="headerlink" href="#la-bola-de-billar" title="Link to this heading">#</a></h2>
+<h2>6. La bola de billar<a class="headerlink" href="#la-bola-de-billar" title="Permalink to this heading">#</a></h2>
 <p>Un  ejemplo donde se hará un uso más complejo de las funciones, bucles y condicionales en Python, es el ejemplo de lo que llamaremos  <em>La bola de billar</em>.</p>
 <p>En  este ejemplo se hace una simulación de una bola de billar rebotando contra las paredes de la mesa.</p>
 <p>Es un ejemplo demasiado largo para desarrollarlo en clase, pero el  alumno interesado puede verlo en un un cuaderno Jupyter que se puede ser bajado  cliqueando el siguiente link <a class="reference external" href="https://tirabo.github.io/files_ayp/La_bola_de_billar.ipynb">La_bola_de_billar.ipynb</a>. En  ese cuaderno se explica pasa a paso la implementación.</p>
@@ -1382,7 +1380,7 @@ i final: 5
 <p>Obviamente, la lógica en todas las implementaciones es muy similar.</p>
 </section>
 <section id="ejemplo-dibujar-un-triangulo-arbitrario">
-<h2>7. Ejemplo: dibujar un triángulo arbitrario<a class="headerlink" href="#ejemplo-dibujar-un-triangulo-arbitrario" title="Link to this heading">#</a></h2>
+<h2>7. Ejemplo: dibujar un triángulo arbitrario<a class="headerlink" href="#ejemplo-dibujar-un-triangulo-arbitrario" title="Permalink to this heading">#</a></h2>
 <p>Todos sabemos (creo) que el triángulo es una figura geométrica <em>rígida</em>,  es decir es indeformable. Está es una importante propiedad utilizada, por ejemplo, en algunos sistemas constructivos.</p>
 <p>La propiedad de ser indeformable es equivalente a la propiedad de que dados tres segmentos existe a lo más un único polígono de tres lados formado por esos segmentos.</p>
 <p>Más específicamente,  dadas tres medidas <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span> mayores que <span class="math notranslate nohighlight">\(0\)</span> y tal que la suma de  cualesquiera dos de ellas es mayor que la tercera,  existe un único triángulo (salvo desplazamientos y rotaciones) con lados que tienen esas tres medidas.</p>

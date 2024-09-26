@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>11. Invariantes &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '11_Invariantes_Desarrollos_en_base_b';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -459,9 +457,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="invariantes">
-<h1>11. Invariantes<a class="headerlink" href="#invariantes" title="Link to this heading">#</a></h1>
+<h1>11. Invariantes<a class="headerlink" href="#invariantes" title="Permalink to this heading">#</a></h1>
 <section id="razonando-sobre-programas-correccion-parcial">
-<h2>1. Razonando sobre programas: Corrección parcial<a class="headerlink" href="#razonando-sobre-programas-correccion-parcial" title="Link to this heading">#</a></h2>
+<h2>1. Razonando sobre programas: Corrección parcial<a class="headerlink" href="#razonando-sobre-programas-correccion-parcial" title="Permalink to this heading">#</a></h2>
 <p>¿Cómo podemos convencernos de que un programa es correcto? Es decir que hace lo que queremos que haga.</p>
 <p>Poe ejemplo, proponemos el siguiente código para calcular el cuadrado de un número.</p>
 <div class="cell docutils container">
@@ -493,7 +491,7 @@ document.write(`
 <p>No profundizaremos en la corrección parcial de programas en este curso. Es un tema muy amplio que excede los alcances de la materia. La demostración anterior se presenta como ejemplo de que es posible demostrar el funcionamiento correcto de programas.</p>
 </section>
 <section id="id1">
-<h2>2. Invariantes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<h2>2. Invariantes<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>Demostrar la corrección de un programa que no tiene ciclos es sencillo y hay algoritmos que son capaces de hacerlo. Cuando introducimos ciclos, demostrar un programa deja de ser una tarea rutinaria y tiene intrínsecamente la misma dificultad que demostrar un teorema en matemática.</p>
 <p>Como ya dijimos no profundizaremos en este tema, pero sí es interesante estudiar una herramienta para demostrar la corrección de programas que son los los <em>invariantes</em> de los ciclos <code class="docutils literal notranslate"><span class="pre">while</span></code>. Un invariante nos puede ayudar a razonar sobre el ciclo y descubrir si lo estamos implementando bien o mal.</p>
 <p>Razonar sobre el ciclo <code class="docutils literal notranslate"><span class="pre">while</span></code> requiere identificar un <em>invariante</em>. Un invariante es una afirmación que vale antes de entrar al <code class="docutils literal notranslate"><span class="pre">while</span></code> y al final de cada ejecución del cuerpo del <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
@@ -684,7 +682,7 @@ while condición:
 <p>Estos dos invariantes garantizan que cuando se termine el ciclo obtenemos el resultado deseado. ¿Por  qué entonces agregamos las afirmaciones sobre el <code class="docutils literal notranslate"><span class="pre">i</span></code>? La respuesta es que las afirmaciones sobre <code class="docutils literal notranslate"><span class="pre">i</span></code> garantizan la finalización del ciclo, pues al estar el <code class="docutils literal notranslate"><span class="pre">i</span></code> acotado y en cada paso ser distinto,  nos garantizamos que el ciclo termina. Sin embargo, cuando nos resulte clara la finalización del ciclo, sólo dejaremos las afirmaciones que no sean de verificación de terminación de ciclo.</p>
 </section>
 <section id="ejemplo-es-primo">
-<h2>3. Ejemplo: ¿es primo?<a class="headerlink" href="#ejemplo-es-primo" title="Link to this heading">#</a></h2>
+<h2>3. Ejemplo: ¿es primo?<a class="headerlink" href="#ejemplo-es-primo" title="Permalink to this heading">#</a></h2>
 <p>Recordemos que <span class="math notranslate nohighlight">\(n \geq 2\)</span>, entero, es primo, si y sólo si no existe ningún número entero <span class="math notranslate nohighlight">\(2 \leq d &lt; n\)</span> que divida a <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>Escribamos un algoritmo sencillo para detectar si un número es primo:</p>
 <div class="cell docutils container">
@@ -766,7 +764,7 @@ while condición:
 <p>Concluyendo,  de lo anterior deducimos  que <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">==</span> <span class="pre">n</span></code> es equivalente  a “<span class="math notranslate nohighlight">\(n\)</span> es primo”.</p>
 </section>
 <section id="ejemplo-maximo-comun-divisor">
-<h2>4. Ejemplo: máximo común divisor<a class="headerlink" href="#ejemplo-maximo-comun-divisor" title="Link to this heading">#</a></h2>
+<h2>4. Ejemplo: máximo común divisor<a class="headerlink" href="#ejemplo-maximo-comun-divisor" title="Permalink to this heading">#</a></h2>
 <p>El  máximo común divisor de define de la siguiente manera.</p>
 <p><strong>Definición.</strong>  Si <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> son enteros algunos de ellos no nulo, decimos que un entero no negativo <span class="math notranslate nohighlight">\(d\)</span> es un <em>máximo común divisor</em> o <em>mcd</em>, de <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> si</p>
 <p>a) <span class="math notranslate nohighlight">\(d|a\)</span>  y <span class="math notranslate nohighlight">\(d|b\)</span>;</p>
@@ -832,7 +830,7 @@ while condición:
 </div>
 <p>Esto prueba que el ciclo es correcto y que el valor que se devuelve es el  mcd  entre <code class="docutils literal notranslate"><span class="pre">a</span></code> y <code class="docutils literal notranslate"><span class="pre">b</span></code>. La única consideración que habría que hacer es respecto a si el ciclo termina. Pero esto se puede verificar fácilmente pues en cada paso se hace una resta y  entonces uno de los argumentos del mcd va decreciendo. Luego de una cantidad suficiente de pasos llegaremos a que uno de los argumentos del mcd es 0 y  el ciclo termina.</p>
 <section id="algoritmo-de-euclides">
-<h3>Algoritmo de Euclides<a class="headerlink" href="#algoritmo-de-euclides" title="Link to this heading">#</a></h3>
+<h3>Algoritmo de Euclides<a class="headerlink" href="#algoritmo-de-euclides" title="Permalink to this heading">#</a></h3>
 <p>El algoritmo anterior es relativamente eficiente, pero lo es mucho más el <em>algoritmo de Euclides</em> que se basa en las siguientes propiedades: si <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>  son enteros no negativos,  con <span class="math notranslate nohighlight">\(y\)</span> no nulo,  entonces:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -867,7 +865,7 @@ while condición:
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="desarrollo-en-base-b-ge-2-de-numeros-enteros">
-<h1>Desarrollo en base <span class="math notranslate nohighlight">\(b \ge 2\)</span> de números enteros<a class="headerlink" href="#desarrollo-en-base-b-ge-2-de-numeros-enteros" title="Link to this heading">#</a></h1>
+<h1>Desarrollo en base <span class="math notranslate nohighlight">\(b \ge 2\)</span> de números enteros<a class="headerlink" href="#desarrollo-en-base-b-ge-2-de-numeros-enteros" title="Permalink to this heading">#</a></h1>
 <p>Dado <span class="math notranslate nohighlight">\(b\)</span> entero y <span class="math notranslate nohighlight">\(b \ge 2\)</span>, un número entero positivo <span class="math notranslate nohighlight">\(n\)</span> se puede escribir de una única forma como</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -944,7 +942,7 @@ n = \sum_{i=0}^k a_i b^i = a_kb^k + a_{k-1}b^{k-1} + \cdots + a_1 b + a_0,
 </div>
 <p>y como  <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">r[i]</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> obtenemos el desarrollo en base <code class="docutils literal notranslate"><span class="pre">b</span></code>.  `</p>
 <section id="desarrollo-en-base-b-ge-2-de-numeros-decimales">
-<h2>Desarrollo en base <span class="math notranslate nohighlight">\(b \ge 2\)</span> de números decimales<a class="headerlink" href="#desarrollo-en-base-b-ge-2-de-numeros-decimales" title="Link to this heading">#</a></h2>
+<h2>Desarrollo en base <span class="math notranslate nohighlight">\(b \ge 2\)</span> de números decimales<a class="headerlink" href="#desarrollo-en-base-b-ge-2-de-numeros-decimales" title="Permalink to this heading">#</a></h2>
 <p>En  forma análoga al resultado para número enteros,  si <span class="math notranslate nohighlight">\(t \in \mathbb R\)</span>, <span class="math notranslate nohighlight">\(t &gt;0\)</span>,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -1093,7 +1091,7 @@ Los cálculos son exactos: x**2 + y = 0.19 . Debería dar (y da) 0.19
 <p>Está claro que es relativamente molesto  codificar usando constantemente la palabra <code class="docutils literal notranslate"><span class="pre">Decimal</span></code>, pero es el precio que se debe pagar para tener precisión razonable. Observar que <code class="docutils literal notranslate"><span class="pre">Decimal</span></code> toma como argumentos cadenas que representan números. También acepta números.</p>
 </section>
 <section id="series-de-taylor-para-la-exponencial">
-<h2>Series de Taylor para la exponencial<a class="headerlink" href="#series-de-taylor-para-la-exponencial" title="Link to this heading">#</a></h2>
+<h2>Series de Taylor para la exponencial<a class="headerlink" href="#series-de-taylor-para-la-exponencial" title="Permalink to this heading">#</a></h2>
 <p>El número <span class="math notranslate nohighlight">\(e\)</span> se define de la siguiente manera:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}

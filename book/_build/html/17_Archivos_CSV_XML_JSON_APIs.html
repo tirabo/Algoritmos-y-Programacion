@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>17. Interacción con archivos CSV, XML y JSON &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '17_Archivos_CSV_XML_JSON_APIs';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -461,10 +459,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interaccion-con-archivos-csv-xml-y-json">
-<h1>17. Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Link to this heading">#</a></h1>
+<h1>17. Interacción con archivos CSV, XML y JSON<a class="headerlink" href="#interaccion-con-archivos-csv-xml-y-json" title="Permalink to this heading">#</a></h1>
 <p>Es común que cuando interactuamos y obtenemos datos de páginas o sitios de Internet estos datos se encuentren en formatos estructurados. Veremos a continuación, brevemente, como podemos obtener datos de archivos CSV, XML y JSON.</p>
 <section id="archivos-csv">
-<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Link to this heading">#</a></h2>
+<h2>1. Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this heading">#</a></h2>
 <p>La forma estructurada más sencilla de información es un archivo CSV,  que es similar a una hoja de una planilla de cálculo.</p>
 <p>Un archivo CSV (Comma Separated Values) es un tipo de archivo de texto que se utiliza comúnmente para almacenar datos tabulares. Los datos en un archivo CSV se organizan en filas y columnas, donde cada fila corresponde a un registro y cada columna corresponde a un campo en ese registro. Los campos en un archivo CSV se separan por un carácter delimitador, como una coma, un punto y coma o una tabulación.</p>
 <p>Cada registro en un archivo CSV se almacena en una nueva línea, y los valores de los campos pueden estar rodeados de comillas dobles si contienen el carácter delimitador. Por ejemplo, el siguiente es un ejemplo de un archivo CSV que contiene información sobre personas:</p>
@@ -525,7 +523,7 @@ Pedro,40,Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
@@ -540,7 +538,7 @@ Pedro,40,Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;], [&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
@@ -556,8 +554,8 @@ Pedro,40,Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre  edad ciudad
-Pérez, Juan  30  Quito
-María  25  Medellín
+PÃ©rez, Juan  30  Quito
+MarÃ­a  25  MedellÃ­n
 Pedro  40  Lima
 </pre></div>
 </div>
@@ -587,13 +585,13 @@ Pedro  40  Lima
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;nombre&#39;, &#39; edad&#39;, &#39;ciudad&#39;]
-[[&#39;Pérez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;María&#39;, &#39; 25&#39;, &#39; Medellín&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
+[[&#39;PÃ©rez, Juan&#39;, &#39; 30&#39;, &#39; Quito&#39;], [&#39;MarÃ\xada&#39;, &#39; 25&#39;, &#39; MedellÃ\xadn&#39;], [&#39;Pedro&#39;, &#39; 40&#39;, &#39; Lima&#39;]]
 </pre></div>
 </div>
 </div>
 </div>
 <section id="lectura-de-archivos-csv-de-la-red">
-<h3>Lectura de archivos CSV de la red<a class="headerlink" href="#lectura-de-archivos-csv-de-la-red" title="Link to this heading">#</a></h3>
+<h3>Lectura de archivos CSV de la red<a class="headerlink" href="#lectura-de-archivos-csv-de-la-red" title="Permalink to this heading">#</a></h3>
 <p>Podemos obtener un archivo CSV  de la red usando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code>.  Si <code class="docutils literal notranslate"><span class="pre">response</span></code> es el objeto que devuelve <code class="docutils literal notranslate"><span class="pre">requests.get(url)</span></code>y  queremos leer el CSV línea por línea, podemos utilizar la instrucción <code class="docutils literal notranslate"><span class="pre">response.text.splitlines()</span></code> que convierte el archivo CSV en una lista de líneas. Luego a esa lista le aplicamos <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code> y podemos leer línea por línea,  donde cada línea será una lista de valores.</p>
 <p>Esquemáticamente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -649,7 +647,7 @@ Pedro  40  Lima
 </section>
 </section>
 <section id="lectura-y-escritura-de-archivos-json">
-<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Link to this heading">#</a></h2>
+<h2>2. Lectura y escritura de archivos JSON<a class="headerlink" href="#lectura-y-escritura-de-archivos-json" title="Permalink to this heading">#</a></h2>
 <p>JSON, cuyo nombre corresponde a las siglas <em>JavaScript Object Notation</em> o <em>Notación de Objetos de JavaScript</em>, es un formato ligero de intercambio de datos, que resulta sencillo de leer y escribir para los programadores y simple de interpretar y generar para las máquinas.</p>
 <p>JSON es un formato de texto completamente independiente de lenguaje y puede ser interpretado y creado por los siguientes lenguajes:</p>
 <ul class="simple">
@@ -699,7 +697,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 128, &#39;max&#39;: 1163, &#39;prom&#39;: 645.5}, {&#39;id&#39;: 1, &#39;min&#39;: 424, &#39;max&#39;: 1047, &#39;prom&#39;: 735.5}, {&#39;id&#39;: 2, &#39;min&#39;: 592, &#39;max&#39;: 1012, &#39;prom&#39;: 802.0}, {&#39;id&#39;: 3, &#39;min&#39;: 246, &#39;max&#39;: 1732, &#39;prom&#39;: 989.0}, {&#39;id&#39;: 4, &#39;min&#39;: 316, &#39;max&#39;: 1552, &#39;prom&#39;: 934.0}, {&#39;id&#39;: 5, &#39;min&#39;: 367, &#39;max&#39;: 1833, &#39;prom&#39;: 1100.0}, {&#39;id&#39;: 6, &#39;min&#39;: 984, &#39;max&#39;: 1100, &#39;prom&#39;: 1042.0}, {&#39;id&#39;: 7, &#39;min&#39;: 367, &#39;max&#39;: 1796, &#39;prom&#39;: 1081.5}, {&#39;id&#39;: 8, &#39;min&#39;: 889, &#39;max&#39;: 1014, &#39;prom&#39;: 951.5}, {&#39;id&#39;: 9, &#39;min&#39;: 293, &#39;max&#39;: 1217, &#39;prom&#39;: 755.0}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 0, &#39;min&#39;: 845, &#39;max&#39;: 1620, &#39;prom&#39;: 1232.5}, {&#39;id&#39;: 1, &#39;min&#39;: 555, &#39;max&#39;: 1639, &#39;prom&#39;: 1097.0}, {&#39;id&#39;: 2, &#39;min&#39;: 244, &#39;max&#39;: 1184, &#39;prom&#39;: 714.0}, {&#39;id&#39;: 3, &#39;min&#39;: 325, &#39;max&#39;: 1178, &#39;prom&#39;: 751.5}, {&#39;id&#39;: 4, &#39;min&#39;: 201, &#39;max&#39;: 1811, &#39;prom&#39;: 1006.0}, {&#39;id&#39;: 5, &#39;min&#39;: 798, &#39;max&#39;: 1536, &#39;prom&#39;: 1167.0}, {&#39;id&#39;: 6, &#39;min&#39;: 832, &#39;max&#39;: 1523, &#39;prom&#39;: 1177.5}, {&#39;id&#39;: 7, &#39;min&#39;: 269, &#39;max&#39;: 1873, &#39;prom&#39;: 1071.0}, {&#39;id&#39;: 8, &#39;min&#39;: 477, &#39;max&#39;: 1927, &#39;prom&#39;: 1202.0}, {&#39;id&#39;: 9, &#39;min&#39;: 644, &#39;max&#39;: 1182, &#39;prom&#39;: 913.0}]
 </pre></div>
 </div>
 </div>
@@ -719,7 +717,7 @@ Pedro  40  Lima
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 128, &quot;max&quot;: 1163, &quot;prom&quot;: 645.5}, {&quot;id&quot;: 1, &quot;min&quot;: 424, &quot;max&quot;: 1047, &quot;prom&quot;: 735.5}, {&quot;id&quot;: 2, &quot;min&quot;: 592, &quot;max&quot;: 1012, &quot;prom&quot;: 802.0}, {&quot;id&quot;: 3, &quot;min&quot;: 246, &quot;max&quot;: 1732, &quot;prom&quot;: 989.0}, {&quot;id&quot;: 4, &quot;min&quot;: 316, &quot;max&quot;: 1552, &quot;prom&quot;: 934.0}, {&quot;id&quot;: 5, &quot;min&quot;: 367, &quot;max&quot;: 1833, &quot;prom&quot;: 1100.0}, {&quot;id&quot;: 6, &quot;min&quot;: 984, &quot;max&quot;: 1100, &quot;prom&quot;: 1042.0}, {&quot;id&quot;: 7, &quot;min&quot;: 367, &quot;max&quot;: 1796, &quot;prom&quot;: 1081.5}, {&quot;id&quot;: 8, &quot;min&quot;: 889, &quot;max&quot;: 1014, &quot;prom&quot;: 951.5}, {&quot;id&quot;: 9, &quot;min&quot;: 293, &quot;max&quot;: 1217, &quot;prom&quot;: 755.0}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&quot;id&quot;: 0, &quot;min&quot;: 845, &quot;max&quot;: 1620, &quot;prom&quot;: 1232.5}, {&quot;id&quot;: 1, &quot;min&quot;: 555, &quot;max&quot;: 1639, &quot;prom&quot;: 1097.0}, {&quot;id&quot;: 2, &quot;min&quot;: 244, &quot;max&quot;: 1184, &quot;prom&quot;: 714.0}, {&quot;id&quot;: 3, &quot;min&quot;: 325, &quot;max&quot;: 1178, &quot;prom&quot;: 751.5}, {&quot;id&quot;: 4, &quot;min&quot;: 201, &quot;max&quot;: 1811, &quot;prom&quot;: 1006.0}, {&quot;id&quot;: 5, &quot;min&quot;: 798, &quot;max&quot;: 1536, &quot;prom&quot;: 1167.0}, {&quot;id&quot;: 6, &quot;min&quot;: 832, &quot;max&quot;: 1523, &quot;prom&quot;: 1177.5}, {&quot;id&quot;: 7, &quot;min&quot;: 269, &quot;max&quot;: 1873, &quot;prom&quot;: 1071.0}, {&quot;id&quot;: 8, &quot;min&quot;: 477, &quot;max&quot;: 1927, &quot;prom&quot;: 1202.0}, {&quot;id&quot;: 9, &quot;min&quot;: 644, &quot;max&quot;: 1182, &quot;prom&quot;: 913.0}]
 </pre></div>
 </div>
 </div>
@@ -749,19 +747,19 @@ Pedro  40  Lima
 Tipo del primer elemento del archivo: &lt;class &#39;dict&#39;&gt;
 
 Imprimimos todo el archivo:
-[{&#39;id&#39;: 0, &#39;min&#39;: 128, &#39;max&#39;: 1163, &#39;prom&#39;: 645.5}, {&#39;id&#39;: 1, &#39;min&#39;: 424, &#39;max&#39;: 1047, &#39;prom&#39;: 735.5}, {&#39;id&#39;: 2, &#39;min&#39;: 592, &#39;max&#39;: 1012, &#39;prom&#39;: 802.0}, {&#39;id&#39;: 3, &#39;min&#39;: 246, &#39;max&#39;: 1732, &#39;prom&#39;: 989.0}, {&#39;id&#39;: 4, &#39;min&#39;: 316, &#39;max&#39;: 1552, &#39;prom&#39;: 934.0}, {&#39;id&#39;: 5, &#39;min&#39;: 367, &#39;max&#39;: 1833, &#39;prom&#39;: 1100.0}, {&#39;id&#39;: 6, &#39;min&#39;: 984, &#39;max&#39;: 1100, &#39;prom&#39;: 1042.0}, {&#39;id&#39;: 7, &#39;min&#39;: 367, &#39;max&#39;: 1796, &#39;prom&#39;: 1081.5}, {&#39;id&#39;: 8, &#39;min&#39;: 889, &#39;max&#39;: 1014, &#39;prom&#39;: 951.5}, {&#39;id&#39;: 9, &#39;min&#39;: 293, &#39;max&#39;: 1217, &#39;prom&#39;: 755.0}]
+[{&#39;id&#39;: 0, &#39;min&#39;: 845, &#39;max&#39;: 1620, &#39;prom&#39;: 1232.5}, {&#39;id&#39;: 1, &#39;min&#39;: 555, &#39;max&#39;: 1639, &#39;prom&#39;: 1097.0}, {&#39;id&#39;: 2, &#39;min&#39;: 244, &#39;max&#39;: 1184, &#39;prom&#39;: 714.0}, {&#39;id&#39;: 3, &#39;min&#39;: 325, &#39;max&#39;: 1178, &#39;prom&#39;: 751.5}, {&#39;id&#39;: 4, &#39;min&#39;: 201, &#39;max&#39;: 1811, &#39;prom&#39;: 1006.0}, {&#39;id&#39;: 5, &#39;min&#39;: 798, &#39;max&#39;: 1536, &#39;prom&#39;: 1167.0}, {&#39;id&#39;: 6, &#39;min&#39;: 832, &#39;max&#39;: 1523, &#39;prom&#39;: 1177.5}, {&#39;id&#39;: 7, &#39;min&#39;: 269, &#39;max&#39;: 1873, &#39;prom&#39;: 1071.0}, {&#39;id&#39;: 8, &#39;min&#39;: 477, &#39;max&#39;: 1927, &#39;prom&#39;: 1202.0}, {&#39;id&#39;: 9, &#39;min&#39;: 644, &#39;max&#39;: 1182, &#39;prom&#39;: 913.0}]
 
 Imprimimos alguna información del archivo:
-645.5
-735.5
-802.0
-989.0
-934.0
-1100.0
-1042.0
-1081.5
-951.5
-755.0
+1232.5
+1097.0
+714.0
+751.5
+1006.0
+1167.0
+1177.5
+1071.0
+1202.0
+913.0
 </pre></div>
 </div>
 </div>
@@ -837,10 +835,10 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 608, &#39;y&#39;: 636, &#39;0&#39;: [20, 741]}, {&#39;x&#39;: 785, &#39;y&#39;: 309, &#39;1&#39;: [326, 135]}, {&#39;x&#39;: 657, &#39;y&#39;: 824, &#39;2&#39;: [838, 125]}, {&#39;x&#39;: 881, &#39;y&#39;: 123, &#39;3&#39;: [507, 853]}, {&#39;x&#39;: 492, &#39;y&#39;: 12, &#39;4&#39;: [608, 866]}, {&#39;x&#39;: 949, &#39;y&#39;: 524, &#39;5&#39;: [191, 16]}, {&#39;x&#39;: 249, &#39;y&#39;: 646, &#39;6&#39;: [801, 935]}, {&#39;x&#39;: 475, &#39;y&#39;: 952, &#39;7&#39;: [543, 887]}, {&#39;x&#39;: 280, &#39;y&#39;: 470, &#39;8&#39;: [712, 908]}, {&#39;x&#39;: 910, &#39;y&#39;: 951, &#39;9&#39;: [513, 830]}, {&#39;x&#39;: 295, &#39;y&#39;: 429, &#39;10&#39;: [572, 730]}, {&#39;x&#39;: 183, &#39;y&#39;: 612, &#39;11&#39;: [934, 67]}, {&#39;x&#39;: 748, &#39;y&#39;: 568, &#39;12&#39;: [117, 319]}, {&#39;x&#39;: 941, &#39;y&#39;: 558, &#39;13&#39;: [636, 219]}, {&#39;x&#39;: 190, &#39;y&#39;: 85, &#39;14&#39;: [224, 330]}, {&#39;x&#39;: 466, &#39;y&#39;: 138, &#39;15&#39;: [155, 559]}, {&#39;x&#39;: 430, &#39;y&#39;: 884, &#39;16&#39;: [674, 298]}, {&#39;x&#39;: 182, &#39;y&#39;: 138, &#39;17&#39;: [853, 855]}, {&#39;x&#39;: 162, &#39;y&#39;: 427, &#39;18&#39;: [395, 466]}, {&#39;x&#39;: 572, &#39;y&#39;: 424, &#39;19&#39;: [331, 516]}, {&#39;x&#39;: 207, &#39;y&#39;: 802, &#39;20&#39;: [489, 959]}, {&#39;x&#39;: 767, &#39;y&#39;: 314, &#39;21&#39;: [681, 273]}, {&#39;x&#39;: 822, &#39;y&#39;: 525, &#39;22&#39;: [41, 603]}, {&#39;x&#39;: 28, &#39;y&#39;: 26, &#39;23&#39;: [685, 270]}, {&#39;x&#39;: 18, &#39;y&#39;: 558, &#39;24&#39;: [865, 697]}, {&#39;x&#39;: 341, &#39;y&#39;: 10, &#39;25&#39;: [780, 315]}, {&#39;x&#39;: 809, &#39;y&#39;: 261, &#39;26&#39;: [196, 335]}, {&#39;x&#39;: 140, &#39;y&#39;: 663, &#39;27&#39;: [331, 655]}, {&#39;x&#39;: 769, &#39;y&#39;: 285, &#39;28&#39;: [623, 430]}, {&#39;x&#39;: 986, &#39;y&#39;: 125, &#39;29&#39;: [785, 102]}, {&#39;x&#39;: 666, &#39;y&#39;: 132, &#39;30&#39;: [235, 462]}, {&#39;x&#39;: 187, &#39;y&#39;: 486, &#39;31&#39;: [538, 658]}, {&#39;x&#39;: 951, &#39;y&#39;: 330, &#39;32&#39;: [842, 631]}, {&#39;x&#39;: 27, &#39;y&#39;: 410, &#39;33&#39;: [840, 402]}, {&#39;x&#39;: 98, &#39;y&#39;: 63, &#39;34&#39;: [339, 721]}, {&#39;x&#39;: 463, &#39;y&#39;: 850, &#39;35&#39;: [456, 461]}, {&#39;x&#39;: 434, &#39;y&#39;: 427, &#39;36&#39;: [61, 520]}, {&#39;x&#39;: 952, &#39;y&#39;: 92, &#39;37&#39;: [889, 397]}, {&#39;x&#39;: 228, &#39;y&#39;: 127, &#39;38&#39;: [220, 226]}, {&#39;x&#39;: 924, &#39;y&#39;: 798, &#39;39&#39;: [430, 776]}, {&#39;x&#39;: 183, &#39;y&#39;: 50, &#39;40&#39;: [710, 650]}, {&#39;x&#39;: 908, &#39;y&#39;: 32, &#39;41&#39;: [888, 107]}, {&#39;x&#39;: 322, &#39;y&#39;: 4, &#39;42&#39;: [428, 28]}, {&#39;x&#39;: 167, &#39;y&#39;: 746, &#39;43&#39;: [804, 182]}, {&#39;x&#39;: 170, &#39;y&#39;: 90, &#39;44&#39;: [643, 386]}, {&#39;x&#39;: 952, &#39;y&#39;: 541, &#39;45&#39;: [643, 787]}, {&#39;x&#39;: 419, &#39;y&#39;: 136, &#39;46&#39;: [142, 447]}, {&#39;x&#39;: 92, &#39;y&#39;: 208, &#39;47&#39;: [300, 360]}, {&#39;x&#39;: 267, &#39;y&#39;: 580, &#39;48&#39;: [817, 685]}, {&#39;x&#39;: 173, &#39;y&#39;: 9, &#39;49&#39;: [361, 278]}, {&#39;x&#39;: 326, &#39;y&#39;: 22, &#39;50&#39;: [605, 595]}, {&#39;x&#39;: 836, &#39;y&#39;: 402, &#39;51&#39;: [585, 279]}, {&#39;x&#39;: 754, &#39;y&#39;: 553, &#39;52&#39;: [975, 588]}, {&#39;x&#39;: 125, &#39;y&#39;: 91, &#39;53&#39;: [390, 844]}, {&#39;x&#39;: 430, &#39;y&#39;: 722, &#39;54&#39;: [221, 103]}, {&#39;x&#39;: 442, &#39;y&#39;: 872, &#39;55&#39;: [370, 368]}, {&#39;x&#39;: 262, &#39;y&#39;: 247, &#39;56&#39;: [727, 888]}, {&#39;x&#39;: 586, &#39;y&#39;: 600, &#39;57&#39;: [25, 582]}, {&#39;x&#39;: 484, &#39;y&#39;: 30, &#39;58&#39;: [760, 990]}, {&#39;x&#39;: 58, &#39;y&#39;: 926, &#39;59&#39;: [382, 471]}, {&#39;x&#39;: 383, &#39;y&#39;: 630, &#39;60&#39;: [713, 19]}, {&#39;x&#39;: 869, &#39;y&#39;: 767, &#39;61&#39;: [300, 831]}, {&#39;x&#39;: 589, &#39;y&#39;: 249, &#39;62&#39;: [421, 384]}, {&#39;x&#39;: 523, &#39;y&#39;: 214, &#39;63&#39;: [684, 772]}, {&#39;x&#39;: 517, &#39;y&#39;: 656, &#39;64&#39;: [372, 540]}, {&#39;x&#39;: 535, &#39;y&#39;: 30, &#39;65&#39;: [861, 231]}, {&#39;x&#39;: 402, &#39;y&#39;: 826, &#39;66&#39;: [490, 460]}, {&#39;x&#39;: 552, &#39;y&#39;: 182, &#39;67&#39;: [777, 639]}, {&#39;x&#39;: 844, &#39;y&#39;: 595, &#39;68&#39;: [784, 883]}, {&#39;x&#39;: 827, &#39;y&#39;: 871, &#39;69&#39;: [261, 744]}, {&#39;x&#39;: 306, &#39;y&#39;: 375, &#39;70&#39;: [799, 428]}, {&#39;x&#39;: 710, &#39;y&#39;: 809, &#39;71&#39;: [843, 933]}, {&#39;x&#39;: 526, &#39;y&#39;: 557, &#39;72&#39;: [853, 301]}, {&#39;x&#39;: 378, &#39;y&#39;: 702, &#39;73&#39;: [171, 919]}, {&#39;x&#39;: 991, &#39;y&#39;: 242, &#39;74&#39;: [301, 952]}, {&#39;x&#39;: 29, &#39;y&#39;: 64, &#39;75&#39;: [595, 305]}, {&#39;x&#39;: 85, &#39;y&#39;: 330, &#39;76&#39;: [373, 963]}, {&#39;x&#39;: 567, &#39;y&#39;: 705, &#39;77&#39;: [339, 575]}, {&#39;x&#39;: 134, &#39;y&#39;: 427, &#39;78&#39;: [203, 223]}, {&#39;x&#39;: 935, &#39;y&#39;: 817, &#39;79&#39;: [424, 703]}, {&#39;x&#39;: 198, &#39;y&#39;: 613, &#39;80&#39;: [363, 989]}, {&#39;x&#39;: 239, &#39;y&#39;: 770, &#39;81&#39;: [251, 328]}, {&#39;x&#39;: 150, &#39;y&#39;: 317, &#39;82&#39;: [518, 134]}, {&#39;x&#39;: 184, &#39;y&#39;: 659, &#39;83&#39;: [91, 66]}, {&#39;x&#39;: 901, &#39;y&#39;: 336, &#39;84&#39;: [897, 428]}, {&#39;x&#39;: 101, &#39;y&#39;: 247, &#39;85&#39;: [778, 842]}, {&#39;x&#39;: 264, &#39;y&#39;: 575, &#39;86&#39;: [264, 829]}, {&#39;x&#39;: 953, &#39;y&#39;: 544, &#39;87&#39;: [446, 402]}, {&#39;x&#39;: 899, &#39;y&#39;: 788, &#39;88&#39;: [658, 67]}, {&#39;x&#39;: 937, &#39;y&#39;: 498, &#39;89&#39;: [361, 578]}, {&#39;x&#39;: 649, &#39;y&#39;: 662, &#39;90&#39;: [785, 700]}, {&#39;x&#39;: 485, &#39;y&#39;: 861, &#39;91&#39;: [598, 15]}, {&#39;x&#39;: 303, &#39;y&#39;: 157, &#39;92&#39;: [395, 802]}, {&#39;x&#39;: 847, &#39;y&#39;: 770, &#39;93&#39;: [523, 994]}, {&#39;x&#39;: 276, &#39;y&#39;: 963, &#39;94&#39;: [171, 242]}, {&#39;x&#39;: 709, &#39;y&#39;: 637, &#39;95&#39;: [98, 114]}, {&#39;x&#39;: 685, &#39;y&#39;: 551, &#39;96&#39;: [206, 908]}, {&#39;x&#39;: 255, &#39;y&#39;: 188, &#39;97&#39;: [382, 585]}, {&#39;x&#39;: 500, &#39;y&#39;: 840, &#39;98&#39;: [709, 866]}, {&#39;x&#39;: 755, &#39;y&#39;: 360, &#39;99&#39;: [716, 348]}]
-&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 881, &#39;y&#39;: 123, &#39;3&#39;: [507, 853]}
-[507, 853]
-[507, 853]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 645, &#39;y&#39;: 821, &#39;0&#39;: [660, 150]}, {&#39;x&#39;: 492, &#39;y&#39;: 884, &#39;1&#39;: [648, 740]}, {&#39;x&#39;: 350, &#39;y&#39;: 5, &#39;2&#39;: [816, 186]}, {&#39;x&#39;: 161, &#39;y&#39;: 810, &#39;3&#39;: [959, 350]}, {&#39;x&#39;: 611, &#39;y&#39;: 304, &#39;4&#39;: [191, 222]}, {&#39;x&#39;: 895, &#39;y&#39;: 970, &#39;5&#39;: [593, 824]}, {&#39;x&#39;: 689, &#39;y&#39;: 766, &#39;6&#39;: [882, 837]}, {&#39;x&#39;: 915, &#39;y&#39;: 746, &#39;7&#39;: [856, 520]}, {&#39;x&#39;: 531, &#39;y&#39;: 84, &#39;8&#39;: [964, 71]}, {&#39;x&#39;: 638, &#39;y&#39;: 612, &#39;9&#39;: [852, 179]}, {&#39;x&#39;: 66, &#39;y&#39;: 616, &#39;10&#39;: [414, 586]}, {&#39;x&#39;: 520, &#39;y&#39;: 166, &#39;11&#39;: [464, 595]}, {&#39;x&#39;: 757, &#39;y&#39;: 951, &#39;12&#39;: [575, 526]}, {&#39;x&#39;: 490, &#39;y&#39;: 995, &#39;13&#39;: [712, 903]}, {&#39;x&#39;: 658, &#39;y&#39;: 575, &#39;14&#39;: [654, 598]}, {&#39;x&#39;: 376, &#39;y&#39;: 930, &#39;15&#39;: [724, 438]}, {&#39;x&#39;: 602, &#39;y&#39;: 471, &#39;16&#39;: [526, 403]}, {&#39;x&#39;: 181, &#39;y&#39;: 85, &#39;17&#39;: [812, 1]}, {&#39;x&#39;: 369, &#39;y&#39;: 911, &#39;18&#39;: [658, 831]}, {&#39;x&#39;: 650, &#39;y&#39;: 769, &#39;19&#39;: [88, 817]}, {&#39;x&#39;: 881, &#39;y&#39;: 656, &#39;20&#39;: [347, 283]}, {&#39;x&#39;: 32, &#39;y&#39;: 351, &#39;21&#39;: [315, 560]}, {&#39;x&#39;: 920, &#39;y&#39;: 394, &#39;22&#39;: [239, 262]}, {&#39;x&#39;: 546, &#39;y&#39;: 880, &#39;23&#39;: [682, 796]}, {&#39;x&#39;: 320, &#39;y&#39;: 252, &#39;24&#39;: [510, 865]}, {&#39;x&#39;: 795, &#39;y&#39;: 444, &#39;25&#39;: [769, 304]}, {&#39;x&#39;: 82, &#39;y&#39;: 587, &#39;26&#39;: [218, 776]}, {&#39;x&#39;: 684, &#39;y&#39;: 220, &#39;27&#39;: [403, 452]}, {&#39;x&#39;: 896, &#39;y&#39;: 383, &#39;28&#39;: [218, 884]}, {&#39;x&#39;: 148, &#39;y&#39;: 781, &#39;29&#39;: [75, 135]}, {&#39;x&#39;: 311, &#39;y&#39;: 971, &#39;30&#39;: [654, 566]}, {&#39;x&#39;: 293, &#39;y&#39;: 493, &#39;31&#39;: [182, 15]}, {&#39;x&#39;: 172, &#39;y&#39;: 584, &#39;32&#39;: [345, 564]}, {&#39;x&#39;: 119, &#39;y&#39;: 463, &#39;33&#39;: [350, 783]}, {&#39;x&#39;: 493, &#39;y&#39;: 414, &#39;34&#39;: [556, 730]}, {&#39;x&#39;: 152, &#39;y&#39;: 130, &#39;35&#39;: [296, 200]}, {&#39;x&#39;: 345, &#39;y&#39;: 664, &#39;36&#39;: [807, 825]}, {&#39;x&#39;: 188, &#39;y&#39;: 50, &#39;37&#39;: [869, 938]}, {&#39;x&#39;: 552, &#39;y&#39;: 435, &#39;38&#39;: [863, 201]}, {&#39;x&#39;: 528, &#39;y&#39;: 376, &#39;39&#39;: [814, 827]}, {&#39;x&#39;: 404, &#39;y&#39;: 537, &#39;40&#39;: [570, 552]}, {&#39;x&#39;: 121, &#39;y&#39;: 711, &#39;41&#39;: [293, 46]}, {&#39;x&#39;: 852, &#39;y&#39;: 920, &#39;42&#39;: [632, 921]}, {&#39;x&#39;: 312, &#39;y&#39;: 829, &#39;43&#39;: [634, 394]}, {&#39;x&#39;: 811, &#39;y&#39;: 272, &#39;44&#39;: [411, 888]}, {&#39;x&#39;: 222, &#39;y&#39;: 181, &#39;45&#39;: [580, 674]}, {&#39;x&#39;: 547, &#39;y&#39;: 991, &#39;46&#39;: [801, 498]}, {&#39;x&#39;: 828, &#39;y&#39;: 916, &#39;47&#39;: [903, 527]}, {&#39;x&#39;: 670, &#39;y&#39;: 18, &#39;48&#39;: [250, 889]}, {&#39;x&#39;: 539, &#39;y&#39;: 859, &#39;49&#39;: [717, 536]}, {&#39;x&#39;: 931, &#39;y&#39;: 871, &#39;50&#39;: [851, 240]}, {&#39;x&#39;: 817, &#39;y&#39;: 811, &#39;51&#39;: [519, 488]}, {&#39;x&#39;: 215, &#39;y&#39;: 403, &#39;52&#39;: [713, 818]}, {&#39;x&#39;: 633, &#39;y&#39;: 37, &#39;53&#39;: [98, 254]}, {&#39;x&#39;: 244, &#39;y&#39;: 297, &#39;54&#39;: [132, 796]}, {&#39;x&#39;: 274, &#39;y&#39;: 554, &#39;55&#39;: [31, 380]}, {&#39;x&#39;: 530, &#39;y&#39;: 71, &#39;56&#39;: [621, 771]}, {&#39;x&#39;: 544, &#39;y&#39;: 316, &#39;57&#39;: [539, 132]}, {&#39;x&#39;: 632, &#39;y&#39;: 552, &#39;58&#39;: [789, 969]}, {&#39;x&#39;: 718, &#39;y&#39;: 18, &#39;59&#39;: [584, 839]}, {&#39;x&#39;: 208, &#39;y&#39;: 59, &#39;60&#39;: [939, 739]}, {&#39;x&#39;: 283, &#39;y&#39;: 202, &#39;61&#39;: [546, 721]}, {&#39;x&#39;: 144, &#39;y&#39;: 779, &#39;62&#39;: [494, 973]}, {&#39;x&#39;: 244, &#39;y&#39;: 647, &#39;63&#39;: [114, 348]}, {&#39;x&#39;: 137, &#39;y&#39;: 372, &#39;64&#39;: [963, 513]}, {&#39;x&#39;: 555, &#39;y&#39;: 138, &#39;65&#39;: [226, 334]}, {&#39;x&#39;: 349, &#39;y&#39;: 119, &#39;66&#39;: [615, 965]}, {&#39;x&#39;: 484, &#39;y&#39;: 142, &#39;67&#39;: [945, 805]}, {&#39;x&#39;: 86, &#39;y&#39;: 729, &#39;68&#39;: [249, 477]}, {&#39;x&#39;: 800, &#39;y&#39;: 695, &#39;69&#39;: [8, 898]}, {&#39;x&#39;: 843, &#39;y&#39;: 288, &#39;70&#39;: [437, 608]}, {&#39;x&#39;: 509, &#39;y&#39;: 387, &#39;71&#39;: [909, 957]}, {&#39;x&#39;: 988, &#39;y&#39;: 662, &#39;72&#39;: [201, 455]}, {&#39;x&#39;: 223, &#39;y&#39;: 931, &#39;73&#39;: [644, 817]}, {&#39;x&#39;: 497, &#39;y&#39;: 558, &#39;74&#39;: [579, 845]}, {&#39;x&#39;: 687, &#39;y&#39;: 737, &#39;75&#39;: [20, 118]}, {&#39;x&#39;: 632, &#39;y&#39;: 301, &#39;76&#39;: [169, 358]}, {&#39;x&#39;: 916, &#39;y&#39;: 790, &#39;77&#39;: [765, 222]}, {&#39;x&#39;: 956, &#39;y&#39;: 192, &#39;78&#39;: [621, 740]}, {&#39;x&#39;: 141, &#39;y&#39;: 438, &#39;79&#39;: [466, 642]}, {&#39;x&#39;: 895, &#39;y&#39;: 727, &#39;80&#39;: [937, 87]}, {&#39;x&#39;: 387, &#39;y&#39;: 295, &#39;81&#39;: [580, 128]}, {&#39;x&#39;: 900, &#39;y&#39;: 556, &#39;82&#39;: [523, 24]}, {&#39;x&#39;: 387, &#39;y&#39;: 39, &#39;83&#39;: [745, 92]}, {&#39;x&#39;: 765, &#39;y&#39;: 799, &#39;84&#39;: [956, 172]}, {&#39;x&#39;: 829, &#39;y&#39;: 457, &#39;85&#39;: [884, 591]}, {&#39;x&#39;: 791, &#39;y&#39;: 367, &#39;86&#39;: [302, 153]}, {&#39;x&#39;: 527, &#39;y&#39;: 818, &#39;87&#39;: [124, 635]}, {&#39;x&#39;: 507, &#39;y&#39;: 404, &#39;88&#39;: [428, 867]}, {&#39;x&#39;: 543, &#39;y&#39;: 967, &#39;89&#39;: [182, 32]}, {&#39;x&#39;: 495, &#39;y&#39;: 212, &#39;90&#39;: [300, 53]}, {&#39;x&#39;: 333, &#39;y&#39;: 78, &#39;91&#39;: [219, 289]}, {&#39;x&#39;: 281, &#39;y&#39;: 914, &#39;92&#39;: [300, 301]}, {&#39;x&#39;: 272, &#39;y&#39;: 215, &#39;93&#39;: [108, 810]}, {&#39;x&#39;: 119, &#39;y&#39;: 153, &#39;94&#39;: [746, 877]}, {&#39;x&#39;: 98, &#39;y&#39;: 968, &#39;95&#39;: [342, 956]}, {&#39;x&#39;: 183, &#39;y&#39;: 32, &#39;96&#39;: [561, 436]}, {&#39;x&#39;: 141, &#39;y&#39;: 727, &#39;97&#39;: [944, 647]}, {&#39;x&#39;: 804, &#39;y&#39;: 111, &#39;98&#39;: [226, 197]}, {&#39;x&#39;: 948, &#39;y&#39;: 386, &#39;99&#39;: [533, 517]}]
+&lt;class &#39;dict&#39;&gt; {&#39;x&#39;: 161, &#39;y&#39;: 810, &#39;3&#39;: [959, 350]}
+[959, 350]
+[959, 350]
 </pre></div>
 </div>
 </div>
@@ -869,7 +867,7 @@ De nuevo un diccionario (vìa json.loads()):	 &lt;class &#39;dict&#39;&gt; {&#39
 <p><strong>Recomendación:</strong> Usar <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> y <code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> de forma prolija y de acuerdo a los líneamientos escritos más arriba. Quizás haciendo aguna  “magia” con los <code class="docutils literal notranslate"><span class="pre">replace()</span></code> se pueda arreglar la celda de código anterior, pero es mejor no hacerlo.</p>
 </section>
 <section id="lectura-de-archivos-json-en-internet">
-<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Link to this heading">#</a></h2>
+<h2>3. Lectura de archivos JSON en internet<a class="headerlink" href="#lectura-de-archivos-json-en-internet" title="Permalink to this heading">#</a></h2>
 <p>Para leer un archivo JSON desde internet utilizando el módulo <code class="docutils literal notranslate"><span class="pre">requests</span></code> en Python, se puede hacer lo siguiente:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import requests
 </pre></div>
@@ -1041,7 +1039,7 @@ Visual Studio 7: A Comprehensive Guide
 </div>
 </section>
 <section id="lectura-y-escritura-de-archivos-xml">
-<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Link to this heading">#</a></h2>
+<h2>4. Lectura y escritura de archivos XML<a class="headerlink" href="#lectura-y-escritura-de-archivos-xml" title="Permalink to this heading">#</a></h2>
 <p>Un archivo XML (Extensible Markup Language) es un tipo de archivo de texto que se utiliza para almacenar y transportar datos de manera estructurada. Un archivo XML está compuesto por una serie de etiquetas que definen elementos y atributos que describen la estructura y los datos contenidos en el archivo.</p>
 <p>Cada elemento en un archivo XML está compuesto por una etiqueta de apertura y una etiqueta de cierre, y puede contener elementos anidados y atributos. Por ejemplo, el siguiente es un ejemplo simple de un archivo XML que contiene información sobre una persona:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;persona&gt;
@@ -1059,7 +1057,7 @@ Visual Studio 7: A Comprehensive Guide
 </div>
 <p>Obviamente hay otras formas de hacerlo.</p>
 <section id="elementos-y-atributos">
-<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Link to this heading">#</a></h3>
+<h3>4.1. Elementos y atributos<a class="headerlink" href="#elementos-y-atributos" title="Permalink to this heading">#</a></h3>
 <p>En XML, los <em>elementos</em> son las partes principales de un documento XML y representan los distintos elementos de información que se están describiendo en el documento. Los elementos tienen un nombre que los identifica y pueden contener <em>otros elementos</em>, <em>atributos</em> o <em>texto</em>.</p>
 <p>Por ejemplo, en el siguiente fragmento de código XML, <code class="docutils literal notranslate"><span class="pre">&lt;trkpt&gt;</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;ele&gt;</span></code> son elementos:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;trkpt lat=&quot;-30.9424310&quot; lon=&quot;-64.2770290&quot;&gt;
@@ -1072,7 +1070,7 @@ Visual Studio 7: A Comprehensive Guide
 <p>Los elementos y atributos en XML se utilizan para estructurar y describir los datos de forma clara y organizada. Los elementos proporcionan la estructura general del documento XML y los atributos permiten proporcionar información adicional sobre los elementos.</p>
 </section>
 <section id="xml-dom">
-<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Link to this heading">#</a></h3>
+<h3>4.2. xml.dom<a class="headerlink" href="#xml-dom" title="Permalink to this heading">#</a></h3>
 <p>La biblioteca <code class="docutils literal notranslate"><span class="pre">xml.dom</span></code> de Python es una biblioteca estándar que proporciona una forma de analizar y manipular documentos XML mediante el modelo de objetos del documento (DOM, por sus siglas en inglés). El modelo DOM representa el documento XML como un árbol de nodos, donde cada nodo representa un elemento, atributo, texto u otro tipo de contenido en el documento.</p>
 <p>Para obtener elementos y atributos de un documento XML utilizando la biblioteca xml.dom, puedes seguir estos pasos:</p>
 <p>Importar la biblioteca y abrir el archivo XML:</p>
@@ -1106,7 +1104,7 @@ contenido = elementos[0].firstChild.nodeValue
 <p>Es importante tener en cuenta que el método <code class="docutils literal notranslate"><span class="pre">getElementsByTagName</span></code> devuelve una lista de elementos, incluso si solo hay un elemento con el nombre de etiqueta especificado en el documento. Por lo tanto, en el ejemplo anterior se utiliza <code class="docutils literal notranslate"><span class="pre">elementos[0]</span></code> para acceder al primer elemento de la lista. Si se espera que solo haya un elemento con el nombre de etiqueta especificado en el documento, se puede utilizar <code class="docutils literal notranslate"><span class="pre">getElementsByTagName(nombre_del_elemento)[0]</span></code> para obtener directamente ese elemento.</p>
 </section>
 <section id="ejemplo">
-<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Link to this heading">#</a></h3>
+<h3>4.3. Ejemplo<a class="headerlink" href="#ejemplo" title="Permalink to this heading">#</a></h3>
 <p>Veamos ahora un archivo XML de internet,  con una estructura no demasiado complicada pero con más registros. El archivo que vamos a leer es <code class="docutils literal notranslate"><span class="pre">books.xml</span></code> y su estrucura es:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;catalog&gt;
@@ -1185,8 +1183,8 @@ contenido = elementos[0].firstChild.nodeValue
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tipo  de dom: &lt;class &#39;xml.dom.minidom.Document&#39;&gt;
-El  primer elemento book: &lt;DOM Element: book at 0x7bf5869e8040&gt;
-El  segundo elemento book: &lt;DOM Element: book at 0x7bf5869eaef0&gt;
+El  primer elemento book: &lt;DOM Element: book at 0x1a80da520e0&gt;
+El  segundo elemento book: &lt;DOM Element: book at 0x1a80daed000&gt;
 Atributo &#39;id&#39; del primer elemento &#39;book&#39;: bk101
 Atributo &#39;id&#39; del segundo elemento &#39;book&#39;: bk102
 &lt;class &#39;str&#39;&gt; : 
@@ -1233,7 +1231,7 @@ El primer autor del primer libro es: &lt;class &#39;str&#39;&gt; : Gambardella, 
 </section>
 </section>
 <section id="uso-de-apis">
-<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Link to this heading">#</a></h2>
+<h2>5. Uso de APIs<a class="headerlink" href="#uso-de-apis" title="Permalink to this heading">#</a></h2>
 <p>Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen e intercambien datos entre sí. Es como un puente que conecta aplicaciones y les permite compartir información y funcionalidades.</p>
 <p>Por ejemplo, (ver [2]), si se tiene una app para móviles acerca de recetas y se hace una búsqueda de una determinada receta, se puede utilizar una API para que esta aplicación se comunique con el sitio web de recetas y pida las recetas que cumplen con los criterios de búsqueda. La API entonces se encarga de recibir la solicitud, buscar las recetas apropiadas y regresar los resultados a la aplicación. Una API es una forma de conectar diferentes aplicaciones y hacer que trabajen juntas de manera más eficiente y efectiva.</p>
 <p>Las APIS <em>no</em> son lenguaje dependientes,  es decir cualquier lenguaje moderno de programación (Python, Java, C++, etc) puede invocar y utilizar una API bien definida.</p>
@@ -1255,7 +1253,7 @@ El primer autor del primer libro es: &lt;class &#39;str&#39;&gt; : Gambardella, 
 <li><p>[5] <a class="reference external" href="https://www.computer.org/publications/tech-news/trends/what-are-apis/">https://www.computer.org/publications/tech-news/trends/what-are-apis/</a></p></li>
 </ul>
 <section id="ejemplo-la-api-del-noaa">
-<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Link to this heading">#</a></h3>
+<h3>Ejemplo: la API del NOAA<a class="headerlink" href="#ejemplo-la-api-del-noaa" title="Permalink to this heading">#</a></h3>
 <p>La Oficina Nacional de Administración Oceánica y Atmosférica (National Oceanic and Atmospheric Administration, NOAA) es una agencia científica del Departamento de Comercio de los Estados Unidos cuyas actividades se centran en monitorear las condiciones de los océanos y la atmósfera.</p>
 <p>El NOAA ofrece distintos <em>datasets</em> (conjuntos de datos estructurados) sin limitaciones. Los datos puedes ser bajados directamente del sitio web https://www.noaa.gov/ o, alternativamente, accedidos por API.</p>
 <p>En esta sección accederemos a los datasets utilizando la API. Para utilizar la API se debe solicitar  un <em>token</em> al NOAA (ver <em>Referencias</em>, más abajo). El token es una cadena de caracteres que funciona como id y password al mismo tiempo.</p>
@@ -1329,7 +1327,152 @@ gov.noaa.ncdc:C00313 : Precipitation Hourly
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;metadata&#39;: {&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 10, &#39;limit&#39;: 25}}, &#39;results&#39;: [{&#39;uid&#39;: &#39;gov.noaa.ncdc:C00861&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-18&#39;, &#39;name&#39;: &#39;Daily Summaries&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GHCND&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00946&#39;, &#39;mindate&#39;: &#39;1750-02-01&#39;, &#39;maxdate&#39;: &#39;2024-09-01&#39;, &#39;name&#39;: &#39;Global Summary of the Month&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOM&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00947&#39;, &#39;mindate&#39;: &#39;1763-01-01&#39;, &#39;maxdate&#39;: &#39;2024-01-01&#39;, &#39;name&#39;: &#39;Global Summary of the Year&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;GSOY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00345&#39;, &#39;mindate&#39;: &#39;1991-06-05&#39;, &#39;maxdate&#39;: &#39;2024-09-19&#39;, &#39;name&#39;: &#39;Weather Radar (Level II)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD2&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00708&#39;, &#39;mindate&#39;: &#39;1994-05-20&#39;, &#39;maxdate&#39;: &#39;2024-09-16&#39;, &#39;name&#39;: &#39;Weather Radar (Level III)&#39;, &#39;datacoverage&#39;: 0.95, &#39;id&#39;: &#39;NEXRAD3&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00821&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-01-01&#39;, &#39;name&#39;: &#39;Normals Annual/Seasonal&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_ANN&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00823&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-31&#39;, &#39;name&#39;: &#39;Normals Daily&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_DLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00822&#39;, &#39;mindate&#39;: &#39;2010-01-01&#39;, &#39;maxdate&#39;: &#39;2010-12-01&#39;, &#39;name&#39;: &#39;Normals Monthly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;NORMAL_MLY&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00505&#39;, &#39;mindate&#39;: &#39;1970-05-12&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation 15 Minute&#39;, &#39;datacoverage&#39;: 0.25, &#39;id&#39;: &#39;PRECIP_15&#39;}, {&#39;uid&#39;: &#39;gov.noaa.ncdc:C00313&#39;, &#39;mindate&#39;: &#39;1900-01-01&#39;, &#39;maxdate&#39;: &#39;2014-01-01&#39;, &#39;name&#39;: &#39;Precipitation Hourly&#39;, &#39;datacoverage&#39;: 1, &#39;id&#39;: &#39;PRECIP_HLY&#39;}]}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">my_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;token&#39;</span> <span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">try</span> <span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.ncdc.noaa.gov/cdo-web/api/v2/datasets?locationid=CITY:US390029&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">my_headers</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py:75,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span><span class="w">     </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Sends a GET request.</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd">     :param url: URL for the new :class:`Request` object.</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     :rtype: requests.Response</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">75</span>     <span class="k">return</span> <span class="n">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\api.py:61,</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># By using the &#39;with&#39; statement we are sure the session is closed, thus we</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="c1"># avoid leaving sockets open which can trigger a ResourceWarning in some</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> <span class="c1"># cases, and look like a memory leak in others.</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="k">with</span> <span class="n">sessions</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">61</span>     <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:529,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span>     <span class="s1">&#39;timeout&#39;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="s1">&#39;allow_redirects&#39;</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">529</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">return</span> <span class="n">resp</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\sessions.py:645,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="n">start</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span> <span class="c1"># Send the request</span>
+<span class="ne">--&gt; </span><span class="mi">645</span> <span class="n">r</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="c1"># Total elapsed time of the request (approximately)</span>
+<span class="g g-Whitespace">    </span><span class="mi">648</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">preferred_clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\adapters.py:440,</span> in <span class="ni">HTTPAdapter.send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">439</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">chunked</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">440</span>         <span class="n">resp</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>             <span class="n">method</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>             <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>             <span class="n">body</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>             <span class="n">headers</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>             <span class="n">redirect</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>             <span class="n">assert_same_host</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>             <span class="n">preload_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>             <span class="n">decode_content</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>             <span class="n">retries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">max_retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span>             <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span>     <span class="c1"># Send the request.</span>
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span>         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;proxy_pool&#39;</span><span class="p">):</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:703,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_proxy</span><span class="p">(</span><span class="n">conn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="c1"># Make the request on the httplib connection object.</span>
+<span class="ne">--&gt; </span><span class="mi">703</span> <span class="n">httplib_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="n">conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span>     <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">708</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">711</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">713</span> <span class="c1"># If we&#39;re going to release the connection in ``finally:``, then</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span> <span class="c1"># the response doesn&#39;t need to know about the connection. Otherwise</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span> <span class="c1"># it will also try to release it and we&#39;ll have a double-release</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="c1"># mess.</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:449,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>             <span class="n">httplib_response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>             <span class="c1"># Remove the TypeError from the exception chain in</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>             <span class="c1"># Python 3 (including for exceptions like SystemExit).</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>             <span class="c1"># Otherwise it looks like a bug in the code.</span>
+<span class="ne">--&gt; </span><span class="mi">449</span>             <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="k">except</span> <span class="p">(</span><span class="n">SocketTimeout</span><span class="p">,</span> <span class="n">BaseSSLError</span><span class="p">,</span> <span class="n">SocketError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
+
+<span class="nn">File &lt;string&gt;:3,</span> in <span class="ni">raise_from</span><span class="nt">(value, from_value)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py:444,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, timeout, chunked, **httplib_request_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="c1"># Python 3</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">444</span>         <span class="n">httplib_response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="c1"># Remove the TypeError from the exception chain in</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="c1"># Python 3 (including for exceptions like SystemExit).</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>         <span class="c1"># Otherwise it looks like a bug in the code.</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="n">six</span><span class="o">.</span><span class="n">raise_from</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\http\client.py:1374,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1372</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1373</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1374</span>         <span class="n">response</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>     <span class="k">except</span> <span class="ne">ConnectionError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>         <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\http\client.py:318,</span> in <span class="ni">HTTPResponse.begin</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span> <span class="c1"># read until we get a non-100 response</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">318</span>     <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">CONTINUE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="k">break</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\http\client.py:279,</span> in <span class="ni">HTTPResponse._read_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span> <span class="nf">_read_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">279</span>     <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">(</span><span class="n">_MAXLINE</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;iso-8859-1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_MAXLINE</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="k">raise</span> <span class="n">LineTooLong</span><span class="p">(</span><span class="s2">&quot;status line&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1273,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1269</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1270</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1271</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1272</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1273</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1274</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\ssl.py:1129,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1127</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1128</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1129</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1130</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1131</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1354,13 +1497,6 @@ gov.noaa.ncdc:C00313 : Precipitation Hourly
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
-metadata
-results
-</pre></div>
-</div>
-</div>
 </div>
 <p>nos devuelve un sumario de temperaturas y precipitaciones diarias en el mes de mayo de la estación meteorológica del Aeropuerto de Córdoba,  que está codificada <code class="docutils literal notranslate"><span class="pre">AR000087344</span></code>.</p>
 <p>Observar que la respuesta recibida puede ser convertida a JSON, pues así lo permite la API. En  este caso particular, la respuesta JSON es un diccionario con dos claves: <code class="docutils literal notranslate"><span class="pre">metadata</span></code> y <code class="docutils literal notranslate"><span class="pre">results</span></code>. El campo <code class="docutils literal notranslate"><span class="pre">metadata</span></code> nos da información sobre tipo de datos, formato, etc. Mientras que <code class="docutils literal notranslate"><span class="pre">results</span></code> es el contenido que nos interesa.</p>
@@ -1371,36 +1507,12 @@ results
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;resultset&#39;: {&#39;offset&#39;: 1, &#39;count&#39;: 14, &#39;limit&#39;: 1000}}
-[{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}, {&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}, {&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}, {&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}, {&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}, {&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}, {&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}, {&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}]
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">respuesta['results']</span></code>es una lista con datos meteorológicos de la localidad en el período especificado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span>  <span class="n">data</span> <span class="ow">in</span> <span class="n">respuesta</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.5}
-{&#39;date&#39;: &#39;2024-04-24T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.0}
-{&#39;date&#39;: &#39;2024-04-25T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 13.4}
-{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 15.7}
-{&#39;date&#39;: &#39;2024-04-26T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 12.3}
-{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;PRCP&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 0.0}
-{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 16.9}
-{&#39;date&#39;: &#39;2024-04-27T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 21.1}
-{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 14.1}
-{&#39;date&#39;: &#39;2024-04-28T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 6.3}
-{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 17.1}
-{&#39;date&#39;: &#39;2024-04-29T00:00:00&#39;, &#39;datatype&#39;: &#39;TMIN&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 8.1}
-{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TAVG&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;H,,S,&#39;, &#39;value&#39;: 19.9}
-{&#39;date&#39;: &#39;2024-04-30T00:00:00&#39;, &#39;datatype&#39;: &#39;TMAX&#39;, &#39;station&#39;: &#39;GHCND:AR000087344&#39;, &#39;attributes&#39;: &#39;,,S,&#39;, &#39;value&#39;: 27.1}
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1540,7 @@ results
 </ul>
 </section>
 <section id="otros-ejemplos-de-apis">
-<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Link to this heading">#</a></h3>
+<h3>Otros ejemplos de APIs<a class="headerlink" href="#otros-ejemplos-de-apis" title="Permalink to this heading">#</a></h3>
 <p>Algunas APIs interesantes para practicar son:</p>
 <ul class="simple">
 <li><p><strong>PokéAPI</strong>: Proporciona datos sobre Pokémon como movimientos, habilidades, tipos, etc. Permite crear fácilmente un Pokédex. [2][3]</p></li>
@@ -1442,7 +1554,7 @@ results
 </section>
 </section>
 <section id="apis-de-servicios-populares">
-<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Link to this heading">#</a></h2>
+<h2>APIs de servicios populares<a class="headerlink" href="#apis-de-servicios-populares" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>API de Google Maps</strong>: Agrega funcionalidades de mapas a aplicaciones web como mostrar ubicaciones, calcular rutas, obtener direcciones. [4]</p></li>
 <li><p><strong>API de Facebook</strong>: Integra funcionalidades sociales como compartir contenido, autenticación de usuarios, conexión a la red de Facebook. [4]</p></li>
