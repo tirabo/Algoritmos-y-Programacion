@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>9. Listas y tuplas &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '09_Listas_y_tuplas';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -455,9 +453,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="listas-y-tuplas">
-<h1>9. Listas y tuplas<a class="headerlink" href="#listas-y-tuplas" title="Link to this heading">#</a></h1>
+<h1>9. Listas y tuplas<a class="headerlink" href="#listas-y-tuplas" title="Permalink to this heading">#</a></h1>
 <section id="listas">
-<h2>1. Listas<a class="headerlink" href="#listas" title="Link to this heading">#</a></h2>
+<h2>1. Listas<a class="headerlink" href="#listas" title="Permalink to this heading">#</a></h2>
 <p>Como una cadena, una <em>lista</em> es una secuencia de valores. En una cadena, los valores son caracteres; en una lista, los valores pueden ser de cualquier tipo. Los valores de una lista se denominan <em>elementos</em> o, a veces, <em>items</em>.</p>
 <p>Hay varias formas de crear una lista nueva; lo más simple es encerrar los elementos entre corchetes <code class="docutils literal notranslate"><span class="pre">[</span></code> y <code class="docutils literal notranslate"><span class="pre">]</span></code>:</p>
 <div class="cell docutils container">
@@ -511,7 +509,7 @@ document.write(`
 </div>
 </section>
 <section id="acceder-a-los-elementos-de-una-lista-y-otras-operaciones-comunes">
-<h2>2. Acceder  a los elementos de una lista y otras operaciones comunes<a class="headerlink" href="#acceder-a-los-elementos-de-una-lista-y-otras-operaciones-comunes" title="Link to this heading">#</a></h2>
+<h2>2. Acceder  a los elementos de una lista y otras operaciones comunes<a class="headerlink" href="#acceder-a-los-elementos-de-una-lista-y-otras-operaciones-comunes" title="Permalink to this heading">#</a></h2>
 <p>La sintaxis para acceder a los elementos de una lista es la misma que para acceder a los caracteres de una cadena: el operador de corchetes. La expresión entre corchetes especifica el índice. Recordá que los índices comienzan en 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -732,7 +730,7 @@ True
 </div>
 </section>
 <section id="una-lista-es-mutable">
-<h2>3. Una lista es mutable<a class="headerlink" href="#una-lista-es-mutable" title="Link to this heading">#</a></h2>
+<h2>3. Una lista es mutable<a class="headerlink" href="#una-lista-es-mutable" title="Permalink to this heading">#</a></h2>
 <p>Los tipos integrados como <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code> son inmutables. Sin embargo, los objetos de tipo <code class="docutils literal notranslate"><span class="pre">list</span></code>  o <em>listas</em> son contenedores ordenados y mutables de Python, siendo una de las estructuras de datos más comunes en Python.</p>
 <p><em>Podemos pensar a una lista como una referencia a los elementos que contiene y que es posible cambiar los elementos referenciados sin cambiar la referencia.</em></p>
 <p>Otra propiedad importante,  es que si dos variables de tipo <code class="docutils literal notranslate"><span class="pre">list</span></code> tiene la misma referencia, entonces el cambio de  elementos en una de ellas se reflejará en un cambio de elementos en la otra. Si ejecutamos:</p>
@@ -802,7 +800,7 @@ True
 <p>Observar que, como antes, <code class="docutils literal notranslate"><span class="pre">lista2</span></code> referencia a la misma lista que <code class="docutils literal notranslate"><span class="pre">lista1</span></code>: cuando se modifique una de las listas se modificará la otra. En  cambio, <code class="docutils literal notranslate"><span class="pre">lista3</span></code> es una copia de los elementos de la <code class="docutils literal notranslate"><span class="pre">lista1</span></code> y cuando modifiquemos <code class="docutils literal notranslate"><span class="pre">lista1</span></code> (o <code class="docutils literal notranslate"><span class="pre">lista2</span></code> en este caso) no afectará en nada a <code class="docutils literal notranslate"><span class="pre">lista3</span></code>.</p>
 </section>
 <section id="arreglos-multidimensionales">
-<h2>4. Arreglos multidimensionales<a class="headerlink" href="#arreglos-multidimensionales" title="Link to this heading">#</a></h2>
+<h2>4. Arreglos multidimensionales<a class="headerlink" href="#arreglos-multidimensionales" title="Permalink to this heading">#</a></h2>
 <p>Un arreglo multidimensional es una estructura de datos que contiene más de una dimensión. En  el caso de 2 dimensiones los elementos están organizados en filas y columnas. A diferencia de un arreglo unidimensional, que es una lista lineal de elementos, un arreglo bidimensional se puede visualizar como una tabla o matriz.</p>
 <p>Por ejemplo, un arreglo unidimensional podría ser una lista de números enteros, mientras que un arreglo bidimensional podría ser una tabla de notas de estudiantes, donde cada fila representa un estudiante y cada columna representa una asignatura. En este caso, el arreglo bidimensional tendría dos dimensiones: una para los estudiantes y otra para las asignaturas.</p>
 <p>Por ejemplo,</p>
@@ -837,7 +835,7 @@ True
 <p>Por supuesto que si <span class="math notranslate nohighlight">\(n&gt;1\)</span> también se pueden hacer arreglos <span class="math notranslate nohighlight">\(n\)</span>-dimensionales: un arreglo <span class="math notranslate nohighlight">\(n\)</span>-dimensional es una lista de arreglos <span class="math notranslate nohighlight">\((n-1)\)</span>-dimensionales.</p>
 </section>
 <section id="recorriendo-una-lista">
-<h2>5. Recorriendo una lista<a class="headerlink" href="#recorriendo-una-lista" title="Link to this heading">#</a></h2>
+<h2>5. Recorriendo una lista<a class="headerlink" href="#recorriendo-una-lista" title="Permalink to this heading">#</a></h2>
 <p>La forma más común de recorrer los elementos de una lista es con un ciclo <code class="docutils literal notranslate"><span class="pre">for</span></code>. La sintaxis es la misma  que para las cadenas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -943,7 +941,7 @@ Gouda
 </div>
 </section>
 <section id="metodos-en-listas">
-<h2>6. Métodos en listas<a class="headerlink" href="#metodos-en-listas" title="Link to this heading">#</a></h2>
+<h2>6. Métodos en listas<a class="headerlink" href="#metodos-en-listas" title="Permalink to this heading">#</a></h2>
 <p>Llamamos métodos a funciones que se aplican de una forma particular, con la notación punto. Veamos a continuación ejemplos.</p>
 <p>Python proporciona métodos que operan en listas. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">append</span></code> agrega un nuevo elemento al final de una lista:</p>
 <div class="cell docutils container">
@@ -1126,7 +1124,7 @@ c
 </div>
 <p>El  método <code class="docutils literal notranslate"><span class="pre">remove()</span></code> devuelve <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <section id="para-leer-mas-adelante">
-<h3><strong>Para leer más adelante.</strong><a class="headerlink" href="#para-leer-mas-adelante" title="Link to this heading">#</a></h3>
+<h3><strong>Para leer más adelante.</strong><a class="headerlink" href="#para-leer-mas-adelante" title="Permalink to this heading">#</a></h3>
 <p>Como un ejemplo de lo engañoso que pueden ser las referencias en listas veamos lo siguiente. Supongamos que   queremos crear un arreglo bidimensional de <span class="math notranslate nohighlight">\(3 \times 5\)</span> donde cada elemento es <span class="math notranslate nohighlight">\(0\)</span>. Estaríamos tentados de hacerlo de la siguiente forma:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1194,7 +1192,7 @@ c
 </section>
 </section>
 <section id="listas-como-argumentos-de-funciones">
-<h2>7. Listas como argumentos de funciones<a class="headerlink" href="#listas-como-argumentos-de-funciones" title="Link to this heading">#</a></h2>
+<h2>7. Listas como argumentos de funciones<a class="headerlink" href="#listas-como-argumentos-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>Habíamos visto que las variables de tipos inmutables pasadas como argumentos de funciones si eran modificadas en el cuerpo de la función no las afectaba, pues en realidad la función copia la variable y todo cambio se hace sobre la copia, no sobre la variable original.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1327,7 +1325,7 @@ None
 </div>
 </section>
 <section id="tuplas">
-<h2>8. Tuplas<a class="headerlink" href="#tuplas" title="Link to this heading">#</a></h2>
+<h2>8. Tuplas<a class="headerlink" href="#tuplas" title="Permalink to this heading">#</a></h2>
 <p>Una <em>tupla</em> en Python es una secuencia de elementos. A diferencia de las listas las tuplas son un tipo de secuencia inmutable. Esto quiere decir que una tupla no puede ser modificada: no se pueden modificar sus elementos y no se puede añadir ni eliminar elementos a una tupla.</p>
 <p>En  Python una tupla tiene el tipo <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. Las tuplas se crean utilizando paréntesis (en vez de corchetes). Por ejemplo</p>
 <div class="cell docutils container">
@@ -1472,7 +1470,7 @@ None
 </div>
 </section>
 <section id="igualdad-de-listas-y-tuplas">
-<h2>9. Igualdad de listas y tuplas<a class="headerlink" href="#igualdad-de-listas-y-tuplas" title="Link to this heading">#</a></h2>
+<h2>9. Igualdad de listas y tuplas<a class="headerlink" href="#igualdad-de-listas-y-tuplas" title="Permalink to this heading">#</a></h2>
 <p>Dos listas o tuplas son iguales si tienen los mismos elementos en el mismo orden. Por ejemplo</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

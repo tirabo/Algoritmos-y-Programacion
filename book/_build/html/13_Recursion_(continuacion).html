@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>13. Recursión (2° parte) &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '13_Recursion_(continuacion)';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -448,9 +446,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recursion-2-parte">
-<h1>13. Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Link to this heading">#</a></h1>
+<h1>13. Recursión (2° parte)<a class="headerlink" href="#recursion-2-parte" title="Permalink to this heading">#</a></h1>
 <section id="algunos-ejemplos">
-<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Link to this heading">#</a></h2>
+<h2>1. Algunos ejemplos<a class="headerlink" href="#algunos-ejemplos" title="Permalink to this heading">#</a></h2>
 <p>En esta primera parte veremos algunos ejemplos sencillos de recursión y recursión sobre listas.</p>
 <p><strong>Ejemplo (función recursiva).</strong> Sea la función recursiva</p>
 <div class="amsmath math notranslate nohighlight">
@@ -538,7 +536,7 @@ f(25) = -327238
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f(35) = 45299420
-Tiempo: 4.6133551597595215
+Tiempo: 4.272250652313232
 </pre></div>
 </div>
 </div>
@@ -564,7 +562,7 @@ f(20) = 67717
 f(25) = -327238
 f(30) = -17109707
 f(35) = 45299420
-Tiempo: 0.00015878677368164062
+Tiempo: 0.0
 </pre></div>
 </div>
 </div>
@@ -577,7 +575,12 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29053.774774774774
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">tiempo_f</span><span class="o">/</span><span class="n">tiempo_f_s</span>
+
+<span class="ne">ZeroDivisionError</span>: float division by zero
 </pre></div>
 </div>
 </div>
@@ -643,7 +646,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </section>
 <section id="ejemplo-de-recursion-torres-de-hanoi">
-<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Link to this heading">#</a></h2>
+<h2>2. Ejemplo de recursión: torres de Hanoi<a class="headerlink" href="#ejemplo-de-recursion-torres-de-hanoi" title="Permalink to this heading">#</a></h2>
 <p>Las Torres de Hanói es un rompecabezas o juego matemático inventado en 1883 por el matemático francés Édouard Lucas.</p>
 <p>Es un juego de mesa y lo describimos a continuación: contamos con  tres postes verticales y <span class="math notranslate nohighlight">\(n\)</span> discos de distinto tamaño (<span class="math notranslate nohighlight">\(n \in \mathbb N\)</span>). En el primer poste se apilan los <span class="math notranslate nohighlight">\(n\)</span> discos de mayor a menor (el más grande abajo,  el más chico arriba). Los otros dos postes quedan vacíos. El objetivo del juego consiste en pasar todos los discos desde el poste ocupado a uno de los otros postes vacíos. Para completar este objetivo, es necesario seguir tres simples reglas:</p>
 <ol class="arabic simple">
@@ -899,7 +902,7 @@ Tiempo: 0.00015878677368164062
 <p>La implementación de un algoritmo como este en forma iterativa  no es sencilla.</p>
 </section>
 <section id="quicksort">
-<h2>3. Quicksort<a class="headerlink" href="#quicksort" title="Link to this heading">#</a></h2>
+<h2>3. Quicksort<a class="headerlink" href="#quicksort" title="Permalink to this heading">#</a></h2>
 <p>Quicksort es un algoritmo de ordenamiento que fue desarrollado por Tony Hoare en 1959. Es uno de los algoritmos de ordenamiento más utilizados debido a su eficiencia y su simplicidad.</p>
 <p>El algoritmo quicksort se implementa con recursión sobre listas. La idea básica detrás de quicksort es la siguiente: se elige un elemento de la lista, conocido como pivote, y se reorganizan los elementos de la lista de manera que todos los elementos menores que el pivote estén a su izquierda y todos los elementos mayores que el pivote estén a su derecha. De esta forma, se logra que el pivote esté en su ubicación definitiva, es decir,  la ubicación que tendría cuando la lista esté completamente ordenada.</p>
 <p>Luego, se repite el proceso en las sublistas generadas a cada lado del pivote, obteniéndose nuevos pivotes en su lugar definitivo. Si aplicamos repetidamente este proceso terminaremos con  la lista ordenada.</p>
@@ -980,7 +983,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[28, 6, 14, 10, 11, 13, 30, 28, 16, 40, 36, 32, 50, 17, 21, 13, 25, 22, 48, 12]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 48, 12, 12, 29, 43, 30, 14, 32, 24, 15, 13, 50, 21, 35, 36, 32, 10, 21, 14]
 </pre></div>
 </div>
 </div>
@@ -993,7 +996,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 10, 11, 12, 13, 13, 14, 16, 17, 21, 22, 25, 28, 28, 30, 32, 36, 40, 48, 50]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 10, 12, 12, 13, 14, 14, 15, 21, 21, 24, 29, 30, 32, 32, 35, 36, 43, 48, 50]
 </pre></div>
 </div>
 </div>
@@ -1097,7 +1100,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[45, 44, 3, 36, 29, 33, 46, 35, 8, 31, 49, 6, 40, 3, 34, 30, 17, 41, 42, 33]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 4, 17, 25, 13, 5, 18, 25, 34, 18, 23, 22, 13, 18, 9, 36, 23, 30, 4, 23]
 </pre></div>
 </div>
 </div>
@@ -1110,7 +1113,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 6, 8, 17, 29, 30, 31, 33, 33, 34, 35, 36, 40, 41, 42, 44, 45, 46, 49]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 4, 5, 6, 9, 13, 13, 17, 18, 18, 18, 22, 23, 23, 23, 25, 25, 30, 34, 36]
 </pre></div>
 </div>
 </div>
@@ -1125,7 +1128,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[474904, 602753, 639679, 379057, 778858, 671012, 394576, 965850, 529161, 716875, 108070, 687982, 867193, 504707, 608690, 841375, 780913, 349889, 97323, 961373, 796603, 789129, 996655, 542746, 445161, 551703, 163899, 850346, 994542, 243646, 710858, 850983, 229727, 582101, 713413, 285966, 932464, 283881, 605775, 214693, 97668, 153098, 452601, 659226, 205849, 100926, 455602, 927622, 258717, 224511, 928372, 14155, 543254, 763407, 189704, 4999, 584535, 312998, 64672, 507596, 457118, 882877, 156885, 649070, 316101, 52575, 794742, 233796, 779989, 789343, 600491, 985257, 833042, 93256, 299715, 136489, 543925, 94902, 79834, 809298, 868075, 141514, 200931, 850446, 796663, 669333, 815919, 591496, 221359, 668346, 598142, 113898, 341875, 685313, 759214, 518795, 830832, 56477, 160058, 281157]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[969490, 677557, 498461, 917660, 356872, 576144, 190524, 791815, 58818, 79922, 657362, 212618, 914261, 420860, 49997, 997741, 647330, 701071, 651992, 262335, 740188, 880335, 955325, 259791, 834161, 204503, 913935, 291052, 800968, 582963, 140970, 659440, 822174, 63083, 56079, 202179, 24822, 144029, 289524, 533468, 909770, 783643, 460408, 685199, 794813, 359178, 491640, 36759, 701751, 807958, 252382, 881596, 599377, 897554, 690115, 686948, 405374, 511097, 343188, 600464, 569850, 34368, 502306, 591081, 450949, 705231, 422802, 955795, 98985, 819613, 616967, 337302, 610940, 577657, 121277, 339026, 227432, 224288, 339048, 828854, 617410, 325624, 488552, 808804, 87849, 771403, 439766, 697535, 420412, 379870, 342318, 738698, 368470, 987926, 261068, 914025, 651379, 138283, 893172, 478677]
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1141,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4, 13, 58, 66, 69, 73, 76, 85, 91, 117, 137, 144, 151, 152, 187, 189, 204, 205, 227, 258, 258, 274, 293, 296, 306, 320, 338, 349, 357, 359, 370, 386, 396, 396, 417, 425, 445, 461, 484, 497, 497, 511, 523, 524, 525, 561, 562, 565, 575, 581, 595, 634, 646, 669, 678, 694, 698, 708, 720, 730, 757, 769, 771, 784, 823, 835, 837, 845, 855, 857, 859, 861, 865, 866, 874, 891, 897, 897, 905, 923, 949, 983, 987, 995, 1014, 1016, 1024, 1025, 1035, 1041, 1051, 1063, 1067, 1069, 1100, 1133, 1133, 1135, 1151, 1160]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[12, 30, 32, 39, 41, 42, 42, 47, 50, 54, 75, 78, 81, 84, 90, 102, 118, 134, 166, 178, 183, 183, 195, 223, 225, 240, 251, 254, 270, 272, 278, 280, 282, 284, 292, 301, 312, 327, 337, 341, 350, 357, 368, 372, 375, 407, 421, 422, 426, 437, 441, 449, 449, 450, 461, 477, 484, 484, 489, 492, 503, 505, 524, 572, 578, 587, 590, 607, 611, 626, 629, 637, 651, 678, 682, 700, 709, 715, 722, 724, 730, 739, 761, 769, 771, 784, 785, 790, 800, 815, 817, 826, 859, 860, 872, 888, 898, 903, 913, 922]
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1149,7 @@ Tiempo: 0.00015878677368164062
 <p>El algoritmo recursivo tiene algunas limitaciones para arreglos muy grandes debido a la falta de profundidad en Python para la recursión. Una implementación iterativa de quicksort es más eficiente y solo impone limitaciones por memoria y capacidad computacional, sin embargo  la explicación de esta implementación está fuera de los alcances del curso.</p>
 </section>
 <section id="criba-de-eratostenes-con-recursion">
-<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Link to this heading">#</a></h2>
+<h2>4. Criba de Eratóstenes con recursión<a class="headerlink" href="#criba-de-eratostenes-con-recursion" title="Permalink to this heading">#</a></h2>
 <p>La criba de Eratóstenes es un método antiguo  para encontrar todos los números primos menores a un número dado. El proceso comienza con el número <span class="math notranslate nohighlight">\(2\)</span>, que es el primer número primo. Luego, se van eliminando los múltiplos de cada número primo encontrado hasta que se llega al número dado.</p>
 <p>Por ejemplo, si queremos encontrar los números primos menores a <span class="math notranslate nohighlight">\(100\)</span>, comencemos con una lista con los números de <span class="math notranslate nohighlight">\(2\)</span> a <span class="math notranslate nohighlight">\(99\)</span> en orden. Comenzamos con el número <span class="math notranslate nohighlight">\(2\)</span>, que es primo y eliminamos todos los múltiplos de <span class="math notranslate nohighlight">\(2\)</span>. El próximo número de la lista, que es el <span class="math notranslate nohighlight">\(3\)</span>, es primo y ahora eliminamos todos los múltiplos de él, este proceso se repite hasta haber recorrido toda la lista.</p>
 <p>Comencemos a implementar la criba definiendo la función que elimnima los múltiplos:</p>
@@ -1217,7 +1220,7 @@ Tiempo: 0.00015878677368164062
 </div>
 </section>
 <section id="ejemplo-el-numero-combinatorio-2o-parte">
-<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Link to this heading">#</a></h2>
+<h2>5. Ejemplo: el número combinatorio (2º parte)<a class="headerlink" href="#ejemplo-el-numero-combinatorio-2o-parte" title="Permalink to this heading">#</a></h2>
 <p>Recordemos.</p>
 <p><strong>Definición.</strong> Sean <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span> números naturales o 0 tal que <span class="math notranslate nohighlight">\(m \le n\)</span>, definimos el <em>número combinatorio <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(m\)</span></em> denotado <span class="math notranslate nohighlight">\(\displaystyle\binom{n}{m}\)</span>, por:</p>
 <div class="math notranslate nohighlight">
@@ -1252,11 +1255,6 @@ Tiempo: 0.00015878677368164062
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">combinatorio</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># no hay problema</span>
 <span class="c1"># combinatorio(40,12) # no lo puede hacer</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>455
 </pre></div>
 </div>
 </div>
@@ -1316,13 +1314,6 @@ Tiempo: 0.00015878677368164062
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-10
-137846528820
-</pre></div>
-</div>
-</div>
 </div>
 <p>Se puede mejorar el código anterior  manteniendo solo las dos últimas filas del triángulo de Pascal. Sin embargo,  sigue siendo mejor el último algoritmo de la clase pasada.</p>
 <div class="cell docutils container">
@@ -1367,12 +1358,6 @@ Tiempo: 0.00015878677368164062
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primera forma de definir: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-Segunda forma de definir: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Parecn iguales pero no lo son. La razón es que  esta segunda forma de definir pone <em>la misma lista</em> en cada coordenada. Nosotros queremos que cada valor del arreglo pueda ser trabajado independientemente, sin embargo con la última definición si se hace la asignación <code class="docutils literal notranslate"><span class="pre">cmb[3][2]</span> <span class="pre">=</span> <span class="pre">5</span></code>, tendremos que <code class="docutils literal notranslate"><span class="pre">cmb[3][0]</span> <span class="pre">==</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">cmb[3][1]</span> <span class="pre">==</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">cmb[3][2]</span> <span class="pre">==</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">cmb[3][3]</span> <span class="pre">==</span> <span class="pre">5</span></code>, etc.  Veamos esto en el ejemplo:</p>
 <div class="cell docutils container">
@@ -1382,12 +1367,6 @@ Segunda forma de definir: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0
 
 <span class="n">cmb_2</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda forma de definir:&#39;</span><span class="p">,</span> <span class="n">cmb_2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primera forma de definir: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 5, 0, 0], [0, 0, 0, 0, 0]]
-Segunda forma de definir: [[0, 0, 5, 0, 0], [0, 0, 5, 0, 0], [0, 0, 5, 0, 0], [0, 0, 5, 0, 0], [0, 0, 5, 0, 0]]
 </pre></div>
 </div>
 </div>

@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>14. Clases y objetos &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '14_Clases_y_objetos';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -452,12 +450,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="clases-y-objetos">
-<h1>14. Clases y objetos<a class="headerlink" href="#clases-y-objetos" title="Link to this heading">#</a></h1>
+<h1>14. Clases y objetos<a class="headerlink" href="#clases-y-objetos" title="Permalink to this heading">#</a></h1>
 <p>Una clase permite trabajar con un conjunto de objetos que comparten características.</p>
 <p>Después de haber aprendido lo que hemos visto de programación hasta ahora somos capaces de resolver muchos problemas utilizando selecciones, bucles y funciones. Sin embargo, estas características no son suficientes para desarrollar un software a gran escala.</p>
 <p>En este cuaderno se introduce la programación orientada a objetos lo cual permite definir tipos de datos y modularizar más aún los programas que escribimos  o los proyectos en que participamos.</p>
 <section id="tipos-abstractos-de-datos">
-<h2>1. Tipos abstractos de datos<a class="headerlink" href="#tipos-abstractos-de-datos" title="Link to this heading">#</a></h2>
+<h2>1. Tipos abstractos de datos<a class="headerlink" href="#tipos-abstractos-de-datos" title="Permalink to this heading">#</a></h2>
 <p>Hemos visto ejemplos y ejercicios con muchas de las estructuras de datos usuales de los lenguajes de programación: enteros, reales, booleanos, strings, arreglos, tuplas, listas.</p>
 <p>Con estas estructuras de datos también es posible representar otras. Por ejemplo, hemos representado los naturales usando enteros y hemos representado las fechas utilizando ternas de enteros.</p>
 <p>De todas formas, no se obtiene el mismo grado de confianza en el funcionamiento de las operaciones sobre los tipos de datos nuestros que sobre los de Python: cuando representamos, por ejemplo, a las fechas como ternas de enteros, no hay ninguna garantía de que el programador los utilice apropiadamente: por error puede alterar el valor de uno de los elementos de la terna y transformar una fecha válida en una que no lo es.</p>
@@ -466,7 +464,7 @@ document.write(`
 <p>En Python, y en la mayor parte de los lenguajes de programación modernos, definir un tipo nuevo es definir una <em>clase</em> y  cada elemento que pertenezca a esa clase (a ese tipo) se llamará un <em>objeto</em> de la clase. Los tipos ya definidos en Python son clases,  aunque nunca lo hayamos mecionado, por ejemplo <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">7]</span></code> es un objeto o <em>instancia</em> de la clase <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 </section>
 <section id="definicion-de-clases">
-<h2>2. Definición de clases<a class="headerlink" href="#definicion-de-clases" title="Link to this heading">#</a></h2>
+<h2>2. Definición de clases<a class="headerlink" href="#definicion-de-clases" title="Permalink to this heading">#</a></h2>
 <p>Crear una clase es como si definiéramos un tipo nuevo  en el lenguaje. Utilizando la clase definida podemos crear elementos de esa clase, llamados objetos o instancias, y podemos operar sobre ellos con métodos propios de la clase.</p>
 <p>Los ingredientes más importantes de la definición de una clase son</p>
 <ul class="simple">
@@ -525,7 +523,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el objeto t: &lt;__main__.Circulo object at 0x763204f35720&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el objeto t: &lt;__main__.Circulo object at 0x0000022BB58569B0&gt;
 </pre></div>
 </div>
 </div>
@@ -550,7 +548,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo objeto s: &lt;__main__.Circulo object at 0x763204f35060&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Imprimimos el nuevo objeto s: &lt;__main__.Circulo object at 0x0000022BB58570A0&gt;
 </pre></div>
 </div>
 </div>
@@ -617,7 +615,7 @@ Imprimimos el nuevo radio de t: 3
 <p>Obviamente los nombres de los métodos pueden ser arbitrarios, con los límites sintácticos que impone Python</p>
 </section>
 <section id="ocultar-los-atributos-de-una-clase">
-<h2>3. Ocultar los atributos de una clase<a class="headerlink" href="#ocultar-los-atributos-de-una-clase" title="Link to this heading">#</a></h2>
+<h2>3. Ocultar los atributos de una clase<a class="headerlink" href="#ocultar-los-atributos-de-una-clase" title="Permalink to this heading">#</a></h2>
 <p>Los atributos definidos en la clase  <code class="docutils literal notranslate"><span class="pre">Circulo</span></code>, así como fueron definidos son públicos, podemos acceder a ellos directamente.</p>
 <p>Podés acceder a los  datos a través de variables de estado directamente desde un objeto. Por ejemplo, el siguiente código, que permite acceder al radio del círculo desde <code class="docutils literal notranslate"><span class="pre">c.radio</span></code>, es legal:</p>
 <div class="cell docutils container">
@@ -706,7 +704,7 @@ Hola
 </div>
 </section>
 <section id="sobrecarga-de-operadores-y-metodos-especiales">
-<h2>4. Sobrecarga de operadores y métodos especiales<a class="headerlink" href="#sobrecarga-de-operadores-y-metodos-especiales" title="Link to this heading">#</a></h2>
+<h2>4. Sobrecarga de operadores y métodos especiales<a class="headerlink" href="#sobrecarga-de-operadores-y-metodos-especiales" title="Permalink to this heading">#</a></h2>
 <p>Python permite definir en las clases <em>métodos especiales</em> para operadores y funciones para realizar operaciones comunes. Estos métodos tienen un nombre específico para que Python reconozca la asociación.</p>
 <p>Expliquemos desarrollando un poco más la clase <code class="docutils literal notranslate"><span class="pre">Circulo</span></code>.  Supongamos que queremos hacer los siguiente</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Circulo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -723,7 +721,7 @@ Hola
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circulo object at 0x763204f34df0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Circulo object at 0x0000022BB5857C10&gt;
 </pre></div>
 </div>
 </div>
@@ -808,7 +806,7 @@ True
 <p>Los métodos <code class="docutils literal notranslate"><span class="pre">__str__</span></code> y <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> son solo algunos métodos que podemos sobreescribir  en una clase.</p>
 <p>Python tiene métodos especiales que refieren a operadores muy utilizados,  como ser <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, etc. y que nos permiten definir,  si así lo deseamos, estos operadores en nuestras clases.</p>
 <section id="ejemplo-tuplas-como-vectores">
-<h3>Ejemplo. Tuplas como vectores.<a class="headerlink" href="#ejemplo-tuplas-como-vectores" title="Link to this heading">#</a></h3>
+<h3>Ejemplo. Tuplas como vectores.<a class="headerlink" href="#ejemplo-tuplas-como-vectores" title="Permalink to this heading">#</a></h3>
 <p>Definamos la clase de 2-uplas de números <code class="docutils literal notranslate"><span class="pre">int</span></code> o <code class="docutils literal notranslate"><span class="pre">float</span></code> con la suma y resta coordenada a coordenada. Para hacer esto vamos a sobreescribir dós métodos especiales: la suma y la resta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1186,7 +1184,7 @@ False
 </div>
 </section>
 <section id="ejemplo-los-numeros-complejos">
-<h3>Ejemplo: los números complejos<a class="headerlink" href="#ejemplo-los-numeros-complejos" title="Link to this heading">#</a></h3>
+<h3>Ejemplo: los números complejos<a class="headerlink" href="#ejemplo-los-numeros-complejos" title="Permalink to this heading">#</a></h3>
 <p>Los números complejos (<span class="math notranslate nohighlight">\(\mathbb C\)</span>) están determinados por un par de números, la parte real y la parte imaginaria. Es decir,  un número complejo es  un <span class="math notranslate nohighlight">\(a + bi\)</span>,  con <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span> reales e <span class="math notranslate nohighlight">\(i\)</span> que simboliza <span class="math notranslate nohighlight">\(\sqrt{-1}\)</span>.</p>
 <p>La suma de complejos es:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -1240,7 +1238,7 @@ True
 </div>
 </section>
 <section id="metodos-especiales">
-<h3>5. Métodos especiales<a class="headerlink" href="#metodos-especiales" title="Link to this heading">#</a></h3>
+<h3>5. Métodos especiales<a class="headerlink" href="#metodos-especiales" title="Permalink to this heading">#</a></h3>
 <p>Una lista de métodos especiales de Python, no todos, es la siguiente:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>

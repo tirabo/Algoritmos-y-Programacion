@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>19. Introducción a Matplotlib &#8212; Algoritmos y Programación</title>
   
@@ -28,35 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '19_PyPlot';</script>
@@ -225,7 +223,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndices</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="20.0_Ejercicios_resueltos.html">Ejercicios resueltos</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="20.1_Python_turtle.html">1. Dibujando con la tortuga</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.2_Expresiones_funciones_condicionales.html">2. Expresiones, funciones y condicionales</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.3_Ciclos_fechas.html">3. Ciclos, tratamiento de fechas</a></li>
@@ -234,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="20.6_Clases_objetos.html">6. Tipos abstractos de datos (clases)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.7_Entrada_y_salida.html">7. Lectura y escritura de archivos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="20.8_Numpy_y_pyplot.html">8. NumPy y PyPlot</a></li>
-</ul>
+</ul><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
 </details></li>
 </ul>
 
@@ -431,13 +429,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibujar-varias-parejas-de-datos">1. Dibujar varias parejas de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot">2. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajando-con-texto-dentro-del-grafico">3. Trabajando con texto dentro del gráfico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficando-parejas-de-datos-o-funciones">1. Graficando parejas de datos o funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajando-con-texto-dentro-del-grafico">2. Trabajando con texto dentro del gráfico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibujar-varias-parejas-de-datos">3. Dibujar varias parejas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramas">4.  Histogramas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-barras">5. Gráficos de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">6. Gráfico circular</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-con-numpy">7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representando-datos-experimentales">8. Representando datos experimentales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot">9. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -450,7 +450,8 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-matplotlib">
-<h1>19. Introducción a Matplotlib<a class="headerlink" href="#introduccion-a-matplotlib" title="Link to this heading">#</a></h1>
+<h1>19. Introducción a Matplotlib<a class="headerlink" href="#introduccion-a-matplotlib" title="Permalink to this heading">#</a></h1>
+<p>En  estas notas daremos una breve introducción a Matplotlib.</p>
 <p><strong>Referencias</strong></p>
 <ul class="simple">
 <li><p>https://matplotlib.org/stable/tutorials/introductory/pyplot.html</p></li>
@@ -481,7 +482,15 @@ document.write(`
 </div>
 </div>
 </div>
-<p>El siguiente script dibuja el gráfico de la función <span class="math notranslate nohighlight">\(y = x^2 + 5\)</span>:</p>
+<section id="graficando-parejas-de-datos-o-funciones">
+<h2>1. Graficando parejas de datos o funciones<a class="headerlink" href="#graficando-parejas-de-datos-o-funciones" title="Permalink to this heading">#</a></h2>
+<p>Hablando sin demasiado rigor, si <span class="math notranslate nohighlight">\(x\)</span>  es un arreglo de NumPy y <span class="math notranslate nohighlight">\(f\)</span>  es una función definida algebraicamente, obtenemos <span class="math notranslate nohighlight">\(y = f(x)\)</span> otro arreglo de NumPy, que está formado por los valores que se obtienen de aplicar <span class="math notranslate nohighlight">\(f\)</span> a los valores de <span class="math notranslate nohighlight">\(x\)</span>. Podemos graficar entonces la función siguiendo el siguiente esquema:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Por ejemplo, el siguiente script dibuja el gráfico de la función <span class="math notranslate nohighlight">\(y = x^2 + 5\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -489,9 +498,7 @@ document.write(`
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span>  <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Demostración de Matplotlib&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Graficando una función con Matplotlib&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;leyenda del eje x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;leyenda del eje y&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -500,22 +507,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.   1.5  2.   2.5  3.   3.5  4.   4.5  5.   5.5  6.   6.5  7.   7.5
-  8.   8.5  9.   9.5 10.  10.5]
-[  6.     7.25   9.    11.25  14.    17.25  21.    25.25  30.    35.25
-  41.    47.25  54.    61.25  69.    77.25  86.    95.25 105.   115.25]
-</pre></div>
-</div>
-<img alt="_images/959b8d012b4e944ec2d570151d124d07c4625287e779d7f2d5f56de7635f1716.png" src="_images/959b8d012b4e944ec2d570151d124d07c4625287e779d7f2d5f56de7635f1716.png" />
+<img alt="_images/6202365f72726838f7897a07f7fa9e215571dfb83a6700f9aea66de7850b0300.png" src="_images/6202365f72726838f7897a07f7fa9e215571dfb83a6700f9aea66de7850b0300.png" />
 </div>
 </div>
-<p>Se crea un objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span> <span class="pre">x</span></code> a partir de la función <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> que serán  los valores del eje <code class="docutils literal notranslate"><span class="pre">x</span></code>. Los valores correspondientes en el eje <code class="docutils literal notranslate"><span class="pre">y</span></code> se almacenan en otro objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span> <span class="pre">y</span></code>. Estos valores se dibujan utilizando la función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> del submódulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> del paquete <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<p>En  el primer renglón se crea un objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> a partir de la función <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> que serán  los valores del eje <code class="docutils literal notranslate"><span class="pre">x</span></code>. Los valores correspondientes en el eje <code class="docutils literal notranslate"><span class="pre">y</span></code> se almacenan en otro objeto <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>. Estos valores se dibujan utilizando la función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> del submódulo <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> del paquete <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <p>La representación gráfica se muestra mediante la función <code class="docutils literal notranslate"><span class="pre">show()</span></code>.</p>
 <p>Observar que para dibujar o plotear se introduce una “pareja de datos”, primero el eje <span class="math notranslate nohighlight">\(x\)</span> y  luego los correspondientes valores en el eje <span class="math notranslate nohighlight">\(y\)</span>. La cantidad de datos en <span class="math notranslate nohighlight">\(x\)</span>  debe ser igual a la cantidad de datos en <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>Hay diferentes opciones de ploteo,  que no exploraremos mayotrmente aquí. Por ejemplo,</p>
+<p>En  el ploteo hemos agregado texto: un título,  etiqueta del eje <span class="math notranslate nohighlight">\(x\)</span> y etiqueta del eje <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Hay diferentes opciones de ploteo,  que no exploraremos mayormente aquí. Por ejemplo,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span>  <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Demostración de Matplotlib&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;leyenda del eje x&quot;</span><span class="p">)</span>
@@ -526,17 +531,95 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4b4747a0c03bcc819cf4ee32a180c9d9e53001fc559934658958aeaa28749990.png" src="_images/4b4747a0c03bcc819cf4ee32a180c9d9e53001fc559934658958aeaa28749990.png" />
+<img alt="_images/dca67ea604619121fa876e74156118b5802c8d66c6b4d2a6c73abb8a3e934450.png" src="_images/dca67ea604619121fa876e74156118b5802c8d66c6b4d2a6c73abb8a3e934450.png" />
 </div>
 </div>
-<p>En  el código anterior “or” nos dice que se deben dibujar “dots” de color rojo.</p>
+<p>En  el código anterior <code class="docutils literal notranslate"><span class="pre">or</span></code> nos dice que se deben dibujar “dots” de color rojo en vez de una curva continua.</p>
+<p>También podemos hacer un <em>gráfico de línea simple</em> que es una representación visual que muestra cómo varía una variable a lo largo del tiempo o en relación con otra variable. Este tipo de gráfico conecta una serie de puntos mediante líneas. Solo debemos agregar el parámetro <code class="docutils literal notranslate"><span class="pre">linestyle='-'</span></code> al <code class="docutils literal notranslate"><span class="pre">plot()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span>  <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Demostración de Matplotlib&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;leyenda del eje x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;leyenda del eje y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1f42a45093cbacb7ea704627e73c4b0d40677698b01311a16377c1014d68c905.png" src="_images/1f42a45093cbacb7ea704627e73c4b0d40677698b01311a16377c1014d68c905.png" />
+</div>
+</div>
+</section>
+<section id="trabajando-con-texto-dentro-del-grafico">
+<h2>2. Trabajando con texto dentro del gráfico<a class="headerlink" href="#trabajando-con-texto-dentro-del-grafico" title="Permalink to this heading">#</a></h2>
+<p>Como vimos al final del punto anterior, existen funciones para añadir texto (etiquetas) a los ejes de la gráfica y a la gráfica en sí. Veamos algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># log(x)*sen(x**2)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eje X&#39;</span><span class="p">)</span>        <span class="c1"># Etiqueta del eje X</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eje Y&#39;</span><span class="p">)</span>        <span class="c1"># Etiqueta del eje Y</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mi grafica&#39;</span><span class="p">)</span>    <span class="c1"># Título del gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;Nota&#39;</span><span class="p">)</span>  <span class="c1"># Texto en coodenadas (1, -0.4)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tirab\AppData\Local\Temp\ipykernel_13484\3634097048.py:5: RuntimeWarning: divide by zero encountered in log10
+  p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
+C:\Users\tirab\AppData\Local\Temp\ipykernel_13484\3634097048.py:5: RuntimeWarning: invalid value encountered in multiply
+  p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
+</pre></div>
+</div>
+<img alt="_images/b0da17a9edb38801c721c24efce409e1d0c966bd981dd83d9e518917ee274ed5.png" src="_images/b0da17a9edb38801c721c24efce409e1d0c966bd981dd83d9e518917ee274ed5.png" />
+</div>
+</div>
+<p>En este ejemplo, se usó la función <code class="docutils literal notranslate"><span class="pre">text()</span></code> para añadir un texto arbitrario en la gráfica, cuya posición se debe dar en las unidades de la gráfica. Cuando se utilizan textos también es posible usar fórmulas con formato LaTeX. Veamos un ejemplo,:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>   <span class="c1">#limpio la figura</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\frac{\operatorname</span><span class="si">{sen}</span><span class="s1">(x)}</span><span class="si">{x}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>       <span class="c1"># Añado una malla al gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Representacion de una función&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo / s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitud / cm&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d753376aaa3322c202af069f213ccc5bf2e5f7336fe4e496b8be975348d9a5ac.png" src="_images/d753376aaa3322c202af069f213ccc5bf2e5f7336fe4e496b8be975348d9a5ac.png" />
+</div>
+</div>
+<p>Aquí hemos usado código LaTeX para escribir fórmulas matemáticas, para lo que siempre hay que escribir entre <code class="docutils literal notranslate"><span class="pre">r'$formula$'</span></code> y hemos usado un tamaño de letra mayor con el parámetro <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>. En la última línea hemos añadido una grilla con la función <code class="docutils literal notranslate"><span class="pre">grid()</span></code>.</p>
+<p><em>Nota.</em> LaTeX es un sistema de escritura orientado a contenidos matemáticos muy popular en matemática,  física teórica y ciencias de la computación.</p>
+</section>
 <section id="dibujar-varias-parejas-de-datos">
-<h2>1. Dibujar varias parejas de datos<a class="headerlink" href="#dibujar-varias-parejas-de-datos" title="Link to this heading">#</a></h2>
+<h2>3. Dibujar varias parejas de datos<a class="headerlink" href="#dibujar-varias-parejas-de-datos" title="Permalink to this heading">#</a></h2>
 <p>Se pueden graficar varias funciones en el  mismo ploteo introduciendo varias parejas de datos.</p>
 <p>Veamos un ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># x es array numpy de números</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">y</span>
@@ -560,267 +643,116 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/50435912f3c366cb2c7aad623da8da335ad23b6707d0754c0ad9ffd06256b8f5.png" src="_images/50435912f3c366cb2c7aad623da8da335ad23b6707d0754c0ad9ffd06256b8f5.png" />
+<img alt="_images/ca56b52dc7046edc3f53c4b6402d6f8d2fd4a2ca50add30c379c1a4268c6bee4.png" src="_images/ca56b52dc7046edc3f53c4b6402d6f8d2fd4a2ca50add30c379c1a4268c6bee4.png" />
 </div>
 </div>
 <p>Se pueden poner opciones de ploteo a cada pareja, por ejemplo (aunque no queda muy bien que digamos)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;or&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s2">&quot;.b&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dace7bb3b2794ee94a4f6ff760a8d9643abfbb124b530b7e42c757db6b1a0593.png" src="_images/dace7bb3b2794ee94a4f6ff760a8d9643abfbb124b530b7e42c757db6b1a0593.png" />
+<img alt="_images/b9484e2d724c7ef22479c26ea178b8699c419fc568acc349eb7177b4d16b93f1.png" src="_images/b9484e2d724c7ef22479c26ea178b8699c419fc568acc349eb7177b4d16b93f1.png" />
 </div>
 </div>
-</section>
-<section id="la-funcion-subplot">
-<h2>2. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code><a class="headerlink" href="#la-funcion-subplot" title="Link to this heading">#</a></h2>
-<p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> permite trazar diferentes gráficos en la misma figura, pero como dibujos separados.</p>
-<p>En el siguiente script, se grafican el seno y el coseno.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular las coordenadas x e y de los puntos de las curvas seno y coseno</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">y_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="c1"># Configurar una grilla tenga ancho 2 y altura 1 (se graficará un plot al costado de otro),</span>
-<span class="c1"># y establecer la primera de esas subtramas como activa.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Se hace el primer plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sin</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Seno&#39;</span><span class="p">)</span>
-
-<span class="c1"># Establecer el segundo subplot como activo y hacer el segundo plot.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_cos</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coseno&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/ca4c0fa00e191788efdb2100f0ca5ae276b5d223825938b2727c6db7e3cb6e87.png" src="_images/ca4c0fa00e191788efdb2100f0ca5ae276b5d223825938b2727c6db7e3cb6e87.png" />
-</div>
-</div>
-<p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> de pyplot es utilizada para crear grillas de subplots en una figura de Matplotlib. Esta función acepta <em>tres</em> parámetros posicionales: <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, <code class="docutils literal notranslate"><span class="pre">ncols</span></code> e <code class="docutils literal notranslate"><span class="pre">index</span></code>, y opcionalmente otros parámetros para ajustar el tamaño, el espacio y los límites de los subplots. A continuación se describen los tres primeros parámetros de la función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">nrows</span></code>: número de filas de la grilla de subplots.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ncols</span></code>: número de columnas de la grilla de subplots.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: índice del subplot actual, comenzando desde 1 y aumentando de izquierda a derecha y de arriba hacia abajo.</p></li>
-</ul>
-<p>Existesn otros argumentos y parámetros para compartir ejes y para ajustar el tamaño, el espacio y los límites de los subplots.</p>
-<p>Es decir el método <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> permite hacer una grilla <span class="math notranslate nohighlight">\(m \times n\)</span> y dibujar en cada rectángulo de esa grilla.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">5.0</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span>
-
-<span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
-    <span class="k">return</span> <span class="n">y</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x) + sen(5x)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)*exp(-x/10)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;cos(x)*x&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/1cf1e96938cc86f9cf1a28f3841936546c259cc609595421fdfc23b7aa122d39.png" src="_images/1cf1e96938cc86f9cf1a28f3841936546c259cc609595421fdfc23b7aa122d39.png" />
-</div>
-</div>
-<p>No quedó muy bien, pero se puede arrglar con un truco:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x) + sen(5x)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)*exp(-x/10)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;cos(x)*x&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/ba207f60d47829bb294fcfdf99f99bfb3d292cb4cf8b2f74990e9a00cc121d66.png" src="_images/ba207f60d47829bb294fcfdf99f99bfb3d292cb4cf8b2f74990e9a00cc121d66.png" />
-</div>
-</div>
-<p>Aunque debe haber mejores formas de hacerlo.</p>
-</section>
-<section id="trabajando-con-texto-dentro-del-grafico">
-<h2>3. Trabajando con texto dentro del gráfico<a class="headerlink" href="#trabajando-con-texto-dentro-del-grafico" title="Link to this heading">#</a></h2>
-<p>Exiten funciones para añadir texto (etiquetas) a los ejes de la gráfica y a la gráfica en sí. Veamos algunos ejemplos:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># log(x)*sen(x**2)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eje X&#39;</span><span class="p">)</span>        <span class="c1"># Etiqueta del eje X</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eje Y&#39;</span><span class="p">)</span>        <span class="c1"># Etiqueta del eje Y</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mi grafica&#39;</span><span class="p">)</span>    <span class="c1"># Título del gráfico</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="s1">&#39;Nota&#39;</span><span class="p">)</span>  <span class="c1"># Texto en coodenadas (1, -0.4)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_265110/2148584508.py:2: RuntimeWarning: divide by zero encountered in log10
-  p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
-/tmp/ipykernel_265110/2148584508.py:2: RuntimeWarning: invalid value encountered in multiply
-  p = plt.plot(x,np.log10(x)*np.sin(x**2)) # log(x)*sen(x**2)
-</pre></div>
-</div>
-<img alt="_images/8d4768983f8319ee4b4717d252801242a26d0c44b493263707bbce0c28db8d84.png" src="_images/8d4768983f8319ee4b4717d252801242a26d0c44b493263707bbce0c28db8d84.png" />
-</div>
-</div>
-<p>En este ejemplo, se usó la función <code class="docutils literal notranslate"><span class="pre">text()</span></code> para añadir un texto arbitrario en la gráfica, cuya posición se debe dar en las unidades de la gráfica. Cuando se utilizan textos también es posible usar fórmulas con formato LaTeX. Veamos un ejemplo,:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>   <span class="c1">#limpio la figura</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\frac{\operatorname</span><span class="si">{sen}</span><span class="s1">(x)}</span><span class="si">{x}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\operatorname</span><span class="si">{sen}</span><span class="s1">(x) \cdot e^{-x}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>       <span class="c1"># Añado una malla al gráfico</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Representacion de dos funciones&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo / s&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitud / cm&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/6a627c04213cefdd212b5e836deb28793b724ff37812af88e6f18fa563029adf.png" src="_images/6a627c04213cefdd212b5e836deb28793b724ff37812af88e6f18fa563029adf.png" />
-</div>
-</div>
-<p>Aquí hemos usado código LaTeX para escribir fórmulas matemáticas, para lo que siempre hay que escribir entre <code class="docutils literal notranslate"><span class="pre">r'$formula$'</span></code> y hemos usado un tamaño de letra mayor con el parámetro <code class="docutils literal notranslate"><span class="pre">fontsize</span></code>. En la última línea hemos añadido una grilla con la función <code class="docutils literal notranslate"><span class="pre">grid()</span></code>.</p>
-<p><em>Nota.</em> LaTeX es un sistema de escritura orientado a contenidos matemáticos muy popular en matemática,  física teórica y ciencias de la computación.</p>
 </section>
 <section id="histogramas">
-<h2>4.  Histogramas<a class="headerlink" href="#histogramas" title="Link to this heading">#</a></h2>
+<h2>4.  Histogramas<a class="headerlink" href="#histogramas" title="Permalink to this heading">#</a></h2>
 <p>Cuando tenemos un conjunto de datos numéricos, por ejemplo como consecuencia de la medida de una cierta magnitud y queremos representarlos gráficamente para ver la distribución subyacente de los mismos se suelen usar los gráficos llamados <em>histogramas</em>.</p>
 <p>Los histogramas representan el número de veces que los valores del conjunto caen dentro de un intervalo dado, frente a los diferentes intervalos en los que queramos dividir el conjunto de valores.</p>
 <p>En Python podemos hacer histogramas muy fácilmente con la función <code class="docutils literal notranslate"><span class="pre">hist()</span></code> indicando como parámetro un array con los números del conjunto. Si no se indica nada más, se generará un histograma con 10 intervalos (llamados <em>bins</em>, en inglés) en los que se divide la diferencia entre el máximo y el mínimo valor del conjunto. Veamos un ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20000</span><span class="p">)</span>  <span class="c1"># array con 200 números aleatorios en distribución normal</span>
-<span class="c1"># print(nums)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># array con 200 números aleatorios en distribución normal</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.90</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7bf3465a138caa71059128c0ead311b8196c56d2aa22a1c692d3cc60511e6c89.png" src="_images/7bf3465a138caa71059128c0ead311b8196c56d2aa22a1c692d3cc60511e6c89.png" />
+<img alt="_images/1d71ffbe3e7648df4366313c8ec564d659aaa7fafd58d6ecbf838d510a254645.png" src="_images/1d71ffbe3e7648df4366313c8ec564d659aaa7fafd58d6ecbf838d510a254645.png" />
 </div>
 </div>
-<p>Si no se le proporciona ningún otro argumento a <code class="docutils literal notranslate"><span class="pre">randn()</span></code> produce floats alrededor de 0 y con una varianza = 1.</p>
-<p>Vemos que los números del array se dividieron automáticamente en 10 intervalos (o bins) y cada barra representa para cada una de ellos el número de valores que caen dentro. Si en lugar de usar sólo 10 divisiones queremos usar 21 por ejemplo, debemos indicarlo como un segundo parámetro:</p>
+<p>Si no se le proporciona ningún otro argumento a <code class="docutils literal notranslate"><span class="pre">randn()</span></code> produce floats alrededor de <span class="math notranslate nohighlight">\(0\)</span> y con una varianza = <span class="math notranslate nohighlight">\(1\)</span>. Si <code class="docutils literal notranslate"><span class="pre">n</span></code> es entero positivo , entonces <code class="docutils literal notranslate"><span class="pre">randn(n)</span></code> produce un array de <code class="docutils literal notranslate"><span class="pre">n</span></code> valores con floats alrededor de <span class="math notranslate nohighlight">\(0\)</span> y con varianza <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Vemos que los números del array se dividieron automáticamente en 10 intervalos (o bins) y cada barra representa para cada una de ellos el número de valores que caen dentro. El parámetro <code class="docutils literal notranslate"><span class="pre">rwidth</span></code> da el ancho de las columnas: con <span class="math notranslate nohighlight">\(1\)</span> todas las columna están pegadas, con <span class="math notranslate nohighlight">\(0.90\)</span> las columnas están separadas por un 10% del ancho total de la columna llena.</p>
+<p>Si en lugar de usar sólo 10 divisiones queremos usar 15 por ejemplo, debemos indicarlo con el parámetro <code class="docutils literal notranslate"><span class="pre">bins</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span> <span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bb5fdbab5c778f2dd2eb9686b9ad94bf1a7540097997e5fe31f2f4209cbbfea8.png" src="_images/bb5fdbab5c778f2dd2eb9686b9ad94bf1a7540097997e5fe31f2f4209cbbfea8.png" />
+<img alt="_images/ad784e9ed3d570e4d6d60f51b45523184a97e2afcaa3bffb0ae14f786638dba7.png" src="_images/ad784e9ed3d570e4d6d60f51b45523184a97e2afcaa3bffb0ae14f786638dba7.png" />
 </div>
 </div>
-<p>El la figura de abajo se muestra el resultado de superponer ambos histogramas y luego hacemos otro gráfico.</p>
+<p>El la figura de abajo se muestra el resultado de superponer ambos histogramas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span> <span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># dibuja el gráfico y podemos empezar otro</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">x</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span> <span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9ef9ff80cf0af153bf34252dc6c3745b07c9f655a5cd9a7904925004bf045b62.png" src="_images/9ef9ff80cf0af153bf34252dc6c3745b07c9f655a5cd9a7904925004bf045b62.png" />
-<img alt="_images/e37f4aacdf1eb14cdfcc75a65c242be906ff8c0b1c28058e07c4754ae10ce938.png" src="_images/e37f4aacdf1eb14cdfcc75a65c242be906ff8c0b1c28058e07c4754ae10ce938.png" />
+<img alt="_images/3192b2bd76877ba5d4a42a56abb82baaa27f25ad94be9ab8cc95fd8bcade7242.png" src="_images/3192b2bd76877ba5d4a42a56abb82baaa27f25ad94be9ab8cc95fd8bcade7242.png" />
 </div>
 </div>
 <p>La función <code class="docutils literal notranslate"><span class="pre">hist()</span></code> devuelve una tupla con tres elementos, que son un array con el número elementos en cada intervalo, un array con el punto del eje X donde empieza cada intervalo y una lista con referencias a cada una de las barras para modificar sus propiedades (consulten el manual de matplotlib para encontrar más información y mayores posibilidades de uso).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span> <span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">rwidth</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cantidad de valores del 10º intevalo:&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">9</span><span class="p">])</span> <span class="c1"># cuantos valores están en el 10º intervalo</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 3064.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cantidad de valores del 10º intevalo: 23.0
 </pre></div>
 </div>
-<img alt="_images/e25d7d3516dd32a57a1d90b4a5cc0e9b129e01993c78e501ee4b26fdf5ab05a2.png" src="_images/e25d7d3516dd32a57a1d90b4a5cc0e9b129e01993c78e501ee4b26fdf5ab05a2.png" />
+<img alt="_images/41a4c0c4c8b0fb67c87b12e079257ec057344f3b30cc6defb166d443dac8dcb8.png" src="_images/41a4c0c4c8b0fb67c87b12e079257ec057344f3b30cc6defb166d443dac8dcb8.png" />
 </div>
 </div>
 </section>
 <section id="graficos-de-barras">
-<h2>5. Gráficos de barras<a class="headerlink" href="#graficos-de-barras" title="Link to this heading">#</a></h2>
-<p>El submódulo pyplot proporciona la función <code class="docutils literal notranslate"><span class="pre">bar</span></code>() para generar gráficos de barras. El siguiente ejemplo produce el gráfico de barras de dos àrreglos, <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<h2>5. Gráficos de barras<a class="headerlink" href="#graficos-de-barras" title="Permalink to this heading">#</a></h2>
+<p>Los <em>gráficos de barras</em> se utilizan para comparar diferentes categorías o variables discretas. Cada barra representa una categoría específica, como tipos de frutas o resultados de encuestas, y la altura de la barra indica la cantidad o frecuencia de cada categoría. Visualmente,  a diferencia del histograma,  se separan las columnas por espacios en blanco.</p>
+<p>El submódulo pyplot proporciona la función <code class="docutils literal notranslate"><span class="pre">bar()</span></code> para generar gráficos de barras. El siguiente ejemplo produce el gráfico de barras tomando como parámetros  <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">x2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">align</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gráfico de barras&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eje y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eje x&#39;</span><span class="p">)</span>
@@ -829,12 +761,48 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d2a6f3260cfe11854022b12a3fb75011f9fc9a9aa0798f7706ce11f79ec5b1b8.png" src="_images/d2a6f3260cfe11854022b12a3fb75011f9fc9a9aa0798f7706ce11f79ec5b1b8.png" />
+<img alt="_images/cbcc5a01a22c852eba349cc19f69704bdaeb8b56b417d55d4f4cca663429d843.png" src="_images/cbcc5a01a22c852eba349cc19f69704bdaeb8b56b417d55d4f4cca663429d843.png" />
 </div>
 </div>
 </section>
+<section id="grafico-circular">
+<h2>6. Gráfico circular<a class="headerlink" href="#grafico-circular" title="Permalink to this heading">#</a></h2>
+<p>Un <em>gráfico circular</em>, también conocido como <em>diagrama circular</em> o <em>gráfico de torta</em>, es una representación gráfica utilizada para mostrar la proporción de diferentes categorías dentro de un todo. Cada sección del círculo representa una categoría y su tamaño es proporcional a la cantidad que representa en relación con el total.</p>
+<p>La instrucción que se utiliza para hacer gráficos circulares  es <code class="docutils literal notranslate"><span class="pre">pie()</span></code></p>
+<p>Por ejemplo, mostremos la proporción de diferentes categorías del siguiente conjunto de datos con un gráfico circular.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Datos</span>
+<span class="n">tamaños</span> <span class="o">=</span> <span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">etiquetas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
+
+<span class="c1"># Crear el gráfico circular</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">tamaños</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">etiquetas</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Añadir título</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Proporción de Diferentes Categorías&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>  <span class="c1"># Para asegurar que el gráfico sea un círculo</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0d5ab1e927f2acd693bddb4c26e1812254deccc544bbe8eadce37b4c888eae42.png" src="_images/0d5ab1e927f2acd693bddb4c26e1812254deccc544bbe8eadce37b4c888eae42.png" />
+</div>
+</div>
+<p>Los <code class="docutils literal notranslate"><span class="pre">labels</span></code> son etiquetas externas que identifican cada categoría y la instrucción <code class="docutils literal notranslate"><span class="pre">autopct='%1.1f%%'</span></code>dibuja los porcentajes de cada “porción de la torta”.</p>
+</section>
 <section id="lectura-y-escritura-de-archivos-con-numpy">
-<h2>7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#lectura-y-escritura-de-archivos-con-numpy" title="Link to this heading">#</a></h2>
+<h2>7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#lectura-y-escritura-de-archivos-con-numpy" title="Permalink to this heading">#</a></h2>
 <p>Los objetos <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (los array de NumPy) se pueden guardar y cargar. Las funciones de entrada y salida disponibles son</p>
 <ul class="simple">
 <li><p>las funciones <code class="docutils literal notranslate"><span class="pre">load()</span></code> y <code class="docutils literal notranslate"><span class="pre">save()</span></code> manejan archivos binarios numPy (con extensión npy),</p></li>
@@ -845,7 +813,9 @@ document.write(`
 <p>El  método <code class="docutils literal notranslate"><span class="pre">save()</span></code> almacena el array de entrada en un archivo con extensión <code class="docutils literal notranslate"><span class="pre">npy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;archivo_salida&#39;</span><span class="p">,</span><span class="n">arr_1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -895,8 +865,8 @@ document.write(`
 <p>Las funciones <code class="docutils literal notranslate"><span class="pre">savetxt()</span></code> y <code class="docutils literal notranslate"><span class="pre">loadtxt()</span></code> aceptan parámetros opcionales adicionales como la cabecera, el pie de página y el delimitador.</p>
 </section>
 <section id="representando-datos-experimentales">
-<h2>8. Representando datos experimentales<a class="headerlink" href="#representando-datos-experimentales" title="Link to this heading">#</a></h2>
-<p>Cuando estamos en el laboratorio (u observatorio) haciendo un experimento y midiendo algún parámetro físico solemos obtener un conjunto de números que normalmente guardaremos en un fichero de texto en cualquier ordenador. Representar datos leídos de un fichero en lugar de generarlos directamente como hemos hecho hasta ahora, es tan sencillo como leer los datos y pasarlos a arrays de numpy. Una vez hecho, se representan gráficamente como ya hemos visto. Supongamos que tenemos los resultados de un experimento en una tabla de dos columnas almacenada en el fichero “datos_2col.txt”.</p>
+<h2>8. Representando datos experimentales<a class="headerlink" href="#representando-datos-experimentales" title="Permalink to this heading">#</a></h2>
+<p>Cuando estamos en el laboratorio (u observatorio) haciendo un experimento y midiendo algún parámetro físico solemos obtener un conjunto de números que normalmente guardaremos en un fichero de texto en cualquier ordenador. Representar datos leídos de un fichero en lugar de generarlos directamente como hemos hecho hasta ahora, es tan sencillo como leer los datos y pasarlos a arrays de NumPy. Una vez hecho, se representan gráficamente como ya hemos visto. Supongamos que tenemos los resultados de un experimento en una tabla de dos columnas almacenada en el fichero “datos_2col.txt”.</p>
 <p>Primero creemos el archivo (no tenemos uno disponible)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,111 +897,21 @@ document.write(`
 <p>es decir, 100 filas, 2 columnas. Veamos el formato de <code class="docutils literal notranslate"><span class="pre">datos</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">datos</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 12.  14.]
- [  6.  28.]
- [  8.  35.]
- [ -5.  37.]
- [ 16.  16.]
- [ 17.  32.]
- [ 17.  27.]
- [ -5.  16.]
- [-15.   4.]
- [ -7.  38.]
- [ -9.  18.]
- [ -3.  19.]
- [ 18.  19.]
- [ -8.   9.]
- [-19.  22.]
- [ -7.  13.]
- [ -4.  37.]
- [  3.   3.]
- [-19.  12.]
- [ -7.  38.]
- [-19.   7.]
- [ 18.  35.]
- [ 14.  34.]
- [ 17.  25.]
- [  8.   3.]
- [ -3.  25.]
- [ -9.  27.]
- [ -5.  27.]
- [-18.  36.]
- [ -6.  20.]
- [ 19.  21.]
- [  8.  12.]
- [-12.  33.]
- [ 13.  36.]
- [-12.   5.]
- [-13.  21.]
- [  7.  11.]
- [ 18.  16.]
- [ 12.   8.]
- [ 16.  23.]
- [  7.   7.]
- [-14.  31.]
- [  0.  14.]
- [-10.  38.]
- [  5.   3.]
- [  6.  31.]
- [  0.   4.]
- [-10.  20.]
- [ 14.  14.]
- [  0.  36.]
- [-18.  25.]
- [  2.   3.]
- [-11.   2.]
- [-14.  32.]
- [ 14.  38.]
- [ -7.   1.]
- [ 16.   2.]
- [-19.  12.]
- [ -6.  12.]
- [ -6.  38.]
- [ -1.  34.]
- [  7.  20.]
- [-20.  32.]
- [  3.  29.]
- [-19.   7.]
- [ 17.  25.]
- [ -1.   7.]
- [  2.   2.]
- [-12.   4.]
- [ 10.  33.]
- [-15.   4.]
- [ -2.  17.]
- [-10.  12.]
- [ 19.  14.]
- [  9.  26.]
- [ -6.  34.]
- [ 11.  25.]
- [ -4.  39.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[  2.  37.]
  [ -1.  13.]
- [  0.  10.]
- [-10.  34.]
- [  9.  19.]
- [-18.  17.]
- [-13.  21.]
- [  0.   5.]
- [  1.   3.]
- [  0.  16.]
- [ 11.  18.]
- [-16.  35.]
- [  6.  20.]
- [ -7.  39.]
- [-14.   9.]
- [  1.  33.]
- [ 14.  27.]
- [  6.   8.]
- [ -5.  15.]
- [-20.  39.]
- [ 17.  16.]
- [  8.  25.]
- [ 19.  14.]]
+ [  3.  11.]
+ [ 11.   1.]
+ [  1.   9.]
+ [ 15.  17.]
+ [ 11.  12.]
+ [ 10.  14.]
+ [  8.  17.]
+ [-17.  39.]]
 </pre></div>
 </div>
 </div>
@@ -1045,50 +925,155 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[14. 28. 35. 37. 16. 32. 27. 16.  4. 38. 18. 19. 19.  9. 22. 13. 37.  3.
- 12. 38.  7. 35. 34. 25.  3. 25. 27. 27. 36. 20. 21. 12. 33. 36.  5. 21.
- 11. 16.  8. 23.  7. 31. 14. 38.  3. 31.  4. 20. 14. 36. 25.  3.  2. 32.
- 38.  1.  2. 12. 12. 38. 34. 20. 32. 29.  7. 25.  7.  2.  4. 33.  4. 17.
- 12. 14. 26. 34. 25. 39. 13. 10. 34. 19. 17. 21.  5.  3. 16. 18. 35. 20.
- 39.  9. 33. 27.  8. 15. 39. 16. 25. 14.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[37. 13. 11.  1.  9. 17. 12. 14. 17. 39. 30. 31. 21. 21. 20.  0. 27. 16.
+  7. 31. 14.  9. 31. 39. 30. 16. 25.  4. 20.  0. 18. 23.  2. 16. 14. 14.
+ 34. 27. 20. 18. 39. 18. 36. 17.  5.  1. 11.  2. 24. 15. 33. 34. 14.  0.
+  3. 26.  9. 20. 38.  2.  6. 38.  1. 28. 36. 33. 24. 22.  5.  6. 36. 25.
+  1.  5. 16. 15. 15.  3. 34. 24. 15.  5. 21. 21.  3.  2. 10. 11.  1. 30.
+  5. 18. 10. 23.  7. 19. 15. 25. 34.  3.]
 </pre></div>
 </div>
-<img alt="_images/7094381d3d98f4c05ee83db1cf22fc0777a2fb14ff0ca2ec2d3589321b46e761.png" src="_images/7094381d3d98f4c05ee83db1cf22fc0777a2fb14ff0ca2ec2d3589321b46e761.png" />
+<img alt="_images/029f48aba790f4b7ca3f36acff142aa550bc47b7eb375b5047ee1d478ecd3e68.png" src="_images/029f48aba790f4b7ca3f36acff142aa550bc47b7eb375b5047ee1d478ecd3e68.png" />
 </div>
 </div>
 <p>En el ploteo anterior se grafica la 2º columna con los pares <code class="docutils literal notranslate"><span class="pre">(i,</span> <span class="pre">x[i])</span></code>donde <code class="docutils literal notranslate"><span class="pre">x</span></code>es el arreglo.</p>
-<p>Comencemos a plotear:</p>
+</section>
+<section id="la-funcion-subplot">
+<h2>9. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code><a class="headerlink" href="#la-funcion-subplot" title="Permalink to this heading">#</a></h2>
+<p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> permite trazar diferentes gráficos en la misma figura, pero como dibujos separados.</p>
+<p>En el siguiente script, se grafican el seno y el coseno.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">datos</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>   <span class="c1"># Segunda columna, puntos azules (b)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">datos</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;r.&#39;</span><span class="p">)</span>   <span class="c1"># Primera columna, puntos rojos (r)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># Trazo una línea horizontal en la coordenada y=4 color verde (g)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="c1"># Calcular las coordenadas x e y de los puntos de las curvas seno y coseno</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">y_sin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y_cos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="c1"># Trazo una línea vertical en la coordenada x=20 color verde (g)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="c1"># Configurar una grilla tenga ancho 2 y altura 1 (se graficará un plot al costado de otro),</span>
+<span class="c1"># y establecer la primera de esas subtramas como activa.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Dibujo una banda horizontal de y=-10 a y=0 de color azul</span>
-<span class="c1"># y 30% de transparencia (alpha=0.3)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhspan</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="c1"># Se hace el primer plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sin</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Seno&#39;</span><span class="p">)</span>
 
-<span class="c1"># Dibujo una banda vertical de x=60 a x=80 de color verde</span>
-<span class="c1"># y 30% de transparencia</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-
-<span class="c1"># Etiqueto los ejes</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Eje X&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Eje Y&#39;</span><span class="p">)</span>
+<span class="c1"># Establecer el segundo subplot como activo y hacer el segundo plot.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_cos</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coseno&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7d3229a8a376817efca1aab7327b1a7c83dd3faa49be48f35e45aaf6edfad4c6.png" src="_images/7d3229a8a376817efca1aab7327b1a7c83dd3faa49be48f35e45aaf6edfad4c6.png" />
+<img alt="_images/a666d4fc598e1253e1f64cc02acc9146df65b2958a7e30d25ce20298b3d8f58b.png" src="_images/a666d4fc598e1253e1f64cc02acc9146df65b2958a7e30d25ce20298b3d8f58b.png" />
 </div>
 </div>
-<p>En este caso hemos usado además algunas funciones para crear líneas y bandas horizontales y verticales.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> de pyplot es utilizada para crear grillas de subplots en una figura de Matplotlib. Esta función acepta <em>tres</em> parámetros posicionales: <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, <code class="docutils literal notranslate"><span class="pre">ncols</span></code> e <code class="docutils literal notranslate"><span class="pre">index</span></code>, y opcionalmente otros parámetros para ajustar el tamaño, el espacio y los límites de los subplots. A continuación se describen los tres primeros parámetros de la función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nrows</span></code>: número de filas de la grilla de subplots.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ncols</span></code>: número de columnas de la grilla de subplots.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: índice del subplot actual, comenzando desde 1 y aumentando de izquierda a derecha y de arriba hacia abajo.</p></li>
+</ul>
+<p>Existesn otros argumentos y parámetros para compartir ejes y para ajustar el tamaño, el espacio y los límites de los subplots.</p>
+<p>Es decir el método <code class="docutils literal notranslate"><span class="pre">subplot()</span></code> permite hacer una grilla <span class="math notranslate nohighlight">\(m \times n\)</span> y dibujar en cada rectángulo de esa grilla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">5.0</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x) + sen(5x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)*exp(-x/10)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;cos(x)*x&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1ec989616a1c75f4991a6156508d54e1d3ecfd3ad1ec1577ca45da6b2c43c64a.png" src="_images/1ec989616a1c75f4991a6156508d54e1d3ecfd3ad1ec1577ca45da6b2c43c64a.png" />
+</div>
+</div>
+<p>No quedó muy bien, pero se puede arreglar con agregando la instrucción <code class="docutils literal notranslate"><span class="pre">subplots_adjust()</span></code> que permite aumentar el espacio vertical:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">5.0</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mf">10.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x) + sen(5x)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;sen(x)*exp(-x/10)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f4</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;cos(x)*x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ajustar el espaciado</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># Aumenta el espacio vertical</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a945e5dba24aaba09b002cc3aef69bad3dd4cbb1392ac569928d9e22ba396abe.png" src="_images/a945e5dba24aaba09b002cc3aef69bad3dd4cbb1392ac569928d9e22ba396abe.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -1156,13 +1141,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibujar-varias-parejas-de-datos">1. Dibujar varias parejas de datos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot">2. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajando-con-texto-dentro-del-grafico">3. Trabajando con texto dentro del gráfico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficando-parejas-de-datos-o-funciones">1. Graficando parejas de datos o funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trabajando-con-texto-dentro-del-grafico">2. Trabajando con texto dentro del gráfico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dibujar-varias-parejas-de-datos">3. Dibujar varias parejas de datos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogramas">4.  Histogramas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficos-de-barras">5. Gráficos de barras</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-circular">6. Gráfico circular</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-y-escritura-de-archivos-con-numpy">7. Lectura y escritura de archivos con <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#representando-datos-experimentales">8. Representando datos experimentales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-subplot">9. La función <code class="docutils literal notranslate"><span class="pre">subplot()</span></code></a></li>
 </ul>
   </nav></div>
 
